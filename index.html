@@ -123,6 +123,14 @@ document.getElementById("places").innerHTML = places.map((p,i) =>
     <p>${p[1]}</p>
   </a>`
 ).join("");
+  document.getElementById("places").insertAdjacentHTML("afterbegin", `
+  <a class="place" href="qazvin.html" style="text-align:center; border:2px solid #b08b48;">
+    <img src="ghab_qazvin.jpg" alt="اثر هنری قزوین از نمایشگاه ایران، هزار رنگ" style="width:100%; max-width:280px; height:auto; display:block; margin:0 auto 15px; border-radius:10px;">
+    <h3>قزوین</h3>
+    <p>قزوین؛ نقش دیروز، رنگ امروز</p>
+    <span>مشاهده اثر و روایت فرهنگی ←</span>
+  </a>
+`);
 </script>
 </body>
 </html>
