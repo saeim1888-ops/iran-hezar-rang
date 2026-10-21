@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#f4ead8">
-<meta name="description" content="ایران، هزار رنگ؛ نمایشگاه تصویری پوشش زنان ایران، به روایت مریم ساعی">
-<title>ایران، هزار رنگ | مریم ساعی</title>
+<meta name="description" content="ایران، هزار رنگ؛ نمایشگاه تصویری پوشش زنان ایران، به روایت مریم ساعی، همراه با پژوهش و گردآوری اطلاعات فرهنگی مرجان ساعی.">
+<title>ایران، هزار رنگ | مریم ساعی و مرجان ساعی</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
@@ -29,589 +29,742 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   color: var(--ink);
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
   background-color: var(--paper);
   background-image:
-    radial-gradient(ellipse at 15% 12%, #d7b78b40 0, transparent 30%),
-    radial-gradient(ellipse at 90% 55%, #c65a2512 0, transparent 35%),
-    repeating-linear-gradient(7deg, #765b2510 0, #765b2505 1px, transparent 2px, transparent 7px);
-  font-family: 'Vazirmatn', Tahoma, sans-serif;
+    repeating-linear-gradient(0deg, transparent 0 5px, rgba(101,80,48,.035) 6px),
+    radial-gradient(ellipse at 10% 15%, rgba(198,90,37,.09), transparent 35%),
+    radial-gradient(ellipse at 90% 60%, rgba(21,63,59,.08), transparent 40%);
   line-height: 1.9;
 }
 
-a { color: inherit; }
+a { color: inherit; text-decoration: none; }
 
-.wrap {
-  width: min(1160px, 92%);
-  margin: auto;
+img { display: block; max-width: 100%; }
+
+.container {
+  width: min(1160px, 91%);
+  margin-inline: auto;
 }
 
 header {
-  padding: 20px 0;
-  border-bottom: 1px solid #bd8b3e65;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(244,234,216,.94);
+  border-bottom: 1px solid rgba(189,139,62,.45);
+  backdrop-filter: blur(12px);
 }
 
 .nav {
+  min-height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 24px;
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   color: var(--green);
-  font-weight: 800;
-  font-size: 1.12rem;
-  text-decoration: none;
 }
 
-.brand small {
-  display: block;
+.brand-mark {
+  font-size: 36px;
   color: var(--rust);
-  font-size: .72rem;
-  font-weight: 500;
+  line-height: 1;
+}
+
+.brand-name {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.brand-en {
+  display: block;
+  font: 12px Georgia, serif;
+  letter-spacing: 2px;
   direction: ltr;
   text-align: right;
 }
 
 .nav-links {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
-  font-size: .88rem;
+  gap: 24px;
+  font-size: 13px;
 }
 
 .nav-links a {
-  text-decoration: none;
+  padding: 8px 0;
+  transition: color .2s;
 }
 
 .nav-links a:hover { color: var(--rust); }
 
+.language {
+  color: var(--rust);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 .hero {
+  position: relative;
+  padding: 54px 0 62px;
+  overflow: hidden;
+}
+
+.hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 52px;
   align-items: center;
-  gap: 48px;
-  padding: 54px 0 68px;
+}
+
+.poster-frame {
+  position: relative;
+  padding: 13px;
+  background: var(--cream);
+  border: 1px solid var(--gold);
+  box-shadow: 10px 12px 0 rgba(21,63,59,.12), 0 18px 40px rgba(48,43,34,.12);
+  transform: rotate(-1deg);
+}
+
+.poster-frame::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(189,139,62,.5);
+  pointer-events: none;
+}
+
+.poster-frame img {
+  width: 100%;
+  max-height: 620px;
+  object-fit: contain;
 }
 
 .eyebrow {
   color: var(--rust);
-  font-size: .9rem;
-  font-weight: 700;
-  letter-spacing: .04em;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: .2px;
 }
 
 h1 {
-  color: var(--rust);
-  font-size: clamp(2.6rem, 6vw, 5.3rem);
-  line-height: 1.25;
   margin: 12px 0;
+  color: var(--green);
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.35;
   font-weight: 800;
 }
 
-h1 span {
-  display: block;
+h1 span { color: var(--rust); }
+
+.english-title {
+  font: 600 clamp(17px, 2.2vw, 25px) Georgia, serif;
+  direction: ltr;
   color: var(--green);
+  letter-spacing: 2px;
+  margin: 4px 0 25px;
 }
 
-.hero h2 {
-  font-size: clamp(1.15rem, 2.5vw, 1.65rem);
+.hero-subtitle {
+  font-size: clamp(17px, 2vw, 23px);
+  font-weight: 600;
   color: var(--green);
-  margin: 18px 0 8px;
+  margin: 0 0 8px;
 }
 
-.hero p {
+.english-subtitle {
+  direction: ltr;
+  text-align: right;
+  font: 16px/1.8 Georgia, serif;
+  color: #625b4d;
+}
+
+.ornament {
+  color: var(--gold);
+  font-size: 24px;
+  letter-spacing: 7px;
+  margin: 20px 0;
+}
+
+.hero-copy {
+  font-size: 15px;
+  color: #51493d;
   max-width: 570px;
-  color: #554b3d;
-}
-
-.hero-art {
-  position: relative;
-  padding: 13px;
-  background: #fff9e9;
-  border: 1px solid var(--gold);
-  box-shadow: 10px 10px 0 #153f3b1b;
-  transform: rotate(1deg);
-}
-
-.hero-art::before {
-  content: "";
-  position: absolute;
-  inset: -9px 14px 14px -9px;
-  border: 1px solid #a83e1d80;
-  pointer-events: none;
-}
-
-.hero-art img {
-  display: block;
-  width: 100%;
-  max-height: 640px;
-  object-fit: contain;
-  background: #ead9bd;
-}
-
-.hero-art figcaption {
-  padding: 9px 4px 2px;
-  color: var(--green);
-  text-align: center;
-  font-size: .82rem;
 }
 
 .button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 11px 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 12px 25px;
+  border: 1px solid var(--rust);
+  border-radius: 3px;
+  background: var(--rust);
   color: #fff8e9;
-  background: var(--green);
-  text-decoration: none;
-  border: 1px solid var(--green);
+  font: inherit;
+  font-weight: 600;
   transition: .2s;
 }
 
 .button:hover {
-  color: white;
-  background: var(--rust);
-  border-color: var(--rust);
+  background: var(--green);
+  border-color: var(--green);
+  transform: translateY(-2px);
 }
 
-.button.outline {
-  color: var(--green);
+.button.secondary {
   background: transparent;
+  color: var(--green);
+  border-color: var(--gold);
   margin-right: 8px;
 }
 
-.section {
-  padding: 48px 0 58px;
-  border-top: 1px solid #bd8b3e55;
+.paper-section {
+  position: relative;
+  margin: 10px 0 58px;
+  padding: 38px 42px;
+  background: rgba(255,249,238,.78);
+  border: 1px solid rgba(189,139,62,.5);
+  box-shadow: 0 8px 24px rgba(48,43,34,.05);
 }
 
 .section-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 26px;
+  text-align: center;
+  margin-bottom: 28px;
 }
 
 .section-heading h2 {
   color: var(--green);
-  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  font-size: clamp(24px, 3vw, 34px);
   margin: 0;
+  line-height: 1.6;
 }
 
 .section-heading p {
-  margin: 5px 0 0;
-  color: #766955;
-  font-size: .9rem;
+  color: var(--rust);
+  margin: 4px 0 0;
+  font: 16px Georgia, serif;
+  direction: ltr;
 }
 
-.motif {
-  color: var(--rust);
-  font-size: 1.7rem;
+.rule {
+  color: var(--gold);
   letter-spacing: 5px;
+  margin-top: 6px;
 }
 
-.intro {
+.about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  grid-template-columns: 1.25fr .9fr .9fr;
+  gap: 26px;
 }
 
-.paper-card {
-  padding: 25px;
-  background: #fff9eecc;
-  border: 1px solid #bd8b3e85;
-  box-shadow: 4px 5px 0 #153f3b0b;
+.about-text {
+  padding-left: 20px;
+  border-left: 1px solid rgba(189,139,62,.6);
 }
 
-.paper-card h3 {
+.about-text p { margin: 0 0 14px; }
+
+.english-copy {
+  direction: ltr;
+  text-align: left;
+  font: 15px/1.9 Georgia, serif;
+  color: #625b4d;
+}
+
+.person {
+  text-align: center;
+  padding: 10px 8px;
+}
+
+.person-icon {
+  font-size: 28px;
   color: var(--rust);
-  margin-top: 0;
 }
 
-.paper-card p { margin-bottom: 0; }
+.person h3 {
+  color: var(--green);
+  margin: 8px 0 0;
+  font-size: 20px;
+}
+
+.person .latin {
+  direction: ltr;
+  font: 17px Georgia, serif;
+  color: var(--green);
+  margin: 2px 0 12px;
+}
+
+.person p {
+  font-size: 13px;
+  color: #625b4d;
+  margin: 0;
+}
+
+.person .latin-role {
+  direction: ltr;
+  font: 13px/1.8 Georgia, serif;
+  margin-top: 7px;
+}
 
 .gallery {
+  padding: 10px 0 72px;
+}
+
+.gallery-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.gallery-intro h2 {
+  color: var(--green);
+  font-size: clamp(26px, 3vw, 38px);
+  margin: 0;
+}
+
+.gallery-intro p {
+  margin: 4px 0 0;
+  color: #625b4d;
+}
+
+.region-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
 }
 
-.region {
+.region-card {
+  position: relative;
   overflow: hidden;
-  background: #fffaf1;
-  border: 1px solid #bd8b3e80;
-  text-decoration: none;
+  padding: 10px;
+  background: var(--cream);
+  border: 1px solid rgba(189,139,62,.7);
+  box-shadow: 0 6px 14px rgba(48,43,34,.06);
   transition: transform .2s, box-shadow .2s;
 }
 
-.region:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px #302b2212;
+.region-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(48,43,34,.13);
 }
 
-.region img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  background: #e9dcc7;
-}
-
-.region-body { padding: 16px 18px 20px; }
-
-.region .number {
-  color: var(--rust);
-  font-size: .76rem;
-}
-
-.region h3 {
-  margin: 3px 0;
-  color: var(--green);
-  font-size: 1.35rem;
-}
-
-.region p {
-  margin: 4px 0 10px;
-  color: #766955;
-  font-size: .88rem;
-}
-
-.region .more {
-  color: var(--rust);
-  font-weight: 600;
-  font-size: .88rem;
-}
-
-.region.pending {
-  background: #f8f0e2bb;
-  border-style: dashed;
-}
-
-.pending-art {
+.region-image {
+  height: 175px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(198,90,37,.18), rgba(21,63,59,.16)),
+    repeating-linear-gradient(45deg, #e5d3b4 0 7px, #f4ead8 7px 14px);
   display: grid;
   place-items: center;
-  aspect-ratio: 4 / 3;
-  color: var(--rust);
-  background:
-    radial-gradient(circle at 50% 50%, #bd8b3e20 0 22%, transparent 23%),
-    repeating-linear-gradient(45deg, #a83e1d0a 0 2px, transparent 2px 10px);
-  font-size: 2.5rem;
 }
 
-.status {
-  display: inline-block;
-  padding: 2px 9px;
-  border: 1px solid #bd8b3e80;
-  color: #766955;
-  font-size: .74rem;
+.region-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.credits {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.credit {
-  padding: 24px;
-  border-top: 3px solid var(--gold);
-  background: #fff9eea8;
-}
-
-.credit .role {
-  color: var(--rust);
-  font-size: .84rem;
-}
-
-.credit h3 {
+.region-image .motif {
   color: var(--green);
-  margin: 5px 0;
-  font-size: 1.35rem;
+  font-size: 45px;
+  opacity: .8;
 }
 
-.english {
-  direction: ltr;
-  text-align: right;
-  font-size: .98rem;
-  color: #766955;
+.region-info {
+  text-align: center;
+  padding: 12px 5px 10px;
 }
+
+.region-number {
+  color: var(--rust);
+  font-size: 11px;
+}
+
+.region-info h3 {
+  color: var(--green);
+  margin: 2px 0;
+  font-size: 20px;
+}
+
+.region-info p {
+  margin: 0;
+  color: #746956;
+  font-size: 12px;
+}
+
+.region-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--rust);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.coming-soon {
+  opacity: .88;
+}
+
+.online-note {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.note-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--rust);
+  font-size: 28px;
+}
+
+.online-note h2 {
+  margin: 0 0 5px;
+  color: var(--green);
+  font-size: 24px;
+}
+
+.online-note p { margin: 4px 0; }
 
 footer {
-  padding: 30px 0;
-  color: #f8efdf;
   background: var(--green);
-  text-align: center;
+  color: #f7ead4;
+  padding: 35px 0 25px;
+  border-top: 5px solid var(--rust);
 }
 
-footer p { margin: 4px 0; }
-
-footer .english {
-  color: #e5d5b8;
-  text-align: center;
-  font-size: .83rem;
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: start;
 }
 
-@media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 34px; }
-  .hero-art { max-width: 540px; margin: auto; }
-  .intro, .credits { grid-template-columns: 1fr; }
-  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-  .region-body { padding: 12px; }
-  .region h3 { font-size: 1.12rem; }
-  .section-heading { align-items: start; }
-  .motif { display: none; }
+footer h2 {
+  margin: 0;
+  font-size: 22px;
 }
 
-@media (max-width: 430px) {
-  .nav { align-items: start; flex-direction: column; }
-  .nav-links { gap: 14px; }
-  .gallery { grid-template-columns: 1fr; }
-  .button.outline { margin-right: 0; }
+footer p {
+  color: #e4d8c1;
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+footer .latin {
+  direction: ltr;
+  text-align: right;
+  font: 13px/1.8 Georgia, serif;
+}
+
+.footer-bottom {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  color: #e4d8c1;
+  font-size: 12px;
+}
+
+@media (max-width: 850px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-copy-block { order: -1; }
+  .poster-frame { width: min(520px, 100%); margin: auto; }
+  .about-grid { grid-template-columns: 1fr 1fr; }
+  .about-text { grid-column: 1 / -1; border-left: 0; border-bottom: 1px solid rgba(189,139,62,.6); padding: 0 0 20px; }
+  .region-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nav { padding: 14px 0; align-items: flex-start; }
+  .nav-links { gap: 10px 16px; justify-content: flex-end; }
+}
+
+@media (max-width: 540px) {
+  .nav { flex-direction: column; gap: 10px; }
+  .nav-links { justify-content: flex-start; font-size: 12px; }
+  .hero { padding-top: 28px; }
+  .paper-section { padding: 26px 20px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-text { grid-column: auto; }
+  .region-grid { gap: 12px; }
+  .region-image { height: 125px; }
+  .region-info h3 { font-size: 17px; }
+  .gallery-intro { align-items: flex-start; flex-direction: column; }
+  .online-note { grid-template-columns: 1fr; }
+  .footer-grid { flex-direction: column; }
 }
 </style>
 </head>
 
 <body>
+
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="#home">
-      ایران، هزار رنگ
-      <small>IRAN, A THOUSAND COLORS</small>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="صفحه اصلی ایران، هزار رنگ">
+      <span class="brand-mark">✿</span>
+      <span>
+        <span class="brand-name">ایران، هزار رنگ</span>
+        <span class="brand-en">IRAN, A THOUSAND COLORS</span>
+      </span>
     </a>
-    <nav class="nav-links" aria-label="ناوبری اصلی">
-      <a href="#about">درباره نمایشگاه</a>
+
+    <nav class="nav-links" aria-label="منوی اصلی">
+      <a href="#home">صفحه اصلی</a>
       <a href="#gallery">گالری مناطق</a>
+      <a href="#about">درباره نمایشگاه</a>
       <a href="#team">عوامل پروژه</a>
+      <a href="#contact">تماس با ما</a>
+      <span class="language">FA | EN</span>
     </nav>
   </div>
 </header>
 
-<main id="home">
-  <section class="wrap hero">
-    <div>
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="poster-frame">
+      <img src="poster.jpg" alt="پوستر نمایشگاه ایران، هزار رنگ؛ روایت تصویری پوشش زنان ایران">
+    </div>
+
+    <div class="hero-copy-block">
       <div class="eyebrow">روایت تصویری فرهنگ و پوشش ایرانی</div>
-      <h1>ایران، <span>هزار رنگ</span></h1>
-      <h2>هر لباس، روایتی از یک سرزمین</h2>
+      <h1><span>ایران،</span><br>هزار رنگ</h1>
+      <div class="english-title">IRAN, A THOUSAND COLORS</div>
+      <p class="hero-subtitle">روایت تصویری پوشش زنان ایران</p>
+      <p class="english-subtitle">A Visual Journey into the Traditional Dress of Iranian Women</p>
+      <div class="ornament">─── ❖ ───</div>
+      <p class="hero-copy">
+        هر لباس، روایتی از یک سرزمین؛ هر نقش، نشانی از حافظه و فرهنگ مردمان ایران.
+        سفری تصویری میان رنگ‌ها، جغرافیا، طبیعت و آیین‌هایی که هویت فرهنگی مناطق ایران را شکل می‌دهند.
+      </p>
+      <a class="button" href="#gallery">ورود به گالری مناطق <span>←</span></a>
+      <a class="button secondary" href="#about">درباره این سفر</a>
+    </div>
+  </div>
+</section>
+
+<section class="container paper-section" id="about">
+  <div class="section-heading">
+    <h2>درباره این سفر هنری</h2>
+    <p>About This Artistic Journey</p>
+    <div class="rule">─── ❖ ───</div>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-text">
       <p>
-        سفری تصویری میان رنگ‌ها، نقش‌ها و پوشش زنان ایران؛
-        روایتی از هویت بومی، خاطره‌های فرهنگی و زیبایی گوناگونی
-        سرزمینمان، از نگاه هنر تصویرسازی.
+        «ایران، هزار رنگ» تلاشی هنری برای بازخوانی تنوع پوشش زنان ایران و پیوند آن با جغرافیا، طبیعت، آیین‌ها و حافظهٔ فرهنگی هر منطقه است. هر اثر پنجره‌ای به قصه‌ای محلی و بخشی از هویت رنگارنگ ایران می‌گشاید.
       </p>
-      <a class="button" href="#gallery">ورود به گالری مناطق ←</a>
-      <a class="button outline" href="#about">درباره نمایشگاه</a>
-    </div>
-
-    <figure class="hero-art">
-      <img src="poster.jpg" alt="پوستر نمایشگاه ایران، هزار رنگ">
-      <figcaption>نمایشگاه تصویری پوشش زنان ایران · قزوین · ۱۴۰۵</figcaption>
-    </figure>
-  </section>
-
-  <section class="section" id="about">
-    <div class="wrap">
-      <div class="section-heading">
-        <div>
-          <h2>درباره این سفر هنری</h2>
-          <p>از نقش یک لباس تا روایت یک فرهنگ</p>
-        </div>
-        <div class="motif" aria-hidden="true">✳ ❋ ✳</div>
-      </div>
-      <div class="intro">
-        <article class="paper-card">
-          <h3>ایدهٔ نمایشگاه</h3>
-          <p>
-            «ایران، هزار رنگ» تلاشی هنری برای بازخوانی تنوع پوشش
-            زنان ایران و پیوند آن با جغرافیا، طبیعت، آیین‌ها و
-            حافظهٔ فرهنگی هر منطقه است. هر اثر پنجره‌ای به قصه‌ای
-            محلی و بخشی از هویت رنگارنگ ایران می‌گشاید.
-          </p>
-        </article>
-        <article class="paper-card">
-          <h3>گالری حضوری و آنلاین</h3>
-          <p>
-            این وب‌سایت همراه دیجیتال نمایشگاه است. در صفحهٔ هر منطقه،
-            اثر هنری و اطلاعات فرهنگی آن قرار می‌گیرد تا مخاطب بتواند
-            پس از بازدید نیز مسیر کشف و آشنایی را ادامه دهد.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="gallery">
-    <div class="wrap">
-      <div class="section-heading">
-        <div>
-          <h2>گالری مناطق ایران</h2>
-          <p>هر منطقه، یک رنگ؛ هر اثر، یک روایت</p>
-        </div>
-        <div class="motif" aria-hidden="true">❋ ✳ ❋</div>
-      </div>
-
-      <div class="gallery">
-        <a class="region" href="qazvin.html">
-          <img src="qazvin.jpg" alt="اثر هنری منطقه قزوین">
-          <div class="region-body">
-            <span class="number">منطقه ۰۱</span>
-            <h3>قزوین</h3>
-            <p>استان قزوین</p>
-            <span class="more">مشاهده اثر و روایت فرهنگی ←</span>
-          </div>
-        </a>
-
-        <article class="region pending">
-          <div class="pending-art" aria-hidden="true">✳</div>
-          <div class="region-body">
-            <span class="number">منطقه ۰۲</span>
-            <h3>گیلان</h3>
-            <p>شمال ایران</p>
-            <span class="status">در حال آماده‌سازی</span>
-          </div>
-        </article>
-
-        <article class="region pending">
-          <div class="pending-art" aria-hidden="true">❋</div>
-          <div class="region-body">
-            <span class="number">منطقه ۰۳</span>
-            <h3>ترکمن‌صحرا</h3>
-            <p>شمال‌شرق ایران</p>
-            <span class="status">در حال آماده‌سازی</span>
-          </div>
-        </article>
-
-        <article class="region pending">
-          <div class="pending-art" aria-hidden="true">✳</div>
-          <div class="region-body">
-            <span class="number">منطقه ۰۴</span>
-            <h3>مازندران</h3>
-            <p>سواحل جنوبی دریای خزر</p>
-            <span class="status">در حال آماده‌سازی</span>
-          </div>
-        </article>
-
-        <article class="region pending">
-          <div class="pending-art" aria-hidden="true">❋</div>
-          <div class="region-body">
-            <span class="number">منطقه ۰۵</span>
-            <h3>آذربایجان</h3>
-            <p>شمال‌غرب ایران</p>
-            <span class="status">در حال آماده‌سازی</span>
-          </div>
-        </article>
-
-        <article class="region pending">
-          <div class="pending-art" aria-hidden="true">✳</div>
-          <div class="region-body">
-            <span class="number">منطقه ۰۶</span>
-            <h3>کردستان</h3>
-            <p>غرب ایران</p>
-            <span class="status">در حال آماده‌سازی</span>
-          </div>
-        </article>
-
-        <article class="region pending">
-          <div class="pending-art" aria-hidden="true">❋</div>
-          <div class="region-body">
-            <span class="number">منطقه ۰۷</span>
-            <h3>لرستان</h3>
-            <p>زاگرس مرکزی</p>
-            <span class="status">در حال آماده‌سازی</span>
-          </div>
-        </article>
-
-        <article class="region pending">
-          <div class="pending-art" aria-hidden="true">✳</div>
-          <div class="region-body">
-            <span class="number">منطقه ۰۸</span>
-            <h3>فارس</h3>
-            <p>جنوب ایران</p>
-            <span class="status">در حال آماده‌سازی</span>
-          </div>
-        </article>
-
-        <article class="region pending">
-          <div class="pending-art" aria-hidden="true">❋</div>
-          <div class="region-body">
-            <span class="number">منطقه ۰۹</span>
-            <h3>بلوچستان</h3>
-            <p>جنوب‌شرق ایران</p>
-            <span class="status">در حال آماده‌سازی</span>
-          </div>
-        </article>
-
-        <article class="region pending">
-          <div class="pending-art" aria-hidden="true">✳</div>
-          <div class="region-body">
-            <span class="number">منطقه ۱۰</span>
-            <h3>خراسان</h3>
-            <p>شرق و شمال‌شرق ایران</p>
-            <span class="status">در حال آماده‌سازی</span>
-          </div>
-        </article>
-
-        <article class="region pending">
-          <div class="pending-art" aria-hidden="true">❋</div>
-          <div class="region-body">
-            <span class="number">منطقه ۱۱</span>
-            <h3>بختیاری</h3>
-            <p>زاگرس و جنوب‌غرب ایران</p>
-            <span class="status">در حال آماده‌سازی</span>
-          </div>
-        </article>
-
-        <article class="region pending">
-          <div class="pending-art" aria-hidden="true">✳</div>
-          <div class="region-body">
-            <span class="number">منطقه ۱۲</span>
-            <h3>اصفهان</h3>
-            <p>مرکز ایران</p>
-            <span class="status">در حال آماده‌سازی</span>
-          </div>
-        </article>
-      </div>
-
-      <p style="text-align:center;color:#766955;margin-top:24px">
-        این گالری در حال تکمیل است؛ صفحه‌های دیگر مناطق به‌تدریج اضافه خواهند شد.
+      <p class="english-copy">
+        Iran, A Thousand Colors is an artistic journey to rediscover the diversity of Iranian women's traditional dress and its deep connection with geography, nature, rituals, and cultural memory. Each artwork opens a window into a local story and a part of Iran's colorful identity.
       </p>
     </div>
-  </section>
 
-  <section class="section" id="team">
-    <div class="wrap">
-      <div class="section-heading">
-        <div>
-          <h2>درباره پدیدآورندگان</h2>
-          <p>هنر، پژوهش و روایت فرهنگی در کنار هم</p>
-        </div>
-        <div class="motif" aria-hidden="true">✳ ❋ ✳</div>
-      </div>
-
-      <div class="credits">
-        <article class="credit">
-          <div class="role">هنرمند و خالق آثار</div>
-          <h3>مریم ساعی</h3>
-          <div class="english" lang="en">Maryam Saei</div>
-          <p>تصویرسازی و روایت هنری پوشش زنان ایران</p>
-        </article>
-
-        <article class="credit">
-          <div class="role">طراحی سایت و گردآوری اطلاعات</div>
-          <h3>مرجان ساعی</h3>
-          <div class="english" lang="en">Marjan Saei</div>
-          <p>طراحی وب‌سایت و گردآوری اطلاعات فرهنگی مناطق</p>
-        </article>
-      </div>
+    <div class="person" id="team">
+      <div class="person-icon">✿</div>
+      <div>هنرمند و خالق آثار</div>
+      <div class="latin">Artist &amp; Creator</div>
+      <h3>مریم ساعی</h3>
+      <div class="latin">Maryam Saei</div>
+      <p>تصویرسازی و روایت هنری پوشش زنان ایران</p>
+      <p class="latin-role">Illustration &amp; Artistic Storytelling<br>of Iranian Women's Dress</p>
     </div>
-  </section>
+
+    <div class="person">
+      <div class="person-icon">❖</div>
+      <div>طراحی وب‌سایت و گردآوری اطلاعات</div>
+      <div class="latin">Website Design &amp; Research</div>
+      <h3>مرجان ساعی</h3>
+      <div class="latin">Marjan Saei</div>
+      <p>پژوهش و گردآوری اطلاعات فرهنگی مناطق</p>
+      <p class="latin-role">Cultural Research<br>&amp; Regional Information Collection</p>
+    </div>
+  </div>
+</section>
+
+<section class="container gallery" id="gallery">
+  <div class="gallery-intro">
+    <div>
+      <h2>گالری مناطق ایران</h2>
+      <p>هر منطقه، یک رنگ؛ هر اثر، یک روایت</p>
+    </div>
+    <div class="english-copy">Regions Gallery · 23 Regions</div>
+  </div>
+
+  <div class="region-grid">
+    <a class="region-card" href="qazvin.html">
+      <div class="region-image">
+        <img src="qazvin.jpg" alt="اثر هنری پوشش زنان قزوین">
+      </div>
+      <div class="region-info">
+        <span class="region-number">منطقه ۰۱</span>
+        <h3>قزوین</h3>
+        <p>قزوین؛ نقش دیروز، رنگ امروز</p>
+        <span class="region-link">مشاهده اثر و روایت فرهنگی ←</span>
+      </div>
+    </a>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✿</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۰۲</span><h3>گیلان</h3><p>شمال ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">❖</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۰۳</span><h3>ترکمن‌صحرا</h3><p>شمال‌شرق ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✺</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۰۴</span><h3>مازندران</h3><p>شمال ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✿</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۰۵</span><h3>کردستان</h3><p>غرب ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">❖</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۰۶</span><h3>آذربایجان</h3><p>شمال‌غرب ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✺</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۰۷</span><h3>فارس</h3><p>جنوب ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✿</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۰۸</span><h3>اصفهان</h3><p>مرکز ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">❖</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۰۹</span><h3>کرمانشاه</h3><p>غرب ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✺</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۱۰</span><h3>لرستان</h3><p>غرب ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✿</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۱۱</span><h3>خوزستان</h3><p>جنوب‌غرب ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">❖</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۱۲</span><h3>یزد</h3><p>مرکز ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✺</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۱۳</span><h3>کرمان</h3><p>جنوب‌شرق ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✿</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۱۴</span><h3>هرمزگان</h3><p>جنوب ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">❖</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۱۵</span><h3>بلوچستان</h3><p>جنوب‌شرق ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✺</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۱۶</span><h3>بوشهر</h3><p>جنوب ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✿</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۱۷</span><h3>همدان</h3><p>غرب ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">❖</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۱۸</span><h3>زنجان</h3><p>شمال‌غرب ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✺</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۱۹</span><h3>خراسان</h3><p>شرق و شمال‌شرق ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✿</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۲۰</span><h3>تهران</h3><p>مرکز ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">❖</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۲۱</span><h3>ایلام</h3><p>غرب ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✺</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۲۲</span><h3>چهارمحال و بختیاری</h3><p>جنوب‌غرب ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+
+    <article class="region-card coming-soon">
+      <div class="region-image"><span class="motif">✿</span></div>
+      <div class="region-info"><span class="region-number">منطقه ۲۳</span><h3>البرز و مناطق دیگر</h3><p>روایت‌های دیگر ایران</p><span class="region-link">به‌زودی</span></div>
+    </article>
+  </div>
+</section>
+
+<section class="container paper-section" id="online">
+  <div class="online-note">
+    <div class="note-icon">⌖</div>
+    <div>
+      <h2>گالری حضوری و آنلاین</h2>
+      <p>
+        این وب‌سایت همراه دیجیتال نمایشگاه است. در صفحهٔ هر منطقه، اثر هنری و اطلاعات فرهنگی آن قرار می‌گیرد تا مخاطب بتواند پس از بازدید نیز مسیر کشف و آشنایی را ادامه دهد.
+      </p>
+      <p class="english-copy">
+        This website is the digital companion to the physical exhibition. Each region's page brings together its artwork and cultural information, allowing visitors to continue their journey of discovery online.
+      </p>
+    </div>
+  </div>
+</section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <p>ایران، هزار رنگ · هر لباس، روایتی از یک سرزمین</p>
-    <p class="english" lang="en">Iran, A Thousand Colors</p>
-    <p style="font-size:.8rem">قزوین · ۱۴۰۵</p>
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h2>ایران، هزار رنگ</h2>
+        <p class="latin">Iran, A Thousand Colors</p>
+        <p>روایت تصویری پوشش زنان ایران</p>
+      </div>
+      <div>
+        <p>هنرمند و خالق آثار: مریم ساعی | Maryam Saei</p>
+        <p>طراحی وب‌سایت و گردآوری اطلاعات: مرجان ساعی | Marjan Saei</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © ایران، هزار رنگ — روایت تصویری فرهنگ و پوشش زنان ایران
+    </div>
   </div>
 </footer>
+
 </body>
 </html>
