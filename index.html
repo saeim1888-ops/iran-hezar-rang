@@ -6,53 +6,123 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ایران، هزار رنگ | گالری آنلاین</title>
 <style>
-:root{--cream:#f8f3e9;--olive:#596447;--gold:#b08b48;--ink:#292b25}
-*{box-sizing:border-box}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:2}
-header{text-align:center;padding:65px 20px 48px;background:linear-gradient(145deg,#f7efe0,#e8dfca)}
-header .eyebrow{color:var(--olive);letter-spacing:2px}
-h1{font-size:clamp(36px,7vw,68px);margin:8px 0;color:var(--olive)}
-header p{margin:0;font-size:18px}
-main{max-width:1050px;margin:auto;padding:35px 20px}
-.intro{text-align:center;max-width:720px;margin:0 auto 35px}
-h2{color:var(--olive)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#fffdf8;border:1px solid #e4d8c1;border-radius:15px;padding:22px;box-shadow:0 5px 18px #44371b0a}
-.number{color:var(--gold);font-size:14px}
-.card h3{margin:4px 0;color:var(--olive);font-size:21px}
-.card p{font-size:14px;color:#666;margin:5px 0 12px}
-footer{text-align:center;padding:25px;background:#e9e0cf;color:#596447}
-.note{font-size:13px;color:#777}
+:root {
+  --cream: #f8f3e9;
+  --olive: #596447;
+  --gold: #b08b48;
+  --ink: #292b25;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Tahoma, Arial, sans-serif;
+  line-height: 2;
+}
+header {
+  text-align: center;
+  padding: 35px 18px 45px;
+  background: linear-gradient(145deg, #f7efe0, #e8dfca);
+}
+.eyebrow { color: var(--olive); letter-spacing: 2px; }
+h1 { font-size: clamp(32px, 7vw, 60px); margin: 8px 0; color: var(--olive); }
+header p { margin: 0; font-size: 18px; }
+.poster-wrap { max-width: 900px; margin: 28px auto; padding: 0 18px; text-align: center; }
+.poster {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px #44371d24;
+}
+main { max-width: 1100px; margin: auto; padding: 20px; }
+.intro { text-align: center; max-width: 760px; margin: 35px auto; }
+h2 { color: var(--olive); }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+.place {
+  display: block;
+  padding: 20px;
+  border: 1px solid #e4d4b7;
+  border-radius: 16px;
+  background: #fffdf8;
+  color: inherit;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+}
+.place:hover { transform: translateY(-3px); box-shadow: 0 8px 22px #44371d15; }
+.number { color: var(--gold); font-size: 13px; }
+.place h3 { margin: 5px 0; color: var(--olive); font-size: 22px; }
+.place p { margin: 0; color: #68685e; font-size: 14px; }
+.note { margin: 35px 0; padding: 20px; background: #eee5d4; border-radius: 14px; }
+footer { text-align: center; padding: 28px 16px; color: #777364; font-size: 13px; }
 </style>
 </head>
 <body>
 <header>
-<div class="eyebrow">گالری آنلاین هنر و فرهنگ ایران</div>
-<h1>ایران، هزار رنگ</h1>
-<p>روایت تصویری پوشش زنان ایران</p>
+  <div class="eyebrow">گالری آنلاین هنر و فرهنگ ایران</div>
+  <h1>ایران، هزار رنگ</h1>
+  <p>روایت تصویری پوشش زنان ایران</p>
 </header>
+
+<div class="poster-wrap">
+  <img class="poster" src="poster.jpg" alt="پوستر نمایشگاه ایران، هزار رنگ">
+</div>
+
 <main>
-<section class="intro">
-<h2>سفری میان رنگ‌ها و روایت‌ها</h2>
-<p>هر پوشش، روایتی از فرهنگ، جغرافیا و زندگی مردمان این سرزمین دارد. در این گالری، به سفری تصویری میان مناطق ایران دعوت می‌شوید؛ سفری برای دیدن و شناختن تنوع فرهنگی سرزمینمان.</p>
-</section>
-<h2>مقصدهای این سفر</h2>
-<div class="grid" id="regions"></div>
-<p class="note">این گالری در حال تکمیل است. اطلاعات هر منطقه باید با منابع معتبر بررسی و به‌تدریج به مجموعه اضافه شود.</p>
+  <section class="intro">
+    <h2>سفری میان رنگ‌ها و روایت‌ها</h2>
+    <p>هر پوشش، روایتی از فرهنگ، جغرافیا و زندگی مردمان این سرزمین دارد. در این گالری، به سفری تصویری میان مناطق ایران دعوت می‌شوید؛ سفری برای دیدن و شناختن تنوع فرهنگی سرزمینمان.</p>
+  </section>
+
+  <h2>مقصدهای این سفر</h2>
+  <div class="grid" id="places"></div>
+
+  <section class="note">
+    <strong>دربارهٔ این گالری</strong>
+    <p>«ایران، هزار رنگ» یک روایت تصویری از پوشش زنان ایران است؛ تلاشی برای دیدن زیبایی، تنوع و هویت فرهنگی مناطق مختلف کشور. این گالری آنلاین همراه نمایشگاه حضوری، امکان بازدید و آشنایی بیشتر را فراهم می‌کند.</p>
+  </section>
 </main>
-<footer>ایران، هزار رنگ · روایت تصویری پوشش زنان ایران</footer>
+
+<footer>ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</footer>
+
 <script>
-const regions=[
-["قزوین","استان قزوین"],["گیلان","شمال ایران"],["ترکمن‌صحرا","شمال‌شرق ایران"],
-["خراسان","شرق و شمال‌شرق ایران"],["بلوچستان","جنوب‌شرق ایران"],["فارس","جنوب ایران"],
-["بختیاری","زاگرس مرکزی"],["لرستان","غرب ایران"],["کردستان","غرب ایران"],
-["آذربایجان","شمال‌غرب ایران"],["سیستان","جنوب‌شرق ایران"],["بیرجند","خراسان جنوبی"],
-["اصفهان","مرکز ایران"],["قشم","جزیرهٔ قشم"],["سمنان","استان سمنان"],
-["یزد","مرکز ایران"],["زنجان","شمال‌غرب ایران"],["اردبیل","شمال‌غرب ایران"],
-["مرکزی","استان مرکزی"],["ابیانه","روستای ابیانه"],["مازندران","شمال ایران"],
-["ایلام","غرب ایران"],["بوشهر","سواحل خلیج فارس"]
+const places = [
+["قزوین","استان قزوین"],
+["گیلان","شمال ایران"],
+["ترکمن‌صحرا","شمال‌شرق ایران"],
+["خراسان","شرق و شمال‌شرق ایران"],
+["بلوچستان","جنوب‌شرق ایران"],
+["فارس","جنوب ایران"],
+["بختیاری","زاگرس مرکزی"],
+["لرستان","غرب ایران"],
+["کردستان","غرب ایران"],
+["آذربایجان","شمال‌غرب ایران"],
+["سیستان","شرق ایران"],
+["بیرجند","خراسان جنوبی"],
+["اصفهان","مرکز ایران"],
+["قشم","جزیرهٔ قشم"],
+["سمنان","شرق فلات مرکزی"],
+["یزد","مرکز ایران"],
+["زنجان","شمال‌غرب ایران"],
+["اردبیل","شمال‌غرب ایران"],
+["اراک و مرکزی","استان مرکزی"],
+["ابیانه","روستای تاریخی در اصفهان"],
+["مازندران","شمال ایران"],
+["ایلام و کُلم","غرب ایران"],
+["بوشهر","جنوب ایران"]
 ];
-document.getElementById("regions").innerHTML=regions.map((r,i)=>`<article class="card"><span class="number">مقصد ${String(i+1).padStart(2,"0")}</span><h3>${r[0]}</h3><p>${r[1]}</p></article>`).join("");
+document.getElementById("places").innerHTML = places.map((p,i) =>
+  `<a class="place" href="https://www.google.com/search?q=${encodeURIComponent(p[0] + " پوشاک سنتی زنان فرهنگ")}" target="_blank" rel="noopener">
+    <span class="number">مقصد ${String(i+1).padStart(2,"0")}</span>
+    <h3>${p[0]}</h3>
+    <p>${p[1]}</p>
+  </a>`
+).join("");
 </script>
 </body>
 </html>
