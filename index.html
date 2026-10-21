@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ایران، هزار رنگ | گالری آنلاین</title>
+<style>
+:root{--cream:#f8f3e9;--olive:#596447;--gold:#b08b48;--ink:#292b25}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:2}
+header{text-align:center;padding:65px 20px 48px;background:linear-gradient(145deg,#f7efe0,#e8dfca)}
+header .eyebrow{color:var(--olive);letter-spacing:2px}
+h1{font-size:clamp(36px,7vw,68px);margin:8px 0;color:var(--olive)}
+header p{margin:0;font-size:18px}
+main{max-width:1050px;margin:auto;padding:35px 20px}
+.intro{text-align:center;max-width:720px;margin:0 auto 35px}
+h2{color:var(--olive)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#fffdf8;border:1px solid #e4d8c1;border-radius:15px;padding:22px;box-shadow:0 5px 18px #44371b0a}
+.number{color:var(--gold);font-size:14px}
+.card h3{margin:4px 0;color:var(--olive);font-size:21px}
+.card p{font-size:14px;color:#666;margin:5px 0 12px}
+footer{text-align:center;padding:25px;background:#e9e0cf;color:#596447}
+.note{font-size:13px;color:#777}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">گالری آنلاین هنر و فرهنگ ایران</div>
+<h1>ایران، هزار رنگ</h1>
+<p>روایت تصویری پوشش زنان ایران</p>
+</header>
+<main>
+<section class="intro">
+<h2>سفری میان رنگ‌ها و روایت‌ها</h2>
+<p>هر پوشش، روایتی از فرهنگ، جغرافیا و زندگی مردمان این سرزمین دارد. در این گالری، به سفری تصویری میان مناطق ایران دعوت می‌شوید؛ سفری برای دیدن و شناختن تنوع فرهنگی سرزمینمان.</p>
+</section>
+<h2>مقصدهای این سفر</h2>
+<div class="grid" id="regions"></div>
+<p class="note">این گالری در حال تکمیل است. اطلاعات هر منطقه باید با منابع معتبر بررسی و به‌تدریج به مجموعه اضافه شود.</p>
+</main>
+<footer>ایران، هزار رنگ · روایت تصویری پوشش زنان ایران</footer>
+<script>
+const regions=[
+["قزوین","استان قزوین"],["گیلان","شمال ایران"],["ترکمن‌صحرا","شمال‌شرق ایران"],
+["خراسان","شرق و شمال‌شرق ایران"],["بلوچستان","جنوب‌شرق ایران"],["فارس","جنوب ایران"],
+["بختیاری","زاگرس مرکزی"],["لرستان","غرب ایران"],["کردستان","غرب ایران"],
+["آذربایجان","شمال‌غرب ایران"],["سیستان","جنوب‌شرق ایران"],["بیرجند","خراسان جنوبی"],
+["اصفهان","مرکز ایران"],["قشم","جزیرهٔ قشم"],["سمنان","استان سمنان"],
+["یزد","مرکز ایران"],["زنجان","شمال‌غرب ایران"],["اردبیل","شمال‌غرب ایران"],
+["مرکزی","استان مرکزی"],["ابیانه","روستای ابیانه"],["مازندران","شمال ایران"],
+["ایلام","غرب ایران"],["بوشهر","سواحل خلیج فارس"]
+];
+document.getElementById("regions").innerHTML=regions.map((r,i)=>`<article class="card"><span class="number">مقصد ${String(i+1).padStart(2,"0")}</span><h3>${r[0]}</h3><p>${r[1]}</p></article>`).join("");
+</script>
+</body>
+</html>
