@@ -553,6 +553,24 @@ body:not(.english-mode) .english-subtitle,
 body:not(.english-mode) .english-copy {
   display: none;
 }
+  
+/* نمایش فقط زبان انتخاب‌شده */
+body:not(.english-mode) .en-text {
+  display: none !important;
+}
+
+body.english-mode .fa-text {
+  display: none !important;
+}
+
+body:not(.english-mode) .fa-text {
+  display: revert;
+}
+
+body.english-mode .en-text {
+  display: revert;
+}
+
 </style>
 </head>
 
@@ -584,6 +602,7 @@ body:not(.english-mode) .english-copy {
 </section>
 
 <main>
+
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div class="poster-frame">
@@ -591,21 +610,36 @@ body:not(.english-mode) .english-copy {
     </div>
 
     <div class="hero-copy-block">
-      <div class="eyebrow">روایت تصویری فرهنگ و پوشش ایرانی</div>
-      <h1><span>ایران،</span><br>هزار رنگ</h1>
-      <div class="english-title">IRAN, A THOUSAND COLORS</div>
-      <p class="hero-subtitle">روایت تصویری پوشش زنان ایران</p>
-      <p class="english-subtitle">A Visual Journey into the Traditional Dress of Iranian Women</p>
+      <div class="eyebrow fa-text">روایت تصویری فرهنگ و پوشش ایرانی</div>
+      <div class="eyebrow en-text">A Visual Journey into Iranian Culture and Dress</div>
+
+      <h1 class="fa-text"><span>ایران،</span><br>هزار رنگ</h1>
+      <h1 class="en-text">IRAN,<br>A THOUSAND COLORS</h1>
+
+      <p class="hero-subtitle fa-text">روایت تصویری پوشش زنان ایران</p>
+      <p class="english-subtitle en-text">A Visual Journey into the Traditional Dress of Iranian Women</p>
+
       <div class="ornament">─── ❖ ───</div>
-      <p class="hero-copy">
+
+      <p class="hero-copy fa-text">
         هر لباس، روایتی از یک سرزمین؛ هر نقش، نشانی از حافظه و فرهنگ مردمان ایران.
         سفری تصویری میان رنگ‌ها، جغرافیا، طبیعت و آیین‌هایی که هویت فرهنگی مناطق ایران را شکل می‌دهند.
       </p>
-      <a class="button" href="#gallery">ورود به گالری مناطق <span>←</span></a>
-      <a class="button secondary" href="#about">درباره این سفر</a>
+
+      <p class="hero-copy en-text">
+        Every garment tells a story of a land; every pattern preserves a memory of Iran's culture.
+        Explore the colors, landscapes, nature, and traditions that shape the cultural identity of Iran's regions.
+      </p>
+
+      <a class="button fa-text" href="#gallery">ورود به گالری مناطق <span>←</span></a>
+      <a class="button en-text" href="#gallery">Explore the Regional Gallery <span>→</span></a>
+
+      <a class="button secondary fa-text" href="#about">درباره این سفر</a>
+      <a class="button secondary en-text" href="#about">About This Journey</a>
     </div>
   </div>
 </section>
+
 
 <section class="container paper-section" id="about">
   <div class="section-heading">
