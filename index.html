@@ -786,5 +786,32 @@ footer .latin {
   </div>
 </footer>
 
+  
+<script>
+(function () {
+  const languageButton = document.querySelector('.language');
+
+  if (!languageButton) return;
+
+  let currentLanguage = localStorage.getItem('iran-hezer-rang-language') || 'fa';
+
+  function applyLanguage(language) {
+    currentLanguage = language;
+    document.documentElement.lang = language;
+    document.documentElement.dir = language === 'fa' ? 'rtl' : 'ltr';
+    languageButton.textContent = language === 'fa' ? 'FA | EN' : 'EN | FA';
+    localStorage.setItem('iran-hezer-rang-language', language);
+  }
+
+  languageButton.style.cursor = 'pointer';
+
+  languageButton.addEventListener('click', function () {
+    applyLanguage(currentLanguage === 'fa' ? 'en' : 'fa');
+  });
+
+  applyLanguage(currentLanguage);
+})();
+</script>
+
 </body>
-</html>
+  </html>
