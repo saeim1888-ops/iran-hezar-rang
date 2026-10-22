@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -64,6 +63,20 @@ nav a {
   border: 1px solid #d3c09a;
   border-radius: 30px;
   font-size: 13px;
+}
+.lang-switch {
+  position: fixed;
+  z-index: 10;
+  top: 12px;
+  left: 12px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  background: var(--paper);
+  color: var(--olive);
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 10px #0001;
 }
 main { max-width: 1050px; margin: auto; padding: 24px 18px 60px; }
 section {
@@ -140,400 +153,259 @@ footer a { color: #ffdf9e; }
   margin-top: 18px;
   color: var(--olive);
 }
+
+/* تنظیم نمایش فارسی و انگلیسی */
+body.english {
+  direction: ltr;
+  font-family: Arial, Tahoma, sans-serif;
+}
+body.english nav { direction: ltr; }
+body.english ul {
+  padding-left: 22px;
+  padding-right: 0;
+}
+body.english .quote {
+  border-right: 0;
+  border-left: 4px solid var(--gold);
+}
+body.english .back { direction: ltr; }
+body:not(.english) .en { display: none !important; }
+body.english .fa { display: none !important; }
+
 @media (max-width:600px) {
-  header { padding-top: 30px; }
+  header { padding-top: 45px; }
   nav { gap: 6px; }
   nav a { font-size: 12px; }
+  .lang-switch {
+    top: 8px;
+    left: 8px;
+    padding: 6px 10px;
+  }
 }
 </style>
 </head>
 <body>
+
+<button class="lang-switch" id="langSwitch" type="button"
+        aria-label="Change language">English</button>
 <div class="topline"></div>
 
 <header>
-  <div class="eyebrow">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</div>
-  <h1>قزوین؛ روایت تاریخ، هنر و زندگی</h1>
-  <p class="slogan">«قزوین؛ نقشِ تاریخ بر تار و پودِ زندگی»</p>
+  <div class="eyebrow">
+    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+    <span class="en">Iran, A Thousand Colors | A visual story of women's dress in Iran</span>
+  </div>
+
+  <h1>
+    <span class="fa">قزوین؛ روایت تاریخ، هنر و زندگی</span>
+    <span class="en">Qazvin: A Story of History, Art and Life</span>
+  </h1>
+
+  <p class="slogan">
+    <span class="fa">«قزوین؛ نقشِ تاریخ بر تار و پودِ زندگی»</span>
+    <span class="en">“Qazvin: History Woven into Everyday Life”</span>
+  </p>
+
   <p class="subtitle">
-    سفری تصویری میان پوشش زنان، روستاهای کهن، بناهای تاریخی،
-    طبیعت و طعم‌های به‌یادماندنی سرزمین قزوین
+    <span class="fa">سفری تصویری میان پوشش زنان، روستاهای کهن، بناهای تاریخی، طبیعت و طعم‌های به‌یادماندنی سرزمین قزوین</span>
+    <span class="en">A visual journey through women's dress, old villages, historic architecture, nature, and the memorable flavors of Qazvin.</span>
   </p>
 </header>
 
-<nav aria-label="فهرست صفحه">
-  <a href="#art">اثر هنری</a>
-  <a href="#clothing">پوشش زنان</a>
-  <a href="#villages">روستاها</a>
-  <a href="#history">تاریخ و طبیعت</a>
-  <a href="#food">خوراک و شیرینی</a>
-  <a href="#products">محصولات محلی</a>
-  <a href="#sources">منابع</a>
+<nav aria-label="Page navigation">
+  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+  <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+  <a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
+  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+  <a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food & Sweets</span></a>
+  <a href="#products"><span class="fa">محصولات محلی</span><span class="en">Local Products</span></a>
+  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
 </nav>
 
 <main>
 <section id="art">
-  <h2>۱. تصویر قزوین؛ روایت یک سرزمین</h2>
+  <h2>
+    <span class="fa">۱. تصویر قزوین؛ روایت یک سرزمین</span>
+    <span class="en">1. Qazvin in Art: A Land's Story</span>
+  </h2>
+
   <p>
-    در این اثر، پوشش گل‌دار زنان، معماری تاریخی، نقش‌مایه‌های کاشی،
-    خوراک‌های محلی و طبیعت کوهستانی در کنار هم قرار گرفته‌اند؛
-    عناصری که هرکدام بخشی از حافظه فرهنگی قزوین را روایت می‌کنند.
+    <span class="fa">در این اثر، پوشش گل‌دار زنان، معماری تاریخی، نقش‌مایه‌های کاشی، خوراک‌های محلی و طبیعت کوهستانی در کنار هم قرار گرفته‌اند؛ عناصری که هرکدام بخشی از حافظه فرهنگی قزوین را روایت می‌کنند.</span>
+    <span class="en">This artwork brings together women's floral clothing, historic architecture, tile motifs, local foods, and mountain landscapes. Each element tells part of Qazvin's cultural memory.</span>
   </p>
+
   <img class="hero-art" src="qazvin.jpg"
        alt="اثر هنری قزوین با پوشش گل‌دار زنانه، معماری تاریخی و خوراک‌های محلی">
+
   <p class="caption">
-    اثر تصویری قزوین از مجموعه «ایران، هزار رنگ»
+    <span class="fa">اثر تصویری قزوین از مجموعه «ایران، هزار رنگ»</span>
+    <span class="en">The Qazvin artwork from “Iran, A Thousand Colors”</span>
   </p>
+
   <div class="quote">
-    هر نقش بر لباس، هر پنجره در عمارت و هر طعم محلی،
-    نشانی از پیوند مردم با سرزمینشان است.
+    <span class="fa">هر نقش بر لباس، هر پنجره در عمارت و هر طعم محلی، نشانی از پیوند مردم با سرزمینشان است.</span>
+    <span class="en">Every pattern on a garment, every window in a historic building, and every local flavor reflects the bond between people and their homeland.</span>
   </div>
+
   <p class="small">
-    این تصویر، اثر هنری مجموعه است؛ تصاویر و توضیحات این صفحه
-    برای معرفی فرهنگی و تاریخی استان ارائه شده‌اند.
+    <span class="fa">این تصویر، اثر هنری مجموعه است؛ تصاویر و توضیحات این صفحه برای معرفی فرهنگی و تاریخی استان ارائه شده‌اند.</span>
+    <span class="en">This is the artwork created for the collection. The images and descriptions on this page provide cultural and historical context about the province.</span>
   </p>
 </section>
 
-<section id="clothing">
-  <h2>۲. پوشش زنان قزوین؛ زیبایی در جزئیات</h2>
-  <p>
-    پوشاک سنتی زنان قزوین یک لباس یکسان برای همه منطقه نیست.
-    شکل پوشش با توجه به روستا، شیوه زندگی، زبان و سنت‌های محلی
-    تفاوت داشته است. روسری‌ها، سربندها، کلاه‌های پارچه‌ای،
-    پارچه‌های نقش‌دار و شیوه‌های بستن آن‌ها از جزئیات مهم این
-    میراث فرهنگی‌اند. برخی از این شیوه‌ها امروزه بیشتر در عکس‌ها،
-    روایت‌های محلی و پژوهش‌های مردم‌شناختی دیده می‌شوند.
-  </p>
-
-  <img class="label-art" src="qazvin_leibel.png"
-       alt="لیبل تصویری معرفی پوشش محلی زنان و فرهنگ قزوین">
-  <p class="caption">
-    لیبل اختصاصی قزوین؛ راهنمای تصویری پوشش، جاذبه‌ها و خوراک محلی
-  </p>
-
+  <section id="clothing">
+  <h2><span class="fa">۲. پوشش زنان قزوین؛ زیبایی در جزئیات</span><span class="en">2. Women's Dress in Qazvin: Beauty in the Details</span></h2>
+  <p><span class="fa">پوشاک سنتی زنان قزوین یک لباس یکسان برای همه منطقه نیست. شکل پوشش با توجه به روستا، شیوه زندگی، زبان و سنت‌های محلی تفاوت داشته است. روسری‌ها، سربندها، کلاه‌های پارچه‌ای، پارچه‌های نقش‌دار و شیوه‌های بستن آن‌ها از جزئیات مهم این میراث فرهنگی‌اند. برخی از این شیوه‌ها امروزه بیشتر در عکس‌ها، روایت‌های محلی و پژوهش‌های مردم‌شناختی دیده می‌شوند.</span><span class="en">Traditional women's clothing in Qazvin was not uniform across the province. Dress varied by village, lifestyle, language, and local custom. Headscarves, headbands, fabric caps, patterned textiles, and the ways they were tied are important details of this cultural heritage. Today, some styles are mainly documented in photographs, local accounts, and ethnographic research.</span></p>
+  <img class="label-art" src="qazvin_leibel.png" alt="لیبل تصویری معرفی پوشش محلی زنان و فرهنگ قزوین">
+  <p class="caption"><span class="fa">لیبل اختصاصی قزوین؛ راهنمای تصویری پوشش، جاذبه‌ها و خوراک محلی</span><span class="en">Qazvin's exhibition label: a visual guide to clothing, landmarks, and local food</span></p>
   <div class="grid">
     <article class="tile">
-      <h3>دیکین و رودبار الموت</h3>
-      <p>
-        در لیبل این مجموعه، به کلاه پارچه‌ای زنانه در دیکین،
-        از روستاهای ناحیه الموت، اشاره شده است. کلاه و پوشش سر
-        در پوشاک محلی می‌توانست بخشی از هویت منطقه‌ای و شیوه
-        آراستن زنان باشد.
-      </p>
+      <h3><span class="fa">دیکین و رودبار الموت</span><span class="en">Dikin and Rudbar-e Alamut</span></h3>
+      <p><span class="fa">در لیبل این مجموعه، به کلاه پارچه‌ای زنانه در دیکین، از روستاهای ناحیه الموت، اشاره شده است. کلاه و پوشش سر در پوشاک محلی می‌توانست بخشی از هویت منطقه‌ای و شیوه آراستن زنان باشد.</span><span class="en">The exhibition label notes a women's fabric cap associated with Dikin, a village in the Alamut area. Caps and other head coverings could express regional identity and personal adornment.</span></p>
     </article>
-
     <article class="tile">
-      <h3>حسین‌آباد کرد، آبیک</h3>
-      <p>
-        در معرفی پوشش این روستا از سربند محلی «شده» یا «لالی»
-        نام برده شده است. «لالی» در منابع مربوط به پوشاک سنتی
-        قزوین نیز به‌عنوان نوعی روسری محلی ثبت شده؛ شکل بستن
-        و رنگ پارچه می‌توانسته در تشخیص شیوه پوشش نقش داشته باشد.
-      </p>
+      <h3><span class="fa">حسین‌آباد کرد، آبیک</span><span class="en">Hosseinabad-e Kurd, Abyek</span></h3>
+      <p><span class="fa">در معرفی پوشش این روستا از سربند محلی «شده» یا «لالی» نام برده شده است. «لالی» در منابع مربوط به پوشاک سنتی قزوین نیز به‌عنوان نوعی روسری محلی ثبت شده؛ شکل بستن و رنگ پارچه می‌توانسته در تشخیص شیوه پوشش نقش داشته باشد.</span><span class="en">The village's clothing description mentions a local head covering called “Shodeh” or “Lali.” “Lali” is also recorded in accounts of traditional Qazvin clothing as a type of local scarf. Its tying style and fabric color may have helped distinguish local dress.</span></p>
     </article>
-
     <article class="tile">
-      <h3>سگزآباد و شیوه بستن روسری</h3>
-      <p>
-        لیبل به شیوه ویژه بستن سربند و روسری در سگزآباد اشاره
-        می‌کند. در پوشاک سنتی منطقه، جنس پارچه، اندازه روسری،
-        رنگ و نحوه مهار آن در زیر چانه از جزئیات قابل توجه بوده‌اند.
-      </p>
+      <h3><span class="fa">سگزآباد و شیوه بستن روسری</span><span class="en">Sagzabad and Scarf-Tying Traditions</span></h3>
+      <p><span class="fa">لیبل به شیوه ویژه بستن سربند و روسری در سگزآباد اشاره می‌کند. در پوشاک سنتی منطقه، جنس پارچه، اندازه روسری، رنگ و نحوه مهار آن در زیر چانه از جزئیات قابل توجه بوده‌اند.</span><span class="en">The label refers to a distinctive way of tying head coverings in Sagzabad. In traditional dress, fabric type, scarf size and color, and how it was secured beneath the chin were notable details.</span></p>
     </article>
-
     <article class="tile">
-      <h3>شعیب‌آباد و دهستان اقبال</h3>
-      <p>
-        در لیبل، از زیرسری و چادر ترمه در روایت پوشش تاریخی
-        این محدوده نام برده شده است. زیرسری‌ها با شیوه‌های
-        متفاوت گره‌زدن یا قراردادن پارچه روی سر استفاده می‌شدند.
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>اورکن‌کرد و طارم سفلی</h3>
-      <p>
-        در لیبل مجموعه به روسری محلی «کیش» اشاره شده است.
-        نام‌ها و شیوه‌های محلی پوشش بخشی از دانش بومی‌اند و
-        ثبت دقیق آن‌ها با کمک روایت زنان و خانواده‌های همان
-        روستاها می‌تواند به حفظ این میراث کمک کند.
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>پارچه، رنگ و آرایه</h3>
-      <p>
-        گل‌دار بودن پارچه، رنگ‌های زنده، روسری‌های نقش‌دار،
-        سربندها و ترکیب چند لایه پوشش، ظرفیت بصری مهمی برای
-        بازنمایی لباس محلی دارند. بااین‌حال، یک نقش یا رنگ
-        به‌تنهایی نماینده پوشش همه زنان قزوین نیست.
-      </p>
+      <h3><span class="fa">تفاوت پوشش در روستاها</span><span class="en">Differences in Village Dress</span></h3>
+      <p><span class="fa">در بررسی پوشش زنان روستاهای قزوین، بهتر است هر منطقه جداگانه معرفی شود؛ زیرا نوع پارچه، رنگ، سربند و شیوه بستن پوشش ممکن است با منطقه دیگر تفاوت داشته باشد.</span><span class="en">Women's dress in Qazvin's villages is best explored region by region, since fabrics, colors, head coverings, and tying methods may differ from one area to another.</span></p>
     </article>
   </div>
-
-  <p>
-    اهمیت این پوشش‌ها تنها در ظاهر آن‌ها نیست؛ هر شیوه بستن
-    روسری یا انتخاب پارچه می‌تواند به مهارت‌های دوخت، دسترسی
-    به مواد اولیه، اقلیم، آداب خانوادگی و خاطره نسل‌های پیشین
-    پیوند داشته باشد.
-  </p>
-  <p class="small">
-    یادداشت پژوهشی: نام‌ها و نسبت‌های روستایی این بخش بر اساس
-    لیبل اختصاصی مجموعه و اطلاعات منتشرشده درباره پوشاک سنتی
-    قزوین تنظیم شده‌اند. برای انتشار نهایی نمایشگاهی، بهتر است
-    تلفظ محلی و جزئیات هر پوشش با افراد آگاه همان منطقه تطبیق داده شود.
-  </p>
+  <p class="small"><span class="fa">برای ثبت دقیق نام‌ها و نسبت‌دادن هر نوع پوشش به یک روستا، استفاده از منابع مردم‌شناختی یا تأیید افراد آگاه محلی ضروری است.</span><span class="en">Ethnographic sources or confirmation from knowledgeable local residents are important when documenting names and linking a clothing style to a specific village.</span></p>
 </section>
 
 <section id="villages">
-  <h2>۳. روستاهای قزوین؛ هر آبادی، روایتی مستقل</h2>
-  <p>
-    هویت قزوین فقط در مرکز تاریخی آن خلاصه نمی‌شود. روستاهای
-    کوهستانی الموت، آبادی‌های طارم سفلی، روستاهای تاکستان و
-    دشت‌های بویین‌زهرا هرکدام چشم‌انداز، گویش، شیوه زندگی و
-    محصولات ویژه خود را دارند.
-  </p>
-
+  <h2><span class="fa">۳. روستاهای قزوین؛ تنوع در دل سرزمین</span><span class="en">3. Qazvin's Villages: Diversity Across the Land</span></h2>
+  <p><span class="fa">استان قزوین تنها به شهر قزوین محدود نیست؛ از روستاهای کوهستانی الموت تا آبادی‌های دشت و مناطق کشاورزی، هر ناحیه ویژگی‌های طبیعی و فرهنگی خود را دارد. معرفی روستاها فرصتی است برای شنیدن روایت مردم، شناخت معماری بومی و ثبت آداب و پوشش محلی.</span><span class="en">Qazvin Province extends far beyond Qazvin city. From the mountain villages of Alamut to settlements on the plains and agricultural areas, each region has its own natural and cultural character. Introducing these villages offers a way to share residents' stories, explore local architecture, and document customs and traditional dress.</span></p>
   <div class="grid">
     <article class="tile">
-      <h3>الموت و رودبار الموت</h3>
-      <p>
-        دیکین، گازرخان، اندج، هیر، گازرخان و روستاهای پیرامون
-        الموت را می‌توان در روایت روستایی این ناحیه بررسی کرد.
-        چشم‌انداز کوهستانی، دره‌ها، باغ‌ها و آثار تاریخی،
-        به‌ویژه در محدوده قلعه الموت، از ویژگی‌های شناخته‌شده
-        این منطقه‌اند.
-      </p>
+      <h3><span class="fa">روستاهای الموت</span><span class="en">Villages of Alamut</span></h3>
+      <p><span class="fa">الموت با کوهستان‌ها، دره‌ها، روستاهای پراکنده و پیشینه تاریخی شناخته می‌شود. زندگی در این ناحیه با طبیعت کوهستانی پیوند خورده و هر روستا می‌تواند روایت ویژه‌ای از معماری، پوشاک و خوراک محلی داشته باشد.</span><span class="en">Alamut is known for its mountains, valleys, scattered villages, and historical background. Life here is closely connected to the mountain environment, and each village may tell a distinct story through its architecture, clothing, and local food.</span></p>
     </article>
-
     <article class="tile">
-      <h3>طارم سفلی</h3>
-      <p>
-        اورکن‌کرد، اورکن‌ترک، سیاهپوش، کلج، شیزر، سنگان سفلی،
-        سنگان علیا، عمادده و آبادی‌های پیرامون سیردان از نام‌هایی
-        هستند که در معرفی این منطقه می‌توان بررسی کرد.
-        باغداری، به‌ویژه زیتون در بخش‌هایی از طارم سفلی،
-        از ظرفیت‌های اقتصادی و فرهنگی منطقه است.
-      </p>
+      <h3><span class="fa">طارم سفلی</span><span class="en">Tarem-e Sofla</span></h3>
+      <p><span class="fa">طارم سفلی از نواحی شناخته‌شده استان است که باغداری، به‌ویژه کشت زیتون در بخش‌هایی از آن، در معرفی ظرفیت‌های محلی اهمیت دارد. ثبت تجربه باغداران و روایت روستاها می‌تواند تصویر کامل‌تری از زندگی منطقه ارائه کند.</span><span class="en">Tarem-e Sofla is one of the province's notable areas, with olive cultivation important in parts of the region. Recording farmers' experiences and village stories can offer a fuller picture of local life.</span></p>
     </article>
-
     <article class="tile">
-      <h3>تاکستان و روستاهای پیرامون</h3>
-      <p>
-        تاکستان و آبادی‌های اطراف آن با باغ‌های انگور و پیشینه
-        کشاورزی شناخته می‌شوند. نیکویه، خرم‌آباد، کندر و
-        اورازجین از نام‌هایی هستند که در بررسی روستاهای این
-        محدوده می‌توان به آن‌ها پرداخت.
-      </p>
+      <h3><span class="fa">تاکستان و روستاهای پیرامون</span><span class="en">Takestan and Surrounding Villages</span></h3>
+      <p><span class="fa">تاکستان و روستاهای پیرامون آن با باغ‌های انگور و فرآورده‌های انگور شناخته می‌شوند. این ظرفیت کشاورزی در کنار فرهنگ محلی، آیین‌های خانوادگی و تجربه نسل‌های باغدار، بخشی از هویت منطقه را شکل می‌دهد.</span><span class="en">Takestan and its surrounding villages are known for vineyards and grape products. This agricultural heritage, together with local customs, family traditions, and generations of growers, helps shape the area's identity.</span></p>
     </article>
-
     <article class="tile">
-      <h3>بویین‌زهرا و دشت‌های جنوبی</h3>
-      <p>
-        سگزآباد، رودک، شال، دشتک، خیارج و روستاهای پیرامون
-        بویین‌زهرا بخشی از جغرافیای متنوع جنوب استان‌اند.
-        دشت‌ها، فعالیت‌های کشاورزی و محوطه‌های باستانی
-        از موضوعات مناسب برای معرفی این محدوده هستند.
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>آبیک و آبادی‌های پیرامون</h3>
-      <p>
-        حسین‌آباد کرد و دیگر آبادی‌های منطقه آبیک می‌توانند
-        در روایت پوشش و زندگی روستایی استان جای بگیرند.
-        پیوند میان کشاورزی، رفت‌وآمد میان روستا و شهر و
-        سنت‌های محلی، بخشی از داستان این ناحیه است.
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>دهستان اقبال و قاقازان</h3>
-      <p>
-        شعیب‌آباد، شینقر، چوبیندر، رشتقون و آبادی‌های دهستان‌های
-        اقبال و قاقازان، نمونه‌هایی از گستردگی سکونتگاه‌های
-        روستایی استان هستند. روایت دقیق هر روستا باید با
-        ویژگی‌های تاریخی و فرهنگی خودش تکمیل شود.
-      </p>
+      <h3><span class="fa">دشت قزوین و بویین‌زهرا</span><span class="en">The Qazvin Plain and Buin Zahra</span></h3>
+      <p><span class="fa">دشت‌های کشاورزی و آبادی‌های پیرامون بویین‌زهرا بخشی از تنوع جغرافیایی استان‌اند. محصولات کشاورزی، شیوه‌های زندگی روستایی و بناهای محلی می‌توانند موضوع روایت تصویری این ناحیه باشند.</span><span class="en">The agricultural plains and settlements around Buin Zahra are part of the province's geographic diversity. Local produce, rural ways of life, and village buildings can all contribute to the area's visual story.</span></p>
     </article>
   </div>
-
-  <p class="small">
-    فهرست بالا نمونه‌ای برای شروع پژوهش است، نه فهرست کامل
-    روستاهای استان. نام روستاها و نسبت آن‌ها با شهرستان یا
-    دهستان باید پیش از چاپ نهایی از منبع معتبر کنترل شود.
-  </p>
+  <p class="small"><span class="fa">این بخش می‌تواند در نسخه‌های بعدی با نام روستاهای بیشتر، عکس‌های مستند و روایت مستقیم ساکنان تکمیل شود.</span><span class="en">Future versions can expand this section with more village names, documentary photographs, and first-hand accounts from residents.</span></p>
 </section>
 
-<section id="history">
-  <h2>۴. تاریخ، معماری و طبیعت</h2>
+  <section id="history">
+  <h2><span class="fa">۴. تاریخ، معماری و طبیعت</span><span class="en">4. History, Architecture, and Nature</span></h2>
 
-  <h3>عمارت چهل‌ستون و باغ صفوی</h3>
-  <p>
-    عمارت چهل‌ستون قزوین یادگاری از دوره صفوی و بخشی از
-    مجموعه تاریخی باغ صفوی است. معماری بنا و تزئینات آن،
-    داستان روزگاری را بازگو می‌کند که قزوین جایگاه مهمی
-    در تاریخ سیاسی و فرهنگی ایران داشت.
-  </p>
+  <h3><span class="fa">عمارت چهل‌ستون و باغ صفوی</span><span class="en">Chehel Sotoun Pavilion and the Safavid Garden</span></h3>
+  <p><span class="fa">عمارت چهل‌ستون قزوین یادگاری از دوره صفوی و بخشی از مجموعه تاریخی باغ صفوی است. معماری بنا و تزئینات آن، داستان روزگاری را بازگو می‌کند که قزوین جایگاه مهمی در تاریخ سیاسی و فرهنگی ایران داشت.</span><span class="en">Qazvin's Chehel Sotoun Pavilion dates to the Safavid period and forms part of the historic Safavid Garden complex. Its architecture and decoration recall a time when Qazvin held an important place in Iran's political and cultural history.</span></p>
 
-  <h3>بازار و سرای سعدالسلطنه</h3>
-  <p>
-    مجموعه تاریخی سعدالسلطنه از مهم‌ترین فضاهای تجاری
-    تاریخی قزوین است. حیاط‌ها، حجره‌ها، راهروها و فضاهای
-    پیوسته آن، نمونه‌ای از معماری بازار و کاروانسراهای
-    شهری ایران به شمار می‌آیند.
-  </p>
+  <h3><span class="fa">بازار و سرای سعدالسلطنه</span><span class="en">Sa'd al-Saltaneh Caravanserai and Bazaar</span></h3>
+  <p><span class="fa">مجموعه تاریخی سعدالسلطنه از مهم‌ترین فضاهای تجاری تاریخی قزوین است. حیاط‌ها، حجره‌ها، راهروها و فضاهای پیوسته آن، نمونه‌ای از معماری بازار و کاروانسراهای شهری ایران به شمار می‌آیند.</span><span class="en">The historic Sa'd al-Saltaneh complex is one of Qazvin's most important commercial heritage sites. Its courtyards, shops, corridors, and connected spaces exemplify the architecture of Iran's urban bazaars and caravanserais.</span></p>
 
-  <h3>قلعه حسن‌صباح و چشم‌انداز الموت</h3>
-  <p>
-    قلعه الموت بر فراز ارتفاعات منطقه، یکی از شناخته‌شده‌ترین
-    آثار تاریخی قزوین است. مسیرهای کوهستانی و چشم‌اندازهای
-    اطراف آن، تاریخ و طبیعت را در یک روایت به هم پیوند می‌دهند.
-  </p>
+  <h3><span class="fa">قلعه حسن‌صباح و چشم‌انداز الموت</span><span class="en">Hassan Sabbah's Castle and Alamut's Landscape</span></h3>
+  <p><span class="fa">قلعه الموت بر فراز ارتفاعات منطقه، یکی از شناخته‌شده‌ترین آثار تاریخی قزوین است. مسیرهای کوهستانی و چشم‌اندازهای اطراف آن، تاریخ و طبیعت را در یک روایت به هم پیوند می‌دهند.</span><span class="en">Alamut Castle stands high above the surrounding landscape and is one of Qazvin's best-known historic sites. Mountain paths and sweeping views bring history and nature together in a single story.</span></p>
 
-  <h3>روستاهای تاریخی و طبیعت استان</h3>
-  <p>
-    در کنار بناهای شهری، آبادی‌های کوهستانی، باغ‌ها،
-    دره‌ها و چشم‌اندازهای طارم و الموت نیز بخشی از میراث
-    طبیعی و فرهنگی استان‌اند. هر منطقه را باید با توجه به
-    شرایط جغرافیایی، تاریخ محلی و روایت ساکنان آن معرفی کرد.
-  </p>
+  <h3><span class="fa">روستاهای تاریخی و طبیعت استان</span><span class="en">Historic Villages and Provincial Landscapes</span></h3>
+  <p><span class="fa">در کنار بناهای شهری، آبادی‌های کوهستانی، باغ‌ها، دره‌ها و چشم‌اندازهای طارم و الموت نیز بخشی از میراث طبیعی و فرهنگی استان‌اند. هر منطقه را باید با توجه به شرایط جغرافیایی، تاریخ محلی و روایت ساکنان آن معرفی کرد.</span><span class="en">Alongside urban monuments, mountain settlements, orchards, valleys, and the landscapes of Tarem and Alamut are part of the province's natural and cultural heritage. Each area should be presented through its geography, local history, and residents' accounts.</span></p>
 </section>
 
 <section id="food">
-  <h2>۵. طعم‌های اصیل قزوین</h2>
-  <p>
-    خوراک‌های محلی در کنار پوشاک و معماری، بخش مهمی از
-    هویت فرهنگی قزوین‌اند. شیرینی‌پزی سنتی این شهر شهرت
-    زیادی دارد و غذاهای مجلسی نیز در مهمانی‌ها و آیین‌های
-    خانوادگی جایگاه ویژه‌ای دارند.
-  </p>
+  <h2><span class="fa">۵. طعم‌های اصیل قزوین</span><span class="en">5. The Flavors of Qazvin</span></h2>
+  <p><span class="fa">خوراک‌های محلی در کنار پوشاک و معماری، بخش مهمی از هویت فرهنگی قزوین‌اند. شیرینی‌پزی سنتی این شهر شهرت زیادی دارد و غذاهای مجلسی نیز در مهمانی‌ها و آیین‌های خانوادگی جایگاه ویژه‌ای دارند.</span><span class="en">Local food, alongside clothing and architecture, is an important part of Qazvin's cultural identity. The city is famous for traditional sweets, while ceremonial dishes have a special place at gatherings and family celebrations.</span></p>
 
   <div class="grid">
     <article class="tile">
-      <h3>شیرینی‌های قزوین</h3>
-      <p>
-        باقلوای قزوینی، نان قندی، نان بادامی، نان نخودی،
-        نان چای و شیرینی پادرازی از نام‌های شناخته‌شده
-        در شیرینی‌پزی سنتی این شهر هستند.
-      </p>
+      <h3><span class="fa">شیرینی‌های قزوین</span><span class="en">Qazvin Sweets</span></h3>
+      <p><span class="fa">باقلوا قزوینی، نان قندی، نان بادامی، نان نخودی، نان چای و شیرینی پادرازی از نام‌های شناخته‌شده در شیرینی‌پزی سنتی این شهر هستند.</span><span class="en">Qazvin baklava, sugar bread, almond bread, chickpea cookies, tea bread, and padrāzi pastries are well-known examples of the city's traditional confectionery.</span></p>
     </article>
-
     <article class="tile">
-      <h3>قیمه‌نثار</h3>
-      <p>
-        قیمه‌نثار از غذاهای شاخص قزوین است که معمولاً با
-        برنج، گوشت و تزئیناتی مانند خلال‌ها و زرشک سرو می‌شود.
-        این غذا در سفره‌های مهمانی و مناسبت‌های خاص جایگاه دارد.
-      </p>
+      <h3><span class="fa">قیمه‌نثار</span><span class="en">Qeymeh Nesar</span></h3>
+      <p><span class="fa">قیمه‌نثار از غذاهای شاخص قزوین است که معمولاً با برنج، گوشت و تزئیناتی مانند خلال‌ها و زرشک سرو می‌شود. این غذا در سفره‌های مهمانی و مناسبت‌های خاص جایگاه دارد.</span><span class="en">Qeymeh nesar is one of Qazvin's signature dishes, usually made with rice and meat and garnished with slivered nuts and barberries. It is often served at formal gatherings and special occasions.</span></p>
     </article>
-
     <article class="tile">
-      <h3>شیرین‌پلو و سفره‌های محلی</h3>
-      <p>
-        شیرین‌پلو و دیگر غذاهای مجلسی بخشی از تنوع سفره‌های
-        قزوینی هستند. شیوه پخت و تزئین غذاها می‌تواند از
-        خانواده‌ای به خانواده دیگر متفاوت باشد.
-      </p>
+      <h3><span class="fa">شیرین‌پلو و سفره‌های محلی</span><span class="en">Shirin Polo and Local Tables</span></h3>
+      <p><span class="fa">شیرین‌پلو و دیگر غذاهای مجلسی بخشی از تنوع سفره‌های قزوینی هستند. شیوه پخت و تزئین غذاها می‌تواند از خانواده‌ای به خانواده دیگر متفاوت باشد.</span><span class="en">Shirin polo and other celebratory dishes add to the variety of Qazvin's food traditions. Recipes and presentation can differ from one family to another.</span></p>
     </article>
   </div>
-  <p class="small">
-    نام خوراک‌ها از لیبل مجموعه و شناخته‌شده‌ترین نمونه‌های
-    خوراک قزوینی گردآوری شده است. نام‌های محلی و تفاوت‌های
-    دستور پخت را می‌توان در نسخه‌های بعدی با کمک اهالی تکمیل کرد.
-  </p>
+  <p class="small"><span class="fa">نام خوراک‌ها از لیبل مجموعه و شناخته‌شده‌ترین نمونه‌های خوراک قزوینی گردآوری شده است. نام‌های محلی و تفاوت‌های دستور پخت را می‌توان در نسخه‌های بعدی با کمک اهالی تکمیل کرد.</span><span class="en">Food names were compiled from the exhibition label and well-known Qazvin dishes. Local names and recipe variations can be expanded in future versions with help from residents.</span></p>
 </section>
 
 <section id="products">
-  <h2>۶. محصولات محلی و کشاورزی</h2>
+  <h2><span class="fa">۶. محصولات محلی و کشاورزی</span><span class="en">6. Local Produce and Agriculture</span></h2>
   <div class="grid">
     <article class="tile">
-      <h3>تاکستان؛ سرزمین انگور</h3>
-      <p>
-        باغ‌های انگور و فرآورده‌های آن از عناصر مهم کشاورزی
-        و اقتصاد محلی تاکستان‌اند.
-      </p>
+      <h3><span class="fa">تاکستان؛ سرزمین انگور</span><span class="en">Takestan: Land of Grapes</span></h3>
+      <p><span class="fa">باغ‌های انگور و فرآورده‌های آن از عناصر مهم کشاورزی و اقتصاد محلی تاکستان‌اند.</span><span class="en">Vineyards and grape products are important to Takestan's agriculture and local economy.</span></p>
     </article>
     <article class="tile">
-      <h3>طارم سفلی؛ زیتون</h3>
-      <p>
-        زیتون و باغداری در بخش‌هایی از طارم سفلی اهمیت دارند
-        و با شرایط اقلیمی این ناحیه پیوند خورده‌اند.
-      </p>
+      <h3><span class="fa">طارم سفلی؛ زیتون</span><span class="en">Tarem-e Sofla: Olives</span></h3>
+      <p><span class="fa">زیتون و باغداری در بخش‌هایی از طارم سفلی اهمیت دارند و با شرایط اقلیمی این ناحیه پیوند خورده‌اند.</span><span class="en">Olives and orchard farming are important in parts of Tarem-e Sofla and are closely linked to the area's climate.</span></p>
     </article>
     <article class="tile">
-      <h3>ضیاءآباد؛ گردو</h3>
-      <p>
-        گردو از محصولاتی است که در روایت محلی ضیاءآباد
-        به آن اشاره می‌شود؛ گستره تولید و جایگاه آن باید
-        با اطلاعات محلی و کشاورزی تکمیل شود.
-      </p>
+      <h3><span class="fa">ضیاءآباد؛ گردو</span><span class="en">Ziaabad: Walnuts</span></h3>
+      <p><span class="fa">گردو از محصولاتی است که در روایت محلی ضیاءآباد به آن اشاره می‌شود؛ گستره تولید و جایگاه آن باید با اطلاعات محلی و کشاورزی تکمیل شود.</span><span class="en">Walnuts are mentioned among Ziaabad's local products. The extent of production and its local importance should be documented with regional and agricultural information.</span></p>
     </article>
     <article class="tile">
-      <h3>بویین‌زهرا؛ پسته</h3>
-      <p>
-        پسته از محصولاتی است که در معرفی ظرفیت‌های کشاورزی
-        بویین‌زهرا می‌توان به آن پرداخت. نوع محصول و میزان
-        تولید ممکن است از یک محدوده به محدوده دیگر متفاوت باشد.
-      </p>
+      <h3><span class="fa">بویین‌زهرا؛ پسته</span><span class="en">Buin Zahra: Pistachios</span></h3>
+      <p><span class="fa">پسته از محصولاتی است که در معرفی ظرفیت‌های کشاورزی بویین‌زهرا می‌توان به آن پرداخت. نوع محصول و میزان تولید ممکن است از یک محدوده به محدوده دیگر متفاوت باشد.</span><span class="en">Pistachios can be included when describing Buin Zahra's agricultural potential. Varieties and production levels may differ across the area.</span></p>
     </article>
   </div>
 </section>
 
 <section id="sources">
-  <h2>۷. منابع و مطالعه بیشتر</h2>
-  <p>
-    برای شناخت دقیق‌تر تاریخ، روستاها و پوشاک سنتی قزوین،
-    می‌توان از منابع زیر آغاز کرد. در نسخه نهایی نمایشگاه،
-    بهتر است منابع اختصاصی هر موضوع نیز به همین فهرست افزوده شوند.
-  </p>
+  <h2><span class="fa">۷. منابع و مطالعه بیشتر</span><span class="en">7. Sources and Further Reading</span></h2>
+  <p><span class="fa">برای شناخت دقیق‌تر تاریخ، روستاها و پوشاک سنتی قزوین، می‌توان از منابع زیر آغاز کرد. در نسخه نهایی نمایشگاه، بهتر است منابع اختصاصی هر موضوع نیز به همین فهرست افزوده شوند.</span><span class="en">The following resources are starting points for learning more about Qazvin's history, villages, and traditional clothing. Topic-specific references should be added before the exhibition page is finalized.</span></p>
   <ul class="source-list">
-    <li>
-      <a href="https://vmic.ir/" target="_blank" rel="noopener">
-        پایگاه‌های میراث فرهنگی ناملموس ایران
-      </a>
-      — برای جست‌وجوی پرونده‌ها و مهارت‌های سنتی، از جمله پوشاک.
-    </li>
-    <li>
-      <a href="https://visitiran.ir/" target="_blank" rel="noopener">
-        Visit Iran
-      </a>
-      — اطلاعات گردشگری و معرفی جاذبه‌های ایران.
-    </li>
-    <li>
-      <a href="https://whc.unesco.org/" target="_blank" rel="noopener">
-        مرکز میراث جهانی یونسکو
-      </a>
-      — اطلاعات درباره میراث جهانی و حفاظت از آثار تاریخی.
-    </li>
-    <li>
-      <a href="https://ich.unesco.org/" target="_blank" rel="noopener">
-        میراث فرهنگی ناملموس یونسکو
-      </a>
-      — آشنایی با سنت‌ها، مهارت‌ها و میراث زنده جوامع.
-    </li>
-    <li>
-      <a href="https://www.irangaah.ir/qazvin" target="_blank" rel="noopener">
-        ایران‌گاه؛ معرفی استان و روستاهای قزوین
-      </a>
-      — نقطه شروعی برای بررسی نام و موقعیت آبادی‌ها.
-    </li>
+    <li><a href="https://vmic.ir/" target="_blank" rel="noopener"><span class="fa">پایگاه‌های میراث فرهنگی ناملموس ایران</span><span class="en">Iran's Intangible Cultural Heritage resources</span></a><span class="fa"> — برای جست‌وجوی پرونده‌ها و مهارت‌های سنتی، از جمله پوشاک.</span><span class="en"> — Search for records of traditional practices and skills, including clothing.</span></li>
+    <li><a href="https://visitiran.ir/" target="_blank" rel="noopener">Visit Iran</a><span class="fa"> — اطلاعات گردشگری و معرفی جاذبه‌های ایران.</span><span class="en"> — Tourism information and introductions to Iranian attractions.</span></li>
+    <li><a href="https://whc.unesco.org/" target="_blank" rel="noopener"><span class="fa">مرکز میراث جهانی یونسکو</span><span class="en">UNESCO World Heritage Centre</span></a><span class="fa"> — اطلاعات درباره میراث جهانی و حفاظت از آثار تاریخی.</span><span class="en"> — Information on world heritage and the conservation of historic sites.</span></li>
+    <li><a href="https://ich.unesco.org/" target="_blank" rel="noopener"><span class="fa">میراث فرهنگی ناملموس یونسکو</span><span class="en">UNESCO Intangible Cultural Heritage</span></a><span class="fa"> — آشنایی با سنت‌ها، مهارت‌ها و میراث زنده جوامع.</span><span class="en"> — Explore traditions, skills, and living heritage in communities.</span></li>
+    <li><a href="https://www.irangaah.ir/qazvin" target="_blank" rel="noopener"><span class="fa">ایران‌گاه؛ معرفی استان و روستاهای قزوین</span><span class="en">IranGaah: Qazvin Province and Villages</span></a><span class="fa"> — نقطه شروعی برای بررسی نام و موقعیت آبادی‌ها.</span><span class="en"> — A starting point for checking settlement names and locations.</span></li>
   </ul>
-  <p class="small">
-    این منابع نقطه شروع پژوهش‌اند؛ ذکر نام یک وب‌سایت به معنی
-    تأیید تک‌تک جزئیات این صفحه از سوی آن وب‌سایت نیست.
-    برای نسبت‌دادن یک نوع پوشش به روستایی مشخص، منبع تخصصی
-    یا تأیید محلی جداگانه لازم است.
-  </p>
+  <p class="small"><span class="fa">این منابع نقطه شروع پژوهش‌اند؛ ذکر نام یک وب‌سایت به معنی تأیید تک‌تک جزئیات این صفحه از سوی آن وب‌سایت نیست. برای نسبت‌دادن یک نوع پوشش به روستایی مشخص، منبع تخصصی یا تأیید محلی جداگانه لازم است.</span><span class="en">These resources are starting points for research; listing a website does not mean it verifies every detail on this page. Assigning a specific clothing style to a particular village requires a specialized source or local confirmation.</span></p>
 </section>
 
-<a class="back" href="index.html">← بازگشت به گالری «ایران، هزار رنگ»</a>
+<a class="back" href="index.html"><span class="fa">← بازگشت به گالری «ایران، هزار رنگ»</span><span class="en">← Back to the “Iran, A Thousand Colors” gallery</span></a>
 </main>
 
 <footer>
-  <p><strong>ایران، هزار رنگ</strong></p>
-  <p>روایت تصویری پوشش زنان ایران</p>
-  <p>قزوین؛ نقشِ تاریخ بر تار و پودِ زندگی</p>
-  <p class="small">این صفحه بخشی از گالری آنلاین مجموعه است.</p>
+  <p><strong><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span></strong></p>
+  <p><span class="fa">روایت تصویری پوشش زنان ایران</span><span class="en">A visual story of women's dress in Iran</span></p>
+  <p><span class="fa">قزوین؛ نقشِ تاریخ بر تار و پودِ زندگی</span><span class="en">Qazvin: History Woven into Everyday Life</span></p>
+  <p class="small"><span class="fa">این صفحه بخشی از گالری آنلاین مجموعه است.</span><span class="en">This page is part of the collection's online gallery.</span></p>
 </footer>
+
+<script>
+(() => {
+  const button = document.getElementById('langSwitch');
+  const saved = localStorage.getItem('iranHezarRangLanguage');
+
+  function setLanguage(language) {
+    const english = language === 'en';
+    document.body.classList.toggle('english', english);
+    document.documentElement.lang = english ? 'en' : 'fa';
+    document.documentElement.dir = english ? 'ltr' : 'rtl';
+    button.textContent = english ? 'فارسی' : 'English';
+    button.setAttribute('aria-label', english ? 'Switch to Persian' : 'Switch to English');
+    localStorage.setItem('iranHezarRangLanguage', language);
+  }
+
+  setLanguage(saved === 'en' ? 'en' : 'fa');
+
+  button.addEventListener('click', () => {
+    setLanguage(document.body.classList.contains('english') ? 'fa' : 'en');
+  });
+})();
+</script>
 </body>
 </html>
