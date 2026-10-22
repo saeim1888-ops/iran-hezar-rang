@@ -828,22 +828,21 @@ footer .latin {
     document.body.classList.toggle('english-mode', language === 'en');
     languageButton.textContent = language === 'fa' ? 'FA | EN' : 'EN | FA';
 
-    document.querySelectorAll('h1,h2,h3,p,span,a,div').forEach(function (element) {
-      if (element.children.length !== 0) return;
+   
+document.querySelectorAll('[data-fa][data-en]').forEach(function (element) {
+  element.textContent = language === 'en'
+    ? element.dataset.en
+    : element.dataset.fa;
+});
 
-      if (!element.dataset.fa) {
-        element.dataset.fa = element.textContent.trim();
-      }
+document.querySelectorAll('[data-fa-placeholder][data-en-placeholder]').forEach(function (element) {
+  element.placeholder = language === 'en'
+    ? element.dataset.enPlaceholder
+    : element.dataset.faPlaceholder;
+});
 
-      const persianText = element.dataset.fa;
-      if (language === 'en' && translations[persianText]) {
-        element.textContent = translations[persianText];
-      } else if (language === 'fa') {
-        element.textContent = persianText;
-      }
-    });
-
-    localStorage.setItem('iran-hezer-rang-language', language);
+localStorage.setItem('iran-hezer-rang-language', language);
+ 
   }
 
   languageButton.style.cursor = 'pointer';
