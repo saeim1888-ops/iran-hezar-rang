@@ -522,7 +522,18 @@ footer .latin {
   object-fit: cover;
   object-position: center;
 }
+/* نمایش متن‌ها بر اساس زبان انتخاب‌شده */
+body.english-mode .english-title,
+body.english-mode .english-subtitle,
+body.english-mode .english-copy {
+  display: block;
+}
 
+body:not(.english-mode) .english-title,
+body:not(.english-mode) .english-subtitle,
+body:not(.english-mode) .english-copy {
+  display: none;
+}
 </style>
 </head>
 
