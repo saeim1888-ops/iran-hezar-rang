@@ -7,7 +7,26 @@
 <meta name="theme-color" content="#f4ead8">
 <meta name="description" content="ایران، هزار رنگ؛ نمایشگاه تصویری پوشش زنان ایران، به روایت مریم ساعی، همراه با پژوهش و گردآوری اطلاعات فرهنگی مرجان ساعی.">
 <title>ایران، هزار رنگ | مریم ساعی و مرجان ساعی</title>
+/* کنترل نمایش زبان فارسی و انگلیسی */
+body:not(.english-mode) .brand-en,
+body:not(.english-mode) .english-title,
+body:not(.english-mode) .english-subtitle,
+body:not(.english-mode) .english-copy {
+  display: none !important;
+}
 
+body.english-mode .brand-name,
+body.english-mode .eyebrow,
+body.english-mode .hero-copy,
+body.english-mode .hero-subtitle {
+  display: none !important;
+}
+
+body.english-mode .english-title,
+body.english-mode .english-subtitle,
+body.english-mode .english-copy {
+  display: block !important;
+}
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
 
