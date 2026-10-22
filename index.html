@@ -828,7 +828,19 @@ footer .latin {
     document.body.classList.toggle('english-mode', language === 'en');
     languageButton.textContent = language === 'fa' ? 'FA | EN' : 'EN | FA';
 
-   
+ document.querySelectorAll('h1,h2,h3,p,a,button,div,span').forEach(function (element) {
+  if (element.children.length !== 0) return;
+
+  const text = element.textContent.trim();
+  if (translations[text]) {
+    if (!element.dataset.fa) {
+      element.dataset.fa = text;
+    }
+    element.textContent = language === 'en'
+      ? translations[element.dataset.fa]
+      : element.dataset.fa;
+  }
+});  
 document.querySelectorAll('[data-fa][data-en]').forEach(function (element) {
   element.textContent = language === 'en'
     ? element.dataset.en
