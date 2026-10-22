@@ -13,8 +13,7 @@
 
 :root {
   --paper: #f4ead8;
-  --cream: #fff9ee;
-  --rust: #a83e1d;
+  --cream: #fff9ee;  --rust: #a83e1d;
   --orange: #c65a25;
   --green: #153f3b;
   --olive: #656b43;
@@ -787,24 +786,67 @@ footer .latin {
 </footer>
 
   
+
 <script>
 (function () {
   const languageButton = document.querySelector('.language');
-
   if (!languageButton) return;
 
-  let currentLanguage = localStorage.getItem('iran-hezer-rang-language') || 'fa';
+  let currentLanguage =
+    localStorage.getItem('iran-hezer-rang-language') || 'fa';
+
+  const translations = {
+    'گالری مناطق ایران': 'Iran Regions Gallery',
+    'هر منطقه، یک رنگ؛ هر اثر، یک روایت': 'Every region, a color; every artwork, a story',
+    'گالری حضوری و آنلاین': 'Physical & Online Exhibition',
+    'قزوین؛ نقش دیروز، رنگ امروز': 'Qazvin: Yesterday’s Heritage, Today’s Colors',
+    'مشاهده اثر و روایت فرهنگی ←': 'View Artwork & Cultural Story ←',
+    'به‌زودی': 'Coming Soon',
+    'شمال ایران': 'Northern Iran',
+    'شمال‌شرق ایران': 'Northeastern Iran',
+    'شمال‌غرب ایران': 'Northwestern Iran',
+    'غرب ایران': 'Western Iran',
+    'جنوب ایران': 'Southern Iran',
+    'جنوب‌غرب ایران': 'Southwestern Iran',
+    'جنوب‌شرق ایران': 'Southeastern Iran',
+    'مرکز ایران': 'Central Iran',
+    'شرق و شمال‌شرق ایران': 'Eastern and Northeastern Iran',
+    'روایت‌های دیگر ایران': 'More Stories of Iran',
+    'ایران، هزار رنگ': 'Iran, A Thousand Colors',
+    'روایت تصویری پوشش زنان ایران': 'A Visual Story of Iranian Women’s Dress',
+    'Artist & Creator': 'Artist & Creator',
+    'طراحی وب‌سایت و گردآوری اطلاعات': 'Website Design & Research',
+    'پژوهش و گردآوری اطلاعات فرهنگی مناطق': 'Cultural Research & Regional Information',
+    'هنرمند و خالق آثار: مریم ساعی | Maryam Saei': 'Artist & Creator: Maryam Saei',
+    'طراحی وب‌سایت و گردآوری اطلاعات: مرجان ساعی | Marjan Saei': 'Website Design & Research: Marjan Saei'
+  };
 
   function applyLanguage(language) {
     currentLanguage = language;
     document.documentElement.lang = language;
     document.documentElement.dir = language === 'fa' ? 'rtl' : 'ltr';
+    document.body.classList.toggle('english-mode', language === 'en');
     languageButton.textContent = language === 'fa' ? 'FA | EN' : 'EN | FA';
+
+    document.querySelectorAll('h1,h2,h3,p,span,a,div').forEach(function (element) {
+      if (element.children.length !== 0) return;
+
+      if (!element.dataset.fa) {
+        element.dataset.fa = element.textContent.trim();
+      }
+
+      const persianText = element.dataset.fa;
+      if (language === 'en' && translations[persianText]) {
+        element.textContent = translations[persianText];
+      } else if (language === 'fa') {
+        element.textContent = persianText;
+      }
+    });
+
     localStorage.setItem('iran-hezer-rang-language', language);
   }
 
   languageButton.style.cursor = 'pointer';
-
   languageButton.addEventListener('click', function () {
     applyLanguage(currentLanguage === 'fa' ? 'en' : 'fa');
   });
@@ -812,6 +854,7 @@ footer .latin {
   applyLanguage(currentLanguage);
 })();
 </script>
+
 
 </body>
   </html>
