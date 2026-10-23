@@ -1,1 +1,228 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="گیلان در مجموعه ایران، هزار رنگ؛ روایتی تصویری از پوشش زنان ایران، طبیعت و فرهنگ بومی.">
+<title>گیلان؛ رقص رنگ‌ها | ایران، هزار رنگ</title>
+<style>
+:root {
+  --olive: #626b3b;
+  --deep: #303b25;
+  --gold: #b99b5b;
+  --cream: #faf7ef;
+  --paper: #fffdf8;
+  --text: #34372c;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: Tahoma, Arial, sans-serif;
+  line-height: 2;
+}
+header {
+  padding: 22px 6%;
+  background: var(--deep);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.brand { font-size: 1.15rem; font-weight: bold; }
+.brand small { display: block; color: #e5d7b4; font-size: .8rem; }
+button {
+  font: inherit;
+  border: 1px solid var(--gold);
+  border-radius: 24px;
+  padding: 7px 18px;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+}
+a { color: var(--olive); }
+.hero {
+  max-width: 1100px;
+  margin: 34px auto;
+  padding: 0 20px;
+}
+.artwork {
+  min-height: 260px;
+  background: #e9e5d7;
+  border: 1px solid #ddd3bb;
+  border-radius: 18px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.artwork img {
+  display: block;
+  width: 100%;
+  max-height: 680px;
+  object-fit: contain;
+}
+.artwork .placeholder {
+  padding: 35px;
+  text-align: center;
+  color: var(--olive);
+}
+h1, h2 { color: var(--deep); line-height: 1.6; }
+h1 { font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 4px; }
+.subtitle { color: var(--olive); margin-top: 0; }
+.intro {
+  background: var(--paper);
+  padding: 24px;
+  border-right: 4px solid var(--gold);
+  border-radius: 12px;
+  margin-top: 24px;
+}
+section.content {
+  max-width: 1000px;
+  margin: 28px auto;
+  padding: 0 20px;
+}
+.info {
+  background: var(--paper);
+  border: 1px solid #e9e1d1;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 18px;
+}
+.info h2 { margin-top: 0; font-size: 1.35rem; }
+.en { display: none; }
+body.english { direction: ltr; }
+body.english header { direction: ltr; }
+body.english .intro { border-right: 0; border-left: 4px solid var(--gold); }
+body.english .fa { display: none; }
+body.english .en { display: block; }
+footer {
+  margin-top: 45px;
+  padding: 25px 20px;
+  text-align: center;
+  background: var(--deep);
+  color: white;
+  font-size: .9rem;
+}
+footer p { margin: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="fa">ایران، هزار رنگ</span>
+    <span class="en">Iran, A Thousand Colors</span>
+    <small class="fa">روایت تصویری پوشش زنان ایران</small>
+    <small class="en">A Visual Story of Iranian Women's Dress</small>
+  </div>
+  <button id="languageButton" onclick="toggleLanguage()">English</button>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="artwork">
+      <img src="gilan.jpg" alt="بانوی گیلانی در روستای مه‌آلود"
+           onerror="this.style.display='none';document.getElementById('imageNote').style.display='block';">
+      <div id="imageNote" class="placeholder">
+        تصویر اصلی اثر گیلان پس از افزودن فایل تصویر در این قسمت نمایش داده می‌شود.
+      </div>
+    </div>
+
+    <div class="fa">
+      <h1>گیلان؛ رقص رنگ‌ها در سرزمین باران</h1>
+      <p class="subtitle">بانوی گیلانی در روستای مه‌آلود</p>
+      <div class="intro">
+        <p>گیلان، سرزمین باران، جنگل‌های انبوه و شالیزارهای سبز، جایی است که رنگ و زندگی در تار و پود فرهنگ بومی آن جاری است. پوشش زنان این سرزمین با دامن‌های چین‌دار و رنگارنگ، پیراهن‌های نقش‌دار، سربندها و روسری‌های محلی، جلوه‌ای چشم‌نواز از تنوع فرهنگی گیلان را به نمایش می‌گذارد.</p>
+        <p>در قاسم‌آباد، رقص قاسم‌آبادی با حرکت دامن‌های رنگین و شور موسیقی محلی، بخشی زنده از میراث فرهنگی منطقه است. در کنار آن، پوشش زنان تالش و دیگر نواحی گیلان نیز با ویژگی‌های خاص خود، روایتگر تفاوت‌های فرهنگی و شیوه زندگی مردم این سرزمین‌اند.</p>
+        <p>در این اثر از مجموعه «ایران، هزار رنگ»، بانوی گیلانی در میان چشم‌اندازی از خانه‌های بومی، آب و جنگل، در کنار خوراک‌ها و جلوه‌های زندگی محلی تصویر شده است؛ روایتی تصویری از پیوند پوشش، طبیعت و فرهنگ در سرزمین سبز شمال ایران.</p>
+      </div>
+    </div>
+
+    <div class="en">
+      <h1>Gilan: A Dance of Colors in the Land of Rain</h1>
+      <p class="subtitle">A Gilani Woman in a Misty Village</p>
+      <div class="intro">
+        <p>Gilan, a land of rain, dense forests, and green rice fields, is a place where color and life flow through local culture. Women's traditional clothing, with its colorful pleated skirts, patterned dresses, and regional headscarves, reflects the cultural diversity of this northern Iranian province.</p>
+        <p>In Qasemabad, the lively Qasemabadi dance, known for the movement of colorful skirts and the energy of local music, remains a vibrant part of the region's cultural heritage. The clothing traditions of Talesh and other parts of Gilan also have their own distinctive features, reflecting the cultural variety and ways of life found across the province.</p>
+        <p>In this artwork from “Iran, A Thousand Colors,” a Gilani woman appears within a misty landscape of local homes, water, and forest, alongside details of regional food and everyday life. The illustration tells a visual story of the connection between clothing, nature, and culture in northern Iran.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="content">
+    <article class="info fa">
+      <h2>پوشش زنان گیلان</h2>
+      <p>پوشاک سنتی گیلان یکدست نیست و با توجه به منطقه، روستا و سنت‌های محلی تفاوت دارد. دامن‌های چین‌دار و رنگارنگ، پیراهن‌ها و سربندهای محلی از جلوه‌های شناخته‌شده این پوشش‌اند.</p>
+      <p><strong>قاسم‌آباد:</strong> پوشش رنگین و دامن‌های پرچین در جلوه‌های نمایشی و رقص محلی جایگاه ویژه‌ای دارند.</p>
+      <p><strong>تالش:</strong> سنت‌های پوشاک محلی ویژگی‌های خاص خود را دارند و بخشی از تنوع فرهنگی غرب گیلان را نشان می‌دهند.</p>
+      <p><strong>نواحی مرکزی گیلان:</strong> ترکیب رنگ‌ها، روسری‌ها و دامن‌های محلی، تنوع پوشاک منطقه را نمایان می‌کند.</p>
+    </article>
+    <article class="info en">
+      <h2>Women's Traditional Clothing in Gilan</h2>
+      <p>Traditional clothing in Gilan is diverse and varies by locality, village, and custom. Colorful pleated skirts, patterned dresses, and regional headscarves are among its recognizable features.</p>
+      <p><strong>Qasemabad:</strong> Colorful clothing and full pleated skirts are especially striking in local dance and performance traditions.</p>
+      <p><strong>Talesh:</strong> Distinctive local clothing traditions reflect the cultural diversity of western Gilan.</p>
+      <p><strong>Central Gilan:</strong> Regional skirts, headscarves, and combinations of vivid colors express the variety of local dress.</p>
+    </article>
+
+    <article class="info fa">
+      <h2>میراث تاریخی و فرهنگی</h2>
+      <p><strong>ماسوله:</strong> روستای تاریخی با معماری پلکانی و پیوند خانه‌ها با شیب کوهستان.</p>
+      <p><strong>قلعه رودخان:</strong> دژی تاریخی در دل جنگل‌های سرسبز فومن.</p>
+      <p><strong>فرهنگ بومی:</strong> موسیقی محلی، رقص قاسم‌آبادی، آیین‌ها و مهارت‌های سنتی بخشی از میراث زنده گیلان‌اند.</p>
+    </article>
+    <article class="info en">
+      <h2>Historical and Cultural Heritage</h2>
+      <p><strong>Masuleh:</strong> A historic village known for its stepped architecture and houses built along a mountain slope.</p>
+      <p><strong>Rudkhan Castle:</strong> A historic fortress surrounded by the lush forests near Fuman.</p>
+      <p><strong>Local culture:</strong> Regional music, the Qasemabadi dance, community traditions, and traditional skills are part of Gilan's living heritage.</p>
+    </article>
+
+    <article class="info fa">
+      <h2>محصولات و خوراکی‌های محلی</h2>
+      <p><strong>چای لاهیجان:</strong> از محصولات شناخته‌شده گیلان.</p>
+      <p><strong>برنج گیلان:</strong> محصولی پیوندخورده با شالیزارها و زندگی کشاورزی منطقه.</p>
+      <p><strong>زیتون رودبار:</strong> محصول شاخص ناحیه رودبار.</p>
+      <p><strong>خوراک‌های محلی:</strong> غذاهای متنوع گیلانی بازتابی از طبیعت و فرهنگ غذایی این سرزمین‌اند.</p>
+    </article>
+    <article class="info en">
+      <h2>Local Products and Cuisine</h2>
+      <p><strong>Lahijan tea:</strong> One of Gilan's best-known regional products.</p>
+      <p><strong>Gilan rice:</strong> Closely connected to the province's rice fields and agricultural traditions.</p>
+      <p><strong>Rudbar olives:</strong> A signature product of the Rudbar area.</p>
+      <p><strong>Local cuisine:</strong> Gilan's varied dishes reflect the region's natural environment and food culture.</p>
+    </article>
+
+    <article class="info fa">
+      <h2>درباره این اثر</h2>
+      <p>این اثر بخشی از مجموعه «ایران، هزار رنگ؛ روایت تصویری پوشش زنان ایران» است؛ مجموعه‌ای که با نگاه تصویری به پوشش، فرهنگ و هویت مناطق گوناگون ایران می‌پردازد.</p>
+    </article>
+    <article class="info en">
+      <h2>About This Artwork</h2>
+      <p>This artwork is part of “Iran, A Thousand Colors: A Visual Story of Iranian Women's Dress,” a collection exploring the clothing, culture, and identity of different regions of Iran through illustration.</p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <p class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</p>
+  <p class="en">Iran, A Thousand Colors | A Visual Story of Iranian Women's Dress</p>
+  <p class="fa">گیلان، ایران</p>
+  <p class="en">Gilan, Iran</p>
+</footer>
+
+<script>
+function toggleLanguage() {
+  const english = document.body.classList.toggle('english');
+  document.documentElement.lang = english ? 'en' : 'fa';
+  document.documentElement.dir = english ? 'ltr' : 'rtl';
+  document.getElementById('languageButton').textContent =
+    english ? 'فارسی' : 'English';
+}
+</script>
+</body>
+</html>
+
