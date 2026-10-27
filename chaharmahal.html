@@ -1,0 +1,611 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="چهارمحال‌وبختیاری؛ روایت تصویری پوشش زنان روستایی و عشایری، روستاها، تاریخ، خوراک و فرهنگ زاگرس در نمایشگاه ایران، هزار رنگ.">
+<title>چهارمحال‌وبختیاری | ایران، هزار رنگ</title>
+
+<style>
+:root {
+  --cream: #f8f1e3;
+  --paper: #fffaf0;
+  --olive: #596447;
+  --dark: #292b25;
+  --gold: #b08b48;
+  --rust: #b94e27;
+  --teal: #245b60;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--dark);
+  font-family: Tahoma, Arial, sans-serif;
+  line-height: 2.1;
+}
+a { color: var(--teal); }
+.topline {
+  height: 5px;
+  background: linear-gradient(90deg,var(--rust),var(--gold),var(--teal),var(--olive));
+}
+header {
+  text-align: center;
+  padding: 48px 20px 34px;
+  border-bottom: 1px solid #d9c8a5;
+  background: var(--paper);
+}
+.eyebrow { color: var(--rust); font-size: 14px; }
+h1 {
+  color: var(--olive);
+  font-size: clamp(30px,5vw,48px);
+  line-height: 1.6;
+  margin: 12px 0;
+}
+.slogan {
+  color: var(--rust);
+  font-size: clamp(18px,3vw,24px);
+  font-weight: bold;
+  margin: 8px 0;
+}
+.subtitle { color: #696455; margin: 8px auto; max-width: 700px; }
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 16px;
+  background: #eee4d1;
+}
+nav a {
+  text-decoration: none;
+  padding: 6px 13px;
+  border: 1px solid #d3c09a;
+  border-radius: 30px;
+  font-size: 13px;
+}
+.lang-switch {
+  position: fixed;
+  z-index: 10;
+  top: 12px;
+  left: 12px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  background: var(--paper);
+  color: var(--olive);
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 10px #0001;
+}
+main { max-width: 1050px; margin: auto; padding: 24px 18px 60px; }
+section {
+  background: var(--paper);
+  border: 1px solid #e3d5b9;
+  border-radius: 15px;
+  padding: clamp(18px,4vw,35px);
+  margin: 25px 0;
+  box-shadow: 0 5px 20px #65502a0a;
+}
+h2 {
+  color: var(--olive);
+  font-size: clamp(22px,3vw,29px);
+  border-bottom: 1px solid #d9c8a5;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+h3 { color: var(--rust); font-size: 19px; }
+p { margin: 12px 0; }
+.hero-art {
+  display: block;
+  width: min(100%, 690px);
+  height: auto;
+  margin: 18px auto;
+  border: 6px solid #fffaf0;
+  outline: 1px solid #d7c398;
+  border-radius: 3px;
+}
+.caption {
+  text-align: center;
+  color: #6b6657;
+  font-size: 13px;
+  margin: 14px auto;
+}
+.label-art {
+  display: block;
+  width: min(100%, 470px);
+  height: auto;
+  margin: 22px auto 10px;
+  border: 1px solid #ddc99e;
+}
+.quote {
+  border-right: 4px solid var(--gold);
+  padding: 12px 18px;
+  background: #f3ead7;
+  color: var(--olive);
+  font-size: 18px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 15px;
+}
+.tile {
+  background: #f6eedf;
+  border: 1px solid #e3d4b7;
+  border-radius: 12px;
+  padding: 17px;
+}
+.tile h3 { margin-top: 0; }
+.small { font-size: 13px; color: #6b6657; }
+ul { padding-right: 22px; }
+li { margin: 7px 0; }
+.source-list li { overflow-wrap: anywhere; }
+footer {
+  text-align: center;
+  padding: 28px 16px;
+  background: var(--olive);
+  color: #fff8e9;
+}
+footer a { color: #ffdf9e; }
+.back {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--olive);
+}
+body.english {
+  direction: ltr;
+  font-family: Arial, Tahoma, sans-serif;
+}
+body.english nav { direction: ltr; }
+body.english ul {
+  padding-left: 22px;
+  padding-right: 0;
+}
+body.english .quote {
+  border-right: 0;
+  border-left: 4px solid var(--gold);
+}
+body.english .back { direction: ltr; }
+body:not(.english) .en { display: none !important; }
+body.english .fa { display: none !important; }
+@media (max-width:600px) {
+  header { padding-top: 45px; }
+  nav { gap: 6px; }
+  nav a { font-size: 12px; }
+  .lang-switch {
+    top: 8px;
+    left: 8px;
+    padding: 6px 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+<button class="lang-switch" id="langSwitch" type="button"
+        aria-label="Change language">English</button>
+<div class="topline"></div>
+
+<header>
+  <div class="eyebrow">
+    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+    <span class="en">Iran, A Thousand Colors | A visual story of women's dress in Iran</span>
+  </div>
+
+  <h1>
+    <span class="fa">چهارمحال‌وبختیاری؛ رنگِ زاگرس، شکوهِ زندگی</span>
+    <span class="en">Chaharmahal and Bakhtiari: Colors of Zagros, Heritage of Life</span>
+  </h1>
+
+  <p class="slogan">
+    <span class="fa">«چهارمحال‌وبختیاری؛ رنگِ زاگرس، شکوهِ کوچ»</span>
+    <span class="en">“Chaharmahal and Bakhtiari: Colors of Zagros, the Beauty of Migration”</span>
+  </p>
+
+  <p class="subtitle">
+    <span class="fa">سفری تصویری میان پوشش زنان روستایی و عشایری، روستاهای کوهستانی، آثار تاریخی، دست‌بافته‌ها و طعم‌های محلی زاگرس</span>
+    <span class="en">A visual journey through rural and nomadic women's dress, mountain villages, historic sites, woven crafts, and the local flavors of the Zagros.</span>
+  </p>
+</header>
+
+<nav aria-label="Page navigation">
+  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+  <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+  <a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
+  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+  <a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food & Sweets</span></a>
+  <a href="#products"><span class="fa">محصولات محلی</span><span class="en">Local Products</span></a>
+  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
+
+<main>
+
+<section id="art">
+  <h2>
+    <span class="fa">۱. تصویر چهارمحال‌وبختیاری؛ روایت یک سرزمین</span>
+    <span class="en">1. Chaharmahal and Bakhtiari in Art: A Land's Story</span>
+  </h2>
+
+  <p>
+    <span class="fa">در این اثر، پوشش رنگارنگ زنان، چشم‌انداز کوه‌های زاگرس، زندگی عشایری، معماری تاریخی، دست‌بافته‌ها و خوراک‌های محلی در کنار هم قرار گرفته‌اند. هر عنصر، بخشی از رابطه مردم با طبیعت و حافظه فرهنگی این سرزمین را بازگو می‌کند.</span>
+    <span class="en">This artwork brings together colorful women's clothing, the Zagros Mountains, nomadic life, historic architecture, woven crafts, and local food. Each element reflects the relationship between people, nature, and cultural memory.</span>
+  </p>
+
+  <img class="hero-art" src="chaharmahal.png"
+       alt="اثر هنری چهارمحال‌وبختیاری با پوشش رنگارنگ زنانه، کوه‌های زاگرس و عناصر فرهنگ محلی">
+
+  <p class="caption">
+    <span class="fa">اثر تصویری چهارمحال‌وبختیاری از مجموعه «ایران، هزار رنگ»</span>
+    <span class="en">The Chaharmahal and Bakhtiari artwork from “Iran, A Thousand Colors”</span>
+  </p>
+
+  <div class="quote">
+    <span class="fa">در رنگ دامن‌ها، نقش دست‌بافته‌ها و راه‌های کوچ، داستان مردمانی جاری است که زندگی‌شان با کوهستان و دشت پیوند خورده است.</span>
+    <span class="en">In colorful skirts, woven patterns, and migration routes lives the story of people whose lives are connected to mountains and plains.</span>
+  </div>
+
+  <p class="small">
+    <span class="fa">این تصویر، اثر هنری مجموعه است؛ متن‌های این صفحه برای معرفی فرهنگی و تاریخی استان ارائه شده‌اند.</span>
+    <span class="en">This image is the artwork created for the collection. The text on this page provides cultural and historical context about the province.</span>
+  </p>
+</section>
+
+<section id="clothing">
+  <h2>
+    <span class="fa">۲. پوشش زنان روستایی و عشایری؛ زیبایی در جزئیات</span>
+    <span class="en">2. Rural and Nomadic Women's Dress: Beauty in the Details</span>
+  </h2>
+
+  <p>
+    <span class="fa">پوشاک زنان چهارمحال‌وبختیاری یک شکل ثابت و یکسان ندارد. پوشش زنان بختیاری، زنان روستایی چهارمحالی و گروه‌های محلی دیگر می‌تواند از نظر فرم لباس، پارچه، رنگ و شیوه آراستن تفاوت داشته باشد. شرایط اقلیمی، شیوه زندگی، سنت‌های خانوادگی و دسترسی به پارچه نیز در انتخاب لباس تأثیر گذاشته‌اند.</span>
+    <span class="en">Women's clothing in Chaharmahal and Bakhtiari is not uniform. Dress among Bakhtiari women, rural women of Chaharmahal, and other local communities may differ in garment shape, fabric, color, and adornment. Climate, lifestyle, family traditions, and access to textiles have all influenced clothing choices.</span>
+  </p>
+
+  <img class="label-art" src="chaharmahal_leibel.png"
+       alt="لیبل تصویری معرفی پوشش زنان، آثار تاریخی و فرهنگ چهارمحال‌وبختیاری">
+
+  <p class="caption">
+    <span class="fa">لیبل اختصاصی چهارمحال‌وبختیاری؛ راهنمای تصویری پوشش و فرهنگ محلی</span>
+    <span class="en">Chaharmahal and Bakhtiari exhibition label: a visual guide to local dress and culture</span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">جومه یا پیراهن محلی</span><span class="en">Jomeh: Traditional Dress</span></h3>
+      <p>
+        <span class="fa">در پوشش سنتی زنان بختیاری، پیراهن بلند و رنگارنگ یکی از اجزای شناخته‌شده است. رنگ و طرح پارچه، نوع دوخت و جزئیات تزئینی می‌تواند با توجه به دوره، محل زندگی و رسم خانوادگی تفاوت داشته باشد.</span>
+        <span class="en">A long, colorful dress is a recognizable part of traditional Bakhtiari women's clothing. Fabric colors, patterns, stitching, and decorative details can vary by period, place, and family custom.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">شولار قِری؛ دامن پرچین</span><span class="en">Sholar Qeri: The Full Skirt</span></h3>
+      <p>
+        <span class="fa">دامن‌های پرچین و بلند از ویژگی‌های شناخته‌شده لباس زنان بختیاری‌اند. حرکت پارچه و لایه‌های رنگی آن هنگام راه رفتن، جلوه‌ای ویژه به پوشش می‌دهد؛ البته شکل و میزان چین در نمونه‌های مختلف یکسان نیست.</span>
+        <span class="en">Long, full skirts are a well-known feature of Bakhtiari women's dress. The movement and layers of color create a distinctive effect, although the cut and amount of pleating vary between garments.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">لچک و مینا؛ پوشش سر</span><span class="en">Lachak and Meyna: Head Coverings</span></h3>
+      <p>
+        <span class="fa">لچک و مینا در پوشش سنتی زنان بختیاری شناخته شده‌اند. لچک روی سر قرار می‌گیرد و مینا، روسری بلند و سبکی است که روی سر و شانه‌ها می‌افتد. جنس، رنگ و شیوه بستن آن‌ها می‌تواند متفاوت باشد.</span>
+        <span class="en">Lachak and meyna are recognized elements of traditional Bakhtiari women's dress. The lachak is a headpiece, while the meyna is a long, light scarf that falls over the head and shoulders. Materials, colors, and tying styles may vary.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">پوشش زنان روستایی چهارمحال</span><span class="en">Rural Women's Dress in Chaharmahal</span></h3>
+      <p>
+        <span class="fa">پوشش روستایی را نباید در همه آبادی‌ها یکسان فرض کرد. نوع روسری، پیراهن، دامن، پارچه و شیوه پوشیدن لباس در هر منطقه می‌تواند متفاوت باشد. برای ثبت نام‌های محلی و جزئیات دقیق، عکس‌های مستند و روایت زنان همان روستا اهمیت دارند.</span>
+        <span class="en">Rural dress should not be treated as identical across all villages. Scarves, dresses, skirts, fabrics, and wearing styles may differ by location. Documentary photographs and accounts from local women are important for recording specific names and details.</span>
+      </p>
+    </article>
+  </div>
+
+  <p class="small">
+    <span class="fa">برای نسبت دادن یک نوع لباس یا نام محلی به روستایی مشخص، بهتر است از منبع مردم‌شناختی یا تأیید افراد آگاه محلی استفاده شود.</span>
+    <span class="en">Ethnographic sources or confirmation from knowledgeable local residents are important when linking a garment or local name to a specific village.</span>
+  </p>
+</section>
+
+<section id="villages">
+  <h2>
+    <span class="fa">۳. روستاهای چهارمحال‌وبختیاری؛ زندگی در دل زاگرس</span>
+    <span class="en">3. Villages of Chaharmahal and Bakhtiari: Life in the Zagros</span>
+  </h2>
+
+  <p>
+    <span class="fa">روستاهای این استان از آبادی‌های کوهستانی و عشایری تا روستاهای باغدار در حاشیه زاینده‌رود گسترده‌اند. معماری بومی، مراتع، چشمه‌ها و شیوه زندگی مردم، هر روستا را به بخشی از روایت فرهنگی منطقه تبدیل می‌کند.</span>
+    <span class="en">The province's villages range from mountain and nomadic settlements to orchard villages near the Zayandeh Rud. Local architecture, pastures, springs, and everyday life make each village part of the region's cultural story.</span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">سرآقاسید؛ روستای پلکانی</span><span class="en">Sar Agha Seyyed: A Terraced Village</span></h3>
+      <p>
+        <span class="fa">روستای سرآقاسید در منطقه کوهرنگ با بافت متراکم و خانه‌های پلکانی در دامنه کوه شناخته می‌شود. شکل قرارگیری خانه‌ها در کنار هم، نمونه‌ای دیدنی از سازگاری معماری بومی با شیب زمین و اقلیم کوهستانی است.</span>
+        <span class="en">Sar Agha Seyyed, in the Kuhrang area, is known for its compact settlement and terraced houses on a mountain slope. Its architecture shows how local building traditions respond to steep terrain and a mountain climate.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">یاسه‌چاه؛ دالان‌های تاریخی</span><span class="en">Yaseh Chah: Historic Passageways</span></h3>
+      <p>
+        <span class="fa">یاسه‌چاه در محدوده سامان، به بافت قدیمی و دالان‌های سرپوشیده‌اش شناخته می‌شود. نزدیکی به زاینده‌رود و باغ‌های منطقه، زمینه مناسبی برای روایت پیوند زندگی روستایی با آب و کشاورزی فراهم می‌کند.</span>
+        <span class="en">Yaseh Chah, in the Saman area, is known for its old settlement and covered passageways. Its proximity to the Zayandeh Rud and local orchards offers a story of rural life shaped by water and agriculture.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">ده‌چشمه و پیرامون پیرغار</span><span class="en">Deh Cheshmeh and the Pir Ghar Area</span></h3>
+      <p>
+        <span class="fa">ده‌چشمه در شهرستان فارسان و در نزدیکی جاذبه طبیعی و تاریخی پیرغار قرار دارد. چشمه‌ها، فضای کوهستانی و آثار تاریخی پیرامون، این ناحیه را برای معرفی طبیعت و حافظه تاریخی استان مناسب می‌کنند.</span>
+        <span class="en">Deh Cheshmeh, in Farsan County, lies near the natural and historic Pir Ghar site. Springs, mountain scenery, and nearby historical traces make the area suitable for exploring the province's natural and historical heritage.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">شیخ‌علیخان و دیمه؛ طبیعت کوهرنگ</span><span class="en">Sheikh Ali Khan and Dimeh: Kuhrang's Nature</span></h3>
+      <p>
+        <span class="fa">منطقه کوهرنگ با کوهستان، چشمه‌ها و مراتع شناخته می‌شود. آبشار شیخ‌علیخان و چشمه دیمه از جاذبه‌های طبیعی این محدوده‌اند و می‌توانند در کنار روایت زندگی روستایی و کوچ فصلی معرفی شوند.</span>
+        <span class="en">The Kuhrang area is known for mountains, springs, and pastures. Sheikh Ali Khan Waterfall and Dimeh Spring are among its natural attractions and can be presented alongside stories of rural life and seasonal migration.</span>
+      </p>
+    </article>
+  </div>
+
+  <p class="small">
+    <span class="fa">معروف بودن یک روستا لزوماً به معنای داشتن پوشش ویژه و مستند مختص همان روستا نیست؛ معرفی پوشاک محلی نیازمند بررسی جداگانه است.</span>
+    <span class="en">A village's popularity does not necessarily mean it has a distinct, documented clothing style of its own. Local dress requires separate research.</span>
+  </p>
+</section>
+
+<section id="history">
+  <h2>
+    <span class="fa">۴. آثار تاریخی، معماری و طبیعت</span>
+    <span class="en">4. Historic Sites, Architecture, and Nature</span>
+  </h2>
+
+  <h3><span class="fa">قلعه چالشتر</span><span class="en">Chaleshtar Castle</span></h3>
+  <p>
+    <span class="fa">مجموعه تاریخی چالشتر در نزدیکی شهرکرد، با معماری و تزئینات وابسته به خانه‌ها و بناهای تاریخی منطقه شناخته می‌شود. این مجموعه تصویری از شیوه زندگی، هنر و سلیقه معماری در دوره‌های گذشته به دست می‌دهد.</span>
+    <span class="en">The historic Chaleshtar complex near Shahrekord is known for its architecture and decorative details. It offers a glimpse into past lifestyles, artistic traditions, and architectural tastes.</span>
+  </p>
+
+  <h3><span class="fa">قلعه دزک</span><span class="en">Dezak Castle</span></h3>
+  <p>
+    <span class="fa">قلعه دزک از بناهای تاریخی شناخته‌شده استان است. معماری آن و روایت‌های تاریخی مرتبط با منطقه، فرصتی برای پیوند دادن تاریخ محلی با هنر و زندگی اجتماعی فراهم می‌کند.</span>
+    <span class="en">Dezak Castle is one of the province's recognized historic buildings. Its architecture and local historical narratives connect regional history with art and social life.</span>
+  </p>
+
+  <h3><span class="fa">پل زمان‌خان و زاینده‌رود</span><span class="en">Zaman Khan Bridge and the Zayandeh Rud</span></h3>
+  <p>
+    <span class="fa">پل زمان‌خان در محدوده سامان بر فراز زاینده‌رود قرار دارد و از نشانه‌های شناخته‌شده منطقه است. پل، رودخانه و باغ‌های پیرامون، رابطه دیرینه میان راه‌های ارتباطی، آب و کشاورزی را به نمایش می‌گذارند.</span>
+    <span class="en">Zaman Khan Bridge, in the Saman area, crosses the Zayandeh Rud and is a well-known regional landmark. The bridge, river, and nearby orchards illustrate the long-standing relationship between transport routes, water, and agriculture.</span>
+  </p>
+
+  <h3><span class="fa">کوهستان زاگرس و مراتع عشایری</span><span class="en">The Zagros Mountains and Nomadic Pastures</span></h3>
+  <p>
+    <span class="fa">کوه‌ها، دشت‌ها و مراتع استان تنها چشم‌انداز طبیعی نیستند؛ این محیط‌ها در مسیرهای کوچ، دامداری، تولید فرآورده‌های لبنی و شکل‌گیری سبک زندگی بسیاری از خانواده‌های روستایی و عشایری نقش دارند.</span>
+    <span class="en">The province's mountains, plains, and pastures are more than scenery. They shape migration routes, animal husbandry, dairy production, and the lives of many rural and nomadic families.</span>
+  </p>
+</section>
+
+<section id="food">
+  <h2>
+    <span class="fa">۵. خوراک و شیرینی؛ طعم‌های محلی زاگرس</span>
+    <span class="en">5. Local Food and Sweets of the Zagros</span>
+  </h2>
+
+  <p>
+    <span class="fa">فرهنگ غذایی چهارمحال‌وبختیاری با دامداری، محصولات کوهستانی، باغداری و سنت‌های خانوادگی پیوند دارد. نام و شیوه تهیه غذاها در شهرها و روستاهای مختلف می‌تواند متفاوت باشد.</span>
+    <span class="en">The food culture of Chaharmahal and Bakhtiari is connected to animal husbandry, mountain products, orchards, and family traditions. Dish names and recipes may vary between towns and villages.</span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">کباب بختیاری</span><span class="en">Bakhtiari Kebab</span></h3>
+      <p>
+        <span class="fa">کباب بختیاری از غذاهای شناخته‌شده‌ای است که نام آن با این منطقه پیوند خورده است. در معرفی آن می‌توان به شیوه آماده‌سازی گوشت و جایگاه کباب در مهمانی‌ها و سفره‌های ایرانی اشاره کرد.</span>
+        <span class="en">Bakhtiari kebab is a well-known dish associated with the region. Its preparation and the place of kebab in Iranian gatherings can be included in the food story.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">آش‌ها و خوراک‌های محلی</span><span class="en">Local Soups and Dishes</span></h3>
+      <p>
+        <span class="fa">آش‌ها و خوراک‌های خانگی بخشی از سفره‌های محلی‌اند. مواد اولیه و روش پخت ممکن است بر اساس فصل، محصولات در دسترس و رسم هر خانواده تغییر کند؛ بنابراین نام‌های خاص هر روستا بهتر است با روایت محلی ثبت شود.</span>
+        <span class="en">Soups and home-cooked dishes are part of local food traditions. Ingredients and methods can change with the season, available produce, and family customs, so village-specific names should be recorded through local accounts.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">نان کاکولی</span><span class="en">Kakoli Bread</span></h3>
+      <p>
+        <span class="fa">نان کاکولی از نان‌های محلی شناخته‌شده شهرکرد و پیرامون آن است. در برخی نمونه‌ها از شیرین‌کننده‌ها، خرما یا خشکبار استفاده می‌شود؛ دستور تهیه می‌تواند از نانوایی‌ای به نانوایی دیگر تفاوت داشته باشد.</span>
+        <span class="en">Kakoli is a well-known local bread in Shahrekord and nearby areas. Some versions include sweeteners, dates, or dried fruit, and recipes can vary between bakers.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">گز بلداجی</span><span class="en">Boldaji Gaz</span></h3>
+      <p>
+        <span class="fa">گز بلداجی از شیرینی‌های شناخته‌شده استان است و در معرفی سوغات منطقه جایگاه ویژه‌ای دارد. این شیرینی را می‌توان در کنار نان‌های محلی و محصولات باغی در روایت تصویری فرهنگ خوراک معرفی کرد.</span>
+        <span class="en">Boldaji gaz is one of the province's best-known sweets and an important local souvenir. It can be presented alongside local breads and orchard products in the region's food story.</span>
+      </p>
+    </article>
+  </div>
+
+  <p class="small">
+    <span class="fa">برای ثبت غذاهای خاص هر روستا، بهتر است از خانواده‌ها و آشپزان محلی درباره نام بومی و روش تهیه پرس‌وجو شود.</span>
+    <span class="en">To document village-specific dishes, local families and cooks can help verify traditional names and recipes.</span>
+  </p>
+</section>
+
+<section id="products">
+  <h2>
+    <span class="fa">۶. سوغات، صنایع‌دستی و محصولات محلی</span>
+    <span class="en">6. Souvenirs, Handicrafts, and Local Products</span>
+  </h2>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">قالی و دست‌بافته‌های بختیاری</span><span class="en">Bakhtiari Rugs and Textiles</span></h3>
+      <p>
+        <span class="fa">قالی، گلیم و جاجیم از هنرهای بافتی مهم در فرهنگ منطقه‌اند. ترکیب رنگ‌ها و نقش‌ها می‌تواند بازتابی از طبیعت، سلیقه هنرمند و سنت‌های خانوادگی باشد.</span>
+        <span class="en">Rugs, kilims, and jajims are important weaving traditions in the region. Their colors and patterns may reflect nature, the maker's taste, and family traditions.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">چوقابافی و هنرهای سنتی</span><span class="en">Choqa Weaving and Traditional Crafts</span></h3>
+      <p>
+        <span class="fa">چوقا با پوشش سنتی مردان بختیاری شناخته می‌شود و بافت آن بخشی از مهارت‌های نساجی منطقه است. معرفی آن در کنار لباس زنان، تصویری گسترده‌تر از فرهنگ پوشاک و بافندگی ارائه می‌کند.</span>
+        <span class="en">Choqa is associated with traditional Bakhtiari men's clothing, and its weaving is part of the region's textile skills. Presenting it alongside women's dress provides a broader view of local clothing and weaving culture.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">بادام سامان</span><span class="en">Saman Almonds</span></h3>
+      <p>
+        <span class="fa">باغ‌های بادام از ویژگی‌های کشاورزی محدوده سامان‌اند. بادام و فرآورده‌های آن می‌توانند در معرفی محصولات محلی و پیوند زندگی روستایی با باغداری جای بگیرند.</span>
+        <span class="en">Almond orchards are an important feature of agriculture around Saman. Almonds and their products can illustrate the relationship between rural life and orchard farming.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">عسل و فرآورده‌های لبنی</span><span class="en">Honey and Dairy Products</span></h3>
+      <p>
+        <span class="fa">عسل کوهستان و فرآورده‌هایی مانند کشک، پنیر و کره با محیط طبیعی و دامداری منطقه پیوند دارند. تولید و روش آماده‌سازی آن‌ها در خانواده‌ها و نواحی مختلف می‌تواند تفاوت داشته باشد.</span>
+        <span class="en">Mountain honey and dairy products such as kashk, cheese, and butter are connected to the region's environment and animal husbandry. Production and preparation methods may differ by family and area.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">گیاهان کوهی و محصولات فصلی</span><span class="en">Mountain Herbs and Seasonal Products</span></h3>
+      <p>
+        <span class="fa">گیاهان کوهی و محصولات فصلی بخشی از منابع طبیعی منطقه‌اند. برداشت آن‌ها باید با توجه به فصل و حفاظت از طبیعت انجام شود؛ نام‌های بومی و کاربردهای محلی نیز بهتر است با منابع معتبر ثبت شوند.</span>
+        <span class="en">Mountain herbs and seasonal products are part of the region's natural resources. Harvesting should respect seasons and conservation, while local names and uses should be documented through reliable sources.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">گز بلداجی؛ سوغات شیرین</span><span class="en">Boldaji Gaz: A Sweet Souvenir</span></h3>
+      <p>
+        <span class="fa">گز بلداجی یکی از نام‌های شناخته‌شده در معرفی سوغات استان است. بسته‌بندی و شیوه عرضه آن نیز می‌تواند در روایت تصویری خوراک و اقتصاد محلی دیده شود.</span>
+        <span class="en">Boldaji gaz is a recognized name among the province's souvenirs. Its packaging and presentation can also feature in a visual story of local food and commerce.</span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="sources">
+  <h2>
+    <span class="fa">۷. منابع و مطالعه بیشتر</span>
+    <span class="en">7. Sources and Further Reading</span>
+  </h2>
+
+  <p>
+    <span class="fa">منابع زیر نقطه شروعی برای بررسی تاریخ، روستاها، پوشاک و میراث فرهنگی چهارمحال‌وبختیاری هستند. برای نسخه نهایی نمایشگاه، بهتر است منابع اختصاصی پوشاک و نام‌های محلی نیز به این فهرست افزوده شوند.</span>
+    <span class="en">The following resources are starting points for researching the history, villages, clothing, and cultural heritage of Chaharmahal and Bakhtiari. Specific sources on traditional dress and local terminology should be added before the exhibition page is finalized.</span>
+  </p>
+
+  <ul class="source-list">
+    <li>
+      <a href="https://www.visitiran.ir/" target="_blank" rel="noopener">
+        <span class="fa">پایگاه گردشگری ایران</span>
+        <span class="en">Visit Iran</span>
+      </a>
+      <span class="fa"> — برای آشنایی با جاذبه‌های گردشگری و فرهنگی استان‌ها.</span>
+      <span class="en"> — For information on tourism and cultural attractions across Iran.</span>
+    </li>
+
+    <li>
+      <a href="https://ich.unesco.org/" target="_blank" rel="noopener">
+        <span class="fa">میراث فرهنگی ناملموس یونسکو</span>
+        <span class="en">UNESCO Intangible Cultural Heritage</span>
+      </a>
+      <span class="fa"> — برای آشنایی با سنت‌ها، مهارت‌ها و میراث زنده جوامع.</span>
+      <span class="en"> — For exploring traditions, skills, and living heritage.</span>
+    </li>
+
+    <li>
+      <a href="https://whc.unesco.org/" target="_blank" rel="noopener">
+        <span class="fa">مرکز میراث جهانی یونسکو</span>
+        <span class="en">UNESCO World Heritage Centre</span>
+      </a>
+      <span class="fa"> — برای مطالعه درباره میراث جهانی و حفاظت از آثار تاریخی.</span>
+      <span class="en"> — For information on world heritage and historic-site conservation.</span>
+    </li>
+
+    <li>
+      <a href="https://www.iranicaonline.org/" target="_blank" rel="noopener">
+        <span class="fa">دانشنامه ایرانیکا</span>
+        <span class="en">Encyclopaedia Iranica</span>
+      </a>
+      <span class="fa"> — منبع مرجع برای مطالعه تاریخ و فرهنگ ایران.</span>
+      <span class="en"> — A reference source for Iranian history and culture.</span>
+    </li>
+  </ul>
+
+  <p class="small">
+    <span class="fa">این پیوندها نقطه شروع پژوهش‌اند و لزوماً تمام جزئیات این صفحه را تأیید نمی‌کنند. برای نسبت دادن نوع خاصی از لباس به یک روستا یا گروه محلی، منبع تخصصی یا تأیید افراد آگاه محلی ضروری است.</span>
+    <span class="en">These links are starting points for research and do not necessarily verify every detail on this page. Assigning a specific garment to a village or community requires a specialized source or confirmation from knowledgeable local residents.</span>
+  </p>
+</section>
+
+<a class="back" href="index.html">
+  <span class="fa">← بازگشت به گالری «ایران، هزار رنگ»</span>
+  <span class="en">← Back to the “Iran, A Thousand Colors” gallery</span>
+</a>
+
+</main>
+
+<footer>
+  <p><strong><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span></strong></p>
+  <p><span class="fa">روایت تصویری پوشش زنان ایران</span><span class="en">A visual story of women's dress in Iran</span></p>
+  <p><span class="fa">چهارمحال‌وبختیاری؛ رنگِ زاگرس، شکوهِ کوچ</span><span class="en">Chaharmahal and Bakhtiari: Colors of Zagros, the Beauty of Migration</span></p>
+  <p class="small">
+    <span class="fa">این صفحه بخشی از گالری آنلاین مجموعه است.</span>
+    <span class="en">This page is part of the collection's online gallery.</span>
+  </p>
+  <p class="small">
+    <span class="fa">هنرمند و آثار: مریم ساعی | طراحی سایت و پژوهش فرهنگی: مرجان ساعی</span>
+    <span class="en">Artist and artworks: Maryam Saei | Website design and cultural research: Marjan Saei</span>
+  </p>
+</footer>
+
+<script>
+(() => {
+  const button = document.getElementById('langSwitch');
+  const saved = localStorage.getItem('iranHezarRangLanguage');
+
+  function setLanguage(language) {
+    const english = language === 'en';
+    document.body.classList.toggle('english', english);
+    document.documentElement.lang = english ? 'en' : 'fa';
+    document.documentElement.dir = english ? 'ltr' : 'rtl';
+    button.textContent = english ? 'فارسی' : 'English';
+    button.setAttribute(
+      'aria-label',
+      english ? 'Switch to Persian' : 'Switch to English'
+    );
+    localStorage.setItem('iranHezarRangLanguage', language);
+  }
+
+  setLanguage(saved === 'en' ? 'en' : 'fa');
+
+  button.addEventListener('click', () => {
+    setLanguage(
+      document.body.classList.contains('english') ? 'fa' : 'en'
+    );
+  });
+})();
+</script>
+
+</body>
+</html>
+```
