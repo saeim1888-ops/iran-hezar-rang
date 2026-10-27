@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اصفهان | ایران، هزار رنگ</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f8f0e1;--panel:#fffaf1;--card:#f6eddd;--ink:#352f26;--green:#596548;--rust:#bd4b28;--line:#e5d2b0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif;line-height:2}
+a{color:#235c70}
+header{max-width:1015px;margin:auto;padding:20px 35px 5px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{font-size:18px;font-weight:800;color:var(--green)}
+button{font:inherit;background:var(--panel);border:1px solid #cda66c;border-radius:25px;padding:5px 17px;cursor:pointer}
+.hero,.page-section{max-width:1015px;margin:20px auto;background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:30px 35px}
+.hero{text-align:center;padding-top:35px}
+.eyebrow{color:var(--rust);font-weight:700}
+h1{color:var(--green);font-size:clamp(27px,4vw,39px);line-height:1.6;margin:7px 0}
+.hero h2{font-size:22px;color:var(--rust);margin:0}
+.hero p{margin:10px auto;max-width:820px}
+nav{max-width:1015px;margin:18px auto;padding:15px 25px;background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+nav a{font-size:14px;text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:5px 12px;color:var(--green)}
+.page-section h2{font-size:clamp(23px,3vw,31px);color:var(--green);border-bottom:1px solid #d9bd8c;padding-bottom:12px;margin:0 0 22px}
+.page-section h3{color:var(--rust);font-size:21px;margin:0 0 12px}
+.page-section p{margin:12px 0 18px}
+.artwork{display:block;width:min(100%,650px);height:auto;margin:25px auto 15px;padding:7px;background:#eee0c7;border:1px solid #d7b982}
+.label-image{display:block;width:min(100%,650px);height:auto;margin:25px auto 12px}
+.caption{text-align:center;font-size:14px;color:#766953}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin:20px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:20px;min-width:0}
+.card h3{margin-bottom:12px}
+.card p:last-child{margin-bottom:0}
+.note{font-size:14px;color:#645843;border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
+ul{padding-right:24px}
+footer{max-width:1015px;margin:25px auto 0;padding:25px 35px 40px;color:var(--green)}
+footer a{color:var(--green)}
+.en{display:none}
+body.english{direction:ltr}
+body.english .en{display:inline}
+body.english .fa{display:none}
+body.english .page-section,body.english .card{text-align:left}
+body.english ul{padding-left:24px;padding-right:0}
+@media(max-width:800px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero,.page-section,nav,header,footer{margin-left:12px;margin-right:12px}.hero,.page-section{padding:23px 18px}}
+@media(max-width:480px){.cards{grid-template-columns:1fr}header{padding-left:5px;padding-right:5px}.logo{font-size:15px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">ایران، هزار رنگ | Iran, A Thousand Colors</div>
+  <button type="button" onclick="toggleLanguage()" id="langButton">English</button>
+</header>
+
+<div class="hero">
+  <div class="eyebrow"><span class="fa">منطقه ۱۱ از ۲۳ منطقه</span><span class="en">REGION 11 OF 23</span></div>
+  <h1><span class="fa">اصفهان؛ سرزمین هنر، کاشی و نقش‌ونگار</span><span class="en">Isfahan: Land of Art, Tiles and Patterns</span></h1>
+  <h2><span class="fa">اصفهان؛ نقشِ هنر بر تار و پودِ تاریخ</span><span class="en">Isfahan: Art Woven into History</span></h2>
+  <p><span class="fa">سفری تصویری میان پوشش زنان، روستاهای تاریخی، معماری باشکوه، صنایع‌دستی و طعم‌های اصیل اصفهان.</span><span class="en">A visual journey through women's dress, historic villages, magnificent architecture, handicrafts and the traditional flavors of Isfahan.</span></p>
+</div>
+
+<nav>
+  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+  <a href="#dress"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+  <a href="#villages"><span class="fa">شهرها و روستاها</span><span class="en">Cities & Villages</span></a>
+  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+  <a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food & Sweets</span></a>
+  <a href="#products"><span class="fa">سوغات و صنایع‌دستی</span><span class="en">Souvenirs & Crafts</span></a>
+  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
+
+<main>
+<section class="page-section" id="art">
+<h2><span class="fa">۱. تصویر اصفهان؛ روایت یک سرزمین</span><span class="en">1. Isfahan in Art: A Land's Story</span></h2>
+<p><span class="fa">این اثر هنری، جلوه‌هایی از هویت اصفهان را در کنار هم قرار می‌دهد؛ از میدان نقش‌جهان و پل‌های تاریخی تا کاشی‌کاری‌های فیروزه‌ای، بازارهای سنتی، صنایع‌دستی و خوراک‌های محلی. رنگ‌ها و نقش‌ها، روایتی تصویری از پیوند هنر و زندگی در این سرزمین‌اند.</span><span class="en">This artwork brings together aspects of Isfahan's identity, from Naqsh-e Jahan Square and historic bridges to turquoise tiles, traditional bazaars, handicrafts and local food. Its colors and patterns tell a visual story of art and everyday life.</span></p>
+<img class="artwork" src="isfahan.png" alt="اثر هنری اصفهان از مجموعه ایران هزار رنگ">
+<p class="caption"><span class="fa">اثر هنری اصفهان از مجموعه «ایران، هزار رنگ»</span><span class="en">The Isfahan artwork from “Iran, A Thousand Colors”</span></p>
+<p><span class="fa">این تصویر، اثر هنری مجموعه است؛ توضیحات این صفحه برای معرفی فرهنگی و تاریخی استان اصفهان ارائه شده‌اند.</span><span class="en">This is the artwork created for the collection. The text on this page provides cultural and historical context about Isfahan Province.</span></p>
+</section>
+
+<section class="page-section" id="dress">
+<h2><span class="fa">۲. پوشش زنان اصفهان؛ رنگ و اصالت</span><span class="en">2. Women's Dress in Isfahan: Color and Heritage</span></h2>
+<p><span class="fa">پوشاک زنان در استان اصفهان یکدست نیست و در طول زمان، با توجه به محل زندگی، گروه فرهنگی، شرایط اجتماعی و مناسبت‌ها تغییر کرده است. نگاره‌های تاریخی و پوشاک محلی روستاها، بخشی از این تنوع فرهنگی را نشان می‌دهند.</span><span class="en">Women's clothing in Isfahan Province is diverse and has changed over time according to location, cultural group, social conditions and occasion. Historical illustrations and village clothing traditions reveal part of this cultural diversity.</span></p>
+<img class="label-image" src="isfahan_leibel.png" alt="لیبل تصویری معرفی پوشش و فرهنگ اصفهان">
+<p class="caption"><span class="fa">لیبل اختصاصی اصفهان؛ راهنمای تصویری پوشش و فرهنگ منطقه</span><span class="en">Isfahan exhibition label: a visual guide to regional dress and culture</span></p>
+
+<h3><span class="fa">پوشاک تاریخی شهر اصفهان</span><span class="en">Historical Clothing of Isfahan City</span></h3>
+<p><span class="fa">نگاره‌ها و اسناد تاریخی، نمونه‌هایی از پیراهن‌های بلند، پوشش سر، چادرها و پارچه‌های آراسته را در دوره‌های مختلف نشان می‌دهند. این تصاویر برای شناخت تاریخ پوشاک اهمیت دارند، اما نباید آن‌ها را نمایندهٔ پوشش همهٔ زنان امروز اصفهان دانست.</span><span class="en">Historical illustrations and documents show long dresses, head coverings, chadors and decorated fabrics from different periods. These sources help us understand clothing history but should not be treated as representative of all Isfahani women today.</span></p>
+
+<h3><span class="fa">پوشش محلی ابیانه</span><span class="en">Traditional Dress of Abyaneh</span></h3>
+<p><span class="fa">ابیانه، روستایی تاریخی در استان اصفهان، به پوشش محلی متمایز زنانش شناخته می‌شود. چارقدهای سفید با نقش‌های گل‌دار و دامن‌های پرچین از ویژگی‌های شناخته‌شدهٔ این پوشش‌اند. شکل و جزئیات لباس ممکن است با توجه به نسل، مناسبت و شیوهٔ استفاده تفاوت داشته باشد.</span><span class="en">Abyaneh, a historic village in Isfahan Province, is known for its distinctive women's clothing. White floral headscarves and full gathered skirts are notable features. Details may vary by generation, occasion and use.</span></p>
+
+<h3><span class="fa">پوشاک بختیاری و قشقایی در مناطق پیرامونی</span><span class="en">Bakhtiari and Qashqai Dress in Nearby Regions</span></h3>
+<p><span class="fa">در بخش‌هایی از مناطق غربی و جنوبی پیرامون اصفهان، فرهنگ‌های بختیاری و قشقایی نیز حضور دارند و پوشاک آن‌ها ویژگی‌های خاص خود را دارد. بهتر است لباس این جوامع با نام و هویت فرهنگی دقیق معرفی شود و به همهٔ زنان استان نسبت داده نشود.</span><span class="en">Bakhtiari and Qashqai communities are present in parts of the wider western and southern region, each with distinctive clothing traditions. Their dress should be identified by its specific cultural community rather than attributed to all women in the province.</span></p>
+</section>
+
+<section class="page-section" id="villages">
+<h2><span class="fa">۳. شهرها و روستاها؛ تنوع در دل اصفهان</span><span class="en">3. Cities and Villages: Isfahan's Diversity</span></h2>
+<p><span class="fa">استان اصفهان از شهرهای تاریخی، روستاهای کهن، نواحی کوهستانی و چشم‌اندازهای کویری تشکیل شده است. هر منطقه با معماری، محصولات محلی، آیین‌ها و شیوهٔ زندگی خود، بخشی از هویت فرهنگی استان را شکل می‌دهد.</span><span class="en">Isfahan Province includes historic cities, old villages, mountain areas and desert landscapes. Each region contributes to the province's cultural identity through its architecture, local products, traditions and way of life.</span></p>
+<div class="cards">
+<div class="card"><h3><span class="fa">کاشان</span><span class="en">Kashan</span></h3><p><span class="fa">شهری تاریخی با خانه‌های سنتی، باغ فین، بازار قدیمی و سنت گلاب‌گیری. گلاب و عرقیات گیاهی از محصولات شناخته‌شدهٔ این منطقه‌اند.</span><span class="en">A historic city known for traditional houses, Fin Garden, its old bazaar and rose-water distillation. Rose water and herbal distillates are well-known local products.</span></p></div>
+<div class="card"><h3><span class="fa">ابیانه</span><span class="en">Abyaneh</span></h3><p><span class="fa">روستایی تاریخی با خانه‌های سرخ‌رنگ، کوچه‌های پلکانی و پوشاک محلی متمایز که بخشی از میراث فرهنگی زندهٔ منطقه است.</span><span class="en">A historic village with red-earth houses, stepped lanes and distinctive traditional dress, forming part of the region's living cultural heritage.</span></p></div>
+<div class="card"><h3><span class="fa">ورزنه</span><span class="en">Varzaneh</span></h3><p><span class="fa">منطقه‌ای در شرق اصفهان با چشم‌اندازهای کویری، سنت‌های کشاورزی و نزدیکی به تالاب گاوخونی. پوشش سفید سر زنان ورزنه از ویژگی‌های محلی شناخته‌شدهٔ آن است.</span><span class="en">An eastern Isfahan area known for desert landscapes, agricultural traditions and proximity to Gavkhouni wetland. Women's white head coverings are a distinctive local tradition.</span></p></div>
+<div class="card"><h3><span class="fa">چادگان و غرب استان</span><span class="en">Chadegan and Western Isfahan</span></h3><p><span class="fa">منطقه‌ای با چشم‌اندازهای کوهستانی، روستاها و فرهنگ‌های محلی متنوع که پیوند نزدیکی با طبیعت و زندگی روستایی دارد.</span><span class="en">An area of mountain landscapes, villages and diverse local cultures closely connected with nature and rural life.</span></p></div>
+</div>
+</section>
+
+<section class="page-section" id="history">
+<h2><span class="fa">۴. تاریخ، معماری و طبیعت</span><span class="en">4. History, Architecture and Nature</span></h2>
+<div class="cards">
+<div class="card"><h3><span class="fa">میدان نقش‌جهان</span><span class="en">Naqsh-e Jahan Square</span></h3><p><span class="fa">مجموعه‌ای تاریخی از دورهٔ صفوی که با مسجد امام، مسجد شیخ لطف‌الله، عمارت عالی‌قاپو و بازار پیرامونی شناخته می‌شود و در فهرست میراث جهانی یونسکو قرار دارد.</span><span class="en">A Safavid-era historic ensemble featuring Imam Mosque, Sheikh Lotfollah Mosque, Ali Qapu Palace and the surrounding bazaar. It is a UNESCO World Heritage Site.</span></p></div>
+<div class="card"><h3><span class="fa">سی‌وسه‌پل و پل خواجو</span><span class="en">Si-o-se-pol and Khaju Bridge</span></h3><p><span class="fa">دو پل تاریخی بر زاینده‌رود که افزون بر نقش ارتباطی، از نمونه‌های برجستهٔ معماری و زندگی شهری اصفهان‌اند.</span><span class="en">Two historic bridges over the Zayandeh Rud, notable for their architecture and role in Isfahan's urban life.</span></p></div>
+<div class="card"><h3><span class="fa">کاخ چهل‌ستون</span><span class="en">Chehel Sotoun Palace</span></h3><p><span class="fa">باغ و کاخی تاریخی با تالارها، نقاشی‌های دیواری و انعکاس ستون‌ها در حوض که از جلوه‌های هنر دورهٔ صفوی به شمار می‌رود.</span><span class="en">A historic palace and garden with halls, wall paintings and columns reflected in its pool, representing Safavid-era art.</span></p></div>
+<div class="card"><h3><span class="fa">باغ فین کاشان</span><span class="en">Fin Garden, Kashan</span></h3><p><span class="fa">باغی تاریخی با آبراهه‌ها، حوض‌ها و درختان که نمونه‌ای برجسته از سنت باغ‌سازی ایرانی است.</span><span class="en">A historic garden with water channels, pools and trees, representing the Persian garden tradition.</span></p></div>
+</div>
+<p><span class="fa">طبیعت استان نیز از کوهستان‌های غربی تا دشت‌ها و نواحی کویری گسترده است. زاینده‌رود و تالاب گاوخونی از عناصر مهم جغرافیایی منطقه‌اند؛ وضعیت آب و محیط طبیعی آن‌ها در دوره‌های مختلف تغییر کرده است.</span><span class="en">The province's landscapes range from western mountains to plains and deserts. The Zayandeh Rud and Gavkhouni wetland are important geographical features whose environmental conditions have changed over time.</span></p>
+</section>
+
+<section class="page-section" id="food">
+<h2><span class="fa">۵. طعم‌های اصیل اصفهان</span><span class="en">5. The Flavors of Isfahan</span></h2>
+<p><span class="fa">غذاها و شیرینی‌های محلی، بخشی از فرهنگ مهمان‌نوازی اصفهان هستند. برخی از آن‌ها در سراسر ایران شناخته شده‌اند و برخی دیگر بیشتر با سفره‌های خانوادگی و بازارهای محلی پیوند دارند.</span><span class="en">Local dishes and sweets are part of Isfahan's hospitality traditions. Some are famous throughout Iran, while others are closely associated with family tables and local markets.</span></p>
+<div class="cards">
+<div class="card"><h3><span class="fa">بریانی اصفهان</span><span class="en">Isfahani Beryani</span></h3><p><span class="fa">غذای مشهور اصفهان که معمولاً با گوشت گوسفند تهیه و همراه نان و چاشنی‌های محلی سرو می‌شود.</span><span class="en">Isfahan's famous dish, usually prepared with lamb and served with bread and local accompaniments.</span></p></div>
+<div class="card"><h3><span class="fa">خورش ماست</span><span class="en">Khoresht-e Mast</span></h3><p><span class="fa">خوراکی سنتی با پایهٔ ماست و گوشت که با زعفران و شکر طعمی ویژه پیدا می‌کند و معمولاً سرد سرو می‌شود.</span><span class="en">A traditional yogurt-and-meat dish flavored with saffron and sugar, usually served cold.</span></p></div>
+<div class="card"><h3><span class="fa">حلیم بادمجان</span><span class="en">Halim Bademjan</span></h3><p><span class="fa">غذایی تهیه‌شده از بادمجان، حبوبات و گوشت که در اصفهان و شهرهای دیگر ایران نیز محبوب است.</span><span class="en">A dish made with eggplant, legumes and meat, popular in Isfahan and other Iranian cities.</span></p></div>
+<div class="card"><h3><span class="fa">گز</span><span class="en">Gaz</span></h3><p><span class="fa">شیرینی شناخته‌شدهٔ اصفهان که در انواع مختلف و با مغزهایی مانند پسته و بادام تهیه می‌شود.</span><span class="en">Isfahan's famous nougat-like sweet, available in varieties with pistachios and almonds.</span></p></div>
+<div class="card"><h3><span class="fa">پولکی</span><span class="en">Poolaki</span></h3><p><span class="fa">شیرینی نازک و شفاف که اغلب همراه چای مصرف می‌شود و از سوغات محبوب شهر است.</span><span class="en">A thin, translucent candy often enjoyed with tea and popular as a local souvenir.</span></p></div>
+<div class="card"><h3><span class="fa">نبات و شیرینی‌های محلی</span><span class="en">Rock Candy and Local Sweets</span></h3><p><span class="fa">نبات و دیگر شیرینی‌های سنتی در بازارهای اصفهان عرضه می‌شوند و بخشی از فرهنگ پذیرایی و سوغات شهر هستند.</span><span class="en">Rock candy and other traditional sweets are sold in Isfahan's markets and form part of its hospitality and souvenir culture.</span></p></div>
+</div>
+</section>
+
+<section class="page-section" id="products">
+<h2><span class="fa">۶. سوغات، محصولات بومی و صنایع‌دستی</span><span class="en">6. Souvenirs, Local Products and Handicrafts</span></h2>
+<div class="cards">
+<div class="card"><h3><span class="fa">میناکاری</span><span class="en">Minakari Enameling</span></h3><p><span class="fa">هنر آراستن فلز با پوشش لعابی و نقش‌های رنگین که از صنایع‌دستی شناخته‌شدهٔ اصفهان است.</span><span class="en">The art of decorating metal with enamel and colorful patterns, a well-known Isfahani craft.</span></p></div>
+<div class="card"><h3><span class="fa">قلم‌زنی</span><span class="en">Ghalamzani Metal Engraving</span></h3><p><span class="fa">هنری ظریف که در آن نقش‌ها با ابزارهای مخصوص روی فلزاتی مانند مس و نقره حک می‌شوند.</span><span class="en">A delicate craft in which patterns are engraved on metals such as copper and silver.</span></p></div>
+<div class="card"><h3><span class="fa">خاتم‌کاری</span><span class="en">Khatamkari Inlay</span></h3><p><span class="fa">هنر ساخت نقش‌های هندسی ظریف با قطعات کوچک چوب و مواد دیگر که برای آراستن جعبه‌ها و اشیای تزئینی به کار می‌رود.</span><span class="en">A craft that creates fine geometric patterns from small pieces of wood and other materials, decorating boxes and ornamental objects.</span></p></div>
+<div class="card"><h3><span class="fa">قلمکار و فرش‌بافی</span><span class="en">Ghalamkar Printing and Carpet Weaving</span></h3><p><span class="fa">قلمکار با چاپ نقش‌های سنتی روی پارچه و فرش‌بافی با طرح‌ها و رنگ‌های متنوع، بخشی از هنرهای نساجی منطقه‌اند.</span><span class="en">Ghalamkar uses traditional block printing on fabric, while carpet weaving features varied patterns and colors. Both are part of the region's textile arts.</span></p></div>
+<div class="card"><h3><span class="fa">گلاب کاشان</span><span class="en">Kashan Rose Water</span></h3><p><span class="fa">گلاب و عرقیات گیاهی از محصولات شناخته‌شدهٔ کاشان و روستاهای پیرامون آن هستند و با سنت گلاب‌گیری پیوند دارند.</span><span class="en">Rose water and herbal distillates are well-known products of Kashan and nearby villages, linked to the local rose-water tradition.</span></p></div>
+<div class="card"><h3><span class="fa">محصولات باغی و محلی</span><span class="en">Orchard and Local Products</span></h3><p><span class="fa">بسته به منطقه و اقلیم، محصولات باغی، خشکبار و فرآورده‌های محلی در اقتصاد روستایی استان نقش دارند.</span><span class="en">Depending on local climate, orchard produce, dried fruits and regional products contribute to the province's rural economy.</span></p></div>
+</div>
+</section>
+
+<section class="page-section" id="sources">
+<h2><span class="fa">۷. منابع و مطالعهٔ بیشتر</span><span class="en">7. Sources and Further Reading</span></h2>
+<p><span class="fa">منابع زیر برای آشنایی با آثار تاریخی، میراث فرهنگی و صنایع‌دستی اصفهان نقطهٔ شروع مناسبی هستند. برای جزئیات دقیق پوشاک محلی، بهتر است پژوهش‌های مردم‌شناسی و منابع معتبر دربارهٔ هر روستا نیز بررسی شوند.</span><span class="en">The following resources are useful starting points for learning about Isfahan's historic sites, cultural heritage and handicrafts. Detailed information on local dress should also be checked against ethnographic research and reliable sources for each village.</span></p>
+<ul>
+<li><a href="https://whc.unesco.org/en/list/115/" target="_blank" rel="noopener">UNESCO — Meidan Emam, Esfahan</a> <span class="fa">؛ میدان نقش‌جهان</span></li>
+<li><a href="https://whc.unesco.org/en/list/1372/" target="_blank" rel="noopener">UNESCO — The Persian Garden</a> <span class="fa">؛ باغ فین و سنت باغ‌سازی ایرانی</span></li>
+<li><a href="https://whc.unesco.org/" target="_blank" rel="noopener">UNESCO World Heritage Centre</a></li>
+<li><a href="https://www.iranicaonline.org/" target="_blank" rel="noopener">Encyclopaedia Iranica</a></li>
+<li><a href="https://www.visitiran.ir/" target="_blank" rel="noopener">Visit Iran</a></li>
+</ul>
+<p class="note"><span class="fa">ذکر منابع به معنی تأیید تک‌تک جزئیات این صفحه از سوی آن‌ها نیست؛ برای نسبت‌دادن یک نوع پوشش مشخص به جامعه‌ای محلی، منبع تخصصی جداگانه لازم است.</span><span class="en">Listing these resources does not mean they verify every detail on this page. Specific clothing attributions require dedicated references.</span></p>
+</section>
+</main>
+
+<footer>
+<p><strong>ایران، هزار رنگ | Iran, A Thousand Colors</strong></p>
+<p><span class="fa">روایت تصویری پوشش زنان ایران</span><span class="en">A visual story of women's dress in Iran</span></p>
+<p><span class="fa">هنرمند: مریم ساعی | طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span><span class="en">Artist: Maryam Saei | Website design and cultural research: Marjan Saei</span></p>
+<p><a href="index.html"><span class="fa">← بازگشت به گالری مناطق ایران</span><span class="en">← Back to the Regions Gallery</span></a></p>
+</footer>
+
+<script>
+function toggleLanguage(){
+ const english=!document.body.classList.contains('english');
+ document.body.classList.toggle('english',english);
+ document.documentElement.lang=english?'en':'fa';
+ document.documentElement.dir=english?'ltr':'rtl';
+ document.getElementById('langButton').textContent=english?'فارسی':'English';
+}
+</script>
+</body>
+</html>
