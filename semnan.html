@@ -1,0 +1,564 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="سمنان؛ روایت تصویری پوشش زنان، فرهنگ عشایری، تاریخ، طبیعت و خوراک محلی در نمایشگاه ایران، هزار رنگ.">
+<title>سمنان | ایران، هزار رنگ</title>
+
+<style>
+:root {
+  --cream:#f8f1e3;
+  --paper:#fffaf0;
+  --olive:#596447;
+  --dark:#292b25;
+  --gold:#b08b48;
+  --rust:#b94e27;
+  --teal:#245b60;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:var(--cream);
+  color:var(--dark);
+  font-family:Tahoma,Arial,sans-serif;
+  line-height:2.1;
+}
+.topline {
+  height:8px;
+  background:linear-gradient(90deg,var(--rust),var(--gold),var(--olive),var(--teal));
+}
+header {
+  text-align:center;
+  padding:55px 20px 35px;
+  background:
+    radial-gradient(circle at 15% 20%,#e8d7b6 0,transparent 28%),
+    radial-gradient(circle at 85% 80%,#e5d8b8 0,transparent 28%),
+    var(--cream);
+  border-bottom:1px solid #ddcfb4;
+}
+.eyebrow { color:var(--rust); font-size:13px; }
+h1 {
+  color:var(--olive);
+  font-size:clamp(27px,5vw,43px);
+  line-height:1.7;
+  margin:12px 0;
+}
+.slogan {
+  color:var(--rust);
+  font-size:clamp(17px,3vw,23px);
+  font-weight:bold;
+  margin:8px 0;
+}
+.subtitle {
+  max-width:720px;
+  margin:12px auto 0;
+  color:#666354;
+  font-size:14px;
+}
+nav {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+  padding:20px 14px;
+  background:var(--paper);
+  border-bottom:1px solid #e4d7bd;
+}
+nav a {
+  text-decoration:none;
+  color:var(--olive);
+  background:#f0e7d5;
+  border:1px solid #e1d2b5;
+  border-radius:30px;
+  padding:5px 13px;
+  font-size:12px;
+}
+nav a:hover { background:var(--olive); color:white; }
+.lang-switch {
+  position:fixed;
+  z-index:1000;
+  top:14px;
+  left:14px;
+  border:0;
+  border-radius:25px;
+  padding:9px 15px;
+  background:var(--olive);
+  color:white;
+  font-family:inherit;
+  cursor:pointer;
+  box-shadow:0 3px 12px #0002;
+}
+main {
+  max-width:1050px;
+  margin:30px auto;
+  padding:0 18px;
+}
+section {
+  background:var(--paper);
+  padding:clamp(20px,4vw,38px);
+  margin-bottom:25px;
+  border:1px solid #e4d7bd;
+  border-radius:18px;
+  box-shadow:0 5px 18px #5946290b;
+  scroll-margin-top:20px;
+}
+h2 {
+  color:var(--olive);
+  font-size:clamp(21px,3vw,28px);
+  margin-top:0;
+  padding-bottom:10px;
+  border-bottom:1px solid #e5d6b9;
+}
+h3 { color:var(--rust); font-size:17px; margin-top:0; }
+p { margin-top:10px; }
+.hero-art {
+  display:block;
+  width:100%;
+  max-width:690px;
+  height:auto;
+  margin:25px auto 10px;
+  padding:9px;
+  background:white;
+  border:1px solid #ddcda9;
+  border-radius:5px;
+  box-shadow:0 9px 25px #00000015;
+}
+.label-art {
+  display:block;
+  width:100%;
+  max-width:470px;
+  height:auto;
+  margin:25px auto 10px;
+  padding:7px;
+  background:white;
+  border:1px solid #ddcda9;
+  border-radius:5px;
+  box-shadow:0 7px 20px #00000012;
+}
+.caption,.small {
+  color:#77705e;
+  font-size:13px;
+  text-align:center;
+}
+.quote {
+  margin:25px 0;
+  padding:15px 20px;
+  border-right:4px solid var(--gold);
+  background:#f5ecd9;
+  color:var(--olive);
+  border-radius:8px;
+  font-size:16px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+.tile {
+  background:#f7efdf;
+  border:1px solid #e6d8bd;
+  border-radius:12px;
+  padding:18px;
+}
+.tile p { margin-bottom:0; font-size:14px; }
+.source-list { padding-right:22px; overflow-wrap:anywhere; }
+.source-list li { margin-bottom:10px; }
+.source-list a {
+  color:var(--teal);
+  text-underline-offset:3px;
+}
+.back {
+  display:inline-block;
+  margin:5px 0 30px;
+  padding:10px 18px;
+  border-radius:30px;
+  background:var(--olive);
+  color:white;
+  text-decoration:none;
+}
+.back:hover { background:var(--teal); }
+footer {
+  background:var(--olive);
+  color:#fffaf0;
+  text-align:center;
+  padding:30px 18px;
+  font-size:13px;
+}
+footer p { margin:5px 0; }
+.en { display:none; }
+body.english {
+  direction:ltr;
+  font-family:Arial,Tahoma,sans-serif;
+}
+body.english header,
+body.english section,
+body.english footer { text-align:left; }
+body.english nav { direction:ltr; }
+body.english .quote {
+  border-right:0;
+  border-left:4px solid var(--gold);
+}
+body.english .source-list {
+  padding-right:0;
+  padding-left:22px;
+}
+body.english .fa { display:none; }
+body.english .en { display:initial; }
+body.english .caption,
+body.english .small { text-align:center; }
+body.english .lang-switch {
+  left:auto;
+  right:14px;
+}
+@media(max-width:600px) {
+  header { padding:55px 16px 28px; }
+  main { padding:0 10px; margin-top:18px; }
+  section { padding:20px 16px; border-radius:13px; }
+  .grid { grid-template-columns:1fr; }
+  nav { gap:7px; }
+  nav a { font-size:11px; padding:4px 10px; }
+}
+</style>
+</head>
+
+<body>
+<button class="lang-switch" id="langSwitch" type="button">English</button>
+<div class="topline"></div>
+
+<header>
+  <div class="eyebrow">
+    <span class="fa">گالری حضوری و آنلاین | ایران، هزار رنگ</span>
+    <span class="en">In-Person & Online Gallery | Iran, A Thousand Colors</span>
+  </div>
+
+  <h1>
+    <span class="fa">سمنان؛ سرزمین کاروانسراها و فرهنگ کهن</span>
+    <span class="en">Semnan: Land of Caravanserais and Ancient Culture</span>
+  </h1>
+
+  <p class="slogan">
+    <span class="fa">سمنان؛ روایتی از زندگی در مرز کویر، کوهستان و جنگل</span>
+    <span class="en">Semnan: Life Between Desert, Mountains, and Forests</span>
+  </p>
+
+  <p class="subtitle">
+    <span class="fa">سفری تصویری میان پوشش زنان، فرهنگ عشایری، روستاها، بناهای تاریخی و طعم‌های محلی استان سمنان</span>
+    <span class="en">A visual journey through women's dress, nomadic culture, villages, historic landmarks, and local flavors of Semnan Province.</span>
+  </p>
+</header>
+
+<nav>
+  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+  <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+  <a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
+  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+  <a href="#food"><span class="fa">خوراکی‌ها</span><span class="en">Local Food</span></a>
+  <a href="#products"><span class="fa">محصولات بومی</span><span class="en">Local Products</span></a>
+  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
+
+<main>
+
+<section id="art">
+  <h2>
+    <span class="fa">۱. اثر هنری | روایت یک سرزمین</span>
+    <span class="en">1. The Artwork | A Region's Story</span>
+  </h2>
+
+  <p>
+    <span class="fa">این اثر، برداشتی هنری از تنوع فرهنگی سمنان است؛ سرزمینی که در آن دشت‌های کویری، کوهستان، جنگل، مسیرهای کاروانی و سنت‌های بومی در کنار هم قرار می‌گیرند. رنگ‌ها و نقش‌های تصویر، پنجره‌ای به خاطره‌های فرهنگی و زندگی مردم این منطقه هستند.</span>
+    <span class="en">This artwork offers an artistic interpretation of Semnan's cultural diversity, where desert plains, mountains, forests, caravan routes, and local traditions meet. Its colors and patterns open a window onto the region's cultural memory and everyday life.</span>
+  </p>
+
+  <img class="hero-art" src="semnan.png" alt="اثر هنری سمنان از مجموعه ایران، هزار رنگ">
+
+  <p class="caption">
+    <span class="fa">اثر هنری سمنان از مجموعهٔ «ایران، هزار رنگ»</span>
+    <span class="en">Semnan artwork from the “Iran, A Thousand Colors” collection</span>
+  </p>
+
+  <div class="quote">
+    <span class="fa">«از رنگ‌های کویر تا نقش‌های پوشش بومی؛ هر گوشهٔ سمنان قصه‌ای برای روایت دارد.»</span>
+    <span class="en">“From the colors of the desert to the patterns of local dress, every corner of Semnan has a story to tell.”</span>
+  </div>
+
+  <p class="small">
+    <span class="fa">این تصویر، بازخوانی هنری پوشش محلی است و نباید آن را بازسازی دقیق یک لباس واحد دانست.</span>
+    <span class="en">This image is an artistic interpretation of local dress, not an exact reconstruction of one specific outfit.</span>
+  </p>
+</section>
+
+<section id="clothing">
+  <h2>
+    <span class="fa">۲. پوشش زنان | رنگ، نقش و هویت</span>
+    <span class="en">2. Women's Dress | Color, Pattern, and Identity</span>
+  </h2>
+
+  <p>
+    <span class="fa">پوشش زنان در استان سمنان با توجه به محل زندگی، شیوهٔ معیشت، سنت‌های خانوادگی و دورهٔ تاریخی تفاوت داشته است. در میان گروه‌های بومی و عشایری منطقه، پوشاک و شیوهٔ آراستن سر و لباس می‌تواند نشانه‌ای از هویت محلی باشد. یکی از نمونه‌های شناخته‌شده، پوشاک سنتی زنان سنگسری در محدودهٔ مهدی‌شهر است.</span>
+    <span class="en">Women's dress in Semnan Province has varied according to place of residence, livelihood, family traditions, and historical period. Among the region's local and nomadic communities, clothing and head coverings can express local identity. One recognized example is the traditional dress of Sangsari women around Mahdishahr.</span>
+  </p>
+
+  <img class="label-art" src="semnan_leibel.png" alt="لیبل تصویری پوشش زنان و فرهنگ سمنان">
+
+  <p class="caption">
+    <span class="fa">لیبل اختصاصی سمنان؛ راهنمای تصویری پوشش، جاذبه‌ها و خوراک محلی</span>
+    <span class="en">Semnan exhibition label: a visual guide to dress, landmarks, and local food</span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">پوشش زنان سنگسری</span><span class="en">Sangsari Women's Dress</span></h3>
+      <p>
+        <span class="fa">پوشاک سنتی زنان سنگسری از اجزای گوناگونی تشکیل می‌شود. نام‌هایی مانند کژین‌شوی و مِکنِه در توصیف این پوشش دیده می‌شوند. شکل و جزئیات لباس ممکن است بر اساس کاربرد و سنت محلی تفاوت داشته باشد.</span>
+        <span class="en">Traditional Sangsari women's dress includes several components. Names such as kejin-shoy and mekneh appear in descriptions of this clothing. Details can vary according to local customs and use.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">پوشش سر و تزئینات</span><span class="en">Head Coverings and Adornments</span></h3>
+      <p>
+        <span class="fa">شال‌ها، پوشش‌های سر و جزئیات تزئینی بخشی از شیوهٔ پوشش در جوامع مختلف منطقه بوده‌اند. برای نسبت‌دادن هر شکل یا رنگ به یک لباس مشخص، باید به مستندات همان جامعهٔ محلی رجوع کرد.</span>
+        <span class="en">Scarves, head coverings, and decorative details have formed part of dress in different communities across the region. Specific garments and colors should be identified using documentation from the relevant local community.</span>
+      </p>
+    </article>
+  </div>
+
+  <p class="small">
+    <span class="fa">لباس نمایش‌داده‌شده در اثر هنری، الهام‌گرفته از پوشش عشایری سمنان است؛ نه ادعای بازسازی دقیق پوشاک سنگسری.</span>
+    <span class="en">The outfit in the artwork is inspired by Semnan's nomadic dress; it is not presented as an exact reconstruction of Sangsari clothing.</span>
+  </p>
+</section>
+
+<section id="villages">
+  <h2>
+    <span class="fa">۳. روستاها و زندگی محلی</span>
+    <span class="en">3. Villages and Local Life</span>
+  </h2>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">شهمیرزاد</span><span class="en">Shahmirzad</span></h3>
+      <p>
+        <span class="fa">شهمیرزاد در دامنه‌های البرز به باغ‌ها، آب‌وهوای خنک‌تر و گردوی خود شناخته می‌شود و چهره‌ای متفاوت از بخش‌های کویری استان دارد.</span>
+        <span class="en">Set along the Alborz foothills, Shahmirzad is known for its orchards, cooler climate, and walnuts, offering a contrast to the province's desert areas.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">مهدی‌شهر و سنگسر</span><span class="en">Mahdishahr and Sangsar</span></h3>
+      <p>
+        <span class="fa">این ناحیه با فرهنگ عشایری سنگسری، سنت‌های دامداری و پوشاک بومی پیوند دارد. زندگی کوچ‌نشینی در شکل‌گیری بخشی از میراث فرهنگی منطقه نقش داشته است.</span>
+        <span class="en">This area is associated with Sangsari nomadic culture, pastoral traditions, and local dress. Nomadic life has shaped part of the region's cultural heritage.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">قلعه‌بالا</span><span class="en">Qaleh Bala</span></h3>
+      <p>
+        <span class="fa">روستای قلعه‌بالا در نزدیکی منطقهٔ حفاظت‌شدهٔ توران قرار دارد و معماری روستایی و چشم‌اندازهای پیرامون آن بخشی از جاذبه‌های شرق استان است.</span>
+        <span class="en">Qaleh Bala lies near the Touran protected area. Its village architecture and surrounding landscapes are among the attractions of eastern Semnan.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">شاهرود و پیرامون آن</span><span class="en">Shahroud and Its Surroundings</span></h3>
+      <p>
+        <span class="fa">در پیرامون شاهرود، چشم‌اندازهای متنوعی از دشت و باغ تا نواحی کوهستانی و جنگلی دیده می‌شود. محصولات کشاورزی و زندگی روستایی نیز بخشی از هویت این ناحیه‌اند.</span>
+        <span class="en">The surroundings of Shahroud range from plains and orchards to mountainous and forested areas. Agricultural products and rural life are also part of the area's identity.</span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="history">
+  <h2>
+    <span class="fa">۴. تاریخ و طبیعت | از کاروانسرا تا جنگل</span>
+    <span class="en">4. History and Nature | From Caravanserais to Forests</span>
+  </h2>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">دروازهٔ ارگ سمنان</span><span class="en">Semnan Arg Gate</span></h3>
+      <p>
+        <span class="fa">دروازهٔ تاریخی ارگ از نشانه‌های معماری شهر سمنان است و با تزئینات و نمای شاخص خود، بخشی از خاطرهٔ شهری این منطقه را بازتاب می‌دهد.</span>
+        <span class="en">The historic Arg Gate is one of Semnan city's architectural landmarks, reflecting part of the area's urban history through its distinctive facade and decoration.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">مسجد تاریخانهٔ دامغان</span><span class="en">Tarikhaneh Mosque, Damghan</span></h3>
+      <p>
+        <span class="fa">مسجد تاریخانه از بناهای مهم و کهن ایران در دامغان است و در مطالعهٔ معماری دورهٔ آغازین اسلامی جایگاه ویژه‌ای دارد.</span>
+        <span class="en">Tarikhaneh Mosque in Damghan is one of Iran's important early Islamic monuments and holds a notable place in the study of early Islamic architecture.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">مجموعهٔ تاریخی بسطام</span><span class="en">Historic Bastam Complex</span></h3>
+      <p>
+        <span class="fa">بسطام مجموعه‌ای از بناهای تاریخی و مذهبی را در خود جای داده و از مراکز شناخته‌شدهٔ میراث فرهنگی در نزدیکی شاهرود است.</span>
+        <span class="en">Bastam contains a group of historic and religious buildings and is a recognized heritage destination near Shahroud.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">جنگل ابر و دشت کویر</span><span class="en">Cloud Forest and Kavir Desert</span></h3>
+      <p>
+        <span class="fa">تنوع طبیعی استان از نواحی کویری تا ارتفاعات و جنگل‌های مه‌آلود گسترده است. جنگل ابر و چشم‌اندازهای دشت کویر دو نمونه از این تضادهای طبیعی‌اند.</span>
+        <span class="en">The province's landscapes range from desert areas to highlands and misty forests. The Cloud Forest and the Kavir Desert illustrate this natural diversity.</span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="food">
+  <h2>
+    <span class="fa">۵. خوراکی‌ها و طعم‌های محلی</span>
+    <span class="en">5. Local Food and Flavors</span>
+  </h2>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">مانی‌پلو دامغان</span><span class="en">Damghan Mani Polo</span></h3>
+      <p>
+        <span class="fa">مانی‌پلو از غذاهای شناخته‌شدهٔ دامغان است و در معرفی خوراک محلی این شهر جایگاه ویژه‌ای دارد.</span>
+        <span class="en">Mani polo is a well-known dish associated with Damghan and is part of the city's local food traditions.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">چرتمه‌پلو</span><span class="en">Chertemeh Polo</span></h3>
+      <p>
+        <span class="fa">چرتمه‌پلو از غذاهایی است که در معرفی آشپزی سنتی سمنان نام برده می‌شود و بخشی از تنوع خوراک منطقه را نشان می‌دهد.</span>
+        <span class="en">Chertemeh polo is mentioned among traditional foods associated with Semnan and reflects the region's culinary variety.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">نان شیرمال سمنانی</span><span class="en">Semnan Nan Shirmal</span></h3>
+      <p>
+        <span class="fa">نان شیرمال از نان‌های شیرین و محبوب منطقه است که در کنار دیگر نان‌ها و شیرینی‌های محلی، بخشی از خوراک سنتی سمنان را تشکیل می‌دهد.</span>
+        <span class="en">Nan shirmal is a popular sweet bread that, alongside other local breads and pastries, forms part of Semnan's food heritage.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">نان کاک و نان چای</span><span class="en">Nan Kak and Nan Chai</span></h3>
+      <p>
+        <span class="fa">نان کاک، نان چای و دیگر شیرینی‌های محلی در کنار چای، بخشی از پذیرایی و خاطره‌های خوراکی مردم منطقه‌اند.</span>
+        <span class="en">Nan kak, nan chai, and other local sweets served with tea are part of the region's hospitality and food memories.</span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="products">
+  <h2>
+    <span class="fa">۶. محصولات بومی و صنایع‌دستی</span>
+    <span class="en">6. Local Products and Handicrafts</span>
+  </h2>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">پستهٔ دامغان</span><span class="en">Damghan Pistachios</span></h3>
+      <p>
+        <span class="fa">پسته از محصولات شناخته‌شدهٔ دامغان است و در اقتصاد کشاورزی و هویت خوراکی این شهر جایگاه مهمی دارد.</span>
+        <span class="en">Pistachios are a well-known agricultural product of Damghan and an important part of its local food identity.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">گردوی شهمیرزاد</span><span class="en">Shahmirzad Walnuts</span></h3>
+      <p>
+        <span class="fa">باغ‌های گردوی شهمیرزاد از ویژگی‌های شناخته‌شدهٔ این ناحیه‌اند و محصول آن در میان سوغات محلی استان قرار می‌گیرد.</span>
+        <span class="en">Shahmirzad's walnut orchards are a notable feature of the area, and its walnuts are among the province's local products.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">گلیچ‌بافی و دست‌بافته‌ها</span><span class="en">Glich Weaving and Textiles</span></h3>
+      <p>
+        <span class="fa">گلیچ‌بافی و دیگر دست‌بافته‌های بومی، از هنرهایی هستند که مهارت و سلیقهٔ بافندگان محلی را در نقش و بافت پارچه نشان می‌دهند.</span>
+        <span class="en">Glich weaving and other local textiles express the skills and artistic choices of regional weavers through pattern and texture.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">نان، شیرینی و محصولات روستایی</span><span class="en">Breads, Sweets, and Rural Products</span></h3>
+      <p>
+        <span class="fa">نان‌ها و شیرینی‌های محلی، محصولات باغی و فرآورده‌های دامداری، بخشی از تولیدات بومی و سوغات مناطق مختلف استان‌اند.</span>
+        <span class="en">Local breads and sweets, orchard products, and dairy goods are among the regional products and souvenirs of the province.</span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="sources">
+  <h2>
+    <span class="fa">۷. منابع و مطالعهٔ بیشتر</span>
+    <span class="en">7. Sources and Further Reading</span>
+  </h2>
+
+  <p>
+    <span class="fa">برای مطالعهٔ دقیق‌تر دربارهٔ تاریخ، میراث فرهنگی، پوشش بومی و جاذبه‌های استان، می‌توان از منابع گردشگری و فرهنگی زیر شروع کرد.</span>
+    <span class="en">For further information about the province's history, cultural heritage, local dress, and attractions, begin with the following tourism and cultural resources.</span>
+  </p>
+
+  <ul class="source-list">
+    <li>
+      <a href="https://www.visitiran.ir/" target="_blank" rel="noopener noreferrer">Visit Iran – سامانهٔ گردشگری ایران</a>
+    </li>
+    <li>
+      <a href="https://www.irantourism.ir/" target="_blank" rel="noopener noreferrer">Iran Tourism – منابع گردشگری ایران</a>
+    </li>
+    <li>
+      <a href="https://ich.unesco.org/" target="_blank" rel="noopener noreferrer">UNESCO Intangible Cultural Heritage</a>
+    </li>
+  </ul>
+
+  <p class="small">
+    <span class="fa">اطلاعات این صفحه معرفی عمومی منطقه است؛ جزئیات پوشاک محلی باید با منابع تخصصی و مستندات جوامع بومی تطبیق داده شوند.</span>
+    <span class="en">This page provides a general regional introduction. Details of local dress should be checked against specialist sources and documentation from local communities.</span>
+  </p>
+</section>
+
+<a class="back" href="index.html">
+  <span class="fa">بازگشت به گالری مناطق ایران ←</span>
+  <span class="en">← Back to the Regions Gallery</span>
+</a>
+
+</main>
+
+<footer>
+  <p>
+    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+    <span class="en">Iran, A Thousand Colors | A Visual Story of Women's Dress in Iran</span>
+  </p>
+  <p>
+    <span class="fa">هنرمند و خالق آثار: مریم ساعی</span>
+    <span class="en">Artist and Artwork Creator: Maryam Saei</span>
+  </p>
+  <p>
+    <span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span>
+    <span class="en">Website Design and Cultural Research: Marjan Saei</span>
+  </p>
+</footer>
+
+<script>
+const langSwitch = document.getElementById("langSwitch");
+
+langSwitch.addEventListener("click", function () {
+  const isEnglish = document.body.classList.toggle("english");
+
+  document.documentElement.lang = isEnglish ? "en" : "fa";
+  document.documentElement.dir = isEnglish ? "ltr" : "rtl";
+  langSwitch.textContent = isEnglish ? "فارسی" : "English";
+});
+</script>
+</body>
+</html>
