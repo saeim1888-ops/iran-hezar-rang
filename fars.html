@@ -3,137 +3,68 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>فارس | ایران، هزار رنگ</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --paper:#f4ead8;
-  --cream:#fff9ed;
-  --ink:#352e24;
-  --olive:#596344;
-  --rust:#a84f36;
-  --gold:#c49a52;
-  --line:#dfceb0;
-}
+:root{--paper:#f8f0e1;--panel:#fffaf1;--card:#f6eddd;--ink:#352f26;--green:#596548;--rust:#bd4b28;--line:#e5d2b0}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--paper);color:var(--ink);
-  font-family:'Vazirmatn',Tahoma,sans-serif;line-height:2;
-}
-a{color:inherit}
-header{
-  padding:18px 6%;display:flex;align-items:center;
-  justify-content:space-between;gap:15px;flex-wrap:wrap;
-  border-bottom:1px solid var(--line);
-}
-.brand{font-weight:800;color:var(--olive);font-size:20px}
-button{
-  font:inherit;cursor:pointer;border:1px solid var(--olive);
-  border-radius:30px;background:var(--olive);color:white;
-  padding:7px 18px;
-}
-.hero{
-  padding:55px 6% 45px;text-align:center;
-  background:linear-gradient(135deg,#e9d7b6,#f8efdf,#e7d7b7);
-  border-bottom:1px solid var(--line);
-}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif;line-height:2}
+a{color:#235c70}
+header{max-width:1015px;margin:auto;padding:20px 35px 5px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{font-size:18px;font-weight:800;color:var(--green)}
+button{font:inherit;background:var(--panel);border:1px solid #cda66c;border-radius:25px;padding:5px 17px;cursor:pointer}
+.hero,.page-section{max-width:1015px;margin:20px auto;background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:30px 35px}
+.hero{text-align:center;padding-top:35px}
 .eyebrow{color:var(--rust);font-weight:700}
-h1{font-size:clamp(30px,5vw,48px);line-height:1.5;margin:8px 0}
-.hero h2{font-size:clamp(19px,3vw,27px);color:var(--olive);margin:8px 0}
-.hero p{max-width:800px;margin:12px auto}
-nav{
-  display:flex;justify-content:center;gap:10px;flex-wrap:wrap;
-  padding:18px 5%;background:var(--cream);
-  border-bottom:1px solid var(--line);
-}
-nav a{
-  text-decoration:none;border:1px solid var(--line);
-  border-radius:24px;padding:5px 13px;font-size:14px;
-}
-main{max-width:1100px;margin:auto;padding:25px 5% 60px}
-section{
-  margin:30px 0;padding:28px;
-  background:var(--cream);border:1px solid var(--line);
-  border-radius:18px;box-shadow:0 6px 20px #5b47200b;
-  scroll-margin-top:20px;
-}
-h2.section-title{
-  color:var(--olive);font-size:clamp(23px,3vw,30px);
-  border-bottom:2px solid var(--gold);
-  padding-bottom:10px;margin-top:0;
-}
-h3{color:var(--rust);margin-bottom:5px}
-.art-frame{
-  max-width:680px;margin:25px auto 15px;padding:12px;
-  background:#e7d7b9;border:1px solid var(--gold);
-  border-radius:8px;box-shadow:0 8px 25px #47351b20;
-}
-.art-frame img,.label-image img{
-  display:block;width:100%;height:auto;border-radius:4px;
-}
-.caption{text-align:center;color:#756650;font-size:14px}
-.label-image{max-width:650px;margin:25px auto}
-.note{
-  padding:15px 18px;border-right:4px solid var(--gold);
-  background:#f5ead5;border-radius:8px;
-}
-.columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.info-card{padding:17px;border:1px solid var(--line);border-radius:12px}
+h1{color:var(--green);font-size:clamp(27px,4vw,39px);line-height:1.6;margin:7px 0}
+.hero h2{font-size:22px;color:var(--rust);margin:0}
+.hero p{margin:10px auto;max-width:820px}
+nav{max-width:1015px;margin:18px auto;padding:15px 25px;background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+nav a{font-size:14px;text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:5px 12px;color:var(--green)}
+.page-section h2{font-size:clamp(23px,3vw,31px);color:var(--green);border-bottom:1px solid #d9bd8c;padding-bottom:12px;margin:0 0 22px}
+.page-section h3{color:var(--rust);font-size:21px;margin:0 0 12px}
+.page-section p{margin:12px 0 18px}
+.artwork{display:block;width:min(100%,650px);height:auto;margin:25px auto 15px;padding:7px;background:#eee0c7;border:1px solid #d7b982}
+.label-image{display:block;width:min(100%,650px);height:auto;margin:25px auto 12px}
+.caption{text-align:center;font-size:14px;color:#766953}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin:20px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:20px;min-width:0}
+.card h3{margin-bottom:12px}
+.card p:last-child{margin-bottom:0}
+.note{font-size:14px;color:#645843;border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
 ul{padding-right:24px}
-footer{
-  padding:30px 6%;text-align:center;background:#394331;
-  color:#fff4df;
-}
-footer a{color:#f4d49b}
+footer{max-width:1015px;margin:25px auto 0;padding:25px 35px 40px;color:var(--green)}
+footer a{color:var(--green)}
 .en{display:none}
 body.english{direction:ltr}
 body.english .en{display:inline}
 body.english .fa{display:none}
-body.english main,body.english section{text-align:left}
+body.english .page-section,body.english .card{text-align:left}
 body.english ul{padding-left:24px;padding-right:0}
-body.english .note{border-right:0;border-left:4px solid var(--gold)}
-body.english h2.section-title{border-bottom:2px solid var(--gold)}
-@media(max-width:650px){
-  header{justify-content:center;text-align:center}
-  .columns{grid-template-columns:1fr}
-  section{padding:20px 16px}
-  nav a{font-size:12px}
-}
+@media(max-width:800px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero,.page-section,nav,header,footer{margin-left:12px;margin-right:12px}.hero,.page-section{padding:23px 18px}}
+@media(max-width:480px){.cards{grid-template-columns:1fr}header{padding-left:5px;padding-right:5px}.logo{font-size:15px}}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="brand">ایران، هزار رنگ | Iran, A Thousand Colors</div>
-  <button id="languageButton" type="button" onclick="toggleLanguage()">English</button>
+  <div class="logo">ایران، هزار رنگ | Iran, A Thousand Colors</div>
+  <button type="button" onclick="toggleLanguage()" id="langButton">English</button>
 </header>
 
 <div class="hero">
-  <div class="eyebrow">
-    <span class="fa">منطقه ۱۰ از ۲۳ منطقه</span>
-    <span class="en">REGION 10 OF 23</span>
-  </div>
-  <h1>
-    <span class="fa">فارس؛ سرزمین شعر، تاریخ و شکوه</span>
-    <span class="en">Fars: Land of Poetry, History and Grandeur</span>
-  </h1>
-  <h2>
-    <span class="fa">فارس؛ ترانه‌ی رنگ‌ها، روایتِ اصالت</span>
-    <span class="en">Fars — A Song of Colors, a Story of Heritage</span>
-  </h2>
-  <p>
-    <span class="fa">سفری تصویری میان پوشش زنان، فرهنگ قشقایی، بناهای تاریخی، طبیعت و طعم‌های به‌یادماندنی سرزمین فارس.</span>
-    <span class="en">A visual journey through women's dress, Qashqai culture, historic landmarks, nature and the memorable flavors of Fars.</span>
-  </p>
+  <div class="eyebrow"><span class="fa">منطقه ۱۰ از ۲۳ منطقه</span><span class="en">REGION 10 OF 23</span></div>
+  <h1><span class="fa">فارس؛ سرزمین شعر، تاریخ و شکوه</span><span class="en">Fars: Land of Poetry, History and Grandeur</span></h1>
+  <h2><span class="fa">فارس؛ ترانه‌ی رنگ‌ها، روایتِ اصالت</span><span class="en">Fars: A Song of Colors, a Story of Heritage</span></h2>
+  <p><span class="fa">سفری تصویری میان پوشش زنان، فرهنگ قشقایی، روستاها، بناهای تاریخی، طبیعت و طعم‌های به‌یادماندنی سرزمین فارس.</span><span class="en">A visual journey through women's dress, Qashqai culture, villages, historic landmarks, nature and the memorable flavors of Fars.</span></p>
 </div>
 
-<nav aria-label="Page sections">
+<nav>
   <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
   <a href="#dress"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
-  <a href="#regions"><span class="fa">نواحی فارس</span><span class="en">Regions</span></a>
+  <a href="#villages"><span class="fa">نواحی فارس</span><span class="en">Regions</span></a>
   <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
   <a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food & Sweets</span></a>
   <a href="#products"><span class="fa">محصولات محلی</span><span class="en">Local Products</span></a>
@@ -141,223 +72,100 @@ body.english h2.section-title{border-bottom:2px solid var(--gold)}
 </nav>
 
 <main>
-
-<section id="art">
-  <h2 class="section-title">
-    <span class="fa">۱. تصویر فارس؛ روایت یک سرزمین</span>
-    <span class="en">1. Fars in Art: A Land's Story</span>
-  </h2>
-  <p>
-    <span class="fa">در این اثر، پوشش رنگارنگ زن قشقایی در کنار چادر عشایری، کوهستان و نشانه‌هایی از تاریخ فارس قرار گرفته است. رنگ‌ها و نقش‌ها، تصویری هنری از پیوند پوشاک، زندگی و حافظه فرهنگی این سرزمین می‌سازند.</span>
-    <span class="en">This artwork places the colorful dress of a Qashqai woman alongside a nomadic tent, mountains and symbols of Fars's history. Colors and patterns create an artistic portrait of clothing, daily life and cultural memory.</span>
-  </p>
-  <div class="art-frame">
-    <img src="fars.png" alt="اثر هنری پوشش زنان فارس و لباس رنگارنگ قشقایی">
-  </div>
-  <p class="caption">
-    <span class="fa">اثر هنری فارس از مجموعه «ایران، هزار رنگ»</span>
-    <span class="en">The Fars artwork from “Iran, A Thousand Colors”</span>
-  </p>
-  <p>
-    <span class="fa">هر رنگ در لباس و هر نشانه در چشم‌انداز، دریچه‌ای برای شناخت تنوع فرهنگی فارس است. این تصویر اثر هنری مجموعه است؛ توضیحات این صفحه برای معرفی فرهنگی و تاریخی منطقه ارائه شده‌اند.</span>
-    <span class="en">Every color in the clothing and every detail in the landscape offers a window into Fars's cultural diversity. This is the artwork created for the collection; the text below provides cultural and historical context.</span>
-  </p>
+<section class="page-section" id="art">
+<h2><span class="fa">۱. تصویر فارس؛ روایت یک سرزمین</span><span class="en">1. Fars in Art: A Land's Story</span></h2>
+<p><span class="fa">در این اثر، پوشش رنگارنگ زن قشقایی در کنار چادر عشایری، کوهستان و نشانه‌هایی از تاریخ فارس قرار گرفته‌اند. هر نقش و رنگ، بخشی از پیوند مردم این سرزمین با فرهنگ و محیط زندگی‌شان را روایت می‌کند.</span><span class="en">This artwork brings together the colorful dress of a Qashqai woman, a nomadic tent, mountains and symbols of Fars's history. Each color and pattern reflects the connection between local culture and the landscape.</span></p>
+<img class="artwork" src="fars.png" alt="اثر هنری پوشش زنان فارس">
+<p class="caption"><span class="fa">اثر هنری فارس از مجموعه «ایران، هزار رنگ»</span><span class="en">The Fars artwork from “Iran, A Thousand Colors”</span></p>
+<p><span class="fa">این تصویر، اثر هنری مجموعه است؛ توضیحات این صفحه برای معرفی فرهنگی و تاریخی استان فارس ارائه شده‌اند.</span><span class="en">This is the artwork created for the collection. The text on this page provides cultural and historical context about Fars Province.</span></p>
 </section>
 
-<section id="dress">
-  <h2 class="section-title">
-    <span class="fa">۲. پوشش زنان فارس؛ شکوه رنگ و حرکت</span>
-    <span class="en">2. Women's Dress in Fars: Color and Movement</span>
-  </h2>
-  <p>
-    <span class="fa">پوشاک سنتی زنان فارس یک شکل ثابت و یکسان ندارد. نوع لباس با توجه به گروه فرهنگی، محل زندگی، سبک زندگی و مناسبت‌ها متفاوت است. پوشش زنان قشقایی از نمونه‌های شناخته‌شده این تنوع است و در برخی شیوه‌ها، دامن‌های چین‌دار و چندلایه، پیراهن بلند، بالاپوش و سربند یا روسری دیده می‌شود.</span>
-    <span class="en">Traditional women's clothing in Fars is not uniform. Dress varies by cultural group, place of residence, lifestyle and occasion. Qashqai women's clothing is one well-known example, with some styles featuring layered, pleated skirts, long dresses, outer garments and headscarves.</span>
-  </p>
-  <div class="label-image">
-    <img src="fars_leibel.png" alt="لیبل تصویری معرفی پوشش و فرهنگ زنان فارس">
-  </div>
-  <p class="caption">
-    <span class="fa">لیبل اختصاصی فارس؛ راهنمای تصویری پوشش و فرهنگ منطقه</span>
-    <span class="en">Fars exhibition label: a visual guide to regional dress and culture</span>
-  </p>
+<section class="page-section" id="dress">
+<h2><span class="fa">۲. پوشش زنان فارس؛ شکوه رنگ و حرکت</span><span class="en">2. Women's Dress in Fars: Color and Movement</span></h2>
+<p><span class="fa">پوشاک سنتی زنان فارس یکدست و یکسان نیست و با توجه به گروه فرهنگی، محل زندگی، سبک زندگی و مناسبت‌ها تفاوت دارد. پوشش زنان قشقایی از نمونه‌های شناخته‌شده این تنوع است.</span><span class="en">Traditional women's clothing in Fars is not uniform. It varies according to cultural group, place, lifestyle and occasion. Qashqai women's dress is a well-known example of this diversity.</span></p>
+<img class="label-image" src="fars_leibel.png" alt="لیبل تصویری معرفی پوشش زنان فارس">
+<p class="caption"><span class="fa">لیبل اختصاصی فارس؛ راهنمای تصویری پوشش و فرهنگ منطقه</span><span class="en">Fars exhibition label: a visual guide to regional dress and culture</span></p>
 
-  <h3><span class="fa">پوشش زنان قشقایی</span><span class="en">Qashqai Women's Dress</span></h3>
-  <p>
-    <span class="fa">در برخی نمونه‌های پوشاک زنان قشقایی، دامن‌های پرچین و رنگارنگ، پیراهن بلند و روسری یا سربند از اجزای چشمگیر لباس‌اند. رنگ و شیوه دوخت می‌تواند میان خانواده‌ها، نواحی و نسل‌ها تفاوت داشته باشد؛ بنابراین بهتر است هر لباس با توجه به زمینه محلی خودش معرفی شود.</span>
-    <span class="en">In some Qashqai women's dress styles, full colorful skirts, long dresses and headscarves are striking features. Colors and sewing styles may differ across families, local areas and generations, so each garment should be described in its own local context.</span>
-  </p>
+<h3><span class="fa">پوشش زنان قشقایی</span><span class="en">Qashqai Women's Dress</span></h3>
+<p><span class="fa">در برخی نمونه‌های پوشاک زنان قشقایی، دامن‌های پرچین و رنگارنگ، پیراهن بلند و روسری یا سربند از اجزای چشمگیر لباس‌اند. رنگ‌ها، پارچه‌ها و شیوه‌های دوخت ممکن است میان نواحی و نسل‌های مختلف تفاوت داشته باشند.</span><span class="en">Some Qashqai women's dress styles feature full colorful skirts, long dresses and headscarves. Fabrics, colors and sewing styles may differ across local areas and generations.</span></p>
 
-  <h3><span class="fa">تنوع پوشاک در فارس</span><span class="en">Clothing Diversity Across Fars</span></h3>
-  <p>
-    <span class="fa">در استان فارس، پوشاک عشایری و روستایی در کنار پوشش شهری و لباس‌های ویژه مراسم، بخشی از تنوع فرهنگی منطقه را نشان می‌دهد. برای ثبت دقیق نام لباس‌ها، اجزای پوشش و شیوه‌های محلی، استفاده از پژوهش‌های مردم‌شناسی و روایت افراد آگاه محلی اهمیت دارد.</span>
-    <span class="en">Across Fars, nomadic and rural dress, urban clothing and garments worn for ceremonies reflect the region's cultural diversity. Ethnographic research and accounts from knowledgeable local people are important for documenting garment names and local practices accurately.</span>
-  </p>
-  <div class="note">
-    <span class="fa">یادداشت پژوهشی: نسبت‌دادن یک نوع لباس به همه زنان یک منطقه درست نیست؛ پوشش می‌تواند با توجه به زمان، مکان و جامعه محلی تغییر کند.</span>
-    <span class="en">Research note: a single clothing style should not be attributed to all women in a region. Dress can vary by time, place and community.</span>
-  </div>
+<h3><span class="fa">پوشاک عشایری و روستایی</span><span class="en">Nomadic and Rural Clothing</span></h3>
+<p><span class="fa">پوشاک عشایری و روستایی بخشی از هویت فرهنگی فارس است. برای ثبت دقیق نام لباس‌ها و نسبت‌دادن هر نوع پوشش به یک جامعه یا ناحیه مشخص، استفاده از پژوهش‌های مردم‌شناسی و روایت‌های مستند محلی اهمیت دارد.</span><span class="en">Nomadic and rural clothing forms part of Fars's cultural identity. Ethnographic research and documented local accounts are important for identifying garments and associating them with particular communities.</span></p>
 </section>
 
-<section id="regions">
-  <h2 class="section-title">
-    <span class="fa">۳. نواحی فارس؛ تنوع در دل سرزمین</span>
-    <span class="en">3. Regions of Fars: Diversity Across the Land</span>
-  </h2>
-  <p>
-    <span class="fa">استان فارس از شهرها، روستاها، نواحی کوهستانی، دشت‌ها و زیست‌بوم‌های متفاوت تشکیل شده است. هر ناحیه با شیوه زندگی، محصولات محلی، معماری و روایت‌های فرهنگی خود شناخته می‌شود.</span>
-    <span class="en">Fars Province includes cities, villages, mountain areas, plains and varied landscapes. Each area has its own ways of life, local products, architecture and cultural stories.</span>
-  </p>
-  <div class="columns">
-    <div class="info-card">
-      <h3><span class="fa">شیراز</span><span class="en">Shiraz</span></h3>
-      <p><span class="fa">شیراز با باغ‌ها، بناهای تاریخی، شعر و ادبیات، بازارهای سنتی و خوراک‌های محلی شناخته می‌شود. این شهر یکی از کانون‌های مهم فرهنگی فارس است.</span><span class="en">Shiraz is known for its gardens, historic buildings, poetry, traditional markets and local cuisine. It is one of the major cultural centers of Fars.</span></p>
-    </div>
-    <div class="info-card">
-      <h3><span class="fa">مناطق قشقایی</span><span class="en">Qashqai Areas</span></h3>
-      <p><span class="fa">زندگی عشایری قشقایی با کوچ فصلی، دامداری، صنایع‌دستی و مهارت‌های نساجی پیوند دارد. جزئیات زندگی و پوشاک در میان تیره‌ها و مناطق مختلف می‌تواند متفاوت باشد.</span><span class="en">Qashqai nomadic life is connected with seasonal migration, herding, handicrafts and textile skills. Customs and clothing can vary among tribes and local areas.</span></p>
-    </div>
-    <div class="info-card">
-      <h3><span class="fa">آباده</span><span class="en">Abadeh</span></h3>
-      <p><span class="fa">آباده به‌ویژه به هنر منبت‌کاری چوب شناخته می‌شود؛ مهارتی که بخشی از هویت صنایع‌دستی این ناحیه است.</span><span class="en">Abadeh is particularly known for wood carving, a craft that forms part of the area's handicraft identity.</span></p>
-    </div>
-    <div class="info-card">
-      <h3><span class="fa">استهبان</span><span class="en">Estahban</span></h3>
-      <p><span class="fa">انجیر از محصولات شناخته‌شده استهبان است و باغداری در معرفی ظرفیت‌های کشاورزی این منطقه اهمیت دارد.</span><span class="en">Figs are among Estahban's best-known products, and orchards are important to the area's agricultural identity.</span></p>
-    </div>
-  </div>
+<section class="page-section" id="villages">
+<h2><span class="fa">۳. شهرها و نواحی فارس؛ تنوع در دل سرزمین</span><span class="en">3. Cities and Regions of Fars: Diversity Across the Land</span></h2>
+<p><span class="fa">استان فارس از شهرها، روستاها، دشت‌ها و نواحی کوهستانی گوناگون تشکیل شده است. هر ناحیه با محصولات محلی، شیوه زندگی، معماری و روایت‌های فرهنگی خود شناخته می‌شود.</span><span class="en">Fars includes cities, villages, plains and mountain areas. Each region has its own local products, ways of life, architecture and cultural stories.</span></p>
+<div class="cards">
+<div class="card"><h3><span class="fa">شیراز</span><span class="en">Shiraz</span></h3><p><span class="fa">شیراز با باغ‌های تاریخی، شعر و ادبیات، بازارهای سنتی، معماری و خوراک‌های محلی شناخته می‌شود.</span><span class="en">Shiraz is known for historic gardens, poetry, traditional markets, architecture and local cuisine.</span></p></div>
+<div class="card"><h3><span class="fa">مناطق قشقایی</span><span class="en">Qashqai Areas</span></h3><p><span class="fa">فرهنگ قشقایی با کوچ فصلی، دامداری، صنایع‌دستی و مهارت‌های بافندگی پیوند دارد.</span><span class="en">Qashqai culture is connected with seasonal migration, herding, handicrafts and weaving skills.</span></p></div>
+<div class="card"><h3><span class="fa">آباده</span><span class="en">Abadeh</span></h3><p><span class="fa">آباده به هنر منبت‌کاری چوب شناخته می‌شود؛ مهارتی که در صنایع‌دستی منطقه جایگاه مهمی دارد.</span><span class="en">Abadeh is known for woodcarving, an important local handicraft.</span></p></div>
+<div class="card"><h3><span class="fa">استهبان</span><span class="en">Estahban</span></h3><p><span class="fa">انجیر از محصولات شناخته‌شده استهبان است و باغداری بخشی از هویت کشاورزی این ناحیه را شکل می‌دهد.</span><span class="en">Figs are a well-known product of Estahban, where orchards contribute to the local agricultural identity.</span></p></div>
+</div>
 </section>
 
-<section id="history">
-  <h2 class="section-title">
-    <span class="fa">۴. تاریخ، معماری و طبیعت</span>
-    <span class="en">4. History, Architecture and Nature</span>
-  </h2>
-  <h3><span class="fa">تخت جمشید</span><span class="en">Persepolis</span></h3>
-  <p>
-    <span class="fa">تخت جمشید از مهم‌ترین محوطه‌های باستانی ایران و یادگار دوره هخامنشی است. پلکان‌ها، تالارها و نقش‌برجسته‌های آن تصویری از هنر و تشریفات درباری آن دوره ارائه می‌کنند.</span>
-    <span class="en">Persepolis is one of Iran's most important archaeological sites and a monument of the Achaemenid period. Its stairways, halls and reliefs offer a glimpse into the art and ceremonies of that era.</span>
-  </p>
-
-  <h3><span class="fa">پاسارگاد و آرامگاه کوروش</span><span class="en">Pasargadae and the Tomb of Cyrus</span></h3>
-  <p>
-    <span class="fa">پاسارگاد، پایتخت نخستین شاهنشاهی هخامنشی، مجموعه‌ای از آثار تاریخی را در خود جای داده است. آرامگاه کوروش یکی از شناخته‌شده‌ترین بناهای این محوطه است.</span>
-    <span class="en">Pasargadae, the first dynastic capital of the Achaemenid Empire, contains a group of historic monuments. The Tomb of Cyrus is among its best-known structures.</span>
-  </p>
-
-  <h3><span class="fa">نقش رستم</span><span class="en">Naqsh-e Rostam</span></h3>
-  <p>
-    <span class="fa">نقش رستم با آرامگاه‌های صخره‌ای شاهان هخامنشی و نقش‌برجسته‌های تاریخی شناخته می‌شود و پیوندی دیدنی میان تاریخ و چشم‌انداز طبیعی منطقه ایجاد می‌کند.</span>
-    <span class="en">Naqsh-e Rostam is known for its Achaemenid rock-cut royal tombs and historical reliefs, bringing together history and the region's natural landscape.</span>
-  </p>
-
-  <h3><span class="fa">باغ ارم و مجموعه وکیل</span><span class="en">Eram Garden and the Vakil Complex</span></h3>
-  <p>
-    <span class="fa">باغ ارم، بازار وکیل، حمام وکیل و مسجد وکیل از جاذبه‌های شناخته‌شده شیراز هستند. این مجموعه‌ها جلوه‌هایی از باغ‌سازی، معماری شهری و زندگی اجتماعی در دوره‌های مختلف را نشان می‌دهند.</span>
-    <span class="en">Eram Garden, Vakil Bazaar, Vakil Bath and Vakil Mosque are among Shiraz's best-known landmarks. They reflect garden design, urban architecture and social life across different periods.</span>
-  </p>
-
-  <h3><span class="fa">باغ‌ها، کوهستان‌ها و چشم‌اندازهای فارس</span><span class="en">Gardens, Mountains and Landscapes of Fars</span></h3>
-  <p>
-    <span class="fa">از باغ‌های شیراز تا کوهستان‌ها و دشت‌های استان، تنوع جغرافیایی فارس در شیوه‌های کشاورزی، معماری و زندگی محلی بازتاب یافته است.</span>
-    <span class="en">From Shiraz's gardens to the province's mountains and plains, Fars's geographic diversity is reflected in agriculture, architecture and local life.</span>
-  </p>
+<section class="page-section" id="history">
+<h2><span class="fa">۴. تاریخ، معماری و طبیعت</span><span class="en">4. History, Architecture and Nature</span></h2>
+<div class="cards">
+<div class="card"><h3><span class="fa">تخت جمشید</span><span class="en">Persepolis</span></h3><p><span class="fa">از مهم‌ترین محوطه‌های باستانی ایران و یادگار دوره هخامنشی که با تالارها، پلکان‌ها و نقش‌برجسته‌های تاریخی شناخته می‌شود.</span><span class="en">One of Iran's most important archaeological sites, dating to the Achaemenid period and known for its halls, stairways and reliefs.</span></p></div>
+<div class="card"><h3><span class="fa">پاسارگاد</span><span class="en">Pasargadae</span></h3><p><span class="fa">مجموعه‌ای تاریخی از دوره هخامنشی که آرامگاه کوروش از شناخته‌شده‌ترین بناهای آن است.</span><span class="en">A historic Achaemenid site whose best-known monument is the Tomb of Cyrus.</span></p></div>
+<div class="card"><h3><span class="fa">نقش رستم</span><span class="en">Naqsh-e Rostam</span></h3><p><span class="fa">محوطه‌ای تاریخی با آرامگاه‌های صخره‌ای شاهان هخامنشی و نقش‌برجسته‌های باستانی.</span><span class="en">A historic site with Achaemenid rock-cut royal tombs and ancient reliefs.</span></p></div>
+<div class="card"><h3><span class="fa">باغ ارم و مجموعه وکیل</span><span class="en">Eram Garden and Vakil Complex</span></h3><p><span class="fa">از جاذبه‌های شناخته‌شده شیراز که جلوه‌هایی از باغ‌سازی، معماری و زندگی شهری را نشان می‌دهند.</span><span class="en">Well-known Shiraz landmarks reflecting garden design, architecture and urban life.</span></p></div>
+</div>
 </section>
 
-<section id="food">
-  <h2 class="section-title">
-    <span class="fa">۵. طعم‌های اصیل فارس</span>
-    <span class="en">5. The Flavors of Fars</span>
-  </h2>
-  <p>
-    <span class="fa">خوراک‌های محلی فارس بخشی از حافظه خانوادگی و فرهنگ مهمان‌نوازی منطقه‌اند. مواد اولیه و شیوه پخت ممکن است در شهرها و خانواده‌های مختلف تفاوت داشته باشند.</span>
-    <span class="en">Fars's local dishes are part of family memory and the region's hospitality traditions. Ingredients and cooking methods may differ among towns and families.</span>
-  </p>
-  <h3><span class="fa">کلم‌پلو شیرازی</span><span class="en">Shirazi Kalam Polo</span></h3>
-  <p><span class="fa">کلم‌پلو از غذاهای شناخته‌شده شیراز است که معمولاً با برنج، کلم، سبزی‌های معطر و کوفته‌ریزه تهیه می‌شود.</span><span class="en">Kalam polo is a well-known Shirazi dish, commonly made with rice, cabbage, aromatic herbs and small meatballs.</span></p>
-
-  <h3><span class="fa">دوپیازه آلو</span><span class="en">Dopiazeh Aloo</span></h3>
-  <p><span class="fa">این غذای ساده و محبوب با سیب‌زمینی و پیاز تهیه می‌شود و در سفره‌های خانگی شیراز جایگاه دارد.</span><span class="en">This simple, popular dish is made with potatoes and onions and is part of home cooking in Shiraz.</span></p>
-
-  <h3><span class="fa">آش سبزی شیرازی</span><span class="en">Shirazi Ash-e Sabzi</span></h3>
-  <p><span class="fa">آش سبزی از خوراک‌های شناخته‌شده شیراز است و در تهیه آن از سبزی، حبوبات و در برخی دستورها گوشت استفاده می‌شود.</span><span class="en">Ash-e sabzi is a well-known Shirazi soup made with herbs and legumes; some recipes also include meat.</span></p>
-
-  <h3><span class="fa">فالوده شیرازی و مسقطی</span><span class="en">Shirazi Faloodeh and Masghati</span></h3>
-  <p><span class="fa">فالوده شیرازی از خوراکی‌های مشهور این شهر است. مسقطی نیز از شیرینی‌های شناخته‌شده فارس به شمار می‌رود و در طعم‌ها و شکل‌های مختلف تهیه می‌شود.</span><span class="en">Shirazi faloodeh is one of the city's famous treats. Masghati is also a well-known sweet from Fars, prepared in different flavors and forms.</span></p>
-
-  <h3><span class="fa">یوخه و رنگینک</span><span class="en">Yukheh and Ranginak</span></h3>
-  <p><span class="fa">یوخه از شیرینی‌های محلی شناخته‌شده شیراز است. رنگینک نیز در بخش‌هایی از جنوب ایران و فارس، به‌ویژه در نواحی خرماخیز، تهیه می‌شود.</span><span class="en">Yukheh is a traditional sweet associated with Shiraz. Ranginak is prepared in parts of southern Iran and Fars, especially in date-growing areas.</span></p>
+<section class="page-section" id="food">
+<h2><span class="fa">۵. طعم‌های اصیل فارس</span><span class="en">5. The Flavors of Fars</span></h2>
+<p><span class="fa">خوراک‌های محلی بخشی از فرهنگ مهمان‌نوازی فارس هستند. دستور پخت و مواد اولیه ممکن است از خانواده‌ای به خانواده دیگر تفاوت داشته باشند.</span><span class="en">Local dishes are part of Fars's hospitality traditions. Recipes and ingredients may vary from family to family.</span></p>
+<div class="cards">
+<div class="card"><h3><span class="fa">کلم‌پلو شیرازی</span><span class="en">Shirazi Kalam Polo</span></h3><p><span class="fa">غذایی شناخته‌شده با برنج، کلم، سبزی‌های معطر و معمولاً کوفته‌ریزه.</span><span class="en">A well-known dish made with rice, cabbage, aromatic herbs and often small meatballs.</span></p></div>
+<div class="card"><h3><span class="fa">دوپیازه آلو</span><span class="en">Dopiazeh Aloo</span></h3><p><span class="fa">غذایی خانگی و محبوب که با سیب‌زمینی و پیاز تهیه می‌شود.</span><span class="en">A popular home-style dish made with potatoes and onions.</span></p></div>
+<div class="card"><h3><span class="fa">آش سبزی شیرازی</span><span class="en">Shirazi Ash-e Sabzi</span></h3><p><span class="fa">آشی شناخته‌شده که با سبزی و حبوبات تهیه می‌شود و برخی دستورها گوشت هم دارند.</span><span class="en">A traditional soup made with herbs and legumes; some recipes include meat.</span></p></div>
+<div class="card"><h3><span class="fa">فالوده شیرازی</span><span class="en">Shirazi Faloodeh</span></h3><p><span class="fa">یکی از خوراکی‌های مشهور شیراز که معمولاً خنک سرو می‌شود.</span><span class="en">One of Shiraz's most famous chilled desserts.</span></p></div>
+<div class="card"><h3><span class="fa">مسقطی</span><span class="en">Masghati</span></h3><p><span class="fa">شیرینی‌ای ژله‌مانند که در طعم‌ها و شکل‌های مختلف تهیه می‌شود.</span><span class="en">A jelly-like sweet prepared in different flavors and forms.</span></p></div>
+<div class="card"><h3><span class="fa">یوخه و رنگینک</span><span class="en">Yukheh and Ranginak</span></h3><p><span class="fa">از شیرینی‌های سنتی شناخته‌شده در شیراز و بخش‌هایی از جنوب فارس.</span><span class="en">Traditional sweets associated with Shiraz and parts of southern Fars.</span></p></div>
+</div>
 </section>
 
-<section id="products">
-  <h2 class="section-title">
-    <span class="fa">۶. محصولات محلی و صنایع‌دستی</span>
-    <span class="en">6. Local Products and Handicrafts</span>
-  </h2>
-  <h3><span class="fa">استهبان؛ انجیر</span><span class="en">Estahban: Figs</span></h3>
-  <p><span class="fa">انجیر از محصولات شناخته‌شده استهبان است و باغداری و فرآوری این محصول بخشی از اقتصاد محلی منطقه را شکل می‌دهد.</span><span class="en">Figs are among Estahban's best-known products, and their cultivation and processing contribute to the local economy.</span></p>
-
-  <h3><span class="fa">خرما و مرکبات</span><span class="en">Dates and Citrus</span></h3>
-  <p><span class="fa">در نواحی گرم‌تر فارس، خرما و مرکبات از محصولات کشاورزی مهم‌اند؛ نوع و میزان تولید با توجه به اقلیم و محدوده جغرافیایی تفاوت دارد.</span><span class="en">In warmer parts of Fars, dates and citrus are important crops; varieties and production differ by climate and location.</span></p>
-
-  <h3><span class="fa">فرش و گبه قشقایی</span><span class="en">Qashqai Carpets and Gabbeh</span></h3>
-  <p><span class="fa">فرش و گبه قشقایی با نقش‌ها و رنگ‌های متنوع، از جلوه‌های شناخته‌شده هنرهای نساجی عشایری‌اند. نقش‌ها و ترکیب رنگ‌ها می‌توانند بازتابی از سلیقه، تجربه و سنت‌های بافندگان باشند.</span><span class="en">Qashqai carpets and gabbeh rugs are known for their varied patterns and colors. Their designs can reflect the tastes, experiences and traditions of their weavers.</span></p>
-
-  <h3><span class="fa">منبت آباده و خاتم شیراز</span><span class="en">Abadeh Woodcarving and Shiraz Khatam</span></h3>
-  <p><span class="fa">منبت‌کاری چوب در آباده و هنر خاتم‌کاری در شیراز از صنایع‌دستی شاخص منطقه‌اند. این مهارت‌ها با دقت، ظرافت و انتقال تجربه از نسلی به نسل دیگر پیوند دارند.</span><span class="en">Woodcarving in Abadeh and khatam inlay in Shiraz are notable regional crafts. These skills depend on precision, artistry and the transmission of knowledge across generations.</span></p>
+<section class="page-section" id="products">
+<h2><span class="fa">۶. محصولات محلی و صنایع‌دستی</span><span class="en">6. Local Products and Handicrafts</span></h2>
+<div class="cards">
+<div class="card"><h3><span class="fa">انجیر استهبان</span><span class="en">Estahban Figs</span></h3><p><span class="fa">انجیر از محصولات شناخته‌شده این ناحیه و بخشی از ظرفیت باغداری استان است.</span><span class="en">Figs are a well-known product and part of the area's orchard economy.</span></p></div>
+<div class="card"><h3><span class="fa">خرما و مرکبات</span><span class="en">Dates and Citrus</span></h3><p><span class="fa">در نواحی گرم‌تر فارس، خرما و مرکبات از محصولات کشاورزی مهم‌اند.</span><span class="en">Dates and citrus are important crops in warmer parts of Fars.</span></p></div>
+<div class="card"><h3><span class="fa">فرش و گبه قشقایی</span><span class="en">Qashqai Carpets and Gabbeh</span></h3><p><span class="fa">نقش‌ها و رنگ‌های متنوع فرش و گبه، جلوه‌ای از هنر نساجی عشایری‌اند.</span><span class="en">The varied patterns and colors of Qashqai carpets and gabbeh reflect nomadic textile arts.</span></p></div>
+<div class="card"><h3><span class="fa">منبت آباده و خاتم شیراز</span><span class="en">Abadeh Woodcarving and Shiraz Khatam</span></h3><p><span class="fa">منبت‌کاری چوب در آباده و خاتم‌کاری در شیراز از صنایع‌دستی شناخته‌شده منطقه‌اند.</span><span class="en">Abadeh woodcarving and Shiraz khatam inlay are well-known regional crafts.</span></p></div>
+</div>
 </section>
 
-<section id="sources">
-  <h2 class="section-title">
-    <span class="fa">۷. منابع و مطالعه بیشتر</span>
-    <span class="en">7. Sources and Further Reading</span>
-  </h2>
-  <p>
-    <span class="fa">منابع زیر نقطه شروعی برای شناخت تاریخ، میراث فرهنگی و جاذبه‌های فارس هستند. برای جزئیات پوشاک محلی، بهتر است در نسخه نهایی منابع تخصصی مردم‌شناسی و روایت‌های مستند محلی نیز افزوده شوند.</span>
-    <span class="en">The following resources are starting points for exploring Fars's history, cultural heritage and landmarks. The final page should also include specialist ethnographic references and documented local accounts about traditional clothing.</span>
-  </p>
-  <ul>
-    <li><a href="https://whc.unesco.org/en/list/114/" target="_blank" rel="noopener">UNESCO — Persepolis</a> <span class="fa">؛ اطلاعات میراث جهانی تخت جمشید.</span></li>
-    <li><a href="https://whc.unesco.org/" target="_blank" rel="noopener">UNESCO World Heritage Centre</a> <span class="fa">؛ پژوهش درباره میراث تاریخی و حفاظت از آثار.</span></li>
-    <li><a href="https://ich.unesco.org/" target="_blank" rel="noopener">UNESCO Intangible Cultural Heritage</a> <span class="fa">؛ سنت‌ها، مهارت‌ها و میراث زنده جوامع.</span></li>
-    <li><a href="https://www.visitiran.ir/" target="_blank" rel="noopener">Visit Iran</a> <span class="fa">؛ معرفی جاذبه‌های گردشگری و فرهنگی ایران.</span></li>
-    <li><a href="https://www.iranicaonline.org/" target="_blank" rel="noopener">Encyclopaedia Iranica</a> <span class="fa">؛ مدخل‌های پژوهشی درباره تاریخ و فرهنگ ایران.</span></li>
-  </ul>
-  <div class="note">
-    <span class="fa">این فهرست نقطه شروع پژوهش است و به معنی تأیید تک‌تک جزئیات صفحه از سوی این منابع نیست. برای نسبت‌دادن یک نوع پوشش به گروه یا ناحیه‌ای مشخص، منبع تخصصی جداگانه لازم است.</span>
-    <span class="en">These links are starting points for research and do not imply that each source verifies every detail on this page. Attributing a clothing style to a specific community or area requires a dedicated reference.</span>
-  </div>
+<section class="page-section" id="sources">
+<h2><span class="fa">۷. منابع و مطالعه بیشتر</span><span class="en">7. Sources and Further Reading</span></h2>
+<p><span class="fa">این منابع نقطه شروعی برای شناخت تاریخ و میراث فرهنگی فارس هستند. برای جزئیات دقیق پوشاک محلی، بهتر است منابع مردم‌شناسی تخصصی و روایت‌های مستند محلی نیز بررسی شوند.</span><span class="en">These resources are starting points for exploring Fars's history and cultural heritage. Specialist ethnographic sources and documented local accounts should also be consulted for detailed clothing information.</span></p>
+<ul>
+<li><a href="https://whc.unesco.org/en/list/114/" target="_blank" rel="noopener">UNESCO — Persepolis</a> <span class="fa">؛ اطلاعات تخت جمشید</span></li>
+<li><a href="https://whc.unesco.org/" target="_blank" rel="noopener">UNESCO World Heritage Centre</a></li>
+<li><a href="https://ich.unesco.org/" target="_blank" rel="noopener">UNESCO Intangible Cultural Heritage</a></li>
+<li><a href="https://www.visitiran.ir/" target="_blank" rel="noopener">Visit Iran</a></li>
+<li><a href="https://www.iranicaonline.org/" target="_blank" rel="noopener">Encyclopaedia Iranica</a></li>
+</ul>
+<p class="note"><span class="fa">ذکر این منابع به معنی تأیید تک‌تک جزئیات صفحه از سوی آن‌ها نیست؛ برای نسبت‌دادن پوشش مشخص به یک گروه محلی، منبع تخصصی جداگانه لازم است.</span><span class="en">Listing these resources does not mean they verify every detail on this page. Specific clothing attributions require dedicated references.</span></p>
 </section>
-
 </main>
 
 <footer>
-  <p><strong>ایران، هزار رنگ | Iran, A Thousand Colors</strong></p>
-  <p>
-    <span class="fa">روایت تصویری پوشش زنان ایران</span>
-    <span class="en">A visual story of women's dress in Iran</span>
-  </p>
-  <p>
-    <span class="fa">هنرمند: مریم ساعی | طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span>
-    <span class="en">Artist: Maryam Saei | Website design and cultural research: Marjan Saei</span>
-  </p>
-  <p>
-    <a href="index.html">
-      <span class="fa">← بازگشت به گالری «ایران، هزار رنگ»</span>
-      <span class="en">← Back to the “Iran, A Thousand Colors” gallery</span>
-    </a>
-  </p>
+<p><strong>ایران، هزار رنگ | Iran, A Thousand Colors</strong></p>
+<p><span class="fa">روایت تصویری پوشش زنان ایران</span><span class="en">A visual story of women's dress in Iran</span></p>
+<p><span class="fa">هنرمند: مریم ساعی | طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span><span class="en">Artist: Maryam Saei | Website design and cultural research: Marjan Saei</span></p>
+<p><a href="index.html"><span class="fa">← بازگشت به گالری مناطق ایران</span><span class="en">← Back to the Regions Gallery</span></a></p>
 </footer>
 
 <script>
 function toggleLanguage(){
-  const english = !document.body.classList.contains('english');
-  document.body.classList.toggle('english', english);
-  document.documentElement.lang = english ? 'en' : 'fa';
-  document.documentElement.dir = english ? 'ltr' : 'rtl';
-  document.getElementById('languageButton').textContent =
-    english ? 'فارسی' : 'English';
+ const english=!document.body.classList.contains('english');
+ document.body.classList.toggle('english',english);
+ document.documentElement.lang=english?'en':'fa';
+ document.documentElement.dir=english?'ltr':'rtl';
+ document.getElementById('langButton').textContent=english?'فارسی':'English';
 }
 </script>
-
 </body>
 </html>
