@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="بوشهر؛ روایت تصویری پوشش زنان، روستاها، تاریخ، معماری، خوراک و صنایع‌دستی در نمایشگاه ایران، هزار رنگ.">
+<title>بوشهر | ایران، هزار رنگ</title>
+
+<style>
+:root {
+  --cream:#f8f1e3;
+  --paper:#fffaf0;
+  --olive:#596447;
+  --dark:#292b25;
+  --gold:#b08b48;
+  --rust:#b94e27;
+  --teal:#245b60;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:var(--cream);
+  color:var(--dark);
+  font-family:Tahoma,Arial,sans-serif;
+  line-height:2.1;
+}
+a { color:var(--teal); }
+.topline {
+  height:5px;
+  background:linear-gradient(90deg,var(--rust),var(--gold),var(--teal),var(--olive));
+}
+header {
+  text-align:center;
+  padding:48px 20px 34px;
+  border-bottom:1px solid #d9c8a5;
+  background:var(--paper);
+}
+.eyebrow { color:var(--rust); font-size:14px; }
+h1 {
+  color:var(--olive);
+  font-size:clamp(30px,5vw,48px);
+  line-height:1.6;
+  margin:12px 0;
+}
+.slogan {
+  color:var(--rust);
+  font-size:clamp(18px,3vw,24px);
+  font-weight:bold;
+  margin:8px 0;
+}
+.subtitle {
+  color:#696455;
+  margin:8px auto;
+  max-width:700px;
+}
+nav {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  padding:16px;
+  background:#eee4d1;
+}
+nav a {
+  text-decoration:none;
+  padding:6px 13px;
+  border:1px solid #d3c09a;
+  border-radius:30px;
+  font-size:13px;
+}
+.lang-switch {
+  position:fixed;
+  z-index:10;
+  top:12px;
+  left:12px;
+  border:1px solid var(--gold);
+  border-radius:30px;
+  background:var(--paper);
+  color:var(--olive);
+  padding:8px 14px;
+  font-weight:bold;
+  cursor:pointer;
+}
+main {
+  max-width:1050px;
+  margin:auto;
+  padding:24px 18px 60px;
+}
+section {
+  background:var(--paper);
+  border:1px solid #e3d5b9;
+  border-radius:15px;
+  padding:clamp(18px,4vw,35px);
+  margin:25px 0;
+  box-shadow:0 5px 20px #65502a0a;
+}
+h2 {
+  color:var(--olive);
+  font-size:clamp(22px,3vw,29px);
+  border-bottom:1px solid #d9c8a5;
+  padding-bottom:10px;
+  margin-top:0;
+}
+h3 { color:var(--rust); font-size:19px; }
+.hero-art {
+  display:block;
+  width:min(100%,690px);
+  height:auto;
+  margin:18px auto;
+  border:6px solid #fffaf0;
+  outline:1px solid #d7c398;
+}
+.caption {
+  text-align:center;
+  color:#6b6657;
+  font-size:13px;
+  margin:14px auto;
+}
+.label-art {
+  display:block;
+  width:min(100%,470px);
+  height:auto;
+  margin:22px auto 10px;
+  border:1px solid #ddc99e;
+}
+.quote {
+  border-right:4px solid var(--gold);
+  padding:12px 18px;
+  background:#f3ead7;
+  color:var(--olive);
+  font-size:18px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.tile {
+  background:#f6eedf;
+  border:1px solid #e3d4b7;
+  border-radius:12px;
+  padding:17px;
+}
+.tile h3 { margin-top:0; }
+.small { font-size:13px; color:#6b6657; }
+ul { padding-right:22px; }
+li { margin:7px 0; }
+.source-list li { overflow-wrap:anywhere; }
+footer {
+  text-align:center;
+  padding:28px 16px;
+  background:var(--olive);
+  color:#fff8e9;
+}
+footer a { color:#ffdf9e; }
+.back {
+  display:inline-block;
+  margin-top:18px;
+  color:var(--olive);
+}
+body.english {
+  direction:ltr;
+  font-family:Arial,Tahoma,sans-serif;
+}
+body.english nav { direction:ltr; }
+body.english ul {
+  padding-left:22px;
+  padding-right:0;
+}
+body.english .quote {
+  border-right:0;
+  border-left:4px solid var(--gold);
+}
+body:not(.english) .en { display:none!important; }
+body.english .fa { display:none!important; }
+
+@media(max-width:600px) {
+  header { padding-top:45px; }
+  nav { gap:6px; }
+  nav a { font-size:12px; }
+}
+</style>
+</head>
+
+<body>
+<button class="lang-switch" id="langSwitch" type="button">English</button>
+<div class="topline"></div>
+
+<header>
+  <div class="eyebrow">
+    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+    <span class="en">Iran, A Thousand Colors | A Visual Story of Women's Dress in Iran</span>
+  </div>
+
+  <h1>
+    <span class="fa">بوشهر؛ نگین نیلگون خلیج فارس</span>
+    <span class="en">Bushehr: The Blue Jewel of the Persian Gulf</span>
+  </h1>
+
+  <p class="slogan">
+    <span class="fa">«بوشهر؛ نغمه‌ی دریا، رنگِ زندگی»</span>
+    <span class="en">“Bushehr: The Song of the Sea, the Colors of Life”</span>
+  </p>
+
+  <p class="subtitle">
+    <span class="fa">سفری تصویری میان پوشش زنان جنوب، خانه‌های تاریخی، بندرهای کهن، لنج‌ها، خوراک‌های دریایی و شیرینی‌های محلی</span>
+    <span class="en">A visual journey through southern women's dress, historic houses, ancient ports, traditional boats, seafood, and local sweets.</span>
+  </p>
+</header>
+
+<nav>
+  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+  <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+  <a href="#villages"><span class="fa">شهرها و روستاها</span><span class="en">Towns & Villages</span></a>
+  <a href="#history"><span class="fa">تاریخ و معماری</span><span class="en">History & Architecture</span></a>
+  <a href="#food"><span class="fa">غذا و شیرینی</span><span class="en">Food & Sweets</span></a>
+  <a href="#products"><span class="fa">سوغات و صنایع‌دستی</span><span class="en">Souvenirs & Crafts</span></a>
+  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
+
+<main>
+
+<section id="art">
+  <h2>
+    <span class="fa">۱. بوشهر در هنر؛ روایت دریا و زندگی</span>
+    <span class="en">1. Bushehr in Art: Stories of the Sea</span>
+  </h2>
+
+  <p>
+    <span class="fa">در این اثر، پوشش رنگارنگ زن جنوب در کنار خانه‌های تاریخی، دریا، لنج‌های چوبی، ماهیگیری و خوراک‌های محلی قرار گرفته است. کلاژ تصویری، پیوند زندگی مردم ساحل با دریا، تجارت دریایی و خاطره‌های فرهنگی جنوب ایران را روایت می‌کند.</span>
+    <span class="en">This artwork places a southern woman's colorful dress alongside historic houses, the sea, wooden boats, fishing, and local food. The collage reflects coastal life, maritime trade, and the cultural memories of southern Iran.</span>
+  </p>
+
+  <img class="hero-art" src="bushehr.png" alt="اثر هنری بوشهر از مجموعه ایران هزار رنگ">
+
+  <p class="caption">
+    <span class="fa">اثر تصویری بوشهر از مجموعه «ایران، هزار رنگ»</span>
+    <span class="en">The Bushehr artwork from “Iran, A Thousand Colors”</span>
+  </p>
+
+  <div class="quote">
+    <span class="fa">در بوشهر، دریا تنها یک چشم‌انداز نیست؛ بخشی از پوشش، خوراک، موسیقی و خاطره‌ی مردم است.</span>
+    <span class="en">In Bushehr, the sea is more than a landscape; it is part of clothing, food, music, and collective memory.</span>
+  </div>
+
+  <p class="small">
+    <span class="fa">این تصویر، اثر هنری مجموعه است؛ توضیحات صفحه برای معرفی فرهنگی و تاریخی منطقه ارائه شده‌اند.</span>
+    <span class="en">This is the original artwork in the collection. The text provides cultural and historical context about the region.</span>
+  </p>
+</section>
+
+<section id="clothing">
+  <h2>
+    <span class="fa">۲. پوشش زنان بوشهر؛ رنگ در آفتاب جنوب</span>
+    <span class="en">2. Women's Dress in Bushehr: Colors of the Southern Sun</span>
+  </h2>
+
+  <p>
+    <span class="fa">پوشش سنتی زنان استان بوشهر در همه مناطق یکسان نبوده است. نوع پارچه، رنگ، شیوه‌ی پوشاندن سر و صورت و تزیین لباس، با توجه به محل زندگی، سنت خانوادگی، شرایط آب‌وهوایی و موقعیت استفاده تفاوت داشته است. به همین دلیل، برای نسبت‌دادن یک لباس مشخص به روستایی معین، باید به منابع مردم‌شناختی یا روایت‌های معتبر محلی مراجعه کرد.</span>
+    <span class="en">Traditional women's clothing in Bushehr has varied from one area to another. Fabric, color, head and face coverings, and decorative details have reflected local life, family traditions, climate, and occasion. Attributing a specific outfit to a particular village requires reliable ethnographic sources or local testimony.</span>
+  </p>
+
+  <img class="label-art" src="bushehr_leibel.png" alt="لیبل اطلاعاتی پوشش و فرهنگ بوشهر">
+
+  <p class="caption">
+    <span class="fa">لیبل اختصاصی بوشهر؛ راهنمای تصویری پوشش، تاریخ، خوراک و صنایع‌دستی</span>
+    <span class="en">Bushehr exhibition label: a visual guide to dress, history, food, and handicrafts</span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">لباس‌های رنگارنگ محلی</span><span class="en">Colorful Local Clothing</span></h3>
+      <p>
+        <span class="fa">در برخی پوشش‌های محلی جنوب، پارچه‌های رنگی و نقش‌دار، لباس‌های بلند و تزیینات دوخت دیده می‌شود. جزییات لباس در نواحی مختلف یکسان نیست.</span>
+        <span class="en">Some southern dress traditions feature colorful patterned fabrics, long garments, and decorative stitching. Details vary across local communities.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">برقع و پوشش سر</span><span class="en">Burqa and Head Coverings</span></h3>
+      <p>
+        <span class="fa">برقع در بخش‌هایی از سواحل جنوبی ایران شناخته شده است؛ اما شکل، رنگ و میزان رواج آن از منطقه‌ای به منطقه دیگر تفاوت دارد. نباید هر نوع برقع را بدون سند به تمام زنان بوشهر نسبت داد.</span>
+        <span class="en">The burqa is known in parts of Iran's southern coast, but its form, color, and prevalence vary by locality. One style should not be attributed to all Bushehri women without evidence.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">زیورآلات و تزیینات</span><span class="en">Jewelry and Decoration</span></h3>
+      <p>
+        <span class="fa">زیورآلات و تزیینات پارچه‌ای می‌توانند بخشی از جلوه‌ی پوشاک محلی باشند. برای ثبت نوع و نام هر تزیین، بررسی نمونه‌های مستند اهمیت دارد.</span>
+        <span class="en">Jewelry and textile embellishments may form part of local dress. Documented examples are important when identifying specific ornaments.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">تنوع پوشش در نواحی ساحلی</span><span class="en">Dress Across Coastal Areas</span></h3>
+      <p>
+        <span class="fa">در معرفی پوشش زنان بندرها و آبادی‌های ساحلی، تفاوت‌های محلی باید حفظ شود. تا زمانی که منبع معتبری در دست نباشد، نام روستای لباس تصویرشده را قطعی نمی‌دانیم.</span>
+        <span class="en">Local differences should be preserved when documenting women's dress in ports and coastal settlements. Without a reliable source, the village associated with the pictured outfit remains unconfirmed.</span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="villages">
+  <h2>
+    <span class="fa">۳. شهرها و روستاهای بوشهر؛ زندگی در کنار دریا</span>
+    <span class="en">3. Bushehr's Towns and Villages: Life by the Sea</span>
+  </h2>
+
+  <p>
+    <span class="fa">استان بوشهر از شهرهای بندری و آبادی‌هایی تشکیل شده که زندگی بسیاری از مردم آن‌ها با دریا، صیادی، تجارت، نخلستان و صنایع وابسته به ساحل پیوند دارد. هر منطقه، روایت و ویژگی‌های محلی خود را دارد.</span>
+    <span class="en">Bushehr includes port towns and settlements where fishing, trade, date-palm cultivation, and coastal crafts shape daily life. Each area has its own local history and identity.</span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">بندر بوشهر</span><span class="en">Bushehr Port</span></h3>
+      <p>
+        <span class="fa">بافت تاریخی بوشهر با خانه‌های قدیمی، گذرهای باریک، بالکن‌ها و معماری سازگار با اقلیم گرم و مرطوب شناخته می‌شود. تجارت دریایی در شکل‌گیری هویت این بندر نقش مهمی داشته است.</span>
+        <span class="en">Historic Bushehr is known for old houses, narrow lanes, balconies, and architecture adapted to a hot, humid climate. Maritime trade has played an important role in the port's identity.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">سیراف</span><span class="en">Siraf</span></h3>
+      <p>
+        <span class="fa">سیراف بندری تاریخی در ساحل خلیج فارس است که آثار باستانی آن از اهمیت این منطقه در تاریخ دریانوردی و تجارت خبر می‌دهد.</span>
+        <span class="en">Siraf is a historic port on the Persian Gulf. Its archaeological remains reflect the area's importance in maritime history and trade.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">برازجان و دشتستان</span><span class="en">Borazjan and Dashtestan</span></h3>
+      <p>
+        <span class="fa">دشتستان از نواحی مهم کشاورزی استان است و نخلستان‌ها و تولید خرما در اقتصاد و فرهنگ غذایی آن جایگاه دارند.</span>
+        <span class="en">Dashtestan is an important agricultural area where date palms and date production play a role in the local economy and food culture.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">دلوار</span><span class="en">Delvar</span></h3>
+      <p>
+        <span class="fa">دلوار با تاریخ مبارزات مردم جنوب در برابر نیروهای خارجی و نام رئیس‌علی دلواری پیوند دارد و از نقاط شناخته‌شده‌ی تاریخی استان است.</span>
+        <span class="en">Delvar is associated with southern Iran's resistance to foreign forces and with the historical figure Rais Ali Delvari.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">بندر کنگان و عسلویه</span><span class="en">Kangan and Asaluyeh</span></h3>
+      <p>
+        <span class="fa">این نواحی ساحلی بخشی از تنوع فرهنگی جنوب استان را نشان می‌دهند. زندگی دریایی، صیادی و سنت‌های محلی در هویت آن‌ها نقش دارند.</span>
+        <span class="en">These coastal areas reflect the cultural diversity of southern Bushehr, where maritime life, fishing, and local traditions remain important.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">بحیری و هنر عبابافی</span><span class="en">Bohayri and Aba Weaving</span></h3>
+      <p>
+        <span class="fa">عبابافی از هنرهای سنتی شناخته‌شده در بخش‌هایی از استان بوشهر است. برای معرفی هر روستا به‌عنوان مرکز یک هنر، باید به محل تولید و منابع معتبر توجه کرد.</span>
+        <span class="en">Aba weaving is a recognized traditional craft in parts of Bushehr Province. Reliable sources should be used when identifying a specific village as a craft center.</span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="history">
+  <h2>
+    <span class="fa">۴. آثار تاریخی، معماری و طبیعت</span>
+    <span class="en">4. Historic Sites, Architecture, and Nature</span>
+  </h2>
+
+  <h3><span class="fa">بافت تاریخی بوشهر</span><span class="en">Historic Bushehr</span></h3>
+  <p>
+    <span class="fa">محله‌های قدیمی بوشهر، از جمله دهدشتی، شنبدی، کوتی و بهبهانی، بخشی از میراث معماری این شهر هستند. خانه‌های تاریخی با بالکن‌ها، پنجره‌ها و جزئیات معماری متناسب با آب‌وهوای ساحلی، تصویری از زندگی بندری گذشته ارائه می‌دهند.</span>
+    <span class="en">Old Bushehr's historic neighborhoods, including Dehdashti, Shenbedi, Kuti, and Behbahani, form part of the city's architectural heritage. Their balconies, windows, and climate-adapted details reflect the life of an old port city.</span>
+  </p>
+
+  <h3><span class="fa">عمارت دهدشتی</span><span class="en">Dehdashti Mansion</span></h3>
+  <p>
+    <span class="fa">عمارت دهدشتی از بناهای تاریخی شهر بوشهر است و معماری آن بخشی از میراث خانه‌های تجاری و مسکونی قدیمی شهر را نشان می‌دهد.</span>
+    <span class="en">Dehdashti Mansion is a historic building in Bushehr and represents part of the city's old residential and commercial architectural heritage.</span>
+  </p>
+
+  <h3><span class="fa">عمارت طاهری</span><span class="en">Taheri Mansion</span></h3>
+  <p>
+    <span class="fa">عمارت طاهری از بناهای شناخته‌شده‌ی بافت قدیمی بوشهر است و به‌عنوان موزه مردم‌شناسی نیز معرفی شده است؛ فضایی برای آشنایی با فرهنگ و زندگی مردم منطقه.</span>
+    <span class="en">Taheri Mansion is a notable building in old Bushehr and has also been used as an ethnography museum, introducing visitors to local culture and everyday life.</span>
+  </p>
+
+  <h3><span class="fa">بندر باستانی سیراف</span><span class="en">Ancient Port of Siraf</span></h3>
+  <p>
+    <span class="fa">آثار باستانی سیراف از گذشته‌ی دریانوردی و ارتباطات تجاری در خلیج فارس حکایت دارند. این محوطه برای شناخت تاریخ بندرهای جنوب ایران اهمیت دارد.</span>
+    <span class="en">Siraf's archaeological remains tell the story of maritime activity and trade across the Persian Gulf and are important for understanding southern Iran's historic ports.</span>
+  </p>
+
+  <h3><span class="fa">ریشهر</span><span class="en">Rishahr</span></h3>
+  <p>
+    <span class="fa">ریشهر از محوطه‌های باستانی شناخته‌شده در نزدیکی بوشهر است. پیشینه‌ی تاریخی آن به اهمیت دیرینه‌ی سکونت و ارتباطات دریایی در این بخش از ساحل اشاره دارد.</span>
+    <span class="en">Rishahr is a known archaeological site near Bushehr. Its history points to the long-standing importance of settlement and maritime connections along this coast.</span>
+  </p>
+
+  <h3><span class="fa">لنج‌ها و چشم‌انداز خلیج فارس</span><span class="en">Traditional Boats and the Persian Gulf</span></h3>
+  <p>
+    <span class="fa">لنج‌های چوبی بخشی از هویت دریایی جنوب ایران هستند. دریانوردی، صیادی و جابه‌جایی کالا در شکل‌گیری فرهنگ و زندگی اقتصادی بسیاری از بندرهای منطقه نقش داشته‌اند.</span>
+    <span class="en">Traditional wooden boats are part of southern Iran's maritime identity. Navigation, fishing, and cargo transport have helped shape the culture and economy of many regional ports.</span>
+  </p>
+</section>
+
+<section id="food">
+  <h2>
+    <span class="fa">۵. غذاها و شیرینی‌های محلی بوشهر</span>
+    <span class="en">5. Local Foods and Sweets of Bushehr</span>
+  </h2>
+
+  <p>
+    <span class="fa">خوراک بوشهر از دریا، صیادی، برنج، خرما، سبزی‌های معطر و چاشنی‌های محلی تأثیر گرفته است. دستور پخت و نام بعضی غذاها ممکن است در شهرها و خانواده‌های مختلف تفاوت داشته باشد.</span>
+    <span class="en">Bushehri cuisine draws on seafood, rice, dates, aromatic herbs, and local seasonings. Recipes and names may vary between towns and families.</span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">قلیه‌ماهی</span><span class="en">Ghalieh Mahi</span></h3>
+      <p>
+        <span class="fa">خورشی جنوبی که معمولاً با ماهی، سبزی‌های معطر، تمرهندی و ادویه تهیه می‌شود و از غذاهای شناخته‌شده‌ی سفره‌های ساحلی است.</span>
+        <span class="en">A southern fish stew commonly prepared with aromatic herbs, tamarind, and spices, well known in coastal cuisine.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">قلیه‌میگو</span><span class="en">Ghalieh Meygoo</span></h3>
+      <p>
+        <span class="fa">گونه‌ای از خورش‌های جنوبی با میگو و سبزی‌های معطر است که طعمی ترش و ادویه‌ای دارد.</span>
+        <span class="en">A southern stew made with shrimp and aromatic herbs, often featuring a tangy and spicy flavor.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">میگوپلو</span><span class="en">Shrimp Rice</span></h3>
+      <p>
+        <span class="fa">ترکیب برنج، میگو و ادویه‌های محلی، غذایی دریایی و پرطرفدار در جنوب ایران به وجود می‌آورد.</span>
+        <span class="en">Rice cooked with shrimp and local spices creates a popular seafood dish in southern Iran.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">قیمه بوشهری</span><span class="en">Bushehri Gheimeh</span></h3>
+      <p>
+        <span class="fa">قیمه بوشهری از غذاهای شناخته‌شده‌ی استان است و بافت و روش آماده‌سازی آن با برخی گونه‌های دیگر قیمه تفاوت دارد.</span>
+        <span class="en">Bushehri gheimeh is a well-known local dish whose texture and preparation differ from some other versions of gheimeh.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">رنگینک</span><span class="en">Ranginak</span></h3>
+      <p>
+        <span class="fa">شیرینی خرمایی جنوب ایران که معمولاً با خرما، آرد تفت‌داده و مغزهایی مانند گردو تهیه می‌شود. خرما در فرهنگ غذایی بوشهر جایگاه ویژه‌ای دارد.</span>
+        <span class="en">A southern Iranian date dessert commonly made with dates, toasted flour, and nuts such as walnuts. Dates hold a special place in Bushehr's food culture.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">مسقطی و حلواهای محلی</span><span class="en">Muscaty and Local Halva</span></h3>
+      <p>
+        <span class="fa">مسقطی و انواع حلوا در کنار شیرینی‌های تهیه‌شده با خرما و کنجد، از خوراکی‌هایی هستند که در معرفی سوغات جنوب دیده می‌شوند.</span>
+        <span class="en">Muscaty and different types of halva, along with date- and sesame-based sweets, are among the treats associated with southern Iranian souvenirs.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">دال‌عدس</span><span class="en">Dal Adas</span></h3>
+      <p>
+        <span class="fa">غذایی ساده بر پایه عدس و ادویه است که در برخی سفره‌های جنوب ایران تهیه می‌شود و روش پخت آن می‌تواند محلی باشد.</span>
+        <span class="en">A simple lentil dish seasoned with spices, prepared in some southern Iranian households with local variations.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">خرما، رطب و خارک</span><span class="en">Dates, Rutab, and Khark</span></h3>
+      <p>
+        <span class="fa">خرما در مرحله‌های مختلف رسیدن، از خارک تا رطب و خرمای رسیده، بخشی از خوراک روزمره و شیرینی‌های خانگی منطقه است.</span>
+        <span class="en">Dates at different stages of ripeness, from khark to rutab and fully ripe dates, are part of local food and homemade sweets.</span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="products">
+  <h2>
+    <span class="fa">۶. سوغات، محصولات محلی و صنایع‌دستی</span>
+    <span class="en">6. Souvenirs, Local Products, and Handicrafts</span>
+  </h2>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">خرمای دشتستان</span><span class="en">Dashtestan Dates</span></h3>
+      <p>
+        <span class="fa">خرما از محصولات مهم کشاورزی استان است. رقم‌هایی مانند کبکاب در معرفی خرمای منطقه شناخته شده‌اند و به‌صورت خرما، رطب یا فرآورده‌های خرمایی عرضه می‌شوند.</span>
+        <span class="en">Dates are an important agricultural product of the province. Varieties such as Kabkab are known in the region and are sold fresh, dried, or as date-based products.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">ارده و فرآورده‌های کنجدی</span><span class="en">Tahini and Sesame Products</span></h3>
+      <p>
+        <span class="fa">ارده و فرآورده‌های کنجدی از خوراکی‌های قابل معرفی در کنار شیرینی‌ها و محصولات محلی جنوب هستند.</span>
+        <span class="en">Tahini and sesame products are local food items that can be presented alongside southern sweets and regional specialties.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">حصیربافی و بافته‌های برگ نخل</span><span class="en">Palm-Leaf Weaving</span></h3>
+      <p>
+        <span class="fa">استفاده از برگ نخل برای ساخت وسایل کاربردی و تزیینی، هنری متناسب با محیط نخلستانی و سنت‌های زندگی جنوب است.</span>
+        <span class="en">Palm leaves are used to create practical and decorative objects, reflecting the palm-growing environment and southern traditions.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">عبابافی</span><span class="en">Aba Weaving</span></h3>
+      <p>
+        <span class="fa">عبابافی از هنرهای سنتی مرتبط با بخش‌هایی از استان بوشهر است و مهارت بافندگان و شناخت مواد اولیه در تداوم آن اهمیت دارد.</span>
+        <span class="en">Aba weaving is a traditional craft associated with parts of Bushehr Province, relying on the skills of weavers and knowledge of materials.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">گبه و گلیم</span><span class="en">Gabbeh and Kilim</span></h3>
+      <p>
+        <span class="fa">بافته‌های محلی جنوب، از جمله گبه و گلیم در برخی نواحی، بازتابی از نقش‌مایه‌ها و مهارت‌های سنتی بافندگی هستند.</span>
+        <span class="en">Local southern textiles, including gabbeh and kilim in some areas, reflect traditional weaving skills and patterns.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">لنج‌سازی و فرهنگ دریایی</span><span class="en">Boatbuilding and Maritime Culture</span></h3>
+      <p>
+        <span class="fa">ساخت و نگهداری لنج‌ها بخشی از دانش دریایی جنوب است؛ دانشی که با سفر، صیادی و تجارت در خلیج فارس پیوند دارد.</span>
+        <span class="en">Building and maintaining traditional boats is part of southern maritime knowledge, connected to travel, fishing, and trade in the Persian Gulf.</span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="sources">
+  <h2>
+    <span class="fa">۷. منابع و مطالعه بیشتر</span>
+    <span class="en">7. Sources and Further Reading</span>
+  </h2>
+
+  <p>
+    <span class="fa">منابع زیر برای آشنایی بیشتر با تاریخ، معماری و فرهنگ بوشهر نقطه شروع هستند. برای تعیین دقیق نام روستای مرتبط با یک نوع پوشش، بهتر است از منابع مردم‌شناسی، موزه‌های محلی و روایت‌های مستند استفاده شود.</span>
+    <span class="en">The following resources are starting points for exploring Bushehr's history, architecture, and culture. Identifying the exact village associated with a clothing style requires ethnographic sources, local museums, and documented accounts.</span>
+  </p>
+
+  <ul class="source-list">
+    <li>
+      <a href="https://visitiran.ir/en/attraction/bushehr-witness-historical-evolutions-iran" target="_blank" rel="noopener">
+        Visit Iran — Historic Bushehr
+      </a>
+    </li>
+    <li>
+      <a href="https://visitiran.ir/en/attraction/taheri-mansion-museum-ethnography" target="_blank" rel="noopener">
+        Visit Iran — Taheri Mansion and Ethnography Museum
+      </a>
+    </li>
+    <li>
+      <a href="https://www.toiran.com/en/city-bushehr/historical_sites/عمارت-دهدشتی/5887" target="_blank" rel="noopener">
+        ToIran — Dehdashti Mansion
+      </a>
+    </li>
+    <li>
+      <a href="https://www.persiantrips.travel/" target="_blank" rel="noopener">
+        Persian Trips — Travel and Cultural Information
+      </a>
+    </li>
+  </ul>
+</section>
+
+<a class="back" href="index.html">
+  <span class="fa">← بازگشت به گالری مناطق ایران</span>
+  <span class="en">← Back to the Regions Gallery</span>
+</a>
+
+</main>
+
+<footer>
+  <p>
+    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+    <span class="en">Iran, A Thousand Colors | A Visual Story of Women's Dress in Iran</span>
+  </p>
+  <p>
+    <span class="fa">هنرمند و خالق آثار: مریم ساعی</span>
+    <span class="en">Artist and Artwork Creator: Maryam Saei</span>
+  </p>
+  <p>
+    <span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span>
+    <span class="en">Website Design and Cultural Research: Marjan Saei</span>
+  </p>
+</footer>
+
+<script>
+const langSwitch = document.getElementById("langSwitch");
+
+langSwitch.addEventListener("click", function () {
+  document.body.classList.toggle("english");
+
+  const isEnglish = document.body.classList.contains("english");
+  document.documentElement.lang = isEnglish ? "en" : "fa";
+  document.documentElement.dir = isEnglish ? "ltr" : "rtl";
+  langSwitch.textContent = isEnglish ? "فارسی" : "English";
+});
+</script>
+
+</body>
+</html>
