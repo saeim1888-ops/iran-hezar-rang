@@ -1,1 +1,414 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="مازندران؛ روایت تصویری پوشش زنان، روستاها، تاریخ، طبیعت و خوراک محلی در نمایشگاه ایران، هزار رنگ.">
+<title>مازندران | ایران، هزار رنگ</title>
+
+<style>
+:root {
+  --cream:#f8f1e3;
+  --paper:#fffaf0;
+  --olive:#596447;
+  --dark:#292b25;
+  --gold:#b08b48;
+  --rust:#b94e27;
+  --teal:#245b60;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:var(--cream);
+  color:var(--dark);
+  font-family:Tahoma,Arial,sans-serif;
+  line-height:2.1;
+}
+a { color:var(--teal); }
+.topline {
+  height:5px;
+  background:linear-gradient(90deg,var(--rust),var(--gold),var(--teal),var(--olive));
+}
+header {
+  text-align:center;
+  padding:48px 20px 34px;
+  border-bottom:1px solid #d9c8a5;
+  background:var(--paper);
+}
+.eyebrow { color:var(--rust); font-size:14px; }
+h1 {
+  color:var(--olive);
+  font-size:clamp(30px,5vw,48px);
+  line-height:1.6;
+  margin:12px 0;
+}
+.slogan {
+  color:var(--rust);
+  font-size:clamp(18px,3vw,24px);
+  font-weight:bold;
+  margin:8px 0;
+}
+.subtitle { color:#696455; margin:8px auto; max-width:700px; }
+nav {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  padding:16px;
+  background:#eee4d1;
+}
+nav a {
+  text-decoration:none;
+  padding:6px 13px;
+  border:1px solid #d3c09a;
+  border-radius:30px;
+  font-size:13px;
+}
+.lang-switch {
+  position:fixed;
+  z-index:10;
+  top:12px;
+  left:12px;
+  border:1px solid var(--gold);
+  border-radius:30px;
+  background:var(--paper);
+  color:var(--olive);
+  padding:8px 14px;
+  font-weight:bold;
+  cursor:pointer;
+}
+main { max-width:1050px; margin:auto; padding:24px 18px 60px; }
+section {
+  background:var(--paper);
+  border:1px solid #e3d5b9;
+  border-radius:15px;
+  padding:clamp(18px,4vw,35px);
+  margin:25px 0;
+  box-shadow:0 5px 20px #65502a0a;
+}
+h2 {
+  color:var(--olive);
+  font-size:clamp(22px,3vw,29px);
+  border-bottom:1px solid #d9c8a5;
+  padding-bottom:10px;
+  margin-top:0;
+}
+h3 { color:var(--rust); font-size:19px; }
+.hero-art {
+  display:block;
+  width:min(100%,690px);
+  height:auto;
+  margin:18px auto;
+  border:6px solid #fffaf0;
+  outline:1px solid #d7c398;
+}
+.caption {
+  text-align:center;
+  color:#6b6657;
+  font-size:13px;
+  margin:14px auto;
+}
+.label-art {
+  display:block;
+  width:min(100%,470px);
+  height:auto;
+  margin:22px auto 10px;
+  border:1px solid #ddc99e;
+}
+.quote {
+  border-right:4px solid var(--gold);
+  padding:12px 18px;
+  background:#f3ead7;
+  color:var(--olive);
+  font-size:18px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.tile {
+  background:#f6eedf;
+  border:1px solid #e3d4b7;
+  border-radius:12px;
+  padding:17px;
+}
+.tile h3 { margin-top:0; }
+.small { font-size:13px; color:#6b6657; }
+ul { padding-right:22px; }
+li { margin:7px 0; }
+.source-list li { overflow-wrap:anywhere; }
+footer {
+  text-align:center;
+  padding:28px 16px;
+  background:var(--olive);
+  color:#fff8e9;
+}
+footer a { color:#ffdf9e; }
+.back { display:inline-block; margin-top:18px; color:var(--olive); }
+body.english { direction:ltr; font-family:Arial,Tahoma,sans-serif; }
+body.english nav { direction:ltr; }
+body.english ul { padding-left:22px; padding-right:0; }
+body.english .quote {
+  border-right:0;
+  border-left:4px solid var(--gold);
+}
+body:not(.english) .en { display:none!important; }
+body.english .fa { display:none!important; }
+@media(max-width:600px) {
+  header { padding-top:45px; }
+  nav { gap:6px; }
+  nav a { font-size:12px; }
+}
+</style>
+</head>
+
+<body>
+<button class="lang-switch" id="langSwitch" type="button">English</button>
+<div class="topline"></div>
+
+<header>
+  <div class="eyebrow">
+    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+    <span class="en">Iran, A Thousand Colors | A visual story of women's dress in Iran</span>
+  </div>
+  <h1>
+    <span class="fa">مازندران؛ سرزمین سبز و باران</span>
+    <span class="en">Mazandaran: Land of Green and Rain</span>
+  </h1>
+  <p class="slogan">
+    <span class="fa">«مازندران | سبزپوشِ قصه‌های باران»</span>
+    <span class="en">“Mazandaran | Green-clad Stories of Rain”</span>
+  </p>
+  <p class="subtitle">
+    <span class="fa">سفری تصویری میان پوشش زنان، جنگل‌های هیرکانی، روستاهای سرسبز، میراث تاریخی و طعم‌های شمال ایران</span>
+    <span class="en">A visual journey through women's dress, Hyrcanian forests, green villages, historic heritage, and the flavors of northern Iran.</span>
+  </p>
+</header>
+
+<nav>
+  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+  <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+  <a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
+  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+  <a href="#food"><span class="fa">خوراک محلی</span><span class="en">Local Food</span></a>
+  <a href="#products"><span class="fa">محصولات محلی</span><span class="en">Local Products</span></a>
+  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
+
+<main>
+<section id="art">
+  <h2>
+    <span class="fa">۱. تصویر مازندران؛ روایت یک سرزمین</span>
+    <span class="en">1. Mazandaran in Art: A Land's Story</span>
+  </h2>
+  <p>
+    <span class="fa">در این اثر، پوشش رنگارنگ زن مازندرانی در کنار جنگل، دریا، معماری بومی و نشانه‌هایی از زندگی محلی قرار گرفته است. هر عنصر، بخشی از پیوند مردم این سرزمین با طبیعت و خاطره‌های فرهنگی آن را روایت می‌کند.</span>
+    <span class="en">This artwork brings together colorful women's dress, forests, the sea, local architecture, and elements of everyday life. Each detail reflects the bond between the people and the natural and cultural heritage of the region.</span>
+  </p>
+  <img class="hero-art" src="mazandaran.png" alt="اثر هنری مازندران از مجموعه ایران هزار رنگ">
+  <p class="caption">
+    <span class="fa">اثر تصویری مازندران از مجموعه «ایران، هزار رنگ»</span>
+    <span class="en">The Mazandaran artwork from “Iran, A Thousand Colors”</span>
+  </p>
+  <div class="quote">
+    <span class="fa">از سبزی جنگل تا آبی دریا، هر رنگ مازندران قصه‌ای از زندگی و سرزمین دارد.</span>
+    <span class="en">From the green of the forest to the blue of the sea, every color of Mazandaran tells a story of land and life.</span>
+  </div>
+  <p class="small">
+    <span class="fa">این تصویر، اثر هنری مجموعه است؛ توضیحات این صفحه برای معرفی فرهنگی و تاریخی استان ارائه شده‌اند.</span>
+    <span class="en">This is the original artwork created for the collection. The descriptions provide cultural and historical context about the province.</span>
+  </p>
+</section>
+
+<section id="clothing">
+  <h2>
+    <span class="fa">۲. پوشش زنان مازندران؛ رنگ در حرکت</span>
+    <span class="en">2. Women's Dress in Mazandaran: Color in Motion</span>
+  </h2>
+  <p>
+    <span class="fa">پوشاک سنتی زنان مازندران در نواحی مختلف یکسان نبوده است. رنگ‌های شاد، دامن‌های چین‌دار مانند شَلیته یا چرخی‌شلوار، سربند و روسری، و بالاپوش‌های محلی از ویژگی‌هایی هستند که در توصیف برخی پوشش‌های این منطقه دیده می‌شوند. شکل لباس با توجه به روستا، دوره تاریخی، شیوه زندگی و موقعیت استفاده تفاوت داشته است.</span>
+    <span class="en">Traditional women's clothing in Mazandaran has varied across local areas. Bright colors, pleated skirts such as shaliteh or charkhi-shalvar, headscarves, and local upper garments appear in descriptions of some regional styles. Clothing has varied by village, historical period, lifestyle, and occasion.</span>
+  </p>
+  <img class="label-art" src="mazandaran_leibel.png" alt="لیبل تصویری پوشش زنان و فرهنگ مازندران">
+  <p class="caption">
+    <span class="fa">لیبل اختصاصی مازندران؛ راهنمای تصویری پوشش، جاذبه‌ها و خوراک محلی</span>
+    <span class="en">Mazandaran's exhibition label: a visual guide to clothing, landmarks, and local food</span>
+  </p>
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">شَلیته و چرخی‌شلوار</span><span class="en">Shaliteh and Charkhi-Shalvar</span></h3>
+      <p><span class="fa">دامن‌های چین‌دار و پرحجم از عناصر شناخته‌شده در برخی توصیف‌های پوشاک سنتی زنان مازندران هستند. نام و شکل دقیق لباس می‌تواند در نواحی مختلف تفاوت داشته باشد.</span><span class="en">Pleated, full skirts are recognized elements in descriptions of some traditional women's clothing in Mazandaran. Names and exact styles can vary between local areas.</span></p>
+    </article>
+    <article class="tile">
+      <h3><span class="fa">روسری و سربند</span><span class="en">Headscarves and Headbands</span></h3>
+      <p><span class="fa">پوشش سر بخشی از ترکیب لباس محلی بوده است. رنگ، جنس پارچه و شیوه بستن آن با توجه به سنت‌های محلی و کاربرد لباس تغییر می‌کرد.</span><span class="en">Head coverings formed part of local dress. Their colors, fabrics, and tying styles varied according to local customs and the purpose of the outfit.</span></p>
+    </article>
+    <article class="tile">
+      <h3><span class="fa">بالاپوش و نیم‌تنه</span><span class="en">Upper Garments and Bodices</span></h3>
+      <p><span class="fa">بالاپوش‌های محلی در کنار دامن و پوشش سر، ترکیب کامل لباس را شکل می‌دادند. برای معرفی دقیق هر نوع، توجه به منطقه و مستندات تصویری اهمیت دارد.</span><span class="en">Local upper garments, combined with skirts and head coverings, completed the outfit. Identifying each style accurately requires attention to locality and visual documentation.</span></p>
+    </article>
+    <article class="tile">
+      <h3><span class="fa">تنوع پوشش در روستاها</span><span class="en">Village Dress Traditions</span></h3>
+      <p><span class="fa">در معرفی پوشاک زنان روستاهای مازندران باید تفاوت‌های محلی حفظ شود؛ یک لباس را نمی‌توان بدون مدرک به همه نواحی استان نسبت داد.</span><span class="en">Local differences should be preserved when documenting women's dress in Mazandaran's villages. One style should not be attributed to the entire province without evidence.</span></p>
+    </article>
+  </div>
+</section>
+
+<section id="villages">
+  <h2>
+    <span class="fa">۳. روستاهای مازندران؛ زندگی در آغوش طبیعت</span>
+    <span class="en">3. Mazandaran's Villages: Life Close to Nature</span>
+  </h2>
+  <p>
+    <span class="fa">روستاهای مازندران از جلگه‌های ساحلی تا دامنه‌های جنگلی و کوهستانی گسترده‌اند. معماری بومی، باغداری، کشت برنج و شیوه‌های زندگی محلی، بخشی از روایت فرهنگی این منطقه را شکل می‌دهند.</span>
+    <span class="en">Mazandaran's villages stretch from coastal plains to forested foothills and mountains. Local architecture, orchards, rice cultivation, and everyday traditions form part of the region's cultural story.</span>
+  </p>
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">کندلوس</span><span class="en">Kandelous</span></h3>
+      <p><span class="fa">کندلوس در منطقه کوهستانی کجور قرار دارد و به بافت روستایی و میراث فرهنگی خود شناخته می‌شود. خانه‌ها و چشم‌اندازهای پیرامون، بخشی از هویت این آبادی‌اند.</span><span class="en">Kandelous, in the mountainous Kojur area, is known for its village character and cultural heritage. Its houses and surrounding landscapes are part of its identity.</span></p>
+    </article>
+    <article class="tile">
+      <h3><span class="fa">جواهرده</span><span class="en">Javaherdeh</span></h3>
+      <p><span class="fa">جواهرده در ارتفاعات نزدیک رامسر قرار دارد و با هوای کوهستانی، جنگل و چشم‌اندازهای سرسبز شناخته می‌شود.</span><span class="en">Javaherdeh, in the highlands near Ramsar, is known for its mountain climate, forests, and green landscapes.</span></p>
+    </article>
+    <article class="tile">
+      <h3><span class="fa">روستاهای شالیزاری</span><span class="en">Rice-Growing Villages</span></h3>
+      <p><span class="fa">شالیزارها بخشی مهم از چشم‌انداز روستایی مازندران‌اند. کشت برنج، فصل‌های کار و همکاری خانوادگی در شکل‌گیری زندگی روزمره بسیاری از روستاها نقش دارد.</span><span class="en">Rice fields are an important part of Mazandaran's rural landscape. Rice cultivation, seasonal work, and family cooperation shape everyday life in many villages.</span></p>
+    </article>
+    <article class="tile">
+      <h3><span class="fa">آبادی‌های جنگلی و ساحلی</span><span class="en">Forest and Coastal Settlements</span></h3>
+      <p><span class="fa">نزدیکی به جنگل یا دریا بر شیوه زندگی و فعالیت‌های محلی اثر گذاشته است. روایت هر روستا با توجه به طبیعت، پیشینه و گفته‌های مردم آن کامل‌تر می‌شود.</span><span class="en">Proximity to forests or the sea has influenced local livelihoods. Each village's story is best understood through its landscape, history, and residents' accounts.</span></p>
+    </article>
+  </div>
+</section>
+
+<section id="history">
+  <h2>
+    <span class="fa">۴. تاریخ، معماری و طبیعت</span>
+    <span class="en">4. History, Architecture, and Nature</span>
+  </h2>
+  <h3><span class="fa">باغ عباس‌آباد بهشهر</span><span class="en">Abbasabad Garden, Behshahr</span></h3>
+  <p><span class="fa">باغ تاریخی عباس‌آباد از آثار برجسته دوره صفوی در مازندران است. مجموعه باغ، آب و سازه‌های تاریخی آن نمونه‌ای از پیوند معماری و طبیعت به شمار می‌آید.</span><span class="en">The historic Abbasabad Garden is a major Safavid-era heritage site in Mazandaran. Its garden, water features, and historic structures demonstrate the relationship between architecture and nature.</span></p>
+
+  <h3><span class="fa">باداب سورت</span><span class="en">Badab-e Surt</span></h3>
+  <p><span class="fa">چشمه‌های پلکانی باداب سورت با رنگ‌ها و رسوبات معدنی خود از چشم‌اندازهای طبیعی شاخص استان هستند. شکل‌گیری این پله‌های طبیعی طی فرایندی طولانی در طبیعت رخ داده است.</span><span class="en">The terraced springs of Badab-e Surt are among the province's distinctive natural landscapes, known for their colors and mineral deposits. Their terraces formed through long-term natural processes.</span></p>
+
+  <h3><span class="fa">پل ورسک</span><span class="en">Veresk Bridge</span></h3>
+  <p><span class="fa">پل ورسک در مسیر راه‌آهن شمال ایران و در میان ارتفاعات البرز قرار دارد. این سازه مهندسی به یکی از نشانه‌های شناخته‌شده مسیرهای کوهستانی مازندران تبدیل شده است.</span><span class="en">Veresk Bridge lies along northern Iran's railway route amid the Alborz Mountains. This engineering landmark has become one of the best-known features of Mazandaran's mountain routes.</span></p>
+
+  <h3><span class="fa">جنگل‌های هیرکانی و دریای خزر</span><span class="en">Hyrcanian Forests and the Caspian Sea</span></h3>
+  <p><span class="fa">جنگل‌های هیرکانی، کوهستان و ساحل دریای خزر در کنار هم تنوع طبیعی مازندران را شکل می‌دهند. این چشم‌اندازها بر کشاورزی، خوراک، معماری و زندگی مردم منطقه اثر گذاشته‌اند.</span><span class="en">Hyrcanian forests, mountains, and the Caspian coast together shape Mazandaran's natural diversity. These landscapes influence agriculture, food, architecture, and local life.</span></p>
+</section>
+
+<section id="food">
+  <h2>
+    <span class="fa">۵. طعم‌های محلی مازندران</span>
+    <span class="en">5. Local Flavors of Mazandaran</span>
+  </h2>
+  <p>
+    <span class="fa">خوراک مازندران از محصولات کشاورزی، سبزی‌های محلی، برنج و ماهی تأثیر گرفته است. دستورها و نام غذاها ممکن است از شهری به شهر دیگر و از خانواده‌ای به خانواده دیگر تفاوت داشته باشند.</span>
+    <span class="en">Mazandaran's cuisine draws on local produce, herbs, rice, and fish. Recipes and dish names may vary from town to town and from family to family.</span>
+  </p>
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">کدوپلو</span><span class="en">Pumpkin Rice</span></h3>
+      <p><span class="fa">کدوپلو از غذاهایی است که در برخی سفره‌های محلی مازندران دیده می‌شود. مواد اولیه و روش پخت آن می‌تواند در خانواده‌ها متفاوت باشد.</span><span class="en">Pumpkin rice appears on some local tables in Mazandaran. Ingredients and cooking methods can vary between families.</span></p>
+    </article>
+    <article class="tile">
+      <h3><span class="fa">ماهی محلی</span><span class="en">Local Fish</span></h3>
+      <p><span class="fa">ماهی از خوراک‌های مهم نواحی ساحلی و برخی مناطق داخلی استان است و به روش‌های گوناگون آماده می‌شود.</span><span class="en">Fish is an important food in coastal areas and some inland parts of the province, prepared in a variety of ways.</span></p>
+    </article>
+    <article class="tile">
+      <h3><span class="fa">اکبرجوجه</span><span class="en">Akbar Joojeh</span></h3>
+      <p><span class="fa">اکبرجوجه از غذاهای مشهور مرتبط با مازندران است که در رستوران‌ها و سفره‌های محلی عرضه می‌شود.</span><span class="en">Akbar Joojeh is a well-known dish associated with Mazandaran and served in restaurants and local eateries.</span></p>
+    </article>
+    <article class="tile">
+      <h3><span class="fa">پشت‌زیک</span><span class="en">Poshtzik Sweet</span></h3>
+      <p><span class="fa">پشت‌زیک از شیرینی‌های سنتی شمال ایران است که معمولاً با دانه‌هایی مانند کنجد و مواد شیرین‌کننده تهیه می‌شود.</span><span class="en">Poshtzik is a traditional sweet from northern Iran, commonly made with seeds such as sesame and a sweetener.</span></p>
+    </article>
+  </div>
+</section>
+
+<section id="products">
+  <h2>
+    <span class="fa">۶. محصولات محلی و کشاورزی</span>
+    <span class="en">6. Local Products and Agriculture</span>
+  </h2>
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">برنج</span><span class="en">Rice</span></h3>
+      <p><span class="fa">شالیزارها و کشت برنج از ویژگی‌های مهم کشاورزی مازندران هستند و در اقتصاد و خوراک محلی جایگاه دارند.</span><span class="en">Rice cultivation is a major part of Mazandaran's agriculture and plays an important role in the local economy and cuisine.</span></p>
+    </article>
+    <article class="tile">
+      <h3><span class="fa">مرکبات</span><span class="en">Citrus Fruits</span></h3>
+      <p><span class="fa">پرتقال و دیگر مرکبات از محصولات شناخته‌شده باغ‌های مازندران‌اند و با آب‌وهوای مرطوب منطقه پیوند دارند.</span><span class="en">Oranges and other citrus fruits are well-known products of Mazandaran's orchards and are associated with the region's humid climate.</span></p>
+    </article>
+    <article class="tile">
+      <h3><span class="fa">چای و باغداری</span><span class="en">Tea and Orchards</span></h3>
+      <p><span class="fa">در برخی نواحی استان، باغداری و کشت محصولات متنوع بخشی از فعالیت‌های اقتصادی مردم است. نوع و میزان محصول با توجه به شرایط محلی تفاوت دارد.</span><span class="en">In parts of the province, orchards and diverse crops are important livelihoods. The type and amount of produce vary with local conditions.</span></p>
+    </article>
+    <article class="tile">
+      <h3><span class="fa">صنایع‌دستی</span><span class="en">Handicrafts</span></h3>
+      <p><span class="fa">سفال، حصیربافی، جاجیم و دیگر دست‌ساخته‌های محلی بخشی از هنرهای سنتی منطقه‌اند؛ شیوه‌ها و مواد اولیه به محیط و سنت هر ناحیه وابسته‌اند.</span><span class="en">Pottery, straw weaving, jajim, and other handmade crafts form part of the region's traditional arts. Techniques and materials depend on each area's environment and traditions.</span></p>
+    </article>
+  </div>
+</section>
+
+<section id="sources">
+  <h2>
+    <span class="fa">۷. منابع و مطالعه بیشتر</span>
+    <span class="en">7. Sources and Further Reading</span>
+  </h2>
+  <p>
+    <span class="fa">برای مطالعه بیشتر درباره پوشاک سنتی، میراث تاریخی و جاذبه‌های مازندران، منابع زیر نقطه شروع هستند. برای ثبت جزئیات لباس‌های هر روستا، منابع مردم‌شناختی و روایت افراد آگاه محلی نیز اهمیت دارند.</span>
+    <span class="en">The following resources are starting points for learning about traditional clothing, historical heritage, and attractions in Mazandaran. Ethnographic sources and local knowledge are also important for documenting village-specific clothing.</span>
+  </p>
+  <ul class="source-list">
+    <li><a href="https://visitiran.ir/en/costume/traditional-clothes-mazandaran" target="_blank" rel="noopener">Visit Iran — Traditional Clothes of Mazandaran</a></li>
+    <li><a href="https://visitiran.ir/en/handicraft/Chador-Shab" target="_blank" rel="noopener">Visit Iran — Chador-Shab</a></li>
+    <li><a href="https://visitiran.ir/index.php/province/mazandaran-province" target="_blank" rel="noopener">Visit Iran — Mazandaran Province</a></li>
+    <li><a href="https://www.persiantrips.travel/en/attractions/mazandaran-province" target="_blank" rel="noopener">Persian Trips — Attractions of Mazandaran</a></li>
+    <li><a href="https://visitmazandaran.ir/home/" target="_blank" rel="noopener">Mazandaran Tourism Portal</a></li>
+  </ul>
+</section>
+
+<a class="back" href="index.html">
+  <span class="fa">← بازگشت به گالری مناطق ایران</span>
+  <span class="en">← Back to the Regions Gallery</span>
+</a>
+</main>
+
+<footer>
+  <p>
+    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+    <span class="en">Iran, A Thousand Colors | A Visual Story of Women's Dress in Iran</span>
+  </p>
+  <p>
+    <span class="fa">هنرمند و خالق آثار: مریم ساعی</span>
+    <span class="en">Artist and Artwork Creator: Maryam Saei</span>
+  </p>
+  <p>
+    <span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span>
+    <span class="en">Website Design and Cultural Research: Marjan Saei</span>
+  </p>
+</footer>
+
+<script>
+const langSwitch = document.getElementById("langSwitch");
+
+langSwitch.addEventListener("click", function () {
+  document.body.classList.toggle("english");
+
+  const isEnglish = document.body.classList.contains("english");
+  document.documentElement.lang = isEnglish ? "en" : "fa";
+  document.documentElement.dir = isEnglish ? "ltr" : "rtl";
+  langSwitch.textContent = isEnglish ? "فارسی" : "English";
+});
+</script>
+</body>
+</html>
+
