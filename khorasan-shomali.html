@@ -2,386 +2,313 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>خراسان شمالی | ایران، هزار رنگ</title>
-  <meta name="description" content="روایتی تصویری از پوشش زنان، فرهنگ، هنر، خوراکی‌ها و جاذبه‌های خراسان شمالی در گالری ایران، هزار رنگ.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --paper: #f4ead8;
-      --cream: #fff8e9;
-      --green: #34452b;
-      --green-light: #566749;
-      --rust: #a64f32;
-      --gold: #b58a48;
-      --ink: #302d22;
-      --muted: #756b57;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Vazirmatn", sans-serif;
-      background:
-        radial-gradient(ellipse at top, #fff8e9 0%, transparent 65%),
-        var(--paper);
-      color: var(--ink);
-      line-height: 2;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .topbar {
-      background: var(--green);
-      color: #fff8e9;
-      padding: 13px 20px;
-    }
-
-    .topbar-inner {
-      max-width: 1120px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      font-size: 15px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .back-link {
-      text-decoration: none;
-      border: 1px solid #d8c18e;
-      border-radius: 30px;
-      padding: 5px 15px;
-      font-size: 13px;
-    }
-
-    .back-link:hover {
-      background: #fff8e9;
-      color: var(--green);
-    }
-
-    .hero {
-      max-width: 1120px;
-      margin: 32px auto 20px;
-      padding: 0 20px;
-    }
-
-    .hero-card {
-      border: 1px solid #d7c29b;
-      border-radius: 24px;
-      padding: 32px 22px;
-      text-align: center;
-      background: rgba(255, 248, 233, 0.8);
-      box-shadow: 0 8px 28px rgba(74, 55, 28, 0.08);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .eyebrow {
-      color: var(--rust);
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 1px;
-    }
-
-    h1 {
-      color: var(--green);
-      font-size: clamp(32px, 6vw, 56px);
-      line-height: 1.5;
-      margin: 5px 0;
-      font-weight: 800;
-    }
-
-    .subtitle {
-      color: var(--rust);
-      font-size: clamp(16px, 3vw, 22px);
-      font-weight: 600;
-      margin: 0;
-    }
-
-    .ornament {
-      color: var(--gold);
-      font-size: 24px;
-      margin: 8px 0;
-    }
-
-    .intro {
-      max-width: 760px;
-      margin: 14px auto 0;
-      color: #5d5544;
-      font-size: 15px;
-    }
-
-    .gallery {
-      max-width: 1120px;
-      padding: 0 20px;
-      margin: 25px auto 55px;
-    }
-
-    .section-heading {
-      text-align: center;
-      color: var(--green);
-      font-size: 25px;
-      margin: 42px 0 8px;
-      font-weight: 800;
-    }
-
-    .section-intro {
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-      margin: 0 auto 22px;
-      max-width: 700px;
-    }
-
-    .art-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      align-items: start;
-    }
-
-    .art-card {
-      background: var(--cream);
-      border: 1px solid #d8c6a4;
-      border-radius: 18px;
-      padding: 12px;
-      box-shadow: 0 8px 24px rgba(61, 47, 25, 0.09);
-    }
-
-    .art-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .art-caption {
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-      padding: 10px 5px 3px;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    .info-card {
-      background: rgba(255, 248, 233, 0.85);
-      border: 1px solid #ddcba8;
-      border-radius: 16px;
-      padding: 22px;
-      position: relative;
-    }
-
-    .info-card h3 {
-      margin: 0 0 10px;
-      color: var(--green);
-      font-size: 19px;
-      border-bottom: 1px solid #d9c69d;
-      padding-bottom: 8px;
-    }
-
-    .info-card p {
-      margin: 0;
-      font-size: 14px;
-    }
-
-    .quote {
-      margin: 35px 0 0;
-      padding: 24px;
-      border-right: 5px solid var(--rust);
-      border-radius: 12px;
-      background: #e9dcc0;
-      text-align: center;
-      color: var(--green);
-      font-weight: 600;
-    }
-
-    .footer {
-      text-align: center;
-      background: var(--green);
-      color: #fff8e9;
-      padding: 25px 18px;
-      font-size: 13px;
-    }
-
-    .footer p {
-      margin: 4px 0;
-    }
-
-    @media (max-width: 720px) {
-      .art-grid,
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        margin-top: 18px;
-        padding: 0 12px;
-      }
-
-      .hero-card {
-        padding: 25px 15px;
-      }
-
-      .gallery {
-        padding: 0 12px;
-      }
-
-      .section-heading {
-        font-size: 22px;
-      }
-
-      .info-card {
-        padding: 18px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="روایت تصویری پوشش زنان، فرهنگ، طبیعت و هنرهای بومی خراسان شمالی در نمایشگاه ایران، هزار رنگ">
+<title>خراسان شمالی | ایران، هزار رنگ</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f4ead8;
+  --cream: #fffaf0;
+  --olive: #596447;
+  --dark: #292b25;
+  --gold: #b08b48;
+  --rust: #a64f32;
+  --line: #d9c7a6;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at top, rgba(255,255,255,.65), transparent 65%),
+    var(--paper);
+  color: var(--dark);
+  font-family: 'Vazirmatn', sans-serif;
+  line-height: 2;
+}
+a { color: inherit; }
+header {
+  padding: 38px 20px 32px;
+  text-align: center;
+  background: var(--olive);
+  color: var(--cream);
+  border-bottom: 7px solid var(--gold);
+}
+.eyebrow { color: #f0d69e; font-size: .9rem; }
+header h1 { margin: 8px 0; font-size: clamp(1.8rem, 5vw, 3rem); }
+header p { margin: 0; }
+.container { max-width: 1100px; margin: auto; padding: 28px 18px 50px; }
+.back {
+  display: inline-block;
+  margin-bottom: 22px;
+  text-decoration: none;
+  color: var(--olive);
+  font-weight: 700;
+}
+.back:hover { color: var(--rust); }
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+.art-card {
+  background: var(--cream);
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  box-shadow: 0 8px 24px #4d38201a;
+}
+.art-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.art-card figcaption {
+  text-align: center;
+  padding: 8px 4px 2px;
+  color: var(--olive);
+  font-size: .9rem;
+}
+.intro {
+  background: rgba(255,250,240,.75);
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--gold);
+}
+h2 {
+  color: var(--olive);
+  font-size: 1.45rem;
+  line-height: 1.7;
+}
+.intro h2 { margin-top: 0; }
+.slogan {
+  color: var(--rust);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+section.info {
+  margin-top: 25px;
+  padding: 23px 25px;
+  background: rgba(255,250,240,.8);
+  border: 1px solid var(--line);
+  border-right: 5px solid var(--olive);
+}
+section.info h2 { margin-top: 0; }
+section.info p { margin-bottom: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.tags span {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: var(--paper);
+  padding: 4px 12px;
+  font-size: .9rem;
+}
+footer {
+  text-align: center;
+  padding: 28px 16px;
+  background: var(--olive);
+  color: var(--cream);
+  border-top: 6px solid var(--gold);
+}
+footer p { margin: 5px; }
+footer a { color: #f0d69e; }
+.en { display: none; }
+body.english { direction: ltr; }
+body.english .fa { display: none; }
+body.english .en { display: initial; }
+body.english section.info { border-right: 1px solid var(--line); border-left: 5px solid var(--olive); }
+body.english header, body.english footer { direction: ltr; }
+.lang-button {
+  margin-top: 18px;
+  border: 1px solid #f0d69e;
+  border-radius: 30px;
+  background: transparent;
+  color: white;
+  padding: 8px 18px;
+  cursor: pointer;
+  font: inherit;
+}
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; }
+  .container { padding: 20px 13px 35px; }
+  section.info, .intro { padding: 18px; }
+}
+</style>
 </head>
-
 <body>
+<header>
+  <div class="eyebrow fa">گالری حضوری و آنلاین</div>
+  <div class="eyebrow en">In-person & Online Exhibition</div>
+  <h1 class="fa">ایران، هزار رنگ</h1>
+  <h1 class="en">Iran, A Thousand Colors</h1>
+  <p class="fa">روایت تصویری پوشش زنان ایران</p>
+  <p class="en">A Visual Journey Through Women's Clothing in Iran</p>
+  <button class="lang-button" onclick="toggleLanguage()">English / فارسی</button>
+</header>
 
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="index.html">ایران، هزار رنگ</a>
-      <a class="back-link" href="index.html">← بازگشت به گالری مناطق ایران</a>
+<main class="container">
+  <a class="back fa" href="index.html">← بازگشت به گالری مناطق ایران</a>
+  <a class="back en" href="index.html">← Back to the Regions Gallery</a>
+
+  <div class="hero">
+    <figure class="art-card">
+      <img src="khorasan-shomali.png" alt="اثر هنری پوشش زنان خراسان شمالی">
+      <figcaption class="fa">اثر هنری خراسان شمالی</figcaption>
+      <figcaption class="en">North Khorasan Artwork</figcaption>
+    </figure>
+
+    <figure class="art-card">
+      <img src="khorasan-shomali_leibel.png" alt="لیبل اطلاعات فرهنگی خراسان شمالی">
+      <figcaption class="fa">لیبل اطلاعات فرهنگی منطقه</figcaption>
+      <figcaption class="en">Regional Cultural Information Label</figcaption>
+    </figure>
+  </div>
+
+  <section class="intro">
+    <h2 class="fa">خراسان شمالی؛ سرخ مثل دشت‌های ترکمن</h2>
+    <h2 class="en">North Khorasan: Red Like the Turkmen Plains</h2>
+    <p class="fa">
+      خراسان شمالی سرزمینی با تنوع فرهنگی و قومی، موسیقی پرشور دوتار،
+      طبیعت کوهستانی و پوشش‌های رنگارنگ محلی است. در این روایت تصویری،
+      رنگ سرخ پارچه و چین‌های دامن، یادآور زیبایی پوشاک سنتی و پیوند
+      هنر با زندگی روزمره مردم منطقه است.
+    </p>
+    <p class="en">
+      North Khorasan is a land of diverse cultures, lively dotar music,
+      mountain landscapes, and colorful traditional clothing. The red
+      textile and pleated skirt in this artwork evoke the beauty of
+      regional dress and the connection between art and everyday life.
+    </p>
+  </section>
+
+  <section class="info">
+    <h2 class="fa">پوشش زنان و تنوع محلی</h2>
+    <h2 class="en">Women's Clothing and Local Diversity</h2>
+    <p class="fa">
+      پوشاک سنتی زنان در بخش‌هایی از خراسان شمالی، به‌ویژه در میان
+      جوامع کرمانج، با دامن‌های چین‌دار و رنگارنگ، جلیقه‌های تزئین‌شده،
+      روسری‌های گل‌دار و گلدوزی‌های محلی شناخته می‌شود. شکل و جزئیات
+      لباس با توجه به روستا، قومیت، سن و مناسبت تغییر می‌کند؛ بنابراین
+      یک پوشش واحد را نمی‌توان نماینده همه زنان منطقه دانست.
+    </p>
+    <p class="en">
+      In parts of North Khorasan, particularly among Kormanji communities,
+      traditional women's clothing may include colorful pleated skirts,
+      decorated vests, floral scarves, and local embroidery. Details vary
+      by village, community, age, and occasion, so no single outfit
+      represents every woman in the region.
+    </p>
+    <div class="tags">
+      <span class="fa">دامن چین‌دار</span><span class="fa">روسری گل‌دار</span>
+      <span class="fa">گلدوزی محلی</span>
+      <span class="en">Pleated skirts</span><span class="en">Floral scarves</span>
+      <span class="en">Local embroidery</span>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="hero-card">
-        <div class="eyebrow">گالری مناطق ایران · روایت شمارهٔ بعد</div>
-        <h1>خراسان شمالی</h1>
-        <p class="subtitle">سرزمین شعر، هنر و رنگ‌های کوهستانی</p>
-        <div class="ornament">✿ ❧ ✿</div>
-        <p class="intro">
-          خراسان شمالی سرزمینی با تنوع فرهنگی و قومی، طبیعت کوهستانی،
-          موسیقی دوتار، پوشاک رنگارنگ و هنرهای دستی است.
-          در این روایت تصویری، نگاهی داریم به بخشی از پوشش زنان
-          و جلوه‌های فرهنگی این منطقه.
-        </p>
-      </div>
-    </section>
+  <section class="info">
+    <h2 class="fa">روستاها، موسیقی و میراث فرهنگی</h2>
+    <h2 class="en">Villages, Music and Cultural Heritage</h2>
+    <p class="fa">
+      موسیقی دوتار و روایت‌های شفاهی بخشی مهم از حافظه فرهنگی منطقه‌اند.
+      روستای روئین در اسفراین به بافت پارچه و دست‌بافته‌های سنتی شناخته
+      می‌شود. آیین‌ها، پوشاک و هنرهای محلی در هر ناحیه ویژگی‌های خاص
+      خود را دارند و در کنار یکدیگر، چهره متنوع خراسان شمالی را می‌سازند.
+    </p>
+    <p class="en">
+      Dotar music and oral storytelling are important parts of the region's
+      cultural memory. Rooyin village in Esfarayen is known for traditional
+      textile weaving. Local clothing, ceremonies, and crafts differ from
+      one area to another, together forming the diverse cultural identity
+      of North Khorasan.
+    </p>
+  </section>
 
-    <section class="gallery">
-      <h2 class="section-heading">روایت تصویری خراسان شمالی</h2>
-      <p class="section-intro">
-        هر اثر، پنجره‌ای به پوشش، زندگی و خاطره‌های فرهنگی یک منطقه است.
-      </p>
+  <section class="info">
+    <h2 class="fa">جاذبه‌های تاریخی و طبیعی</h2>
+    <h2 class="en">Historical and Natural Attractions</h2>
+    <p class="fa">
+      عمارت مفخم و آیینه‌خانه در بجنورد، شهر تاریخی بلقیس در اسفراین
+      و مجموعه طبیعی باباامان از دیدنی‌های شناخته‌شده این استان هستند.
+      بناها و چشم‌اندازهای منطقه، زمینه‌ای برای شناخت تاریخ و پیوند
+      زندگی مردم با طبیعت فراهم می‌کنند.
+    </p>
+    <p class="en">
+      Mofakham Mansion and Ayeneh Khaneh in Bojnord, the historic city
+      of Belqis in Esfarayen, and Baba Aman natural complex are among
+      the region's notable attractions. They offer a window into local
+      history and the relationship between people and their landscape.
+    </p>
+  </section>
 
-      <div class="art-grid">
-        <figure class="art-card">
-          <img
-            src="khorasan-shomali.png"
-            alt="اثر هنری خراسان شمالی با پوشش محلی زنان، طبیعت و جلوه‌های فرهنگی منطقه"
-            loading="lazy"
-          >
-          <figcaption class="art-caption">
-            اثر هنری خراسان شمالی · مریم ساعی
-          </figcaption>
-        </figure>
+  <section class="info">
+    <h2 class="fa">دست‌بافته‌ها و محصولات محلی</h2>
+    <h2 class="en">Traditional Crafts and Local Products</h2>
+    <p class="fa">
+      قالی، گلیم، جاجیم و سفره‌بافی از هنرهای دست‌باف منطقه‌اند.
+      کشاورزی و باغداری نیز در بخش‌هایی از استان رواج دارد و انگور
+      و کشمش از محصولات شناخته‌شده آن به شمار می‌روند. این هنرها و
+      محصولات، بخشی از هویت اقتصادی و فرهنگی خانواده‌های محلی هستند.
+    </p>
+    <p class="en">
+      Carpets, kilims, jajims, and woven tablecloths are among the
+      region's traditional crafts. Agriculture and orchards are also
+      important in parts of the province, with grapes and raisins
+      among its recognized products.
+    </p>
+  </section>
 
-        <figure class="art-card">
-          <img
-            src="khorasan-shomali_leibel.png"
-            alt="لیبل اطلاعات فرهنگی خراسان شمالی شامل پوشش، آثار تاریخی، محصولات و خوراکی‌ها"
-            loading="lazy"
-          >
-          <figcaption class="art-caption">
-            شناسنامهٔ فرهنگی و اطلاعاتی منطقه
-          </figcaption>
-        </figure>
-      </div>
+  <section class="info">
+    <h2 class="fa">خوراکی‌های محلی</h2>
+    <h2 class="en">Local Foods</h2>
+    <p class="fa">
+      فتیر و قاتلمه، آش یارمه و شله‌ماش از خوراکی‌هایی هستند که در
+      بخش‌هایی از خراسان شمالی تهیه می‌شوند. شیوه پخت و نام خوراک‌ها
+      ممکن است در شهرها و روستاهای مختلف تفاوت داشته باشد.
+    </p>
+    <p class="en">
+      Fatir and qatlama flatbreads, yarmeh soup, and sholeh-mash are
+      among the foods prepared in parts of North Khorasan. Recipes
+      and names may vary between towns and villages.
+    </p>
+  </section>
 
-      <h2 class="section-heading">نگاهی به فرهنگ و زندگی محلی</h2>
-      <p class="section-intro">
-        پوشش و خوراک و هنرهای دستی، بخشی از هویت زندهٔ مردم این سرزمین‌اند.
-      </p>
+  <section class="info">
+    <h2 class="fa">درباره این سفر هنری</h2>
+    <h2 class="en">About This Artistic Journey</h2>
+    <p class="fa">
+      «ایران، هزار رنگ» تلاشی هنری برای بازخوانی تنوع پوشش زنان ایران
+      و پیوند آن با جغرافیا، طبیعت، آیین‌ها و حافظه فرهنگی است.
+      هر اثر پنجره‌ای به یک روایت محلی و بخشی از هویت رنگارنگ ایران است.
+    </p>
+    <p class="en">
+      “Iran, A Thousand Colors” is an artistic exploration of the diversity
+      of women's clothing in Iran and its connection to geography, nature,
+      traditions, and cultural memory. Each artwork opens a window into
+      a local story and a colorful part of Iran's identity.
+    </p>
+  </section>
+</main>
 
-      <div class="info-grid">
-        <article class="info-card">
-          <h3>پوشش زنان محلی</h3>
-          <p>
-            در میان زنان کرمانج خراسان شمالی، لباس‌های رنگارنگ،
-            دامن‌های چین‌دار، بالاپوش‌های تزئین‌شده و روسری‌های
-            طرح‌دار دیده می‌شود. سوزن‌دوزی، نوارهای رنگی و گاه
-            سکه‌دوزی از جزئیات تزئینی برخی پوشاک هستند.
-            شکل و جزئیات لباس با توجه به محل زندگی، سن و مناسبت
-            تفاوت دارد و همهٔ زنان منطقه پوشش یکسانی ندارند.
-          </p>
-        </article>
+<footer>
+  <p class="fa">هنرمند و خالق آثار: مریم ساعی</p>
+  <p class="en">Artist and Artwork Creator: Maryam Saei</p>
+  <p class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</p>
+  <p class="en">Website Design and Cultural Research: Marjan Saei</p>
+  <p><a href="index.html"><span class="fa">بازگشت به گالری اصلی</span><span class="en">Return to Main Gallery</span></a></p>
+  <p>© ایران، هزار رنگ | Iran, A Thousand Colors</p>
+</footer>
 
-        <article class="info-card">
-          <h3>آثار تاریخی و فرهنگی</h3>
-          <p>
-            عمارت مفخم و آیینه‌خانه در بجنورد، شهر تاریخی بلقیس
-            در اسفراین و مجموعهٔ طبیعی باباامان از جاذبه‌های شناخته‌شدهٔ
-            استان‌اند. موسیقی دوتار و روایت‌های شفاهی نیز جایگاه مهمی
-            در فرهنگ محلی دارند.
-          </p>
-        </article>
-
-        <article class="info-card">
-          <h3>محصولات و صنایع دستی</h3>
-          <p>
-            قالی و قالیچه، گلیم، جاجیم، سفره‌بافی و پارچه‌بافی
-            از هنرهای دستی منطقه‌اند. پارچه‌بافی روستای روئین
-            از نمونه‌های شناخته‌شدهٔ این هنر است. انگور و کشمش،
-            محصولات کشاورزی و تولیدات محلی نیز بخشی از اقتصاد
-            و زندگی مردم استان را تشکیل می‌دهند.
-          </p>
-        </article>
-
-        <article class="info-card">
-          <h3>خوراکی‌ها و شیرینی‌های محلی</h3>
-          <p>
-            در سفرهٔ محلی منطقه، نان‌های سنتی و فتیر،
-            آش‌ها و غذاهای خانگی جایگاه دارند. شکرپنیر بجنورد
-            نیز از خوراکی‌های شناخته‌شدهٔ شهر است.
-            دستور تهیه و نام خوراکی‌ها ممکن است از شهری به شهر
-            دیگر و از خانواده‌ای به خانوادهٔ دیگر متفاوت باشد.
-          </p>
-        </article>
-      </div>
-
-      <div class="quote">
-        هر نقش، نشانی از یک زندگی؛ هر رنگ، روایتی از فرهنگ ایران.
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</p>
-    <p>آثار هنری: مریم ساعی</p>
-    <p>طراحی وب‌سایت و پژوهش اطلاعات فرهنگی: مرجان ساعی</p>
-  </footer>
-
+<script>
+function toggleLanguage() {
+  const isEnglish = document.body.classList.toggle('english');
+  document.documentElement.lang = isEnglish ? 'en' : 'fa';
+  document.documentElement.dir = isEnglish ? 'ltr' : 'rtl';
+}
+</script>
 </body>
 </html>
-
