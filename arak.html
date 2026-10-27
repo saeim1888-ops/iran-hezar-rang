@@ -2,671 +2,170 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="اراک در گالری ایران، هزار رنگ؛ روایتی تصویری از پوشش زنان و فرهنگ استان مرکزی.">
-  <title>اراک | ایران، هزار رنگ</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --paper: #f4ead8;
-      --cream: #fff8ec;
-      --rust: #a84e32;
-      --orange: #d58a42;
-      --green: #405443;
-      --ink: #30291f;
-      --muted: #756858;
-      --line: #d8c7ad;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background:
-        radial-gradient(ellipse at top left, rgba(213,138,66,.13), transparent 40%),
-        var(--paper);
-      color: var(--ink);
-      font-family: "Vazirmatn", sans-serif;
-      line-height: 1.9;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .topbar {
-      padding: 16px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-      border-bottom: 1px solid var(--line);
-      background: rgba(255,248,236,.8);
-    }
-
-    .brand {
-      color: var(--green);
-      font-size: 17px;
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    .top-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .back-link,
-    .language-button {
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      padding: 7px 15px;
-      text-decoration: none;
-      background: var(--cream);
-      color: var(--green);
-      font: inherit;
-      font-size: 13px;
-      cursor: pointer;
-    }
-
-    .hero {
-      width: min(1160px, 90%);
-      margin: 42px auto 30px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 38px;
-    }
-
-    .hero-copy {
-      padding: 10px 0;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: var(--rust);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .3px;
-      margin-bottom: 12px;
-    }
-
-    h1 {
-      color: var(--green);
-      font-size: clamp(34px, 5vw, 57px);
-      line-height: 1.35;
-      margin: 0 0 8px;
-    }
-
-    .slogan {
-      color: var(--rust);
-      font-size: clamp(18px, 2.5vw, 25px);
-      font-weight: 600;
-      margin: 0 0 20px;
-    }
-
-    .intro {
-      color: var(--muted);
-      max-width: 540px;
-      margin: 0;
-    }
-
-    .hero-art {
-      background: var(--cream);
-      padding: 12px;
-      border: 1px solid #d5c2a5;
-      border-radius: 6px;
-      box-shadow: 0 15px 35px rgba(75, 52, 28, .12);
-      transform: rotate(-1deg);
-    }
-
-    .hero-art img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 650px;
-      object-fit: contain;
-      background: #e8d9c1;
-    }
-
-    .art-caption {
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
-      padding: 9px 5px 2px;
-    }
-
-    .label-wrap {
-      width: min(850px, 90%);
-      margin: 36px auto 55px;
-    }
-
-    .info-label {
-      background: var(--cream);
-      border: 1px solid var(--line);
-      border-right: 5px solid var(--rust);
-      padding: 25px;
-      display: grid;
-      grid-template-columns: 155px 1fr;
-      align-items: center;
-      gap: 25px;
-      box-shadow: 0 8px 24px rgba(75, 52, 28, .07);
-    }
-
-    .label-image img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .label-placeholder {
-      border: 1px dashed var(--line);
-      min-height: 160px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 12px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .label-kicker {
-      color: var(--rust);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .info-label h2 {
-      color: var(--green);
-      font-size: 22px;
-      margin: 3px 0 8px;
-    }
-
-    .info-label p {
-      margin: 0;
-      font-size: 14px;
-    }
-
-    .section {
-      width: min(1000px, 88%);
-      margin: 0 auto 55px;
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      margin-bottom: 18px;
-    }
-
-    .section-heading::before {
-      content: "";
-      width: 5px;
-      height: 34px;
-      border-radius: 8px;
-      background: var(--orange);
-      flex-shrink: 0;
-    }
-
-    h2 {
-      color: var(--green);
-      font-size: clamp(22px, 3vw, 30px);
-      margin: 0;
-    }
-
-    .story-card {
-      background: rgba(255,248,236,.72);
-      border: 1px solid var(--line);
-      padding: clamp(20px, 4vw, 34px);
-      border-radius: 5px;
-    }
-
-    .story-card p {
-      margin: 0 0 15px;
-    }
-
-    .story-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    .quote {
-      border-right: 3px solid var(--orange);
-      padding: 12px 18px;
-      margin-top: 22px;
-      color: var(--rust);
-      font-weight: 600;
-      background: rgba(213,138,66,.08);
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .feature {
-      background: var(--cream);
-      border: 1px solid var(--line);
-      padding: 22px;
-      border-radius: 5px;
-    }
-
-    .feature .symbol {
-      font-size: 25px;
-    }
-
-    .feature h3 {
-      color: var(--rust);
-      font-size: 18px;
-      margin: 5px 0 8px;
-    }
-
-    .feature p {
-      margin: 0;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .note {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 18px;
-    }
-
-    .sources {
-      padding-right: 20px;
-      margin-bottom: 0;
-    }
-
-    .sources li {
-      margin: 8px 0;
-    }
-
-    .sources a {
-      color: var(--rust);
-      overflow-wrap: anywhere;
-    }
-
-    .footer {
-      background: var(--green);
-      color: #fff8ec;
-      padding: 30px 6%;
-      text-align: center;
-      margin-top: 70px;
-    }
-
-    .footer p {
-      margin: 4px 0;
-      font-size: 13px;
-    }
-
-    .footer .footer-title {
-      font-weight: 700;
-      font-size: 17px;
-    }
-
-    [hidden] {
-      display: none !important;
-    }
-
-    html[dir="ltr"] body {
-      font-family: "Vazirmatn", sans-serif;
-    }
-
-    html[dir="ltr"] .info-label {
-      border-right: 1px solid var(--line);
-      border-left: 5px solid var(--rust);
-    }
-
-    html[dir="ltr"] .section-heading::before {
-      order: -1;
-    }
-
-    html[dir="ltr"] .quote {
-      border-right: 0;
-      border-left: 3px solid var(--orange);
-    }
-
-    html[dir="ltr"] .sources {
-      padding-right: 0;
-      padding-left: 20px;
-    }
-
-    @media (max-width: 720px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        margin-top: 25px;
-      }
-
-      .hero-copy {
-        order: 1;
-      }
-
-      .hero-art {
-        order: 0;
-        max-width: 500px;
-        margin: 0 auto;
-      }
-
-      .info-label {
-        grid-template-columns: 1fr;
-        padding: 18px;
-      }
-
-      .label-image {
-        max-width: 220px;
-        margin: 0 auto;
-      }
-
-      .feature-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        margin-bottom: 38px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اراک | ایران، هزار رنگ</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f8f0e1;--panel:#fffaf1;--card:#f6eddd;--ink:#352f26;--green:#596548;--rust:#bd4b28;--line:#e5d2b0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif;line-height:2}
+a{color:#235c70}
+header{max-width:1015px;margin:auto;padding:20px 35px 5px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{font-size:18px;font-weight:800;color:var(--green)}
+button{font:inherit;background:var(--panel);border:1px solid #cda66c;border-radius:25px;padding:5px 17px;cursor:pointer}
+.hero,.page-section{max-width:1015px;margin:20px auto;background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:30px 35px}
+.hero{text-align:center;padding-top:35px}
+.eyebrow{color:var(--rust);font-weight:700}
+h1{color:var(--green);font-size:clamp(27px,4vw,39px);line-height:1.6;margin:7px 0}
+.hero h2{font-size:22px;color:var(--rust);margin:0}
+.hero p{margin:10px auto;max-width:820px}
+nav{max-width:1015px;margin:18px auto;padding:15px 25px;background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+nav a{font-size:14px;text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:5px 12px;color:var(--green)}
+.page-section h2{font-size:clamp(23px,3vw,31px);color:var(--green);border-bottom:1px solid #d9bd8c;padding-bottom:12px;margin:0 0 22px}
+.page-section h3{color:var(--rust);font-size:21px;margin:0 0 12px}
+.page-section p{margin:12px 0 18px}
+.artwork{display:block;width:min(100%,650px);height:auto;margin:25px auto 15px;padding:7px;background:#eee0c7;border:1px solid #d7b982}
+.label-image{display:block;width:min(100%,650px);height:auto;margin:25px auto 12px}
+.caption{text-align:center;font-size:14px;color:#766953}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin:20px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:20px;min-width:0}
+.card h3{margin-bottom:12px}
+.card p:last-child{margin-bottom:0}
+.note{font-size:14px;color:#645843;border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
+ul{padding-right:24px}
+footer{max-width:1015px;margin:25px auto 0;padding:25px 35px 40px;color:var(--green)}
+footer a{color:var(--green)}
+.en{display:none}
+body.english{direction:ltr}
+body.english .en{display:inline}
+body.english .fa{display:none}
+body.english .page-section,body.english .card{text-align:left}
+body.english ul{padding-left:24px;padding-right:0}
+@media(max-width:800px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero,.page-section,nav,header,footer{margin-left:12px;margin-right:12px}.hero,.page-section{padding:23px 18px}}
+@media(max-width:480px){.cards{grid-template-columns:1fr}header{padding-left:5px;padding-right:5px}.logo{font-size:15px}}
+</style>
 </head>
-
 <body>
-  <header class="topbar">
-    <a class="brand" href="index.html">
-      <span class="fa-inline">ایران، هزار رنگ</span>
-      <span class="en-inline" hidden>Iran, A Thousand Colors</span>
-    </a>
+<header>
+  <div class="logo">ایران، هزار رنگ | Iran, A Thousand Colors</div>
+  <button type="button" onclick="toggleLanguage()" id="langButton">English</button>
+</header>
 
-    <div class="top-actions">
-      <a class="back-link" href="index.html">
-        <span class="fa-inline">← بازگشت به گالری</span>
-        <span class="en-inline" hidden>← Back to Gallery</span>
-      </a>
-      <button class="language-button" id="languageToggle" type="button">English</button>
-    </div>
-  </header>
+<div class="hero">
+  <div class="eyebrow"><span class="fa">منطقه ۱۴ از ۲۳ منطقه</span><span class="en">REGION 14 OF 23</span></div>
+  <h1><span class="fa">اراک؛ سرزمین نقش‌ها و خاطره‌ها</span><span class="en">Arak: A Land of Patterns and Memories</span></h1>
+  <h2><span class="fa">اراک؛ نقش دست‌ها، رنگ خاطره</span><span class="en">Arak: Patterns of Hands, Colors of Memory</span></h2>
+  <p><span class="fa">سفری تصویری میان پوشش زنان، فرش ساروق، روستاهای تاریخی، طبیعت، معماری و طعم‌های محلی استان مرکزی.</span><span class="en">A visual journey through women's dress, Saruq carpets, historic villages, nature, architecture and local flavors of Markazi Province.</span></p>
+</div>
 
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <span class="eyebrow">
-          <span class="fa-inline">منطقه اراک و استان مرکزی</span>
-          <span class="en-inline" hidden>Arak & Markazi Province</span>
-        </span>
+<nav>
+  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+  <a href="#dress"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+  <a href="#regions"><span class="fa">شهرها و نواحی</span><span class="en">Regions</span></a>
+  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+  <a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food & Sweets</span></a>
+  <a href="#products"><span class="fa">محصولات محلی</span><span class="en">Local Products</span></a>
+  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
 
-        <h1>
-          <span class="fa-inline">اراک</span>
-          <span class="en-inline" hidden>Arak</span>
-        </h1>
+<main>
+<section class="page-section" id="art">
+<h2><span class="fa">۱. تصویر اراک؛ روایت یک سرزمین</span><span class="en">1. Arak in Art: A Land's Story</span></h2>
+<p><span class="fa">در این اثر، پوشش الهام‌گرفته از فرهنگ بومی استان مرکزی با نشانه‌هایی از طبیعت، معماری تاریخی و هنرهای دستی منطقه همراه شده است. رنگ‌ها و نقش‌ها، پیوند میان زندگی مردم، هنر دست و خاطره فرهنگی را روایت می‌کنند.</span><span class="en">This artwork combines dress inspired by local culture in Markazi Province with references to nature, historic architecture and regional crafts. Its colors and patterns tell a story of community, handmade art and cultural memory.</span></p>
+<img class="artwork" src="arak.png" alt="اثر هنری پوشش زنان منطقه اراک">
+<p class="caption"><span class="fa">اثر هنری اراک از مجموعه «ایران، هزار رنگ»</span><span class="en">The Arak artwork from “Iran, A Thousand Colors”</span></p>
+<p><span class="fa">این تصویر، بازآفرینی هنری مجموعه است؛ توضیحات این صفحه برای معرفی فرهنگی و تاریخی استان مرکزی ارائه شده‌اند.</span><span class="en">This image is an artistic interpretation created for the collection. The text provides cultural and historical context about Markazi Province.</span></p>
+</section>
 
-        <p class="slogan">
-          <span class="fa-inline">نقش دست‌ها، رنگ خاطره</span>
-          <span class="en-inline" hidden>Patterns of Hands, Colors of Memory</span>
-        </p>
+<section class="page-section" id="dress">
+<h2><span class="fa">۲. پوشش زنان استان مرکزی؛ تنوع در نقش و رنگ</span><span class="en">2. Women's Dress in Markazi: Diversity in Pattern and Color</span></h2>
+<p><span class="fa">پوشاک سنتی زنان استان مرکزی یکدست و یکسان نبوده است. نوع لباس، روسری، شلوار، پیش‌بند و دیگر اجزای پوشش، بسته به روستا، دوره تاریخی، سبک زندگی و مناسبت‌ها تفاوت داشته‌اند. به همین دلیل، بهتر است پوشش هر ناحیه با تکیه بر شواهد محلی بررسی شود.</span><span class="en">Traditional women's clothing in Markazi Province has not followed one uniform pattern. Garments, headscarves, trousers, aprons and other elements have varied by village, historical period, lifestyle and occasion. Each area's dress should therefore be studied through local evidence.</span></p>
+<img class="label-image" src="arak_leibel.png" alt="لیبل تصویری معرفی پوشش زنان اراک">
+<p class="caption"><span class="fa">لیبل اختصاصی اراک؛ راهنمای تصویری پوشش و فرهنگ منطقه</span><span class="en">Arak exhibition label: a visual guide to regional dress and culture</span></p>
 
-        <p class="intro fa-inline">
-          سفری تصویری به سرزمین فرش‌های پرنقش، هنرهای بومی، دشت‌های پهناور و روایت‌های زنان استان مرکزی؛ جایی که فرهنگ در تار و پود زندگی روزمره ادامه پیدا می‌کند.
-        </p>
-        <p class="intro en-inline" hidden>
-          A visual journey through richly patterned carpets, local crafts, wide plains, and the stories of women in Markazi Province, where culture continues through the fabric of everyday life.
-        </p>
-      </div>
+<h3><span class="fa">پوشاک روستایی</span><span class="en">Rural Clothing</span></h3>
+<p><span class="fa">در روستاهای استان مرکزی، پوشاک روزمره و لباس‌های ویژه مراسم ممکن است از نظر جنس پارچه، رنگ، شیوه دوخت و پوشش سر تفاوت داشته باشند. برای نسبت دادن نام یک لباس به روستایی مشخص، مراجعه به عکس‌های مستند، پژوهش‌های مردم‌شناسی و روایت زنان همان منطقه اهمیت دارد.</span><span class="en">In villages across Markazi Province, everyday clothing and ceremonial garments may differ in fabric, color, tailoring and head coverings. Documented photographs, ethnographic research and accounts from local women are important when identifying a garment with a specific village.</span></p>
 
-      <div class="hero-art">
-        <img src="arak.png" alt="اثر هنری پوشش زنان منطقه اراک" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
-        <div class="label-placeholder" hidden>
-          <span class="fa-inline">تصویر اثر را با نام arak.png بارگذاری کن.</span>
-          <span class="en-inline" hidden>Upload the artwork as arak.png.</span>
-        </div>
-        <div class="art-caption">
-          <span class="fa-inline">بازآفرینی هنری با الهام از پوشاک و فرهنگ بومی استان مرکزی</span>
-          <span class="en-inline" hidden>An artistic interpretation inspired by local dress and culture in Markazi Province</span>
-        </div>
-      </div>
-    </section>
+<h3><span class="fa">هنر دست و پوشاک</span><span class="en">Handicrafts and Clothing</span></h3>
+<p><span class="fa">هنرهای دستی منطقه، از بافت فرش تا دوخت و تزئینات پارچه‌ای، بخشی از میراث مهارتی مردم هستند. هر نقش می‌تواند بازتابی از سلیقه، تجربه و محیط زندگی سازندگانش باشد.</span><span class="en">Regional handicrafts, from carpet weaving to textile decoration, form part of the community's practical heritage. Patterns can reflect the taste, experience and surroundings of their makers.</span></p>
+</section>
 
-    <section class="label-wrap" aria-label="لیبل اطلاعاتی">
-      <div class="info-label">
-        <div class="label-image">
-          <img src="arak_leibel.png" alt="لیبل اطلاعاتی اراک" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
-          <div class="label-placeholder" hidden>
-            <span class="fa-inline">لیبل را با نام arak_leibel.png بارگذاری کن.</span>
-            <span class="en-inline" hidden>Upload the label as arak_leibel.png.</span>
-          </div>
-        </div>
+<section class="page-section" id="regions">
+<h2><span class="fa">۳. شهرها و نواحی استان مرکزی</span><span class="en">3. Cities and Regions of Markazi Province</span></h2>
+<p><span class="fa">استان مرکزی مجموعه‌ای از شهرها و روستاهای گوناگون است. محصولات کشاورزی، صنایع‌دستی، معماری و شیوه‌های زندگی محلی، هر ناحیه را با ویژگی‌های خاص خود معرفی می‌کنند.</span><span class="en">Markazi Province includes a variety of cities and villages. Agricultural products, handicrafts, architecture and local ways of life give each area its own character.</span></p>
+<div class="cards">
+<div class="card"><h3><span class="fa">اراک</span><span class="en">Arak</span></h3><p><span class="fa">مرکز استان و شهری با بازار تاریخی، خانه‌های قدیمی و پیشینه صنایع‌دستی و دادوستد.</span><span class="en">The provincial capital, known for its historic bazaar, old houses, handicrafts and trade heritage.</span></p></div>
+<div class="card"><h3><span class="fa">ساروق</span><span class="en">Saruq</span></h3><p><span class="fa">از نام‌های شناخته‌شده در هنر قالی‌بافی استان مرکزی؛ فرش ساروق به نقش‌پردازی و کیفیت بافت شهرت دارد.</span><span class="en">A well-known name in Markazi carpet weaving; Saruq carpets are noted for their designs and weaving quality.</span></p></div>
+<div class="card"><h3><span class="fa">ساوه</span><span class="en">Saveh</span></h3><p><span class="fa">ساوه به‌ویژه با انار شناخته می‌شود و باغداری در هویت کشاورزی این ناحیه جایگاه مهمی دارد.</span><span class="en">Saveh is especially known for pomegranates, which play an important role in its agricultural identity.</span></p></div>
+<div class="card"><h3><span class="fa">هزاوه</span><span class="en">Hazaveh</span></h3><p><span class="fa">روستایی در نزدیکی اراک که با باغداری و انگور در معرفی محصولات محلی استان مطرح است.</span><span class="en">A village near Arak associated with orchards and grapes among the province's local products.</span></p></div>
+<div class="card"><h3><span class="fa">محلات</span><span class="en">Mahallat</span></h3><p><span class="fa">محلات به پرورش گل و گیاه شهرت دارد و گلخانه‌ها و باغ‌های آن از نشانه‌های منطقه‌اند.</span><span class="en">Mahallat is known for flower cultivation, with greenhouses and gardens forming part of its regional identity.</span></p></div>
+<div class="card"><h3><span class="fa">نراق</span><span class="en">Naraq</span></h3><p><span class="fa">شهری با بافت تاریخی و معماری سنتی که در شناخت میراث فرهنگی منطقه جایگاه دارد.</span><span class="en">A town with historic urban fabric and traditional architecture, contributing to the region's cultural heritage.</span></p></div>
+</div>
+</section>
 
-        <div>
-          <span class="label-kicker">
-            <span class="fa-inline">شناسنامه اثر</span>
-            <span class="en-inline" hidden>Artwork Information</span>
-          </span>
+<section class="page-section" id="history">
+<h2><span class="fa">۴. تاریخ، معماری و طبیعت</span><span class="en">4. History, Architecture and Nature</span></h2>
+<div class="cards">
+<div class="card"><h3><span class="fa">بازار تاریخی اراک</span><span class="en">Arak Historic Bazaar</span></h3><p><span class="fa">بازاری تاریخی با گذرها و فضاهای تجاری که بخشی از تاریخ شهر و زندگی اقتصادی آن را بازگو می‌کند.</span><span class="en">A historic bazaar whose passages and commercial spaces reflect the city's history and economic life.</span></p></div>
+<div class="card"><h3><span class="fa">حمام چهارفصل</span><span class="en">Chaharfasl Bath</span></h3><p><span class="fa">بنایی تاریخی در اراک با تزئینات معماری و کاشی‌کاری که امروزه به‌عنوان موزه نیز شناخته می‌شود.</span><span class="en">A historic building in Arak, known for its architectural decoration and tilework, now also used as a museum.</span></p></div>
+<div class="card"><h3><span class="fa">خانه تاریخی حسن‌پور</span><span class="en">Hassanpour Historic House</span></h3><p><span class="fa">از بناهای تاریخی شهر که نمونه‌ای از معماری خانه‌های قدیمی اراک را به نمایش می‌گذارد.</span><span class="en">A historic building that illustrates traditional domestic architecture in Arak.</span></p></div>
+<div class="card"><h3><span class="fa">تالاب میقان</span><span class="en">Miqan Wetland</span></h3><p><span class="fa">زیستگاهی طبیعی در نزدیکی اراک که چشم‌انداز آن با تغییر فصل و شرایط آب‌وهوایی دگرگون می‌شود.</span><span class="en">A natural habitat near Arak whose landscape changes with the seasons and weather conditions.</span></p></div>
+</div>
+</section>
 
-          <h2>
-            <span class="fa-inline">اراک | نقش دست‌ها، رنگ خاطره</span>
-            <span class="en-inline" hidden>Arak | Patterns of Hands, Colors of Memory</span>
-          </h2>
+<section class="page-section" id="food">
+<h2><span class="fa">۵. خوراک و شیرینی‌های محلی</span><span class="en">5. Local Food and Sweets</span></h2>
+<p><span class="fa">فرهنگ غذایی استان مرکزی از محصولات کشاورزی و سنت‌های خانوادگی تأثیر گرفته است. نام خوراک‌ها و روش پخت ممکن است در شهرها و خانواده‌های مختلف متفاوت باشد.</span><span class="en">Food culture in Markazi Province is shaped by agricultural products and family traditions. Dish names and cooking methods may vary between towns and households.</span></p>
+<div class="cards">
+<div class="card"><h3><span class="fa">فتیر اراک</span><span class="en">Arak Fatir</span></h3><p><span class="fa">نان محلی که در برخی نواحی با شیوه‌ها و طعم‌های متفاوت تهیه می‌شود.</span><span class="en">A local bread prepared in different styles and flavors across the region.</span></p></div>
+<div class="card"><h3><span class="fa">آش‌های محلی</span><span class="en">Regional Ash</span></h3><p><span class="fa">آش‌های محلی با توجه به فصل، مواد در دسترس و دستور خانوادگی تفاوت دارند.</span><span class="en">Local soups vary according to season, available ingredients and family recipes.</span></p></div>
+<div class="card"><h3><span class="fa">خوراک‌های خانگی</span><span class="en">Home-style Dishes</span></h3><p><span class="fa">خوراک‌های سنتی و غذاهای خانگی بخشی از فرهنگ مهمان‌نوازی و زندگی روزمره منطقه‌اند.</span><span class="en">Traditional and home-style dishes form part of local hospitality and everyday life.</span></p></div>
+<div class="card"><h3><span class="fa">شیرینی‌های سنتی</span><span class="en">Traditional Sweets</span></h3><p><span class="fa">شیرینی‌ها و نان‌های شیرین محلی در برخی شهرها و مناسبت‌ها تهیه می‌شوند؛ نام و دستور آن‌ها نیازمند بررسی محلی است.</span><span class="en">Local sweets and sweet breads are prepared in some towns and for special occasions; their names and recipes require local verification.</span></p></div>
+</div>
+</section>
 
-          <p class="fa-inline">
-            این اثر، بازآفرینی هنری با الهام از پوشاک سنتی و فرهنگ متنوع روستاهای استان مرکزی است. پوشش زنان در این منطقه، مانند دیگر بخش‌های ایران، با توجه به روستا، نسل، شرایط زندگی و آیین‌های محلی تفاوت داشته است.
-          </p>
-          <p class="en-inline" hidden>
-            This artwork is an artistic interpretation inspired by traditional clothing and the diverse culture of villages in Markazi Province. As elsewhere in Iran, women's clothing has varied by village, generation, lifestyle, and local customs.
-          </p>
-        </div>
-      </div>
-    </section>
+<section class="page-section" id="products">
+<h2><span class="fa">۶. محصولات محلی و صنایع‌دستی</span><span class="en">6. Local Products and Handicrafts</span></h2>
+<div class="cards">
+<div class="card"><h3><span class="fa">فرش ساروق</span><span class="en">Saruq Carpets</span></h3><p><span class="fa">از صنایع‌دستی شناخته‌شده استان مرکزی با طرح‌ها و شیوه‌های بافت متنوع.</span><span class="en">A well-known regional craft featuring varied designs and weaving techniques.</span></p></div>
+<div class="card"><h3><span class="fa">انار ساوه</span><span class="en">Saveh Pomegranates</span></h3><p><span class="fa">یکی از محصولات کشاورزی شناخته‌شده منطقه که در معرفی ساوه جایگاه ویژه‌ای دارد.</span><span class="en">A well-known agricultural product with a prominent place in Saveh's identity.</span></p></div>
+<div class="card"><h3><span class="fa">انگور هزاوه</span><span class="en">Hazaveh Grapes</span></h3><p><span class="fa">انگور و فرآورده‌های آن بخشی از محصولات باغی شناخته‌شده اطراف اراک هستند.</span><span class="en">Grapes and their products are among the recognized orchard products around Arak.</span></p></div>
+<div class="card"><h3><span class="fa">گل و گیاه محلات</span><span class="en">Mahallat Flowers</span></h3><p><span class="fa">پرورش گل و گیاه یکی از ویژگی‌های شناخته‌شده کشاورزی و اقتصادی محلات است.</span><span class="en">Flower cultivation is a recognized part of Mahallat's agriculture and economy.</span></p></div>
+</div>
+</section>
 
-    <section class="section">
-      <div class="section-heading">
-        <h2>
-          <span class="fa-inline">روایت فرهنگی اراک</span>
-          <span class="en-inline" hidden>The Cultural Story of Arak</span>
-        </h2>
-      </div>
+<section class="page-section" id="sources">
+<h2><span class="fa">۷. منابع و مطالعه بیشتر</span><span class="en">7. Sources and Further Reading</span></h2>
+<p><span class="fa">این لینک‌ها برای شروع پژوهش درباره تاریخ، میراث فرهنگی و جاذبه‌های استان مرکزی هستند. برای معرفی دقیق پوشاک محلی، باید منابع تخصصی و مستندات مربوط به هر روستا نیز بررسی شوند.</span><span class="en">These links are starting points for researching the history, cultural heritage and attractions of Markazi Province. Specific local clothing descriptions should also be checked against specialist sources and village-level documentation.</span></p>
+<ul>
+<li><a href="https://www.visitiran.ir/" target="_blank" rel="noopener noreferrer">Visit Iran</a> <span class="fa">؛ معرفی جاذبه‌های ایران</span></li>
+<li><a href="https://ich.unesco.org/" target="_blank" rel="noopener noreferrer">UNESCO Intangible Cultural Heritage</a></li>
+<li><a href="https://www.iranicaonline.org/" target="_blank" rel="noopener noreferrer">Encyclopaedia Iranica</a></li>
+<li><a href="https://www.google.com/search?q=%D8%A7%D8%B3%D8%AA%D8%A7%D9%86+%D9%85%D8%B1%DA%A9%D8%B2%DB%8C+%D9%85%DB%8C%D8%B1%D8%A7%D8%AB+%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C" target="_blank" rel="noopener noreferrer">جست‌وجوی منابع فارسی درباره میراث فرهنگی استان مرکزی</a></li>
+<li><a href="https://www.google.com/search?q=%D9%81%D8%B1%D8%B4+%D8%B3%D8%A7%D8%B1%D9%88%D9%82+%D9%85%D9%86%D8%A7%D8%A8%D8%B9" target="_blank" rel="noopener noreferrer">جست‌وجوی منابع فارسی درباره فرش ساروق</a></li>
+</ul>
+<p class="note"><span class="fa">وجود لینک در این فهرست به معنی تأیید تک‌تک جزئیات صفحه از سوی آن منبع نیست. برای نسبت دادن پوشش مشخص به یک روستا یا گروه محلی، منبع تخصصی جداگانه لازم است.</span><span class="en">Listing a resource does not mean it verifies every detail on this page. Specific clothing attributions require dedicated references.</span></p>
+</section>
+</main>
 
-      <div class="story-card">
-        <p class="fa-inline">
-          اراک، مرکز استان مرکزی، در منطقه‌ای قرار گرفته که مسیرهای ارتباطی، زندگی روستایی و هنرهای دستی در شکل‌گیری فرهنگ آن نقش داشته‌اند. در این سرزمین، مهارت‌های خانوادگی و محلی از نسلی به نسل دیگر منتقل شده و در بافت فرش، دوخت لباس، تولید محصولات کشاورزی و آیین‌های روزمره دیده می‌شود.
-        </p>
-        <p class="en-inline" hidden>
-          Arak, the capital of Markazi Province, lies in a region where trade routes, rural life, and handicrafts have helped shape local culture. Skills passed from one generation to the next can be seen in carpet weaving, clothing, agricultural products, and everyday traditions.
-        </p>
+<footer>
+<p><strong>ایران، هزار رنگ | Iran, A Thousand Colors</strong></p>
+<p><span class="fa">روایت تصویری پوشش زنان ایران</span><span class="en">A visual story of women's dress in Iran</span></p>
+<p><span class="fa">هنرمند: مریم ساعی | طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span><span class="en">Artist: Maryam Saei | Website design and cultural research: Marjan Saei</span></p>
+<p><a href="index.html"><span class="fa">← بازگشت به گالری مناطق ایران</span><span class="en">← Back to the Regions Gallery</span></a></p>
+</footer>
 
-        <p class="fa-inline">
-          پوشاک سنتی زنان استان مرکزی یک الگوی کاملاً یکسان نداشته است. نوع لباس، روسری، شلوار و دیگر اجزای پوشش با توجه به محل زندگی و دوره تاریخی تفاوت داشته‌اند. به همین دلیل، تصویر این گالری را باید یک برداشت هنری از تنوع پوشاک منطقه دانست، نه بازنمایی قطعی لباس همه زنان اراک.
-        </p>
-        <p class="en-inline" hidden>
-          Traditional women's clothing in Markazi Province has not followed a single uniform pattern. Garments, headscarves, trousers, and other elements have varied by locality and historical period. This gallery image should therefore be understood as an artistic interpretation of regional diversity, not a definitive representation of all women in Arak.
-        </p>
-
-        <p class="fa-inline">
-          فرش ساروق، از شناخته‌شده‌ترین هنرهای منطقه، نمونه‌ای از پیوند میان مهارت دست، نقش و حافظه فرهنگی است. در کنار آن، بازار تاریخی اراک و بناهای قدیمی شهر، بخشی از روایت زندگی اجتماعی و دادوستد در این منطقه را بازگو می‌کنند.
-        </p>
-        <p class="en-inline" hidden>
-          Saruq carpets are among the region's best-known crafts, reflecting the connection between hand skill, pattern, and cultural memory. Arak's historic bazaar and old buildings also tell part of the story of local social life and trade.
-        </p>
-
-        <div class="quote">
-          <span class="fa-inline">هر نقش، نشانی از دست‌هایی است که فرهنگ را زنده نگه می‌دارند.</span>
-          <span class="en-inline" hidden>Every pattern carries the mark of hands that keep culture alive.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <h2>
-          <span class="fa-inline">دیدنی‌ها و نشانه‌های منطقه</span>
-          <span class="en-inline" hidden>Places & Regional Symbols</span>
-        </h2>
-      </div>
-
-      <div class="feature-grid">
-        <article class="feature">
-          <div class="symbol">🏛️</div>
-          <h3>
-            <span class="fa-inline">بازار تاریخی اراک</span>
-            <span class="en-inline" hidden>Arak Historic Bazaar</span>
-          </h3>
-          <p class="fa-inline">مجموعه‌ای تاریخی که از دادوستد، معماری شهری و زندگی روزمره در اراک روایت می‌کند.</p>
-          <p class="en-inline" hidden>A historic complex reflecting trade, urban architecture, and everyday life in Arak.</p>
-        </article>
-
-        <article class="feature">
-          <div class="symbol">🧵</div>
-          <h3>
-            <span class="fa-inline">فرش ساروق</span>
-            <span class="en-inline" hidden>Saruq Carpet</span>
-          </h3>
-          <p class="fa-inline">هنری دست‌باف با نقش‌پردازی چشمگیر که نام منطقه را در میان هنرهای فرش‌بافی شناخته‌شده کرده است.</p>
-          <p class="en-inline" hidden>A handwoven craft known for its distinctive designs and its place in the region's carpet-making heritage.</p>
-        </article>
-
-        <article class="feature">
-          <div class="symbol">🌾</div>
-          <h3>
-            <span class="fa-inline">دشت و تالاب میقان</span>
-            <span class="en-inline" hidden>Plains & Miqan Wetland</span>
-          </h3>
-          <p class="fa-inline">چشم‌اندازی طبیعی در نزدیکی اراک که در فصل‌های مختلف، چهره‌های متفاوتی از طبیعت منطقه نشان می‌دهد.</p>
-          <p class="en-inline" hidden>A natural landscape near Arak that reveals different faces of the region across the seasons.</p>
-        </article>
-
-        <article class="feature">
-          <div class="symbol">🍇</div>
-          <h3>
-            <span class="fa-inline">محصولات محلی</span>
-            <span class="en-inline" hidden>Local Products</span>
-          </h3>
-          <p class="fa-inline">انگور هزاوه، انار ساوه و محصولات کشاورزی و خوراکی دیگر، بخشی از تنوع منطقه مرکزی را شکل می‌دهند.</p>
-          <p class="en-inline" hidden>Hazaveh grapes, Saveh pomegranates, and other agricultural products contribute to the diversity of Markazi Province.</p>
-        </article>
-
-        <article class="feature">
-          <div class="symbol">🏠</div>
-          <h3>
-            <span class="fa-inline">خانه تاریخی حسن‌پور</span>
-            <span class="en-inline" hidden>Historic Hassanpour House</span>
-          </h3>
-          <p class="fa-inline">یکی از بناهای تاریخی اراک که بخشی از معماری و خاطره شهری منطقه را به نمایش می‌گذارد.</p>
-          <p class="en-inline" hidden>A historic building in Arak that preserves part of the city's architectural heritage and memory.</p>
-        </article>
-
-        <article class="feature">
-          <div class="symbol">🥮</div>
-          <h3>
-            <span class="fa-inline">خوراکی‌های محلی</span>
-            <span class="en-inline" hidden>Local Foods & Sweets</span>
-          </h3>
-          <p class="fa-inline">فتیر اراک و خوراک‌های محلی، بخشی از فرهنگ غذایی هستند؛ دستورها و نام‌ها ممکن است از شهری به شهر دیگر تفاوت داشته باشند.</p>
-          <p class="en-inline" hidden>Arak fatir and local dishes are part of the region's food culture; recipes and names may vary from town to town.</p>
-        </article>
-      </div>
-
-      <p class="note fa-inline">
-        یادداشت پژوهشی: برای معرفی دقیق‌تر پوشاک هر روستا، بهتر است از عکس‌های مستند، منابع مردم‌نگاری یا روایت افراد محلی استفاده شود.
-      </p>
-      <p class="note en-inline" hidden>
-        Research note: Documented photographs, ethnographic sources, or local oral histories are recommended for identifying village-specific clothing accurately.
-      </p>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <h2>
-          <span class="fa-inline">برای مطالعه بیشتر</span>
-          <span class="en-inline" hidden>Further Reading</span>
-        </h2>
-      </div>
-
-      <div class="story-card">
-        <p class="fa-inline">
-          لینک‌های زیر برای شروع بررسی تاریخ، میراث فرهنگی و جاذبه‌های استان مرکزی در نظر گرفته شده‌اند. پیش از چاپ لیبل نهایی، جزئیات مربوط به هر پوشش یا رسم محلی را با منابع مشخص و معتبر تطبیق بده.
-        </p>
-        <p class="en-inline" hidden>
-          The links below are starting points for exploring the history, cultural heritage, and attractions of Markazi Province. Before printing the final label, verify specific clothing and local traditions against reliable sources.
-        </p>
-
-        <ul class="sources">
-          <li>
-            <a href="https://www.visitiran.ir/" target="_blank" rel="noopener noreferrer">Visit Iran — معرفی میراث و جاذبه‌های ایران</a>
-          </li>
-          <li>
-            <a href="https://ich.unesco.org/" target="_blank" rel="noopener noreferrer">UNESCO Intangible Cultural Heritage — میراث فرهنگی ناملموس</a>
-          </li>
-          <li>
-            <a href="https://www.google.com/search?q=%D8%A7%D8%B3%D8%AA%D8%A7%D9%86+%D9%85%D8%B1%DA%A9%D8%B2%DB%8C+%D9%85%DB%8C%D8%B1%D8%A7%D8%AB+%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C+%D9%BE%D9%88%D8%B4%D8%A7%DA%A9+%D8%B3%D9%86%D8%AA%DB%8C" target="_blank" rel="noopener noreferrer">جست‌وجوی منابع فارسی درباره پوشاک سنتی استان مرکزی</a>
-          </li>
-          <li>
-            <a href="https://www.google.com/search?q=%D9%81%D8%B1%D8%B4+%D8%B3%D8%A7%D8%B1%D9%88%D9%82+%D8%A7%D8%B1%D8%A7%DA%A9+%D9%85%D9%86%D8%A7%D8%A8%D8%B9" target="_blank" rel="noopener noreferrer">جست‌وجوی منابع فارسی درباره فرش ساروق</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p class="footer-title">
-      <span class="fa-inline">ایران، هزار رنگ</span>
-      <span class="en-inline" hidden>Iran, A Thousand Colors</span>
-    </p>
-    <p>
-      <span class="fa-inline">روایت تصویری پوشش زنان ایران</span>
-      <span class="en-inline" hidden>A Visual Journey Through Women's Clothing in Iran</span>
-    </p>
-    <p>
-      <span class="fa-inline">هنرمند و خالق آثار: مریم ساعی</span>
-      <span class="en-inline" hidden>Artist & Artwork Creator: Maryam Saei</span>
-    </p>
-    <p>
-      <span class="fa-inline">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span>
-      <span class="en-inline" hidden>Website Design & Cultural Research: Marjan Saei</span>
-    </p>
-    <p>© Iran, A Thousand Colors</p>
-  </footer>
-
-  <script>
-    const languageToggle = document.getElementById("languageToggle");
-    let currentLanguage = "fa";
-
-    function setLanguage(language) {
-      currentLanguage = language;
-
-      document.documentElement.lang = language;
-      document.documentElement.dir = language === "fa" ? "rtl" : "ltr";
-
-      document.querySelectorAll(".fa-inline").forEach(element => {
-        element.hidden = language !== "fa";
-      });
-
-      document.querySelectorAll(".en-inline").forEach(element => {
-        element.hidden = language !== "en";
-      });
-
-      languageToggle.textContent = language === "fa" ? "English" : "فارسی";
-    }
-
-    languageToggle.addEventListener("click", () => {
-      setLanguage(currentLanguage === "fa" ? "en" : "fa");
-    });
-
-    setLanguage("fa");
-  </script>
+<script>
+function toggleLanguage(){
+  const english = !document.body.classList.contains('english');
+  document.body.classList.toggle('english', english);
+  document.documentElement.lang = english ? 'en' : 'fa';
+  document.documentElement.dir = english ? 'ltr' : 'rtl';
+  document.getElementById('langButton').textContent = english ? 'فارسی' : 'English';
+}
+</script>
 </body>
 </html>
 ```
