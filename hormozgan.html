@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="هرمزگان؛ روایت تصویری پوشش زنان، روستاها، تاریخ، صنایع‌دستی و خوراک محلی در نمایشگاه ایران، هزار رنگ.">
+<title>هرمزگان | ایران، هزار رنگ</title>
+
+<style>
+:root {
+  --cream:#f8f1e3;
+  --paper:#fffaf0;
+  --olive:#596447;
+  --dark:#292b25;
+  --gold:#b08b48;
+  --rust:#b94e27;
+  --teal:#245b60;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:var(--cream);
+  color:var(--dark);
+  font-family:Tahoma,Arial,sans-serif;
+  line-height:2.1;
+}
+a { color:var(--teal); }
+.topline {
+  height:5px;
+  background:linear-gradient(90deg,var(--rust),var(--gold),var(--teal),var(--olive));
+}
+header {
+  text-align:center;
+  padding:48px 20px 34px;
+  border-bottom:1px solid #d9c8a5;
+  background:var(--paper);
+}
+.eyebrow { color:var(--rust); font-size:14px; }
+h1 {
+  color:var(--olive);
+  font-size:clamp(30px,5vw,48px);
+  line-height:1.6;
+  margin:12px 0;
+}
+.slogan {
+  color:var(--rust);
+  font-size:clamp(18px,3vw,24px);
+  font-weight:bold;
+  margin:8px 0;
+}
+.subtitle { color:#696455; margin:8px auto; max-width:700px; }
+nav {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  padding:16px;
+  background:#eee4d1;
+}
+nav a {
+  text-decoration:none;
+  padding:6px 13px;
+  border:1px solid #d3c09a;
+  border-radius:30px;
+  font-size:13px;
+}
+.lang-switch {
+  position:fixed;
+  z-index:10;
+  top:12px;
+  left:12px;
+  border:1px solid var(--gold);
+  border-radius:30px;
+  background:var(--paper);
+  color:var(--olive);
+  padding:8px 14px;
+  font-weight:bold;
+  cursor:pointer;
+}
+main { max-width:1050px; margin:auto; padding:24px 18px 60px; }
+section {
+  background:var(--paper);
+  border:1px solid #e3d5b9;
+  border-radius:15px;
+  padding:clamp(18px,4vw,35px);
+  margin:25px 0;
+  box-shadow:0 5px 20px #65502a0a;
+}
+h2 {
+  color:var(--olive);
+  font-size:clamp(22px,3vw,29px);
+  border-bottom:1px solid #d9c8a5;
+  padding-bottom:10px;
+  margin-top:0;
+}
+h3 { color:var(--rust); font-size:19px; }
+.hero-art {
+  display:block;
+  width:min(100%,690px);
+  height:auto;
+  margin:18px auto;
+  border:6px solid #fffaf0;
+  outline:1px solid #d7c398;
+}
+.caption {
+  text-align:center;
+  color:#6b6657;
+  font-size:13px;
+  margin:14px auto;
+}
+.label-art {
+  display:block;
+  width:min(100%,470px);
+  height:auto;
+  margin:22px auto 10px;
+  border:1px solid #ddc99e;
+}
+.quote {
+  border-right:4px solid var(--gold);
+  padding:12px 18px;
+  background:#f3ead7;
+  color:var(--olive);
+  font-size:18px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.tile {
+  background:#f6eedf;
+  border:1px solid #e3d4b7;
+  border-radius:12px;
+  padding:17px;
+}
+.tile h3 { margin-top:0; }
+.small { font-size:13px; color:#6b6657; }
+ul { padding-right:22px; }
+li { margin:7px 0; }
+.source-list li { overflow-wrap:anywhere; }
+footer {
+  text-align:center;
+  padding:28px 16px;
+  background:var(--olive);
+  color:#fff8e9;
+}
+footer a { color:#ffdf9e; }
+.back { display:inline-block; margin-top:18px; color:var(--olive); }
+body.english { direction:ltr; font-family:Arial,Tahoma,sans-serif; }
+body.english nav { direction:ltr; }
+body.english ul { padding-left:22px; padding-right:0; }
+body.english .quote {
+  border-right:0;
+  border-left:4px solid var(--gold);
+}
+body:not(.english) .en { display:none!important; }
+body.english .fa { display:none!important; }
+@media(max-width:600px) {
+  header { padding-top:45px; }
+  nav { gap:6px; }
+  nav a { font-size:12px; }
+}
+</style>
+</head>
+
+<body>
+<button class="lang-switch" id="langSwitch" type="button">English</button>
+<div class="topline"></div>
+
+<header>
+  <div class="eyebrow">
+    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+    <span class="en">Iran, A Thousand Colors | A Visual Story of Women's Dress in Iran</span>
+  </div>
+
+  <h1>
+    <span class="fa">هرمزگان؛ سرزمین دریا و آفتاب</span>
+    <span class="en">Hormozgan: Land of Sea and Sunshine</span>
+  </h1>
+
+  <p class="slogan">
+    <span class="fa">«هرمزگان | رنگِ دریا، نقشِ آفتاب»</span>
+    <span class="en">“Hormozgan | Colors of the Sea, Patterns of the Sun”</span>
+  </p>
+
+  <p class="subtitle">
+    <span class="fa">سفری تصویری میان پوشش زنان جنوب، بندرهای تاریخی، هنرهای دستی و طعم‌های گرم ساحل خلیج فارس</span>
+    <span class="en">A visual journey through southern women's dress, historic ports, handicrafts, and the flavors of the Persian Gulf coast.</span>
+  </p>
+</header>
+
+<nav>
+  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+  <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+  <a href="#villages"><span class="fa">شهرها و روستاها</span><span class="en">Towns & Villages</span></a>
+  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+  <a href="#food"><span class="fa">غذا و شیرینی</span><span class="en">Food & Sweets</span></a>
+  <a href="#products"><span class="fa">محصولات و سوغات</span><span class="en">Products & Souvenirs</span></a>
+  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
+
+<main>
+
+<section id="art">
+  <h2>
+    <span class="fa">۱. تصویر هرمزگان؛ روایت یک سرزمین</span>
+    <span class="en">1. Hormozgan in Art: A Land's Story</span>
+  </h2>
+
+  <p>
+    <span class="fa">در این اثر، پوشش رنگارنگ زن هرمزگانی در کنار دریا، لنج‌های سنتی، نخل‌ها و نشانه‌هایی از زندگی ساحلی قرار گرفته است. رنگ‌های زنده لباس و نقش‌های پارچه، در کنار آبی خلیج فارس، روایتی تصویری از فرهنگ و زندگی مردم جنوب می‌سازند.</span>
+    <span class="en">This artwork brings together colorful women's dress, the sea, traditional lenj boats, palm trees, and details of coastal life. Vivid fabrics and the blue waters of the Persian Gulf tell a visual story of southern culture.</span>
+  </p>
+
+  <img class="hero-art" src="hormozgan.png" alt="اثر هنری پوشش زنان هرمزگان از مجموعه ایران، هزار رنگ">
+
+  <p class="caption">
+    <span class="fa">اثر تصویری هرمزگان از مجموعه «ایران، هزار رنگ»</span>
+    <span class="en">The Hormozgan artwork from “Iran, A Thousand Colors”</span>
+  </p>
+
+  <div class="quote">
+    <span class="fa">از نقش پارچه‌های رنگارنگ تا حرکت لنج‌ها بر آب، هرمزگان قصه‌ی زندگی در کنار دریاست.</span>
+    <span class="en">From colorful fabrics to lenj boats moving across the water, Hormozgan tells a story of life beside the sea.</span>
+  </div>
+
+  <p class="small">
+    <span class="fa">این تصویر، اثر هنری مجموعه است؛ توضیحات این صفحه برای معرفی فرهنگی و تاریخی استان ارائه شده‌اند.</span>
+    <span class="en">This is the original artwork created for the collection. The text provides cultural and historical context about the province.</span>
+  </p>
+</section>
+
+<section id="clothing">
+  <h2>
+    <span class="fa">۲. پوشش زنان هرمزگان؛ رنگ و هویت</span>
+    <span class="en">2. Women's Dress in Hormozgan: Color and Identity</span>
+  </h2>
+
+  <p>
+    <span class="fa">پوشاک سنتی زنان هرمزگان با توجه به شهر، روستا، شیوه زندگی و مناسبت‌ها تنوع زیادی دارد. لباس‌های رنگارنگ، شلوارهای تزئین‌شده، روسری‌ها و پوشش‌های سر و صورت از عناصر قابل توجه این فرهنگ پوششی هستند. نوع پارچه، نقش‌دوزی و شیوه پوشیدن لباس در نقاط مختلف استان یکسان نیست.</span>
+    <span class="en">Traditional women's clothing in Hormozgan varies by town, village, lifestyle, and occasion. Colorful garments, decorated trousers, scarves, and different forms of head and face coverings are notable elements. Fabrics, embroidery, and clothing styles differ across the province.</span>
+  </p>
+
+  <img class="label-art" src="hormozgan_leibel.png" alt="لیبل اطلاعاتی پوشش و فرهنگ هرمزگان">
+
+  <p class="caption">
+    <span class="fa">لیبل اختصاصی هرمزگان؛ راهنمای تصویری پوشش، میراث و خوراک محلی</span>
+    <span class="en">Hormozgan's exhibition label: a visual guide to dress, heritage, and local food</span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">لباس‌های رنگارنگ</span><span class="en">Colorful Garments</span></h3>
+      <p>
+        <span class="fa">رنگ‌های پرنشاط و پارچه‌های طرح‌دار در بسیاری از نمونه‌های پوشاک محلی دیده می‌شوند. ترکیب لباس‌ها بسته به منطقه و موقعیت استفاده متفاوت است.</span>
+        <span class="en">Bright colors and patterned fabrics appear in many examples of local clothing. Garment combinations vary by area and occasion.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">گلابتون‌دوزی</span><span class="en">Golābatun Embroidery</span></h3>
+      <p>
+        <span class="fa">در این هنر، نخ‌های فلزی براق برای ایجاد نقش‌های تزئینی روی پارچه به کار می‌روند. گلابتون‌دوزی در تزئین برخی لباس‌ها و پوشاک مجلسی جنوب جایگاه دارد.</span>
+        <span class="en">This craft uses shiny metallic threads to create decorative patterns on fabric. Golābatun embroidery is used to embellish some southern garments and ceremonial clothing.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">خوس‌دوزی و بادله‌دوزی</span><span class="en">Khos and Badleh Embroidery</span></h3>
+      <p>
+        <span class="fa">این هنرهای رودوزی با نوارها و نقش‌های براق، به تزئین پارچه و لباس کمک می‌کنند. روش اجرا و کاربرد آن‌ها در جوامع محلی می‌تواند متفاوت باشد.</span>
+        <span class="en">These embroidery traditions use shiny strips and patterns to decorate fabrics and clothing. Their techniques and uses may differ between local communities.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">پوشش سر و صورت</span><span class="en">Head and Face Coverings</span></h3>
+      <p>
+        <span class="fa">روسری و پوشش‌های مختلف سر در پوشاک زنان منطقه دیده می‌شوند. برقع نیز در برخی جوامع ساحلی و بخش‌هایی از استان کاربرد فرهنگی دارد؛ شکل و شیوه استفاده از آن یکسان نیست.</span>
+        <span class="en">Scarves and different head coverings are part of women's dress in the region. The burqa is also used in some coastal communities, though its form and use are not uniform.</span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="villages">
+  <h2>
+    <span class="fa">۳. شهرها و روستاها؛ زندگی در کنار خلیج فارس</span>
+    <span class="en">3. Towns and Villages: Life Beside the Persian Gulf</span>
+  </h2>
+
+  <p>
+    <span class="fa">فرهنگ هرمزگان در بندرها، بازارها، روستاهای ساحلی و آبادی‌های کشاورزی شکل گرفته است. دریانوردی، ماهیگیری، نخلداری، سفالگری و بافت حصیر بخشی از تجربه زندگی در نقاط مختلف استان‌اند.</span>
+    <span class="en">Hormozgan's culture has developed through its ports, markets, coastal villages, and agricultural settlements. Seafaring, fishing, date cultivation, pottery, and palm weaving are part of life in different areas of the province.</span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">بندرعباس</span><span class="en">Bandar Abbas</span></h3>
+      <p>
+        <span class="fa">مرکز استان و بندری مهم در خلیج فارس که بازارهای محلی، خوراک دریایی و پوشاک رنگارنگ بخشی از سیمای فرهنگی آن هستند.</span>
+        <span class="en">The provincial capital is an important Persian Gulf port, known for its local markets, seafood, and colorful clothing traditions.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">میناب</span><span class="en">Minab</span></h3>
+      <p>
+        <span class="fa">میناب به بازارهای محلی، کشاورزی گرمسیری، حصیربافی و سنت‌های صنایع‌دستی شناخته می‌شود.</span>
+        <span class="en">Minab is known for its local markets, tropical agriculture, palm weaving, and handicraft traditions.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">بندر کنگ</span><span class="en">Bandar Kong</span></h3>
+      <p>
+        <span class="fa">این بندر تاریخی با خانه‌های بومی، بادگیرها و میراث دریانوردی، بخشی از تاریخ تجارت دریایی جنوب ایران را روایت می‌کند.</span>
+        <span class="en">This historic port, with its traditional houses, windcatchers, and seafaring heritage, reflects the history of maritime trade in southern Iran.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">بستک و مناطق پیرامون</span><span class="en">Bastak and Surrounding Areas</span></h3>
+      <p>
+        <span class="fa">بافت‌های مسکونی و معماری بومی این منطقه، جلوه‌هایی از سازگاری زندگی با آب‌وهوای گرم و سنت‌های فرهنگی محلی را نشان می‌دهند.</span>
+        <span class="en">Local settlements and architecture here reflect ways of adapting to the hot climate and preserving regional traditions.</span>
+      </p>
+    </article>
+  </div>
+
+  <p class="small">
+    <span class="fa">یادداشت: جزیره قشم در این صفحه به‌صورت مستقل معرفی نمی‌شود تا اطلاعات آن با صفحه اختصاصی قشم تکرار نشود.</span>
+    <span class="en">Note: Qeshm Island is not covered separately here, to avoid duplicating content on its dedicated page.</span>
+  </p>
+</section>
+
+<section id="history">
+  <h2>
+    <span class="fa">۴. تاریخ، معماری و طبیعت</span>
+    <span class="en">4. History, Architecture, and Nature</span>
+  </h2>
+
+  <h3><span class="fa">قلعه پرتغالی‌های جزیره هرمز</span><span class="en">Portuguese Castle on Hormuz Island</span></h3>
+  <p>
+    <span class="fa">این قلعه یادگاری از حضور پرتغالی‌ها در منطقه خلیج فارس در سده‌های گذشته است. موقعیت ساحلی و بقایای معماری آن، بخشی از تاریخ رقابت بر سر مسیرهای دریایی را بازگو می‌کند.</span>
+    <span class="en">This castle dates from the Portuguese presence in the Persian Gulf centuries ago. Its coastal location and surviving structures reflect the history of competition over maritime routes.</span>
+  </p>
+
+  <h3><span class="fa">بافت تاریخی بندر کنگ</span><span class="en">Historic Urban Fabric of Bandar Kong</span></h3>
+  <p>
+    <span class="fa">خانه‌های بومی و عناصر معماری سازگار با آب‌وهوای گرم، در کنار میراث دریانوردی، بندر کنگ را به یکی از مکان‌های مهم برای شناخت تاریخ ساحلی هرمزگان تبدیل کرده‌اند.</span>
+    <span class="en">Traditional houses and climate-adapted architectural features, together with its seafaring heritage, make Bandar Kong an important place for understanding Hormozgan's coastal history.</span>
+  </p>
+
+  <h3><span class="fa">پل تاریخی لاتیدان</span><span class="en">Historic Latidan Bridge</span></h3>
+  <p>
+    <span class="fa">پل لاتیدان از سازه‌های تاریخی مسیرهای ارتباطی جنوب ایران است و اهمیت راه‌ها و پیوندهای تجاری گذشته را یادآوری می‌کند.</span>
+    <span class="en">Latidan Bridge is a historic structure along southern Iran's old routes, recalling the importance of transport and trade connections in the past.</span>
+  </p>
+
+  <h3><span class="fa">سواحل و نخلستان‌ها</span><span class="en">Coastlines and Palm Groves</span></h3>
+  <p>
+    <span class="fa">دریا، نخلستان‌ها و آب‌وهوای گرم بر اقتصاد، خوراک، صنایع‌دستی و شیوه زندگی مردم استان تأثیر گذاشته‌اند. این پیوند در نقش پارچه‌ها، محصولات بومی و معماری محلی نیز بازتاب دارد.</span>
+    <span class="en">The sea, palm groves, and hot climate influence the province's economy, cuisine, handicrafts, and everyday life. This relationship is also reflected in textiles, local products, and architecture.</span>
+  </p>
+</section>
+
+<section id="food">
+  <h2>
+    <span class="fa">۵. طعم‌های محلی هرمزگان</span>
+    <span class="en">5. Local Flavors of Hormozgan</span>
+  </h2>
+
+  <p>
+    <span class="fa">خوراک هرمزگان از ماهی و میگو، برنج، خرما، ادویه‌ها و محصولات محلی تأثیر گرفته است. دستور پخت‌ها و نام غذاها ممکن است از شهری به شهر دیگر و از خانواده‌ای به خانواده دیگر تفاوت داشته باشند.</span>
+    <span class="en">Hormozgan's cuisine draws on fish, shrimp, rice, dates, spices, and local produce. Recipes and dish names may vary between towns and families.</span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">هواری ماهی و میگو</span><span class="en">Fish and Shrimp Hovari</span></h3>
+      <p>
+        <span class="fa">غذایی بر پایه برنج که با ماهی یا میگو و ادویه‌های محلی آماده می‌شود. مواد و روش پخت آن در خانواده‌ها و مناطق مختلف می‌تواند تفاوت داشته باشد.</span>
+        <span class="en">A rice-based dish prepared with fish or shrimp and local spices. Ingredients and methods can vary between families and areas.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">زیبون</span><span class="en">Ziboon</span></h3>
+      <p>
+        <span class="fa">از غذاهای شناخته‌شده جنوب که معمولاً با ماهی سرخ‌شده، سیب‌زمینی و برنج تهیه می‌شود.</span>
+        <span class="en">A well-known southern dish commonly prepared with fried fish, potatoes, and rice.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">قلیه‌ماهی</span><span class="en">Fish Ghalieh</span></h3>
+      <p>
+        <span class="fa">خوراکی با ماهی، سبزی و چاشنی‌های ترش که در بخش‌هایی از جنوب ایران و هرمزگان رواج دارد.</span>
+        <span class="en">A fish stew with herbs and tangy seasonings, popular in parts of southern Iran, including Hormozgan.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">سوراغ</span><span class="en">Sooragh</span></h3>
+      <p>
+        <span class="fa">چاشنی محلی تهیه‌شده از ماهی و ترکیبات نمکی و ادویه‌ای که در برخی سفره‌های بندرعباس و اطراف آن استفاده می‌شود.</span>
+        <span class="en">A local condiment made from fish with salty and spiced ingredients, used in some households in and around Bandar Abbas.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">نان توموشی</span><span class="en">Tomoshi Bread</span></h3>
+      <p>
+        <span class="fa">نان نازک محلی که به روش سنتی پخته می‌شود و می‌تواند با مواد گوناگون مانند تخم‌مرغ، پنیر یا سس‌های محلی همراه باشد.</span>
+        <span class="en">A thin local bread baked traditionally and served with different fillings or toppings, such as egg, cheese, or local sauces.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">رنگینک</span><span class="en">Ranginak</span></h3>
+      <p>
+        <span class="fa">شیرینی خرمایی جنوب ایران که معمولاً با آرد و روغن تهیه می‌شود و گاهی مغزهایی مانند گردو در آن قرار می‌گیرد.</span>
+        <span class="en">A southern Iranian date dessert commonly made with flour and oil, sometimes with nuts such as walnuts.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">خرما و شیرینی‌های خرمایی</span><span class="en">Dates and Date Sweets</span></h3>
+      <p>
+        <span class="fa">خرما در خوراک روزانه و پذیرایی محلی جایگاه دارد و در تهیه انواع خوراکی‌ها و شیرینی‌های خانگی نیز استفاده می‌شود.</span>
+        <span class="en">Dates are part of everyday food and hospitality and are also used in homemade sweets and other local treats.</span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="products">
+  <h2>
+    <span class="fa">۶. محصولات محلی، سوغات و صنایع‌دستی</span>
+    <span class="en">6. Local Products, Souvenirs, and Handicrafts</span>
+  </h2>
+
+  <div class="grid">
+    <article class="tile">
+      <h3><span class="fa">خرما و فرآورده‌های آن</span><span class="en">Dates and Date Products</span></h3>
+      <p>
+        <span class="fa">خرما از محصولات مهم نواحی گرم استان است و به شکل تازه یا در فرآورده‌های خوراکی محلی عرضه می‌شود.</span>
+        <span class="en">Dates are an important crop in the province's warm areas and are sold fresh or as locally prepared food products.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">انبه و ترشی انبه</span><span class="en">Mango and Mango Pickle</span></h3>
+      <p>
+        <span class="fa">انبه در بخش‌هایی از جنوب استان کشت می‌شود و از آن برای تهیه ترشی و چاشنی‌های محلی نیز استفاده می‌کنند.</span>
+        <span class="en">Mangoes are grown in parts of the southern province and are also used to make pickles and local condiments.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">گلابتون‌دوزی</span><span class="en">Golābatun Embroidery</span></h3>
+      <p>
+        <span class="fa">یکی از هنرهای رودوزی جنوب که با نخ‌های فلزی براق، نقش‌هایی تزئینی روی پارچه ایجاد می‌کند و در پوشاک و محصولات هنری کاربرد دارد.</span>
+        <span class="en">A southern embroidery tradition using shiny metallic threads to create decorative fabric patterns for clothing and art objects.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">خوس‌دوزی و بادله‌دوزی</span><span class="en">Khos and Badleh Embroidery</span></h3>
+      <p>
+        <span class="fa">این هنرهای تزئینی در برخی پوشاک و پارچه‌های محلی دیده می‌شوند و بخشی از میراث هنری زنان منطقه‌اند.</span>
+        <span class="en">These decorative techniques appear on some local garments and fabrics and form part of the region's textile heritage.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">حصیربافی</span><span class="en">Palm Weaving</span></h3>
+      <p>
+        <span class="fa">با استفاده از برگ درخت خرما، وسایلی مانند سبد، زیرانداز و ظروف کاربردی ساخته می‌شود. این هنر با محیط نخلستانی جنوب پیوند دارد.</span>
+        <span class="en">Palm leaves are used to make baskets, mats, and useful household objects. This craft is closely linked to the southern palm-growing environment.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">سفالگری میناب</span><span class="en">Minab Pottery</span></h3>
+      <p>
+        <span class="fa">ظروف سفالی و کوزه‌های سنتی، از جمله جهله، نمونه‌هایی از هنر سفالگری و کاربرد روزمره سفال در منطقه هستند.</span>
+        <span class="en">Traditional pottery, including the jahleh water vessel, reflects local pottery skills and the everyday use of clay objects.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">ماهی و میگو</span><span class="en">Fish and Shrimp</span></h3>
+      <p>
+        <span class="fa">محصولات دریایی از تولیدات مهم نواحی ساحلی‌اند و به صورت تازه یا فرآوری‌شده در بازارهای محلی عرضه می‌شوند.</span>
+        <span class="en">Seafood is an important coastal product and is sold fresh or processed in local markets.</span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="sources">
+  <h2>
+    <span class="fa">۷. منابع و مطالعه بیشتر</span>
+    <span class="en">7. Sources and Further Reading</span>
+  </h2>
+
+  <p>
+    <span class="fa">برای آشنایی بیشتر با میراث فرهنگی، پوشاک، صنایع‌دستی و جاذبه‌های هرمزگان می‌توان از منابع گردشگری و فرهنگی زیر آغاز کرد. برای ثبت دقیق نام لباس‌ها و سنت‌های هر شهر یا روستا، منابع مردم‌شناختی و روایت افراد آگاه محلی نیز اهمیت دارند.</span>
+    <span class="en">The following cultural and tourism resources are starting points for exploring Hormozgan's heritage, clothing, handicrafts, and attractions. Ethnographic sources and local knowledge are also valuable for documenting specific clothing traditions.</span>
+  </p>
+
+  <ul class="source-list">
+    <li>
+      <a href="https://www.visitiran.ir/" target="_blank" rel="noopener">
+        Visit Iran — Iran's Cultural Heritage and Tourism
+      </a>
+    </li>
+    <li>
+      <a href="https://ich.unesco.org/" target="_blank" rel="noopener">
+        UNESCO Intangible Cultural Heritage
+      </a>
+    </li>
+    <li>
+      <a href="https://whc.unesco.org/" target="_blank" rel="noopener">
+        UNESCO World Heritage Centre
+      </a>
+    </li>
+    <li>
+      <a href="https://www.britannica.com/place/Iran" target="_blank" rel="noopener">
+        Encyclopaedia Britannica — Iran
+      </a>
+    </li>
+  </ul>
+
+  <p class="small">
+    <span class="fa">این منابع برای شروع پژوهش هستند؛ جزئیات مربوط به هر اثر تاریخی یا هنر محلی باید با منبع اختصاصی همان موضوع بررسی شود.</span>
+    <span class="en">These resources are starting points. Details about individual historic sites and local crafts should be checked against topic-specific sources.</span>
+  </p>
+</section>
+
+<a class="back" href="index.html">
+  <span class="fa">← بازگشت به گالری مناطق ایران</span>
+  <span class="en">← Back to the Regions Gallery</span>
+</a>
+
+</main>
+
+<footer>
+  <p>
+    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+    <span class="en">Iran, A Thousand Colors | A Visual Story of Women's Dress in Iran</span>
+  </p>
+  <p>
+    <span class="fa">هنرمند و خالق آثار: مریم ساعی</span>
+    <span class="en">Artist and Artwork Creator: Maryam Saei</span>
+  </p>
+  <p>
+    <span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span>
+    <span class="en">Website Design and Cultural Research: Marjan Saei</span>
+  </p>
+</footer>
+
+<script>
+const langSwitch = document.getElementById("langSwitch");
+
+langSwitch.addEventListener("click", function () {
+  document.body.classList.toggle("english");
+
+  const isEnglish = document.body.classList.contains("english");
+  document.documentElement.lang = isEnglish ? "en" : "fa";
+  document.documentElement.dir = isEnglish ? "ltr" : "rtl";
+  langSwitch.textContent = isEnglish ? "فارسی" : "English";
+});
+</script>
+
+</body>
+</html>
