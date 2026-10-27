@@ -1,1 +1,686 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کاشان و ابیانه | ایران، هزار رنگ</title>
+  <meta name="description" content="روایتی تصویری از پوشش سنتی زنان ابیانه، تاریخ، معماری، غذاها و هنرهای منطقه کاشان.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #f4ead8;
+      --cream: #fff8eb;
+      --rust: #a7482d;
+      --orange: #d58b43;
+      --green: #354b39;
+      --brown: #493529;
+      --gold: #c49a52;
+      --line: #d8c5a6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 10% 10%, #e9d5b5 0, transparent 35%),
+        var(--paper);
+      color: var(--brown);
+      font-family: "Vazirmatn", sans-serif;
+      line-height: 1.95;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 6%;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,248,235,.86);
+    }
+
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .lang-button, .back-button {
+      display: inline-block;
+      border: 1px solid var(--green);
+      border-radius: 24px;
+      padding: 7px 16px;
+      font-family: inherit;
+      font-size: .88rem;
+      text-decoration: none;
+      cursor: pointer;
+      background: transparent;
+      color: var(--green);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 45px 22px 25px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--rust);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    h1 {
+      color: var(--green);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.5;
+      margin: 5px 0;
+    }
+
+    .subtitle {
+      color: var(--rust);
+      font-size: 1.12rem;
+      font-weight: 600;
+      margin: 0 0 14px;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 12px auto 25px;
+    }
+
+    .artwork-frame {
+      max-width: 700px;
+      margin: 28px auto 40px;
+      padding: 12px;
+      background: var(--cream);
+      border: 1px solid var(--gold);
+      box-shadow: 0 12px 35px rgba(73,53,41,.15);
+      transform: rotate(-.3deg);
+    }
+
+    .artwork-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .image-caption {
+      font-size: .82rem;
+      text-align: center;
+      padding: 10px 4px 2px;
+      color: #76614b;
+    }
+
+    .content {
+      max-width: 1050px;
+      margin: auto;
+      padding: 0 22px 60px;
+    }
+
+    .section {
+      position: relative;
+      margin: 25px 0;
+      padding: 28px clamp(18px, 4vw, 38px);
+      background: rgba(255,248,235,.84);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      box-shadow: 0 6px 20px rgba(73,53,41,.045);
+    }
+
+    .section h2 {
+      color: var(--green);
+      font-size: 1.45rem;
+      margin: 0 0 12px;
+    }
+
+    .section h3 {
+      color: var(--rust);
+      font-size: 1.08rem;
+      margin-bottom: 5px;
+    }
+
+    .section p { margin: 8px 0 14px; }
+
+    .ornament {
+      width: 70px;
+      height: 3px;
+      background: var(--orange);
+      margin: 10px 0 18px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 15px;
+    }
+
+    .tag {
+      border: 1px solid #d7bd91;
+      border-radius: 22px;
+      padding: 5px 13px;
+      background: #f8edda;
+      font-size: .9rem;
+    }
+
+    .label-frame {
+      max-width: 660px;
+      margin: 20px auto 0;
+      padding: 10px;
+      background: #fff9ec;
+      border: 1px solid var(--gold);
+      box-shadow: 0 8px 22px rgba(73,53,41,.1);
+    }
+
+    .label-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .note {
+      padding: 13px 17px;
+      border-right: 4px solid var(--orange);
+      background: #f7eddc;
+      font-size: .93rem;
+    }
+
+    .sources a {
+      color: var(--rust);
+      overflow-wrap: anywhere;
+    }
+
+    .sources li { margin-bottom: 9px; }
+
+    footer {
+      text-align: center;
+      padding: 28px 18px;
+      background: var(--green);
+      color: var(--cream);
+    }
+
+    footer strong { color: #f1cc85; }
+
+    .en-inline { display: none; }
+
+    html[lang="en"] body { font-family: Arial, sans-serif; }
+
+    html[lang="en"] .fa-inline { display: none; }
+    html[lang="en"] .en-inline { display: inline; }
+
+    html[lang="en"] .section { text-align: left; }
+    html[lang="en"] .ornament { margin-left: 0; }
+    html[lang="en"] .note {
+      border-right: 0;
+      border-left: 4px solid var(--orange);
+    }
+
+    html[lang="en"] .tag-list { justify-content: flex-start; }
+
+    @media (max-width: 600px) {
+      .topbar { padding: 12px 4%; }
+      .hero { padding-top: 28px; }
+      .section { padding: 21px 17px; }
+      .section h2 { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="fa-inline">ایران، هزار رنگ</span>
+      <span class="en-inline">Iran, A Thousand Colors</span>
+    </a>
+
+    <button class="lang-button" type="button" onclick="toggleLanguage()">
+      <span class="fa-inline">English</span>
+      <span class="en-inline">فارسی</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">
+        <span class="fa-inline">گالری مناطق ایران · روایت چهاردهم</span>
+        <span class="en-inline">REGIONAL GALLERY · REGION 14</span>
+      </div>
+
+      <h1>
+        <span class="fa-inline">کاشان و ابیانه</span>
+        <span class="en-inline">Kashan &amp; Abyaneh</span>
+      </h1>
+
+      <p class="subtitle">
+        <span class="fa-inline">عطر گل، رنگ زندگی</span>
+        <span class="en-inline">The Scent of Roses, the Colors of Life</span>
+      </p>
+
+      <p class="intro">
+        <span class="fa-inline">
+          کاشان و نواحی پیرامون آن، با خانه‌های تاریخی، باغ‌های ایرانی،
+          هنرهای سنتی و آیین گلاب‌گیری شناخته می‌شوند. در این روایت تصویری،
+          پوشش رنگارنگ زنان ابیانه در کنار معماری و طبیعت منطقه،
+          پنجره‌ای به تنوع فرهنگی ایران می‌گشاید.
+        </span>
+        <span class="en-inline">
+          Kashan and its surrounding region are known for historic houses,
+          Persian gardens, traditional crafts and rosewater distillation.
+          This visual story brings the colorful traditional dress of Abyaneh
+          into conversation with the region's architecture and landscape,
+          offering a window into Iran's cultural diversity.
+        </span>
+      </p>
+
+      <div class="artwork-frame">
+        <img src="kashan.png"
+             alt="اثر هنری کاشان و ابیانه، با الهام از پوشش محلی زنان">
+        <div class="image-caption">
+          <span class="fa-inline">اثر هنری از مجموعه ایران، هزار رنگ</span>
+          <span class="en-inline">Artwork from Iran, A Thousand Colors</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="content">
+
+      <section class="section">
+        <h2>
+          <span class="fa-inline">پوشش زنان روستایی</span>
+          <span class="en-inline">Traditional Rural Women's Dress</span>
+        </h2>
+        <div class="ornament"></div>
+
+        <p>
+          <span class="fa-inline">
+            پوشش سنتی زنان ابیانه از شناخته‌شده‌ترین جلوه‌های لباس محلی
+            در منطقه مرکزی ایران است. روسری بزرگ و گل‌دار، پیراهن بلند،
+            دامن پُرچین و رنگ‌های زنده، از ویژگی‌هایی هستند که در تصاویر
+            و توصیف‌های این پوشش دیده می‌شوند.
+          </span>
+          <span class="en-inline">
+            Abyaneh's traditional women's dress is one of the best-known
+            examples of local clothing in central Iran. A large floral
+            headscarf, a long tunic, a full skirt and vivid colors are
+            among the features associated with this attire.
+          </span>
+        </p>
+
+        <p>
+          <span class="fa-inline">
+            نقش پارچه‌ها، شیوه بستن روسری و ترکیب لباس‌ها بخشی از هویت
+            بصری این روستا هستند. پوشش می‌تواند در گذر زمان و میان نسل‌ها
+            تغییر کند؛ بنابراین بهتر است هر بازسازی هنری با عکس‌ها و
+            منابع مردم‌نگارانه معتبر مقایسه شود.
+          </span>
+          <span class="en-inline">
+            Fabric patterns, the way the headscarf is worn and the
+            combination of garments contribute to the village's visual
+            identity. Clothing can change across generations, so artistic
+            reconstructions should be compared with reliable historical
+            photographs and ethnographic sources.
+          </span>
+        </p>
+
+        <div class="note">
+          <span class="fa-inline">
+            نکته پژوهشی: ابیانه در شهرستان نطنز، استان اصفهان قرار دارد.
+            در این صفحه، آن را به‌عنوان بخشی از روایت فرهنگی ناحیه کاشان
+            معرفی می‌کنیم، نه به‌عنوان روستایی در شهرستان کاشان.
+          </span>
+          <span class="en-inline">
+            Research note: Abyaneh is located in Natanz County, Isfahan
+            Province. It is presented here in the wider cultural context
+            of the Kashan region, not as a village within Kashan County.
+          </span>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>
+          <span class="fa-inline">آثار تاریخی و جاذبه‌ها</span>
+          <span class="en-inline">Historic Sites &amp; Attractions</span>
+        </h2>
+        <div class="ornament"></div>
+
+        <h3>
+          <span class="fa-inline">باغ فین</span>
+          <span class="en-inline">Fin Garden</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            باغی تاریخی با آبراهه‌ها، حوض‌ها، درختان و بناهایی که نمونه‌ای
+            از باغ‌سازی ایرانی را نشان می‌دهند.
+          </span>
+          <span class="en-inline">
+            A historic garden with water channels, pools, trees and
+            buildings representing the Persian garden tradition.
+          </span>
+        </p>
+
+        <h3>
+          <span class="fa-inline">خانه طباطبایی‌ها و خانه بروجردی‌ها</span>
+          <span class="en-inline">Tabatabaei and Borujerdi Houses</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            خانه‌هایی تاریخی با حیاط‌های مرکزی، گچ‌بری، شیشه‌های رنگی،
+            بادگیرها و تزئینات معماری چشم‌نواز.
+          </span>
+          <span class="en-inline">
+            Historic houses known for central courtyards, plasterwork,
+            colored glass, windcatchers and elaborate architectural details.
+          </span>
+        </p>
+
+        <h3>
+          <span class="fa-inline">بازار تاریخی کاشان</span>
+          <span class="en-inline">Kashan Historic Bazaar</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            مجموعه‌ای از راسته‌ها، سراها و تیمچه‌ها که پیوند دیرینه
+            تجارت، معماری و صنایع‌دستی را به نمایش می‌گذارد.
+          </span>
+          <span class="en-inline">
+            A network of traditional lanes, caravanserais and covered
+            market halls reflecting the historic relationship between
+            trade, architecture and handicrafts.
+          </span>
+        </p>
+
+        <h3>
+          <span class="fa-inline">روستای ابیانه و تپه سیلک</span>
+          <span class="en-inline">Abyaneh Village and Sialk Mounds</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            ابیانه با بافت پلکانی و بناهای سرخ‌رنگ خود شناخته می‌شود.
+            تپه سیلک نیز از محوطه‌های باستانی مهم منطقه کاشان است.
+          </span>
+          <span class="en-inline">
+            Abyaneh is known for its stepped village layout and
+            reddish buildings. The Sialk Mounds are an important
+            archaeological site in the Kashan area.
+          </span>
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>
+          <span class="fa-inline">سوغات و محصولات محلی</span>
+          <span class="en-inline">Souvenirs &amp; Local Products</span>
+        </h2>
+        <div class="ornament"></div>
+
+        <p>
+          <span class="fa-inline">
+            گلاب و عرقیات گیاهی از شناخته‌شده‌ترین محصولات این منطقه‌اند.
+            قالی‌بافی، مخمل‌بافی و زری‌بافی نیز در تاریخ هنر و تولید
+            پارچه کاشان جایگاه مهمی دارند.
+          </span>
+          <span class="en-inline">
+            Rosewater and herbal distillates are among the region's
+            best-known products. Carpet weaving, velvet weaving and
+            brocade weaving also hold an important place in Kashan's
+            textile and craft heritage.
+          </span>
+        </p>
+
+        <div class="tag-list">
+          <span class="tag">
+            <span class="fa-inline">گلاب و عرقیات</span>
+            <span class="en-inline">Rosewater &amp; Distillates</span>
+          </span>
+          <span class="tag">
+            <span class="fa-inline">قالی و قالیچه</span>
+            <span class="en-inline">Persian Carpets</span>
+          </span>
+          <span class="tag">
+            <span class="fa-inline">مخمل‌بافی</span>
+            <span class="en-inline">Velvet Weaving</span>
+          </span>
+          <span class="tag">
+            <span class="fa-inline">زری‌بافی</span>
+            <span class="en-inline">Brocade Weaving</span>
+          </span>
+          <span class="tag">
+            <span class="fa-inline">گل محمدی</span>
+            <span class="en-inline">Damask Roses</span>
+          </span>
+          <span class="tag">
+            <span class="fa-inline">جوزقند</span>
+            <span class="en-inline">Jozghand Sweet</span>
+          </span>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>
+          <span class="fa-inline">غذاهای محلی</span>
+          <span class="en-inline">Traditional Foods</span>
+        </h2>
+        <div class="ornament"></div>
+
+        <h3>
+          <span class="fa-inline">گوشت و لوبیا</span>
+          <span class="en-inline">Meat and Bean Stew</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            خوراکی سنتی و مقوی که در سفره‌های محلی کاشان شناخته شده است.
+          </span>
+          <span class="en-inline">
+            A hearty traditional dish associated with Kashan's local cuisine.
+          </span>
+        </p>
+
+        <h3>
+          <span class="fa-inline">شفته کاشانی</span>
+          <span class="en-inline">Kashani Shefteh</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            یکی از خوراک‌های محلی منطقه که با دستورها و چاشنی‌های
+            متفاوت در خانواده‌ها تهیه می‌شود.
+          </span>
+          <span class="en-inline">
+            A local dish prepared with variations in ingredients and
+            seasonings across households.
+          </span>
+        </p>
+
+        <h3>
+          <span class="fa-inline">خورش نخودآله</span>
+          <span class="en-inline">Nokhod-aleh Stew</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            از غذاهای سنتی معرفی‌شده در فرهنگ خوراک کاشان.
+            دستور دقیق آن ممکن است در خانواده‌ها متفاوت باشد.
+          </span>
+          <span class="en-inline">
+            A traditional dish mentioned in accounts of Kashan's food
+            culture. Its exact preparation may vary between households.
+          </span>
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>
+          <span class="fa-inline">شیرینی‌ها و خوراکی‌های شیرین</span>
+          <span class="en-inline">Traditional Sweets</span>
+        </h2>
+        <div class="ornament"></div>
+
+        <h3>
+          <span class="fa-inline">جوزقند</span>
+          <span class="en-inline">Jozghand</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            شیرینی سنتی تهیه‌شده از میوه خشک و مغزها که در برخی مناطق
+            اطراف کاشان، به‌ویژه برزک، شناخته می‌شود.
+          </span>
+          <span class="en-inline">
+            A traditional sweet made with dried fruit and nuts, known
+            in some areas around Kashan, particularly Barzok.
+          </span>
+        </p>
+
+        <h3>
+          <span class="fa-inline">شیرینی‌های محلی و فرآورده‌های گل محمدی</span>
+          <span class="en-inline">Local Sweets and Rose Products</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            شیرینی‌های محلی و فرآورده‌های معطر گل محمدی، بخشی از تجربه
+            خوراکی و سوغات این منطقه هستند.
+          </span>
+          <span class="en-inline">
+            Local pastries and fragrant damask-rose products form part
+            of the region's culinary and souvenir traditions.
+          </span>
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>
+          <span class="fa-inline">لیبل اطلاعاتی اثر</span>
+          <span class="en-inline">Artwork Information Label</span>
+        </h2>
+        <div class="ornament"></div>
+
+        <p>
+          <span class="fa-inline">
+            برای مشاهده جزئیات معرفی منطقه، لیبل همراه اثر را در این بخش ببینید.
+          </span>
+          <span class="en-inline">
+            View the artwork's information label below for a concise
+            introduction to the region.
+          </span>
+        </p>
+
+        <div class="label-frame">
+          <img src="kashan_leibel.png"
+               alt="لیبل اطلاعات فرهنگی کاشان و ابیانه">
+        </div>
+      </section>
+
+      <section class="section sources">
+        <h2>
+          <span class="fa-inline">منابع و مطالعه بیشتر</span>
+          <span class="en-inline">Sources &amp; Further Reading</span>
+        </h2>
+        <div class="ornament"></div>
+
+        <ul>
+          <li>
+            <a href="https://whc.unesco.org/" target="_blank" rel="noopener">
+              UNESCO World Heritage Centre
+            </a>
+            <span class="fa-inline"> — اطلاعات مربوط به میراث جهانی و محوطه‌های تاریخی</span>
+            <span class="en-inline"> — World heritage and historic sites</span>
+          </li>
+          <li>
+            <a href="https://www.iranicaonline.org/" target="_blank" rel="noopener">
+              Encyclopaedia Iranica
+            </a>
+            <span class="fa-inline"> — پژوهش‌های تاریخی و فرهنگی ایران</span>
+            <span class="en-inline"> — Scholarly resources on Iranian history and culture</span>
+          </li>
+          <li>
+            <a href="https://visitiran.ir/" target="_blank" rel="noopener">
+              Visit Iran
+            </a>
+            <span class="fa-inline"> — اطلاعات گردشگری ایران</span>
+            <span class="en-inline"> — Iran tourism information</span>
+          </li>
+        </ul>
+
+        <p class="note">
+          <span class="fa-inline">
+            توضیح: معرفی لباس در این صفحه یک روایت فرهنگی کلی است.
+            برای انتساب قطعی جزئیات پوشاک به یک دوره تاریخی یا روستای خاص،
+            باید از تصاویر مستند و پژوهش‌های تخصصی پوشاک استفاده شود.
+          </span>
+          <span class="en-inline">
+            Note: The clothing section offers a general cultural account.
+            Attributing specific garment details to a particular historical
+            period or village requires documented photographs and
+            specialized clothing research.
+          </span>
+        </p>
+      </section>
+
+      <div style="text-align:center; padding:10px 0 30px;">
+        <a class="back-button" href="index.html">
+          <span class="fa-inline">← بازگشت به گالری مناطق</span>
+          <span class="en-inline">← Back to the Regional Gallery</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <span class="fa-inline">مجموعه هنری </span>
+      <span class="en-inline">An art project by </span>
+      <strong>Maryam Saei | مریم ساعی</strong>
+    </div>
+    <div>
+      <span class="fa-inline">طراحی وب و پژوهش فرهنگی: مرجان ساعی</span>
+      <span class="en-inline">Website &amp; Cultural Research: Marjan Saei</span>
+    </div>
+    <div style="margin-top:8px;">
+      <span class="fa-inline">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+      <span class="en-inline">Iran, A Thousand Colors | A Visual Journey Through Iranian Women's Dress</span>
+    </div>
+  </footer>
+
+  <script>
+    function toggleLanguage() {
+      const html = document.documentElement;
+      const isEnglish = html.lang === "fa";
+
+      html.lang = isEnglish ? "en" : "fa";
+      html.dir = isEnglish ? "ltr" : "rtl";
+
+      document.title = isEnglish
+        ? "Kashan & Abyaneh | Iran, A Thousand Colors"
+        : "کاشان و ابیانه | ایران، هزار رنگ";
+
+      try {
+        localStorage.setItem("iranHezarRangLanguage", html.lang);
+      } catch (error) {}
+    }
+
+    window.addEventListener("DOMContentLoaded", function () {
+      try {
+        const savedLanguage =
+          localStorage.getItem("iranHezarRangLanguage");
+
+        if (savedLanguage === "en") {
+          document.documentElement.lang = "en";
+          document.documentElement.dir = "ltr";
+          document.title = "Kashan & Abyaneh | Iran, A Thousand Colors";
+        }
+      } catch (error) {}
+    });
+  </script>
+</body>
+</html>
+
