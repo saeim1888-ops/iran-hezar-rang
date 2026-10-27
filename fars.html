@@ -1,0 +1,1108 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فارس | ایران، هزار رنگ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f4ead8;
+      --paper: #fff9ee;
+      --olive: #536044;
+      --dark: #253d39;
+      --gold: #bd9655;
+      --rust: #a64d35;
+      --teal: #244e59;
+      --text: #37382f;
+      --muted: #777064;
+      --border: rgba(83, 96, 68, .23);
+      --shadow: 0 12px 35px rgba(54, 44, 29, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Vazirmatn", sans-serif;
+      background:
+        radial-gradient(ellipse at top left, rgba(189,150,85,.13), transparent 35%),
+        var(--cream);
+      color: var(--text);
+      line-height: 2;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    .topbar {
+      background: var(--dark);
+      color: var(--paper);
+      padding: 13px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.3px;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-link,
+    .lang-button {
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 30px;
+      padding: 5px 13px;
+      color: white;
+      background: transparent;
+      font-family: inherit;
+      font-size: .85rem;
+      cursor: pointer;
+    }
+
+    .lang-button:hover,
+    .top-link:hover {
+      background: rgba(255,255,255,.12);
+    }
+
+    .hero {
+      padding: 48px 0 25px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 4px 16px;
+      border: 1px solid var(--gold);
+      border-radius: 30px;
+      color: var(--olive);
+      font-size: .88rem;
+      margin-bottom: 12px;
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    .hero h1 {
+      color: var(--dark);
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .hero h2 {
+      color: var(--rust);
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    .section-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+      padding: 15px 0 30px;
+    }
+
+    .section-nav a {
+      text-decoration: none;
+      background: rgba(255,249,238,.78);
+      border: 1px solid var(--border);
+      padding: 6px 13px;
+      border-radius: 24px;
+      font-size: .88rem;
+      transition: .2s;
+    }
+
+    .section-nav a:hover {
+      background: var(--olive);
+      color: white;
+    }
+
+    .section {
+      margin: 0 auto 28px;
+      padding: clamp(20px, 4vw, 38px);
+      background: rgba(255,249,238,.88);
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 20px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-number {
+      display: grid;
+      place-items: center;
+      min-width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--dark);
+      color: white;
+      font-weight: 700;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(1.25rem, 3vw, 1.8rem);
+      color: var(--dark);
+    }
+
+    .section-intro {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .artwork-frame {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 12px;
+      background: #e6d4b3;
+      border: 1px solid var(--gold);
+      border-radius: 19px;
+      box-shadow: 0 15px 35px rgba(41, 40, 29, .18);
+    }
+
+    .artwork-frame img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .image-caption {
+      text-align: center;
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 13px 0 0;
+    }
+
+    .label-frame {
+      max-width: 570px;
+      margin: 25px auto 0;
+      padding: 8px;
+      background: #e6d4b3;
+      border: 1px solid var(--gold);
+      border-radius: 15px;
+    }
+
+    .label-frame img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .info-card {
+      padding: 20px;
+      background: #f8efdf;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+    }
+
+    .info-card h3 {
+      color: var(--rust);
+      font-size: 1.12rem;
+      margin-bottom: 8px;
+    }
+
+    .info-card p:last-child,
+    .info-card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-card ul {
+      padding-right: 20px;
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      margin-top: 20px;
+      padding: 17px 20px;
+      background: rgba(36,78,89,.08);
+      border-right: 4px solid var(--teal);
+      border-radius: 12px;
+    }
+
+    .highlight strong {
+      color: var(--teal);
+    }
+
+    .quote {
+      padding: 25px;
+      text-align: center;
+      background: var(--dark);
+      color: var(--paper);
+      border-radius: 18px;
+      font-size: 1.2rem;
+    }
+
+    .quote p {
+      margin: 0;
+    }
+
+    .sources-list {
+      padding-right: 22px;
+    }
+
+    .sources-list li {
+      margin-bottom: 10px;
+      overflow-wrap: anywhere;
+    }
+
+    .sources-list a {
+      color: var(--teal);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .back-area {
+      text-align: center;
+      padding: 10px 0 42px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 11px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: white;
+      background: var(--rust);
+      transition: .2s;
+    }
+
+    .back-button:hover {
+      background: var(--dark);
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--paper);
+      padding: 27px 0;
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .en {
+      display: none;
+    }
+
+    body.english {
+      direction: ltr;
+    }
+
+    body.english .fa {
+      display: none;
+    }
+
+    body.english .en {
+      display: initial;
+    }
+
+    body.english .section-heading {
+      flex-direction: row;
+    }
+
+    body.english .highlight {
+      border-right: 0;
+      border-left: 4px solid var(--teal);
+    }
+
+    body.english .info-card ul,
+    body.english .sources-list {
+      padding-right: 0;
+      padding-left: 22px;
+    }
+
+    @media (max-width: 700px) {
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 32px;
+      }
+
+      .section {
+        border-radius: 19px;
+      }
+
+      .topbar-inner {
+        justify-content: center;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .section-nav,
+      .back-area {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .section {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="fa">ایران، هزار رنگ</span>
+        <span class="en">Iran, A Thousand Colors</span>
+      </a>
+
+      <div class="top-actions">
+        <a class="top-link" href="index.html">
+          <span class="fa">بازگشت به گالری</span>
+          <span class="en">Back to Gallery</span>
+        </a>
+        <button class="lang-button" id="langSwitch" type="button">
+          English
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="eyebrow">
+        <span class="fa">منطقه بعدی از سفر تصویری ما</span>
+        <span class="en">The next stop in our visual journey</span>
+      </span>
+
+      <h1>
+        <span class="fa">فارس</span>
+        <span class="en">Fars</span>
+      </h1>
+
+      <h2>
+        <span class="fa">سرزمین شعر، تاریخ و شکوه</span>
+        <span class="en">Land of Poetry, History and Grandeur</span>
+      </h2>
+
+      <p class="hero-description">
+        <span class="fa">
+          از نقش‌برجسته‌های ایران باستان تا لباس‌های رنگارنگ زنان قشقایی؛
+          فارس روایت پیوند تاریخ، طبیعت و زندگی مردم است.
+        </span>
+        <span class="en">
+          From ancient reliefs to the colorful clothing of Qashqai women,
+          Fars tells a story of history, nature and everyday life.
+        </span>
+      </p>
+    </section>
+
+    <nav class="section-nav" aria-label="Page sections">
+      <a href="#art"><span class="fa">اثر و لیبل</span><span class="en">Artwork</span></a>
+      <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+      <a href="#villages"><span class="fa">مناطق محلی</span><span class="en">Local Areas</span></a>
+      <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+      <a href="#food"><span class="fa">غذا و شیرینی</span><span class="en">Food & Sweets</span></a>
+      <a href="#products"><span class="fa">سوغات و محصولات</span><span class="en">Products</span></a>
+      <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+    </nav>
+
+    <!-- ARTWORK -->
+    <section class="section" id="art">
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <h2>
+          <span class="fa">اثر هنری فارس</span>
+          <span class="en">Fars Artwork</span>
+        </h2>
+      </div>
+
+      <p class="section-intro">
+        <span class="fa">
+          تصویری از پوشش رنگارنگ زنان قشقایی در کنار چشم‌اندازهای تاریخی
+          و فرهنگی استان فارس.
+        </span>
+        <span class="en">
+          A visual story of colorful Qashqai women's clothing alongside
+          the historical and cultural landscapes of Fars.
+        </span>
+      </p>
+
+      <figure class="artwork-frame">
+        <img src="fars.png"
+             alt="اثر هنری پوشش زنان قشقایی و فرهنگ استان فارس"
+             loading="eager">
+        <figcaption class="image-caption">
+          <span class="fa">اثر هنری: مریم ساعی</span>
+          <span class="en">Artwork: Maryam Saei</span>
+        </figcaption>
+      </figure>
+
+      <div class="label-frame">
+        <img src="fars_leibel.png"
+             alt="لیبل اطلاعات فرهنگی استان فارس"
+             loading="lazy">
+      </div>
+      <p class="image-caption">
+        <span class="fa">لیبل اطلاعاتی منطقه فارس</span>
+        <span class="en">Fars Region Information Label</span>
+      </p>
+    </section>
+
+    <!-- CLOTHING -->
+    <section class="section" id="clothing">
+      <div class="section-heading">
+        <span class="section-number">02</span>
+        <h2>
+          <span class="fa">پوشش زنان فارس</span>
+          <span class="en">Women's Traditional Clothing</span>
+        </h2>
+      </div>
+
+      <p>
+        <span class="fa">
+          پوشش زنان فارس با توجه به تنوع قومی، شیوه زندگی و اقلیم منطقه
+          یکسان نیست. لباس زنان قشقایی از نمونه‌های شاخص پوشش عشایری
+          این استان است؛ پوششی که با رنگ‌های زنده، دامن‌های چین‌دار،
+          پیراهن بلند، بالاپوش و روسری شناخته می‌شود.
+        </span>
+        <span class="en">
+          Women's clothing in Fars varies according to local communities,
+          ways of life and climate. Qashqai women's dress is a distinctive
+          example of the province's nomadic heritage, known for vivid
+          colors, layered skirts, long dresses, outer garments and scarves.
+        </span>
+      </p>
+
+      <div class="two-column">
+        <article class="info-card">
+          <h3>
+            <span class="fa">لباس زنان قشقایی</span>
+            <span class="en">Qashqai Women's Dress</span>
+          </h3>
+          <p>
+            <span class="fa">
+              در نمونه‌های سنتی، دامن‌های پرچین و چندلایه، پیراهن بلند،
+              آرخالق یا بالاپوش و روسری از اجزای قابل مشاهده‌اند.
+              رنگ و تزئینات با توجه به زمان، موقعیت و رسم محلی تغییر می‌کند.
+            </span>
+            <span class="en">
+              Traditional examples may include full layered skirts,
+              long dresses, an outer garment known as an arkhaleq,
+              and a headscarf. Colors and details vary by occasion
+              and local tradition.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">رنگ و نقش</span>
+            <span class="en">Color and Pattern</span>
+          </h3>
+          <p>
+            <span class="fa">
+              رنگ‌های پرطراوت و پارچه‌های طرح‌دار، در کنار زیورآلات
+              و سربندها، در بسیاری از بازنمایی‌های پوشش قشقایی دیده می‌شوند.
+              بااین‌حال، پوشش همه زنان و همه گروه‌های محلی یکسان نیست.
+            </span>
+            <span class="en">
+              Bright colors, patterned fabrics, jewelry and head coverings
+              appear in many representations of Qashqai dress. However,
+              clothing is not identical across all women or communities.
+            </span>
+          </p>
+        </article>
+      </div>
+
+      <div class="highlight">
+        <strong>
+          <span class="fa">یادداشت پژوهشی:</span>
+          <span class="en">Research note:</span>
+        </strong>
+        <span class="fa">
+          برای نسبت دادن یک مدل لباس به روستایی مشخص، باید نام روستا
+          و ویژگی‌های پوشش با منبع معتبر یا روایت محلی تطبیق داده شود.
+        </span>
+        <span class="en">
+          A specific garment should only be attributed to a particular
+          village after checking reliable sources or local testimony.
+        </span>
+      </div>
+    </section>
+
+    <!-- VILLAGES AND LOCAL AREAS -->
+    <section class="section" id="villages">
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <h2>
+          <span class="fa">مناطق و زندگی محلی</span>
+          <span class="en">Local Areas and Ways of Life</span>
+        </h2>
+      </div>
+
+      <p>
+        <span class="fa">
+          برای شناخت پوشش و فرهنگ فارس، بررسی مناطق مختلف استان اهمیت دارد.
+          شیراز، فیروزآباد، فراشبند، مرودشت، کازرون، آباده، استهبان و لارستان
+          هرکدام بخشی از تنوع فرهنگی و اقتصادی فارس را نشان می‌دهند.
+        </span>
+        <span class="en">
+          Understanding Fars requires looking beyond Shiraz. Areas such as
+          Firuzabad, Farashband, Marvdasht, Kazerun, Abadeh, Estahban and
+          Laristan contribute to the province's cultural and economic diversity.
+        </span>
+      </p>
+
+      <div class="two-column">
+        <article class="info-card">
+          <h3>
+            <span class="fa">فیروزآباد و فراشبند</span>
+            <span class="en">Firuzabad and Farashband</span>
+          </h3>
+          <p>
+            <span class="fa">
+              از مناطق مناسب برای مطالعه زندگی عشایری و فرهنگ قشقایی؛
+              در معرفی پوشش باید به گروه محلی و شیوه زندگی توجه کرد.
+            </span>
+            <span class="en">
+              Important areas for exploring nomadic life and Qashqai culture.
+              Clothing descriptions should reflect the particular community
+              and way of life.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">شیراز و روستاهای پیرامون</span>
+            <span class="en">Shiraz and Surrounding Villages</span>
+          </h3>
+          <p>
+            <span class="fa">
+              باغ‌ها، کشاورزی، معماری تاریخی و سنت‌های خوراکی، بخش‌هایی
+              از زندگی فرهنگی این ناحیه را شکل می‌دهند.
+            </span>
+            <span class="en">
+              Gardens, agriculture, historic architecture and food traditions
+              are important parts of life in this area.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">آباده</span>
+            <span class="en">Abadeh</span>
+          </h3>
+          <p>
+            <span class="fa">
+              این شهر به هنر منبت‌کاری چوب شهرت دارد؛ هنری که در کنار
+              دیگر صنایع‌دستی، بخشی از هویت فرهنگی فارس است.
+            </span>
+            <span class="en">
+              Abadeh is known for wood inlay and carving traditions,
+              part of the province's wider craft heritage.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">استهبان و لارستان</span>
+            <span class="en">Estahban and Laristan</span>
+          </h3>
+          <p>
+            <span class="fa">
+              استهبان با انجیر و لارستان با خوراکی‌ها و شیرینی‌های محلی
+              شناخته می‌شوند. فرهنگ جنوب و شرق فارس نیز تنوع ویژه‌ای دارد.
+            </span>
+            <span class="en">
+              Estahban is associated with figs, while Laristan is known
+              for local foods and sweets. Southern and eastern Fars
+              have distinctive cultural traditions.
+            </span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- HISTORY AND NATURE -->
+    <section class="section" id="history">
+      <div class="section-heading">
+        <span class="section-number">04</span>
+        <h2>
+          <span class="fa">آثار تاریخی و طبیعت</span>
+          <span class="en">Historic Sites and Nature</span>
+        </h2>
+      </div>
+
+      <div class="two-column">
+        <article class="info-card">
+          <h3>
+            <span class="fa">تخت جمشید و نقش رستم</span>
+            <span class="en">Persepolis and Naqsh-e Rostam</span>
+          </h3>
+          <p>
+            <span class="fa">
+              یادگارهای مهم تاریخ ایران باستان در نزدیکی مرودشت که
+              نقش برجسته‌ای در شناخت هنر و معماری دوره هخامنشی و ساسانی دارند.
+            </span>
+            <span class="en">
+              Major landmarks near Marvdasht that reveal important aspects
+              of Achaemenid and Sasanian art and architecture.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">پاسارگاد</span>
+            <span class="en">Pasargadae</span>
+          </h3>
+          <p>
+            <span class="fa">
+              محوطه‌ای باستانی با آرامگاه کوروش بزرگ و بقایای بناهای
+              دوره هخامنشی.
+            </span>
+            <span class="en">
+              An ancient site containing the tomb of Cyrus the Great
+              and remains of Achaemenid structures.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">باغ ارم و حافظیه</span>
+            <span class="en">Eram Garden and Hafezieh</span>
+          </h3>
+          <p>
+            <span class="fa">
+              باغ ایرانی، درختان سرو و یاد حافظ، پیوند میان طبیعت،
+              شعر و هویت فرهنگی شیراز را به تصویر می‌کشند.
+            </span>
+            <span class="en">
+              Persian garden design, cypress trees and the memory of Hafez
+              connect nature, poetry and Shiraz's cultural identity.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">مسجد نصیرالملک و مجموعه وکیل</span>
+            <span class="en">Nasir al-Mulk Mosque and Vakil Complex</span>
+          </h3>
+          <p>
+            <span class="fa">
+              شیشه‌های رنگی مسجد نصیرالملک و معماری بازار وکیل،
+              از جلوه‌های شاخص معماری تاریخی شیراز هستند.
+            </span>
+            <span class="en">
+              The colored glass of Nasir al-Mulk Mosque and the architecture
+              of Vakil Bazaar are notable features of historic Shiraz.
+            </span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FOOD -->
+    <section class="section" id="food">
+      <div class="section-heading">
+        <span class="section-number">05</span>
+        <h2>
+          <span class="fa">غذاها و شیرینی‌های محلی</span>
+          <span class="en">Local Foods and Sweets</span>
+        </h2>
+      </div>
+
+      <div class="two-column">
+        <article class="info-card">
+          <h3>
+            <span class="fa">کلم‌پلوی شیرازی</span>
+            <span class="en">Shirazi Kalam Polo</span>
+          </h3>
+          <p>
+            <span class="fa">
+              غذایی شناخته‌شده با برنج، کلم قمری، سبزی‌های معطر
+              و معمولاً کوفته‌ریزه.
+            </span>
+            <span class="en">
+              A well-known rice dish made with kohlrabi, aromatic herbs
+              and usually small meatballs.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">دوپیازه‌آلو</span>
+            <span class="en">Dopiazeh Aloo</span>
+          </h3>
+          <p>
+            <span class="fa">
+              غذای ساده و محبوب شیرازی بر پایه سیب‌زمینی، پیاز
+              و ادویه‌های محلی.
+            </span>
+            <span class="en">
+              A popular Shirazi dish made primarily with potatoes,
+              onions and spices.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">آش سبزی و قنبرپلو</span>
+            <span class="en">Ash-e Sabzi and Ghanbar Polo</span>
+          </h3>
+          <p>
+            <span class="fa">
+              دو نمونه از خوراک‌های شناخته‌شده شیراز که در روایت
+              خوراک محلی این استان جایگاه ویژه‌ای دارند.
+            </span>
+            <span class="en">
+              Two well-known dishes associated with Shiraz's local food culture.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">فالوده شیرازی</span>
+            <span class="en">Shirazi Faloodeh</span>
+          </h3>
+          <p>
+            <span class="fa">
+              دسری خنک و رشته‌ای که معمولاً با شربت و آب‌لیمو
+              سرو می‌شود.
+            </span>
+            <span class="en">
+              A refreshing dessert made with thin starch noodles,
+              syrup and often lime juice.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">نان یوخه</span>
+            <span class="en">Youkheh Pastry</span>
+          </h3>
+          <p>
+            <span class="fa">
+              شیرینی نازک و لایه‌لایه شیراز که اغلب با پودر قند
+              پوشانده می‌شود.
+            </span>
+            <span class="en">
+              A thin, layered Shirazi pastry often finished with powdered sugar.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">مسقطی و رنگینک</span>
+            <span class="en">Masghati and Ranginak</span>
+          </h3>
+          <p>
+            <span class="fa">
+              مسقطی در شیراز و لارستان محبوب است و رنگینک نیز در بخش‌های
+              جنوبی استان و مناطق گرمسیر رواج دارد.
+            </span>
+            <span class="en">
+              Masghati is popular in Shiraz and Laristan, while ranginak
+              is common in warmer parts of southern Fars.
+            </span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section" id="products">
+      <div class="section-heading">
+        <span class="section-number">06</span>
+        <h2>
+          <span class="fa">محصولات، سوغات و صنایع‌دستی</span>
+          <span class="en">Products, Souvenirs and Crafts</span>
+        </h2>
+      </div>
+
+      <div class="two-column">
+        <article class="info-card">
+          <h3>
+            <span class="fa">انجیر استهبان</span>
+            <span class="en">Estahban Figs</span>
+          </h3>
+          <p>
+            <span class="fa">
+              انجیر خشک استهبان از محصولات شناخته‌شده فارس است و
+              پیوند دیرینه کشاورزی با اقلیم منطقه را نشان می‌دهد.
+            </span>
+            <span class="en">
+              Dried figs from Estahban are a recognized regional product,
+              reflecting the relationship between agriculture and climate.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">خرما و مرکبات</span>
+            <span class="en">Dates and Citrus</span>
+          </h3>
+          <p>
+            <span class="fa">
+              در نواحی گرم‌تر استان، خرما و محصولات باغی از محصولات
+              مهم محلی به شمار می‌روند.
+            </span>
+            <span class="en">
+              Dates and orchard crops are important products in the
+              warmer parts of the province.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">قالی، گلیم، گبه و جاجیم</span>
+            <span class="en">Carpets, Kilims, Gabbehs and Jajims</span>
+          </h3>
+          <p>
+            <span class="fa">
+              دست‌بافته‌های عشایری با نقش‌های هندسی و الهام‌گرفته از
+              طبیعت، از جلوه‌های مهم هنرهای سنتی فارس هستند.
+            </span>
+            <span class="en">
+              Nomadic textiles with geometric and nature-inspired patterns
+              are an important part of Fars's traditional arts.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">خاتم شیراز و منبت آباده</span>
+            <span class="en">Shiraz Khatam and Abadeh Woodcarving</span>
+          </h3>
+          <p>
+            <span class="fa">
+              خاتم‌کاری با قطعات ظریف هندسی و منبت‌کاری با نقش‌های
+              برجسته چوبی، بخشی از میراث هنری استان‌اند.
+            </span>
+            <span class="en">
+              Khatam inlay uses fine geometric patterns, while woodcarving
+              creates raised designs. Both are part of the region's craft heritage.
+            </span>
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3>
+            <span class="fa">بهارنارنج و عرقیات گیاهی</span>
+            <span class="en">Orange Blossom and Herbal Distillates</span>
+          </h3>
+          <p>
+            <span class="fa">
+              عطر بهارنارنج و عرقیات گیاهی با باغ‌ها و سنت‌های خوراکی
+              و خانگی شیراز پیوند دارد.
+            </span>
+            <span class="en">
+              Orange blossom fragrance and herbal distillates are associated
+              with Shiraz's gardens and culinary traditions.
+            </span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SOURCES -->
+    <section class="section" id="sources">
+      <div class="section-heading">
+        <span class="section-number">07</span>
+        <h2>
+          <span class="fa">منابع و مطالعه بیشتر</span>
+          <span class="en">Sources and Further Reading</span>
+        </h2>
+      </div>
+
+      <p class="section-intro">
+        <span class="fa">
+          این منابع برای مطالعه آثار تاریخی، میراث فرهنگی و پوشش‌های
+          سنتی به کار می‌آیند. اطلاعات مربوط به هر روستا باید جداگانه بررسی شود.
+        </span>
+        <span class="en">
+          These resources support research on historical sites, cultural
+          heritage and traditional dress. Village-specific details should
+          be verified individually.
+        </span>
+      </p>
+
+      <ul class="sources-list">
+        <li>
+          <a href="https://www.iranicaonline.org/" target="_blank" rel="noopener noreferrer">
+            Encyclopaedia Iranica
+          </a>
+          — <span class="fa">دانشنامه ایرانیکا؛ برای پژوهش درباره فرهنگ و پوشاک ایران</span>
+          <span class="en">Research on Iranian culture and clothing</span>
+        </li>
+        <li>
+          <a href="https://whc.unesco.org/en/list/114/" target="_blank" rel="noopener noreferrer">
+            UNESCO — Persepolis
+          </a>
+          — <span class="fa">اطلاعات میراث جهانی تخت جمشید</span>
+          <span class="en">World Heritage information on Persepolis</span>
+        </li>
+        <li>
+          <a href="https://whc.unesco.org/en/list/1106/" target="_blank" rel="noopener noreferrer">
+            UNESCO — Pasargadae
+          </a>
+          — <span class="fa">اطلاعات میراث جهانی پاسارگاد</span>
+          <span class="en">World Heritage information on Pasargadae</span>
+        </li>
+        <li>
+          <a href="https://www.visitiran.ir/" target="_blank" rel="noopener noreferrer">
+            Visit Iran
+          </a>
+          — <span class="fa">درگاه معرفی جاذبه‌ها و میراث فرهنگی ایران</span>
+          <span class="en">Iran's tourism and cultural heritage portal</span>
+        </li>
+        <li>
+          <a href="https://www.isna.ir/" target="_blank" rel="noopener noreferrer">
+            خبرگزاری ایسنا
+          </a>
+          — <span class="fa">برای یافتن گزارش‌های فارسی درباره میراث محلی و صنایع‌دستی</span>
+          <span class="en">Persian reporting on local heritage and crafts</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="quote">
+      <p class="fa">«فارس؛ ترانه‌ی رنگ‌ها، روایتِ اصالت»</p>
+      <p class="en">“Fars — A Song of Colors, a Story of Heritage”</p>
+    </section>
+
+    <div class="back-area">
+      <a class="back-button" href="index.html">
+        <span class="fa">← بازگشت به گالری مناطق ایران</span>
+        <span class="en">← Return to the Regions Gallery</span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+        <span class="en">Iran, A Thousand Colors | A Visual Story of Iranian Women's Dress</span>
+      </p>
+      <p>
+        <span class="fa">آثار هنری: مریم ساعی</span>
+        <span class="en">Artwork: Maryam Saei</span>
+      </p>
+      <p>
+        <span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span>
+        <span class="en">Website Design and Cultural Research: Marjan Saei</span>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const langSwitch = document.getElementById("langSwitch");
+
+    langSwitch.addEventListener("click", function () {
+      const isEnglish = document.body.classList.toggle("english");
+
+      document.documentElement.lang = isEnglish ? "en" : "fa";
+      document.documentElement.dir = isEnglish ? "ltr" : "rtl";
+      langSwitch.textContent = isEnglish ? "فارسی" : "English";
+
+      try {
+        localStorage.setItem("iranHezarRangLanguage", isEnglish ? "en" : "fa");
+      } catch (error) {
+        // The page still works if browser storage is unavailable.
+      }
+    });
+
+    try {
+      const savedLanguage = localStorage.getItem("iranHezarRangLanguage");
+
+      if (savedLanguage === "en") {
+        document.body.classList.add("english");
+        document.documentElement.lang = "en";
+        document.documentElement.dir = "ltr";
+        langSwitch.textContent = "فارسی";
+      }
+    } catch (error) {
+      // Use Persian as the default language.
+    }
+  </script>
+</body>
+</html>
