@@ -4,311 +4,907 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="روایت تصویری پوشش زنان، فرهنگ، طبیعت و هنرهای بومی خراسان شمالی در نمایشگاه ایران، هزار رنگ">
+<meta name="description" content="خراسان شمالی؛ روایت تصویری پوشش زنان، فرهنگ‌های محلی، موسیقی دوتار و طبیعت ایران در نمایشگاه ایران، هزار رنگ.">
 <title>خراسان شمالی | ایران، هزار رنگ</title>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root {
-  --paper: #f4ead8;
-  --cream: #fffaf0;
+  --cream: #f8f1e3;
+  --paper: #fffaf0;
   --olive: #596447;
   --dark: #292b25;
   --gold: #b08b48;
-  --rust: #a64f32;
-  --line: #d9c7a6;
+  --rust: #b94e27;
+  --teal: #245b60;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  background:
-    radial-gradient(ellipse at top, rgba(255,255,255,.65), transparent 65%),
-    var(--paper);
-  color: var(--dark);
-  font-family: 'Vazirmatn', sans-serif;
-  line-height: 2;
-}
-a { color: inherit; }
-header {
-  padding: 38px 20px 32px;
-  text-align: center;
-  background: var(--olive);
-  color: var(--cream);
-  border-bottom: 7px solid var(--gold);
-}
-.eyebrow { color: #f0d69e; font-size: .9rem; }
-header h1 { margin: 8px 0; font-size: clamp(1.8rem, 5vw, 3rem); }
-header p { margin: 0; }
-.container { max-width: 1100px; margin: auto; padding: 28px 18px 50px; }
-.back {
-  display: inline-block;
-  margin-bottom: 22px;
-  text-decoration: none;
-  color: var(--olive);
-  font-weight: 700;
-}
-.back:hover { color: var(--rust); }
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  align-items: start;
-}
-.art-card {
   background: var(--cream);
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  box-shadow: 0 8px 24px #4d38201a;
+  color: var(--dark);
+  font-family: Tahoma, Arial, sans-serif;
+  line-height: 2.1;
 }
-.art-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+
+.topline {
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    var(--rust),
+    var(--gold),
+    var(--olive),
+    var(--teal)
+  );
 }
-.art-card figcaption {
+
+header {
   text-align: center;
-  padding: 8px 4px 2px;
-  color: var(--olive);
-  font-size: .9rem;
+  padding: 55px 20px 35px;
+  background:
+    radial-gradient(circle at 15% 20%, #e8d7b6 0, transparent 28%),
+    radial-gradient(circle at 85% 80%, #e5d8b8 0, transparent 28%),
+    var(--cream);
+  border-bottom: 1px solid #ddcfb4;
 }
-.intro {
-  background: rgba(255,250,240,.75);
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-top: 5px solid var(--gold);
+
+.eyebrow {
+  color: var(--rust);
+  font-size: 13px;
+  letter-spacing: 1px;
 }
-h2 {
+
+h1 {
   color: var(--olive);
-  font-size: 1.45rem;
+  font-size: clamp(27px, 5vw, 43px);
   line-height: 1.7;
+  margin: 12px 0;
 }
-.intro h2 { margin-top: 0; }
+
 .slogan {
   color: var(--rust);
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-size: clamp(17px, 3vw, 23px);
+  font-weight: bold;
+  margin: 8px 0;
 }
-section.info {
-  margin-top: 25px;
-  padding: 23px 25px;
-  background: rgba(255,250,240,.8);
-  border: 1px solid var(--line);
-  border-right: 5px solid var(--olive);
+
+.subtitle {
+  max-width: 720px;
+  margin: 12px auto 0;
+  color: #666354;
+  font-size: 14px;
 }
-section.info h2 { margin-top: 0; }
-section.info p { margin-bottom: 0; }
-.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-.tags span {
-  border: 1px solid var(--line);
-  border-radius: 30px;
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+  padding: 20px 14px;
   background: var(--paper);
-  padding: 4px 12px;
-  font-size: .9rem;
+  border-bottom: 1px solid #e4d7bd;
 }
-footer {
-  text-align: center;
-  padding: 28px 16px;
-  background: var(--olive);
-  color: var(--cream);
-  border-top: 6px solid var(--gold);
-}
-footer p { margin: 5px; }
-footer a { color: #f0d69e; }
-.en { display: none; }
-body.english { direction: ltr; }
-body.english .fa { display: none; }
-body.english .en { display: initial; }
-body.english section.info { border-right: 1px solid var(--line); border-left: 5px solid var(--olive); }
-body.english header, body.english footer { direction: ltr; }
-.lang-button {
-  margin-top: 18px;
-  border: 1px solid #f0d69e;
+
+nav a {
+  text-decoration: none;
+  color: var(--olive);
+  background: #f0e7d5;
+  border: 1px solid #e1d2b5;
   border-radius: 30px;
-  background: transparent;
-  color: white;
-  padding: 8px 18px;
-  cursor: pointer;
-  font: inherit;
+  padding: 5px 13px;
+  font-size: 12px;
+  transition: 0.2s;
 }
-@media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; }
-  .container { padding: 20px 13px 35px; }
-  section.info, .intro { padding: 18px; }
+
+nav a:hover {
+  background: var(--olive);
+  color: white;
+}
+
+.lang-switch {
+  position: fixed;
+  z-index: 1000;
+  top: 14px;
+  left: 14px;
+  border: 0;
+  border-radius: 25px;
+  padding: 9px 15px;
+  background: var(--olive);
+  color: white;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 3px 12px #0002;
+}
+
+main {
+  max-width: 1050px;
+  margin: 30px auto;
+  padding: 0 18px;
+}
+
+section {
+  background: var(--paper);
+  padding: clamp(20px, 4vw, 38px);
+  margin-bottom: 25px;
+  border: 1px solid #e4d7bd;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px #5946290b;
+  scroll-margin-top: 20px;
+}
+
+h2 {
+  color: var(--olive);
+  font-size: clamp(21px, 3vw, 28px);
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5d6b9;
+}
+
+h3 {
+  color: var(--rust);
+  font-size: 17px;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 10px;
+}
+
+.hero-art {
+  display: block;
+  width: 100%;
+  max-width: 690px;
+  height: auto;
+  margin: 25px auto 10px;
+  padding: 9px;
+  background: white;
+  border: 1px solid #ddcda9;
+  border-radius: 5px;
+  box-shadow: 0 9px 25px #00000015;
+}
+
+.label-art {
+  display: block;
+  width: 100%;
+  max-width: 470px;
+  height: auto;
+  margin: 25px auto 10px;
+  padding: 7px;
+  background: white;
+  border: 1px solid #ddcda9;
+  border-radius: 5px;
+  box-shadow: 0 7px 20px #00000012;
+}
+
+.caption,
+.small {
+  color: #77705e;
+  font-size: 13px;
+  text-align: center;
+}
+
+.quote {
+  margin: 25px 0;
+  padding: 15px 20px;
+  border-right: 4px solid var(--gold);
+  background: #f5ecd9;
+  color: var(--olive);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.tile {
+  background: #f7efdf;
+  border: 1px solid #e6d8bd;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.tile p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.source-list {
+  padding-right: 22px;
+  overflow-wrap: anywhere;
+}
+
+.source-list li {
+  margin-bottom: 10px;
+}
+
+.source-list a {
+  color: var(--teal);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.back {
+  display: inline-block;
+  margin: 5px 0 30px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: var(--olive);
+  color: white;
+  text-decoration: none;
+}
+
+.back:hover {
+  background: var(--teal);
+}
+
+footer {
+  background: var(--olive);
+  color: #fffaf0;
+  text-align: center;
+  padding: 30px 18px;
+  font-size: 13px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+.en {
+  display: none;
+}
+
+body.english {
+  direction: ltr;
+  font-family: Arial, Tahoma, sans-serif;
+}
+
+body.english header,
+body.english section,
+body.english footer {
+  text-align: left;
+}
+
+body.english nav {
+  direction: ltr;
+}
+
+body.english .quote {
+  border-right: 0;
+  border-left: 4px solid var(--gold);
+}
+
+body.english .source-list {
+  padding-right: 0;
+  padding-left: 22px;
+}
+
+body.english .fa {
+  display: none;
+}
+
+body.english .en {
+  display: initial;
+}
+
+body.english .caption,
+body.english .small {
+  text-align: center;
+}
+
+body.english .lang-switch {
+  left: auto;
+  right: 14px;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 55px 16px 28px;
+  }
+
+  main {
+    padding: 0 10px;
+    margin-top: 18px;
+  }
+
+  section {
+    padding: 20px 16px;
+    border-radius: 13px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    gap: 7px;
+  }
+
+  nav a {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
 }
 </style>
 </head>
+
 <body>
+<button class="lang-switch" id="langSwitch" type="button">English</button>
+<div class="topline"></div>
+
 <header>
-  <div class="eyebrow fa">گالری حضوری و آنلاین</div>
-  <div class="eyebrow en">In-person & Online Exhibition</div>
-  <h1 class="fa">ایران، هزار رنگ</h1>
-  <h1 class="en">Iran, A Thousand Colors</h1>
-  <p class="fa">روایت تصویری پوشش زنان ایران</p>
-  <p class="en">A Visual Journey Through Women's Clothing in Iran</p>
-  <button class="lang-button" onclick="toggleLanguage()">English / فارسی</button>
-</header>
-
-<main class="container">
-  <a class="back fa" href="index.html">← بازگشت به گالری مناطق ایران</a>
-  <a class="back en" href="index.html">← Back to the Regions Gallery</a>
-
-  <div class="hero">
-    <figure class="art-card">
-      <img src="khorasan-shomali.png" alt="اثر هنری پوشش زنان خراسان شمالی">
-      <figcaption class="fa">اثر هنری خراسان شمالی</figcaption>
-      <figcaption class="en">North Khorasan Artwork</figcaption>
-    </figure>
-
-    <figure class="art-card">
-      <img src="khorasan-shomali_leibel.png" alt="لیبل اطلاعات فرهنگی خراسان شمالی">
-      <figcaption class="fa">لیبل اطلاعات فرهنگی منطقه</figcaption>
-      <figcaption class="en">Regional Cultural Information Label</figcaption>
-    </figure>
+  <div class="eyebrow">
+    <span class="fa">گالری حضوری و آنلاین | ایران، هزار رنگ</span>
+    <span class="en">In-Person & Online Gallery | Iran, A Thousand Colors</span>
   </div>
 
-  <section class="intro">
-    <h2 class="fa">خراسان شمالی؛ سرخ مثل دشت‌های ترکمن</h2>
-    <h2 class="en">North Khorasan: Red Like the Turkmen Plains</h2>
-    <p class="fa">
-      خراسان شمالی سرزمینی با تنوع فرهنگی و قومی، موسیقی پرشور دوتار،
-      طبیعت کوهستانی و پوشش‌های رنگارنگ محلی است. در این روایت تصویری،
-      رنگ سرخ پارچه و چین‌های دامن، یادآور زیبایی پوشاک سنتی و پیوند
-      هنر با زندگی روزمره مردم منطقه است.
-    </p>
-    <p class="en">
-      North Khorasan is a land of diverse cultures, lively dotar music,
-      mountain landscapes, and colorful traditional clothing. The red
-      textile and pleated skirt in this artwork evoke the beauty of
-      regional dress and the connection between art and everyday life.
-    </p>
-  </section>
+  <h1>
+    <span class="fa">خراسان شمالی؛ سرزمین فرهنگ‌های رنگارنگ</span>
+    <span class="en">North Khorasan: A Land of Colorful Cultures</span>
+  </h1>
 
-  <section class="info">
-    <h2 class="fa">پوشش زنان و تنوع محلی</h2>
-    <h2 class="en">Women's Clothing and Local Diversity</h2>
-    <p class="fa">
-      پوشاک سنتی زنان در بخش‌هایی از خراسان شمالی، به‌ویژه در میان
-      جوامع کرمانج، با دامن‌های چین‌دار و رنگارنگ، جلیقه‌های تزئین‌شده،
-      روسری‌های گل‌دار و گلدوزی‌های محلی شناخته می‌شود. شکل و جزئیات
-      لباس با توجه به روستا، قومیت، سن و مناسبت تغییر می‌کند؛ بنابراین
-      یک پوشش واحد را نمی‌توان نماینده همه زنان منطقه دانست.
-    </p>
-    <p class="en">
-      In parts of North Khorasan, particularly among Kormanji communities,
-      traditional women's clothing may include colorful pleated skirts,
-      decorated vests, floral scarves, and local embroidery. Details vary
-      by village, community, age, and occasion, so no single outfit
-      represents every woman in the region.
-    </p>
-    <div class="tags">
-      <span class="fa">دامن چین‌دار</span><span class="fa">روسری گل‌دار</span>
-      <span class="fa">گلدوزی محلی</span>
-      <span class="en">Pleated skirts</span><span class="en">Floral scarves</span>
-      <span class="en">Local embroidery</span>
-    </div>
-  </section>
+  <p class="slogan">
+    <span class="fa">خراسان شمالی | سرخ مثل دشت‌های ترکمن</span>
+    <span class="en">North Khorasan | Red Like the Turkmen Plains</span>
+  </p>
 
-  <section class="info">
-    <h2 class="fa">روستاها، موسیقی و میراث فرهنگی</h2>
-    <h2 class="en">Villages, Music and Cultural Heritage</h2>
-    <p class="fa">
-      موسیقی دوتار و روایت‌های شفاهی بخشی مهم از حافظه فرهنگی منطقه‌اند.
-      روستای روئین در اسفراین به بافت پارچه و دست‌بافته‌های سنتی شناخته
-      می‌شود. آیین‌ها، پوشاک و هنرهای محلی در هر ناحیه ویژگی‌های خاص
-      خود را دارند و در کنار یکدیگر، چهره متنوع خراسان شمالی را می‌سازند.
-    </p>
-    <p class="en">
-      Dotar music and oral storytelling are important parts of the region's
-      cultural memory. Rooyin village in Esfarayen is known for traditional
-      textile weaving. Local clothing, ceremonies, and crafts differ from
-      one area to another, together forming the diverse cultural identity
-      of North Khorasan.
-    </p>
-  </section>
+  <p class="subtitle">
+    <span class="fa">
+      روایتی از پوشش زنان، نقش‌ونگارهای بومی، موسیقی دوتار و خاطره‌های زندهٔ اقوام خراسان شمالی
+    </span>
+    <span class="en">
+      A story of women's clothing, local patterns, dotar music, and the living cultural memories of North Khorasan
+    </span>
+  </p>
+</header>
 
-  <section class="info">
-    <h2 class="fa">جاذبه‌های تاریخی و طبیعی</h2>
-    <h2 class="en">Historical and Natural Attractions</h2>
-    <p class="fa">
-      عمارت مفخم و آیینه‌خانه در بجنورد، شهر تاریخی بلقیس در اسفراین
-      و مجموعه طبیعی باباامان از دیدنی‌های شناخته‌شده این استان هستند.
-      بناها و چشم‌اندازهای منطقه، زمینه‌ای برای شناخت تاریخ و پیوند
-      زندگی مردم با طبیعت فراهم می‌کنند.
-    </p>
-    <p class="en">
-      Mofakham Mansion and Ayeneh Khaneh in Bojnord, the historic city
-      of Belqis in Esfarayen, and Baba Aman natural complex are among
-      the region's notable attractions. They offer a window into local
-      history and the relationship between people and their landscape.
-    </p>
-  </section>
+<nav>
+  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+  <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+  <a href="#villages"><span class="fa">روستاها و زندگی</span><span class="en">Villages</span></a>
+  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+  <a href="#food"><span class="fa">خوراکی‌ها</span><span class="en">Food</span></a>
+  <a href="#products"><span class="fa">محصولات بومی</span><span class="en">Local Products</span></a>
+  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
 
-  <section class="info">
-    <h2 class="fa">دست‌بافته‌ها و محصولات محلی</h2>
-    <h2 class="en">Traditional Crafts and Local Products</h2>
-    <p class="fa">
-      قالی، گلیم، جاجیم و سفره‌بافی از هنرهای دست‌باف منطقه‌اند.
-      کشاورزی و باغداری نیز در بخش‌هایی از استان رواج دارد و انگور
-      و کشمش از محصولات شناخته‌شده آن به شمار می‌روند. این هنرها و
-      محصولات، بخشی از هویت اقتصادی و فرهنگی خانواده‌های محلی هستند.
-    </p>
-    <p class="en">
-      Carpets, kilims, jajims, and woven tablecloths are among the
-      region's traditional crafts. Agriculture and orchards are also
-      important in parts of the province, with grapes and raisins
-      among its recognized products.
-    </p>
-  </section>
+<main>
 
-  <section class="info">
-    <h2 class="fa">خوراکی‌های محلی</h2>
-    <h2 class="en">Local Foods</h2>
-    <p class="fa">
-      فتیر و قاتلمه، آش یارمه و شله‌ماش از خوراکی‌هایی هستند که در
-      بخش‌هایی از خراسان شمالی تهیه می‌شوند. شیوه پخت و نام خوراک‌ها
-      ممکن است در شهرها و روستاهای مختلف تفاوت داشته باشد.
-    </p>
-    <p class="en">
-      Fatir and qatlama flatbreads, yarmeh soup, and sholeh-mash are
-      among the foods prepared in parts of North Khorasan. Recipes
-      and names may vary between towns and villages.
-    </p>
-  </section>
+<section id="art">
+  <h2>
+    <span class="fa">۱. اثر هنری | روایت یک سرزمین</span>
+    <span class="en">1. The Artwork | A Region's Story</span>
+  </h2>
 
-  <section class="info">
-    <h2 class="fa">درباره این سفر هنری</h2>
-    <h2 class="en">About This Artistic Journey</h2>
-    <p class="fa">
-      «ایران، هزار رنگ» تلاشی هنری برای بازخوانی تنوع پوشش زنان ایران
-      و پیوند آن با جغرافیا، طبیعت، آیین‌ها و حافظه فرهنگی است.
-      هر اثر پنجره‌ای به یک روایت محلی و بخشی از هویت رنگارنگ ایران است.
-    </p>
-    <p class="en">
-      “Iran, A Thousand Colors” is an artistic exploration of the diversity
-      of women's clothing in Iran and its connection to geography, nature,
-      traditions, and cultural memory. Each artwork opens a window into
-      a local story and a colorful part of Iran's identity.
-    </p>
-  </section>
+  <p>
+    <span class="fa">
+      در خراسان شمالی، رنگ لباس‌ها، نقش پارچه‌ها و شیوهٔ آراستن پوشش، بخشی از خاطرهٔ فرهنگی مردمانی است که در کنار یکدیگر زندگی کرده‌اند. این اثر، نگاهی هنری به تنوع پوشش زنان و رنگ‌های زندهٔ این سرزمین دارد؛ از دشت‌های باز تا روستاهای کوهپایه‌ای.
+    </span>
+    <span class="en">
+      In North Khorasan, clothing colors, textile patterns, and ways of dressing form part of the cultural memory of communities that have lived alongside one another. This artwork offers an artistic view of women's dress and the region's vivid colors, from open plains to mountain villages.
+    </span>
+  </p>
+
+  <img
+    class="hero-art"
+    src="khorasan-shomali.png"
+    alt="اثر هنری پوشش زنان خراسان شمالی"
+  >
+
+  <p class="caption">
+    <span class="fa">اثر هنری خراسان شمالی از مجموعهٔ «ایران، هزار رنگ»</span>
+    <span class="en">North Khorasan artwork from the Iran, A Thousand Colors collection</span>
+  </p>
+
+  <div class="quote">
+    <span class="fa">
+      «هر رنگ، نشانی از یک خاطره؛ هر نقش، روایتی از مردمانی که فرهنگ خود را زنده نگه داشته‌اند.»
+    </span>
+    <span class="en">
+      “Every color holds a memory; every pattern tells the story of people keeping their culture alive.”
+    </span>
+  </div>
+
+  <p class="small">
+    <span class="fa">این اثر، بازخوانی هنری پوشش محلی است؛ نه بازسازی یک لباس واحد برای همهٔ اقوام منطقه.</span>
+    <span class="en">This artwork is an artistic interpretation of regional dress, not a reconstruction of one outfit shared by every community.</span>
+  </p>
+</section>
+
+<section id="clothing">
+  <h2>
+    <span class="fa">۲. پوشش زنان | رنگ، نقش و هویت</span>
+    <span class="en">2. Women's Dress | Color, Pattern, and Identity</span>
+  </h2>
+
+  <p>
+    <span class="fa">
+      خراسان شمالی از نظر فرهنگی منطقه‌ای متنوع است و گروه‌های قومی گوناگونی، از جمله کرمانج‌ها و ترکمن‌ها، در آن زندگی می‌کنند. به همین دلیل، پوشش زنان در سراسر استان یکسان نیست و با توجه به قومیت، محل زندگی، سن، مناسبت و سلیقهٔ خانوادگی تفاوت دارد.
+    </span>
+    <span class="en">
+      North Khorasan is culturally diverse, with communities including Kurmanj Kurds and Turkmen people. Women's clothing is therefore not uniform throughout the province; it varies with community, locality, age, occasion, and family tradition.
+    </span>
+  </p>
+
+  <img
+    class="label-art"
+    src="khorasan-shomali_leibel.png"
+    alt="لیبل اطلاعاتی پوشش زنان خراسان شمالی"
+  >
+
+  <p class="caption">
+    <span class="fa">لیبل اطلاعاتی و روایت فرهنگی اثر</span>
+    <span class="en">Artwork information label and cultural story</span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3>
+        <span class="fa">دامن‌ها و لایه‌های رنگی</span>
+        <span class="en">Skirts and Layers of Color</span>
+      </h3>
+      <p>
+        <span class="fa">
+          در برخی پوشش‌های محلی، دامن‌های چین‌دار و پارچه‌های رنگی جلوهٔ چشمگیری دارند. جنس پارچه، حجم دامن و ترکیب رنگ‌ها با توجه به سنت محلی و نوع مراسم تغییر می‌کند.
+        </span>
+        <span class="en">
+          In some local outfits, pleated skirts and colorful fabrics create a striking appearance. Fabric, skirt volume, and color combinations vary with local traditions and the occasion.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">روسری و سربند</span>
+        <span class="en">Headscarves and Head Coverings</span>
+      </h3>
+      <p>
+        <span class="fa">
+          روسری‌ها و سربندهای رنگی در پوشش زنان منطقه جایگاه مهمی دارند. شیوهٔ بستن، طرح و رنگ آن‌ها می‌تواند در میان روستاها و گروه‌های فرهنگی متفاوت باشد.
+        </span>
+        <span class="en">
+          Colorful scarves and head coverings play an important role in women's regional dress. Their patterns, colors, and ways of tying them can differ between villages and cultural communities.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">جلیقه، بالاپوش و تزئینات</span>
+        <span class="en">Vests, Outerwear, and Decoration</span>
+      </h3>
+      <p>
+        <span class="fa">
+          در برخی لباس‌های محلی، جلیقه‌ها و بالاپوش‌ها با پارچه‌های طرح‌دار، نوارهای تزئینی یا دوخت‌های آراسته همراه می‌شوند. این جزئیات بخشی از زیبایی و هویت بصری لباس‌اند.
+        </span>
+        <span class="en">
+          Some traditional outfits feature vests and outer garments decorated with patterned fabrics, ornamental trims, or detailed stitching. These elements contribute to the visual identity of the clothing.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">تنوع قومی و محلی</span>
+        <span class="en">Ethnic and Local Diversity</span>
+      </h3>
+      <p>
+        <span class="fa">
+          پوشش زنان کرمانج، ترکمن و دیگر جوامع منطقه را نباید یکسان فرض کرد. هر سنت پوششی تاریخ و ویژگی‌های خود را دارد و در طول زمان نیز دستخوش تغییر شده است.
+        </span>
+        <span class="en">
+          The clothing traditions of Kurmanj, Turkmen, and other communities should not be treated as identical. Each has its own history and characteristics, and all have evolved over time.
+        </span>
+      </p>
+    </article>
+  </div>
+
+  <p class="small">
+    <span class="fa">برای معرفی دقیق‌تر هر نوع لباس، بررسی منابع مردم‌نگاری و تصاویر مستند همان جامعه ضروری است.</span>
+    <span class="en">More specific clothing identifications require ethnographic sources and documented images from the relevant community.</span>
+  </p>
+</section>
+
+<section id="villages">
+  <h2>
+    <span class="fa">۳. روستاها و زندگی بومی</span>
+    <span class="en">3. Villages and Local Life</span>
+  </h2>
+
+  <p>
+    <span class="fa">
+      فرهنگ خراسان شمالی فقط در بناهای تاریخی خلاصه نمی‌شود؛ روستاها، شیوه‌های کار، موسیقی، صنایع‌دستی و آیین‌های خانوادگی نیز بخشی از میراث زندهٔ این منطقه‌اند.
+    </span>
+    <span class="en">
+      North Khorasan's culture extends beyond historic monuments. Its villages, working traditions, music, handicrafts, and family customs are also part of the region's living heritage.
+    </span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3>
+        <span class="fa">روستای رویین</span>
+        <span class="en">Rooyin Village</span>
+      </h3>
+      <p>
+        <span class="fa">
+          روستای رویین در شهرستان اسفراین به هنر نساجی سنتی و پارچه‌بافی شهرت دارد. این مهارت، پیوندی میان زندگی روزمره، دانش نسل‌های پیشین و هنر دست ایجاد کرده است.
+        </span>
+        <span class="en">
+          Rooyin village in Esfarayen is known for traditional textile weaving. This craft connects everyday life with inherited knowledge and handmade artistry.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">بجنورد و پیرامون آن</span>
+        <span class="en">Bojnord and Its Surroundings</span>
+      </h3>
+      <p>
+        <span class="fa">
+          بجنورد، مرکز استان، محل تلاقی تجربه‌های فرهنگی گوناگون است. بازارها، خانه‌های قدیمی و روستاهای اطراف، بخش‌هایی از زندگی اجتماعی و سنت‌های محلی را بازتاب می‌دهند.
+        </span>
+        <span class="en">
+          Bojnord, the provincial capital, brings together diverse cultural experiences. Its markets, old houses, and surrounding villages reflect aspects of local social life and tradition.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">اسفراین و روستاهای پیرامون</span>
+        <span class="en">Esfarayen and Nearby Villages</span>
+      </h3>
+      <p>
+        <span class="fa">
+          در محدودهٔ اسفراین، زندگی کشاورزی، باغداری، دامداری و هنرهای بومی با جغرافیای منطقه پیوند خورده‌اند. شیوه‌های زندگی و پوشش در روستاهای مختلف می‌تواند تفاوت داشته باشد.
+        </span>
+        <span class="en">
+          Around Esfarayen, farming, orchards, livestock keeping, and local crafts are connected to the region's geography. Everyday life and dress can differ from one village to another.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">موسیقی دوتار</span>
+        <span class="en">Dotar Music</span>
+      </h3>
+      <p>
+        <span class="fa">
+          دوتار و روایت‌های آوازی از نشانه‌های فرهنگی مهم بخش‌هایی از خراسان شمالی‌اند. موسیقی محلی، داستان‌ها، خاطره‌ها و تجربه‌های جمعی را از نسلی به نسل دیگر منتقل می‌کند.
+        </span>
+        <span class="en">
+          The dotar and sung storytelling are important cultural expressions in parts of North Khorasan. Local music carries stories, memories, and shared experiences across generations.
+        </span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="history">
+  <h2>
+    <span class="fa">۴. تاریخ، معماری و طبیعت</span>
+    <span class="en">4. History, Architecture, and Nature</span>
+  </h2>
+
+  <div class="grid">
+    <article class="tile">
+      <h3>
+        <span class="fa">عمارت مفخم</span>
+        <span class="en">Mofakham Mansion</span>
+      </h3>
+      <p>
+        <span class="fa">
+          عمارت مفخم از بناهای تاریخی شاخص بجنورد است. تزئینات معماری و کاشی‌کاری‌های آن، جلوه‌ای از هنر و سلیقهٔ دورهٔ قاجار را نشان می‌دهد.
+        </span>
+        <span class="en">
+          Mofakham Mansion is one of Bojnord's notable historic buildings. Its architectural details and tilework reflect artistic tastes of the Qajar period.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">آینه‌خانهٔ مفخم</span>
+        <span class="en">Mofakham Mirror House</span>
+      </h3>
+      <p>
+        <span class="fa">
+          آینه‌خانهٔ مفخم با تزئینات داخلی و جزئیات معماری خود، بخشی از میراث تاریخی بجنورد است و برای شناخت هنرهای تزئینی گذشته اهمیت دارد.
+        </span>
+        <span class="en">
+          Mofakham Mirror House, with its interior decoration and architectural details, forms part of Bojnord's historic heritage and offers insight into decorative arts of the past.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">شهر تاریخی بلقیس</span>
+        <span class="en">Historic City of Belqis</span>
+      </h3>
+      <p>
+        <span class="fa">
+          محوطهٔ تاریخی بلقیس در نزدیکی اسفراین، بقایای شهری کهن را در خود جای داده است. این مجموعه یادآور پیشینهٔ تاریخی و اهمیت سکونتگاه‌های منطقه در گذر زمان است.
+        </span>
+        <span class="en">
+          The historic site of Belqis near Esfarayen contains the remains of an ancient city. It recalls the region's long history and the importance of its settlements over time.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">بش‌قارداش و باباامان</span>
+        <span class="en">Besh Qardash and Baba Aman</span>
+      </h3>
+      <p>
+        <span class="fa">
+          این تفرجگاه‌های طبیعی در اطراف بجنورد، با چشم‌اندازهای سبز و فضای مناسب گردش، بخشی از جاذبه‌های طبیعی شناخته‌شدهٔ استان به شمار می‌روند.
+        </span>
+        <span class="en">
+          These natural recreation areas near Bojnord are known for their green surroundings and scenic landscapes, making them familiar destinations within the province.
+        </span>
+      </p>
+    </article>
+  </div>
+
+  <div class="quote">
+    <span class="fa">
+      طبیعت، تاریخ و فرهنگ در خراسان شمالی کنار هم قرار گرفته‌اند؛ هر روستا و هر بنای تاریخی، دریچه‌ای به روایتی دیگر است.
+    </span>
+    <span class="en">
+      In North Khorasan, nature, history, and culture meet. Every village and historic building opens a window onto another story.
+    </span>
+  </div>
+</section>
+
+<section id="food">
+  <h2>
+    <span class="fa">۵. خوراکی‌ها و طعم‌های محلی</span>
+    <span class="en">5. Local Foods and Flavors</span>
+  </h2>
+
+  <p>
+    <span class="fa">
+      خوراک‌های محلی خراسان شمالی از محصولات کشاورزی، لبنیات، غلات و شیوه‌های آشپزی خانوادگی تأثیر گرفته‌اند. دستور پخت و نام خوراک‌ها ممکن است از شهری به شهر دیگر تفاوت داشته باشد.
+    </span>
+    <span class="en">
+      North Khorasan's local cuisine draws on agricultural produce, dairy, grains, and family cooking traditions. Recipes and food names can vary between towns and communities.
+    </span>
+  </p>
+
+  <div class="grid">
+    <article class="tile">
+      <h3>
+        <span class="fa">فتیر محلی</span>
+        <span class="en">Local Fatir Bread</span>
+      </h3>
+      <p>
+        <span class="fa">
+          فتیر نوعی نان محلی است که در شکل‌ها و شیوه‌های گوناگون پخته می‌شود. این نان در برخی خانواده‌ها برای صبحانه، پذیرایی یا مناسبت‌های خاص تهیه می‌شود.
+        </span>
+        <span class="en">
+          Fatir is a traditional bread made in different forms and styles. In some households, it is prepared for breakfast, hospitality, or special occasions.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">آش‌ها و خوراک‌های خانگی</span>
+        <span class="en">Soups and Home-Cooked Dishes</span>
+      </h3>
+      <p>
+        <span class="fa">
+          آش‌ها و غذاهای خانگی با استفاده از غلات، حبوبات و سبزی‌های در دسترس، بخشی از فرهنگ غذایی منطقه را تشکیل می‌دهند. ترکیب مواد و نام غذاها در خانواده‌ها و نواحی مختلف متفاوت است.
+        </span>
+        <span class="en">
+          Soups and home-cooked dishes made with grains, legumes, and available herbs are part of the region's food culture. Ingredients and names vary among households and localities.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">لبنیات و فرآورده‌های محلی</span>
+        <span class="en">Dairy and Local Products</span>
+      </h3>
+      <p>
+        <span class="fa">
+          در نواحی روستایی و دامداری، شیر و فرآورده‌هایی مانند ماست و پنیر در سفرهٔ محلی جای دارند. روش تهیه و طعم این محصولات می‌تواند بر اساس سنت خانوادگی متفاوت باشد.
+        </span>
+        <span class="en">
+          In rural and livestock-raising areas, milk and dairy products such as yogurt and cheese feature in local meals. Preparation methods and flavors can differ by family tradition.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">شیرینی‌ها و نان‌های آیینی</span>
+        <span class="en">Sweets and Occasion Breads</span>
+      </h3>
+      <p>
+        <span class="fa">
+          نان‌ها و شیرینی‌های خانگی در پذیرایی‌ها و مناسبت‌های خانوادگی نقش دارند. برای معرفی هر نوع شیرینی به‌عنوان خوراک ویژهٔ یک روستا، بهتر است نام و شیوهٔ تهیه از منبع محلی معتبر بررسی شود.
+        </span>
+        <span class="en">
+          Homemade breads and sweets play a role in hospitality and family occasions. To identify a particular sweet as unique to a village, its name and preparation should be verified through a reliable local source.
+        </span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="products">
+  <h2>
+    <span class="fa">۶. محصولات بومی و هنرهای دستی</span>
+    <span class="en">6. Local Products and Handicrafts</span>
+  </h2>
+
+  <div class="grid">
+    <article class="tile">
+      <h3>
+        <span class="fa">نساجی سنتی رویین</span>
+        <span class="en">Rooyin Traditional Textiles</span>
+      </h3>
+      <p>
+        <span class="fa">
+          پارچه‌بافی سنتی رویین از هنرهای شناخته‌شدهٔ منطقه است. این هنر، مهارت دست و دانش بافندگی را با طرح‌ها و کاربردهای روزمره پیوند می‌دهد.
+        </span>
+        <span class="en">
+          Rooyin's traditional textile weaving is a recognized local craft. It connects hand skills and weaving knowledge with patterns and everyday uses.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">قالی، گلیم و جاجیم</span>
+        <span class="en">Carpets, Kilims, and Jajim</span>
+      </h3>
+      <p>
+        <span class="fa">
+          بافت قالی، گلیم و جاجیم در بخش‌هایی از استان رواج دارد. نقش‌ها، رنگ‌ها و شیوهٔ بافت می‌توانند از یک منطقه به منطقهٔ دیگر تفاوت داشته باشند.
+        </span>
+        <span class="en">
+          Carpet, kilim, and jajim weaving are practiced in parts of the province. Patterns, colors, and weaving methods may differ from one locality to another.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">محصولات کشاورزی و باغی</span>
+        <span class="en">Agricultural and Orchard Products</span>
+      </h3>
+      <p>
+        <span class="fa">
+          کشاورزی و باغداری از فعالیت‌های مهم اقتصادی منطقه‌اند. محصولات دقیق هر ناحیه به آب‌وهوا، منابع آب و نوع کشت بستگی دارد و بهتر است در معرفی محلی به داده‌های معتبر همان منطقه تکیه شود.
+        </span>
+        <span class="en">
+          Farming and orchards are important economic activities in the region. Local produce depends on climate, water resources, and cultivation, so specific claims should be based on reliable local information.
+        </span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3>
+        <span class="fa">موسیقی و هنرهای روایی</span>
+        <span class="en">Music and Storytelling Traditions</span>
+      </h3>
+      <p>
+        <span class="fa">
+          موسیقی دوتار و روایت‌های شفاهی، بخشی از میراث فرهنگی استان هستند. این هنرها در کنار صنایع‌دستی، بخشی از هویت زندهٔ مردم منطقه را شکل می‌دهند.
+        </span>
+        <span class="en">
+          Dotar music and oral storytelling form part of the province's cultural heritage. Alongside handicrafts, these traditions contribute to the region's living identity.
+        </span>
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="sources">
+  <h2>
+    <span class="fa">۷. منابع و مطالعهٔ بیشتر</span>
+    <span class="en">7. Sources and Further Reading</span>
+  </h2>
+
+  <p>
+    <span class="fa">
+      این صفحه روایتی مقدماتی از فرهنگ و پوشش خراسان شمالی است. برای پژوهش دقیق‌تر دربارهٔ لباس هر قوم، روستا و آیین، باید اطلاعات با منابع مردم‌نگاری، موزه‌ای و محلی تطبیق داده شود.
+    </span>
+    <span class="en">
+      This page offers an introduction to the culture and dress of North Khorasan. More detailed research on the clothing of each community, village, and tradition should be checked against ethnographic, museum, and local sources.
+    </span>
+  </p>
+
+  <ul class="source-list">
+    <li>
+      <a href="https://www.visitiran.ir/" target="_blank" rel="noopener noreferrer">
+        <span class="fa">وزارت میراث فرهنگی، گردشگری و صنایع دستی ـ درگاه معرفی ایران</span>
+        <span class="en">Visit Iran — Iran's cultural heritage and tourism portal</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://ich.unesco.org/" target="_blank" rel="noopener noreferrer">
+        <span class="fa">یونسکو ـ میراث فرهنگی ناملموس</span>
+        <span class="en">UNESCO — Intangible Cultural Heritage</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.iranicaonline.org/" target="_blank" rel="noopener noreferrer">
+        <span class="fa">دانشنامهٔ ایرانیکا ـ پژوهش‌های تاریخی و فرهنگی ایران</span>
+        <span class="en">Encyclopaedia Iranica — Iranian history and culture</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.isna.ir/" target="_blank" rel="noopener noreferrer">
+        <span class="fa">خبرگزاری ایسنا ـ گزارش‌های فرهنگی و محلی</span>
+        <span class="en">ISNA — Cultural and regional reports</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.irna.ir/" target="_blank" rel="noopener noreferrer">
+        <span class="fa">خبرگزاری جمهوری اسلامی ـ اخبار و گزارش‌های استان</span>
+        <span class="en">IRNA — Provincial news and reports</span>
+      </a>
+    </li>
+  </ul>
+
+  <p class="small">
+    <span class="fa">پیوندها به درگاه‌های مرجع هستند؛ برای هر ادعای جزئی، منبع و صفحهٔ دقیق باید جداگانه بررسی شود.</span>
+    <span class="en">These links lead to reference portals; specific claims should be checked against individual source pages.</span>
+  </p>
+</section>
+
+<a class="back" href="index.html">
+  <span class="fa">← بازگشت به گالری مناطق ایران</span>
+  <span class="en">← Back to the Regions Gallery</span>
+</a>
+
 </main>
 
 <footer>
-  <p class="fa">هنرمند و خالق آثار: مریم ساعی</p>
-  <p class="en">Artist and Artwork Creator: Maryam Saei</p>
-  <p class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</p>
-  <p class="en">Website Design and Cultural Research: Marjan Saei</p>
-  <p><a href="index.html"><span class="fa">بازگشت به گالری اصلی</span><span class="en">Return to Main Gallery</span></a></p>
-  <p>© ایران، هزار رنگ | Iran, A Thousand Colors</p>
+  <p>
+    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+    <span class="en">Iran, A Thousand Colors | A Visual Story of Women's Dress in Iran</span>
+  </p>
+  <p>
+    <span class="fa">هنرمند و خالق آثار: مریم ساعی</span>
+    <span class="en">Artist and Artwork Creator: Maryam Saei</span>
+  </p>
+  <p>
+    <span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span>
+    <span class="en">Website Design and Cultural Research: Marjan Saei</span>
+  </p>
 </footer>
 
 <script>
-function toggleLanguage() {
-  const isEnglish = document.body.classList.toggle('english');
-  document.documentElement.lang = isEnglish ? 'en' : 'fa';
-  document.documentElement.dir = isEnglish ? 'ltr' : 'rtl';
-}
+const langSwitch = document.getElementById("langSwitch");
+
+langSwitch.addEventListener("click", function () {
+  document.body.classList.toggle("english");
+
+  const isEnglish = document.body.classList.contains("english");
+  document.documentElement.lang = isEnglish ? "en" : "fa";
+  document.documentElement.dir = isEnglish ? "ltr" : "rtl";
+  langSwitch.textContent = isEnglish ? "فارسی" : "English";
+});
 </script>
 </body>
 </html>
