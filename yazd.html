@@ -1,0 +1,913 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>یزد | ایران، هزار رنگ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper: #f4ead8;
+  --cream: #fffaf0;
+  --green: #344d31;
+  --olive: #657047;
+  --rust: #a65e3b;
+  --gold: #c4a36a;
+  --ink: #38352a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Vazirmatn', sans-serif;
+  background:
+    radial-gradient(circle at top left, #e6d5b5, transparent 35%),
+    var(--paper);
+  color: var(--ink);
+  line-height: 2;
+}
+
+body.english {
+  direction: ltr;
+  font-family: Georgia, serif;
+}
+
+.container {
+  width: min(1080px, 92%);
+  margin: auto;
+}
+
+header {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--gold);
+  background: rgba(255,250,240,.78);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  color: var(--green);
+  font-weight: 800;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid var(--green);
+  border-radius: 30px;
+  padding: 8px 18px;
+  background: var(--green);
+  color: white;
+  font-size: 14px;
+}
+
+.hero {
+  text-align: center;
+  padding: 45px 12px 30px;
+}
+
+.eyebrow {
+  color: var(--rust);
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+h1 {
+  color: var(--green);
+  font-size: clamp(34px, 6vw, 58px);
+  line-height: 1.5;
+  margin: 8px 0;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--olive);
+  margin: 0 auto;
+}
+
+.hero-line {
+  width: 100px;
+  height: 3px;
+  margin: 20px auto;
+  background: var(--gold);
+  border-radius: 10px;
+}
+
+.page-section {
+  margin: 28px auto;
+  padding: clamp(18px, 4vw, 35px);
+  border: 1px solid #d7c39c;
+  border-radius: 20px;
+  background: rgba(255,250,240,.82);
+  box-shadow: 0 8px 25px rgba(77,59,35,.07);
+}
+
+h2 {
+  color: var(--green);
+  font-size: 25px;
+  margin: 0 0 16px;
+  line-height: 1.7;
+}
+
+h3 {
+  color: var(--rust);
+  margin: 0 0 8px;
+  font-size: 19px;
+}
+
+p {
+  margin: 8px 0 14px;
+}
+
+.artwork {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  background: #fffaf0;
+  box-shadow: 0 12px 30px rgba(60,45,25,.15);
+}
+
+.artwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 9px;
+}
+
+.label-image {
+  width: 100%;
+  max-width: 440px;
+  display: block;
+  margin: 25px auto 0;
+  padding: 7px;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  background: white;
+}
+
+.label-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.caption {
+  text-align: center;
+  color: var(--olive);
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid #dfcfad;
+  border-radius: 15px;
+  background: #fffdf7;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.note {
+  padding: 15px 18px;
+  border-right: 4px solid var(--rust);
+  background: #f5ead6;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+body.english .note {
+  border-right: 0;
+  border-left: 4px solid var(--rust);
+}
+
+ul {
+  padding-inline-start: 25px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+a {
+  color: var(--rust);
+  overflow-wrap: anywhere;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 10px 45px;
+  color: var(--olive);
+}
+
+footer a {
+  font-weight: 700;
+}
+
+.fa-inline {
+  display: inline;
+}
+
+.en-inline {
+  display: none;
+}
+
+body.english .fa-inline {
+  display: none;
+}
+
+body.english .en-inline {
+  display: inline;
+}
+
+@media (max-width: 650px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 30px;
+  }
+
+  .page-section {
+    margin: 18px auto;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container topbar">
+    <a class="brand" href="index.html">
+      <span class="fa-inline">ایران، هزار رنگ</span>
+      <span class="en-inline">Iran, A Thousand Colors</span>
+    </a>
+
+    <button id="languageButton" onclick="toggleLanguage()">
+      English
+    </button>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="eyebrow">
+      <span class="fa-inline">منطقهٔ یزد</span>
+      <span class="en-inline">Yazd Region</span>
+    </div>
+
+    <h1>
+      <span class="fa-inline">یزد</span>
+      <span class="en-inline">Yazd</span>
+    </h1>
+
+    <p class="subtitle">
+      <span class="fa-inline">نقشِ ماندگار در دلِ کویر</span>
+      <span class="en-inline">Timeless Patterns in the Heart of the Desert</span>
+    </p>
+
+    <div class="hero-line"></div>
+
+    <p>
+      <span class="fa-inline">
+        سفری تصویری به سرزمین بادگیرها، کوچه‌های خشتی،
+        پوشش‌های سنتی و میراث فرهنگی زنده.
+      </span>
+      <span class="en-inline">
+        A visual journey through windcatchers, adobe alleys,
+        traditional clothing and a living cultural heritage.
+      </span>
+    </p>
+  </section>
+
+  <section class="page-section" id="art">
+    <h2>
+      <span class="fa-inline">۱. اثر هنری یزد</span>
+      <span class="en-inline">1. The Yazd Artwork</span>
+    </h2>
+
+    <div class="artwork">
+      <img src="yazd.png"
+           alt="اثر هنری پوشش زنان یزد در مجموعه ایران هزار رنگ">
+    </div>
+
+    <p class="caption">
+      <span class="fa-inline">اثر هنری از مجموعهٔ «ایران، هزار رنگ»</span>
+      <span class="en-inline">Artwork from the Iran, A Thousand Colors collection</span>
+    </p>
+
+    <div class="label-image">
+      <img src="yazd_leibel.png"
+           alt="لیبل اطلاعات فرهنگی منطقه یزد">
+    </div>
+
+    <p class="caption">
+      <span class="fa-inline">لیبل اطلاعات فرهنگی یزد</span>
+      <span class="en-inline">Yazd cultural information label</span>
+    </p>
+  </section>
+
+  <section class="page-section" id="dress">
+    <h2>
+      <span class="fa-inline">۲. پوشش سنتی زنان یزد</span>
+      <span class="en-inline">2. Traditional Women's Clothing in Yazd</span>
+    </h2>
+
+    <p>
+      <span class="fa-inline">
+        پوشش سنتی زنان یزد در دوره‌ها و نواحی مختلف شکل‌های گوناگونی داشته است.
+        در نمونه‌های تاریخی، پیراهن، شلوار، دامن‌های چین‌دار مانند شلیته،
+        چارقد یا روسری و چادر از اجزایی هستند که ممکن است دیده شوند.
+        نوع پارچه، رنگ، تزئینات و شیوهٔ پوشیدن لباس با توجه به محل زندگی،
+        دورهٔ تاریخی و شرایط اجتماعی تفاوت داشته است.
+      </span>
+      <span class="en-inline">
+        Traditional women's clothing in Yazd has varied across periods and localities.
+        Historical examples may include shirts, trousers, gathered skirts such as
+        shaliteh, headscarves and chadors. Fabrics, colors, decoration and ways of
+        wearing these garments differed according to locality, historical period
+        and social context.
+      </span>
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>
+          <span class="fa-inline">لباس و دامن</span>
+          <span class="en-inline">Garments and Skirts</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            دامن‌های چین‌دار و شلوارهای گشاد در برخی نمونه‌های پوشش سنتی
+            دیده می‌شوند؛ اما نباید آن‌ها را به تمام زنان و همهٔ دوره‌ها تعمیم داد.
+          </span>
+          <span class="en-inline">
+            Gathered skirts and loose trousers appear in some traditional examples,
+            but they should not be generalized to all women or periods.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">چارقد و پوشش سر</span>
+          <span class="en-inline">Headscarves and Head Coverings</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            چارقدها و روسری‌ها از نظر جنس، رنگ و طرح متنوع بوده‌اند.
+            برای بازسازی دقیق هر لباس، بهتر است به نمونه‌های مستند همان ناحیه
+            و دوره مراجعه شود.
+          </span>
+          <span class="en-inline">
+            Headscarves varied in fabric, color and pattern. Accurate reconstruction
+            should rely on documented examples from the relevant locality and period.
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:24px">
+      <span class="fa-inline">پوشش زنان زرتشتی یزد</span>
+      <span class="en-inline">Clothing of Zoroastrian Women in Yazd</span>
+    </h3>
+
+    <p>
+      <span class="fa-inline">
+        جامعهٔ زرتشتی یزد بخشی مهم از تاریخ و فرهنگ این استان است.
+        در برخی نمونه‌های تاریخی پوشاک زنان زرتشتی، دامن‌های رنگی یا راه‌راه،
+        پیراهن، شلوار و پوشش‌های سر مانند لچک و مکنی دیده می‌شود.
+        شکل و ترکیب این اجزا در دوره‌ها و خانواده‌های مختلف یکسان نبوده است.
+        بنابراین برای معرفی دقیق این پوشش، باید به عکس‌ها، مجموعه‌های موزه‌ای
+        و پژوهش‌های مستند دربارهٔ لباس زرتشتیان تکیه کرد.
+      </span>
+      <span class="en-inline">
+        Yazd's Zoroastrian community is an important part of the province's history
+        and culture. Some historical examples of Zoroastrian women's clothing show
+        colorful or striped skirts, shirts, trousers and head coverings such as
+        lachaks and maknis. These elements were not identical across periods
+        or families. Reliable photographs, museum collections and documented
+        studies are therefore essential for an accurate description.
+      </span>
+    </p>
+
+    <div class="note">
+      <span class="fa-inline">
+        نکتهٔ پژوهشی: پوشش عمومی زنان یزد و پوشش زنان زرتشتی را دو موضوع مرتبط
+        اما جداگانه در نظر می‌گیریم؛ هر لباس باید با شواهد تاریخی معرفی شود.
+      </span>
+      <span class="en-inline">
+        Research note: General women's clothing in Yazd and Zoroastrian women's
+        clothing are related but distinct subjects. Each garment should be
+        presented with historical evidence.
+      </span>
+    </div>
+  </section>
+
+  <section class="page-section" id="villages">
+    <h2>
+      <span class="fa-inline">۳. شهرها و روستاهای تاریخی</span>
+      <span class="en-inline">3. Historic Towns and Villages</span>
+    </h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>
+          <span class="fa-inline">میبد</span>
+          <span class="en-inline">Meybod</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            میبد با نارین‌قلعه، بافت تاریخی، سفال و سرامیک و زیلوبافی شناخته می‌شود.
+            نقش‌های هندسی و هنرهای دست‌ساز این شهر بخشی از هویت فرهنگی منطقه‌اند.
+          </span>
+          <span class="en-inline">
+            Meybod is known for Narin Castle, its historic fabric, pottery,
+            ceramics and zilu weaving. Geometric patterns and handicrafts are
+            part of the town's cultural identity.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">خرانق</span>
+          <span class="en-inline">Kharanaq</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            روستایی تاریخی با خانه‌های خشتی، گذرهای قدیمی و چشم‌اندازی که
+            با معماری کویری پیوند دارد.
+          </span>
+          <span class="en-inline">
+            A historic village with adobe houses, old passages and a landscape
+            closely connected to desert architecture.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">فهرج</span>
+          <span class="en-inline">Fahraj</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            فهرج با بافت تاریخی و مسجد کهن خود از نقاط مهم پیرامون شهر یزد است.
+          </span>
+          <span class="en-inline">
+            Fahraj is known for its historic settlement and ancient mosque
+            near the city of Yazd.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">تفت و چک‌چک</span>
+          <span class="en-inline">Taft and Chak Chak</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            تفت در دامنه‌های شیرکوه قرار دارد و چک‌چک از زیارتگاه‌های مهم
+            زرتشتیان در کوهستان‌های استان یزد است.
+          </span>
+          <span class="en-inline">
+            Taft lies near the Shirkuh foothills, while Chak Chak is an important
+            Zoroastrian pilgrimage site in the province's mountains.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="history">
+    <h2>
+      <span class="fa-inline">۴. آثار تاریخی و طبیعت</span>
+      <span class="en-inline">4. Historic Sites and Nature</span>
+    </h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>
+          <span class="fa-inline">بافت تاریخی یزد</span>
+          <span class="en-inline">Historic City of Yazd</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            خانه‌های خشتی، کوچه‌های باریک، ساباط‌ها و بادگیرها،
+            نمونه‌هایی از سازگاری معماری با آب‌وهوای گرم و خشک‌اند.
+            بافت تاریخی یزد در فهرست میراث جهانی یونسکو ثبت شده است.
+          </span>
+          <span class="en-inline">
+            Adobe houses, narrow alleys, shaded passages and windcatchers
+            illustrate architectural adaptation to a hot, dry climate.
+            The Historic City of Yazd is a UNESCO World Heritage Site.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">مجموعهٔ امیرچخماق</span>
+          <span class="en-inline">Amir Chakhmaq Complex</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            مجموعه‌ای شاخص با نمای طاق‌دار و ساختار متقارن که به یکی از
+            شناخته‌شده‌ترین نشانه‌های تصویری یزد تبدیل شده است.
+          </span>
+          <span class="en-inline">
+            A landmark complex with an arched facade and a distinctive
+            symmetrical composition, widely associated with Yazd.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">باغ دولت‌آباد</span>
+          <span class="en-inline">Dowlat Abad Garden</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            باغی تاریخی با عمارت، فضای سبز و بادگیر بلند که پیوند
+            معماری، آب و طبیعت را در اقلیم کویری نشان می‌دهد.
+          </span>
+          <span class="en-inline">
+            A historic garden with a pavilion, greenery and a tall windcatcher,
+            illustrating the relationship between architecture, water and nature
+            in a desert environment.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">مسجد جامع یزد</span>
+          <span class="en-inline">Jameh Mosque of Yazd</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            با کاشی‌کاری‌های فیروزه‌ای، کتیبه‌ها و مناره‌های بلند،
+            از مهم‌ترین بناهای تاریخی و هنری شهر است.
+          </span>
+          <span class="en-inline">
+            With turquoise tilework, inscriptions and tall minarets,
+            it is one of the city's major historic and artistic landmarks.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">آتشکده و میراث زرتشتی</span>
+          <span class="en-inline">Fire Temple and Zoroastrian Heritage</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            آتشکدهٔ زرتشتیان یزد و دیگر مکان‌های مرتبط با این جامعه،
+            برای شناخت تنوع دینی و میراث فرهنگی منطقه اهمیت دارند.
+          </span>
+          <span class="en-inline">
+            Yazd's Zoroastrian Fire Temple and related sites are important
+            for understanding the region's religious diversity and cultural heritage.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">قنات‌ها و بادگیرها</span>
+          <span class="en-inline">Qanats and Windcatchers</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            قنات‌ها برای انتقال آب در سرزمین خشک و بادگیرها برای تهویهٔ
+            طبیعی ساختمان‌ها به کار می‌رفتند؛ هر دو بخشی از دانش بومی
+            سازگاری با محیط‌اند.
+          </span>
+          <span class="en-inline">
+            Qanats carried water across arid landscapes, while windcatchers
+            helped ventilate buildings naturally. Both reflect local knowledge
+            of environmental adaptation.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="food">
+    <h2>
+      <span class="fa-inline">۵. غذاهای محلی و شیرینی‌ها</span>
+      <span class="en-inline">5. Local Food and Sweets</span>
+    </h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>
+          <span class="fa-inline">آش شولی</span>
+          <span class="en-inline">Shooli Soup</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            یکی از غذاهای شناخته‌شدهٔ یزد که معمولاً با سبزی، چغندر
+            و چاشنی‌هایی مانند سرکه تهیه می‌شود.
+          </span>
+          <span class="en-inline">
+            A well-known Yazdi soup usually made with herbs, beetroot
+            and seasonings such as vinegar.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">قیمهٔ نخود یزدی</span>
+          <span class="en-inline">Yazdi Chickpea Stew</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            خورشی محلی که نخود در آن نقش اصلی دارد و از غذاهای شاخص
+            آشپزی سنتی یزد به شمار می‌رود.
+          </span>
+          <span class="en-inline">
+            A local stew in which chickpeas are a key ingredient,
+            representing traditional Yazdi cooking.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">قطاب</span>
+          <span class="en-inline">Qottab</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            شیرینی مغزدار با عطری از هل و مغزهایی مانند بادام؛
+            از مشهورترین سوغات خوراکی یزد.
+          </span>
+          <span class="en-inline">
+            A filled pastry flavored with cardamom and nuts such as almonds,
+            and one of Yazd's best-known edible souvenirs.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">باقلوا و حاجی‌بادام</span>
+          <span class="en-inline">Baklava and Haji Badam</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            شیرینی‌های سنتی با بافت و طعم متفاوت که در کنار دیگر
+            محصولات قنادی یزد عرضه می‌شوند.
+          </span>
+          <span class="en-inline">
+            Traditional sweets with distinct textures and flavors,
+            sold alongside other Yazdi confectionery.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">کیک یزدی و پشمک</span>
+          <span class="en-inline">Yazdi Cake and Pashmak</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            کیک یزدی با عطر هل و گلاب و پشمک با بافت رشته‌ای و لطیف،
+            از شیرینی‌های شناخته‌شدهٔ این منطقه‌اند.
+          </span>
+          <span class="en-inline">
+            Yazdi cake, flavored with cardamom and rosewater, and delicate
+            strand-like pashmak are well-known regional sweets.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="products">
+    <h2>
+      <span class="fa-inline">۶. سوغات، محصولات و صنایع‌دستی</span>
+      <span class="en-inline">6. Souvenirs, Products and Handicrafts</span>
+    </h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>
+          <span class="fa-inline">زیلوبافی میبد</span>
+          <span class="en-inline">Meybod Zilu Weaving</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            زیراندازی دست‌باف با نقش‌های هندسی که از هنرهای شاخص
+            میبد و از جلوه‌های مهم میراث نساجی منطقه است.
+          </span>
+          <span class="en-inline">
+            A handwoven floor covering with geometric patterns,
+            representing Meybod's textile heritage.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">ترمه‌بافی</span>
+          <span class="en-inline">Termeh Weaving</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            پارچه‌ای ظریف و نقش‌دار که در محصولات تزئینی و کاربردهای
+            گوناگون به کار می‌رود.
+          </span>
+          <span class="en-inline">
+            A finely patterned textile used in decorative and practical products.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">سفال و سرامیک</span>
+          <span class="en-inline">Pottery and Ceramics</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            از هنرهای شناخته‌شدهٔ میبد که برخی محصولات آن با نقش‌های
+            هندسی، پرندگان و طرح‌های الهام‌گرفته از طبیعت تزئین می‌شوند.
+          </span>
+          <span class="en-inline">
+            A well-known Meybod craft; some pieces feature geometric designs,
+            birds and motifs inspired by nature.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">دارایی‌بافی و شمدبافی</span>
+          <span class="en-inline">Daraei and Shamad Weaving</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            از بافت‌های سنتی منطقه که نمونه‌هایی از مهارت نساجی
+            و استفاده از رنگ و نقش در زندگی روزمره را نشان می‌دهند.
+          </span>
+          <span class="en-inline">
+            Traditional textile crafts that demonstrate local weaving skills
+            and the use of color and pattern in everyday life.
+          </span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>
+          <span class="fa-inline">شیرینی‌های سنتی</span>
+          <span class="en-inline">Traditional Sweets</span>
+        </h3>
+        <p>
+          <span class="fa-inline">
+            قطاب، باقلوا، حاجی‌بادام، پشمک و کیک یزدی از سوغات خوراکی
+            شناخته‌شدهٔ این استان‌اند.
+          </span>
+          <span class="en-inline">
+            Qottab, baklava, haji badam, pashmak and Yazdi cake are among
+            the province's well-known edible souvenirs.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="sources">
+    <h2>
+      <span class="fa-inline">۷. منابع و مطالعهٔ بیشتر</span>
+      <span class="en-inline">7. Sources and Further Reading</span>
+    </h2>
+
+    <p>
+      <span class="fa-inline">
+        برای آشنایی بیشتر با میراث تاریخی، معماری و فرهنگ یزد،
+        منابع زیر نقطهٔ شروع مناسبی هستند.
+      </span>
+      <span class="en-inline">
+        The following resources are useful starting points for learning
+        about Yazd's historical, architectural and cultural heritage.
+      </span>
+    </p>
+
+    <ul>
+      <li>
+        <a href="https://whc.unesco.org/en/list/1544/"
+           target="_blank" rel="noopener noreferrer">
+          UNESCO — Historic City of Yazd
+        </a>
+      </li>
+      <li>
+        <a href="https://www.iranicaonline.org/"
+           target="_blank" rel="noopener noreferrer">
+          Encyclopaedia Iranica — پژوهش‌های تاریخ و فرهنگ ایران
+        </a>
+      </li>
+      <li>
+        <a href="https://www.visitiran.ir/"
+           target="_blank" rel="noopener noreferrer">
+          Visit Iran — معرفی میراث فرهنگی و گردشگری ایران
+        </a>
+      </li>
+      <li>
+        <a href="https://www.trc-leiden.nl/"
+           target="_blank" rel="noopener noreferrer">
+          Textile Research Centre, Leiden — پژوهش دربارهٔ پوشاک و منسوجات
+        </a>
+      </li>
+    </ul>
+
+    <div class="note">
+      <span class="fa-inline">
+        این صفحه روایتی فرهنگی و تصویری از یزد است. پوشش‌ها و سنت‌ها
+        در طول زمان تغییر کرده‌اند و برای جزئیات تخصصی باید به پژوهش‌ها
+        و نمونه‌های تاریخی مستند مراجعه کرد.
+      </span>
+      <span class="en-inline">
+        This page offers a visual and cultural account of Yazd.
+        Clothing and traditions have changed over time; detailed claims
+        should be checked against documented historical research.
+      </span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    <span class="fa-inline">هنر، حافظه و رنگ‌های ایران</span>
+    <span class="en-inline">Art, Memory and the Colors of Iran</span>
+  </p>
+
+  <p>
+    <span class="fa-inline">اثر هنری: مریم ساعی | طراحی سایت و پژوهش فرهنگی: مرجان ساعی</span>
+    <span class="en-inline">Artwork: Maryam Saei | Website Design and Cultural Research: Marjan Saei</span>
+  </p>
+
+  <a href="index.html">
+    <span class="fa-inline">← بازگشت به گالری مناطق ایران</span>
+    <span class="en-inline">← Back to the Regions Gallery</span>
+  </a>
+</footer>
+
+<script>
+function toggleLanguage() {
+  const isEnglish = document.body.classList.toggle('english');
+
+  document.documentElement.lang = isEnglish ? 'en' : 'fa';
+  document.documentElement.dir = isEnglish ? 'ltr' : 'rtl';
+
+  document.getElementById('languageButton').textContent =
+    isEnglish ? 'فارسی' : 'English';
+}
+</script>
+
+</body>
+</html>
