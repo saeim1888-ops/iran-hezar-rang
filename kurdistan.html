@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>کردستان | ایران، هزار رنگ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#f8f0e1;
+  --panel:#fffaf1;
+  --card:#f6eddd;
+  --ink:#352f26;
+  --green:#596548;
+  --rust:#bd4b28;
+  --line:#e5d2b0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Vazirmatn,Tahoma,sans-serif;
+  line-height:2;
+}
+a{color:#235c70}
+header{
+  max-width:1015px;
+  margin:auto;
+  padding:20px 35px 5px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+.logo{font-size:18px;font-weight:800;color:var(--green)}
+button{
+  font:inherit;
+  background:var(--panel);
+  border:1px solid #cda66c;
+  border-radius:25px;
+  padding:5px 17px;
+  cursor:pointer;
+}
+.hero,.page-section{
+  max-width:1015px;
+  margin:20px auto;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:30px 35px;
+}
+.hero{text-align:center;padding-top:35px}
+.eyebrow{color:var(--rust);font-weight:700}
+h1{
+  color:var(--green);
+  font-size:clamp(27px,4vw,39px);
+  line-height:1.6;
+  margin:7px 0;
+}
+.hero h2{font-size:22px;color:var(--rust);margin:0}
+.hero p{margin:10px auto;max-width:820px}
+nav{
+  max-width:1015px;
+  margin:18px auto;
+  padding:15px 25px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  display:flex;
+  gap:9px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+nav a{
+  font-size:14px;
+  text-decoration:none;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:5px 12px;
+  color:var(--green);
+}
+.page-section h2{
+  font-size:clamp(23px,3vw,31px);
+  color:var(--green);
+  border-bottom:1px solid #d9bd8c;
+  padding-bottom:12px;
+  margin:0 0 22px;
+}
+.page-section h3{color:var(--rust);font-size:21px;margin:0 0 12px}
+.page-section p{margin:12px 0 18px}
+.artwork{
+  display:block;
+  width:min(100%,650px);
+  height:auto;
+  margin:25px auto 15px;
+  padding:7px;
+  background:#eee0c7;
+  border:1px solid #d7b982;
+}
+.label-image{
+  display:block;
+  width:min(100%,650px);
+  height:auto;
+  margin:25px auto 12px;
+}
+.caption{text-align:center;font-size:14px;color:#766953}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:15px;
+  margin:20px 0;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:20px;
+  min-width:0;
+}
+.card h3{margin-bottom:12px}
+.card p:last-child{margin-bottom:0}
+.note{
+  font-size:14px;
+  color:#645843;
+  border-top:1px solid var(--line);
+  padding-top:14px;
+  margin-top:20px;
+}
+ul{padding-right:24px}
+footer{
+  max-width:1015px;
+  margin:25px auto 0;
+  padding:25px 35px 40px;
+  color:var(--green);
+}
+footer a{color:var(--green)}
+.en{display:none}
+body.english{direction:ltr}
+body.english .en{display:inline}
+body.english .fa{display:none}
+body.english .page-section,
+body.english .card{text-align:left}
+body.english ul{padding-left:24px;padding-right:0}
+
+@media(max-width:800px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero,.page-section,nav,header,footer{
+    margin-left:12px;
+    margin-right:12px;
+  }
+  .hero,.page-section{padding:23px 18px}
+}
+@media(max-width:480px){
+  .cards{grid-template-columns:1fr}
+  header{padding-left:5px;padding-right:5px}
+  .logo{font-size:15px}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="logo">ایران، هزار رنگ | Iran, A Thousand Colors</div>
+  <button type="button" onclick="toggleLanguage()" id="langButton">English</button>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">
+    <span class="fa">منطقه ۹ از ۲۳ منطقه</span>
+    <span class="en">REGION 9 OF 23</span>
+  </div>
+
+  <h1>
+    <span class="fa">کردستان؛ رنگ کوهستان، نقش زندگی</span>
+    <span class="en">Kurdistan: Mountain Colors, Patterns of Life</span>
+  </h1>
+
+  <h2>
+    <span class="fa">سرزمین فرهنگ، رنگ و زندگی</span>
+    <span class="en">A Land of Culture, Color and Life</span>
+  </h2>
+
+  <p>
+    <span class="fa">سفری تصویری میان پوشش زنان کرد، روستاهای پلکانی، کوهستان‌های زاگرس، میراث تاریخی، موسیقی، صنایع‌دستی و طعم‌های اصیل کردستان.</span>
+    <span class="en">A visual journey through Kurdish women's dress, stepped villages, the Zagros Mountains, historic heritage, music, handicrafts and the distinctive flavors of Kurdistan.</span>
+  </p>
+</div>
+
+<nav>
+  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+  <a href="#dress"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+  <a href="#villages"><span class="fa">روستاها و نواحی</span><span class="en">Villages & Regions</span></a>
+  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+  <a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food & Sweets</span></a>
+  <a href="#products"><span class="fa">محصولات محلی</span><span class="en">Local Products</span></a>
+  <a href="#crafts"><span class="fa">صنایع‌دستی</span><span class="en">Handicrafts</span></a>
+  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
+
+<main>
+
+<section class="page-section" id="art">
+  <h2>
+    <span class="fa">۱. تصویر کردستان؛ روایت یک سرزمین</span>
+    <span class="en">1. Kurdistan in Art: A Land's Story</span>
+  </h2>
+
+  <p>
+    <span class="fa">در این اثر، پوشش رنگارنگ زنان کرد در کنار نقش‌مایه‌های قالی و گلیم، ساز دف، خوراک‌های محلی و چشم‌انداز روستاهای کوهستانی قرار گرفته است. لایه‌های کاغذ پاره، گل‌های رنگین و بافت‌های سنتی، پیوند هنر، طبیعت و زندگی روزمره را روایت می‌کنند.</span>
+    <span class="en">This artwork brings together colorful Kurdish women's dress, carpet and kilim patterns, the daf drum, local foods and mountain-village landscapes. Torn-paper layers, vivid flowers and traditional textures express the connection between art, nature and everyday life.</span>
+  </p>
+
+  <img class="artwork" src="kurdistan.png" alt="اثر هنری پوشش زنان کردستان">
+
+  <p class="caption">
+    <span class="fa">اثر هنری کردستان از مجموعه «ایران، هزار رنگ»</span>
+    <span class="en">The Kurdistan artwork from “Iran, A Thousand Colors”</span>
+  </p>
+
+  <p>
+    <span class="fa">این تصویر، اثر هنری مجموعه است؛ توضیحات این صفحه برای آشنایی بیشتر با فرهنگ و میراث کردستان ارائه شده‌اند.</span>
+    <span class="en">This image is the artwork created for the collection. The text on this page provides additional cultural and historical context about Kurdistan.</span>
+  </p>
+</section>
+
+<section class="page-section" id="dress">
+  <h2>
+    <span class="fa">۲. پوشش زنان کردستان؛ رنگ، وقار و اصالت</span>
+    <span class="en">2. Women's Dress in Kurdistan: Color and Heritage</span>
+  </h2>
+
+  <p>
+    <span class="fa">پوشش زنان کرد در همه مناطق یکسان نیست. نوع پارچه، رنگ، تزئینات، سربند و شیوه بستن پوشش می‌تواند با توجه به ناحیه، خانواده، نسل و مناسبت تفاوت داشته باشد. لباس‌های محلی، افزون بر زیبایی، بخشی از حافظه فرهنگی و مهارت‌های دوخت و تزئین هستند.</span>
+    <span class="en">Kurdish women's clothing is not identical across all areas. Fabrics, colors, decorations, head coverings and the way garments are worn may vary by region, family, generation and occasion. Traditional dress is both an expression of beauty and part of cultural memory and textile skills.</span>
+  </p>
+
+  <img class="label-image" src="kurdistan_leibel.png" alt="لیبل تصویری معرفی پوشش زنان کردستان">
+
+  <p class="caption">
+    <span class="fa">لیبل اختصاصی کردستان؛ راهنمای تصویری پوشش و فرهنگ منطقه</span>
+    <span class="en">Kurdistan exhibition label: a visual guide to regional dress and culture</span>
+  </p>
+
+  <h3>
+    <span class="fa">اجزای شناخته‌شده پوشاک کردی</span>
+    <span class="en">Recognizable Elements of Kurdish Dress</span>
+  </h3>
+
+  <div class="cards">
+    <div class="card">
+      <h3><span class="fa">کراس</span><span class="en">Kras</span></h3>
+      <p>
+        <span class="fa">پیراهن یا لباس اصلی که در نمونه‌های محلی می‌تواند بلند، رنگارنگ و دارای آستین‌های آزاد باشد.</span>
+        <span class="en">A principal dress or gown that may be long, colorful and have loose sleeves in some regional styles.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">جافی یا دِرپه</span><span class="en">Jafi or Derpe</span></h3>
+      <p>
+        <span class="fa">نام‌هایی برای گونه‌هایی از شلوارهای محلی که شکل و کاربرد آن‌ها ممکن است میان نواحی متفاوت باشد.</span>
+        <span class="en">Names associated with regional forms of traditional trousers; their cut and use may vary by area.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">سوخمه و کُلَنجه</span><span class="en">Sokhmeh and Kolanja</span></h3>
+      <p>
+        <span class="fa">نام‌هایی برای پوشش‌های رویی یا جلیقه‌مانند در برخی سنت‌های محلی؛ شکل دقیق آن‌ها نیازمند بررسی نمونه‌های منطقه‌ای است.</span>
+        <span class="en">Names for outer garments or vest-like pieces in some local traditions; their precise forms require regional documentation.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">سَلته و کَوا</span><span class="en">Salteh and Kawa</span></h3>
+      <p>
+        <span class="fa">از نام‌هایی که در معرفی برخی پوشش‌های محلی به کار می‌روند؛ کاربرد و شکل آن‌ها باید با توجه به منبع محلی بررسی شود.</span>
+        <span class="en">Terms used in descriptions of some traditional garments; their form and use should be checked against local sources.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">سربند و روسری</span><span class="en">Headscarves and Headwraps</span></h3>
+      <p>
+        <span class="fa">رنگ، نقش پارچه و شیوه بستن سربند از جلوه‌های قابل توجه پوشش زنان در برخی مناطق کردنشین است.</span>
+        <span class="en">Fabric colors, patterns and wrapping techniques are notable features of women's dress in some Kurdish regions.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">زیورآلات</span><span class="en">Jewelry</span></h3>
+      <p>
+        <span class="fa">زیورهای فلزی، گردنبندها و تزئینات لباس می‌توانند در پوشش‌های مناسبتی و محلی دیده شوند.</span>
+        <span class="en">Metal ornaments, necklaces and garment decorations may feature in regional and ceremonial dress.</span>
+      </p>
+    </div>
+  </div>
+
+  <h3>
+    <span class="fa">پوشش زنان روستایی</span>
+    <span class="en">Rural Women's Clothing</span>
+  </h3>
+
+  <p>
+    <span class="fa">در بررسی پوشش زنان روستایی کردستان، باید به تنوع میان نواحی اورامان، اطراف مریوان، سروآباد، سنندج و دیگر مناطق توجه کرد. لباس روزمره، پوشش کار، لباس جشن و پوشاک نسل‌های مختلف ممکن است تفاوت داشته باشند. برای نسبت‌دادن یک لباس مشخص به روستایی معین، عکس مستند، روایت مردم محلی یا پژوهش مردم‌شناسی لازم است.</span>
+    <span class="en">Research into rural women's clothing in Kurdistan should recognize differences among Hawraman, the areas around Marivan, Sarvabad, Sanandaj and other localities. Everyday, working and ceremonial clothing may differ, as can garments across generations. Assigning a specific outfit to a particular village requires documented photographs, local testimony or ethnographic research.</span>
+  </p>
+</section>
+
+<section class="page-section" id="villages">
+  <h2>
+    <span class="fa">۳. روستاها و نواحی؛ زندگی در دل زاگرس</span>
+    <span class="en">3. Villages and Regions: Life in the Zagros</span>
+  </h2>
+
+  <p>
+    <span class="fa">روستاهای کردستان با معماری سنگی، مسیرهای کوهستانی، رودخانه‌ها، باغ‌ها و شیوه‌های زندگی محلی شناخته می‌شوند. هر روستا روایت ویژه‌ای دارد و شناخت دقیق پوشش زنان آن، به ثبت و مستندسازی جداگانه نیازمند است.</span>
+    <span class="en">Kurdistan's villages are known for stone architecture, mountain paths, rivers, orchards and local ways of life. Each village has its own story, and documenting its women's clothing requires focused local research.</span>
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h3><span class="fa">اورامان تخت</span><span class="en">Hawraman Takht</span></h3>
+      <p>
+        <span class="fa">روستایی کوهستانی با معماری پلکانی و پیوند عمیق با فرهنگ اورامی و چشم‌انداز زاگرس.</span>
+        <span class="en">A mountain village known for stepped architecture, Hawrami culture and its Zagros landscape.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">پالنگان</span><span class="en">Palangan</span></h3>
+      <p>
+        <span class="fa">روستایی پلکانی در دل دره که خانه‌های سنگی و رودخانه، از ویژگی‌های چشم‌انداز آن هستند.</span>
+        <span class="en">A stepped village in a valley, known for its stone houses and river landscape.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">بی‌ساران</span><span class="en">Besarān</span></h3>
+      <p>
+        <span class="fa">از روستاهای کوهستانی منطقه سروآباد که می‌توان آن را در بررسی معماری، طبیعت و فرهنگ روستایی کردستان دنبال کرد.</span>
+        <span class="en">A mountain village in the Sarvabad area worth exploring for its rural landscape, architecture and culture.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">نواحی مریوان</span><span class="en">Marivan Area</span></h3>
+      <p>
+        <span class="fa">منطقه‌ای با چشم‌اندازهای طبیعی، دریاچه زریوار و روستاهایی که هرکدام ویژگی‌های محلی خود را دارند.</span>
+        <span class="en">An area of natural landscapes, Zarivar Lake and villages with their own local characteristics.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">اطراف سنندج</span><span class="en">Sanandaj Surroundings</span></h3>
+      <p>
+        <span class="fa">روستاهای پیرامون سنندج برای مطالعه پیوند زندگی روستایی، هنرهای دستی و فرهنگ منطقه اهمیت دارند.</span>
+        <span class="en">Villages around Sanandaj offer opportunities to explore rural life, handicrafts and regional culture.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">سروآباد و اورامان</span><span class="en">Sarvabad and Hawraman</span></h3>
+      <p>
+        <span class="fa">ناحیه‌ای کوهستانی با روستاهای تاریخی و میراث فرهنگی متنوع که برای پژوهش میدانی و ثبت پوشاک محلی اهمیت دارد.</span>
+        <span class="en">A mountainous area with historic villages and diverse cultural heritage, valuable for field research and documenting local dress.</span>
+      </p>
+    </div>
+  </div>
+
+  <p class="note">
+    <span class="fa">توجه: این فهرست برای معرفی نواحی و روستاهاست، نه ادعای وجود یک لباس اختصاصی و ثابت در هر روستا.</span>
+    <span class="en">Note: This list introduces villages and regions; it does not claim that each village has one exclusive, unchanging outfit.</span>
+  </p>
+</section>
+
+<section class="page-section" id="history">
+  <h2>
+    <span class="fa">۴. تاریخ، معماری و طبیعت کردستان</span>
+    <span class="en">4. History, Architecture and Nature in Kurdistan</span>
+  </h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3><span class="fa">عمارت آصف وزیری</span><span class="en">Asef Vaziri Mansion</span></h3>
+      <p>
+        <span class="fa">بنایی تاریخی در سنندج که با نام خانه کرد نیز شناخته می‌شود و برای آشنایی با فرهنگ و زندگی منطقه اهمیت دارد.</span>
+        <span class="en">A historic building in Sanandaj, also known as the Kurdish House, associated with the region's culture and way of life.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">عمارت خسروآباد</span><span class="en">Khosroabad Mansion</span></h3>
+      <p>
+        <span class="fa">از بناهای تاریخی سنندج که معماری و تزئینات آن بخشی از میراث شهری کردستان است.</span>
+        <span class="en">A historic Sanandaj landmark whose architecture and decoration form part of Kurdistan's urban heritage.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">مسجد جامع سنندج</span><span class="en">Sanandaj Grand Mosque</span></h3>
+      <p>
+        <span class="fa">بنایی مذهبی و تاریخی که در شناخت معماری سنتی و تاریخ شهر سنندج جایگاه دارد.</span>
+        <span class="en">A historic religious building important to understanding traditional architecture and Sanandaj's history.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">منطقه فرهنگی اورامانات</span><span class="en">Hawraman Cultural Landscape</span></h3>
+      <p>
+        <span class="fa">چشم‌اندازی کوهستانی و فرهنگی با معماری پلکانی، سنت‌های محلی و سکونتگاه‌های تاریخی که در فهرست میراث جهانی یونسکو ثبت شده است.</span>
+        <span class="en">A mountainous cultural landscape with stepped architecture, local traditions and historic settlements, inscribed on the UNESCO World Heritage List.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">دریاچه زریوار</span><span class="en">Zarivar Lake</span></h3>
+      <p>
+        <span class="fa">از جاذبه‌های طبیعی شناخته‌شده نزدیک مریوان که با چشم‌انداز دریاچه و طبیعت اطراف شناخته می‌شود.</span>
+        <span class="en">A well-known natural attraction near Marivan, noted for its lake and surrounding landscape.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">کوهستان زاگرس</span><span class="en">The Zagros Mountains</span></h3>
+      <p>
+        <span class="fa">کوهستان، دره‌ها و رودخانه‌ها بخشی از محیط طبیعی زندگی و شکل‌گیری فرهنگ‌های گوناگون منطقه هستند.</span>
+        <span class="en">Mountains, valleys and rivers form part of the natural setting in which the region's diverse cultures have developed.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="page-section" id="food">
+  <h2>
+    <span class="fa">۵. طعم‌های اصیل کردستان</span>
+    <span class="en">5. Traditional Flavors of Kurdistan</span>
+  </h2>
+
+  <p>
+    <span class="fa">خوراک‌های کردی با محصولات فصلی، سبزی‌های محلی، نان، لبنیات و سنت مهمان‌نوازی پیوند دارند. دستورها و نام غذاها ممکن است میان شهرها و خانواده‌ها تفاوت داشته باشند.</span>
+    <span class="en">Kurdish cuisine draws on seasonal produce, local herbs, bread, dairy and traditions of hospitality. Recipes and dish names may vary between towns and families.</span>
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h3><span class="fa">کلانه</span><span class="en">Kalaneh</span></h3>
+      <p>
+        <span class="fa">نان محلی که در برخی شیوه‌های تهیه با گیاهان خوراکی فصلی مانند پیچک یا گیاهان مشابه پر می‌شود.</span>
+        <span class="en">A local flatbread that may be filled with seasonal edible greens, depending on the recipe.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">شِلکینه</span><span class="en">Sholkineh</span></h3>
+      <p>
+        <span class="fa">نوعی نان یا خوراک خمیری محلی که شیوه تهیه آن در مناطق مختلف می‌تواند تفاوت داشته باشد.</span>
+        <span class="en">A traditional bread or batter-based local food whose preparation may vary by area.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">ترخینه</span><span class="en">Tarkhineh</span></h3>
+      <p>
+        <span class="fa">خوراکی سنتی بر پایه غلات و فرآورده‌های تخمیری که در برخی مناطق برای تهیه آش و سوپ استفاده می‌شود.</span>
+        <span class="en">A traditional fermented grain preparation used to make soups in some regions.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">آش‌های محلی</span><span class="en">Regional Soups</span></h3>
+      <p>
+        <span class="fa">آش‌ها و غذاهای آبکی با حبوبات، سبزی‌ها و مواد فصلی که دستورهای خانوادگی گوناگونی دارند.</span>
+        <span class="en">Soups made with legumes, herbs and seasonal ingredients, with many family variations.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">نان ساجی</span><span class="en">Saji Bread</span></h3>
+      <p>
+        <span class="fa">نان نازکی که روی صفحه یا ساج داغ پخته می‌شود و در سنت‌های غذایی منطقه دیده می‌شود.</span>
+        <span class="en">A thin bread cooked on a hot saj or griddle, found in regional food traditions.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">دلمه و کوفته</span><span class="en">Dolma and Kofta</span></h3>
+      <p>
+        <span class="fa">از خانواده غذاهایی که در شکل‌ها و دستورهای متفاوت در بخش‌های گوناگون منطقه تهیه می‌شوند.</span>
+        <span class="en">Dishes prepared in different forms and recipes across various parts of the region.</span>
+      </p>
+    </div>
+  </div>
+
+  <h3>
+    <span class="fa">شیرینی‌ها و خوراکی‌های شیرین</span>
+    <span class="en">Sweets and Sweet Treats</span>
+  </h3>
+
+  <div class="cards">
+    <div class="card">
+      <h3><span class="fa">کِلِیچه</span><span class="en">Klicheh</span></h3>
+      <p>
+        <span class="fa">نامی برای گونه‌هایی از شیرینی یا نان شیرین محلی؛ شکل و مواد اولیه به دستور منطقه بستگی دارد.</span>
+        <span class="en">A name used for some local sweet pastries or breads; shape and ingredients depend on the regional recipe.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">شیرینی‌های خانگی</span><span class="en">Homemade Sweets</span></h3>
+      <p>
+        <span class="fa">شیرینی‌های محلی که در خانواده‌ها و مناسبت‌های مختلف تهیه می‌شوند؛ برای معرفی نام‌های اختصاصی هر شهر باید منبع محلی بررسی شود.</span>
+        <span class="en">Local sweets prepared in homes and for special occasions; specific town specialties should be verified through local sources.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">محصولات فصلی</span><span class="en">Seasonal Treats</span></h3>
+      <p>
+        <span class="fa">خشکبار، میوه‌های فصلی و فرآورده‌های محلی نیز ممکن است در پذیرایی و سوغات منطقه حضور داشته باشند.</span>
+        <span class="en">Dried fruits, seasonal produce and local preparations may also feature in regional hospitality and souvenirs.</span>
+      </p>
+    </div>
+  </div>
+
+  <p class="note">
+    <span class="fa">برای نسخه نهایی نمایشگاه، نام و دستور شیرینی‌های اختصاصی هر شهر باید با منبع معتبر محلی تطبیق داده شود.</span>
+    <span class="en">For the final exhibition, the names and recipes of town-specific sweets should be checked against reliable local sources.</span>
+  </p>
+</section>
+
+<section class="page-section" id="products">
+  <h2>
+    <span class="fa">۶. محصولات محلی کردستان</span>
+    <span class="en">6. Local Products of Kurdistan</span>
+  </h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3><span class="fa">عسل کوهستان</span><span class="en">Mountain Honey</span></h3>
+      <p>
+        <span class="fa">عسل تولیدشده در نواحی کوهستانی، با ویژگی‌هایی که به پوشش گیاهی و شرایط هر منطقه وابسته است.</span>
+        <span class="en">Honey from mountain areas, with characteristics influenced by local vegetation and conditions.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">گردو و خشکبار</span><span class="en">Walnuts and Dried Fruits</span></h3>
+      <p>
+        <span class="fa">محصولات باغی و خشکبار از اقلامی هستند که بسته به ناحیه و فصل در بازارهای محلی عرضه می‌شوند.</span>
+        <span class="en">Orchard products and dried fruits are sold in local markets depending on area and season.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">لبنیات محلی</span><span class="en">Local Dairy</span></h3>
+      <p>
+        <span class="fa">فرآورده‌های لبنی بخشی از شیوه‌های غذایی و دامداری در برخی نواحی روستایی و کوهستانی هستند.</span>
+        <span class="en">Dairy products are part of food and herding traditions in some rural and mountain areas.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">گیاهان خوراکی فصلی</span><span class="en">Seasonal Edible Greens</span></h3>
+      <p>
+        <span class="fa">برخی گیاهان خودرو در فصل مناسب برای خوراک‌های محلی استفاده می‌شوند؛ شناسایی و مصرف آن‌ها باید با دانش محلی معتبر انجام شود.</span>
+        <span class="en">Some wild greens are used in seasonal dishes; identification and use should rely on reliable local knowledge.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="page-section" id="crafts">
+  <h2>
+    <span class="fa">۷. صنایع‌دستی کردستان؛ هنر دست و حافظه فرهنگ</span>
+    <span class="en">7. Kurdistan Handicrafts: Craft and Cultural Memory</span>
+  </h2>
+
+  <p>
+    <span class="fa">صنایع‌دستی کردستان، از بافته‌های سنتی تا کارهای چوبی، سفال، رودوزی و سازسازی، بخشی از دانش و مهارت هنرمندان منطقه‌اند. فهرست زیر برای آشنایی با زمینه‌های صنایع‌دستی است؛ میزان رواج و محل تولید هر مورد ممکن است در نواحی مختلف تفاوت داشته باشد.</span>
+    <span class="en">Kurdistan's handicrafts range from traditional textiles to woodwork, pottery, embroidery and instrument-making. The list below introduces these craft traditions; their prevalence and production locations may vary by area.</span>
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3><span class="fa">۱. انواع صنایع‌دستی کردستان</span><span class="en">1. Kurdistan Handicrafts</span></h3>
+      <p>
+        <span class="fa">مجموعه‌ای از هنرهای بافندگی، دوخت، چوب، سفال، فلز و ساخت ابزارهای سنتی که در زندگی و فرهنگ منطقه جای دارند.</span>
+        <span class="en">A range of weaving, sewing, wood, pottery, metal and traditional tool-making crafts connected with regional life and culture.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۲. قالی کردستان</span><span class="en">2. Kurdish Carpets</span></h3>
+      <p>
+        <span class="fa">قالی‌های دست‌باف با نقش‌ها و رنگ‌های متنوع که طرح آن‌ها می‌تواند از سنت‌های محلی و سلیقه بافندگان تأثیر بگیرد.</span>
+        <span class="en">Handwoven carpets with varied patterns and colors influenced by local traditions and weavers' choices.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۳. گلیم‌بافی</span><span class="en">3. Kilim Weaving</span></h3>
+      <p>
+        <span class="fa">بافت تخت و بدون پرز که با ترکیب رنگ‌ها و نقش‌های هندسی و محلی شناخته می‌شود.</span>
+        <span class="en">Flat, pileless weaving known for its color combinations and geometric or regional patterns.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۴. ارغوان‌بافی</span><span class="en">4. Arghavan Twig Weaving</span></h3>
+      <p>
+        <span class="fa">بافت محصولات کاربردی و تزئینی با شاخه‌های انعطاف‌پذیر؛ مواد و شیوه ساخت به سنت و دسترسی محلی بستگی دارد.</span>
+        <span class="en">Making practical and decorative woven objects from flexible branches, depending on local materials and techniques.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۵. جاجیم‌بافی</span><span class="en">5. Jajim Weaving</span></h3>
+      <p>
+        <span class="fa">بافت پارچه‌ای سنتی با نوارها و ترکیب رنگی مشخص که برای زیرانداز و دیگر کاربردهای خانگی استفاده می‌شود.</span>
+        <span class="en">Traditional striped textile weaving used for floor coverings and other household purposes.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۶. موج‌بافی</span><span class="en">6. Moj Weaving</span></h3>
+      <p>
+        <span class="fa">بافت سنتی پارچه‌های ضخیم و کاربردی که در برخی مناطق برای روانداز و وسایل خانگی به کار می‌رود.</span>
+        <span class="en">A traditional technique for sturdy textiles used in some areas for coverings and household items.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۷. شال‌بافی</span><span class="en">7. Shawl Weaving</span></h3>
+      <p>
+        <span class="fa">بافت شال و پارچه‌های پوشیدنی با الیاف و نقش‌های گوناگون، متناسب با سنت هر منطقه.</span>
+        <span class="en">Weaving shawls and wearable textiles in varied fibers and patterns according to regional traditions.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۸. جولایی‌بافی</span><span class="en">8. Julayi Weaving</span></h3>
+      <p>
+        <span class="fa">نام یکی از زمینه‌های بافندگی سنتی در فهرست صنایع‌دستی منطقه؛ جزئیات شیوه و محصولات آن نیازمند بررسی منبع تخصصی است.</span>
+        <span class="en">A traditional weaving category listed among regional crafts; its precise techniques and products require specialist documentation.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۹. رودوزی سنتی</span><span class="en">9. Traditional Embroidery</span></h3>
+      <p>
+        <span class="fa">تزئین پارچه با نخ و دوخت‌های نقش‌دار که می‌تواند در لباس، لوازم پارچه‌ای و تزئینات محلی دیده شود.</span>
+        <span class="en">Decorating fabric with patterned stitching for garments, textiles and local decorative items.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۱۰. نمدمالی</span><span class="en">10. Felt Making</span></h3>
+      <p>
+        <span class="fa">ساخت نمد با فشردن و درهم‌نشاندن الیاف پشم و استفاده از رطوبت و فشار.</span>
+        <span class="en">Making felt by matting wool fibers together through moisture and pressure.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۱۱. گیوه و کلاش</span><span class="en">11. Giveh and Klash Footwear</span></h3>
+      <p>
+        <span class="fa">گونه‌هایی از کفش‌های سنتی دست‌ساز که در ساخت آن‌ها از مواد و مهارت‌های بومی استفاده می‌شود؛ کلاش با فرهنگ مناطق کردنشین پیوند دارد.</span>
+        <span class="en">Traditional handmade footwear made with local materials and skills; klash is closely associated with Kurdish regions.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۱۲. کردی‌دوزی</span><span class="en">12. Kurdish Dressmaking</span></h3>
+      <p>
+        <span class="fa">دوخت و تزئین پوشاک محلی با برش‌ها، نوارها و جزئیات متناسب با سبک‌های منطقه‌ای.</span>
+        <span class="en">Making and decorating traditional garments with cuts, trims and details shaped by regional styles.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۱۳. نازک‌کاری سنندج</span><span class="en">13. Sanandaj Wood Inlay</span></h3>
+      <p>
+        <span class="fa">هنر ظریف کار با چوب و کنار هم نشاندن قطعات و نقش‌های کوچک برای ساخت اشیای تزئینی و کاربردی.</span>
+        <span class="en">Fine woodwork involving small pieces and patterns to create decorative and practical objects.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۱۴. سفالگری سنتی</span><span class="en">14. Traditional Pottery</span></h3>
+      <p>
+        <span class="fa">ساخت ظروف و اشیای سفالی با شکل‌ها و روش‌های مختلف؛ شیوه تزئین و تولید در هر کارگاه می‌تواند متفاوت باشد.</span>
+        <span class="en">Making pottery vessels and objects in varied forms and techniques, with decoration differing between workshops.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۱۵. زیورآلات سنتی</span><span class="en">15. Traditional Jewelry</span></h3>
+      <p>
+        <span class="fa">ساخت و تزئین زیورهایی که در برخی پوشش‌های محلی و مناسبت‌ها استفاده می‌شوند؛ مواد و طرح‌ها متنوع‌اند.</span>
+        <span class="en">Making and decorating jewelry used in some regional garments and occasions, with varied materials and designs.</span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3><span class="fa">۱۶. ساخت ابزارآلات موسیقی</span><span class="en">16. Musical Instrument Making</span></h3>
+      <p>
+        <span class="fa">ساخت و نگهداری سازهای مورد استفاده در موسیقی منطقه، با تکیه بر مهارت‌های فنی و شناخت صدا و مواد.</span>
+        <span class="en">Making and maintaining instruments used in regional music, drawing on technical skill and knowledge of sound and materials.</span>
+      </p>
+    </div>
+
+  </div>
+
+  <p class="note">
+    <span class="fa">برای انتساب هر هنر به شهر یا روستای مشخص، اطلاعات تولیدکنندگان و منابع تخصصی باید بررسی شود. این فهرست، زمینه‌های صنایع‌دستی معرفی‌شده برای کردستان را گردآوری می‌کند.</span>
+    <span class="en">Attributing a craft to a particular town or village requires checking specialist sources and makers' accounts. This list brings together handicraft categories presented for Kurdistan.</span>
+  </p>
+</section>
+
+<section class="page-section" id="sources">
+  <h2>
+    <span class="fa">۸. منابع و مطالعه بیشتر</span>
+    <span class="en">8. Sources and Further Reading</span>
+  </h2>
+
+  <p>
+    <span class="fa">پیوندهای زیر نقطه شروعی برای مطالعه تاریخ، میراث فرهنگی، صنایع‌دستی و فرهنگ کردستان هستند. برای اطلاعات دقیق درباره پوشاک روستایی و نام‌های محلی، منابع مردم‌شناسی و روایت‌های مستند منطقه‌ای نیز اهمیت دارند.</span>
+    <span class="en">The links below provide starting points for researching Kurdistan's history, cultural heritage, handicrafts and culture. Ethnographic research and documented local accounts are also important for detailed information about rural clothing and local terminology.</span>
+  </p>
+
+  <ul>
+    <li>
+      <a href="https://www.kojaro.com/shopping/198084-kurdistan-handicraft-souvenirs/" target="_blank" rel="noopener">کجارو — صنایع‌دستی و سوغات کردستان</a>
+      <span class="fa">؛ منبع معرفی صنایع‌دستی</span>
+      <span class="en"> — an introduction to regional handicrafts</span>
+    </li>
+    <li>
+      <a href="https://whc.unesco.org/" target="_blank" rel="noopener">UNESCO World Heritage Centre</a>
+      <span class="fa">؛ میراث جهانی و آثار تاریخی</span>
+      <span class="en"> — World Heritage and historic sites</span>
+    </li>
+    <li>
+      <a href="https://ich.unesco.org/" target="_blank" rel="noopener">UNESCO Intangible Cultural Heritage</a>
+      <span class="fa">؛ میراث فرهنگی ناملموس</span>
+      <span class="en"> — intangible cultural heritage</span>
+    </li>
+    <li>
+      <a href="https://www.visitiran.ir/" target="_blank" rel="noopener">Visit Iran</a>
+      <span class="fa">؛ معرفی جاذبه‌ها و مناطق ایران</span>
+      <span class="en"> — destinations and regions of Iran</span>
+    </li>
+    <li>
+      <a href="https://www.iranicaonline.org/" target="_blank" rel="noopener">Encyclopaedia Iranica</a>
+      <span class="fa">؛ مرجع پژوهشی تاریخ و فرهنگ ایران</span>
+      <span class="en"> — a research reference on Iranian history and culture</span>
+    </li>
+  </ul>
+
+  <p class="note">
+    <span class="fa">ذکر یک منبع در این صفحه به معنی تأیید تک‌تک جزئیات از سوی آن منبع نیست. اطلاعات محلی، نام پوشاک و نسبت‌دادن یک هنر به منطقه‌ای مشخص باید با منبع مرتبط بررسی شوند.</span>
+    <span class="en">Listing a source does not mean it verifies every detail on this page. Local information, clothing terminology and regional craft attributions should be checked against relevant references.</span>
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>ایران، هزار رنگ | Iran, A Thousand Colors</strong></p>
+
+  <p>
+    <span class="fa">روایت تصویری پوشش زنان ایران</span>
+    <span class="en">A visual story of women's dress in Iran</span>
+  </p>
+
+  <p>
+    <span class="fa">هنرمند: مریم ساعی | طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span>
+    <span class="en">Artist: Maryam Saei | Website design and cultural research: Marjan Saei</span>
+  </p>
+
+  <p>
+    <a href="index.html">
+      <span class="fa">← بازگشت به گالری مناطق ایران</span>
+      <span class="en">← Back to the Regions Gallery</span>
+    </a>
+  </p>
+</footer>
+
+<script>
+function toggleLanguage(){
+  const english=!document.body.classList.contains('english');
+
+  document.body.classList.toggle('english',english);
+  document.documentElement.lang=english?'en':'fa';
+  document.documentElement.dir=english?'ltr':'rtl';
+
+  document.getElementById('langButton').textContent=
+    english?'فارسی':'English';
+}
+</script>
+
+</body>
+</html>
