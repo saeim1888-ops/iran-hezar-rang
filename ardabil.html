@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اردبیل | ایران، هزار رنگ</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f8f0e1;--panel:#fffaf1;--card:#f6eddd;--ink:#352f26;--green:#596548;--rust:#bd4b28;--line:#e5d2b0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif;line-height:2}
+a{color:#235c70}
+header{max-width:1015px;margin:auto;padding:20px 35px 5px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{font-size:18px;font-weight:800;color:var(--green)}
+button{font:inherit;background:var(--panel);border:1px solid #cda66c;border-radius:25px;padding:5px 17px;cursor:pointer}
+.hero,.page-section{max-width:1015px;margin:20px auto;background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:30px 35px}
+.hero{text-align:center;padding-top:35px}
+.eyebrow{color:var(--rust);font-weight:700}
+h1{color:var(--green);font-size:clamp(27px,4vw,39px);line-height:1.6;margin:7px 0}
+.hero h2{font-size:22px;color:var(--rust);margin:0}
+.hero p{margin:10px auto;max-width:820px}
+nav{max-width:1015px;margin:18px auto;padding:15px 25px;background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+nav a{font-size:14px;text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:5px 12px;color:var(--green)}
+.page-section h2{font-size:clamp(23px,3vw,31px);color:var(--green);border-bottom:1px solid #d9bd8c;padding-bottom:12px;margin:0 0 22px}
+.page-section h3{color:var(--rust);font-size:21px;margin:0 0 12px}
+.page-section p{margin:12px 0 18px}
+.artwork{display:block;width:min(100%,650px);height:auto;margin:25px auto 15px;padding:7px;background:#eee0c7;border:1px solid #d7b982}
+.label-image{display:block;width:min(100%,650px);height:auto;margin:25px auto 12px}
+.caption{text-align:center;font-size:14px;color:#766953}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin:20px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:20px;min-width:0}
+.card h3{margin-bottom:12px}
+.card p:last-child{margin-bottom:0}
+.note{font-size:14px;color:#645843;border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
+ul{padding-right:24px}
+footer{max-width:1015px;margin:25px auto 0;padding:25px 35px 40px;color:var(--green)}
+footer a{color:var(--green)}
+.en{display:none}
+body.english{direction:ltr}
+body.english .en{display:inline}
+body.english .fa{display:none}
+body.english .page-section,body.english .card{text-align:left}
+body.english ul{padding-left:24px;padding-right:0}
+@media(max-width:800px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero,.page-section,nav,header,footer{margin-left:12px;margin-right:12px}.hero,.page-section{padding:23px 18px}}
+@media(max-width:480px){.cards{grid-template-columns:1fr}header{padding-left:5px;padding-right:5px}.logo{font-size:15px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">ایران، هزار رنگ | Iran, A Thousand Colors</div>
+  <button type="button" onclick="toggleLanguage()" id="langButton">English</button>
+</header>
+
+<div class="hero">
+  <div class="eyebrow"><span class="fa">منطقه اردبیل از ۲۳ منطقه</span><span class="en">ARDABIL REGION · IRAN, A THOUSAND COLORS</span></div>
+  <h1><span class="fa">اردبیل؛ رنگِ شاهسون، روایتِ سبلان</span><span class="en">Ardabil: Shahsevan Colors, Sabalan Stories</span></h1>
+  <h2><span class="fa">سرزمین سبلان و عشایر شاهسون</span><span class="en">Land of Sabalan and the Shahsevan</span></h2>
+  <p><span class="fa">سفری تصویری میان پوشش زنان شاهسون، زندگی عشایری، آلاچیق‌ها، هنر ورنی‌بافی، تاریخ اردبیل و طبیعت سبلان.</span><span class="en">A visual journey through Shahsevan women's dress, nomadic life, traditional tents, verni weaving, Ardabil's history and the nature of Sabalan.</span></p>
+</div>
+
+<nav>
+  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+  <a href="#dress"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+  <a href="#regions"><span class="fa">شهرها و نواحی</span><span class="en">Regions</span></a>
+  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+  <a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food & Sweets</span></a>
+  <a href="#products"><span class="fa">محصولات محلی</span><span class="en">Local Products</span></a>
+  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
+
+<main>
+<section class="page-section" id="art">
+<h2><span class="fa">۱. تصویر اردبیل؛ روایت یک سرزمین</span><span class="en">1. Ardabil in Art: A Land's Story</span></h2>
+<p><span class="fa">در این اثر، پوشش الهام‌گرفته از زنان شاهسون با چشم‌انداز سبلان، آلاچیق عشایری، گله‌ها، بافته‌های رنگارنگ و معماری تاریخی اردبیل همراه شده است. رنگ‌ها و نقش‌ها، پیوند میان زندگی، طبیعت و میراث فرهنگی را روایت می‌کنند.</span><span class="en">This artwork brings together dress inspired by Shahsevan women, the Sabalan landscape, nomadic tents, flocks, colorful textiles and Ardabil's historic architecture. Its colors and patterns tell a story of life, nature and cultural heritage.</span></p>
+<img class="artwork" src="ardabil.png" alt="اثر هنری اردبیل با پوشش زنان شاهسون و چشم‌انداز سبلان">
+<p class="caption"><span class="fa">اثر هنری اردبیل از مجموعه «ایران، هزار رنگ»</span><span class="en">The Ardabil artwork from “Iran, A Thousand Colors”</span></p>
+<p><span class="fa">این تصویر بازآفرینی هنری مجموعه است؛ توضیحات این صفحه برای معرفی فرهنگی و تاریخی منطقه ارائه شده‌اند.</span><span class="en">This image is an artistic interpretation created for the collection. The text provides cultural and historical context about the region.</span></p>
+</section>
+
+<section class="page-section" id="dress">
+<h2><span class="fa">۲. پوشش زنان شاهسون؛ رنگ، لایه و هویت</span><span class="en">2. Shahsevan Women's Dress: Color, Layers and Identity</span></h2>
+<p><span class="fa">پوشش سنتی زنان شاهسون یکدست و ثابت نبوده است. نوع لباس، رنگ، جنس پارچه و تعداد لایه‌ها می‌توانسته با فصل، سن، موقعیت اجتماعی و مناسبت‌هایی مانند جشن و عزا تغییر کند. از همین رو، پوشش زنان شاهسون را باید با توجه به تنوع تاریخی و محلی آن شناخت.</span><span class="en">Traditional Shahsevan women's dress has not been uniform or unchanging. Garment types, colors, fabrics and layers could vary by season, age, social context and occasions such as celebrations and mourning. This diversity is essential to understanding the tradition.</span></p>
+
+<img class="label-image" src="ardabil_leibel.png" alt="لیبل تصویری پوشش زنان شاهسون و فرهنگ اردبیل">
+<p class="caption"><span class="fa">لیبل اختصاصی اردبیل؛ راهنمای تصویری پوشش و فرهنگ منطقه</span><span class="en">Ardabil exhibition label: a visual guide to regional dress and culture</span></p>
+
+<h3><span class="fa">نام‌های محلی اجزای پوشش</span><span class="en">Local Names for Garments</span></h3>
+<p><span class="fa">در گزارش مهر درباره پوشش بومی اردبیل، نام‌هایی مانند «کوینگ» برای پیراهن، «تومان» برای دامن، «یایلیق» برای روسری، «آلین‌یایلیقی» برای چارقد روی روسری، «آرخچن» برای عرقچین، «یِل» برای نیم‌تنه زمستانی و «جلقا» برای جلیقه ثبت شده‌اند. املای این واژه‌ها ممکن است در منابع و گویش‌های محلی تفاوت داشته باشد.</span><span class="en">A Mehr News report on Ardabil's traditional dress records terms such as “kuving” for a dress, “toman” for a skirt, “yayliq” for a headscarf, “alin-yayliqi” for an additional head covering, “arkhchin” for a cap, “yel” for a winter garment and “jelqa” for a vest. Spellings may vary across local dialects and sources.</span></p>
+
+<h3><span class="fa">پوشاک و زندگی عشایری</span><span class="en">Dress and Nomadic Life</span></h3>
+<p><span class="fa">پوشش، با شیوه زندگی و شرایط آب‌وهوایی پیوند داشته است. زندگی عشایری شاهسون با دامداری و کوچ فصلی شناخته می‌شود، اما امروزه همه خانواده‌های شاهسون کوچ‌نشین نیستند و شیوه‌های زندگی متفاوتی دارند.</span><span class="en">Clothing has been connected to lifestyle and climate. Shahsevan culture is associated with pastoralism and seasonal migration, but today not all Shahsevan families are nomadic, and ways of life vary.</span></p>
+</section>
+
+<section class="page-section" id="regions">
+<h2><span class="fa">۳. شهرها و نواحی اردبیل</span><span class="en">3. Cities and Regions of Ardabil</span></h2>
+<p><span class="fa">استان اردبیل از شهرها، دشت‌ها، نواحی کوهستانی و روستاهای گوناگون تشکیل شده است. هر ناحیه با طبیعت، محصولات، معماری و روایت‌های محلی خود شناخته می‌شود.</span><span class="en">Ardabil Province includes cities, plains, mountain areas and diverse villages. Each area has its own landscapes, products, architecture and local stories.</span></p>
+<div class="cards">
+<div class="card"><h3><span class="fa">اردبیل</span><span class="en">Ardabil</span></h3><p><span class="fa">مرکز استان و محل مجموعه تاریخی شیخ صفی‌الدین اردبیلی؛ شهری با پیشینه فرهنگی و معماری ارزشمند.</span><span class="en">The provincial capital, home to the Sheikh Safi al-Din Ardabili complex and a rich architectural heritage.</span></p></div>
+<div class="card"><h3><span class="fa">دشت مغان</span><span class="en">Mughan Plain</span></h3><p><span class="fa">دشتی گسترده در شمال استان که در روایت‌های مربوط به دامداری و کوچ فصلی عشایر شاهسون جایگاه دارد.</span><span class="en">A broad plain in the north of the province, important in accounts of Shahsevan pastoralism and seasonal migration.</span></p></div>
+<div class="card"><h3><span class="fa">مشگین‌شهر</span><span class="en">Meshgin Shahr</span></h3><p><span class="fa">ناحیه‌ای در نزدیکی سبلان با چشم‌اندازهای کوهستانی، آثار تاریخی و جاذبه‌های طبیعی.</span><span class="en">An area near Sabalan known for mountain landscapes, historic remains and natural attractions.</span></p></div>
+<div class="card"><h3><span class="fa">سرعین</span><span class="en">Sareyn</span></h3><p><span class="fa">شهری شناخته‌شده به‌خاطر چشمه‌های آب گرم و گردشگری طبیعی.</span><span class="en">A town known for its hot springs and nature tourism.</span></p></div>
+<div class="card"><h3><span class="fa">خلخال</span><span class="en">Khalkhal</span></h3><p><span class="fa">ناحیه‌ای با جاده‌های کوهستانی، جنگل‌ها و چشم‌اندازهای متنوع.</span><span class="en">An area with mountain roads, forests and varied landscapes.</span></p></div>
+<div class="card"><h3><span class="fa">نمین</span><span class="en">Namin</span></h3><p><span class="fa">ناحیه‌ای در شرق استان با طبیعت سرسبز و پیوندهای فرهنگی محلی.</span><span class="en">An area in the east of the province with green landscapes and local cultural traditions.</span></p></div>
+</div>
+<p class="note"><span class="fa">این فهرست، چند نمونه از نواحی استان را معرفی می‌کند؛ نام روستاها و نسبت‌دادن پوشش مشخص به هر روستا نیازمند بررسی منابع محلی است.</span><span class="en">This list presents selected areas of the province. Village-level clothing attributions require local sources and verification.</span></p>
+</section>
+
+<section class="page-section" id="history">
+<h2><span class="fa">۴. تاریخ، معماری و طبیعت</span><span class="en">4. History, Architecture and Nature</span></h2>
+<div class="cards">
+<div class="card"><h3><span class="fa">مجموعه شیخ صفی‌الدین اردبیلی</span><span class="en">Sheikh Safi al-Din Ardabili Complex</span></h3><p><span class="fa">مجموعه‌ای تاریخی و معماری در اردبیل که از مهم‌ترین یادگارهای فرهنگی شهر به شمار می‌رود.</span><span class="en">A historic architectural complex and one of Ardabil's important cultural landmarks.</span></p></div>
+<div class="card"><h3><span class="fa">کوه سبلان</span><span class="en">Mount Sabalan</span></h3><p><span class="fa">کوهی آتشفشانی با چشم‌اندازهای کوهستانی و قله‌ای برف‌پوش در بخش‌هایی از سال.</span><span class="en">A volcanic mountain with dramatic highland scenery and a snow-covered summit during parts of the year.</span></p></div>
+<div class="card"><h3><span class="fa">دریاچه شورابیل</span><span class="en">Shorabil Lake</span></h3><p><span class="fa">دریاچه‌ای در محدوده شهر اردبیل که از فضاهای شناخته‌شده طبیعی و تفریحی منطقه است.</span><span class="en">A lake within Ardabil city, known as a local natural and recreational area.</span></p></div>
+<div class="card"><h3><span class="fa">چشمه‌های آب گرم سرعین</span><span class="en">Sareyn Hot Springs</span></h3><p><span class="fa">چشمه‌های آب گرم از جاذبه‌های شناخته‌شده سرعین و بخشی از هویت گردشگری استان هستند.</span><span class="en">The hot springs are among Sareyn's best-known attractions and part of the province's tourism identity.</span></p></div>
+</div>
+</section>
+
+<section class="page-section" id="food">
+<h2><span class="fa">۵. خوراک و شیرینی‌های محلی</span><span class="en">5. Local Food and Sweets</span></h2>
+<p><span class="fa">خوراک اردبیل از آب‌وهوا، محصولات لبنی، غلات و سنت‌های خانوادگی تأثیر گرفته است. دستورها و شیوه‌های تهیه می‌توانند از شهری به شهر دیگر و از خانواده‌ای به خانواده دیگر متفاوت باشند.</span><span class="en">Ardabil's food culture is shaped by its climate, dairy products, grains and family traditions. Recipes and preparation methods may differ between towns and households.</span></p>
+<div class="cards">
+<div class="card"><h3><span class="fa">آش دوغ</span><span class="en">Doogh Ash</span></h3><p><span class="fa">آشی تهیه‌شده با دوغ که از خوراک‌های شناخته‌شده اردبیل و بخش‌هایی از آذربایجان است.</span><span class="en">A yogurt-based soup known in Ardabil and other parts of Azerbaijan.</span></p></div>
+<div class="card"><h3><span class="fa">قیقاناق</span><span class="en">Qeyqanagh</span></h3><p><span class="fa">خوراکی شیرین که در برخی خانواده‌ها برای صبحانه یا میان‌وعده تهیه می‌شود.</span><span class="en">A sweet dish prepared in some households for breakfast or a snack.</span></p></div>
+<div class="card"><h3><span class="fa">حلوای سیاه</span><span class="en">Black Halva</span></h3><p><span class="fa">از شیرینی‌های مشهور اردبیل که با بافت و رنگ تیره شناخته می‌شود.</span><span class="en">A famous Ardabil sweet known for its dark color and distinctive texture.</span></p></div>
+<div class="card"><h3><span class="fa">لبنیات محلی</span><span class="en">Local Dairy</span></h3><p><span class="fa">سرشیر، کره محلی و دیگر فرآورده‌های لبنی در خوراک و مهمان‌نوازی منطقه جایگاه دارند.</span><span class="en">Clotted cream, local butter and other dairy products play a role in regional food and hospitality.</span></p></div>
+</div>
+</section>
+
+<section class="page-section" id="products">
+<h2><span class="fa">۶. محصولات محلی و صنایع‌دستی</span><span class="en">6. Local Products and Handicrafts</span></h2>
+<div class="cards">
+<div class="card"><h3><span class="fa">ورنی‌بافی</span><span class="en">Verni Weaving</span></h3><p><span class="fa">ورنی از بافته‌های شناخته‌شده عشایری منطقه است و نقش‌های آن بخشی از میراث هنری بافندگان را بازتاب می‌دهد.</span><span class="en">Verni is a well-known nomadic flatweave whose patterns reflect the artistic heritage of local weavers.</span></p></div>
+<div class="card"><h3><span class="fa">گلیم و جاجیم</span><span class="en">Kilim and Jajim</span></h3><p><span class="fa">بافته‌هایی کاربردی و تزئینی که با رنگ‌ها و طرح‌های متنوع تولید می‌شوند.</span><span class="en">Practical and decorative textiles produced in a variety of colors and patterns.</span></p></div>
+<div class="card"><h3><span class="fa">عسل سبلان</span><span class="en">Sabalan Honey</span></h3><p><span class="fa">عسل از محصولات شناخته‌شده استان است که با پوشش گیاهی و طبیعت کوهستانی منطقه پیوند دارد.</span><span class="en">Honey is a well-known regional product connected to the area's mountain flora and landscape.</span></p></div>
+<div class="card"><h3><span class="fa">فرآورده‌های لبنی</span><span class="en">Dairy Products</span></h3><p><span class="fa">سرشیر و کره محلی از محصولات خوراکی شناخته‌شده اردبیل هستند.</span><span class="en">Clotted cream and local butter are among Ardabil's recognized food products.</span></p></div>
+</div>
+</section>
+
+<section class="page-section" id="sources">
+<h2><span class="fa">۷. منابع و مطالعه بیشتر</span><span class="en">7. Sources and Further Reading</span></h2>
+<p><span class="fa">منابع زیر برای آشنایی بیشتر با فرهنگ شاهسون، پوشش بومی، تاریخ و صنایع‌دستی اردبیل انتخاب شده‌اند.</span><span class="en">The following resources offer further reading on Shahsevan culture, traditional dress, history and handicrafts in Ardabil.</span></p>
+<ul>
+<li><a href="https://www.iranicaonline.org/articles/shahsevan/" target="_blank" rel="noopener noreferrer">Encyclopaedia Iranica — Shahsevan</a></li>
+<li><a href="https://www.mehrnews.com/news/3808731/" target="_blank" rel="noopener noreferrer">مهر نیوز — کلاه وارداتی بر سر فرهنگ اصیل؛ لباس بومی اردبیل</a></li>
+<li><a href="https://www.irna.ir/news/86284863/" target="_blank" rel="noopener noreferrer">ایرنا — آلاچیق عشایر اردبیل</a></li>
+<li><a href="https://www.alibaba.ir/mag/ardabil/ardabil-ci/ardabil-historical-attractions/" target="_blank" rel="noopener noreferrer">علی‌بابا — جاذبه‌های تاریخی اردبیل</a></li>
+<li><a href="https://www.otaghak.com/blog/souvenirs-handicrafts-ardabil/" target="_blank" rel="noopener noreferrer">اتاقک — سوغات و صنایع‌دستی اردبیل</a></li>
+<li><a href="https://www.alibaba.ir/mag/ardabil/ardabil-ci/ardabil-traditional-dishes/" target="_blank" rel="noopener noreferrer">علی‌بابا — غذاهای سنتی اردبیل</a></li>
+</ul>
+<p class="note"><span class="fa">نام‌های محلی لباس ممکن است در گویش‌ها و منابع مختلف با املای متفاوت ثبت شده باشند. برای نسبت دادن یک پوشش مشخص به روستایی خاص، بررسی منابع تخصصی و مستندات محلی ضروری است.</span><span class="en">Local garment names may be spelled differently across dialects and sources. Specific village-level clothing attributions require specialist research and local documentation.</span></p>
+</section>
+</main>
+
+<footer>
+<p><strong>ایران، هزار رنگ | Iran, A Thousand Colors</strong></p>
+<p><span class="fa">روایت تصویری پوشش زنان ایران</span><span class="en">A visual story of women's dress in Iran</span></p>
+<p><span class="fa">هنرمند: مریم ساعی | طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span><span class="en">Artist: Maryam Saei | Website design and cultural research: Marjan Saei</span></p>
+<p><a href="index.html"><span class="fa">← بازگشت به گالری مناطق ایران</span><span class="en">← Back to the Regions Gallery</span></a></p>
+</footer>
+
+<script>
+function toggleLanguage(){
+  const english = !document.body.classList.contains('english');
+  document.body.classList.toggle('english', english);
+  document.documentElement.lang = english ? 'en' : 'fa';
+  document.documentElement.dir = english ? 'ltr' : 'rtl';
+  document.getElementById('langButton').textContent = english ? 'فارسی' : 'English';
+}
+</script>
+</body>
+</html>
