@@ -1,4 +1,261 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ایلام | ایران، هزار رنگ</title>
+<style>
+:root {
+  --cream:#f4ead8;
+  --paper:#fff9ed;
+  --rust:#a83e1d;
+  --green:#153f3b;
+  --olive:#656b43;
+  --gold:#bd9856;
+  --ink:#352d25;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:Tahoma,"Segoe UI",sans-serif;line-height:2;
+}
+header{
+  padding:22px 6%;display:flex;justify-content:space-between;
+  align-items:center;gap:15px;flex-wrap:wrap;
+  border-bottom:1px solid #d9c7a5;
+}
+a{color:var(--rust)}
+button{
+  cursor:pointer;border:1px solid var(--olive);background:transparent;
+  color:var(--green);border-radius:25px;padding:8px 18px;font-size:14px;
+}
+.container{max-width:1100px;margin:auto;padding:25px 20px 60px}
+.hero{
+  text-align:center;padding:36px 20px 30px;
+  background:var(--paper);border:1px solid #e3d2b0;
+  border-radius:18px;margin-bottom:25px;
+}
+.eyebrow{color:var(--olive);letter-spacing:1px}
+h1{font-size:clamp(30px,5vw,48px);color:var(--green);margin:8px 0}
+h2{font-size:23px;color:var(--green);margin-top:0}
+h3{color:var(--rust);margin-bottom:8px}
+.subtitle{font-size:18px;color:var(--rust)}
+.art-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;margin:25px 0;
+}
+.panel{
+  background:var(--paper);padding:22px;border-radius:16px;
+  border:1px solid #e3d2b0;min-width:0;
+}
+.art-image{
+  width:100%;display:block;object-fit:contain;
+  background:#eee0c4;border-radius:10px;
+}
+.label-image{width:100%;height:auto;display:block;border-radius:8px}
+.note{font-size:13px;color:#756957}
+ul{padding-right:22px}
+li{margin-bottom:7px}
+.section{margin:25px 0}
+.tag{
+  display:inline-block;background:#e9ddc3;color:var(--green);
+  padding:3px 11px;border-radius:20px;margin:3px;font-size:13px;
+}
+.sources a{overflow-wrap:anywhere}
+footer{
+  text-align:center;border-top:1px solid #d9c7a5;
+  padding:25px 15px;color:var(--olive);font-size:14px;
+}
+.en-inline{display:none}
+html[dir="ltr"] body{text-align:left}
+html[dir="ltr"] ul{padding-left:22px;padding-right:0}
+html[dir="ltr"] header{direction:ltr}
+html[dir="ltr"] .hero{text-align:center}
+@media(max-width:600px){
+  header{justify-content:center}
+  .container{padding:15px 12px 35px}
+  .panel{padding:16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <strong>
+    <span class="fa-inline">ایران، هزار رنگ</span>
+    <span class="en-inline">Iran, A Thousand Colors</span>
+  </strong>
+  <div>
+    <a href="index.html" style="margin-left:12px">
+      <span class="fa-inline">صفحهٔ اصلی</span>
+      <span class="en-inline">Home</span>
+    </a>
+    <button id="languageButton" type="button" onclick="toggleLanguage()">English</button>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="eyebrow">
+      <span class="fa-inline">گالری مناطق ایران · روایت پوشش زنان</span>
+      <span class="en-inline">Regions Gallery · Women's Dress Stories</span>
+    </div>
+    <h1>
+      <span class="fa-inline">ایلام</span>
+      <span class="en-inline">Ilam</span>
+    </h1>
+    <div class="subtitle">
+      <span class="fa-inline">آواز بلوط، رنگِ زاگرس</span>
+      <span class="en-inline">Oak Forest Songs, Colors of the Zagros</span>
+    </div>
+    <p>
+      <span class="fa-inline">سفری تصویری به پوشش زنان، فرهنگ محلی و چشم‌اندازهای زاگرس در استان ایلام؛ سرزمینی که خاطره، طبیعت و هنر در کنار هم روایت می‌شوند.</span>
+      <span class="en-inline">A visual journey into women's dress, local culture, and the Zagros landscapes of Ilam, where memory, nature, and art come together.</span>
+    </p>
+  </section>
+
+  <div class="art-grid">
+    <section class="panel">
+      <h2>
+        <span class="fa-inline">اثر هنری ایلام</span>
+        <span class="en-inline">Ilam Artwork</span>
+      </h2>
+      <img class="art-image" src="ilam.png" alt="اثر هنری پوشش زنان ایلام">
+      <p class="note">
+        <span class="fa-inline">اثر هنری: مریم ساعی</span>
+        <span class="en-inline">Artwork: Maryam Saei</span>
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>
+        <span class="fa-inline">لیبل اطلاعاتی</span>
+        <span class="en-inline">Information Label</span>
+      </h2>
+      <img class="label-image" src="ilam_leibel.png" alt="لیبل اطلاعاتی اثر ایلام">
+      <p class="note">
+        <span class="fa-inline">لیبل نهایی را پس از تکمیل اطلاعات و تأیید تصویر قرار بده.</span>
+        <span class="en-inline">Add the final label after its information and image have been verified.</span>
+      </p>
+    </section>
+  </div>
+
+  <section class="panel section">
+    <h2>
+      <span class="fa-inline">پوشش زنان ایلام</span>
+      <span class="en-inline">Women's Traditional Dress</span>
+    </h2>
+    <p>
+      <span class="fa-inline">پوشش محلی زنان ایلام بخشی از فرهنگ کردیِ منطقه و میراث زندگی در زاگرس است. فرم لباس، شیوهٔ بستن سربند، انتخاب پارچه و آرایه‌های لباس می‌تواند با توجه به نسل، موقعیت، سلیقه و محل زندگی تفاوت داشته باشد.</span>
+      <span class="en-inline">Women's traditional dress in Ilam forms part of the region's Kurdish cultural heritage and Zagros way of life. Garment shapes, head coverings, fabrics, and decorations may vary by generation, occasion, personal preference, and locality.</span>
+    </p>
+    <div>
+      <span class="tag">پوشش محلی</span>
+      <span class="tag">سربند و روسری</span>
+      <span class="tag">پارچه و تزئینات</span>
+      <span class="tag">هویت فرهنگی</span>
+    </div>
+    <h3>
+      <span class="fa-inline">نکتهٔ فرهنگی</span>
+      <span class="en-inline">Cultural Note</span>
+    </h3>
+    <p>
+      <span class="fa-inline">برای معرفی نام‌های بومی لباس و تفاوت پوشش روستاها، باید اصطلاحات و نمونه‌های هر منطقه با منبع معتبر یا مستندات محلی تطبیق داده شوند؛ بنابراین نام یک لباس را بدون تأیید به همهٔ زنان استان نسبت نمی‌دهیم.</span>
+      <span class="en-inline">Local garment names and village-level differences should be checked against reliable sources or local documentation. A particular garment name should not be generalized to every woman in the province without evidence.</span>
+    </p>
+  </section>
+
+  <section class="panel section">
+    <h2>
+      <span class="fa-inline">روستاها و مناطق فرهنگی</span>
+      <span class="en-inline">Villages and Cultural Areas</span>
+    </h2>
+    <p>
+      <span class="fa-inline">استان ایلام شامل مناطق و شهرستان‌هایی با پیشینه‌ها و چشم‌اندازهای متنوع است. شهرها و مناطق زیر نقطهٔ شروعی برای پژوهش بیشترند، نه فهرست قطعی پوشش ویژهٔ هر روستا.</span>
+      <span class="en-inline">Ilam Province includes diverse districts and cultural landscapes. The places below are starting points for further research, not a definitive list of village-specific clothing traditions.</span>
+    </p>
+    <ul>
+      <li><strong>ایلام:</strong> مرکز استان و محل بررسی پوشش شهری و سنت‌های محلی.</li>
+      <li><strong>دره‌شهر:</strong> منطقه‌ای با میراث تاریخی سیمره و روستاهای پیرامون.</li>
+      <li><strong>بدره:</strong> منطقه‌ای کوهستانی در امتداد زاگرس.</li>
+      <li><strong>ایوان:</strong> از مناطق مهم شمال استان.</li>
+      <li><strong>چرداول:</strong> منطقه‌ای با روستاها و سنت‌های محلی متنوع.</li>
+      <li><strong>مهران و دهلران:</strong> مناطق مهم جنوب و جنوب‌غرب استان.</li>
+    </ul>
+    <p class="note">نام روستاها و نسبت‌دادن پوشش مشخص به آن‌ها پس از بررسی منابع محلی تکمیل شود.</p>
+  </section>
+
+  <section class="panel section">
+    <h2>
+      <span class="fa-inline">تاریخ و معماری</span>
+      <span class="en-inline">History and Architecture</span>
+    </h2>
+    <ul>
+      <li><strong>قلعه والی:</strong> از بناهای تاریخی شناخته‌شدهٔ شهر ایلام.</li>
+      <li><strong>کاخ فلاحتی:</strong> بنایی تاریخی در شهر ایلام.</li>
+      <li><strong>شهر باستانی سیمره:</strong> محوطه‌ای تاریخی در محدودهٔ دره‌شهر.</li>
+      <li><strong>طاق شیرین و فرهاد:</strong> بنایی تاریخی در ناحیهٔ کوهستانی استان.</li>
+    </ul>
+  </section>
+
+  <section class="panel section">
+    <h2>
+      <span class="fa-inline">طبیعت زاگرس</span>
+      <span class="en-inline">The Zagros Landscape</span>
+    </h2>
+    <ul>
+      <li><strong>تنگه رازیانه:</strong> چشم‌اندازی طبیعی با دیواره‌های سنگی.</li>
+      <li><strong>تنگه ارغوان:</strong> منطقه‌ای شناخته‌شده برای طبیعت و درختان ارغوان.</li>
+      <li><strong>دریاچه‌های دوقلوی سیاه‌گاو:</strong> جاذبه‌ای طبیعی در استان.</li>
+      <li><strong>جنگل‌های بلوط:</strong> بخشی شاخص از چشم‌اندازهای زاگرس.</li>
+    </ul>
+  </section>
+
+  <section class="panel section">
+    <h2>
+      <span class="fa-inline">غذاهای محلی</span>
+      <span class="en-inline">Local Cuisine</span>
+    </h2>
+    <p>
+      <span class="fa-inline">خوراک‌های محلی، بخشی از حافظهٔ خانوادگی و فرهنگ روزمرهٔ ایلام‌اند. نام غذاها و روش تهیهٔ آن‌ها در منابع محلی و میان خانواده‌ها ممکن است تفاوت داشته باشد.</span>
+      <span class="en-inline">Local dishes are part of Ilam's family memories and everyday culture. Dish names and preparation methods may vary across local sources and families.</span>
+    </p>
+    <p>
+      <span class="fa-inline">برای معرفی نهایی غذاها و شیرینی‌های ایلام، از منابع اتاقک و کجارو که در فهرست منابع آمده‌اند استفاده می‌کنیم و نام هر خوراک را با مقالهٔ مربوط تطبیق می‌دهیم.</span>
+      <span class="en-inline">The Otaghak and Kojaro articles listed below will be used to verify the final selection of Ilam's local dishes and sweets.</span>
+    </p>
+  </section>
+
+  <section class="panel section">
+    <h2>
+      <span class="fa-inline">سوغات و صنایع‌دستی</span>
+      <span class="en-inline">Souvenirs and Handicrafts</span>
+    </h2>
+    <p>
+      <span class="fa-inline">دست‌بافته‌ها و صنایع‌دستی، بازتابی از مهارت‌های محلی و پیوند مردم با محیط زندگی‌شان هستند. گلیم نقش‌برجسته و دیگر بافته‌های بومی را می‌توان با ارجاع به منابع تخصصی و معرفی تولیدکنندگان محلی بررسی کرد.</span>
+      <span class="en-inline">Traditional weaving and handicrafts reflect local skills and people's relationship with their environment. Relief-patterned kilims and other regional textiles can be explored through specialist sources and local makers.</span>
+    </p>
+    <p>
+      <span class="fa-inline">برای فهرست دقیق سوغات و صنایع‌دستی، مقاله‌های علی‌بابا و بازار مینا در منابع پایین صفحه قرار دارند.</span>
+      <span class="en-inline">The Alibaba and Bazaar-e Mina articles below are included as references for Ilam's souvenirs and handicrafts.</span>
+    </p>
+  </section>
+
+  <section class="panel section">
+    <h2>
+      <span class="fa-inline">موسیقی و آیین‌ها</span>
+      <span class="en-inline">Music and Rituals</span>
+    </h2>
+    <p>
+      <span class="fa-inline">هوره از گونه‌های شناخته‌شدهٔ آواز در فرهنگ موسیقایی بخش‌هایی از زاگرس است. در معرفی موسیقی ایلام باید میان سنت‌های محلی، نواحی همسایه و گونه‌های متفاوت اجرا تمایز گذاشت و از نسبت‌دادن بی‌سند هر آیین به همهٔ استان پرهیز کرد.</span>
+      <span class="en-inline">Hura is a well-known vocal tradition in parts of the Zagros region. Descriptions of Ilam's music should distinguish local practices from those of neighboring regions and avoid unsupported generalizations.</span>
+    </p>
+  </section>
+
+  <section class="panel section sources">
+    <h2>
+      
 <section class="panel section" id="kalem-village">
   <h2>
     <span class="fa-inline">روستای کلم | زمزمهٔ بلوط و رود</span>
@@ -42,3 +299,75 @@
     <span class="en-inline">Research note: Specific details of women's dress and local garment terminology require further verification before publication.</span>
   </p>
 </section>
+
+      <span class="fa-inline">منابع و مطالعهٔ بیشتر</span>
+      <span class="en-inline">Sources and Further Reading</span>
+    </h2>
+    <p class="note">
+      <span class="fa-inline">منابع زیر برای پژوهش و بررسی مطالب این صفحه گردآوری شده‌اند. منابع گردشگری به‌تنهایی برای تأیید اصطلاحات پوشاک یا تفاوت‌های فرهنگی هر روستا کافی نیستند.</span>
+      <span class="en-inline">The following sources support further research. Tourism articles alone are not sufficient to verify local clothing terminology or village-specific cultural differences.</span>
+    </p>
+    <ol>
+      <li><a href="https://diarland.shop/mag/ilam-woman-dress/" target="_blank" rel="noopener">پوشش زنان ایلام – دیارلند</a></li>
+      <li><a href="https://www.alibaba.ir/mag/ilam/ilam-ci/ilam-souvenirs/" target="_blank" rel="noopener">سوغات ایلام – علی‌بابا</a></li>
+      <li><a href="https://bazaremina.ir/news/ilam-handicrafts" target="_blank" rel="noopener">صنایع‌دستی ایلام – بازار مینا</a></li>
+      <li><a href="https://fa.wikipedia.org/wiki/جاهای_گردشگری_استان_ایلام" target="_blank" rel="noopener">جاذبه‌های گردشگری استان ایلام – ویکی‌پدیا</a></li>
+      <li><a href="https://fa.wikipedia.org/wiki/رده:روستاهای_شهرستان_ایلام" target="_blank" rel="noopener">روستاهای شهرستان ایلام – ویکی‌پدیا</a></li>
+      <li><a href="https://www.otaghak.com/blog/local-foods-of-ilam/" target="_blank" rel="noopener">غذاهای محلی ایلام – اتاقک</a></li>
+      <li><a href="https://www.kojaro.com/food/116961-ilam-traditional-sweet/" target="_blank" rel="noopener">شیرینی‌های سنتی ایلام – کجارو</a></li>
+      <li><a href="https://www.iranicaonline.org/articles/ilam/" target="_blank" rel="noopener">Encyclopaedia Iranica – Ilam</a></li>
+      <li><a href="https://www.iranicaonline.org/articles/clothing-i/" target="_blank" rel="noopener">Encyclopaedia Iranica – Clothing</a></li>
+      <li><a href="https://visitiran.ir/en/province/Ilam-Province" target="_blank" rel="noopener">Visit Iran – Ilam Province</a></li>
+      <li><a href="https://indianjournals.com/article/ajrssh-4-4-012" target="_blank" rel="noopener">پژوهش دربارهٔ پوشاک سنتی زنان ایلامی – IndianJournals</a></li>
+    </ol>
+  </section>
+
+  <section class="panel section">
+    <h2>
+      <span class="fa-inline">دربارهٔ پروژه</span>
+      <span class="en-inline">About the Project</span>
+    </h2>
+    <p>
+      <span class="fa-inline">این صفحه بخشی از پروژهٔ هنری «ایران، هزار رنگ» است؛ روایتی تصویری از تنوع پوشش زنان و پیوند آن با فرهنگ و جغرافیای ایران.</span>
+      <span class="en-inline">This page is part of Iran, A Thousand Colors, an artistic exploration of women's dress and its connections to Iran's culture and geography.</span>
+    </p>
+    <p>
+      <span class="fa-inline">هنرمند و خالق آثار: مریم ساعی</span>
+      <span class="en-inline">Artist: Maryam Saei</span>
+    </p>
+    <p>
+      <span class="fa-inline">طراحی وب‌سایت و پژوهش اطلاعات فرهنگی: مرجان ساعی</span>
+      <span class="en-inline">Website design and cultural research: Marjan Saei</span>
+    </p>
+  </section>
+</main>
+
+<footer>
+  <span class="fa-inline">ایران، هزار رنگ · هر منطقه، یک رنگ؛ هر اثر، یک روایت</span>
+  <span class="en-inline">Iran, A Thousand Colors · Every Region, a Color; Every Artwork, a Story</span>
+</footer>
+
+<script>
+let currentLanguage = "fa";
+
+function toggleLanguage() {
+  currentLanguage = currentLanguage === "fa" ? "en" : "fa";
+  document.documentElement.lang = currentLanguage;
+  document.documentElement.dir = currentLanguage === "fa" ? "rtl" : "ltr";
+
+  document.querySelectorAll(".fa-inline").forEach(el => {
+    el.style.display = currentLanguage === "fa" ? "" : "none";
+  });
+
+  document.querySelectorAll(".en-inline").forEach(el => {
+    el.style.display = currentLanguage === "en" ? "" : "none";
+  });
+
+  document.getElementById("languageButton").textContent =
+    currentLanguage === "fa" ? "English" : "فارسی";
+}
+
+toggleLanguage();
+</script>
+</body>
+</html>
