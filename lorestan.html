@@ -4,576 +4,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="لرستان؛ روایت تصویری پوشش زنان لر، گلونی، روستاهای پیرامون خرم‌آباد و آثار تاریخی زاگرس در نمایشگاه ایران، هزار رنگ.">
+<meta name="description" content="لرستان؛ روایت تصویری پوشش زنان، روستاها، تاریخ، طبیعت، غذاها و صنایع دستی در نمایشگاه ایران، هزار رنگ.">
 <title>لرستان | ایران، هزار رنگ</title>
-
 <style>
-:root {
-  --cream: #f8f1e3;
-  --paper: #fffaf0;
-  --olive: #596447;
-  --dark: #292b25;
-  --gold: #b08b48;
-  --rust: #b94e27;
-  --teal: #245b60;
+:root{
+  --cream:#f8f1e3;--paper:#fffaf0;--olive:#596447;
+  --dark:#292b25;--gold:#b08b48;--rust:#b94e27;--teal:#245b60
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--dark);
-  font-family: Tahoma, Arial, sans-serif;
-  line-height: 2.1;
-}
-a { color: var(--teal); }
-.topline {
-  height: 5px;
-  background: linear-gradient(90deg,var(--rust),var(--gold),var(--teal),var(--olive));
-}
-header {
-  text-align: center;
-  padding: 48px 20px 34px;
-  border-bottom: 1px solid #d9c8a5;
-  background: var(--paper);
-}
-.eyebrow { color: var(--rust); font-size: 14px; }
-h1 {
-  color: var(--olive);
-  font-size: clamp(30px,5vw,48px);
-  line-height: 1.6;
-  margin: 12px 0;
-}
-.slogan {
-  color: var(--rust);
-  font-size: clamp(18px,3vw,24px);
-  font-weight: bold;
-  margin: 8px 0;
-}
-.subtitle { color: #696455; margin: 8px auto; max-width: 700px; }
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 9px;
-  padding: 16px;
-  background: #eee4d1;
-}
-nav a {
-  text-decoration: none;
-  padding: 6px 13px;
-  border: 1px solid #d3c09a;
-  border-radius: 30px;
-  font-size: 13px;
-}
-.lang-switch {
-  position: fixed;
-  z-index: 10;
-  top: 12px;
-  left: 12px;
-  border: 1px solid var(--gold);
-  border-radius: 30px;
-  background: var(--paper);
-  color: var(--olive);
-  padding: 8px 14px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 2px 10px #0001;
-}
-main { max-width: 1050px; margin: auto; padding: 24px 18px 60px; }
-section {
-  background: var(--paper);
-  border: 1px solid #e3d5b9;
-  border-radius: 15px;
-  padding: clamp(18px,4vw,35px);
-  margin: 25px 0;
-  box-shadow: 0 5px 20px #65502a0a;
-}
-h2 {
-  color: var(--olive);
-  font-size: clamp(22px,3vw,29px);
-  border-bottom: 1px solid #d9c8a5;
-  padding-bottom: 10px;
-  margin-top: 0;
-}
-h3 { color: var(--rust); font-size: 19px; }
-p { margin: 12px 0; }
-.hero-art {
-  display: block;
-  width: min(100%, 690px);
-  height: auto;
-  margin: 18px auto;
-  border: 6px solid #fffaf0;
-  outline: 1px solid #d7c398;
-  border-radius: 3px;
-}
-.caption {
-  text-align: center;
-  color: #6b6657;
-  font-size: 13px;
-  margin: 14px auto;
-}
-.label-art {
-  display: block;
-  width: min(100%, 470px);
-  height: auto;
-  margin: 22px auto 10px;
-  border: 1px solid #ddc99e;
-}
-.quote {
-  border-right: 4px solid var(--gold);
-  padding: 12px 18px;
-  background: #f3ead7;
-  color: var(--olive);
-  font-size: 18px;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 15px;
-}
-.tile {
-  background: #f6eedf;
-  border: 1px solid #e3d4b7;
-  border-radius: 12px;
-  padding: 17px;
-  overflow-wrap: anywhere;
-}
-.tile h3 { margin-top: 0; }
-.small { font-size: 13px; color: #6b6657; }
-ul { padding-right: 22px; }
-li { margin: 7px 0; }
-.source-list li { overflow-wrap: anywhere; }
-footer {
-  text-align: center;
-  padding: 28px 16px;
-  background: var(--olive);
-  color: #fff8e9;
-}
-footer a { color: #ffdf9e; }
-.back { display: inline-block; margin-top: 18px; color: var(--olive); }
-
-body.english {
-  direction: ltr;
-  font-family: Arial, Tahoma, sans-serif;
-}
-body.english nav { direction: ltr; }
-body.english ul { padding-left: 22px; padding-right: 0; }
-body.english .quote {
-  border-right: 0;
-  border-left: 4px solid var(--gold);
-}
-body.english .back { direction: ltr; }
-body:not(.english) .en { display: none !important; }
-body.english .fa { display: none !important; }
-
-@media (max-width:600px) {
-  header { padding-top: 45px; }
-  nav { gap: 6px; }
-  nav a { font-size: 12px; }
-  .lang-switch { top: 8px; left: 8px; padding: 6px 10px; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--dark);
+font-family:Tahoma,Arial,sans-serif;line-height:2}
+a{color:var(--teal)}
+.topline{height:7px;background:linear-gradient(90deg,var(--rust),var(--gold),var(--olive),var(--teal))}
+header{text-align:center;padding:48px 20px 32px;background:var(--paper);
+border-bottom:1px solid #ddcfb4}
+.eyebrow{color:var(--rust);font-size:13px}
+h1{color:var(--olive);font-size:clamp(28px,5vw,44px);line-height:1.6;margin:12px 0}
+.slogan{color:var(--rust);font-size:clamp(17px,3vw,23px);font-weight:bold}
+.subtitle{max-width:760px;margin:auto;color:#696455}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:16px;background:#eee4d1}
+nav a{text-decoration:none;padding:5px 12px;border:1px solid #d3c09a;
+border-radius:25px;font-size:12px}
+.lang-switch{position:fixed;z-index:10;top:12px;left:12px;border:1px solid var(--gold);
+border-radius:25px;background:var(--olive);color:white;padding:8px 13px;
+font-weight:bold;cursor:pointer}
+main{max-width:1050px;margin:auto;padding:20px 16px 50px}
+section{background:var(--paper);border:1px solid #e3d5b9;border-radius:16px;
+padding:clamp(18px,4vw,32px);margin:22px 0;box-shadow:0 5px 20px #65502a0a;
+scroll-margin-top:20px}
+h2{color:var(--olive);font-size:clamp(21px,3vw,28px);
+border-bottom:1px solid #d9c8a5;padding-bottom:10px;margin-top:0}
+h3{color:var(--rust);font-size:17px;margin-top:0}
+.hero-art{display:block;width:100%;max-width:690px;height:auto;margin:22px auto;
+padding:8px;background:white;border:1px solid #d7c398;box-shadow:0 8px 24px #00000012}
+.label-art{display:block;width:100%;max-width:470px;height:auto;margin:22px auto;
+border:1px solid #ddc99e;padding:5px;background:white}
+.caption,.small{font-size:13px;color:#77705e;text-align:center}
+.quote{padding:14px 18px;background:#f3ead7;color:var(--olive);
+border-right:4px solid var(--gold);border-radius:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+.tile{background:#f6eedf;border:1px solid #e3d4b7;border-radius:12px;padding:17px}
+.tile p{font-size:14px;margin-bottom:0}
+ul{padding-right:22px}
+li{margin:7px 0}
+.source-list li{overflow-wrap:anywhere;margin-bottom:12px}
+.back{display:inline-block;margin:5px 0 25px;padding:9px 17px;
+border-radius:25px;background:var(--olive);color:white;text-decoration:none}
+footer{text-align:center;padding:28px 16px;background:var(--olive);color:#fff8e9;font-size:13px}
+footer a{color:#ffdf9e}
+.en{display:none}
+body.english{direction:ltr;font-family:Arial,Tahoma,sans-serif}
+body.english nav{direction:ltr}
+body.english ul{padding-left:22px;padding-right:0}
+body.english .quote{border-right:0;border-left:4px solid var(--gold)}
+body.english .fa{display:none}
+body.english .en{display:initial}
+body.english .lang-switch{left:auto;right:12px}
+body.english .source-list{padding-left:22px;padding-right:0}
+@media(max-width:600px){
+ header{padding-top:50px}
+ nav{gap:6px}
+ nav a{font-size:11px;padding:4px 9px}
+ .grid{grid-template-columns:1fr}
 }
 </style>
 </head>
-
 <body>
-<button class="lang-switch" id="langSwitch" type="button"
-        aria-label="Change language">English</button>
-
+<button class="lang-switch" id="langSwitch" type="button">English</button>
 <div class="topline"></div>
 
 <header>
   <div class="eyebrow">
     <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
-    <span class="en">Iran, A Thousand Colors | A Visual Story of Women's Dress in Iran</span>
+    <span class="en">Iran, A Thousand Colors | Women's Dress in Iran</span>
   </div>
-
   <h1>
-    <span class="fa">لرستان؛ سرزمین زاگرس و فرهنگ لُری</span>
-    <span class="en">Lorestan: The Zagros and Luri Culture</span>
+    <span class="fa">لرستان؛ سرزمین رنگ‌های زاگرس</span>
+    <span class="en">Lorestan: Colors of the Zagros</span>
   </h1>
-
   <p class="slogan">
-    <span class="fa">«لرستان؛ رنگ زاگرس، شکوه زندگی لُری»</span>
-    <span class="en">“Lorestan: Colors of the Zagros, the Beauty of Luri Life”</span>
+    <span class="fa">لرستان؛ رنگ زاگرس، شکوه زندگی لُری</span>
+    <span class="en">Lorestan: Colors of the Zagros, Pride of Luri Life</span>
   </p>
-
   <p class="subtitle">
-    <span class="fa">سفری تصویری میان پوشش زنان لر، سربند گلونی، روستاهای زاگرس، دژهای کهن و یادگارهای تاریخی خرم‌آباد</span>
-    <span class="en">A visual journey through Luri women's dress, Goloni headscarves, Zagros villages, ancient fortresses and the historic landmarks of Khorramabad.</span>
+    <span class="fa">روایتی تصویری از پوشش زنان، فرهنگ لُری، روستاها، میراث تاریخی، طبیعت و خوراک محلی</span>
+    <span class="en">A visual story of women's dress, Luri culture, villages, heritage, nature, and local food.</span>
   </p>
 </header>
 
-<nav aria-label="Page navigation">
+<nav>
   <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
   <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
   <a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
-  <a href="#history"><span class="fa">آثار تاریخی</span><span class="en">Historic Sites</span></a>
-  <a href="#nature"><span class="fa">طبیعت و فرهنگ</span><span class="en">Nature & Culture</span></a>
-  <a href="#food"><span class="fa">خوراک محلی</span><span class="en">Local Food</span></a>
+  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+  <a href="#food"><span class="fa">غذاها</span><span class="en">Local Food</span></a>
+  <a href="#sweets"><span class="fa">شیرینی‌ها</span><span class="en">Sweets</span></a>
+  <a href="#crafts"><span class="fa">صنایع‌دستی</span><span class="en">Handicrafts</span></a>
   <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
 </nav>
 
 <main>
-
 <section id="art">
-  <h2>
-    <span class="fa">۱. تصویر لرستان؛ روایت یک سرزمین</span>
-    <span class="en">1. Lorestan in Art: A Land's Story</span>
-  </h2>
-
+  <h2><span class="fa">۱. اثر هنری | روایت لرستان</span><span class="en">1. Lorestan in Art</span></h2>
   <p>
-    <span class="fa">این اثر، بازخوانی هنری از فرهنگ و پوشش زنان لرستان است؛ جایی که نقش‌های پارچه، سربند گلونی، چشم‌انداز زاگرس و معماری تاریخی در کنار هم روایتی از هویت و حافظه فرهنگی منطقه می‌سازند.</span>
-    <span class="en">This artwork is an artistic interpretation of Lorestan's culture and women's dress. Textile patterns, Goloni headscarves, Zagros landscapes and historic architecture come together to evoke the region's cultural memory.</span>
+    <span class="fa">این اثر، بازخوانی هنری پوشش زنان لرستان و پیوند آن با کوهستان‌های زاگرس، تاریخ و خاطره‌های فرهنگی مردم این سرزمین است. رنگ و نقش در کنار هم، روایتی از هویت و زندگی محلی می‌سازند.</span>
+    <span class="en">This artwork is an artistic interpretation of women's dress in Lorestan and its connections to the Zagros Mountains, history, and cultural memory.</span>
   </p>
-
-  <img class="hero-art" src="lorestan.png"
-       alt="اثر هنری لرستان با الهام از پوشش زنان لر و سربند گلونی">
-
-  <p class="caption">
-    <span class="fa">اثر تصویری لرستان از مجموعه «ایران، هزار رنگ»</span>
-    <span class="en">The Lorestan artwork from “Iran, A Thousand Colors”</span>
-  </p>
-
+  <img class="hero-art" src="lorestan.png" alt="اثر هنری لرستان از مجموعه ایران هزار رنگ">
+  <p class="caption"><span class="fa">اثر هنری لرستان از مجموعهٔ «ایران، هزار رنگ»</span><span class="en">Lorestan artwork from Iran, A Thousand Colors</span></p>
   <div class="quote">
-    <span class="fa">هر نقش، روایتی از زندگی؛ هر رنگ، نشانی از هویت.</span>
-    <span class="en">Every pattern tells a story; every color carries an identity.</span>
+    <span class="fa">«در هر چینِ گلونی، خاطره‌ای؛ در هر رنگ، روایتی از زاگرس.»</span>
+    <span class="en">“In every fold of the Golvani, a memory; in every color, a story of the Zagros.”</span>
   </div>
-
-  <p class="small">
-    <span class="fa">این تصویر بازآفرینی هنری است و نباید به‌عنوان سند قطعی پوشش یک روستای مشخص در نظر گرفته شود.</span>
-    <span class="en">This image is an artistic interpretation, not definitive evidence of the dress of a specific village.</span>
-  </p>
+  <p class="small"><span class="fa">این اثر بازخوانی هنری پوشش محلی است و ادعا نمی‌کند که همهٔ زنان منطقه لباس یکسانی داشته‌اند.</span><span class="en">This is an artistic interpretation, not a claim that all women in the region wore the same outfit.</span></p>
 </section>
 
 <section id="clothing">
-  <h2>
-    <span class="fa">۲. پوشش زنان لرستان؛ گلونی و رنگ‌های زاگرس</span>
-    <span class="en">2. Women's Dress in Lorestan: Goloni and Zagros Colors</span>
-  </h2>
-
+  <h2><span class="fa">۲. پوشش زنان | گلونی و رنگ‌های لُری</span><span class="en">2. Women's Dress | Golvani and Luri Colors</span></h2>
+  <p>
+    <span class="fa">پوشش زنان لر در مناطق مختلف، با توجه به محل زندگی، دورهٔ تاریخی، سن و مناسبت تفاوت داشته است. گلونی، سربند شناخته‌شدهٔ زنان لر، یکی از نمادهای فرهنگی این پوشش است. لباس‌های محلی می‌توانند شامل پیراهن، جلیقه یا بالاپوش، دامن یا شلوار و سربند باشند؛ شکل و ترکیب دقیق آن‌ها در همهٔ نواحی یکسان نیست.</span>
+    <span class="en">Women's traditional dress in Luri communities has varied by location, historical period, age, and occasion. The Golvani headscarf is a well-known cultural symbol. Local outfits may include a shirt, vest or outer garment, skirt or trousers, and head covering, with regional differences.</span>
+  </p>
+  <img class="label-art" src="lorestan_leibel.png" alt="لیبل اطلاعاتی پوشش زنان لرستان">
+  <p class="caption"><span class="fa">لیبل اطلاعاتی لرستان</span><span class="en">Lorestan information label</span></p>
   <div class="grid">
     <article class="tile">
-      <h3>
-        <span class="fa">گلونی؛ سربند شناخته‌شده زنان لر</span>
-        <span class="en">Goloni: A Recognizable Luri Headscarf</span>
-      </h3>
-      <p>
-        <span class="fa">گلونی نام سربندی شناخته‌شده در فرهنگ پوشاک زنان لر است. این سربند در طرح‌ها و رنگ‌های گوناگون دیده می‌شود و شیوه بستن آن می‌تواند با توجه به سلیقه، نسل، محل زندگی و موقعیت استفاده تفاوت داشته باشد.</span>
-        <span class="en">Goloni is a well-known headscarf associated with Luri women's dress. It appears in varied colors and patterns, and its styling can differ by personal preference, generation, locality and occasion.</span>
-      </p>
+      <h3><span class="fa">گلونی</span><span class="en">Golvani</span></h3>
+      <p><span class="fa">سربند سنتی زنان لر که در رنگ‌ها و طرح‌های گوناگون دیده می‌شود و در جشن‌ها و رویدادهای فرهنگی نیز کاربرد دارد.</span><span class="en">A traditional Luri women's headscarf, found in varied colors and patterns and worn at cultural events.</span></p>
     </article>
-
     <article class="tile">
-      <h3>
-        <span class="fa">لباس محلی؛ تنوع در جزئیات</span>
-        <span class="en">Local Dress: Diversity in Detail</span>
-      </h3>
-      <p>
-        <span class="fa">پوشش محلی زنان لرستان در همه مناطق یکسان نیست. پارچه، رنگ، شکل دامن و بالاپوش و شیوه آراستن سر می‌تواند تفاوت داشته باشد. برای معرفی لباس یک روستا باید به عکس‌ها، روایت‌های محلی و پژوهش‌های مستند تکیه کرد.</span>
-        <span class="en">Women's local dress is not identical throughout Lorestan. Fabrics, colors, skirts, outer garments and headwear may vary. Descriptions of a village's dress should be based on documented photographs, local accounts and research.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>
-        <span class="fa">پوشش و زندگی روزمره</span>
-        <span class="en">Dress and Everyday Life</span>
-      </h3>
-      <p>
-        <span class="fa">پوشاک تنها یک ظاهر نیست؛ با شرایط آب‌وهوا، کار روزانه، مراسم، خانواده و حافظه فرهنگی پیوند دارد. روایت زنان محلی می‌تواند جزئیاتی را ثبت کند که در تصویر به‌تنهایی دیده نمی‌شوند.</span>
-        <span class="en">Clothing is more than appearance. It relates to climate, daily work, ceremonies, family and cultural memory. Local women's accounts can preserve details that an image alone cannot show.</span>
-      </p>
+      <h3><span class="fa">لباس محلی</span><span class="en">Traditional Clothing</span></h3>
+      <p><span class="fa">ترکیب و رنگ لباس بر اساس منطقه و مناسبت تفاوت دارد؛ برای نسبت دادن یک مدل دقیق به روستایی خاص، به منبع محلی نیاز است.</span><span class="en">Outfit combinations and colors vary by area and occasion; specific village-level claims need local documentation.</span></p>
     </article>
   </div>
-
-  <img class="label-art" src="lorestan_leibel.png"
-       alt="لیبل اطلاعاتی اثر هنری لرستان" loading="lazy">
-
-  <p class="caption">
-    <span class="fa">لیبل اطلاعاتی اثر لرستان</span>
-    <span class="en">Lorestan artwork information label</span>
-  </p>
 </section>
 
 <section id="villages">
-  <h2>
-    <span class="fa">۳. روستاهای خرم‌آباد و پیرامون آن</span>
-    <span class="en">3. Villages in and Around Khorramabad</span>
-  </h2>
-
-  <p>
-    <span class="fa">روستاهای پیرامون خرم‌آباد بخشی از زندگی و فرهنگ منطقه زاگرس را نشان می‌دهند. هر روستا تاریخ، چشم‌انداز و تجربه زیسته خود را دارد؛ اما برای نسبت دادن یک نوع لباس یا شیوه مشخص گلونی به روستایی خاص، به مستندات محلی نیاز داریم.</span>
-    <span class="en">Villages around Khorramabad reflect aspects of life and culture in the Zagros. Each has its own history, landscape and lived experience. Specific clothing or Goloni styles should only be attributed to a village when supported by local documentation.</span>
-  </p>
-
+  <h2><span class="fa">۳. روستاها و زندگی محلی</span><span class="en">3. Villages and Local Life</span></h2>
+  <p><span class="fa">روستاها و نواحی اطراف خرم‌آباد بخشی از تنوع فرهنگی لرستان‌اند. این معرفی، نمونه‌هایی از مکان‌ها و زندگی منطقه را نشان می‌دهد؛ نه اینکه پوشش واحد و مستندی برای تمام روستاها وجود داشته باشد.</span><span class="en">Villages around Khorramabad are part of Lorestan's cultural diversity. These examples introduce local places and life without assuming one documented outfit for every village.</span></p>
   <div class="grid">
     <article class="tile">
-      <h3>
-        <span class="fa">گوشه شاهنشاه</span>
-        <span class="en">Gusheh Shahneshin</span>
-      </h3>
-      <p>
-        <span class="fa">این روستا در محدوده شهرستان خرم‌آباد شناخته می‌شود و کاروانسرای تاریخی گوشه شاهنشاه از جاذبه‌های مرتبط با آن است. این مکان می‌تواند در روایت مسیرهای قدیمی، رفت‌وآمد و تاریخ منطقه معرفی شود.</span>
-        <span class="en">This village is associated with Khorramabad County, and the historic Gusheh Shahneshin caravanserai is a nearby heritage feature. It can help tell the story of historic routes, travel and regional history.</span>
-      </p>
+      <h3><span class="fa">گوشه شاه‌نشین</span><span class="en">Gusheh Shahneshin</span></h3>
+      <p><span class="fa">از نام‌های محلی اطراف خرم‌آباد؛ برای ثبت جزئیات پوشش و آیین‌های ویژهٔ روستا، بررسی میدانی یا منبع محلی لازم است.</span><span class="en">A local area near Khorramabad; village-specific clothing and customs require local documentation.</span></p>
     </article>
-
     <article class="tile">
-      <h3>
-        <span class="fa">کرگاه شرقی و کرگاه غربی</span>
-        <span class="en">Kargah-e Sharqi and Kargah-e Gharbi</span>
-      </h3>
-      <p>
-        <span class="fa">کرگاه شرقی و کرگاه غربی از محدوده‌های روستایی شهرستان خرم‌آباد هستند. برای معرفی آن‌ها می‌توان به جغرافیای روستایی و زندگی در دامنه‌های زاگرس پرداخت؛ جزئیات پوشش زنان باید با عکس یا روایت معتبر محلی تکمیل شود.</span>
-        <span class="en">Eastern and Western Kargah are rural areas in Khorramabad County. Their rural geography and life in the Zagros foothills can be explored, while details of women's dress should be verified through local photographs or accounts.</span>
-      </p>
+      <h3><span class="fa">کرگاه شرقی و غربی</span><span class="en">Kargah Sharqi and Gharbi</span></h3>
+      <p><span class="fa">از نواحی پیرامون خرم‌آباد؛ زندگی روستایی و پیوند با طبیعت زاگرس، زمینه‌ای برای روایت فرهنگی این منطقه فراهم می‌کند.</span><span class="en">Areas around Khorramabad where rural life and the Zagros landscape form part of the local story.</span></p>
     </article>
-
     <article class="tile">
-      <h3>
-        <span class="fa">بیشه؛ روستای آبشار</span>
-        <span class="en">Bisheh: The Waterfall Village</span>
-      </h3>
-      <p>
-        <span class="fa">روستای بیشه در ناحیه‌ای دیگر از لرستان، به‌واسطه آبشار مشهور بیشه شناخته می‌شود. این روستا نمونه‌ای از پیوند زندگی روستایی و طبیعت استان است؛ اما در فاصله‌ای دورتر از شهر خرم‌آباد قرار دارد و نباید آن را داخل شهر معرفی کرد.</span>
-        <span class="en">Bisheh, elsewhere in Lorestan, is known for its famous waterfall. It illustrates the connection between rural life and nature in the province, although it lies outside the city of Khorramabad.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>
-        <span class="fa">روایت‌های محلی؛ بخش تکمیلی پژوهش</span>
-        <span class="en">Local Accounts: Further Research</span>
-      </h3>
-      <p>
-        <span class="fa">نام روستاهای دیگر و ویژگی‌های پوشش زنان آن‌ها باید پس از بررسی منابع معتبر و گفت‌وگو با زنان بومی اضافه شود. این کار کمک می‌کند تفاوت‌های واقعی میان روستاها حفظ شود و پوشش‌ها به‌اشتباه به یک منطقه نسبت داده نشوند.</span>
-        <span class="en">Additional villages and details of women's clothing should be added after checking reliable sources and speaking with local women. This helps preserve genuine local differences and avoids misattributing clothing traditions.</span>
-      </p>
+      <h3><span class="fa">بیشه</span><span class="en">Bisheh</span></h3>
+      <p><span class="fa">منطقه‌ای در لرستان که به آبشار بیشه شناخته می‌شود؛ این نام را نباید با محله‌ای درون شهر خرم‌آباد یکی دانست.</span><span class="en">An area in Lorestan known for Bisheh Waterfall; it should not be confused with a neighborhood inside Khorramabad.</span></p>
     </article>
   </div>
 </section>
 
 <section id="history">
-  <h2>
-    <span class="fa">۴. آثار تاریخی خرم‌آباد و لرستان</span>
-    <span class="en">4. Historic Sites of Khorramabad and Lorestan</span>
-  </h2>
-
+  <h2><span class="fa">۴. تاریخ و طبیعت | میراث زاگرس</span><span class="en">4. History and Nature | Zagros Heritage</span></h2>
   <div class="grid">
-    <article class="tile">
-      <h3>
-        <span class="fa">قلعه فلک‌الافلاک</span>
-        <span class="en">Falak-ol-Aflak Castle</span>
-      </h3>
-      <p>
-        <span class="fa">این دژ تاریخی بر فراز تپه‌ای مشرف به شهر خرم‌آباد قرار دارد و از نمادهای شناخته‌شده شهر است. موقعیت مرتفع قلعه، آن را به نشانه‌ای برجسته در چشم‌انداز شهری تبدیل کرده است. مجموعه قلعه و موزه‌های آن در معرفی تاریخ و فرهنگ لرستان اهمیت دارد.</span>
-        <span class="en">This historic fortress stands on a hill overlooking Khorramabad and is one of the city's best-known landmarks. Its elevated position makes it a striking part of the urban landscape. The castle and its museums help present Lorestan's history and culture.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>
-        <span class="fa">پل شکسته یا پل شاپوری</span>
-        <span class="en">Shapouri Bridge, or the Broken Bridge</span>
-      </h3>
-      <p>
-        <span class="fa">بقایای این پل تاریخی در خرم‌آباد، یادآور مهارت سازندگان پل در دوره‌های گذشته است. بخش‌های باقی‌مانده بنا، داستانی از ارتباط مسیرها، عبور از آب و معماری تاریخی منطقه را روایت می‌کنند.</span>
-        <span class="en">The remains of this historic bridge in Khorramabad recall the engineering skills of earlier builders. Its surviving structure tells a story of routes, river crossings and historic architecture.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>
-        <span class="fa">گرداب سنگی</span>
-        <span class="en">Gerdab-e Sangi</span>
-      </h3>
-      <p>
-        <span class="fa">گرداب سنگی سازه‌ای مدور از سنگ و ملات در بافت شهری خرم‌آباد است که با مدیریت و هدایت آب ارتباط دارد. این اثر، نمونه‌ای از پیوند زندگی شهری قدیم با منابع آب به شمار می‌رود.</span>
-        <span class="en">Gerdab-e Sangi is a circular stone-and-mortar structure in Khorramabad associated with water management. It illustrates the relationship between historic urban life and water resources.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>
-        <span class="fa">مناره آجری خرم‌آباد</span>
-        <span class="en">Khorramabad Brick Minaret</span>
-      </h3>
-      <p>
-        <span class="fa">مناره آجری از بناهای تاریخی شهر است و در معرفی معماری و پیشینه شهری خرم‌آباد جایگاه دارد. این بنا در کنار دیگر آثار شهر، تنوع دوره‌های تاریخی منطقه را نشان می‌دهد.</span>
-        <span class="en">The Brick Minaret is a historic monument in the city and contributes to the story of Khorramabad's architecture and urban past. Alongside other sites, it reflects the region's historical layers.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>
-        <span class="fa">پل تاریخی کشکان</span>
-        <span class="en">Kashkan Historic Bridge</span>
-      </h3>
-      <p>
-        <span class="fa">پل کشکان از پل‌های تاریخی مهم لرستان است که در مسیرهای قدیمی ارتباطی منطقه قرار داشته است. این اثر را می‌توان در کنار پل شاپوری برای معرفی تاریخ پل‌سازی و رفت‌وآمد در لرستان بررسی کرد.</span>
-        <span class="en">Kashkan is an important historic bridge in Lorestan, associated with older regional routes. Alongside Shapouri Bridge, it can help explain the history of bridge building and travel in the province.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>
-        <span class="fa">غار کنجی و دره خرم‌آباد</span>
-        <span class="en">Konji Cave and the Khorramabad Valley</span>
-      </h3>
-      <p>
-        <span class="fa">غار کنجی بخشی از مجموعه محوطه‌های پیشاتاریخی دره خرم‌آباد است. این محوطه‌ها شواهد مهمی از حضور انسان در گذشته‌های دور در زاگرس دارند و در شناخت تاریخ بسیار کهن سکونت انسان در منطقه اهمیت دارند.</span>
-        <span class="en">Konji Cave is part of the prehistoric sites of the Khorramabad Valley. These sites provide important evidence of early human presence in the Zagros and are significant for understanding the region's ancient settlement history.</span>
-      </p>
-    </article>
-  </div>
-</section>
-
-<section id="nature">
-  <h2>
-    <span class="fa">۵. طبیعت زاگرس و میراث فرهنگی</span>
-    <span class="en">5. Zagros Nature and Cultural Heritage</span>
-  </h2>
-
-  <div class="grid">
-    <article class="tile">
-      <h3>
-        <span class="fa">کوهستان و دره‌ها</span>
-        <span class="en">Mountains and Valleys</span>
-      </h3>
-      <p>
-        <span class="fa">کوهستان‌های زاگرس، دره‌ها و رودخانه‌های لرستان در شکل‌گیری شیوه زندگی، مسیرهای ارتباطی و فعالیت‌های روزمره مردم نقش داشته‌اند.</span>
-        <span class="en">The Zagros Mountains, valleys and rivers have shaped local lifestyles, routes of communication and everyday activities in Lorestan.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>
-        <span class="fa">آبشارها و چشم‌اندازهای طبیعی</span>
-        <span class="en">Waterfalls and Landscapes</span>
-      </h3>
-      <p>
-        <span class="fa">آبشارها و چشم‌اندازهای طبیعی استان، از جمله آبشار بیشه، از شناخته‌شده‌ترین جاذبه‌های لرستان هستند. معرفی این مناطق باید با نام دقیق مکان و موقعیت جغرافیایی آن همراه باشد.</span>
-        <span class="en">Lorestan's waterfalls and landscapes, including Bisheh Waterfall, are among its well-known attractions. Each site should be presented with its correct name and geographic location.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3>
-        <span class="fa">صنایع‌دستی</span>
-        <span class="en">Handicrafts</span>
-      </h3>
-      <p>
-        <span class="fa">قالی، گلیم و جاجیم از نمونه‌های هنرهای بافتنی در فرهنگ منطقه‌اند. ورشوسازی بروجرد نیز از هنرهای فلزی شناخته‌شده استان است. برای هر هنر می‌توان در ادامه نمونه تصویری و توضیح اختصاصی اضافه کرد.</span>
-        <span class="en">Carpets, kilims and jajims are examples of regional weaving traditions. Borujerd's varsho metalwork is another recognized craft. Images and dedicated descriptions can be added for each craft.</span>
-      </p>
-    </article>
+    <article class="tile"><h3><span class="fa">قلعه فلک‌الافلاک</span><span class="en">Falak-ol-Aflak Castle</span></h3><p><span class="fa">دژ تاریخی شاخص خرم‌آباد که بر فراز بلندی شهر قرار گرفته و از نمادهای شناخته‌شدهٔ لرستان است.</span><span class="en">A landmark historic fortress overlooking Khorramabad.</span></p></article>
+    <article class="tile"><h3><span class="fa">پل شکسته</span><span class="en">Broken Bridge</span></h3><p><span class="fa">بازمانده‌ای تاریخی از پل‌سازی در منطقهٔ خرم‌آباد و بخشی از میراث معماری لرستان.</span><span class="en">Historic bridge remains reflecting Lorestan's architectural heritage.</span></p></article>
+    <article class="tile"><h3><span class="fa">گرداب سنگی</span><span class="en">Stone Whirlpool</span></h3><p><span class="fa">سازه‌ای تاریخی در خرم‌آباد که با مدیریت آب و زندگی شهری گذشته پیوند دارد.</span><span class="en">A historic structure in Khorramabad associated with water management.</span></p></article>
+    <article class="tile"><h3><span class="fa">مناره آجری</span><span class="en">Brick Minaret</span></h3><p><span class="fa">از آثار تاریخی شهر خرم‌آباد و نشانه‌ای از معماری دوره‌های گذشته.</span><span class="en">A historic monument reflecting earlier architectural traditions.</span></p></article>
+    <article class="tile"><h3><span class="fa">پل کشکان</span><span class="en">Kashkan Bridge</span></h3><p><span class="fa">یکی از پل‌های تاریخی منطقه که اهمیت مسیرهای ارتباطی و پل‌سازی در لرستان را نشان می‌دهد.</span><span class="en">A historic bridge illustrating the importance of routes and bridge building in Lorestan.</span></p></article>
+    <article class="tile"><h3><span class="fa">غارهای پیشاتاریخی</span><span class="en">Prehistoric Caves</span></h3><p><span class="fa">غارهای درهٔ خرم‌آباد شواهد مهمی از سکونت انسان در دوره‌های بسیار کهن را در خود دارند.</span><span class="en">Caves in the Khorramabad Valley preserve important evidence of ancient human presence.</span></p></article>
+    <article class="tile"><h3><span class="fa">آبشار بیشه</span><span class="en">Bisheh Waterfall</span></h3><p><span class="fa">از چشم‌اندازهای طبیعی شناخته‌شدهٔ لرستان در دامنه‌های زاگرس.</span><span class="en">One of Lorestan's best-known natural landmarks in the Zagros region.</span></p></article>
+    <article class="tile"><h3><span class="fa">کوهستان زاگرس</span><span class="en">Zagros Mountains</span></h3><p><span class="fa">کوهستان، جنگل‌ها، چشمه‌ها و مراتع در شکل‌گیری شیوهٔ زندگی و فرهنگ منطقه نقش داشته‌اند.</span><span class="en">Mountains, forests, springs, and pastures have shaped regional life and culture.</span></p></article>
   </div>
 </section>
 
 <section id="food">
-  <h2>
-    <span class="fa">۶. خوراک و طعم‌های محلی</span>
-    <span class="en">6. Local Food and Flavors</span>
-  </h2>
+  <h2><span class="fa">۵. غذاهای محلی لرستان</span><span class="en">5. Local Foods of Lorestan</span></h2>
+  <p><span class="fa">خوراک‌های محلی، بخشی از حافظهٔ خانوادگی و فرهنگ مهمان‌نوازی مردم لرستان‌اند. نام و شیوهٔ تهیهٔ غذا ممکن است از شهری به شهر دیگر تفاوت داشته باشد.</span><span class="en">Local foods are part of family memory and hospitality in Lorestan. Names and recipes may vary from one town to another.</span></p>
+  <div class="grid">
+    <article class="tile"><h3><span class="fa">خورشت سیب</span><span class="en">Apple Stew</span></h3><p><span class="fa">خورشتی محلی با نامی برگرفته از سیب؛ دستور تهیه می‌تواند میان خانواده‌ها متفاوت باشد.</span><span class="en">A local stew named for apple, with recipes that may vary by household.</span></p></article>
+    <article class="tile"><h3><span class="fa">کوفته نخودچی</span><span class="en">Chickpea-Flour Kofta</span></h3><p><span class="fa">نوعی کوفته که نام آن به استفاده از نخودچی یا آرد نخود اشاره دارد.</span><span class="en">A kofta whose name refers to chickpea or chickpea flour.</span></p></article>
+    <article class="tile"><h3><span class="fa">کباب بروجرد</span><span class="en">Borujerd Kebab</span></h3><p><span class="fa">کبابی شناخته‌شده در فرهنگ غذایی بروجرد.</span><span class="en">A kebab associated with Borujerd's food culture.</span></p></article>
+    <article class="tile"><h3><span class="fa">آش شعله‌ماش</span><span class="en">Shole Mash Soup</span></h3><p><span class="fa">از آش‌های محلی که نام ماش در عنوان آن آمده است.</span><span class="en">A regional soup whose name refers to mung beans.</span></p></article>
+    <article class="tile"><h3><span class="fa">آش گوشت خرم‌آباد</span><span class="en">Khorramabad Meat Soup</span></h3><p><span class="fa">خوراکی محلی با گوشت که با نام خرم‌آباد شناخته می‌شود.</span><span class="en">A meat-based local dish associated with Khorramabad.</span></p></article>
+    <article class="tile"><h3><span class="fa">خورشت قلیه ترش</span><span class="en">Qaliyeh Torsh Stew</span></h3><p><span class="fa">خورشتی محلی با طعمی ترش که در فهرست غذاهای لرستان آمده است.</span><span class="en">A tangy stew listed among Lorestan's local foods.</span></p></article>
+    <article class="tile"><h3><span class="fa">سُغدو</span><span class="en">Soghdo</span></h3><p><span class="fa">یکی از خوراک‌های سنتی معرفی‌شده در فهرست غذاهای محلی لرستان.</span><span class="en">A traditional dish included in lists of Lorestan's local foods.</span></p></article>
+    <article class="tile"><h3><span class="fa">آبگوشت دو گوله دودار</span><span class="en">Do Gole Doodar Broth</span></h3><p><span class="fa">آبگوشت محلی با نامی خاص که بخشی از تنوع غذایی منطقه است.</span><span class="en">A local broth with a distinctive name, part of the region's culinary diversity.</span></p></article>
+    <article class="tile"><h3><span class="fa">گوله‌ریزه</span><span class="en">Gole Rizeh</span></h3><p><span class="fa">خوراک محلی که در فهرست غذاهای سنتی لرستان معرفی می‌شود.</span><span class="en">A dish featured in lists of Lorestan's traditional foods.</span></p></article>
+    <article class="tile"><h3><span class="fa">چزنک رغو</span><span class="en">Chzenak Regho</span></h3><p><span class="fa">خوراکی سنتی که نام آن در میان خوراک‌های شناخته‌شدهٔ لرستان دیده می‌شود.</span><span class="en">A traditional food listed among Lorestan's well-known local dishes.</span></p></article>
+  </div>
+  <p class="small"><span class="fa">برای دستور پخت و مواد دقیق هر غذا، به منبع معرفی‌شده مراجعه کنید؛ دستورها ممکن است منطقه‌ای و خانوادگی باشند.</span><span class="en">See the source article for recipes and ingredients; methods may vary by locality and family.</span></p>
+</section>
 
-  <p>
-    <span class="fa">خوراک‌های محلی بخشی از فرهنگ مهمان‌نوازی و زندگی روزمره مردم لرستان هستند. چزنک‌رغو و انواع نان‌های محلی از نمونه‌هایی هستند که می‌توان با عکس، دستور تهیه و روایت خانواده‌های بومی معرفی کرد.</span>
-    <span class="en">Local foods are part of Lorestan's hospitality and everyday life. Chezenak-regho and regional breads can be presented through photographs, recipes and stories from local families.</span>
-  </p>
+<section id="sweets">
+  <h2><span class="fa">۶. شیرینی‌ها و خوراکی‌های سوغاتی</span><span class="en">6. Sweets and Edible Souvenirs</span></h2>
+  <div class="grid">
+    <article class="tile"><h3><span class="fa">کلوچه بروجردی</span><span class="en">Borujerd Cookie</span></h3><p><span class="fa">کلوچهٔ قندی مشهور بروجرد که با روغن حیوانی و گاهی مغز بادام تهیه می‌شود.</span><span class="en">A famous Borujerd sugar cookie made with animal butter and sometimes almonds.</span></p></article>
+    <article class="tile"><h3><span class="fa">کاک</span><span class="en">Kak Pastry</span></h3><p><span class="fa">شیرینی لایه‌ای نازک که در لرستان نیز به‌عنوان سوغاتی تهیه می‌شود.</span><span class="en">A thin, layered pastry also found as a souvenir in Lorestan.</span></p></article>
+    <article class="tile"><h3><span class="fa">شیرینی آردی</span><span class="en">Flour-Based Sweets</span></h3><p><span class="fa">از شیرینی‌های سنتی عرضه‌شده در شیرینی‌پزی‌های استان.</span><span class="en">Traditional sweets available from bakeries in the province.</span></p></article>
+    <article class="tile"><h3><span class="fa">برساق</span><span class="en">Barsaq</span></h3><p><span class="fa">نان یا شیرینی سنتی غرب ایران که در خرم‌آباد نیز تهیه می‌شود.</span><span class="en">A traditional western Iranian bread or pastry also made in Khorramabad.</span></p></article>
+    <article class="tile"><h3><span class="fa">حلوا ارده و حلوا شکری</span><span class="en">Halva Ardeh and Halva Shekari</span></h3><p><span class="fa">از خوراکی‌های سوغاتی بروجرد و دیگر نقاط استان؛ گونه‌های مختلفی از آن عرضه می‌شود.</span><span class="en">Traditional edible souvenirs from Borujerd and other parts of the province.</span></p></article>
+    <article class="tile"><h3><span class="fa">ارده‌شیره</span><span class="en">Tahini and Grape Syrup</span></h3><p><span class="fa">ترکیبی خوراکی از ارده و شیره که در فهرست سوغات منطقه معرفی می‌شود.</span><span class="en">A traditional combination of tahini and syrup listed among local edible souvenirs.</span></p></article>
+    <article class="tile"><h3><span class="fa">نان ساجی</span><span class="en">Saji Bread</span></h3><p><span class="fa">نان سنتی که روی صفحهٔ فلزی محدب یا ساج پخته می‌شود.</span><span class="en">Traditional bread cooked on a metal griddle known as a saj.</span></p></article>
+    <article class="tile"><h3><span class="fa">سمنوی بروجرد</span><span class="en">Borujerd Samanu</span></h3><p><span class="fa">سمنوی سنتی تهیه‌شده از جوانهٔ گندم که در بروجرد نیز شهرت دارد.</span><span class="en">Traditional wheat-sprout samanu, also known in Borujerd.</span></p></article>
+    <article class="tile"><h3><span class="fa">عسل طبیعی</span><span class="en">Natural Honey</span></h3><p><span class="fa">عسل از محصولات محلی مرتبط با مراتع و طبیعت کوهستانی لرستان است.</span><span class="en">Honey is a local product associated with Lorestan's mountain pastures.</span></p></article>
+    <article class="tile"><h3><span class="fa">روغن حیوانی</span><span class="en">Traditional Animal Butter</span></h3><p><span class="fa">روغن سنتی تهیه‌شده از کرهٔ حیوانی که روغن دلفان نیز به آن شناخته می‌شود.</span><span class="en">Traditional clarified animal butter, with Delfan known for this product.</span></p></article>
+  </div>
+</section>
 
-  <p class="small">
-    <span class="fa">نام خوراک‌ها، شیوه تهیه و تفاوت‌های محلی پیش از انتشار نهایی باید بررسی شوند.</span>
-    <span class="en">Food names, preparation methods and local variations should be verified before final publication.</span>
-  </p>
+<section id="crafts">
+  <h2><span class="fa">۷. صنایع‌دستی لرستان | هنر دست و خاطره</span><span class="en">7. Lorestan Handicrafts | Handmade Heritage</span></h2>
+  <p><span class="fa">صنایع‌دستی لرستان با زندگی عشایری، مواد طبیعی و مهارت‌های منتقل‌شده میان نسل‌ها پیوند دارند. جاجیم‌بافی از هنرهای زنان عشایر است و ورشوسازی بروجرد نیز شهرت تاریخی دارد.</span><span class="en">Lorestan's handicrafts are connected to nomadic life, natural materials, and skills passed between generations. Jajim weaving is associated with nomadic women, while Borujerd is known for its historic metalwork.</span></p>
+  <div class="grid">
+    <article class="tile"><h3><span class="fa">جاجیم‌بافی</span><span class="en">Jajim Weaving</span></h3><p><span class="fa">دست‌بافته‌ای رنگارنگ که با نخ‌های پشمی و نقش‌های هندسی تولید می‌شود و از هنرهای شناخته‌شدهٔ عشایر لرستان است.</span><span class="en">A colorful woven textile made with wool yarn and geometric patterns, associated with Lorestan's nomadic communities.</span></p></article>
+    <article class="tile"><h3><span class="fa">ورشوسازی بروجرد</span><span class="en">Borujerd German-Silver Craft</span></h3><p><span class="fa">هنر ساخت ظروف و اشیای فلزی از ورشو؛ از جمله سینی، قندان، قاشق و سماور.</span><span class="en">Metalwork using nickel-silver alloy to make trays, sugar bowls, spoons, and samovars.</span></p></article>
+    <article class="tile"><h3><span class="fa">گیوه</span><span class="en">Giveh Footwear</span></h3><p><span class="fa">پاپوش سبک سنتی که از الیاف و روش‌های بافت محلی ساخته می‌شود.</span><span class="en">Light traditional footwear made using local fibers and weaving techniques.</span></p></article>
+    <article class="tile"><h3><span class="fa">نمدمالی</span><span class="en">Felt Making</span></h3><p><span class="fa">هنر شکل دادن به پشم برای ساخت زیرانداز، پوشاک و دیگر محصولات نمدی.</span><span class="en">The craft of shaping wool into mats, clothing, and other felt products.</span></p></article>
+    <article class="tile"><h3><span class="fa">حصیربافی</span><span class="en">Mat Weaving</span></h3><p><span class="fa">بافت حصیر برای ساخت سبد، زیرانداز و وسایل کاربردی از الیاف گیاهی.</span><span class="en">Plant-fiber weaving used to make baskets, mats, and practical household items.</span></p></article>
+    <article class="tile"><h3><span class="fa">قالی و گلیم</span><span class="en">Carpets and Kilims</span></h3><p><span class="fa">دست‌بافته‌هایی با نقش‌ها و رنگ‌های محلی که در کنار جاجیم بخشی از هنرهای نساجی منطقه‌اند.</span><span class="en">Textiles with local patterns and colors that form part of the region's weaving traditions.</span></p></article>
+    <article class="tile"><h3><span class="fa">خراطی</span><span class="en">Wood Turning</span></h3><p><span class="fa">هنر شکل دادن به چوب برای تولید اشیای کاربردی و تزئینی.</span><span class="en">The craft of shaping wood into useful and decorative objects.</span></p></article>
+  </div>
 </section>
 
 <section id="sources">
-  <h2>
-    <span class="fa">۷. منابع و مطالعه بیشتر</span>
-    <span class="en">7. Sources and Further Reading</span>
-  </h2>
-
-  <p>
-    <span class="fa">برای تکمیل روایت تاریخی و فرهنگی لرستان، می‌توان از منابع گردشگری، پایگاه‌های میراث فرهنگی و منابع پژوهشی استفاده کرد. اطلاعات مربوط به روستاها و پوشش محلی بهتر است با منابع اختصاصی همان منطقه تکمیل شود.</span>
-    <span class="en">Tourism portals, heritage institutions and research resources can help develop Lorestan's historical and cultural story. Information about villages and local dress should be supplemented with sources specific to each area.</span>
-  </p>
-
+  <h2><span class="fa">۸. منابع و مطالعهٔ بیشتر</span><span class="en">8. Sources and Further Reading</span></h2>
+  <p><span class="fa">برای بررسی بیشتر پوشش، غذاها، سوغات و صنایع‌دستی لرستان، این منابع را ببینید.</span><span class="en">Explore these sources for more information about Lorestan's food, souvenirs, and handicrafts.</span></p>
   <ul class="source-list">
-    <li>
-      <a href="https://www.visitiran.ir/" target="_blank" rel="noopener">
-        <span class="fa">پایگاه گردشگری ایران — Visit Iran</span>
-        <span class="en">Visit Iran — Tourism Portal</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://ich.unesco.org/" target="_blank" rel="noopener">
-        <span class="fa">یونسکو — میراث فرهنگی ناملموس</span>
-        <span class="en">UNESCO — Intangible Cultural Heritage</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://whc.unesco.org/" target="_blank" rel="noopener">
-        <span class="fa">مرکز میراث جهانی یونسکو</span>
-        <span class="en">UNESCO World Heritage Centre</span>
-      </a>
-    </li>
+    <li><a href="https://www.eligasht.com/Blog/travelguide/%D8%BA%D8%B0%D8%A7%D9%87%D8%A7%DB%8C-%D9%85%D8%AD%D9%84%DB%8C-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86/#ghdhahay_mhly_lrstan_trkyby_az_zraft_w_shjat" target="_blank" rel="noopener"><span class="fa">الی‌گشت | غذاهای محلی لرستان</span><span class="en">Eligasht | Local Foods of Lorestan</span></a></li>
+    <li><a href="https://www.raheeno.com/article/3405/%D8%B3%D9%88%D8%BA%D8%A7%D8%AA-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86.aspx" target="_blank" rel="noopener"><span class="fa">رهی‌نو | سوغات لرستان</span><span class="en">Raheeno | Lorestan Souvenirs</span></a></li>
+    <li><a href="https://www.eligasht.com/Blog/travelguide/%D8%B3%D9%88%D8%BA%D8%A7%D8%AA-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86/" target="_blank" rel="noopener"><span class="fa">الی‌گشت | صنایع‌دستی و سوغات لرستان</span><span class="en">Eligasht | Lorestan Handicrafts and Souvenirs</span></a></li>
+    <li><a href="https://whc.unesco.org/" target="_blank" rel="noopener"><span class="fa">مرکز میراث جهانی یونسکو | میراث فرهنگی و تاریخی</span><span class="en">UNESCO World Heritage Centre | Cultural and Historic Heritage</span></a></li>
+    <li><a href="https://www.visitiran.ir/" target="_blank" rel="noopener"><span class="fa">Visit Iran | راهنمای گردشگری ایران</span><span class="en">Visit Iran | Iran Tourism Guide</span></a></li>
   </ul>
-
-  <p class="small">
-    <span class="fa">یادداشت پژوهشی: معرفی دقیق پوشش زنان در هر روستا نیازمند منابع مردم‌شناختی، عکس‌های مستند یا روایت‌های ثبت‌شده محلی است.</span>
-    <span class="en">Research note: Accurate descriptions of women's dress in each village require ethnographic sources, documented photographs or recorded local accounts.</span>
-  </p>
+  <p class="small"><span class="fa">این صفحه برای معرفی فرهنگی و هنری تهیه شده است. نام غذاها و صنایع‌دستی از منابع معرفی‌شده گردآوری شده‌اند؛ جزئیات محلی ممکن است متفاوت باشد.</span><span class="en">This page is a cultural and artistic introduction. Food and handicraft names are drawn from the listed sources; local details may vary.</span></p>
 </section>
 
+<a class="back" href="index.html"><span class="fa">← بازگشت به گالری مناطق ایران</span><span class="en">← Back to the Regions Gallery</span></a>
 </main>
 
 <footer>
-  <p>
-    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
-    <span class="en">Iran, A Thousand Colors | A Visual Journey Through Women's Dress in Iran</span>
-  </p>
-
-  <p>
-    <span class="fa">آثار هنری: مریم ساعی</span>
-    <span class="en">Artwork: Maryam Saei</span>
-  </p>
-
-  <p>
-    <span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span>
-    <span class="en">Website Design and Cultural Research: Marjan Saei</span>
-  </p>
-
-  <p><a class="back" href="index.html">
-    <span class="fa">بازگشت به گالری مناطق ایران ←</span>
-    <span class="en">Return to the Regions Gallery →</span>
-  </a></p>
+  <p><span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span><span class="en">Iran, A Thousand Colors | A Visual Story of Women's Dress in Iran</span></p>
+  <p><span class="fa">آثار هنری: مریم ساعی | طراحی وب و پژوهش: مرجان ساعی</span><span class="en">Artwork: Maryam Saei | Website Design and Research: Marjan Saei</span></p>
 </footer>
 
 <script>
-const langSwitch = document.getElementById("langSwitch");
-
-function setLanguage(lang) {
-  const isEnglish = lang === "en";
-
-  document.documentElement.lang = lang;
-  document.documentElement.dir = isEnglish ? "ltr" : "rtl";
-  document.body.classList.toggle("english", isEnglish);
-
-  langSwitch.textContent = isEnglish ? "فارسی" : "English";
-  langSwitch.setAttribute(
-    "aria-label",
-    isEnglish ? "Switch to Persian" : "Switch to English"
-  );
-}
-
-langSwitch.addEventListener("click", () => {
-  const nextLanguage =
-    document.documentElement.lang === "fa" ? "en" : "fa";
-  setLanguage(nextLanguage);
+const langSwitch=document.getElementById("langSwitch");
+langSwitch.addEventListener("click",function(){
+  const isEnglish=document.body.classList.toggle("english");
+  document.documentElement.lang=isEnglish?"en":"fa";
+  document.documentElement.dir=isEnglish?"ltr":"rtl";
+  langSwitch.textContent=isEnglish?"فارسی":"English";
 });
-
-setLanguage("fa");
 </script>
 </body>
 </html>
