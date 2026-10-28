@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="کرمانشاه؛ روایت تصویری پوشش زنان، روستاها، تاریخ، طبیعت، موسیقی و خوراک محلی در نمایشگاه ایران، هزار رنگ.">
+<title>کرمانشاه | ایران، هزار رنگ</title>
+
+<style>
+:root {
+  --cream: #f8f1e3;
+  --paper: #fffaf0;
+  --olive: #354b2d;
+  --dark: #292b25;
+  --gold: #b08b48;
+  --rust: #9e4329;
+  --teal: #245b60;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--dark);
+  font-family: Tahoma, Arial, sans-serif;
+  line-height: 2;
+}
+
+a {
+  color: var(--teal);
+}
+
+.topline {
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--rust),
+    var(--gold),
+    var(--teal),
+    var(--olive)
+  );
+}
+
+header {
+  text-align: center;
+  padding: 48px 20px 34px;
+  border-bottom: 1px solid #d9c8a5;
+  background: var(--paper);
+}
+
+.eyebrow {
+  color: var(--rust);
+  font-size: 14px;
+}
+
+h1 {
+  color: var(--olive);
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+.slogan {
+  color: var(--rust);
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.subtitle {
+  color: #696455;
+  margin: 8px auto;
+  max-width: 760px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 16px;
+  background: #eee4d1;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 6px 13px;
+  border: 1px solid #d3c09a;
+  border-radius: 30px;
+  font-size: 13px;
+}
+
+.lang-switch {
+  position: fixed;
+  z-index: 10;
+  top: 12px;
+  left: 12px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  background: var(--paper);
+  color: var(--olive);
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 10px #0001;
+}
+
+main {
+  max-width: 1050px;
+  margin: auto;
+  padding: 24px 18px 60px;
+}
+
+section {
+  background: var(--paper);
+  border: 1px solid #e3d5b9;
+  border-radius: 15px;
+  padding: clamp(18px, 4vw, 35px);
+  margin: 25px 0;
+  box-shadow: 0 5px 20px #65502a0a;
+}
+
+h2 {
+  color: var(--olive);
+  font-size: clamp(22px, 3vw, 29px);
+  border-bottom: 1px solid #d9c8a5;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+h3 {
+  color: var(--rust);
+  font-size: 19px;
+  line-height: 1.7;
+  margin: 0 0 8px;
+}
+
+p {
+  margin: 12px 0;
+}
+
+.hero-art {
+  display: block;
+  width: min(100%, 690px);
+  height: auto;
+  margin: 18px auto;
+  border: 6px solid #fffaf0;
+  outline: 1px solid #d7c398;
+  border-radius: 3px;
+}
+
+.caption {
+  text-align: center;
+  color: #6b6657;
+  font-size: 13px;
+  margin: 14px auto;
+}
+
+.label-art {
+  display: block;
+  width: min(100%, 470px);
+  height: auto;
+  margin: 22px auto 10px;
+  border: 1px solid #ddc99e;
+}
+
+.quote {
+  border-right: 4px solid var(--gold);
+  padding: 12px 18px;
+  background: #f3ead7;
+  color: var(--olive);
+  font-size: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.tile {
+  background: #f6eedf;
+  border: 1px solid #e3d4b7;
+  border-radius: 12px;
+  padding: 17px;
+}
+
+.tile p {
+  font-size: 14px;
+  line-height: 1.95;
+  margin: 8px 0;
+}
+
+.small {
+  font-size: 13px;
+  color: #6b6657;
+}
+
+ul {
+  padding-right: 22px;
+}
+
+li {
+  margin: 7px 0;
+}
+
+.source-list li {
+  overflow-wrap: anywhere;
+}
+
+footer {
+  text-align: center;
+  padding: 28px 16px;
+  background: var(--olive);
+  color: #fff8e9;
+}
+
+footer a {
+  color: #ffdf9e;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--olive);
+}
+
+body.english {
+  direction: ltr;
+  font-family: Arial, Tahoma, sans-serif;
+}
+
+body.english nav {
+  direction: ltr;
+}
+
+body.english ul {
+  padding-left: 22px;
+  padding-right: 0;
+}
+
+body.english .quote {
+  border-right: 0;
+  border-left: 4px solid var(--gold);
+}
+
+body.english .back {
+  direction: ltr;
+}
+
+body:not(.english) .en {
+  display: none !important;
+}
+
+body.english .fa {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding-top: 45px;
+  }
+
+  nav {
+    gap: 6px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .lang-switch {
+    top: 8px;
+    left: 8px;
+    padding: 6px 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<button class="lang-switch" id="langSwitch" type="button">
+  English
+</button>
+
+<div class="topline"></div>
+
+<header>
+  <div class="eyebrow">
+    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+    <span class="en">Iran, A Thousand Colors | A visual story of women's dress in Iran</span>
+  </div>
+
+  <h1>
+    <span class="fa">کرمانشاه؛ سرزمین سنگ، موسیقی و اصالت</span>
+    <span class="en">Kermanshah: A Land of Stone, Music and Heritage</span>
+  </h1>
+
+  <p class="slogan">
+    <span class="fa">«کرمانشاه؛ آواز کوهستان، رنگِ زندگی»</span>
+    <span class="en">“Kermanshah: Mountain Songs, Colors of Life”</span>
+  </p>
+
+  <p class="subtitle">
+    <span class="fa">سفری تصویری میان پوشش رنگارنگ زنان، آثار باستانی، روستاهای کوهستانی، نواهای محلی و طعم‌های ماندگار کرمانشاه</span>
+    <span class="en">A visual journey through colorful women's dress, ancient monuments, mountain villages, local music, and the memorable flavors of Kermanshah.</span>
+  </p>
+</header>
+
+<nav>
+  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+  <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+  <a href="#villages"><span class="fa">روستاها و نواحی</span><span class="en">Villages & Areas</span></a>
+  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+  <a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food & Sweets</span></a>
+  <a href="#products"><span class="fa">سوغات و صنایع‌دستی</span><span class="en">Souvenirs & Crafts</span></a>
+  <a href="#music"><span class="fa">موسیقی و آیین‌ها</span><span class="en">Music & Traditions</span></a>
+  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
+
+<main>
+
+<section id="art">
+  <h2>
+    <span class="fa">۱. تصویر کرمانشاه؛ روایت یک سرزمین</span>
+    <span class="en">1. Kermanshah in Art: A Land's Story</span>
+  </h2>
+
+  <p>
+    <span class="fa">در این اثر، پوشش رنگارنگ زن کُرد در کنار کوهستان، نقش‌برجسته‌های باستانی، معماری تاریخی، گیوه و خوراک‌های محلی قرار گرفته است. کلاژ، پیوند میان طبیعت زاگرس، حافظه تاریخی و زندگی فرهنگی مردم کرمانشاه را روایت می‌کند.</span>
+    <span class="en">This artwork places colorful Kurdish women's dress alongside the Zagros mountains, ancient reliefs, historic architecture, traditional footwear, and local food.</span>
+  </p>
+
+  <img class="hero-art" src="kermanshah.png" alt="اثر هنری کرمانشاه از مجموعه ایران هزار رنگ">
+
+  <p class="caption">
+    <span class="fa">اثر تصویری کرمانشاه از مجموعه «ایران، هزار رنگ»</span>
+    <span class="en">The Kermanshah artwork from “Iran, A Thousand Colors”</span>
+  </p>
+
+  <div class="quote">
+    <span class="fa">از نقش سنگ‌های باستانی تا رنگ دامن‌های محلی و نوای تنبور، کرمانشاه سرزمینی است که تاریخ و زندگی در آن کنار هم جریان دارند.</span>
+    <span class="en">From ancient stone reliefs to colorful local skirts and the sound of the tanbur, Kermanshah brings history and everyday life together.</span>
+  </div>
+
+  <img class="label-art" src="kermanshah_leibel.png" alt="لیبل تصویری کرمانشاه">
+
+  <p class="caption">
+    <span class="fa">لیبل اختصاصی کرمانشاه؛ راهنمای تصویری پوشش، میراث تاریخی، صنایع‌دستی و خوراک محلی</span>
+    <span class="en">Kermanshah exhibition label: a visual guide to dress, heritage, crafts, and local food</span>
+  </p>
+</section>
+
+<section id="clothing">
+  <h2>
+    <span class="fa">۲. پوشش زنان کرمانشاه؛ رنگ‌هایی از طبیعت زاگرس</span>
+    <span class="en">2. Women's Dress in Kermanshah: Colors of the Zagros</span>
+  </h2>
+
+  <p>
+    <span class="fa">پوشش سنتی زنان کرمانشاه در مناطق مختلف یکسان نیست و نام لباس‌ها و شیوه استفاده از آن‌ها می‌تواند تفاوت داشته باشد. در گزارش همشهری آنلاین، اجزایی مانند سربند، زیرپیراهن، پیراهن، جلیقه، نیم‌تنه، قبا، روپوش، شلوار و کفش معرفی شده‌اند. پارچه‌های رنگارنگ، مخمل و ساتن و آرایه‌های سکه‌ای یا فلزی در برخی نمونه‌های پوشش محلی دیده می‌شوند.</span>
+    <span class="en">Traditional women's dress in Kermanshah varies across towns and communities. A Hamshahri Online report describes head coverings, undershirts, dresses, vests, jackets, outer robes, trousers, and footwear. Some local garments feature vivid fabrics, velvet or satin, and metallic ornaments.</span>
+  </p>
+
+  <div class="grid">
+
+    <article class="tile">
+      <h3><span class="fa">کراس، کُرواس، شِو و شُوی</span><span class="en">Keras, Korvas, Shev and Shov</span></h3>
+      <p>
+        <span class="fa">این نام‌ها در گزارش پوشاک زنان کرمانشاه به‌عنوان صورت‌های محلی نام لباس در برخی نواحی ثبت شده‌اند. کاربرد دقیق آن‌ها ممکن است با محل و گویش تفاوت داشته باشد.</span>
+        <span class="en">These names are recorded as local garment terms in some areas. Their exact use may vary by place and dialect.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">کلنجه، سخمه و جلیزقه</span><span class="en">Kalanjeh, Sakhmeh and Jalzeqeh</span></h3>
+      <p>
+        <span class="fa">کلنجه و نام‌های نزدیک به آن برای پوشش‌هایی مانند جلیقه یا نیم‌تنه در برخی روایت‌های محلی به کار می‌روند. در نمونه‌هایی از هورامان، نام‌هایی چون جلیزقه و سخمه نیز ذکر شده‌اند.</span>
+        <span class="en">Kalanjeh and related terms refer in some local accounts to vests or fitted jackets. Descriptions of Hawraman also mention jalzeqeh and sakhmeh.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">سربند و روسری‌های محلی</span><span class="en">Local Head Coverings and Scarves</span></h3>
+      <p>
+        <span class="fa">در گزارش همشهری از نام‌هایی مانند گلونی، سرون و کت یاد شده است. نام و شکل سربندها می‌تواند میان نواحی مختلف تفاوت داشته باشد.</span>
+        <span class="en">The report mentions local head-covering names such as golvani, sarvan, and kat. Names and styles may differ across areas.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">شلوار جافی</span><span class="en">Jafi Trousers</span></h3>
+      <p>
+        <span class="fa">شلوار جافی در برخی روایت‌ها از پوشاک زنان روستایی، به‌ویژه هنگام کار، معرفی شده است. شکل و ترکیب آن با دیگر اجزای لباس ممکن است در مناطق مختلف تفاوت داشته باشد.</span>
+        <span class="en">Jafi trousers are described in some accounts as clothing worn by rural women, particularly for work. Their style may vary by area.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">گیوه و کلاش</span><span class="en">Giveh and Kalash Footwear</span></h3>
+      <p>
+        <span class="fa">گیوه و کلاش از انواع کفش‌های دست‌ساز شناخته‌شده در بخش‌هایی از غرب ایران‌اند. در نواحی هورامان و پیرامون شاهو، مهارت ساخت و بافت کفش بخشی از میراث صنایع‌دستی منطقه است.</span>
+        <span class="en">Giveh and kalash are handmade footwear traditions in western Iran. Around Hawraman and Mount Shahu, footwear-making is part of the region's craft heritage.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">رنگ و آرایه</span><span class="en">Color and Ornament</span></h3>
+      <p>
+        <span class="fa">دامن‌های چین‌دار، پارچه‌های رنگین، جلیقه‌های تزئین‌شده و سربندهای نقش‌دار در برخی نمونه‌های لباس محلی دیده می‌شوند. هیچ ترکیب رنگ یا لباسی به‌تنهایی نماینده همه زنان استان نیست.</span>
+        <span class="en">Pleated skirts, vivid fabrics, decorated vests, and patterned head coverings appear in some examples of local dress. No single outfit represents all women in the province.</span>
+      </p>
+    </article>
+
+  </div>
+
+  <p class="small">
+    <span class="fa">یادداشت پژوهشی: نام‌ها و توصیف‌های پوشاک بر پایه گزارش منتشرشده درباره لباس زنان کرمانشاه تنظیم شده‌اند؛ تنوع محلی مهم است.</span>
+    <span class="en">Research note: Clothing terms are based on a published report about women's dress in Kermanshah. Local diversity matters.</span>
+  </p>
+</section>
+
+<section id="villages">
+  <h2>
+    <span class="fa">۳. روستاها و نواحی؛ هر منطقه، روایتی مستقل</span>
+    <span class="en">3. Villages and Areas: Each Place Has Its Own Story</span>
+  </h2>
+
+  <p>
+    <span class="fa">استان کرمانشاه مجموعه‌ای از دشت‌ها، دره‌ها، کوهستان‌ها و نواحی فرهنگی گوناگون است. نام‌های زیر برای معرفی جغرافیای استان آمده‌اند؛ برای نسبت دادن لباس یا رسم خاص به هر روستا، به منبع محلی جداگانه نیاز است.</span>
+    <span class="en">Kermanshah Province includes plains, valleys, mountains, and diverse cultural areas. Attributing a specific garment or custom to an individual village requires a separate local source.</span>
+  </p>
+
+  <div class="grid">
+
+    <article class="tile">
+      <h3><span class="fa">پاوه و نواحی هورامان</span><span class="en">Paveh and Hawraman</span></h3>
+      <p>
+        <span class="fa">منطقه‌ای کوهستانی با روستاهای پلکانی، معماری سازگار با شیب کوه و سنت‌های فرهنگی شناخته‌شده. هجیج، نودشه و نوسود از نام‌های قابل بررسی برای روایت زندگی روستایی این ناحیه‌اند.</span>
+        <span class="en">A mountainous area known for stepped villages, distinctive architecture, and cultural traditions. Hajij, Nowdesheh, and Nowsud are places to explore.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">جوانرود</span><span class="en">Javanrud</span></h3>
+      <p>
+        <span class="fa">از نواحی کردنشین استان که بازار، زندگی شهری و پیوند با روستاهای اطراف بخشی از هویت معاصر آن است. برای معرفی پوشش زنان این منطقه، تصاویر مستند و روایت‌های محلی اهمیت دارند.</span>
+        <span class="en">A Kurdish-majority area where markets, town life, and nearby villages shape contemporary identity. Documented photographs and local accounts help present women's dress here.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">روانسر</span><span class="en">Ravansar</span></h3>
+      <p>
+        <span class="fa">روانسر با چشم‌اندازهای طبیعی و چشمه‌ها شناخته می‌شود و می‌تواند در روایت پیوند زندگی روزمره با منابع آب و دشت‌های منطقه جای بگیرد.</span>
+        <span class="en">Ravansar is known for its natural scenery and springs, connecting everyday life with water and surrounding plains.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">ثلاث باباجانی</span><span class="en">Salas-e Babajani</span></h3>
+      <p>
+        <span class="fa">ناحیه‌ای در غرب استان با روستاها و چشم‌اندازهای کوهستانی. جزئیات فرهنگی هر روستا باید با منابع معتبر محلی تطبیق داده شوند.</span>
+        <span class="en">A western area of the province with mountain villages. Cultural details for individual villages should be checked against reliable local sources.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">سرپل‌ذهاب و قصرشیرین</span><span class="en">Sarpol-e Zahab and Qasr-e Shirin</span></h3>
+      <p>
+        <span class="fa">این نواحی غربی استان دارای میراث تاریخی و اقلیم متفاوتی نسبت به بخش‌های مرتفع‌ترند. سنگ‌نگاره آنوبانی‌نی در نزدیکی سرپل‌ذهاب از آثار باستانی شاخص این محدوده است.</span>
+        <span class="en">These western areas have historic heritage and a different climate from higher parts of the province. The Anubanini rock relief near Sarpol-e Zahab is a notable monument.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">شهرستان کرمانشاه و روستاهای پیرامون</span><span class="en">Kermanshah County and Surrounding Villages</span></h3>
+      <p>
+        <span class="fa">فهرست روستاهای شهرستان کرمانشاه نقطه شروع بررسی نام آبادی‌هاست. انتخاب روستاهای نهایی برای گالری باید بر اساس شواهد درباره پوشش، صنایع‌دستی یا آیین‌های محلی انجام شود.</span>
+        <span class="en">The county's village list is a starting point for checking settlement names. Final selections should be based on evidence about dress, crafts, or local traditions.</span>
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section id="history">
+  <h2>
+    <span class="fa">۴. تاریخ و طبیعت؛ از سنگ‌نگاره تا چشمه</span>
+    <span class="en">4. History and Nature: From Rock Reliefs to Springs</span>
+  </h2>
+
+  <div class="grid">
+
+    <article class="tile">
+      <h3><span class="fa">طاق‌بستان</span><span class="en">Taq-e Bostan</span></h3>
+      <p>
+        <span class="fa">مجموعه‌ای از سنگ‌نگاره‌ها و ایوان‌های سنگی دوره ساسانی در شمال‌شرقی شهر کرمانشاه که صحنه‌هایی از پادشاهی و آیین‌های درباری را به نمایش می‌گذارد.</span>
+        <span class="en">A complex of Sasanian rock reliefs and stone iwans northeast of Kermanshah, depicting royal scenes and ceremonies.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">بیستون</span><span class="en">Bisotun</span></h3>
+      <p>
+        <span class="fa">محوطه‌ای تاریخی با کتیبه و نقش‌برجسته داریوش بزرگ و آثار دوره‌های مختلف. کتیبه بیستون از مهم‌ترین اسناد شناخته‌شده دوره هخامنشی است.</span>
+        <span class="en">A historic site with the inscription and relief of Darius the Great. The Bisotun inscription is a major surviving record of the Achaemenid era.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">تکیه معاون‌الملک</span><span class="en">Moaven al-Molk Tekyeh</span></h3>
+      <p>
+        <span class="fa">بنایی تاریخی در شهر کرمانشاه که به کاشی‌کاری‌های رنگین و صحنه‌های تصویری آن شناخته می‌شود؛ نمونه‌ای برجسته از هنر تزئینی دوره قاجار.</span>
+        <span class="en">A historic building known for colorful tilework and figurative scenes, representing Qajar-era decorative art.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">تکیه بیگلربیگی</span><span class="en">Biglarbegi Tekyeh</span></h3>
+      <p>
+        <span class="fa">از بناهای تاریخی شهر با تزئینات آینه‌کاری و معماری دوره قاجار که بخشی از حافظه آیینی و شهری کرمانشاه را بازتاب می‌دهد.</span>
+        <span class="en">A historic Qajar-era building featuring mirrorwork and architecture that reflects Kermanshah's urban and ritual heritage.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">معبد آناهیتا در کنگاور</span><span class="en">Anahita Temple in Kangavar</span></h3>
+      <p>
+        <span class="fa">محوطه‌ای باستانی با بقایای معماری سنگی در کنگاور که از آثار مهم تاریخی شرق استان به شمار می‌رود.</span>
+        <span class="en">An archaeological site with stone architectural remains in Kangavar, among the major historic sites in eastern Kermanshah Province.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">طبیعت؛ قوری‌قلعه، هشیلان و سرآب نیلوفر</span><span class="en">Nature: Quri Qaleh, Hashilan and Sarab-e Niloufar</span></h3>
+      <p>
+        <span class="fa">غار قوری‌قلعه، تالاب هشیلان و سرآب نیلوفر از جاذبه‌های طبیعی شناخته‌شده استان‌اند. چشمه‌ها، تالاب‌ها و چشم‌اندازهای کوهستانی در زندگی محلی نقش دارند.</span>
+        <span class="en">Quri Qaleh Cave, Hashilan Wetland, and Sarab-e Niloufar are known natural attractions. Springs, wetlands, and mountain landscapes shape local life.</span>
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section id="food">
+  <h2>
+    <span class="fa">۵. خوراک محلی؛ طعم‌های به‌یادماندنی کرمانشاه</span>
+    <span class="en">5. Local Food: Memorable Flavors of Kermanshah</span>
+  </h2>
+
+  <div class="grid">
+
+    <article class="tile">
+      <h3><span class="fa">دنده‌کباب</span><span class="en">Dandeh Kebab</span></h3>
+      <p>
+        <span class="fa">از خوراک‌های مشهور کرمانشاه که با دنده بره و شیوه پخت ویژه شناخته می‌شود و در معرفی خوراک شهری استان جایگاه مهمی دارد.</span>
+        <span class="en">A well-known Kermanshah dish prepared with lamb ribs and a distinctive cooking method.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">خورش خلال</span><span class="en">Khoresht-e Khelal</span></h3>
+      <p>
+        <span class="fa">خورشی مجلسی که با خلال بادام و زعفران شناخته می‌شود و در مهمانی‌ها و سفره‌های رسمی کرمانشاه حضور دارد.</span>
+        <span class="en">A festive stew known for slivered almonds and saffron, served at gatherings in Kermanshah.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">آش عباسعلی</span><span class="en">Ash-e Abbasali</span></h3>
+      <p>
+        <span class="fa">آشی غلیظ و مقوی که از خوراک‌های شناخته‌شده شهر کرمانشاه است و در روایت‌های محلی با نذر و سنت‌های غذایی نیز پیوند دارد.</span>
+        <span class="en">A hearty soup known in Kermanshah and associated in some local accounts with food traditions and vows.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">آش سورانه</span><span class="en">Ash-e Suraneh</span></h3>
+      <p>
+        <span class="fa">خوراکی محلی که با گیاه سورانه در فصل آن تهیه می‌شود. مواد اولیه و شیوه پخت می‌تواند از خانواده‌ای به خانواده دیگر تفاوت داشته باشد.</span>
+        <span class="en">A local dish prepared with suraneh greens in season. Ingredients and methods can vary between families.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">سیب‌پلو و ونوشک‌پلو</span><span class="en">Sib-Polo and Venushak-Polo</span></h3>
+      <p>
+        <span class="fa">از غذاهای برنجی منطقه که با مواد و چاشنی‌های محلی تهیه می‌شوند. دستور پخت آن‌ها ممکن است در خانواده‌های مختلف کمی تفاوت داشته باشد.</span>
+        <span class="en">Local rice dishes prepared with regional ingredients and seasonings. Recipes may vary between families.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">کوفته شیرین</span><span class="en">Sweet Koofteh</span></h3>
+      <p>
+        <span class="fa">کوفته شیرین از خوراک‌های متفاوت و شناخته‌شده کرمانشاه است. آش‌ها، خوراک‌های فصلی و غذاهای خانگی نیز بخشی از تنوع آشپزی منطقه‌اند.</span>
+        <span class="en">Sweet koofteh is a distinctive Kermanshah dish. Soups, seasonal foods, and home-cooked meals are also part of the region's culinary variety.</span>
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section id="products">
+  <h2>
+    <span class="fa">۶. شیرینی، سوغات و صنایع‌دستی</span>
+    <span class="en">6. Sweets, Souvenirs and Handicrafts</span>
+  </h2>
+
+  <div class="grid">
+
+    <article class="tile">
+      <h3><span class="fa">نان برنجی</span><span class="en">Nan-e Berenji</span></h3>
+      <p>
+        <span class="fa">از معروف‌ترین شیرینی‌های کرمانشاه، تهیه‌شده با آرد برنج و عطر دلپذیر؛ معمولاً با نقش‌های قالبی روی سطح آن شناخته می‌شود.</span>
+        <span class="en">One of Kermanshah's best-known sweets, made with rice flour and often marked with decorative impressions.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">کاک</span><span class="en">Kak</span></h3>
+      <p>
+        <span class="fa">شیرینی لایه‌ای و نازک که بافت ترد آن از ویژگی‌های اصلی‌اش است و در فهرست سوغات محبوب کرمانشاه قرار دارد.</span>
+        <span class="en">A thin, layered pastry with a crisp texture, popular among Kermanshah souvenirs.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">نان خرمایی و بژی</span><span class="en">Date Bread and Bizhi</span></h3>
+      <p>
+        <span class="fa">نان خرمایی و بژی از شیرینی‌ها و نان‌های محلی معرفی‌شده در منابع گردشگری استان‌اند. دستورها ممکن است در نانوایی‌ها و خانواده‌ها متفاوت باشد.</span>
+        <span class="en">Date bread and bizhi are local baked treats listed in tourism sources. Recipes may vary.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">روغن حیوانی کرمانشاهی</span><span class="en">Kermanshahi Animal Ghee</span></h3>
+      <p>
+        <span class="fa">روغن حیوانی از محصولات شناخته‌شده استان است که در آشپزی محلی و به‌عنوان سوغات عرضه می‌شود.</span>
+        <span class="en">Animal ghee is a well-known regional product used in local cooking and sold as a souvenir.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">گیوه و کلاش دست‌ساز</span><span class="en">Handmade Giveh and Kalash</span></h3>
+      <p>
+        <span class="fa">کفش‌های دست‌ساز با مهارت‌های دوخت و بافت سنتی، از صنایع‌دستی مهم غرب ایران‌اند. طرح و روش ساخت می‌تواند با محل تولید تفاوت داشته باشد.</span>
+        <span class="en">Handmade footwear created with traditional sewing and weaving skills is an important craft in western Iran.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">جاجیم و بافته‌های محلی</span><span class="en">Jajim and Local Weavings</span></h3>
+      <p>
+        <span class="fa">بافته‌های سنتی و منسوجات محلی، در کنار دیگر محصولات دست‌ساز، می‌توانند در بخش سوغات معرفی شوند؛ برای معرفی هر محصول خاص، محل تولید باید مشخص شود.</span>
+        <span class="en">Traditional weavings and local textiles can be introduced as souvenirs. Specific products should be linked to verified production locations.</span>
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section id="music">
+  <h2>
+    <span class="fa">۷. موسیقی و آیین‌ها؛ صدای زاگرس</span>
+    <span class="en">7. Music and Traditions: The Sound of the Zagros</span>
+  </h2>
+
+  <div class="grid">
+
+    <article class="tile">
+      <h3><span class="fa">تنبور</span><span class="en">Tanbur</span></h3>
+      <p>
+        <span class="fa">تنبور از سازهای مهم موسیقی عرفانی و آیینی در بخش‌هایی از غرب ایران است. منطقه گوران و برخی اجتماعات پیرامون آن با سنت‌های تنبورنوازی شناخته می‌شوند.</span>
+        <span class="en">The tanbur is an important instrument in mystical and ritual music in western Iran. The Guran area is known for tanbur traditions.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">هوره و سیاه‌چمانه</span><span class="en">Hura and Siah Chamanah</span></h3>
+      <p>
+        <span class="fa">هوره و سیاه‌چمانه از شیوه‌های آوازی شناخته‌شده در برخی سنت‌های موسیقایی مناطق کردنشین‌اند. شکل اجرا و کاربرد هر نوا به جامعه محلی و موقعیت آیینی وابسته است.</span>
+        <span class="en">Hura and siah chamanah are vocal traditions known in some Kurdish musical communities. Their use depends on local context.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">سازهای محلی</span><span class="en">Local Instruments</span></h3>
+      <p>
+        <span class="fa">در معرفی موسیقی منطقه، سازهایی مانند دوزله، شمشال، دهل، سرنا و دایره نیز مطرح می‌شوند. رواج هر ساز در نواحی مختلف یکسان نیست.</span>
+        <span class="en">Instruments such as dozaleh, shomshal, dahol, sorna, and frame drum are mentioned in regional music accounts.</span>
+      </p>
+    </article>
+
+    <article class="tile">
+      <h3><span class="fa">آواز و روایت شفاهی</span><span class="en">Song and Oral Tradition</span></h3>
+      <p>
+        <span class="fa">نواهای محلی می‌توانند با داستان‌گویی، آیین‌ها، شادی، سوگواری و خاطره جمعی پیوند داشته باشند. برای ثبت هر سبک یا نام محلی، منابع تخصصی اهمیت دارند.</span>
+        <span class="en">Local music may connect with storytelling, rituals, celebration, mourning, and collective memory.</span>
+      </p>
+    </article>
+
+  </div>
+
+  <p class="small">
+    <span class="fa">یادداشت: مقاله سیویلیکا که فرستاده شد درباره رقص‌های کردی و استان کردستان است؛ بنابراین برای توصیف رقص در کرمانشاه به‌عنوان منبع مستقیم به آن استناد نکرده‌ایم.</span>
+    <span class="en">Note: The Civilica paper concerns Kurdish dance in Kurdistan Province, so it is not treated as a direct source for Kermanshah.</span>
+  </p>
+</section>
+
+<section id="sources">
+  <h2>
+    <span class="fa">۸. منابع و مطالعه بیشتر</span>
+    <span class="en">8. Sources and Further Reading</span>
+  </h2>
+
+  <p>
+    <span class="fa">پیوندهای زیر برای مطالعه بیشتر و بررسی جزئیات فرهنگی، تاریخی و محلی گردآوری شده‌اند.</span>
+    <span class="en">The following links are provided for further reading and checking cultural, historical, and local details.</span>
+  </p>
+
+  <ul class="source-list">
+    <li><a href="https://www.hamshahrionline.ir/news/722095/تصاویر-انعکاس-زیبایی-های-طبیعت-در-لباس-رنگین-زنان-کرمانشاهی" target="_blank" rel="noopener">همشهری آنلاین — پوشش رنگین زنان کرمانشاهی</a></li>
+    <li><a href="https://lastsecond.ir/blog/6636-food-kermanshah" target="_blank" rel="noopener">لست‌سکند — غذاهای محلی کرمانشاه</a></li>
+    <li><a href="https://snapp.ir/blog/famous-sweets-of-kermanshah/" target="_blank" rel="noopener">اسنپ — شیرینی‌های معروف کرمانشاه</a></li>
+    <li><a href="https://www.alibaba.ir/mag/kermanshah/kermanshah-ci/kermanshah-souvenirs/" target="_blank" rel="noopener">مجله علی‌بابا — سوغات کرمانشاه</a></li>
+    <li><a href="https://fa.wikipedia.org/wiki/فهرست_آثار_تاریخی_کرمانشاه" target="_blank" rel="noopener">ویکی‌پدیای فارسی — فهرست آثار تاریخی کرمانشاه</a></li>
+    <li><a href="https://www.otaghak.com/blog/attractions-of-kermanshah/" target="_blank" rel="noopener">اتاقک — جاذبه‌های گردشگری کرمانشاه</a></li>
+    <li><a href="https://www.irna.ir/news/4490594/نگاهی-به-نواها-و-سازهای-سنتی-کرمانشاه" target="_blank" rel="noopener">خبرگزاری ایرنا — نواها و سازهای سنتی کرمانشاه</a></li>
+    <li><a href="https://fa.wikipedia.org/wiki/رده:روستاهای_شهرستان_کرمانشاه" target="_blank" rel="noopener">ویکی‌پدیای فارسی — روستاهای شهرستان کرمانشاه</a></li>
+    <li><a href="https://civilica.com/doc/391569/" target="_blank" rel="noopener">سیویلیکا — پژوهش درباره رقص‌های کردی؛ مرتبط با استان کردستان</a></li>
+  </ul>
+
+  <p class="small">
+    <span class="fa">این منابع نقطه شروع پژوهش‌اند. برای نسبت دادن نوع پوشش یا رسم خاص به روستایی مشخص، منبع تخصصی یا تأیید محلی جداگانه لازم است.</span>
+    <span class="en">These sources are starting points for research. Assigning a specific garment or custom to a particular village requires a specialized source or local confirmation.</span>
+  </p>
+</section>
+
+<a class="back" href="index.html">
+  <span class="fa">← بازگشت به گالری «ایران، هزار رنگ»</span>
+  <span class="en">← Back to the “Iran, A Thousand Colors” gallery</span>
+</a>
+
+</main>
+
+<footer>
+  <p><strong><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span></strong></p>
+  <p><span class="fa">روایت تصویری پوشش زنان ایران</span><span class="en">A visual story of women's dress in Iran</span></p>
+  <p><span class="fa">کرمانشاه؛ آواز کوهستان، رنگِ زندگی</span><span class="en">Kermanshah: Mountain Songs, Colors of Life</span></p>
+  <p class="small">
+    <span class="fa">اثر هنری: مریم ساعی | طراحی سایت و پژوهش فرهنگی: مرجان ساعی</span>
+    <span class="en">Artwork: Maryam Saei | Website design and cultural research: Marjan Saei</span>
+  </p>
+</footer>
+
+<script>
+(() => {
+  const button = document.getElementById('langSwitch');
+  const saved = localStorage.getItem('iranHezarRangLanguage');
+
+  function setLanguage(language) {
+    const english = language === 'en';
+
+    document.body.classList.toggle('english', english);
+    document.documentElement.lang = english ? 'en' : 'fa';
+    document.documentElement.dir = english ? 'ltr' : 'rtl';
+
+    button.textContent = english ? 'فارسی' : 'English';
+    button.setAttribute(
+      'aria-label',
+      english ? 'Switch to Persian' : 'Switch to English'
+    );
+
+    localStorage.setItem('iranHezarRangLanguage', language);
+  }
+
+  setLanguage(saved === 'en' ? 'en' : 'fa');
+
+  button.addEventListener('click', () => {
+    setLanguage(
+      document.body.classList.contains('english') ? 'fa' : 'en'
+    );
+  });
+})();
+</script>
+
+</body>
+</html>
