@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>زنجان | ایران، هزار رنگ</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4ead8;
+  --cream:#fff9ee;
+  --rust:#a83e1d;
+  --orange:#c65a25;
+  --green:#153f3b;
+  --olive:#656b43;
+  --gold:#bd8b3e;
+  --ink:#302b22;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Vazirmatn',sans-serif;
+  line-height:2;
+}
+header{
+  background:var(--green);
+  color:var(--cream);
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+header a{
+  color:var(--cream);
+  text-decoration:none;
+  margin:0 8px;
+  font-size:14px;
+}
+.lang{
+  border:1px solid var(--gold);
+  border-radius:20px;
+  padding:5px 14px;
+}
+.hero{
+  padding:55px 6% 35px;
+  text-align:center;
+}
+.hero small{color:var(--rust);font-weight:700}
+h1{
+  color:var(--green);
+  font-size:clamp(30px,5vw,48px);
+  margin:8px 0;
+}
+.hero p{color:#665b49}
+.container{max-width:1100px;margin:auto;padding:15px 22px 60px}
+.poster{
+  max-width:650px;
+  margin:20px auto 45px;
+  background:var(--cream);
+  padding:12px;
+  border:1px solid var(--gold);
+  box-shadow:0 8px 25px #4b38201c;
+}
+.poster img{width:100%;display:block}
+.section{
+  background:var(--cream);
+  border:1px solid #d8c7a6;
+  padding:25px;
+  margin:25px 0;
+  border-radius:5px;
+}
+.section h2{
+  color:var(--cream);
+  background:var(--green);
+  border-right:5px solid var(--gold);
+  padding:8px 15px;
+  font-size:20px;
+  margin:0 0 18px;
+}
+.section h3{color:var(--rust);font-size:17px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.item{
+  background:#f6eddd;
+  border:1px solid #e3d4b9;
+  padding:15px;
+  border-radius:5px;
+}
+.item h3{margin:0 0 6px}
+.tagline{
+  text-align:center;
+  color:var(--rust);
+  font-weight:700;
+  font-size:19px;
+  padding:20px;
+}
+ul{padding-right:22px}
+li{margin:5px 0}
+a{color:var(--rust)}
+.sources a{display:block;margin:9px 0;text-decoration:none}
+.sources a:hover{text-decoration:underline}
+.credits{
+  text-align:center;
+  color:var(--olive);
+  padding:25px 10px;
+  border-top:1px solid #d8c7a6;
+  margin-top:35px;
+  font-size:14px;
+}
+footer{
+  text-align:center;
+  background:var(--green);
+  color:var(--cream);
+  padding:20px;
+  font-size:13px;
+}
+@media(max-width:600px){
+  header{justify-content:center}
+  .section{padding:17px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div><strong>ایران، هزار رنگ</strong></div>
+  <nav>
+    <a href="index.html">صفحه اصلی</a>
+    <a href="index.html#gallery">گالری مناطق</a>
+    <a href="qazvin.html">قزوین</a>
+  </nav>
+  <a class="lang" href="#" onclick="toggleLang();return false;">FA | EN</a>
+</header>
+
+<div class="hero">
+  <small>REGIONS GALLERY · ZANJAN</small>
+  <h1>زنجان</h1>
+  <p>سرزمین نقش‌های نقره‌ای، چاروق‌های چرمی و میراث کهن</p>
+</div>
+
+<main class="container">
+
+  <div class="poster">
+    <img src="zanjan.png" alt="پوستر هنری زنجان">
+  </div>
+
+  <div class="tagline">
+    زنجان؛ درخشش نقره، شکوه نقش‌های ماندگار
+  </div>
+
+  <section class="section">
+    <h2>پوشش زنان زنجان</h2>
+    <p>
+      پوشاک سنتی زنان زنجان از جلوه‌های ارزشمند فرهنگ بومی منطقه است.
+      این پوشش با پیراهن‌های محلی، دامن‌های چین‌دار، جلیقه‌های تزئین‌شده،
+      سربندها و زیورآلات سنتی شناخته می‌شود. شکل و ترکیب لباس در
+      روستاها و نواحی مختلف استان تفاوت‌هایی دارد.
+    </p>
+    <div class="grid">
+      <div class="item">
+        <h3>پوشن</h3>
+        <p>پارچه‌ای برای پوشاندن و نگه‌داشتن مو که در آرایش سر استفاده می‌شده است.</p>
+      </div>
+      <div class="item">
+        <h3>چنه‌آلتی</h3>
+        <p>آویز تزئینی زیر چانه، ساخته‌شده از سکه‌های قلاب‌دار یا منجوق.</p>
+      </div>
+      <div class="item">
+        <h3>یاشماق</h3>
+        <p>پوششی برای دهان، چانه و گردن.</p>
+      </div>
+      <div class="item">
+        <h3>جلیزقا و یل</h3>
+        <p>جلیقه بدون آستین و بالاپوش آستین‌دار در پوشاک سنتی زنان.</p>
+      </div>
+      <div class="item">
+        <h3>کوینک و تومان</h3>
+        <p>پیراهن محلی و دامن یا تنبان سنتی که در برخی مناطق به شکل بلند و چین‌دار پوشیده می‌شده است.</p>
+      </div>
+      <div class="item">
+        <h3>چاروق</h3>
+        <p>پای‌افزار چرمی سنتی که از شناخته‌شده‌ترین نمادهای هنر زنجان است.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>روستاها و روایت‌های محلی</h2>
+    <p>
+      پوشاک محلی در برخی روستاهای زنجان هنوز بخشی از حافظه فرهنگی
+      منطقه است. از نمونه‌های شناخته‌شده می‌توان به پوشاک زنان طارمی اشاره کرد.
+    </p>
+    <div class="grid">
+      <div class="item">
+        <h3>هزاررود – طارم</h3>
+        <p>از روستاهای شناخته‌شده در معرفی پوشاک محلی زنان طارمی.</p>
+      </div>
+      <div class="item">
+        <h3>سانسیز – طارم</h3>
+        <p>از مناطقی که پوشش سنتی زنان در آن گزارش شده است.</p>
+      </div>
+      <div class="item">
+        <h3>آب‌بر و روستاهای طارم</h3>
+        <p>منطقه‌ای با تنوع فرهنگی و پوشش‌های محلی متأثر از شیوه زندگی روستایی.</p>
+      </div>
+      <div class="item">
+        <h3>خوئین</h3>
+        <p>روستایی تاریخی در استان زنجان با هویت فرهنگی و زبانی ویژه.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>زبان و فرهنگ</h2>
+    <p>
+      ترکی آذربایجانی با گونه زنجانی، زبان رایج بخش بزرگی از مردم استان است.
+      فارسی نیز زبان رسمی و مشترک است. در برخی روستاها، گونه‌هایی از زبان
+      تاتی نیز حفظ شده‌اند.
+    </p>
+    <p>
+      موسیقی عاشیقی، آیین‌های محلی، هنرهای دستی و مراسم سنتی از بخش‌های
+      مهم هویت فرهنگی زنجان هستند.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>خوراکی‌های محلی زنجان</h2>
+    <div class="grid">
+      <div class="item">
+        <h3>جغوربغور</h3>
+        <p>خوراکی محلی تهیه‌شده از جگر و دل و قلوه، معمولاً همراه پیاز و ادویه.</p>
+      </div>
+      <div class="item">
+        <h3>آش ترش</h3>
+        <p>آشی محلی با طعم ترش و ترکیبی از حبوبات و سبزیجات.</p>
+      </div>
+      <div class="item">
+        <h3>شش‌انداز</h3>
+        <p>غذایی سنتی که در برخی مناسبت‌ها و شب چهارشنبه‌سوری تهیه می‌شود.</p>
+      </div>
+      <div class="item">
+        <h3>پیازو</h3>
+        <p>خوراک سنتی و محلی زنجان.</p>
+      </div>
+      <div class="item">
+        <h3>نان اردک</h3>
+        <p>از نان‌ها و خوراکی‌های سنتی منطقه.</p>
+      </div>
+      <div class="item">
+        <h3>شیرینی شستی و قرابیه</h3>
+        <p>از شیرینی‌های محلی و سوغات شیرین زنجان.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>هنرهای دستی و سوغات</h2>
+    <div class="grid">
+      <div class="item">
+        <h3>ملیله‌کاری</h3>
+        <p>هنر ظریف ساخت زیورآلات و اشیای تزئینی با رشته‌های نقره.</p>
+      </div>
+      <div class="item">
+        <h3>چاقوسازی</h3>
+        <p>یکی از شناخته‌شده‌ترین هنرهای فلزکاری زنجان.</p>
+      </div>
+      <div class="item">
+        <h3>چاروق‌دوزی</h3>
+        <p>ساخت پای‌افزار چرمی سنتی و گونه‌های تزئینی آن.</p>
+      </div>
+      <div class="item">
+        <h3>مسگری و قلمزنی</h3>
+        <p>هنر ساخت و تزئین ظروف و اشیای فلزی.</p>
+      </div>
+      <div class="item">
+        <h3>قالی، گلیم و جاجیم</h3>
+        <p>بافته‌های سنتی که در بخش‌های مختلف استان رواج داشته‌اند.</p>
+      </div>
+      <div class="item">
+        <h3>محصولات طارم</h3>
+        <p>زیتون، روغن زیتون و محصولات باغی از سوغات شناخته‌شده این منطقه هستند.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>جاذبه‌های تاریخی و طبیعی</h2>
+    <div class="grid">
+      <div class="item">
+        <h3>گنبد سلطانیه</h3>
+        <p>شاهکار معماری دوره ایلخانی و میراث جهانی ثبت‌شده در یونسکو.</p>
+      </div>
+      <div class="item">
+        <h3>معبد داش‌کسن</h3>
+        <p>مجموعه سنگی تاریخی در نزدیکی سلطانیه با نقش‌برجسته‌های اژدها.</p>
+      </div>
+      <div class="item">
+        <h3>قلعه بهستان</h3>
+        <p>دژ صخره‌ای تاریخی در شهرستان ماهنشان، در کنار رود قزل‌اوزن.</p>
+      </div>
+      <div class="item">
+        <h3>رخت‌شوی‌خانه</h3>
+        <p>بنای تاریخی منحصربه‌فرد زنجان که برای شست‌وشوی امن و سرپوشیده لباس‌ها ساخته شده است.</p>
+      </div>
+      <div class="item">
+        <h3>غار کتله‌خور</h3>
+        <p>غاری شگفت‌انگیز با تالارها و سازه‌های آهکی در شهرستان خدابنده.</p>
+      </div>
+      <div class="item">
+        <h3>بازار تاریخی زنجان</h3>
+        <p>بازاری سرپوشیده با راسته‌ها، کاروانسراها و معماری آجری دوره قاجار.</p>
+      </div>
+      <div class="item">
+        <h3>موزه مردان نمکی</h3>
+        <p>در عمارت ذوالفقاری؛ محل نگهداری آثار مردان نمکی معدن چهرآباد.</p>
+      </div>
+      <div class="item">
+        <h3>طبیعت طارم و قزل‌اوزن</h3>
+        <p>چشم‌اندازهای کوهستانی، رودخانه‌ها و باغ‌های زیتون در شمال استان.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sources">
+    <h2>منابع و پژوهش بیشتر</h2>
+
+    <h3>منابع فارسی</h3>
+    <a href="https://ostandari-zn.ir/zanjangov/سیماى-شهرستان/صنایع-دستی-شهرستان" target="_blank">استانداری زنجان – صنایع دستی و فرهنگ شهرستان</a>
+    <a href="https://zanjan360.ir/لباس-محلی-زنان-زنجان؛-نمادی-از-هویت-و-اص/" target="_blank">زنجان ۳۶۰ – لباس محلی زنان زنجان</a>
+    <a href="https://www.karnaval.ir/blog/zanjan-local-foods" target="_blank">کارناوال – غذاهای محلی زنجان</a>
+    <a href="https://www.alibaba.ir/mag/zanjan/zanjan-ci/zanjan-attractions/" target="_blank">علی‌بابا – جاذبه‌های گردشگری زنجان</a>
+    <a href="https://fa.wikipedia.org/wiki/جاهای_گردشگری_استان_زنجان" target="_blank">ویکی‌پدیای فارسی – جاذبه‌های گردشگری استان زنجان</a>
+
+    <h3>منابع خارجی</h3>
+    <a href="https://visitiran.ir/en/province/zanjan-province" target="_blank">Visit Iran – Zanjan Province</a>
+    <a href="https://visitiran.ir/destination/zanjan" target="_blank">Visit Iran – Zanjan Destination</a>
+    <a href="https://whc.unesco.org/en/list/1188/" target="_blank">UNESCO – Soltaniyeh Dome</a>
+    <a href="https://visitiran.ir/attraction/rakhtshooy-khaneh-edifice-laundry" target="_blank">Visit Iran – Rakhtshooy Khaneh</a>
+    <a href="https://www.discover-iran.com/en/provinces/zanjan" target="_blank">Discover Iran – Zanjan</a>
+  </section>
+
+  <div class="credits">
+    <strong>هنرمند و خالق آثار: مریم ساعی</strong><br>
+    پژوهش فرهنگی و طراحی وب‌سایت: مرجان ساعی<br>
+    <span>ایران، هزار رنگ | روایتی تصویری از پوشش زنان ایران</span>
+  </div>
+
+</main>
+
+<footer>
+  Iran, A Thousand Colors · Zanjan Region
+</footer>
+
+<script>
+function toggleLang(){
+  const en = document.documentElement.lang === 'fa';
+  document.documentElement.lang = en ? 'en' : 'fa';
+  document.documentElement.dir = en ? 'ltr' : 'rtl';
+  alert(en ? 'نسخه انگلیسی در حال آماده‌سازی است.' : 'نسخه فارسی');
+}
+</script>
+
+</body>
+</html>
