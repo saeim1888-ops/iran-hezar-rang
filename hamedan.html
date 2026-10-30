@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="همدان؛ روایت تصویری پوشش زنان، تاریخ، خوراک و هنرهای دستی در ایران، هزار رنگ.">
+<title>همدان | ایران، هزار رنگ</title>
+
+<style>
+:root{
+--cream:#f8f1e3;
+--paper:#fffaf0;
+--olive:#596447;
+--dark:#292b25;
+--gold:#b08b48;
+--rust:#b94e27;
+--teal:#245b60
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+background:var(--cream);
+color:var(--dark);
+font-family:Tahoma,Arial,sans-serif;
+line-height:2.1
+}
+a{color:var(--teal)}
+
+.topline{
+height:5px;
+background:linear-gradient(90deg,var(--rust),var(--gold),var(--teal),var(--olive))
+}
+
+header{
+text-align:center;
+padding:48px 20px 34px;
+border-bottom:1px solid #d9c8a5;
+background:var(--paper)
+}
+
+.eyebrow{color:var(--rust);font-size:14px}
+
+h1{
+color:var(--olive);
+font-size:clamp(30px,5vw,48px);
+line-height:1.6;
+margin:12px 0
+}
+
+.slogan{
+color:var(--rust);
+font-size:clamp(18px,3vw,24px);
+font-weight:bold;
+margin:8px 0
+}
+
+.subtitle{
+color:#696455;
+margin:8px auto;
+max-width:700px
+}
+
+nav{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:9px;
+padding:16px;
+background:#eee4d1
+}
+
+nav a{
+text-decoration:none;
+padding:6px 13px;
+border:1px solid #d3c09a;
+border-radius:30px;
+font-size:13px
+}
+
+.lang-switch{
+position:fixed;
+z-index:10;
+top:12px;
+left:12px;
+border:1px solid var(--gold);
+border-radius:30px;
+background:var(--paper);
+color:var(--olive);
+padding:8px 14px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 2px 10px #0001
+}
+
+main{
+max-width:1050px;
+margin:auto;
+padding:24px 18px 60px
+}
+
+section{
+background:var(--paper);
+border:1px solid #e3d5b9;
+border-radius:15px;
+padding:clamp(18px,4vw,35px);
+margin:25px 0;
+box-shadow:0 5px 20px #65502a0a
+}
+
+h2{
+color:var(--olive);
+font-size:clamp(22px,3vw,29px);
+border-bottom:1px solid #d9c8a5;
+padding-bottom:10px;
+margin-top:0
+}
+
+h3{color:var(--rust);font-size:19px}
+p{margin:12px 0}
+
+.hero-art{
+display:block;
+width:min(100%,690px);
+height:auto;
+margin:18px auto;
+border:6px solid #fffaf0;
+outline:1px solid #d7c398;
+border-radius:3px
+}
+
+.caption{
+text-align:center;
+color:#6b6657;
+font-size:13px;
+margin:14px auto
+}
+
+.label-art{
+display:block;
+width:min(100%,470px);
+height:auto;
+margin:22px auto 10px;
+border:1px solid #ddc99e
+}
+
+.quote{
+border-right:4px solid var(--gold);
+padding:12px 18px;
+background:#f3ead7;
+color:var(--olive);
+font-size:18px
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px
+}
+
+.tile{
+background:#f6eedf;
+border:1px solid #e3d4b7;
+border-radius:12px;
+padding:17px
+}
+
+.tile h3{margin-top:0}
+
+.small{font-size:13px;color:#6b6657}
+ul{padding-right:22px}
+li{margin:7px 0}
+.source-list li{overflow-wrap:anywhere}
+
+footer{
+text-align:center;
+padding:28px 16px;
+background:var(--olive);
+color:#fff8e9
+}
+
+footer a{color:#ffdf9e}
+
+.back{
+display:inline-block;
+margin-top:18px;
+color:var(--olive)
+}
+
+body.english{
+direction:ltr;
+font-family:Arial,Tahoma,sans-serif
+}
+
+body.english nav{direction:ltr}
+body.english ul{
+padding-left:22px;
+padding-right:0
+}
+
+body.english .quote{
+border-right:0;
+border-left:4px solid var(--gold)
+}
+
+body.english .back{direction:ltr}
+
+body:not(.english) .en,
+body.english .fa{
+display:none!important
+}
+
+@media(max-width:600px){
+header{padding-top:45px}
+nav{gap:6px}
+nav a{font-size:12px}
+.lang-switch{
+top:8px;
+left:8px;
+padding:6px 10px
+}
+}
+</style>
+</head>
+
+<body>
+
+<button class="lang-switch" id="langSwitch" type="button" aria-label="Change language">English</button>
+<div class="topline"></div>
+
+<header>
+<div class="eyebrow">
+<span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+<span class="en">Iran, A Thousand Colors | A visual story of women's dress in Iran</span>
+</div>
+
+<h1>
+<span class="fa">همدان؛ روایت تاریخ، هنر و زندگی</span>
+<span class="en">Hamedan: A Story of History, Art and Life</span>
+</h1>
+
+<p class="slogan">
+<span class="fa">«همدان؛ اصالت در نقش، گرما در پوشش»</span>
+<span class="en">“Hamedan: Heritage in Every Pattern, Warmth in Every Layer”</span>
+</p>
+
+<p class="subtitle">
+<span class="fa">سفری تصویری میان پوشش زنان، شهرها و روستاهای کهن، بناهای تاریخی، سفال لالجین و طعم‌های به‌یادماندنی همدان</span>
+<span class="en">A visual journey through women's dress, historic towns and villages, heritage sites, Lalejin pottery, and Hamedan's memorable flavors.</span>
+</p>
+</header>
+
+<nav>
+<a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+<a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+<a href="#villages"><span class="fa">شهرها و روستاها</span><span class="en">Towns & Villages</span></a>
+<a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
+<a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food & Sweets</span></a>
+<a href="#products"><span class="fa">محصولات محلی</span><span class="en">Local Products</span></a>
+<a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
+
+<main>
+
+<section id="art">
+<h2>
+<span class="fa">۱. تصویر همدان؛ روایت یک سرزمین</span>
+<span class="en">1. Hamedan in Art: A Land's Story</span>
+</h2>
+
+<p>
+<span class="fa">در این اثر، پوشش آبی الهام‌گرفته از نمونه‌های محلی، گیوه، سفال لالجین، خوراک‌های سنتی و نشانه‌هایی از تاریخ همدان کنار هم قرار گرفته‌اند؛ عناصری که بخشی از حافظه فرهنگی این سرزمین را روایت می‌کنند.</span>
+<span class="en">This artwork brings together a blue outfit inspired by local examples, giveh footwear, Lalejin pottery, regional foods, and historic landmarks of Hamedan.</span>
+</p>
+
+<img class="hero-art" src="hamedan.png" alt="اثر هنری همدان با پوشش آبی، گیوه، سفال لالجین و نمادهای تاریخی">
+
+<p class="caption">
+<span class="fa">اثر تصویری همدان از مجموعه «ایران، هزار رنگ»</span>
+<span class="en">The Hamedan artwork from “Iran, A Thousand Colors”</span>
+</p>
+
+<div class="quote">
+<span class="fa">از نقش پارچه و بافت گیوه تا سفال لالجین و یادگارهای هگمتانه؛ هرکدام روایتی از پیوند مردم با سرزمینشان است.</span>
+<span class="en">From textile patterns and woven giveh to Lalejin pottery and ancient Hegmataneh, each tells a story of people's bond with their land.</span>
+</div>
+
+<p class="small">
+<span class="fa">این تصویر، اثر هنری مجموعه است؛ توضیحات این صفحه برای معرفی فرهنگی و تاریخی استان ارائه شده‌اند.</span>
+<span class="en">This is the collection's artwork; the text provides cultural and historical context.</span>
+</p>
+</section>
+
+<section id="clothing">
+<h2>
+<span class="fa">۲. پوشش زنان همدان؛ تنوع در جزئیات</span>
+<span class="en">2. Women's Dress in Hamedan: Diversity in the Details</span>
+</h2>
+
+<p>
+<span class="fa">پوشاک سنتی زنان همدان یک دست لباس یکسان برای تمام استان نیست. همدان در محل پیوند حوزه‌های فرهنگی فارس، ترک، کرد و لر قرار دارد و پوشش در نواحی مختلف، با توجه به زبان، جغرافیا و شیوه زندگی تفاوت داشته است. در توصیف‌های منتشرشده، سرپوش‌هایی مانند چارقد و «سرکی» و نیز پیراهن، جلیقه و دامن چین‌دار دیده می‌شود.</span>
+<span class="en">Traditional women's clothing in Hamedan was not uniform across the province. At the meeting point of Persian, Turkic, Kurdish, and Luri cultural areas, dress varied by language, geography, and way of life. Published descriptions mention head coverings such as Saraki, as well as a long shirt, vest, and pleated skirt.</span>
+</p>
+
+<img class="label-art" src="hamedan_leibel.png" alt="لیبل تصویری معرفی پوشش، تاریخ و فرهنگ همدان">
+
+<p class="caption">
+<span class="fa">لیبل اختصاصی همدان؛ راهنمای تصویری پوشش، جاذبه‌ها و خوراک محلی</span>
+<span class="en">Hamedan's exhibition label: a visual guide to clothing, landmarks, and food</span>
+</p>
+
+<div class="grid">
+
+<article class="tile">
+<h3><span class="fa">سرکی؛ پوشش سر در نواحی کردنشین</span><span class="en">Saraki: Headwear in Kurdish Areas</span></h3>
+<p>
+<span class="fa">منبع انگلیسی Visit Iran، سرکی را نوعی روسری در میان زنان کرد منطقه معرفی می‌کند که معمولاً زمینه تیره و نقش‌های قرمز دارد. این نام را نباید به همه زنان استان نسبت داد.</span>
+<span class="en">Visit Iran describes Saraki as a headscarf worn by Kurdish women in the region, often dark with red patterns. It should not be generalized to all women in the province.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">شده و عرقچین</span><span class="en">Shadeh and Skullcap</span></h3>
+<p>
+<span class="fa">در توصیف‌های پوشاک محلی، از «شده» و عرقچین به‌عنوان پوشش‌هایی که زیر یا همراه روسری استفاده می‌شدند یاد شده است. شکل و کاربرد آن‌ها می‌توانست میان نواحی تفاوت داشته باشد.</span>
+<span class="en">Local clothing descriptions mention Shadeh and skullcaps worn beneath or with a scarf. Their form and use could vary by area.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">کوینک یا کراس</span><span class="en">Kevink or Keras</span></h3>
+<p>
+<span class="fa">در منبع Visit Iran، کوینک یا کراس به‌عنوان پیراهنی آستین‌دار و بلند توصیف شده است. این اصطلاحات محلی در نوشتار انگلیسی با چند املای متفاوت ثبت شده‌اند.</span>
+<span class="en">Visit Iran describes Kevink or Keras as a long-sleeved, long shirt. These local terms appear with different English transliterations.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">جلیقه، شوال‌قری و تومبال</span><span class="en">Vest, Shoval Qeri, and Toombal</span></h3>
+<p>
+<span class="fa">در همان توصیف، جلیقه ساتن یا مخمل گلدوزی‌شده، دامن کوتاه چین‌دار با نام شوال‌قری و شلوار تومبال از اجزای پوشش زنان معرفی شده‌اند؛ نه نسخه‌ای ثابت برای تمام شهرستان‌ها.</span>
+<span class="en">The same account mentions an embroidered satin or velvet vest, a short pleated skirt called Shoval Qeri, and trousers known as Toombal. This is not a fixed outfit for every district.</span>
+</p>
+</article>
+
+</div>
+
+<p class="small">
+<span class="fa">برای نسبت‌دادن هر جزء لباس به روستایی مشخص، به عکس مستند، پژوهش مردم‌شناختی یا تأیید افراد آگاه محلی نیاز داریم.</span>
+<span class="en">Linking a garment to a specific village requires documentary photographs, ethnographic research, or local confirmation.</span>
+</p>
+</section>
+
+<section id="villages">
+<h2>
+<span class="fa">۳. شهرها و روستاهای همدان؛ هر ناحیه، یک روایت</span>
+<span class="en">3. Hamedan's Towns and Villages</span>
+</h2>
+
+<p>
+<span class="fa">در این بخش نام شهرها و مراکز شناخته‌شده را از روستاها جدا می‌کنیم تا اطلاعات جغرافیایی دقیق بماند. در نسخه‌های بعدی می‌توان روایت روستاهایی را افزود که پوشش یا هنر بومی آن‌ها مستند شده باشد.</span>
+<span class="en">This section distinguishes towns and known centers from villages. Later versions can add villages whose local dress or crafts are documented.</span>
+</p>
+
+<div class="grid">
+
+<article class="tile">
+<h3><span class="fa">لالجین؛ شهر سفال</span><span class="en">Lalejin: The Pottery Town</span></h3>
+<p>
+<span class="fa">لالجین در شهرستان بهار از مراکز مهم سفالگری ایران است. کارگاه‌های سفال و لعاب‌های رنگی آن بخشی شاخص از هویت هنری همدان‌اند.</span>
+<span class="en">Lalejin, in Bahar County, is a major pottery center, known for its workshops and colored glazes.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">ملایر؛ گیوه و منبت</span><span class="en">Malayer: Giveh and Woodcarving</span></h3>
+<p>
+<span class="fa">ملایر با گیوه‌بافی، فرش و هنرهای چوبی شناخته می‌شود. گیوه آجیده را در بخش پای‌افزار و صنایع‌دستی معرفی می‌کنیم، نه به‌عنوان لباس کامل زنان یک روستای مشخص.</span>
+<span class="en">Malayer is associated with giveh weaving, carpets, and woodcraft. Ajideh giveh belongs in the footwear and handicrafts section, not as a complete village costume.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">تویسرکان؛ گردو و خوراک محلی</span><span class="en">Tuyserkan: Walnuts and Local Cuisine</span></h3>
+<p>
+<span class="fa">تویسرکان به باغ‌های گردو و خوراک‌هایی مانند آش کلم‌قمری شناخته می‌شود و بخشی از تنوع کشاورزی و غذایی استان را نشان می‌دهد.</span>
+<span class="en">Tuyserkan is known for walnut orchards and dishes such as kohlrabi ash.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">نهاوند؛ گلیم</span><span class="en">Nahavand: Kilim</span></h3>
+<p>
+<span class="fa">گلیم نهاوند از صنایع‌دستی معرفی‌شده استان است و در کنار دیگر دست‌بافته‌های محلی جای می‌گیرد.</span>
+<span class="en">Nahavand kilim is among the province's documented handicrafts.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">اسدآباد و نواحی غربی</span><span class="en">Asadabad and Western Areas</span></h3>
+<p>
+<span class="fa">در نواحی غربی استان، از جمله بخش‌هایی با جمعیت کردزبان، تنوع پوشش و زبان اهمیت دارد. پوشاک هر روستا باید جداگانه مستند شود.</span>
+<span class="en">In western areas, including Kurdish-speaking communities, linguistic and clothing diversity matters. Each village's dress should be documented separately.</span>
+</p>
+</article>
+
+</div>
+</section>
+
+<section id="history">
+<h2>
+<span class="fa">۴. تاریخ، معماری و طبیعت</span>
+<span class="en">4. History, Architecture, and Nature</span>
+</h2>
+
+<h3><span class="fa">هگمتانه؛ شهر باستانی</span><span class="en">Hegmataneh: The Ancient City</span></h3>
+<p>
+<span class="fa">یونسکو در معرفی «هگمتانه و مرکز تاریخی همدان» به پیشینه چند هزار ساله سکونت در این شهر و اهمیت آن در دوره مادها و حکومت‌های بعدی اشاره می‌کند. این مجموعه در سال ۲۰۲۴ در فهرست میراث جهانی ثبت شد.</span>
+<span class="en">UNESCO's “Hegmataneh and Historical Centre of Hamedan” entry highlights nearly three millennia of settlement and its importance under the Medes and later dynasties. It was inscribed in 2024.</span>
+</p>
+
+<h3><span class="fa">کتیبه‌های گنج‌نامه</span><span class="en">Ganjnameh Inscriptions</span></h3>
+<p>
+<span class="fa">کتیبه‌های گنج‌نامه در دامنه الوند، یادگار دوره هخامنشی‌اند و به داریوش و خشایارشا نسبت داده می‌شوند. این سنگ‌نوشته‌ها از نمادهای تاریخی همدان‌اند.</span>
+<span class="en">The Ganjnameh inscriptions on Mount Alvand date to the Achaemenid period and are associated with Darius I and Xerxes I.</span>
+</p>
+
+<h3><span class="fa">آرامگاه بوعلی‌سینا و باباطاهر</span><span class="en">Mausoleums of Avicenna and Baba Taher</span></h3>
+<p>
+<span class="fa">آرامگاه بوعلی‌سینا یادآور جایگاه علمی این دانشمند ایرانی است و آرامگاه باباطاهر با شعر و دوبیتی‌های او پیوند دارد.</span>
+<span class="en">Avicenna's mausoleum commemorates the Iranian philosopher and physician; Baba Taher's mausoleum is associated with his poetry.</span>
+</p>
+
+<h3><span class="fa">گنبد علویان و شیر سنگی</span><span class="en">Alavian Dome and Stone Lion</span></h3>
+<p>
+<span class="fa">گنبد علویان از بناهای برجسته دوره سلجوقی و نمونه‌ای ارزشمند از آجرکاری و گچ‌بری ایرانی است. شیر سنگی نیز از یادمان‌های شناخته‌شده شهر است.</span>
+<span class="en">The Alavian Dome is a notable Seljuk monument and an example of Iranian brickwork and stucco. The Stone Lion is another well-known city landmark.</span>
+</p>
+
+<h3><span class="fa">الوند و غار علیصدر</span><span class="en">Mount Alvand and Ali-Sadr Cave</span></h3>
+<p>
+<span class="fa">کوهستان الوند و چشم‌اندازهای اطراف آن هویت طبیعی همدان را شکل می‌دهند؛ غار آبی علیصدر نیز از جاذبه‌های شناخته‌شده استان است.</span>
+<span class="en">Mount Alvand and its landscapes shape Hamedan's natural identity; Ali-Sadr water cave is another major attraction.</span>
+</p>
+</section>
+
+<section id="food">
+<h2>
+<span class="fa">۵. طعم‌های اصیل همدان</span>
+<span class="en">5. The Flavors of Hamedan</span>
+</h2>
+
+<p>
+<span class="fa">سفره همدان از غذاهای گرم و محلی تا شیرینی‌های سنتی تنوع دارد. نام و دستور پخت بعضی خوراک‌ها در شهرستان‌ها و خانواده‌های مختلف تفاوت می‌کند.</span>
+<span class="en">Hamedan's food culture ranges from hearty regional dishes to traditional sweets. Names and recipes may vary between districts and families.</span>
+</p>
+
+<div class="grid">
+
+<article class="tile">
+<h3><span class="fa">سرداشی</span><span class="en">Sardashi</span></h3>
+<p>
+<span class="fa">از غذاهای شناخته‌شده همدان که با گوشت و سبزیجات تهیه و در ظرفی مخصوص در تنور یا فر پخته می‌شود.</span>
+<span class="en">A well-known Hamedan dish made with meat and vegetables and baked in a special dish.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">آش خشکبار</span><span class="en">Dried-Fruit Ash</span></h3>
+<p>
+<span class="fa">آشی محلی با ترکیبی از حبوبات، میوه‌های خشک و چاشنی‌های ترش که در معرفی خوراک‌های سنتی همدان آمده است.</span>
+<span class="en">A regional soup combining legumes, dried fruits, and sour seasonings.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">آش کلم‌قمری تویسرکان</span><span class="en">Tuyserkan Kohlrabi Ash</span></h3>
+<p>
+<span class="fa">خوراک محلی معرفی‌شده برای تویسرکان که کلم‌قمری در آن نقش اصلی دارد.</span>
+<span class="en">A local Tuyserkan dish in which kohlrabi is a key ingredient.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">حلوا زرده و انگشت‌پیچ</span><span class="en">Halva Zardeh and Angosht-Pich</span></h3>
+<p>
+<span class="fa">دو شیرینی شناخته‌شده همدان که در فهرست سوغات خوراکی استان آمده‌اند.</span>
+<span class="en">Two well-known Hamedan sweets listed among the province's edible souvenirs.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">کماج و نان چای</span><span class="en">Komaj and Naan-e Chay</span></h3>
+<p>
+<span class="fa">نان‌ها و شیرینی‌های سنتی که در کنار انگشت‌پیچ و دیگر سوغات شیرین، بخشی از خوراکی‌های استان‌اند.</span>
+<span class="en">Traditional breads and sweets sold alongside Angosht-Pich and other local confectionery.</span>
+</p>
+</article>
+
+</div>
+</section>
+
+<section id="products">
+<h2>
+<span class="fa">۶. محصولات محلی و هنرهای دستی</span>
+<span class="en">6. Local Products and Handicrafts</span>
+</h2>
+
+<div class="grid">
+
+<article class="tile">
+<h3><span class="fa">لالجین؛ سفال و سرامیک</span><span class="en">Lalejin: Pottery and Ceramics</span></h3>
+<p>
+<span class="fa">لالجین یکی از مهم‌ترین مراکز سفالگری ایران است. سفالینه‌های آن با فرم‌های کاربردی و لعاب‌های رنگی، از جمله فیروزه‌ای، شناخته می‌شوند.</span>
+<span class="en">Lalejin is a major pottery center, known for functional forms and colored glazes including turquoise.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">ملایر؛ گیوه آجیده و منبت</span><span class="en">Malayer: Ajideh Giveh and Woodcarving</span></h3>
+<p>
+<span class="fa">گیوه آجیده را به‌عنوان پای‌افزار دست‌ساز منطقه معرفی می‌کنیم. منبت‌کاری و صنایع چوبی ملایر نیز از هنرهای شناخته‌شده این شهرستان‌اند.</span>
+<span class="en">Ajideh giveh is presented as handmade regional footwear. Malayer is also known for woodcarving and wooden crafts.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">نهاوند؛ گلیم</span><span class="en">Nahavand: Kilim</span></h3>
+<p>
+<span class="fa">گلیم نهاوند از دست‌بافته‌های معرفی‌شده استان است و در کنار فرش و دیگر بافته‌های محلی جای می‌گیرد.</span>
+<span class="en">Nahavand kilim is among the province's noted woven crafts.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">تویسرکان؛ گردو</span><span class="en">Tuyserkan: Walnuts</span></h3>
+<p>
+<span class="fa">گردوی تویسرکان از محصولات کشاورزی شناخته‌شده استان است و پیوند باغداری و اقتصاد محلی را نشان می‌دهد.</span>
+<span class="en">Tuyserkan walnuts are a well-known agricultural product of the province.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">ملایر؛ انگور و شیره انگور</span><span class="en">Malayer: Grapes and Grape Syrup</span></h3>
+<p>
+<span class="fa">انگور، کشمش و شیره انگور از محصولات کشاورزی و خوراکی شناخته‌شده بخش‌هایی از استان، به‌ویژه ملایر، هستند.</span>
+<span class="en">Grapes, raisins, and grape syrup are well-known products in parts of the province, especially Malayer.</span>
+</p>
+</article>
+
+<article class="tile">
+<h3><span class="fa">چرم و صنایع چوبی</span><span class="en">Leather and Woodcraft</span></h3>
+<p>
+<span class="fa">چرم‌کاری، نمدمالی، خراطی و منبت از دیگر هنرهای دستی معرفی‌شده در استان همدان‌اند.</span>
+<span class="en">Leatherworking, felt-making, woodturning, and woodcarving are among Hamedan's other handicrafts.</span>
+</p>
+</article>
+
+</div>
+</section>
+
+<section id="sources">
+<h2>
+<span class="fa">۷. منابع و مطالعه بیشتر</span>
+<span class="en">7. Sources and Further Reading</span>
+</h2>
+
+<p>
+<span class="fa">برای تدوین این صفحه از منابع فارسی و انگلیسی استفاده شده است. منابع پوشاک، گردشگری، صنایع‌دستی و میراث تاریخی جداگانه انتخاب شده‌اند.</span>
+<span class="en">This page draws on Persian- and English-language sources covering clothing, tourism, handicrafts, and historical heritage.</span>
+</p>
+
+<h3><span class="fa">منابع ایرانی و فارسی</span><span class="en">Iranian and Persian-Language Sources</span></h3>
+
+<ul class="source-list">
+<li>
+<a href="https://www.discover-iran.com/fa/provinces/hamadan" target="_blank" rel="noopener">Discover Iran – همدان</a>
+<span class="fa"> — خوراک محلی، سفال لالجین، منبت ملایر، گلیم نهاوند و جاذبه‌های استان.</span>
+<span class="en"> — Local cuisine, Lalejin pottery, Malayer woodcarving, Nahavand kilim, and attractions.</span>
+</li>
+
+<li>
+<a href="https://miras.iranhc.org/heritage/گنبد-علویان-33" target="_blank" rel="noopener">یگان میراث ایران – گنبد علویان</a>
+<span class="fa"> — معرفی تاریخی و معماری گنبد علویان.</span>
+<span class="en"> — Historical and architectural information about Alavian Dome.</span>
+</li>
+
+<li>
+<a href="https://www.tasnimnews.ir/fa/news/1393/12/13/675108/" target="_blank" rel="noopener">خبرگزاری تسنیم – جاذبه‌های گردشگری همدان</a>
+<span class="fa"> — آثار تاریخی، جاذبه‌های طبیعی، خوراک و صنایع‌دستی استان.</span>
+<span class="en"> — Historic sites, natural attractions, food, and handicrafts.</span>
+</li>
+</ul>
+
+<h3><span class="fa">منابع انگلیسی و بین‌المللی</span><span class="en">English and International Sources</span></h3>
+
+<ul class="source-list">
+<li>
+<a href="https://visitiran.ir/costume/traditional-clothes-hamedan-province" target="_blank" rel="noopener">Visit Iran – Traditional Clothes of Hamedan Province</a>
+<span class="fa"> — منبع مستقیم برای اجزای پوشاک سنتی زنان و تنوع فرهنگی استان.</span>
+<span class="en"> — Women's traditional clothing and the province's cultural diversity.</span>
+</li>
+
+<li>
+<a href="https://visitiran.ir/province/hamedan-province" target="_blank" rel="noopener">Visit Iran – Hamedan Province</a>
+<span class="fa"> — خوراک‌ها، سوغات، صنایع‌دستی و آداب محلی.</span>
+<span class="en"> — Cuisine, souvenirs, handicrafts, and local customs.</span>
+</li>
+
+<li>
+<a href="https://en.icro.ir/Drawing-and-visualization/Iranian-Pottery-and-Ceramics%3A-A-Cohesive-Union-of-Art-and-Craft" target="_blank" rel="noopener">Islamic Culture and Relations Organization – Iranian Pottery and Ceramics</a>
+<span class="fa"> — معرفی لالجین به‌عنوان یکی از مراکز مهم سفالگری ایران.</span>
+<span class="en"> — Lalejin as one of Iran's major pottery centers.</span>
+</li>
+
+<li>
+<a href="https://www.unesco.org/archives/multimedia/document-6874" target="_blank" rel="noopener">UNESCO – Hegmataneh and Historical Centre of Hamedan</a>
+<span class="fa"> — پیشینه باستانی هگمتانه و ثبت جهانی ۲۰۲۴.</span>
+<span class="en"> — Ancient Hegmataneh and the 2024 World Heritage inscription.</span>
+</li>
+</ul>
+
+<p class="small">
+<span class="fa">یادداشت پژوهشی: منابع گردشگری برای معرفی عمومی مناسب‌اند؛ برای ثبت قطعی پوشش یک روستا یا شیوه خاص دوخت، عکس مستند، پژوهش مردم‌شناختی یا تأیید میراث فرهنگی همان منطقه لازم است.</span>
+<span class="en">Research note: Confirming a specific village costume or sewing tradition requires documentary photographs, ethnographic research, or local heritage confirmation.</span>
+</p>
+</section>
+
+<a class="back" href="index.html">
+<span class="fa">← بازگشت به گالری «ایران، هزار رنگ»</span>
+<span class="en">← Back to the “Iran, A Thousand Colors” gallery</span>
+</a>
+
+</main>
+
+<footer>
+<p><strong><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span></strong></p>
+<p><span class="fa">روایت تصویری پوشش زنان ایران</span><span class="en">A visual story of women's dress in Iran</span></p>
+<p><span class="fa">همدان؛ اصالت در نقش، گرما در پوشش</span><span class="en">Hamedan: Heritage in Every Pattern, Warmth in Every Layer</span></p>
+<p class="small"><span class="fa">این صفحه بخشی از گالری آنلاین مجموعه است.</span><span class="en">This page is part of the collection's online gallery.</span></p>
+</footer>
+
+<script>
+(() => {
+ const button=document.getElementById('langSwitch');
+ const saved=localStorage.getItem('iranHezarRangLanguage');
+
+ function setLanguage(language){
+  const english=language==='en';
+  document.body.classList.toggle('english',english);
+  document.documentElement.lang=english?'en':'fa';
+  document.documentElement.dir=english?'ltr':'rtl';
+  button.textContent=english?'فارسی':'English';
+  button.setAttribute('aria-label',english?'Switch to Persian':'Switch to English');
+  localStorage.setItem('iranHezarRangLanguage',language);
+ }
+
+ setLanguage(saved==='en'?'en':'fa');
+
+ button.addEventListener('click',()=>{
+  setLanguage(document.body.classList.contains('english')?'fa':'en');
+ });
+})();
+</script>
+
+</body>
+</html>
