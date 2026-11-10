@@ -4,627 +4,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f4e6cc">
-<meta name="description" content="ایران، هزار رنگ؛ روایت تصویری پوشش زنان ایران">
+
 <title>ایران، هزار رنگ | نمایشگاه هنری</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-:root {
-  --paper: #f5e7ce;
-  --cream: #fff5e3;
-  --green: #104b45;
-  --rust: #a83b19;
-  --gold: #c18a38;
-  --ink: #30271e;
-}
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: #f5e7ce;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  color: var(--ink);
-  font-family: 'Vazirmatn', Tahoma, sans-serif;
-
-  background:
-    radial-gradient(ellipse at 15% 15%, rgba(190,110,43,.12), transparent 35%),
-    radial-gradient(ellipse at 85% 65%, rgba(16,75,69,.09), transparent 40%),
-    repeating-linear-gradient(
-      0deg,
-      transparent 0 5px,
-      rgba(105,75,40,.025) 6px
-    ),
-    var(--paper);
+    font-family: Tahoma, Arial, sans-serif;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.homepage {
+    position: relative;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    line-height: 0;
 }
 
-/* HEADER */
-
-.topbar {
-  width: min(1450px, 94%);
-  min-height: 88px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(193,138,56,.55);
-  position: relative;
-  z-index: 5;
+.homepage img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--green);
-  font-size: 21px;
-  font-weight: 800;
+/* محدوده کلیک هر کارت */
+
+.hotspot {
+    position: absolute;
+    display: block;
+    z-index: 5;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background 0.2s ease;
 }
 
-.brand-mark {
-  color: var(--rust);
-  font-size: 34px;
+.hotspot:hover {
+    background: rgba(255,255,255,0.08);
 }
 
-.language {
-  border: 1px solid var(--gold);
-  color: var(--rust);
-  background: rgba(255,248,233,.8);
-  padding: 9px 18px;
-  border-radius: 22px;
-  font-family: inherit;
-  font-size: 14px;
-  cursor: pointer;
+.hotspot:focus-visible {
+    outline: 4px solid #a83b19;
+    outline-offset: 4px;
 }
 
-/* MAIN HERO */
+/* کارت اول: معرفی مناطق و آثار */
 
-.hero {
-  width: min(1450px, 96%);
-  margin: 0 auto;
-  min-height: 390px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 35px 20px 15px;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(248,232,202,.08),
-      rgba(248,232,202,.20)
-    );
+.regions {
+    left: 66.4%;
+    top: 49.8%;
+    width: 30.7%;
+    height: 31.2%;
 }
 
-/* Decorative background details */
+/* کارت دوم: گالری سه‌بعدی */
 
-.hero::before {
-  content: "✿";
-  position: absolute;
-  top: 5px;
-  left: 15px;
-  font-size: 85px;
-  color: rgba(168,59,25,.25);
-  pointer-events: none;
+.gallery3d {
+    left: 34.4%;
+    top: 49.8%;
+    width: 30.8%;
+    height: 31.2%;
 }
 
-.hero::after {
-  content: "❖";
-  position: absolute;
-  bottom: 5px;
-  right: 25px;
-  font-size: 45px;
-  color: rgba(193,138,56,.55);
-  pointer-events: none;
+/* کارت سوم: تصاویر نمایشگاه حضوری */
+
+.exhibition {
+    left: 3%;
+    top: 49.8%;
+    width: 30.8%;
+    height: 31.2%;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 850px;
-  margin: 0 auto;
-}
+/* نمایش در موبایل */
 
-.eyebrow {
-  color: var(--rust);
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
+@media (max-width: 700px) {
 
-h1 {
-  color: var(--green);
-  font-size: clamp(42px, 6vw, 76px);
-  line-height: 1.4;
-  margin: 0;
-  font-weight: 800;
-}
+    .hotspot {
+        border-radius: 3vw;
+    }
 
-h1 span {
-  color: var(--rust);
-}
-
-.subtitle {
-  font-size: clamp(17px, 2vw, 24px);
-  font-weight: 700;
-  margin: 0;
-  color: #28251e;
-}
-
-.english-title {
-  direction: ltr;
-  font: 20px Georgia, serif;
-  color: var(--green);
-  margin-top: 12px;
-}
-
-.ornament {
-  color: var(--gold);
-  font-size: 20px;
-  letter-spacing: 8px;
-  margin: 12px 0;
-}
-
-.intro {
-  max-width: 680px;
-  margin: 10px auto 0;
-  font-size: 14px;
-  line-height: 2.2;
-  color: #625747;
-}
-
-/* THREE CARDS */
-
-.choices {
-  width: min(1450px, 94%);
-  margin: -8px auto 0;
-  position: relative;
-  z-index: 3;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.card {
-  min-height: 260px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: stretch;
-  background: var(--cream);
-  border: 2px solid rgba(193,138,56,.85);
-  border-radius: 25px;
-  box-shadow:
-    0 8px 18px rgba(70,45,20,.16),
-    inset 0 0 0 3px rgba(255,255,255,.55);
-  transition: transform .25s, box-shadow .25s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 28px rgba(70,45,20,.22);
-}
-
-.card-image {
-  width: 48%;
-  min-height: 258px;
-  flex-shrink: 0;
-  background-size: cover;
-  background-position: center;
-  border-left: 1px solid rgba(193,138,56,.6);
-}
-
-.card-content {
-  flex: 1;
-  padding: 22px 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.card h2 {
-  color: var(--green);
-  font-size: clamp(16px, 1.5vw, 21px);
-  line-height: 1.8;
-  margin: 0 0 5px;
-}
-
-.card .en {
-  direction: ltr;
-  font: 15px Georgia, serif;
-  color: #75664e;
-  margin-bottom: 9px;
-}
-
-.card p {
-  font-size: 12px;
-  line-height: 2;
-  color: #665b49;
-  margin: 3px 0 12px;
-}
-
-.enter {
-  margin-top: auto;
-  width: 45px;
-  height: 45px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  color: white;
-  background: var(--rust);
-  font-size: 25px;
-  box-shadow: 0 4px 8px rgba(80,35,15,.2);
-  transition: transform .2s, background .2s;
-}
-
-.card:hover .enter {
-  transform: translateX(-4px);
-  background: #853015;
-}
-
-/* CARD IMAGE FILES */
-
-.regions-image {
-  background-image: url("region-card.jpg");
-}
-
-.gallery-image {
-  background-image: url("3d-gallery-card.jpg");
-}
-
-.exhibition-image {
-  background-image: url("exhibition-card.jpg");
-}
-
-/* FOOTER */
-
-.footer {
-  width: min(900px, 90%);
-  margin: 25px auto 0;
-  padding: 18px 10px 25px;
-  text-align: center;
-  color: var(--green);
-  font-size: 13px;
-}
-
-.footer-ornament {
-  color: var(--gold);
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-
-.footer-line {
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--gold),
-    transparent
-  );
-  margin-bottom: 14px;
-}
-
-.footer-names {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
-}
-
-.footer-names span {
-  color: var(--ink);
-}
-
-/* ENGLISH MODE */
-
-.en-text {
-  display: none;
-}
-
-body.english-mode {
-  direction: ltr;
-}
-
-body.english-mode .fa-text {
-  display: none !important;
-}
-
-body.english-mode .en-text {
-  display: block !important;
-}
-
-body.english-mode .brand {
-  direction: ltr;
-}
-
-body.english-mode .card {
-  direction: ltr;
-}
-
-body.english-mode .card-image {
-  border-left: none;
-  border-right: 1px solid rgba(193,138,56,.6);
-}
-
-body.english-mode .card-content {
-  direction: ltr;
-}
-
-body.english-mode .footer-names {
-  direction: ltr;
-}
-
-/* MOBILE */
-
-@media (max-width: 900px) {
-  .hero {
-    min-height: 340px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-    max-width: 600px;
-    margin: auto;
-  }
-
-  .card {
-    min-height: 220px;
-  }
-
-  .card-image {
-    min-height: 220px;
-  }
-
-  .choices {
-    margin-top: 5px;
-  }
-
-  .footer {
-    margin-top: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .topbar {
-    min-height: 70px;
-  }
-
-  .brand {
-    font-size: 17px;
-  }
-
-  .hero {
-    min-height: 310px;
-    padding: 30px 12px;
-  }
-
-  .intro {
-    font-size: 12px;
-  }
-
-  .card {
-    min-height: 190px;
-  }
-
-  .card-image {
-    min-height: 190px;
-    width: 43%;
-  }
-
-  .card-content {
-    padding: 12px 8px;
-  }
-
-  .card h2 {
-    font-size: 16px;
-  }
-
-  .card p {
-    font-size: 11px;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="topbar">
-  <a class="brand" href="index.html">
-    <span class="brand-mark">✿</span>
-    <span class="fa-text">ایران، هزار رنگ</span>
-    <span class="en-text">IRAN, A THOUSAND COLORS</span>
-  </a>
+<main class="homepage">
 
-  <button class="language" id="languageBtn" type="button">
-    FA | EN
-  </button>
-</header>
+    <!-- تصویر اصلی طراحی‌شده -->
 
-<main>
+    <img
+        src="homepage-design.png"
+        alt="ایران، هزار رنگ؛ روایت تصویری پوشش زنان ایران"
+    >
 
-  <section class="hero">
-    <div class="hero-content">
+    <!-- گزینه اول -->
 
-      <div class="eyebrow fa-text">
-        به جهان رنگارنگ فرهنگ ایران خوش آمدید
-      </div>
+    <a
+        class="hotspot regions"
+        href="regions.html"
+        aria-label="معرفی مناطق و آثار"
+        title="معرفی مناطق و آثار">
+    </a>
 
-      <div class="eyebrow en-text">
-        WELCOME TO THE COLORS OF IRANIAN CULTURE
-      </div>
+    <!-- گزینه دوم -->
 
-      <h1 class="fa-text">
-        <span>ایران،</span> هزار رنگ
-      </h1>
+    <a
+        class="hotspot gallery3d"
+        href="3d-gallery.html"
+        aria-label="گالری سه‌بعدی"
+        title="گالری سه‌بعدی">
+    </a>
 
-      <h1 class="en-text">
-        IRAN, A THOUSAND COLORS
-      </h1>
+    <!-- گزینه سوم -->
 
-      <p class="subtitle fa-text">
-        روایت تصویری پوشش زنان ایران
-      </p>
-
-      <p class="subtitle en-text">
-        A Visual Journey Through Iranian Women's Dress
-      </p>
-
-      <div class="english-title en-text">
-        Iran, A Thousand Colors
-      </div>
-
-      <div class="ornament">─── ❖ ✿ ❖ ───</div>
-
-      <p class="intro fa-text">
-        هر لباس، روایتی از یک سرزمین؛ هر نقش، نشانی از حافظه و فرهنگ مردمان ایران.
-        شما را به سفری میان رنگ‌ها، جغرافیا، هنر و آیین‌های سرزمین ایران دعوت می‌کنیم.
-      </p>
-
-      <p class="intro en-text">
-        Every garment tells a story of a land. Discover the colors, geography,
-        art and traditions that shape the cultural identity of Iran.
-      </p>
-
-    </div>
-  </section>
-
-  <section class="choices">
-
-    <div class="cards">
-
-      <!-- OPTION 1 -->
-      <a class="card" href="regions.html">
-
-        <div class="card-image regions-image"></div>
-
-        <div class="card-content">
-
-          <h2 class="fa-text">معرفی مناطق و آثار</h2>
-          <h2 class="en-text">Regions & Artworks</h2>
-
-          <div class="en">Explore the Regions</div>
-
-          <p class="fa-text">
-            آشنایی با پوشش، فرهنگ و روایت تصویری مناطق ایران
-          </p>
-
-          <p class="en-text">
-            Discover the traditional dress, culture and stories of Iran's regions.
-          </p>
-
-          <span class="enter">←</span>
-
-        </div>
-      </a>
-
-      <!-- OPTION 2 -->
-      <a class="card" href="3d-gallery.html">
-
-        <div class="card-image gallery-image"></div>
-
-        <div class="card-content">
-
-          <h2 class="fa-text">گالری سه‌بعدی</h2>
-          <h2 class="en-text">3D Gallery</h2>
-
-          <div class="en">An Immersive Journey</div>
-
-          <p class="fa-text">
-            سفر از کرهٔ زمین تا ایران و ورود به فضای نمایشگاه
-          </p>
-
-          <p class="en-text">
-            An interactive journey from Earth to Iran and into the exhibition.
-          </p>
-
-          <span class="enter">←</span>
-
-        </div>
-      </a>
-
-      <!-- OPTION 3 -->
-      <a class="card" href="exhibition-photos.html">
-
-        <div class="card-image exhibition-image"></div>
-
-        <div class="card-content">
-
-          <h2 class="fa-text">تصاویر نمایشگاه حضوری</h2>
-          <h2 class="en-text">Exhibition Photos</h2>
-
-          <div class="en">Physical Exhibition</div>
-
-          <p class="fa-text">
-            تماشای عکس‌های فضا، آثار و لحظه‌های نمایشگاه
-          </p>
-
-          <p class="en-text">
-            Explore photos of the venue, artworks and exhibition moments.
-          </p>
-
-          <span class="enter">←</span>
-
-        </div>
-      </a>
-
-    </div>
-  </section>
+    <a
+        class="hotspot exhibition"
+        href="exhibition-photos.html"
+        aria-label="تصاویر نمایشگاه حضوری"
+        title="تصاویر نمایشگاه حضوری">
+    </a>
 
 </main>
-
-<footer class="footer">
-
-  <div class="footer-ornament">✿</div>
-  <div class="footer-line"></div>
-
-  <div class="footer-names fa-text">
-    <span>هنرمند: مریم ساعی</span>
-    <span>|</span>
-    <span>طراحی سایت و پژوهش: مرجان ساعی</span>
-  </div>
-
-  <div class="footer-names en-text">
-    <span>Artist: Maryam Saei</span>
-    <span>|</span>
-    <span>Website Design & Research: Marjan Saei</span>
-  </div>
-
-</footer>
-
-<script>
-const languageBtn = document.getElementById("languageBtn");
-
-languageBtn.addEventListener("click", function () {
-
-  const english = document.body.classList.toggle("english-mode");
-
-  document.documentElement.lang = english ? "en" : "fa";
-  document.documentElement.dir = english ? "ltr" : "rtl";
-
-  languageBtn.textContent = english ? "EN | FA" : "FA | EN";
-
-});
-</script>
 
 </body>
 </html>
