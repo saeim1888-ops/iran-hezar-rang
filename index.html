@@ -21,9 +21,7 @@
       --ink: #392e24;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       min-height: 100%;
@@ -45,9 +43,7 @@
       text-decoration: none;
     }
 
-    button {
-      font-family: inherit;
-    }
+    button { font-family: inherit; }
 
     .stage {
       position: relative;
@@ -62,7 +58,6 @@
       overflow: hidden;
     }
 
-    /* تصویر ثابت جایگزین */
     .bg-fallback,
     .bg-video {
       position: absolute;
@@ -74,20 +69,15 @@
       pointer-events: none;
     }
 
-    .bg-fallback {
-      z-index: -3;
-    }
+    .bg-fallback { z-index: -3; }
 
-    /* ویدئوی گل‌ها */
     .bg-video {
       z-index: -2;
       opacity: 0;
       transition: opacity 1.5s ease;
     }
 
-    .bg-video.is-playing {
-      opacity: 1;
-    }
+    .bg-video.is-playing { opacity: 1; }
 
     .wash {
       position: absolute;
@@ -102,7 +92,6 @@
       pointer-events: none;
     }
 
-    /* دکمه تغییر زبان */
     .language {
       position: absolute;
       top: max(18px, env(safe-area-inset-top));
@@ -118,11 +107,8 @@
       transition: background .2s ease;
     }
 
-    .language:hover {
-      background: #fffaf0;
-    }
+    .language:hover { background: #fffaf0; }
 
-    /* محتوای اصلی */
     .content {
       position: relative;
       z-index: 1;
@@ -159,90 +145,113 @@
       text-shadow: 0 1px 10px rgba(255,248,225,.98);
     }
 
-    /* سه کارت اصلی */
+    /* سه کارت تصویری */
     .cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(12px, 2vw, 22px);
-      width: min(100%, 900px);
+      gap: clamp(12px, 1.5vw, 22px);
+      width: min(100%, 1120px);
       margin: 0 auto;
     }
 
     .card {
       position: relative;
-      min-height: 190px;
-      padding: 20px 15px 17px;
-      background: linear-gradient(
-        145deg,
-        rgba(255,250,236,.95),
-        rgba(242,226,196,.92)
-      );
-      border: 1px solid #a87938;
-      box-shadow:
-        0 8px 22px rgba(62,43,22,.17),
-        inset 0 0 0 4px rgba(199,154,74,.13);
-      color: var(--deep);
+      min-height: 230px;
+      direction: ltr;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      align-items: stretch;
       overflow: hidden;
+      padding: 0;
+      color: var(--deep);
+      text-decoration: none;
+      background: linear-gradient(145deg, #fff4df, #f2e2c4);
+      border: 1px solid #a87938;
+      border-radius: 22px;
+      box-shadow:
+        0 8px 22px rgba(62,43,22,.2),
+        inset 0 0 0 4px rgba(199,154,74,.13);
       transition: transform .3s ease, box-shadow .3s ease;
       animation: cardRise .8s ease both;
       -webkit-tap-highlight-color: transparent;
     }
 
-    .card:nth-child(2) {
-      animation-delay: .12s;
-    }
-
-    .card:nth-child(3) {
-      animation-delay: .24s;
-    }
+    .card:nth-child(2) { animation-delay: .12s; }
+    .card:nth-child(3) { animation-delay: .24s; }
 
     .card::before {
       content: "";
       position: absolute;
-      inset: 7px;
-      border: 1px solid rgba(168,121,56,.42);
+      inset: 6px;
+      border: 1px solid rgba(168,121,56,.48);
+      border-radius: 16px;
       pointer-events: none;
+      z-index: 2;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 14px 26px rgba(62,43,22,.22);
+      box-shadow: 0 15px 30px rgba(62,43,22,.25);
     }
 
-    .card:active {
-      transform: scale(.985);
+    .card:active { transform: scale(.985); }
+
+    .card-image {
+      display: block;
+      width: 48%;
+      min-width: 0;
+      object-fit: cover;
+      object-position: center;
+      align-self: stretch;
     }
 
-    .symbol {
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: #9b4a2a;
-      background: radial-gradient(circle, #fff7e5, #e8d4aa);
-      border: 1px solid #bd914d;
-      font-size: 27px;
-      margin-bottom: 10px;
+    .card-copy {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      min-width: 0;
+      direction: rtl;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 22px 12px;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(199,154,74,.14), transparent 35%),
+        linear-gradient(145deg, rgba(255,247,229,.98), rgba(246,226,190,.97));
     }
 
-    .card strong {
-      font-size: clamp(15px, 1.65vw, 19px);
-      font-weight: 700;
+    html[dir="ltr"] .card-copy { direction: ltr; }
+
+    .card-copy strong {
+      font-size: clamp(15px, 1.55vw, 20px);
+      line-height: 1.8;
+      font-weight: 800;
     }
 
-    .card small {
-      font-size: 12px;
+    .card-copy small {
+      font-size: clamp(10px, .95vw, 12px);
       line-height: 1.8;
       color: #6c604b;
       margin-top: 5px;
     }
 
-    /* امضا و اعتبار هنرمند و طراح */
+    .card-arrow {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-top: 13px;
+      border-radius: 50%;
+      color: #fff8e9;
+      background: #b83e1b;
+      border: 1px solid #e1b46c;
+      box-shadow: 0 3px 7px rgba(86,35,15,.22);
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    /* اعتبار هنرمند و طراح */
     .credit {
       position: absolute;
       bottom: max(14px, env(safe-area-inset-bottom));
@@ -278,16 +287,10 @@
     }
 
     /* نشانگر قرمز موس */
-    .cursor-dot {
-      display: none;
-    }
+    .cursor-dot { display: none; }
 
     @media (pointer: fine) {
-      body,
-      a,
-      button {
-        cursor: none;
-      }
+      body, a, button { cursor: none; }
 
       .cursor-dot {
         display: block;
@@ -318,51 +321,50 @@
       }
     }
 
-    /* تنظیمات موبایل */
+    /* نمایش موبایل */
     @media (max-width: 700px) {
       .stage {
         justify-content: flex-start;
         padding: clamp(86px,10vh,116px) 16px 145px;
       }
 
-      .content {
-        margin: 0 auto;
-      }
+      .content { margin: 0 auto; }
 
-      .subtitle {
-        margin-bottom: 20px;
-      }
+      .subtitle { margin-bottom: 20px; }
 
       .cards {
         grid-template-columns: 1fr;
-        max-width: 440px;
-        gap: 11px;
+        width: min(100%, 460px);
+        gap: 12px;
       }
 
       .card {
-        min-height: 116px;
-        display: grid;
-        grid-template-columns: 62px 1fr;
-        grid-template-rows: auto auto;
-        column-gap: 12px;
-        text-align: right;
-        padding: 12px 18px;
+        min-height: 132px;
+        border-radius: 17px;
       }
 
-      .symbol {
-        grid-row: 1 / 3;
-        width: 52px;
-        height: 52px;
-        margin: 0;
+      .card-image {
+        width: 42%;
+        min-height: 132px;
       }
 
-      .card strong {
-        align-self: end;
+      .card-copy { padding: 14px 10px; }
+
+      .card-copy strong {
+        font-size: 15px;
+        line-height: 1.7;
       }
 
-      .card small {
-        align-self: start;
-        font-size: 11px;
+      .card-copy small {
+        font-size: 10px;
+        line-height: 1.7;
+      }
+
+      .card-arrow {
+        width: 32px;
+        height: 32px;
+        margin-top: 7px;
+        font-size: 19px;
       }
 
       .language {
@@ -382,24 +384,15 @@
     }
 
     @media (max-width: 380px) {
-      h1 {
-        font-size: 38px;
-      }
+      h1 { font-size: 38px; }
 
-      .stage {
-        padding-inline: 12px;
-      }
+      .stage { padding-inline: 12px; }
 
-      .card {
-        min-height: 108px;
-      }
+      .card { min-height: 108px; }
 
-      .credit-item {
-        font-size: 9px;
-      }
+      .credit-item { font-size: 9px; }
     }
 
-    /* احترام به تنظیم کاهش حرکت دستگاه */
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -408,9 +401,7 @@
         transition-duration: .01ms !important;
       }
 
-      .bg-video {
-        display: none !important;
-      }
+      .bg-video { display: none !important; }
     }
 
     @keyframes riseIn {
@@ -443,14 +434,12 @@
 
   <main class="stage">
 
-    <!-- تصویر ثابت جایگزین ویدئو -->
     <img
       class="bg-fallback"
       src="assets/flowers-poster.png"
       alt=""
     >
 
-    <!-- ویدئوی پس‌زمینه گل‌ها -->
     <video
       class="bg-video"
       muted
@@ -469,7 +458,6 @@
 
     <div class="wash"></div>
 
-    <!-- تغییر زبان -->
     <button
       class="language"
       id="languageToggle"
@@ -505,73 +493,78 @@
 
       <nav class="cards" aria-label="بخش‌های نمایشگاه">
 
-        <!-- کارت اول: معرفی مناطق و آثار -->
         <a class="card" href="regions.html">
-
-          <span class="symbol" aria-hidden="true">⌘</span>
-
-          <strong
-            data-fa="معرفی مناطق و آثار"
-            data-en="Regions & Artworks"
+          <img
+            class="card-image"
+            src="assets/card-regions.png"
+            alt="پوشش سنتی زنان ایران"
           >
-            معرفی مناطق و آثار
-          </strong>
-
-          <small
-            data-fa="آشنایی با پوشش و فرهنگ بومی ایران"
-            data-en="Explore regional dress and culture"
-          >
-            آشنایی با پوشش و فرهنگ بومی ایران
-          </small>
-
+          <span class="card-copy">
+            <strong
+              data-fa="معرفی مناطق و آثار"
+              data-en="Regions & Artworks"
+            >
+              معرفی مناطق و آثار
+            </strong>
+            <small
+              data-fa="آشنایی با پوشش و فرهنگ بومی ایران"
+              data-en="Explore regional dress and culture"
+            >
+              آشنایی با پوشش و فرهنگ بومی ایران
+            </small>
+            <span class="card-arrow" aria-hidden="true">←</span>
+          </span>
         </a>
 
-        <!-- کارت دوم: گالری سه‌بعدی -->
         <a class="card" href="gallery-3d.html">
-
-          <span class="symbol" aria-hidden="true">◇</span>
-
-          <strong
-            data-fa="گالری سه‌بعدی"
-            data-en="3D Gallery"
+          <img
+            class="card-image"
+            src="assets/card-3d-gallery.png"
+            alt="نقشه تصویری ایران و بناهای تاریخی"
           >
-            گالری سه‌بعدی
-          </strong>
-
-          <small
-            data-fa="قدم‌زدن در فضای مجازی نمایشگاه"
-            data-en="Explore the virtual exhibition"
-          >
-            قدم‌زدن در فضای مجازی نمایشگاه
-          </small>
-
+          <span class="card-copy">
+            <strong
+              data-fa="گالری سه‌بعدی"
+              data-en="3D Gallery"
+            >
+              گالری سه‌بعدی
+            </strong>
+            <small
+              data-fa="سفر مجازی در فضای نمایشگاه"
+              data-en="Explore the virtual exhibition"
+            >
+              سفر مجازی در فضای نمایشگاه
+            </small>
+            <span class="card-arrow" aria-hidden="true">←</span>
+          </span>
         </a>
 
-        <!-- کارت سوم: تصاویر نمایشگاه حضوری -->
         <a class="card" href="exhibition-photos.html">
-
-          <span class="symbol" aria-hidden="true">▧</span>
-
-          <strong
-            data-fa="تصاویر نمایشگاه حضوری"
-            data-en="In-person Exhibition"
+          <img
+            class="card-image"
+            src="assets/card-exhibition-photos.png"
+            alt="فضای نمایش آثار در نمایشگاه حضوری"
           >
-            تصاویر نمایشگاه حضوری
-          </strong>
-
-          <small
-            data-fa="لحظه‌هایی از برگزاری نمایشگاه"
-            data-en="Moments from the physical exhibition"
-          >
-            لحظه‌هایی از برگزاری نمایشگاه
-          </small>
-
+          <span class="card-copy">
+            <strong
+              data-fa="تصاویر نمایشگاه حضوری"
+              data-en="Exhibition Photos"
+            >
+              تصاویر نمایشگاه حضوری
+            </strong>
+            <small
+              data-fa="لحظه‌هایی از برگزاری نمایشگاه"
+              data-en="Moments from the physical exhibition"
+            >
+              لحظه‌هایی از برگزاری نمایشگاه
+            </small>
+            <span class="card-arrow" aria-hidden="true">←</span>
+          </span>
         </a>
 
       </nav>
     </section>
 
-    <!-- معرفی هنرمند و طراح -->
     <footer class="credit">
 
       <div class="credit-item">
@@ -615,7 +608,6 @@
 
       let english = false;
 
-      /* تغییر زبان فارسی و انگلیسی */
       languageButton.addEventListener("click", () => {
 
         english = !english;
@@ -635,7 +627,6 @@
 
       });
 
-      /* نشانگر قرمز مخصوص موس کامپیوتر */
       const cursor =
         document.querySelector(".cursor-dot");
 
@@ -676,7 +667,6 @@
 
       }
 
-      /* کنترل و کاهش سرعت ویدئوی گل‌ها */
       const video =
         document.querySelector(".bg-video");
 
@@ -696,7 +686,6 @@
           video.style.display = "none";
         });
 
-        /* اگر پخش خودکار مجاز نبود، تصویر ثابت باقی بماند */
         const playPromise = video.play();
 
         if (playPromise !== undefined) {
