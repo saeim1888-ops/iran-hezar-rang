@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -46,6 +45,10 @@
       text-decoration: none;
     }
 
+    button {
+      font-family: inherit;
+    }
+
     .stage {
       position: relative;
       isolation: isolate;
@@ -59,6 +62,7 @@
       overflow: hidden;
     }
 
+    /* تصویر ثابت جایگزین */
     .bg-fallback,
     .bg-video {
       position: absolute;
@@ -67,18 +71,28 @@
       height: 100%;
       object-fit: cover;
       object-position: center center;
+      pointer-events: none;
+    }
+
+    .bg-fallback {
       z-index: -3;
     }
 
+    /* ویدئوی گل‌ها */
     .bg-video {
+      z-index: -2;
       opacity: 0;
-      animation: videoFade 1.2s ease-out .15s forwards;
+      transition: opacity 1.5s ease;
+    }
+
+    .bg-video.is-playing {
+      opacity: 1;
     }
 
     .wash {
       position: absolute;
       inset: 0;
-      z-index: -2;
+      z-index: -1;
       background: linear-gradient(
         180deg,
         rgba(255,247,230,.05),
@@ -88,16 +102,18 @@
       pointer-events: none;
     }
 
+    /* دکمه تغییر زبان */
     .language {
       position: absolute;
       top: max(18px, env(safe-area-inset-top));
       left: 22px;
       z-index: 5;
       border: 1px solid rgba(21,63,59,.5);
-      background: rgba(255,247,229,.9);
+      background: rgba(255,247,229,.92);
       color: var(--deep);
       padding: 8px 15px;
-      font: 600 13px "Vazirmatn", Tahoma, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
       cursor: pointer;
       transition: background .2s ease;
     }
@@ -106,11 +122,14 @@
       background: #fffaf0;
     }
 
+    /* محتوای اصلی */
     .content {
+      position: relative;
+      z-index: 1;
       width: min(100%, 980px);
       text-align: center;
       margin: auto;
-      animation: riseIn .9s ease-out both;
+      animation: riseIn 1s ease both;
     }
 
     .eyebrow {
@@ -140,6 +159,7 @@
       text-shadow: 0 1px 10px rgba(255,248,225,.98);
     }
 
+    /* سه کارت اصلی */
     .cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -167,8 +187,9 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      transition: transform .25s ease, box-shadow .25s ease;
-      animation: cardRise .75s ease both;
+      transition: transform .3s ease, box-shadow .3s ease;
+      animation: cardRise .8s ease both;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .card:nth-child(2) {
@@ -221,6 +242,7 @@
       margin-top: 5px;
     }
 
+    /* امضا و اعتبار هنرمند و طراح */
     .credit {
       position: absolute;
       bottom: max(14px, env(safe-area-inset-bottom));
@@ -234,21 +256,28 @@
       z-index: 2;
     }
 
-    .credit span {
-      background: rgba(16,54,49,.91);
-      border: 1px solid rgba(235,198,128,.85);
+    .credit-item {
+      background: rgba(16,54,49,.94);
+      border: 1px solid rgba(235,198,128,.9);
       padding: 7px 14px;
-      color: #fff4df;
+      color: #fff8e9;
       font-size: 12px;
-      line-height: 1.7;
+      line-height: 1.8;
       box-shadow: 0 3px 10px rgba(0,0,0,.18);
     }
 
-    .credit b {
+    .credit-label {
       color: #f6d58e;
       font-weight: 700;
     }
 
+    .credit-name {
+      color: #ffffff;
+      font-weight: 700;
+      text-shadow: 0 0 5px rgba(255,255,255,.2);
+    }
+
+    /* نشانگر قرمز موس */
     .cursor-dot {
       display: none;
     }
@@ -289,11 +318,11 @@
       }
     }
 
-    /* تنظیمات مخصوص موبایل */
+    /* تنظیمات موبایل */
     @media (max-width: 700px) {
       .stage {
         justify-content: flex-start;
-        padding: clamp(86px,10vh,116px) 16px 125px;
+        padding: clamp(86px,10vh,116px) 16px 145px;
       }
 
       .content {
@@ -346,7 +375,7 @@
         gap: 6px;
       }
 
-      .credit span {
+      .credit-item {
         font-size: 10px;
         padding: 5px 9px;
       }
@@ -365,11 +394,12 @@
         min-height: 108px;
       }
 
-      .credit span {
+      .credit-item {
         font-size: 9px;
       }
     }
 
+    /* احترام به تنظیم کاهش حرکت دستگاه */
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -379,14 +409,7 @@
       }
 
       .bg-video {
-        animation: none;
-        opacity: 1;
-      }
-    }
-
-    @keyframes videoFade {
-      to {
-        opacity: 1;
+        display: none !important;
       }
     }
 
@@ -427,12 +450,12 @@
       alt=""
     >
 
-    <!-- ویدئوی پس‌زمینه -->
+    <!-- ویدئوی پس‌زمینه گل‌ها -->
     <video
       class="bg-video"
-      autoplay
       muted
       loop
+      autoplay
       playsinline
       preload="none"
       poster="assets/flowers-poster.png"
@@ -482,8 +505,8 @@
 
       <nav class="cards" aria-label="بخش‌های نمایشگاه">
 
-        <!-- کارت اول: لینک فعلی قزوین حفظ شده -->
-        <a class="card" href="qazvin.html">
+        <!-- کارت اول: معرفی مناطق و آثار -->
+        <a class="card" href="regions.html">
 
           <span class="symbol" aria-hidden="true">⌘</span>
 
@@ -503,7 +526,7 @@
 
         </a>
 
-        <!-- کارت دوم: لینک گالری سه‌بعدی حفظ شده -->
+        <!-- کارت دوم: گالری سه‌بعدی -->
         <a class="card" href="gallery-3d.html">
 
           <span class="symbol" aria-hidden="true">◇</span>
@@ -524,7 +547,7 @@
 
         </a>
 
-        <!-- کارت سوم: نام فایل آلبوم را پیش از انتشار بررسی کن -->
+        <!-- کارت سوم: تصاویر نمایشگاه حضوری -->
         <a class="card" href="exhibition-photos.html">
 
           <span class="symbol" aria-hidden="true">▧</span>
@@ -551,25 +574,33 @@
     <!-- معرفی هنرمند و طراح -->
     <footer class="credit">
 
-      <span>
-        <b
+      <div class="credit-item">
+        <span
+          class="credit-label"
           data-fa="هنرمند و خالق آثار:"
           data-en="Artist & creator:"
         >
           هنرمند و خالق آثار:
-        </b>
-        مریم ساعی · Maryam Saei
-      </span>
+        </span>
 
-      <span>
-        <b
+        <span class="credit-name">
+          مریم ساعی · Maryam Saei
+        </span>
+      </div>
+
+      <div class="credit-item">
+        <span
+          class="credit-label"
           data-fa="طراحی سایت و پژوهش فرهنگی:"
           data-en="Website design & cultural research:"
         >
           طراحی سایت و پژوهش فرهنگی:
-        </b>
-        مرجان ساعی · Marjan Saei
-      </span>
+        </span>
+
+        <span class="credit-name">
+          مرجان ساعی · Marjan Saei
+        </span>
+      </div>
 
     </footer>
 
@@ -645,24 +676,37 @@
 
       }
 
-      /* کاهش سرعت حرکت گل‌ها */
+      /* کنترل و کاهش سرعت ویدئوی گل‌ها */
       const video =
         document.querySelector(".bg-video");
 
-      video.addEventListener(
-        "loadedmetadata",
-        () => {
-          video.playbackRate = 0.62;
-        }
-      );
+      if (video) {
 
-      /* اگر ویدئو پخش نشد، تصویر ثابت نمایش داده شود */
-      video.addEventListener(
-        "error",
-        () => {
+        video.addEventListener("loadedmetadata", () => {
+          video.playbackRate = 0.55;
+        });
+
+        video.addEventListener("play", () => {
+          video.playbackRate = 0.55;
+          video.classList.add("is-playing");
+        });
+
+        video.addEventListener("error", () => {
+          video.classList.remove("is-playing");
           video.style.display = "none";
+        });
+
+        /* اگر پخش خودکار مجاز نبود، تصویر ثابت باقی بماند */
+        const playPromise = video.play();
+
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            video.classList.remove("is-playing");
+            video.style.display = "none";
+          });
         }
-      );
+
+      }
 
     })();
   </script>
