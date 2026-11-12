@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -26,11 +27,14 @@ body{
 }
 button,a{font:inherit}
 button{cursor:pointer}
+[hidden]{display:none!important}
+
+/* نوار بالای صفحه */
 .topbar{
   position:fixed;
   z-index:100;
   top:0;left:0;right:0;
-  height:62px;
+  min-height:62px;
   padding:7px 3%;
   display:grid;
   grid-template-columns:1fr auto 1fr;
@@ -87,6 +91,8 @@ button{cursor:pointer}
   white-space:nowrap;
 }
 .visitor-counter strong{color:white;font-size:14px}
+
+/* صحنه‌های ورود و سالن */
 .screen{
   min-height:100svh;
   position:relative;
@@ -94,14 +100,11 @@ button{cursor:pointer}
   align-items:center;
   justify-content:center;
   overflow:hidden;
+  background:#243a32;
 }
-.screen picture,.screen .background{
+.screen-bg{
   position:absolute;
   inset:0;
-  width:100%;
-  height:100%;
-}
-.screen picture img,.screen .background{
   width:100%;
   height:100%;
   object-fit:cover;
@@ -110,13 +113,13 @@ button{cursor:pointer}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,#101b1a30,#101b1a55);
+  background:linear-gradient(180deg,#101b1a22,#101b1a66);
   pointer-events:none;
 }
 .intro-content{
   position:relative;
   z-index:2;
-  width:min(90%,800px);
+  width:min(90%,850px);
   text-align:center;
   color:white;
   padding:25px;
@@ -156,12 +159,12 @@ button{cursor:pointer}
   text-shadow:0 2px 15px #000b;
 }
 .hall-content h1{
-  font-size:clamp(35px,6vw,65px);
+  font-size:clamp(38px,6vw,68px);
   margin:0 0 10px;
   color:#fff4d7;
 }
 .hall-content .slogan{
-  font-size:clamp(14px,2vw,19px);
+  font-size:clamp(13px,2vw,18px);
   margin:8px 0;
 }
 .hall-content .instruction{
@@ -183,9 +186,14 @@ button{cursor:pointer}
   padding:13px 27px;
   font-weight:bold;
   box-shadow:0 5px 18px #0004;
-  transition:.2s;
+  transition:transform .2s,box-shadow .2s;
 }
-.gold-button:hover{transform:translateY(-3px);box-shadow:0 8px 22px #0005}
+.gold-button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 22px #0005;
+}
+
+/* بخش نقشه و پیاده‌روی */
 .panel{
   display:none;
   min-height:100svh;
@@ -195,13 +203,20 @@ button{cursor:pointer}
     var(--paper);
 }
 .panel.active{display:block}
-.panel-heading{text-align:center;margin:0 auto 25px}
+.panel-heading{
+  text-align:center;
+  margin:0 auto 25px;
+}
 .panel-heading h2{
   color:var(--green);
   font-size:clamp(25px,4vw,38px);
   margin:0 0 10px;
 }
-.panel-heading p{color:#756858;line-height:2;margin:0}
+.panel-heading p{
+  color:#756858;
+  line-height:2;
+  margin:0;
+}
 .map-layout{
   width:min(1250px,100%);
   margin:auto;
@@ -218,10 +233,19 @@ button{cursor:pointer}
   background:#fffaf1;
   box-shadow:0 10px 30px #47351d18;
 }
-.map-wrap img{width:100%;display:block;height:auto}
+.map-wrap img{
+  width:100%;
+  display:block;
+  height:auto;
+}
+.map-pins{
+  position:absolute;
+  inset:0;
+}
 .map-pin{
   position:absolute;
-  width:15px;height:15px;
+  width:15px;
+  height:15px;
   border:2px solid white;
   border-radius:50%;
   background:var(--rust);
@@ -230,7 +254,8 @@ button{cursor:pointer}
   padding:0;
 }
 .map-pin.selected{
-  width:22px;height:22px;
+  width:22px;
+  height:22px;
   background:#e0ad45;
   box-shadow:0 0 0 5px #e0ad4566;
 }
@@ -267,14 +292,16 @@ button{cursor:pointer}
   font-weight:bold;
 }
 .city-option small{color:#98763d}
-.map-actions{
+.map-actions,.back-row{
   text-align:center;
   margin:22px auto 0;
 }
+
+/* پیاده‌روی */
 .walk-panel{
   background:#10251e;
   color:white;
-  padding:85px 3% 35px;
+  padding:90px 3% 35px;
 }
 .walk-heading{
   text-align:center;
@@ -284,7 +311,10 @@ button{cursor:pointer}
   color:#f5dfb2;
   font-size:clamp(22px,4vw,34px);
 }
-.walk-heading p{color:#e4d5b9;line-height:2}
+.walk-heading p{
+  color:#e4d5b9;
+  line-height:2;
+}
 .walk-stage{
   position:relative;
   width:min(1100px,100%);
@@ -305,7 +335,7 @@ button{cursor:pointer}
   object-fit:cover;
   transition:transform 1.2s ease;
 }
-.walk-stage.moving .walk-bg{transform:scale(1.09)}
+.walk-stage.moving .walk-bg{transform:scale(1.07)}
 .frame{
   position:absolute;
   inset:4% 12%;
@@ -331,6 +361,21 @@ button{cursor:pointer}
   background:#fff;
   box-shadow:0 5px 22px #0007;
 }
+.poster-placeholder{
+  position:relative;
+  z-index:1;
+  width:58%;
+  height:82%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:15px;
+  background:#f4ead8;
+  color:#153f3b;
+  box-shadow:0 5px 22px #0007;
+  line-height:2;
+}
 .walk-controls{
   display:flex;
   justify-content:center;
@@ -355,10 +400,59 @@ button{cursor:pointer}
   font-size:12px;
   margin-top:15px;
 }
-.back-row{
+
+/* پایان سفر */
+.end-scene{
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#10251e;
+  color:white;
   text-align:center;
-  margin:20px auto;
+  padding:100px 20px 45px;
 }
+.end-scene:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,#10251e66,#10251edb);
+  z-index:1;
+}
+.end-content{
+  position:relative;
+  z-index:2;
+  width:min(900px,95%);
+  text-shadow:0 2px 12px #0008;
+}
+.end-content h2{
+  color:#f8e7c2;
+  font-size:clamp(22px,4vw,38px);
+  line-height:2;
+  margin:0 auto 30px;
+}
+.end-credits{
+  line-height:2.5;
+  font-size:clamp(13px,2vw,17px);
+  color:#fff3dc;
+}
+.end-english{
+  color:#e8d4af;
+  font-size:12px;
+  line-height:2;
+  margin-top:8px;
+}
+.end-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  margin-top:30px;
+}
+
+/* پابرگ */
 footer{
   padding:24px 10px;
   background:var(--green);
@@ -367,11 +461,9 @@ footer{
   line-height:2.2;
   font-size:12px;
 }
-[hidden]{display:none!important}
 
 @media(max-width:700px){
   .topbar{
-    height:auto;
     min-height:58px;
     padding:6px 7px;
     grid-template-columns:1fr auto;
@@ -395,8 +487,9 @@ footer{
   .walk-panel{padding:120px 10px 30px}
   .walk-stage{height:54vh;min-height:330px}
   .frame{inset:5% 5%}
-  .poster{width:66%;height:76%}
+  .poster,.poster-placeholder{width:66%;height:76%}
   .city-name{min-width:120px;padding:10px}
+  .end-scene{padding-top:125px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
@@ -413,7 +506,7 @@ footer{
 <header class="topbar">
   <div class="tools">
     <button class="tool" id="langBtn">FA | EN</button>
-    <a class="tool" href="index.html" data-fa="صفحه اصلی" data-en="Home">صفحه اصلی</a>
+    <a class="tool" href="./index.html" data-fa="صفحه اصلی" data-en="Home">صفحه اصلی</a>
     <button class="tool" id="backBtn" data-fa="بازگشت" data-en="Back">بازگشت</button>
   </div>
 
@@ -430,13 +523,13 @@ footer{
 
 <main>
 
-<!-- ورودی بسته -->
+<!-- مرحله اول: درهای بسته -->
 <section class="screen" id="entrance">
-  <picture>
-    <source media="(max-width:700px)" srcset="assets/gallery-entrance-closed-mobile.png">
-    <img class="background" src="assets/gallery-entrance-closed.png"
-         alt="درهای بسته نمایشگاه" fetchpriority="high">
-  </picture>
+  <img class="screen-bg"
+       data-desktop="assets/gallery-entrance-closed.png"
+       data-mobile="assets/gallery-entrance-closed-mobile.png"
+       alt="درهای بسته نمایشگاه"
+       fetchpriority="high">
   <div class="intro-content">
     <p class="sub" data-fa="گالری آنلاین نمایشگاه" data-en="Online Exhibition Gallery">گالری آنلاین نمایشگاه</p>
     <h1 data-fa="ورود به نمایشگاه ایران، هزار رنگ" data-en="Welcome to Iran, A Thousand Colors">ورود به نمایشگاه ایران، هزار رنگ</h1>
@@ -445,37 +538,44 @@ footer{
   <div class="scroll-hint" data-fa="اسکرول کنید؛ درها به روی شما گشوده می‌شوند ↓" data-en="Scroll to open the doors ↓">اسکرول کنید؛ درها به روی شما گشوده می‌شوند ↓</div>
 </section>
 
-<!-- درهای باز -->
+<!-- مرحله دوم: درهای باز -->
 <section class="screen" id="openDoors">
-  <picture>
-    <source media="(max-width:700px)" srcset="assets/gallery-entrance-open-mobile.png">
-    <img class="background" src="assets/gallery-entrance-open.jpg"
-         alt="درهای باز نمایشگاه" loading="lazy">
-  </picture>
+  <img class="screen-bg"
+       data-desktop="assets/gallery-entrance-open.jpg"
+       data-mobile="assets/gallery-entrance-open-mobile.jpg"
+       alt="درهای باز نمایشگاه"
+       loading="lazy">
   <div class="intro-content">
-    <h1 data-fa="به جهان رنگ‌ها خوش آمدید" data-en="Welcome to a world of colors">به جهان رنگ‌ها خوش آمدید</h1>
+    <h1 data-fa="به جهان رنگ‌ها خوش آمدید" data-en="Welcome to a World of Colors">به جهان رنگ‌ها خوش آمدید</h1>
     <p data-fa="هر پوشش، قصه‌ای از یک سرزمین است." data-en="Every garment tells a story of a land.">هر پوشش، قصه‌ای از یک سرزمین است.</p>
   </div>
 </section>
 
-<!-- سالن اصلی و انتخاب مسیر -->
+<!-- مرحله سوم: سالن اصلی -->
 <section class="screen" id="mainHall">
-  <picture>
-    <source media="(max-width:700px)" srcset="assets/gallery-main-hall-mobile.jpg">
-    <img class="background" src="assets/gallery-main-hall.jpg"
-         alt="سالن اصلی نمایشگاه" loading="lazy">
-  </picture>
+  <img class="screen-bg"
+       data-desktop="assets/gallery-main-hall.jpg"
+       data-mobile="assets/gallery-main-hall-mobile.jpg"
+       alt="سالن اصلی نمایشگاه"
+       loading="lazy">
 
   <div class="hall-content">
     <h1>ایران، هزار رنگ</h1>
-    <p class="slogan" data-fa="از هر گوشهٔ ایران، روایتی از زیبایی و هویت" data-en="From every corner of Iran, a story of beauty and identity">
-      از هر گوشهٔ ایران، روایتی از زیبایی و هویت
+    <p class="slogan"
+       data-fa="از هر گوشهٔ ایران، روایتی از زیبایی و هویت"
+       data-en="From every corner of Iran, a story of beauty and identity">
+       از هر گوشهٔ ایران، روایتی از زیبایی و هویت
     </p>
-    <p class="slogan" data-fa="۲۸ مقصد؛ یک سفر به گسترهٔ فرهنگ ایران" data-en="28 destinations; one journey through Iranian culture">
-      ۲۸ مقصد؛ یک سفر به گسترهٔ فرهنگ ایران
+    <p class="slogan"
+       data-fa="سفری تصویری در رنگارنگی پوشش زنان ایران"
+       data-en="A visual journey through the diversity of Iranian women's clothing">
+       سفری تصویری در رنگارنگی پوشش زنان ایران
     </p>
-    <p class="instruction" data-fa="اسکرول کنید؛ در مسیر سالن حرکت کنید" data-en="Scroll to move through the gallery">اسکرول کنید؛ در مسیر سالن حرکت کنید</p>
-
+    <p class="instruction"
+       data-fa="اسکرول کنید؛ در مسیر سالن حرکت کنید"
+       data-en="Scroll to move through the gallery">
+       اسکرول کنید؛ در مسیر سالن حرکت کنید
+    </p>
     <div class="path-buttons">
       <button class="gold-button" id="showMap" data-fa="نقشهٔ سفر" data-en="Travel Map">نقشهٔ سفر</button>
       <button class="gold-button" id="showWalk" data-fa="پیاده‌روی در گالری" data-en="Gallery Walk">پیاده‌روی در گالری</button>
@@ -483,23 +583,24 @@ footer{
   </div>
 </section>
 
-<!-- نقشه -->
+<!-- نقشه سفر -->
 <section class="panel" id="mapPanel">
   <div class="panel-heading">
     <h2 data-fa="نقشهٔ سفر ایران" data-en="Iran Travel Map">نقشهٔ سفر ایران</h2>
-    <p data-fa="نقطه یا نام مقصد را انتخاب کنید؛ مسیر خود را از میان رنگ‌های ایران پیدا کنید."
+    <p data-fa="نقطه یا نام مقصد را انتخاب کنید و مسیر خود را در میان رنگ‌های ایران پیدا کنید."
        data-en="Choose a marker or destination to explore the colors of Iran.">
-      نقطه یا نام مقصد را انتخاب کنید؛ مسیر خود را از میان رنگ‌های ایران پیدا کنید.
+       نقطه یا نام مقصد را انتخاب کنید و مسیر خود را در میان رنگ‌های ایران پیدا کنید.
     </p>
   </div>
 
   <div class="map-layout">
-    <div class="map-wrap" id="mapWrap">
-      <picture>
-        <source media="(max-width:700px)" srcset="assets/iran-map-mobile.png">
-        <img src="assets/iran-map-desktop.png" alt="نقشه ایران" loading="lazy">
-      </picture>
-      <div id="mapPins"></div>
+    <div class="map-wrap">
+      <img id="iranMap"
+           data-desktop="assets/iran-map-desktop.png"
+           data-mobile="assets/iran-map-mobile.png"
+           alt="نقشه ایران"
+           loading="lazy">
+      <div class="map-pins" id="mapPins"></div>
     </div>
 
     <aside class="map-list">
@@ -509,7 +610,9 @@ footer{
   </div>
 
   <div class="map-actions">
-    <button class="gold-button" id="mapToWalk" data-fa="نمایش این مقصد در پیاده‌روی" data-en="View this destination in the walk">
+    <button class="gold-button" id="mapToWalk"
+      data-fa="نمایش این مقصد در پیاده‌روی"
+      data-en="View this destination in the walk">
       نمایش این مقصد در پیاده‌روی
     </button>
   </div>
@@ -518,27 +621,33 @@ footer{
   </div>
 </section>
 
-<!-- پیاده‌روی -->
+<!-- پیاده‌روی در گالری -->
 <section class="panel walk-panel" id="walkPanel">
   <div class="walk-heading">
     <h2 data-fa="پیاده‌روی در گالری" data-en="Walk through the Gallery">پیاده‌روی در گالری</h2>
     <p data-fa="قدم‌به‌قدم با پوشش و روایت فرهنگی مناطق ایران آشنا شوید."
        data-en="Discover the clothing and cultural stories of Iran, one step at a time.">
-      قدم‌به‌قدم با پوشش و روایت فرهنگی مناطق ایران آشنا شوید.
+       قدم‌به‌قدم با پوشش و روایت فرهنگی مناطق ایران آشنا شوید.
     </p>
   </div>
 
   <div class="walk-stage" id="walkStage">
-    <picture>
-      <source media="(max-width:700px)" srcset="assets/gallery-choice-walk-mobile.jpg">
-      <img class="walk-bg" src="assets/gallery-choice-walk.jpg" alt="راهروی گالری">
-    </picture>
+    <img class="walk-bg"
+         data-desktop="assets/gallery-choice-walk.jpg"
+         data-mobile="assets/gallery-choice-walk-mobile.jpg"
+         alt="راهروی گالری"
+         loading="lazy">
+
     <div class="frame">
-      <img class="poster" id="cityPoster" src="qazvin.jpg" alt="پوستر قزوین">
-      <picture>
-        <source media="(max-width:700px)" srcset="assets/city-frame-mobile.png">
-        <img class="frame-art" src="assets/city-frame-desktop.png" alt="">
-      </picture>
+      <img class="poster" id="cityPoster" alt="" hidden>
+      <div class="poster-placeholder" id="posterPlaceholder">
+        پوستر این منطقه به‌زودی اضافه می‌شود
+      </div>
+      <img class="frame-art"
+           data-desktop="assets/city-frame-desktop.png"
+           data-mobile="assets/city-frame-mobile.png"
+           alt=""
+           loading="lazy">
     </div>
   </div>
 
@@ -548,10 +657,56 @@ footer{
     <button class="gold-button" id="nextCity" data-fa="بعدی" data-en="Next">بعدی</button>
   </div>
 
-  <p class="walk-note" id="walkProgress">ایستگاه ۱ از ۲۸</p>
+  <p class="walk-note" id="walkProgress">ایستگاه ۱ از ۲۹</p>
 
   <div class="back-row">
     <button class="tool" id="walkBack" data-fa="بازگشت به سالن" data-en="Back to Hall">بازگشت به سالن</button>
+  </div>
+</section>
+
+<!-- صحنه پایانی -->
+<section class="end-scene" id="endScene" hidden>
+  <img class="screen-bg"
+       data-desktop="assets/gallery-choice-walk.jpg"
+       data-mobile="assets/gallery-choice-walk-mobile.jpg"
+       alt="پایان سفر در گالری"
+       loading="lazy">
+
+  <div class="end-content">
+    <h2 data-fa="هر نقش، یادگاری از یک سرزمین؛ هر رنگ، تکه‌ای از هویت ایران"
+        data-en="Every pattern, a memory of a land; every color, a piece of Iran's identity">
+      هر نقش، یادگاری از یک سرزمین؛ هر رنگ، تکه‌ای از هویت ایران
+    </h2>
+
+    <div class="end-credits">
+      <div data-fa="هنرمند و خالق آثار: مریم ساعی"
+           data-en="Artist and Creator: Maryam Saei">
+        هنرمند و خالق آثار: مریم ساعی
+      </div>
+      <div data-fa="طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی"
+           data-en="Website Design and Cultural Research: Marjan Saei">
+        طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی
+      </div>
+    </div>
+
+    <div class="end-english" lang="en" dir="ltr">
+      Artist and Creator: Maryam Saei<br>
+      Website Design and Cultural Research: Marjan Saei
+    </div>
+
+    <div class="end-buttons">
+      <button class="gold-button" id="endToGallery"
+        data-fa="بازگشت به گالری سه‌بعدی"
+        data-en="Back to 3D Gallery">
+        بازگشت به گالری سه‌بعدی
+      </button>
+      <a class="gold-button" href="./index.html"
+        data-fa="بازگشت به صفحه اصلی"
+        data-en="Back to Homepage"
+        style="text-decoration:none">
+        بازگشت به صفحه اصلی
+      </a>
+    </div>
   </div>
 </section>
 
@@ -560,29 +715,31 @@ footer{
 <footer>
   <div>ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</div>
   <div>آثار و ایده: مریم ساعی | طراحی و پژوهش فرهنگی: مرجان ساعی</div>
-  <div>Maryam Saei — Artwork | Marjan Saei — Design & Cultural Research</div>
+  <div dir="ltr">Maryam Saei — Artwork | Marjan Saei — Design & Cultural Research</div>
 </footer>
 
 <script>
-/* فهرست مسیر؛ ترتیب در نقشه و پیاده‌روی یکسان است */
+"use strict";
+
+/* ۲۸ مقصد؛ ایستگاه ۲۹ پایان سفر است */
 const cities = [
- {fa:"قزوین",en:"Qazvin",file:"qazvin.jpg",x:43,y:43},
+ {fa:"قزوین",en:"Qazvin",file:"qazvin.jpg",fallback:"ghab_qazvin.jpg",x:43,y:43},
  {fa:"گیلان",en:"Gilan",file:"gilan.jpg",x:43,y:34},
  {fa:"مازندران",en:"Mazandaran",file:"mazandaran.png",x:49,y:38},
- {fa:"گلستان",en:"Golestan",file:"turkmen-sahra.jpg",x:59,y:36},
+ {fa:"گلستان",en:"Golestan",file:"",x:59,y:36},
  {fa:"سمنان",en:"Semnan",file:"semnan.png",x:57,y:48},
  {fa:"خراسان شمالی",en:"North Khorasan",file:"khorasan-shomali.png",x:70,y:37},
  {fa:"خراسان جنوبی",en:"South Khorasan",file:"khorasan-jonubi.png",x:76,y:57},
  {fa:"سیستان و بلوچستان",en:"Sistan and Baluchestan",file:"sistan-baluchestan.png",x:83,y:76},
  {fa:"هرمزگان",en:"Hormozgan",file:"hormozgan.png",x:68,y:83},
- {fa:"کرمان",en:"Kerman",file:"kerman.png",x:69,y:67},
+ {fa:"کرمان",en:"Kerman",file:"",x:69,y:67},
  {fa:"یزد",en:"Yazd",file:"yazd.png",x:58,y:65},
  {fa:"اصفهان",en:"Isfahan",file:"isfahan.png",x:48,y:61},
  {fa:"شیراز",en:"Shiraz",file:"fars.png",x:43,y:77},
  {fa:"بوشهر",en:"Bushehr",file:"bushehr.png",x:34,y:83},
- {fa:"کهگیلویه و بویراحمد",en:"Kohgiluyeh and Boyer-Ahmad",file:"poster.jpg",x:37,y:72},
+ {fa:"کهگیلویه و بویراحمد",en:"Kohgiluyeh and Boyer-Ahmad",file:"",x:37,y:72},
  {fa:"چهارمحال و بختیاری",en:"Chaharmahal and Bakhtiari",file:"chaharmahal.png",x:39,y:62},
- {fa:"خوزستان",en:"Khuzestan",file:"poster.jpg",x:24,y:72},
+ {fa:"خوزستان",en:"Khuzestan",file:"",x:24,y:72},
  {fa:"ایلام",en:"Ilam",file:"ilam.png",x:19,y:58},
  {fa:"لرستان",en:"Lorestan",file:"lorestan.png",x:28,y:55},
  {fa:"اراک",en:"Arak",file:"arak.png",x:34,y:48},
@@ -596,15 +753,95 @@ const cities = [
  {fa:"زنجان",en:"Zanjan",file:"zanjan.png",x:31,y:34}
 ];
 
+const TOTAL_STOPS = 29;
 let selected = 0;
 let language = "fa";
-let previousPanel = null;
+let currentView = "entrance";
 
 const $ = id => document.getElementById(id);
 const mapPanel = $("mapPanel");
 const walkPanel = $("walkPanel");
+const endScene = $("endScene");
 const hall = $("mainHall");
 
+function isMobile(){
+  return window.matchMedia("(max-width:700px)").matches;
+}
+
+/* انتخاب تصویر موبایل یا دسکتاپ؛ در صورت نبود نسخه موبایل، دسکتاپ */
+function setResponsiveImages(){
+  document.querySelectorAll("img[data-desktop]").forEach(img=>{
+    const desktop = img.dataset.desktop;
+    const mobile = img.dataset.mobile;
+    const chosen = isMobile() && mobile ? mobile : desktop;
+
+    if(img.dataset.loadedChoice === chosen) return;
+    img.dataset.loadedChoice = chosen;
+    img.onerror = function(){
+      if(this.dataset.loadedChoice !== desktop){
+        this.dataset.loadedChoice = desktop;
+        this.src = desktop;
+      }else{
+        this.style.visibility = "hidden";
+      }
+    };
+    img.style.visibility = "visible";
+    img.src = chosen;
+  });
+}
+
+/* تصویرهای پایین صفحه پس از آماده شدن صفحه بارگذاری می‌شوند */
+function loadLazyImages(){
+  const images = [...document.querySelectorAll('img[loading="lazy"][data-desktop]')];
+  if("IntersectionObserver" in window){
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const img = entry.target;
+          const chosen = isMobile() && img.dataset.mobile
+            ? img.dataset.mobile : img.dataset.desktop;
+          img.src = chosen;
+          img.onerror = ()=>{
+            if(chosen !== img.dataset.desktop) img.src = img.dataset.desktop;
+            else img.style.visibility = "hidden";
+          };
+          observer.unobserve(img);
+        }
+      });
+    },{rootMargin:"250px"});
+    images.forEach(img=>observer.observe(img));
+  }else{
+    images.forEach(img=>{
+      img.src = isMobile() && img.dataset.mobile
+        ? img.dataset.mobile : img.dataset.desktop;
+    });
+  }
+}
+
+function showPanel(panel,name){
+  mapPanel.classList.remove("active");
+  walkPanel.classList.remove("active");
+  endScene.hidden = true;
+  panel.classList.add("active");
+  currentView = name;
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function backToHall(){
+  mapPanel.classList.remove("active");
+  walkPanel.classList.remove("active");
+  endScene.hidden = true;
+  currentView = "hall";
+  hall.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function showEndScene(){
+  mapPanel.classList.remove("active");
+  walkPanel.classList.remove("active");
+  endScene.hidden = false;
+  currentView = "end";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* فهرست و نقاط نقشه */
 function renderCities(){
   const list = $("cityList");
   const pins = $("mapPins");
@@ -614,7 +851,8 @@ function renderCities(){
   cities.forEach((city,index)=>{
     const button = document.createElement("button");
     button.className = "city-option" + (index===selected?" selected":"");
-    button.innerHTML = `<span>${index+1}. ${language==="fa"?city.fa:city.en}</span><small>●</small>`;
+    button.innerHTML =
+      `<span>${index+1}. ${language==="fa"?city.fa:city.en}</span><small>●</small>`;
     button.addEventListener("click",()=>selectCity(index));
     list.appendChild(button);
 
@@ -629,108 +867,159 @@ function renderCities(){
   });
 }
 
+/* انتخاب مقصد و نمایش پوستر */
+function updateWalk(){
+  const city = cities[selected];
+  $("currentCity").textContent =
+    language==="fa" ? city.fa : city.en;
+
+  $("walkProgress").textContent =
+    language==="fa"
+      ? `ایستگاه ${selected+1} از ${TOTAL_STOPS}`
+      : `Stop ${selected+1} of ${TOTAL_STOPS}`;
+
+  const poster = $("cityPoster");
+  const placeholder = $("posterPlaceholder");
+  poster.hidden = true;
+  placeholder.hidden = false;
+
+  placeholder.textContent = language==="fa"
+    ? `پوستر ${city.fa} به‌زودی اضافه می‌شود`
+    : `The ${city.en} poster will be added soon`;
+
+  if(city.file){
+    poster.onerror = function(){
+      if(city.fallback && this.src.indexOf(city.fallback)===-1){
+        this.src = city.fallback;
+      }else{
+        this.hidden = true;
+        placeholder.hidden = false;
+      }
+    };
+    poster.onload = function(){
+      this.hidden = false;
+      placeholder.hidden = true;
+    };
+    poster.src = city.file;
+    poster.alt = language==="fa" ? `پوستر ${city.fa}` : `${city.en} poster`;
+  }
+
+  $("walkStage").classList.add("moving");
+  setTimeout(()=>$("walkStage").classList.remove("moving"),900);
+}
+
 function selectCity(index){
   selected = Math.max(0,Math.min(cities.length-1,index));
   renderCities();
   updateWalk();
 }
 
-function updateWalk(){
-  const city = cities[selected];
-  $("currentCity").textContent = language==="fa"?city.fa:city.en;
-  $("walkProgress").textContent =
-    language==="fa"
-    ? `ایستگاه ${selected+1} از ${cities.length}`
-    : `Stop ${selected+1} of ${cities.length}`;
-
-  const poster = $("cityPoster");
-  poster.onerror = function(){
-    this.onerror = null;
-    this.src = "poster.jpg";
-  };
-  poster.src = city.file;
-  poster.alt = "پوستر " + city.fa;
-
-  $("walkStage").classList.add("moving");
-  setTimeout(()=>$("walkStage").classList.remove("moving"),900);
+/* حرکت به مقصد بعدی؛ پس از زنجان صحنه پایان */
+function nextCity(){
+  if(selected < cities.length-1){
+    selectCity(selected+1);
+  }else{
+    showEndScene();
+  }
+}
+function previousCity(){
+  if(selected > 0){
+    selectCity(selected-1);
+  }
 }
 
-function showPanel(panel){
-  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
-  panel.classList.add("active");
-  previousPanel = panel;
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-function backToHall(){
-  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
-  window.scrollTo({top:hall.offsetTop,behavior:"smooth"});
-}
-
+/* دکمه‌ها */
 $("showMap").addEventListener("click",()=>{
-  showPanel(mapPanel);
   renderCities();
+  showPanel(mapPanel,"map");
 });
 $("showWalk").addEventListener("click",()=>{
   selectCity(0);
-  showPanel(walkPanel);
+  showPanel(walkPanel,"walk");
 });
 $("mapBack").addEventListener("click",backToHall);
 $("walkBack").addEventListener("click",backToHall);
 $("mapToWalk").addEventListener("click",()=>{
   updateWalk();
-  showPanel(walkPanel);
+  showPanel(walkPanel,"walk");
 });
-$("nextCity").addEventListener("click",()=>{
-  if(selected < cities.length-1) selectCity(selected+1);
-  else selectCity(0);
-});
-$("prevCity").addEventListener("click",()=>{
-  if(selected > 0) selectCity(selected-1);
-  else selectCity(cities.length-1);
-});
+$("nextCity").addEventListener("click",nextCity);
+$("prevCity").addEventListener("click",previousCity);
+$("endToGallery").addEventListener("click",backToHall);
+
 $("backBtn").addEventListener("click",()=>{
-  if(walkPanel.classList.contains("active") || mapPanel.classList.contains("active")){
+  if(currentView==="map" || currentView==="walk" || currentView==="end"){
     backToHall();
+  }else if(currentView==="hall"){
+    $("entrance").scrollIntoView({behavior:"smooth"});
+    currentView="entrance";
   }else{
     window.scrollTo({top:0,behavior:"smooth"});
   }
 });
 
+/* تشخیص مرحله‌ای که بازدیدکننده در آن قرار دارد */
+const sectionObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting && currentView!=="map" &&
+       currentView!=="walk" && currentView!=="end"){
+      currentView = entry.target.id;
+    }
+  });
+},{threshold:.55});
+
+["entrance","openDoors","mainHall"].forEach(id=>{
+  sectionObserver.observe($(id));
+});
+
 /* تغییر زبان */
 function setLanguage(){
   document.documentElement.lang = language;
-  document.documentElement.dir = language==="fa"?"rtl":"ltr";
+  document.documentElement.dir = language==="fa" ? "rtl" : "ltr";
 
-  document.querySelectorAll("[data-fa]").forEach(el=>{
+  document.querySelectorAll("[data-fa][data-en]").forEach(el=>{
     el.textContent = el.dataset[language];
   });
 
-  $("langBtn").textContent = language==="fa"?"FA | EN":"EN | FA";
+  $("langBtn").textContent =
+    language==="fa" ? "FA | EN" : "EN | FA";
+
   renderCities();
   updateWalk();
 }
 $("langBtn").addEventListener("click",()=>{
-  language = language==="fa"?"en":"fa";
+  language = language==="fa" ? "en" : "fa";
   setLanguage();
 });
 
-/* شمارنده بازدید */
+/* شمارنده بازدید؛ وابسته به سرویس بیرونی */
 fetch("https://api.counterapi.dev/v1/iran-hezar-rang/gallery/up")
   .then(response=>{
-    if(!response.ok) throw new Error("counter unavailable");
+    if(!response.ok) throw new Error("Counter unavailable");
     return response.json();
   })
   .then(data=>{
     $("visitorCount").textContent =
-      Number(data.count).toLocaleString(language==="fa"?"fa-IR":"en-US");
+      Number(data.count).toLocaleString(
+        language==="fa" ? "fa-IR" : "en-US"
+      );
   })
   .catch(()=>{
     $("visitorCount").textContent = "—";
   });
 
-/* آماده‌سازی اولیه */
+/* شروع */
+setResponsiveImages();
+loadLazyImages();
 renderCities();
 updateWalk();
+
+/* هنگام تغییر اندازه، تصویر مناسب صفحه انتخاب شود */
+let resizeTimeout;
+window.addEventListener("resize",()=>{
+  clearTimeout(resizeTimeout);
+  resizeTimeout=setTimeout(setResponsiveImages,180);
+});
 </script>
 </body>
 </html>
