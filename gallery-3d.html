@@ -1,399 +1,408 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f4ead8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#153f3b">
 <title>گالری سه‌بعدی | ایران، هزار رنگ</title>
 
 <style>
-:root {
-  --paper: #f4ead8;
-  --cream: #fffaf1;
-  --gold: #b38a4a;
-  --green: #153f3b;
-  --rust: #a83e1d;
-  --ink: #342d25;
+:root{
+  --green:#153f3b;
+  --deep:#10251e;
+  --paper:#f4ead8;
+  --cream:#fffaf1;
+  --gold:#c99a42;
+  --rust:#a83e1d;
+  --ink:#342d25;
 }
-
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Tahoma,Arial,sans-serif;
 }
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 70px;
+button,a{font:inherit}
+button{cursor:pointer}
+.topbar{
+  position:fixed;
+  z-index:100;
+  top:0;left:0;right:0;
+  height:62px;
+  padding:7px 3%;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  direction:ltr;
+  background:#fffaf1ed;
+  border-bottom:1px solid #c99a4266;
+  backdrop-filter:blur(8px);
 }
-
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: Tahoma, Arial, sans-serif;
+.tools{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:7px;
+  direction:ltr;
 }
-
-.topbar {
-  position: fixed;
-  z-index: 20;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 58px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5%;
-  background: rgba(255,250,241,.92);
-  border-bottom: 1px solid rgba(179,138,74,.25);
-  backdrop-filter: blur(12px);
+.tool{
+  border:1px solid var(--gold);
+  background:var(--cream);
+  color:var(--green);
+  border-radius:22px;
+  padding:8px 13px;
+  font-size:12px;
+  text-decoration:none;
+  white-space:nowrap;
 }
-
-.brand {
-  color: var(--green);
-  font-weight: bold;
-  text-decoration: none;
+.tool:hover{background:var(--green);color:white}
+.brand{
+  direction:rtl;
+  text-align:center;
+  color:var(--green);
+  font-weight:bold;
+  font-size:19px;
+  white-space:nowrap;
 }
-
-.home-link {
-  color: var(--green);
-  text-decoration: none;
-  border: 1px solid var(--gold);
-  border-radius: 25px;
-  padding: 8px 17px;
-  font-size: 13px;
+.brand small{
+  display:block;
+  font-size:9px;
+  letter-spacing:2px;
+  margin-top:3px;
+  color:#94713b;
 }
-
-.scene {
-  min-height: 100svh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  isolation: isolate;
+.visitor-counter{
+  justify-self:end;
+  direction:rtl;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 13px;
+  border-radius:22px;
+  background:var(--deep);
+  color:#f4dfb1;
+  font-size:11px;
+  white-space:nowrap;
 }
-
-.scene-image {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.visitor-counter strong{color:white;font-size:14px}
+.screen{
+  min-height:100svh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
 }
-
-.scene::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    180deg,
-    rgba(20,18,15,.08),
-    rgba(20,18,15,.24)
-  );
+.screen picture,.screen .background{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
 }
-
-.scene-copy {
-  width: min(90%, 760px);
-  padding: 25px;
-  text-align: center;
-  color: white;
-  text-shadow: 0 2px 15px rgba(0,0,0,.55);
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 1s ease, transform 1s ease;
+.screen picture img,.screen .background{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
-
-.scene.visible .scene-copy {
-  opacity: 1;
-  transform: translateY(0);
+.screen:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,#101b1a30,#101b1a55);
+  pointer-events:none;
 }
-
-.scene-copy h1 {
-  font-size: clamp(27px, 5vw, 52px);
-  line-height: 1.8;
-  margin: 0 0 12px;
+.intro-content{
+  position:relative;
+  z-index:2;
+  width:min(90%,800px);
+  text-align:center;
+  color:white;
+  padding:25px;
+  text-shadow:0 3px 18px #000b;
 }
-
-.scene-copy p {
-  font-size: clamp(16px, 2vw, 22px);
-  line-height: 2;
-  margin: 0;
+.intro-content h1{
+  font-size:clamp(30px,5vw,58px);
+  line-height:1.7;
+  margin:0 0 8px;
 }
-
-.scroll-hint {
-  position: absolute;
-  bottom: 25px;
-  color: white;
-  font-size: 13px;
-  opacity: .9;
-  animation: hint 2s infinite;
+.intro-content p{
+  font-size:clamp(14px,2vw,20px);
+  line-height:2;
+  margin:5px 0;
 }
-
-@keyframes hint {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
+.intro-content .sub{
+  font-size:clamp(12px,1.5vw,16px);
+  color:#ffe3a7;
 }
+.scroll-hint{
+  position:absolute;
+  z-index:3;
+  bottom:25px;
+  color:white;
+  font-size:13px;
+  animation:float 2s infinite;
+}
+@keyframes float{50%{transform:translateY(8px)}}
 
-/* انتخاب مسیر */
-
-.choice-section {
-  min-height: 100svh;
-  padding: 105px 6% 75px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.hall-content{
+  position:relative;
+  z-index:3;
+  width:min(94%,850px);
+  text-align:center;
+  color:white;
+  padding:25px;
+  text-shadow:0 2px 15px #000b;
+}
+.hall-content h1{
+  font-size:clamp(35px,6vw,65px);
+  margin:0 0 10px;
+  color:#fff4d7;
+}
+.hall-content .slogan{
+  font-size:clamp(14px,2vw,19px);
+  margin:8px 0;
+}
+.hall-content .instruction{
+  color:#ffe3a7;
+  font-size:13px;
+  margin:15px 0 28px;
+}
+.path-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+.gold-button{
+  border:1px solid #e7c77e;
+  background:linear-gradient(135deg,#fff3d4,#d6ad60);
+  color:#263c31;
+  border-radius:30px;
+  padding:13px 27px;
+  font-weight:bold;
+  box-shadow:0 5px 18px #0004;
+  transition:.2s;
+}
+.gold-button:hover{transform:translateY(-3px);box-shadow:0 8px 22px #0005}
+.panel{
+  display:none;
+  min-height:100svh;
+  padding:95px 4% 45px;
   background:
-    radial-gradient(circle at top, #fffdf8, transparent 65%),
+    radial-gradient(circle at top,#fffdf7,transparent 65%),
     var(--paper);
 }
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 38px;
+.panel.active{display:block}
+.panel-heading{text-align:center;margin:0 auto 25px}
+.panel-heading h2{
+  color:var(--green);
+  font-size:clamp(25px,4vw,38px);
+  margin:0 0 10px;
 }
-
-.section-heading h2 {
-  color: var(--green);
-  font-size: clamp(25px, 4vw, 38px);
-  margin: 0 0 12px;
+.panel-heading p{color:#756858;line-height:2;margin:0}
+.map-layout{
+  width:min(1250px,100%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.6fr) minmax(230px,.7fr);
+  gap:20px;
+  align-items:start;
 }
-
-.section-heading p {
-  color: #756858;
-  line-height: 2;
-  margin: 0;
+.map-wrap{
+  position:relative;
+  border:1px solid #c99a4277;
+  border-radius:16px;
+  overflow:hidden;
+  background:#fffaf1;
+  box-shadow:0 10px 30px #47351d18;
 }
-
-.choice-grid {
-  width: min(100%, 1050px);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 25px;
+.map-wrap img{width:100%;display:block;height:auto}
+.map-pin{
+  position:absolute;
+  width:15px;height:15px;
+  border:2px solid white;
+  border-radius:50%;
+  background:var(--rust);
+  box-shadow:0 1px 8px #0008;
+  transform:translate(-50%,-50%);
+  padding:0;
 }
-
-.choice-card {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px;
-  background: white;
-  border: 1px solid rgba(179,138,74,.4);
-  box-shadow: 0 8px 28px rgba(70,50,25,.09);
-  color: var(--ink);
-  text-decoration: none;
-  transition: transform .3s ease, box-shadow .3s ease;
+.map-pin.selected{
+  width:22px;height:22px;
+  background:#e0ad45;
+  box-shadow:0 0 0 5px #e0ad4566;
 }
-
-.choice-card:hover {
-  transform: translateY(-8px) scale(1.015);
-  box-shadow: 0 18px 38px rgba(70,50,25,.17);
+.map-list{
+  background:#fffaf1;
+  border:1px solid #c99a4277;
+  border-radius:15px;
+  padding:14px;
+  max-height:610px;
+  overflow:auto;
 }
-
-.choice-card picture {
-  display: block;
-  height: 290px;
-  overflow: hidden;
+.map-list h3{
+  color:var(--green);
+  margin:0 0 12px;
+  text-align:center;
 }
-
-.choice-card img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  transition: transform .5s ease;
+.city-option{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  border:0;
+  border-bottom:1px solid #e9ddc9;
+  padding:10px 8px;
+  background:transparent;
+  color:var(--ink);
+  text-align:right;
+  border-radius:7px;
 }
-
-.choice-card:hover img {
-  transform: scale(1.04);
+.city-option:hover,.city-option.selected{
+  background:#e9dfc9;
+  color:var(--green);
+  font-weight:bold;
 }
-
-.choice-content {
-  padding: 22px;
-  text-align: center;
+.city-option small{color:#98763d}
+.map-actions{
+  text-align:center;
+  margin:22px auto 0;
 }
-
-.choice-content h3 {
-  color: var(--green);
-  font-size: 22px;
-  margin: 0 0 10px;
+.walk-panel{
+  background:#10251e;
+  color:white;
+  padding:85px 3% 35px;
 }
-
-.choice-content p {
-  color: #756858;
-  font-size: 14px;
-  line-height: 2;
-  margin: 0 0 18px;
+.walk-heading{
+  text-align:center;
+  margin:0 auto 18px;
 }
-
-.choice-button {
-  display: inline-block;
-  background: var(--green);
-  color: white;
-  border-radius: 30px;
-  padding: 11px 25px;
-  font-size: 14px;
+.walk-heading h2{
+  color:#f5dfb2;
+  font-size:clamp(22px,4vw,34px);
 }
-
-/* نقشه */
-
-.map-section {
-  min-height: 100svh;
-  padding: 95px 5% 55px;
-  background: #fffaf1;
-  text-align: center;
+.walk-heading p{color:#e4d5b9;line-height:2}
+.walk-stage{
+  position:relative;
+  width:min(1100px,100%);
+  height:min(67vh,690px);
+  min-height:380px;
+  margin:auto;
+  overflow:hidden;
+  border:5px solid #c99a42;
+  border-radius:9px;
+  background:#263b32;
+  box-shadow:0 15px 40px #0007;
 }
-
-.map-section h2 {
-  color: var(--green);
-  font-size: clamp(26px, 4vw, 38px);
-  margin: 0 0 12px;
+.walk-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 1.2s ease;
 }
-
-.map-section p {
-  color: #756858;
-  line-height: 2;
-  margin-bottom: 28px;
+.walk-stage.moving .walk-bg{transform:scale(1.09)}
+.frame{
+  position:absolute;
+  inset:4% 12%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-
-.map-picture {
-  display: block;
-  width: min(100%, 1150px);
-  margin: auto;
+.frame-art{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  z-index:2;
+  pointer-events:none;
 }
-
-.map-picture img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-  box-shadow: 0 12px 35px rgba(40,30,20,.12);
+.poster{
+  position:relative;
+  width:58%;
+  height:82%;
+  object-fit:contain;
+  z-index:1;
+  background:#fff;
+  box-shadow:0 5px 22px #0007;
 }
-
-.map-note {
-  margin: 22px auto 0;
-  color: var(--green);
-  font-size: 14px;
+.walk-controls{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  margin:22px auto 0;
+  flex-wrap:wrap;
 }
-
-/* شروع مسیر هدایت شده - تکمیل تابلوها در مرحله بعد */
-
-.guided-section {
-  min-height: 100svh;
-  padding: 100px 6%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: #fffaf1;
+.city-name{
+  min-width:160px;
+  text-align:center;
+  padding:12px 20px;
+  border:1px solid var(--gold);
+  background:var(--green);
+  color:#fff2d5;
+  border-radius:9px;
+  font-weight:bold;
 }
-
-.guided-content {
-  max-width: 650px;
+.walk-note{
+  text-align:center;
+  color:#e6d8bf;
+  font-size:12px;
+  margin-top:15px;
 }
-
-.guided-content h2 {
-  color: var(--green);
-  font-size: clamp(26px, 4vw, 38px);
+.back-row{
+  text-align:center;
+  margin:20px auto;
 }
-
-.guided-content p {
-  line-height: 2.2;
-  color: #756858;
+footer{
+  padding:24px 10px;
+  background:var(--green);
+  color:#fff0d3;
+  text-align:center;
+  line-height:2.2;
+  font-size:12px;
 }
+[hidden]{display:none!important}
 
-.guided-content a {
-  display: inline-block;
-  margin-top: 15px;
-  background: var(--green);
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  padding: 13px 27px;
-}
-
-footer {
-  padding: 25px 15px;
-  text-align: center;
-  background: var(--green);
-  color: #fffaf1;
-  font-size: 12px;
-  line-height: 2.2;
-}
-
-/* موبایل */
-
-@media (max-width: 700px) {
-  .topbar {
-    height: 54px;
-    padding: 0 4%;
+@media(max-width:700px){
+  .topbar{
+    height:auto;
+    min-height:58px;
+    padding:6px 7px;
+    grid-template-columns:1fr auto;
+    grid-template-areas:"tools counter" "brand brand";
+    row-gap:4px;
   }
-
-  .brand {
-    font-size: 13px;
-  }
-
-  .home-link {
-    padding: 7px 12px;
-    font-size: 12px;
-  }
-
-  .scene {
-    min-height: 100svh;
-  }
-
-  .scene-copy {
-    width: 92%;
-    padding: 18px;
-  }
-
-  .scene-copy h1 {
-    font-size: 29px;
-  }
-
-  .scene-copy p {
-    font-size: 16px;
-  }
-
-  .choice-section {
-    padding: 85px 5% 55px;
-  }
-
-  .choice-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .choice-card picture {
-    height: auto;
-    aspect-ratio: 9 / 12;
-  }
-
-  .choice-content {
-    padding: 18px;
-  }
-
-  .choice-content h3 {
-    font-size: 20px;
-  }
-
-  .map-section {
-    padding: 85px 4% 40px;
-  }
-
-  .map-picture img {
-    border-radius: 10px;
-  }
+  .tools{grid-area:tools;gap:4px}
+  .brand{grid-area:brand;font-size:14px;padding-bottom:3px}
+  .brand small{display:none}
+  .visitor-counter{grid-area:counter;font-size:9px;padding:7px 9px}
+  .visitor-counter strong{font-size:11px}
+  .tool{font-size:10px;padding:7px 9px}
+  .intro-content{padding:15px}
+  .intro-content h1{font-size:30px}
+  .hall-content h1{font-size:36px}
+  .path-buttons{gap:9px}
+  .gold-button{padding:11px 17px;font-size:12px}
+  .panel{padding:115px 12px 30px}
+  .map-layout{grid-template-columns:1fr}
+  .map-list{max-height:310px}
+  .walk-panel{padding:120px 10px 30px}
+  .walk-stage{height:54vh;min-height:330px}
+  .frame{inset:5% 5%}
+  .poster{width:66%;height:76%}
+  .city-name{min-width:120px;padding:10px}
 }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
   }
 }
 </style>
@@ -402,164 +411,326 @@ footer {
 <body>
 
 <header class="topbar">
-  <a class="brand" href="index.html">ایران، هزار رنگ</a>
-  <a class="home-link" href="index.html">صفحه اصلی</a>
+  <div class="tools">
+    <button class="tool" id="langBtn">FA | EN</button>
+    <a class="tool" href="index.html" data-fa="صفحه اصلی" data-en="Home">صفحه اصلی</a>
+    <button class="tool" id="backBtn" data-fa="بازگشت" data-en="Back">بازگشت</button>
+  </div>
+
+  <div class="brand">
+    ایران، هزار رنگ
+    <small>IRAN · A THOUSAND COLORS</small>
+  </div>
+
+  <div class="visitor-counter">
+    <span data-fa="بازدیدکنندگان" data-en="Visitors">بازدیدکنندگان</span>
+    <strong id="visitorCount">…</strong>
+  </div>
 </header>
 
 <main>
 
-  <!-- ۱. ورودی بسته -->
-  <section class="scene">
+<!-- ورودی بسته -->
+<section class="screen" id="entrance">
+  <picture>
+    <source media="(max-width:700px)" srcset="assets/gallery-entrance-closed-mobile.png">
+    <img class="background" src="assets/gallery-entrance-closed.png"
+         alt="درهای بسته نمایشگاه" fetchpriority="high">
+  </picture>
+  <div class="intro-content">
+    <p class="sub" data-fa="گالری آنلاین نمایشگاه" data-en="Online Exhibition Gallery">گالری آنلاین نمایشگاه</p>
+    <h1 data-fa="ورود به نمایشگاه ایران، هزار رنگ" data-en="Welcome to Iran, A Thousand Colors">ورود به نمایشگاه ایران، هزار رنگ</h1>
+    <p data-fa="روایت تصویری پوشش زنان ایران" data-en="A visual story of women's clothing in Iran">روایت تصویری پوشش زنان ایران</p>
+  </div>
+  <div class="scroll-hint" data-fa="اسکرول کنید؛ درها به روی شما گشوده می‌شوند ↓" data-en="Scroll to open the doors ↓">اسکرول کنید؛ درها به روی شما گشوده می‌شوند ↓</div>
+</section>
+
+<!-- درهای باز -->
+<section class="screen" id="openDoors">
+  <picture>
+    <source media="(max-width:700px)" srcset="assets/gallery-entrance-open-mobile.png">
+    <img class="background" src="assets/gallery-entrance-open.jpg"
+         alt="درهای باز نمایشگاه" loading="lazy">
+  </picture>
+  <div class="intro-content">
+    <h1 data-fa="به جهان رنگ‌ها خوش آمدید" data-en="Welcome to a world of colors">به جهان رنگ‌ها خوش آمدید</h1>
+    <p data-fa="هر پوشش، قصه‌ای از یک سرزمین است." data-en="Every garment tells a story of a land.">هر پوشش، قصه‌ای از یک سرزمین است.</p>
+  </div>
+</section>
+
+<!-- سالن اصلی و انتخاب مسیر -->
+<section class="screen" id="mainHall">
+  <picture>
+    <source media="(max-width:700px)" srcset="assets/gallery-main-hall-mobile.jpg">
+    <img class="background" src="assets/gallery-main-hall.jpg"
+         alt="سالن اصلی نمایشگاه" loading="lazy">
+  </picture>
+
+  <div class="hall-content">
+    <h1>ایران، هزار رنگ</h1>
+    <p class="slogan" data-fa="از هر گوشهٔ ایران، روایتی از زیبایی و هویت" data-en="From every corner of Iran, a story of beauty and identity">
+      از هر گوشهٔ ایران، روایتی از زیبایی و هویت
+    </p>
+    <p class="slogan" data-fa="۲۸ مقصد؛ یک سفر به گسترهٔ فرهنگ ایران" data-en="28 destinations; one journey through Iranian culture">
+      ۲۸ مقصد؛ یک سفر به گسترهٔ فرهنگ ایران
+    </p>
+    <p class="instruction" data-fa="اسکرول کنید؛ در مسیر سالن حرکت کنید" data-en="Scroll to move through the gallery">اسکرول کنید؛ در مسیر سالن حرکت کنید</p>
+
+    <div class="path-buttons">
+      <button class="gold-button" id="showMap" data-fa="نقشهٔ سفر" data-en="Travel Map">نقشهٔ سفر</button>
+      <button class="gold-button" id="showWalk" data-fa="پیاده‌روی در گالری" data-en="Gallery Walk">پیاده‌روی در گالری</button>
+    </div>
+  </div>
+</section>
+
+<!-- نقشه -->
+<section class="panel" id="mapPanel">
+  <div class="panel-heading">
+    <h2 data-fa="نقشهٔ سفر ایران" data-en="Iran Travel Map">نقشهٔ سفر ایران</h2>
+    <p data-fa="نقطه یا نام مقصد را انتخاب کنید؛ مسیر خود را از میان رنگ‌های ایران پیدا کنید."
+       data-en="Choose a marker or destination to explore the colors of Iran.">
+      نقطه یا نام مقصد را انتخاب کنید؛ مسیر خود را از میان رنگ‌های ایران پیدا کنید.
+    </p>
+  </div>
+
+  <div class="map-layout">
+    <div class="map-wrap" id="mapWrap">
+      <picture>
+        <source media="(max-width:700px)" srcset="assets/iran-map-mobile.png">
+        <img src="assets/iran-map-desktop.png" alt="نقشه ایران" loading="lazy">
+      </picture>
+      <div id="mapPins"></div>
+    </div>
+
+    <aside class="map-list">
+      <h3 data-fa="فهرست مقصدها" data-en="Destinations">فهرست مقصدها</h3>
+      <div id="cityList"></div>
+    </aside>
+  </div>
+
+  <div class="map-actions">
+    <button class="gold-button" id="mapToWalk" data-fa="نمایش این مقصد در پیاده‌روی" data-en="View this destination in the walk">
+      نمایش این مقصد در پیاده‌روی
+    </button>
+  </div>
+  <div class="back-row">
+    <button class="tool" id="mapBack" data-fa="بازگشت به سالن" data-en="Back to Hall">بازگشت به سالن</button>
+  </div>
+</section>
+
+<!-- پیاده‌روی -->
+<section class="panel walk-panel" id="walkPanel">
+  <div class="walk-heading">
+    <h2 data-fa="پیاده‌روی در گالری" data-en="Walk through the Gallery">پیاده‌روی در گالری</h2>
+    <p data-fa="قدم‌به‌قدم با پوشش و روایت فرهنگی مناطق ایران آشنا شوید."
+       data-en="Discover the clothing and cultural stories of Iran, one step at a time.">
+      قدم‌به‌قدم با پوشش و روایت فرهنگی مناطق ایران آشنا شوید.
+    </p>
+  </div>
+
+  <div class="walk-stage" id="walkStage">
     <picture>
-      <source
-        media="(max-width: 700px)"
-        srcset="assets/gallery-entrance-closed-mobile.png">
-      <img
-        class="scene-image"
-        src="assets/gallery-entrance-closed.png"
-        alt="ورودی گالری ایران، هزار رنگ">
+      <source media="(max-width:700px)" srcset="assets/gallery-choice-walk-mobile.jpg">
+      <img class="walk-bg" src="assets/gallery-choice-walk.jpg" alt="راهروی گالری">
     </picture>
-    <div class="scene-copy">
-      <h1>به ایران، هزار رنگ خوش آمدید</h1>
+    <div class="frame">
+      <img class="poster" id="cityPoster" src="qazvin.jpg" alt="پوستر قزوین">
+      <picture>
+        <source media="(max-width:700px)" srcset="assets/city-frame-mobile.png">
+        <img class="frame-art" src="assets/city-frame-desktop.png" alt="">
+      </picture>
     </div>
-    <div class="scroll-hint">برای آغاز سفر، به پایین بروید ↓</div>
-  </section>
+  </div>
 
-  <!-- ۲. درهای باز -->
-  <section class="scene">
-    <picture>
-      <source
-        media="(max-width: 700px)"
-        srcset="assets/gallery-entrance-open-mobile.png">
-      <img
-        class="scene-image"
-        src="assets/gallery-entrance-open.jpg"
-        alt="درهای باز نمایشگاه">
-    </picture>
-    <div class="scene-copy">
-      <h1>از اینجا، سفر رنگ‌ها آغاز می‌شود.</h1>
-    </div>
-  </section>
+  <div class="walk-controls">
+    <button class="gold-button" id="prevCity" data-fa="قبلی" data-en="Previous">قبلی</button>
+    <div class="city-name" id="currentCity">قزوین</div>
+    <button class="gold-button" id="nextCity" data-fa="بعدی" data-en="Next">بعدی</button>
+  </div>
 
-  <!-- ۳. سالن اصلی -->
-  <section class="scene">
-    <picture>
-      <source
-        media="(max-width: 700px)"
-        srcset="assets/gallery-main-hall-mobile.jpg">
-      <img
-        class="scene-image"
-        src="assets/gallery-main-hall.jpg"
-        alt="سالن اصلی نمایشگاه">
-    </picture>
-    <div class="scene-copy">
-      <h1>هر گوشه از این سرزمین، روایتی دارد</h1>
-      <p>روایتی از زنان، پوشش‌ها و فرهنگ‌ها؛ از دل تاریخ تا زندگی امروز.</p>
-    </div>
-  </section>
+  <p class="walk-note" id="walkProgress">ایستگاه ۱ از ۲۸</p>
 
-  <!-- ۴. انتخاب مسیر -->
-  <section class="choice-section" id="choices">
-    <div class="section-heading">
-      <h2>سفر خود را چگونه آغاز می‌کنید؟</h2>
-      <p>راه خود را انتخاب کنید و به کشف رنگ‌های ایران بروید.</p>
-    </div>
-
-    <div class="choice-grid">
-
-      <!-- مسیر نقشه -->
-      <a class="choice-card" href="#map">
-        <picture>
-          <source
-            media="(max-width: 700px)"
-            srcset="assets/iran-map-mobile.png">
-          <img
-            src="assets/iran-map-desktop.png"
-            alt="نقشه رنگارنگ ایران">
-        </picture>
-        <div class="choice-content">
-          <h3>نقشه سفر</h3>
-          <p>مقصدت را انتخاب کن؛ سفر تو از هر نقطه‌ای می‌تواند آغاز شود.</p>
-          <span class="choice-button">رفتن به نقشه</span>
-        </div>
-      </a>
-
-      <!-- مسیر پیاده‌روی -->
-      <a class="choice-card" href="#guided">
-        <picture>
-          <source
-            media="(max-width: 700px)"
-            srcset="assets/gallery-choice-walk-mobile.jpg">
-          <img
-            src="assets/gallery-choice-walk.jpg"
-            alt="راهروی تابلوهای نمایشگاه">
-        </picture>
-        <div class="choice-content">
-          <h3>پیاده‌روی در گالری</h3>
-          <p>قدم‌به‌قدم در مسیر نمایشگاه حرکت کن و تابلوها را به ترتیب ببین.</p>
-          <span class="choice-button">شروع پیاده‌روی</span>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ۵. مقصد مسیر نقشه -->
-  <section class="map-section" id="map">
-    <h2>راهنمای سفر</h2>
-    <p>مقصد خود را روی نقشه ایران انتخاب کنید.</p>
-
-    <picture class="map-picture">
-      <source
-        media="(max-width: 700px)"
-        srcset="assets/iran-map-mobile.png">
-      <img
-        src="assets/iran-map-desktop.png"
-        alt="نقشه برجسته ایران">
-    </picture>
-
-    <div class="map-note">
-      انتخاب شهرها و نشانگرهای تعاملی در مرحله بعد اضافه می‌شوند.
-    </div>
-  </section>
-
-  <!-- ۶. شروع مسیر هدایت‌شده -->
-  <section class="guided-section" id="guided">
-    <div class="guided-content">
-      <h2>پیاده‌روی در گالری</h2>
-      <p>
-        در این مسیر، تابلوها را یکی‌یکی و به ترتیب مسیر نمایشگاه تماشا خواهید کرد.
-        بازدید هدایت‌شده از قزوین آغاز می‌شود.
-      </p>
-      <p>
-        بخش حرکت دوربین و نمایش تابلوهای شهرها در مرحله بعد تکمیل می‌شود.
-      </p>
-      <a href="qazvin.html">آشنایی با قزوین</a>
-    </div>
-  </section>
+  <div class="back-row">
+    <button class="tool" id="walkBack" data-fa="بازگشت به سالن" data-en="Back to Hall">بازگشت به سالن</button>
+  </div>
+</section>
 
 </main>
 
 <footer>
   <div>ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</div>
   <div>آثار و ایده: مریم ساعی | طراحی و پژوهش فرهنگی: مرجان ساعی</div>
+  <div>Maryam Saei — Artwork | Marjan Saei — Design & Cultural Research</div>
 </footer>
 
 <script>
-const scenes = document.querySelectorAll(".scene");
+/* فهرست مسیر؛ ترتیب در نقشه و پیاده‌روی یکسان است */
+const cities = [
+ {fa:"قزوین",en:"Qazvin",file:"qazvin.jpg",x:43,y:43},
+ {fa:"گیلان",en:"Gilan",file:"gilan.jpg",x:43,y:34},
+ {fa:"مازندران",en:"Mazandaran",file:"mazandaran.png",x:49,y:38},
+ {fa:"گلستان",en:"Golestan",file:"turkmen-sahra.jpg",x:59,y:36},
+ {fa:"سمنان",en:"Semnan",file:"semnan.png",x:57,y:48},
+ {fa:"خراسان شمالی",en:"North Khorasan",file:"khorasan-shomali.png",x:70,y:37},
+ {fa:"خراسان جنوبی",en:"South Khorasan",file:"khorasan-jonubi.png",x:76,y:57},
+ {fa:"سیستان و بلوچستان",en:"Sistan and Baluchestan",file:"sistan-baluchestan.png",x:83,y:76},
+ {fa:"هرمزگان",en:"Hormozgan",file:"hormozgan.png",x:68,y:83},
+ {fa:"کرمان",en:"Kerman",file:"kerman.png",x:69,y:67},
+ {fa:"یزد",en:"Yazd",file:"yazd.png",x:58,y:65},
+ {fa:"اصفهان",en:"Isfahan",file:"isfahan.png",x:48,y:61},
+ {fa:"شیراز",en:"Shiraz",file:"fars.png",x:43,y:77},
+ {fa:"بوشهر",en:"Bushehr",file:"bushehr.png",x:34,y:83},
+ {fa:"کهگیلویه و بویراحمد",en:"Kohgiluyeh and Boyer-Ahmad",file:"poster.jpg",x:37,y:72},
+ {fa:"چهارمحال و بختیاری",en:"Chaharmahal and Bakhtiari",file:"chaharmahal.png",x:39,y:62},
+ {fa:"خوزستان",en:"Khuzestan",file:"poster.jpg",x:24,y:72},
+ {fa:"ایلام",en:"Ilam",file:"ilam.png",x:19,y:58},
+ {fa:"لرستان",en:"Lorestan",file:"lorestan.png",x:28,y:55},
+ {fa:"اراک",en:"Arak",file:"arak.png",x:34,y:48},
+ {fa:"کاشان",en:"Kashan",file:"kashan.png",x:43,y:55},
+ {fa:"همدان",en:"Hamedan",file:"hamedan.png",x:28,y:43},
+ {fa:"کرمانشاه",en:"Kermanshah",file:"kermanshah.png",x:18,y:49},
+ {fa:"کردستان",en:"Kurdistan",file:"kurdistan.png",x:17,y:37},
+ {fa:"ارومیه",en:"Urmia",file:"azerbaijan.png",x:10,y:32},
+ {fa:"تبریز",en:"Tabriz",file:"azerbaijan.png",x:20,y:25},
+ {fa:"اردبیل",en:"Ardabil",file:"ardabil.png",x:33,y:24},
+ {fa:"زنجان",en:"Zanjan",file:"zanjan.png",x:31,y:34}
+];
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
+let selected = 0;
+let language = "fa";
+let previousPanel = null;
+
+const $ = id => document.getElementById(id);
+const mapPanel = $("mapPanel");
+const walkPanel = $("walkPanel");
+const hall = $("mainHall");
+
+function renderCities(){
+  const list = $("cityList");
+  const pins = $("mapPins");
+  list.innerHTML = "";
+  pins.innerHTML = "";
+
+  cities.forEach((city,index)=>{
+    const button = document.createElement("button");
+    button.className = "city-option" + (index===selected?" selected":"");
+    button.innerHTML = `<span>${index+1}. ${language==="fa"?city.fa:city.en}</span><small>●</small>`;
+    button.addEventListener("click",()=>selectCity(index));
+    list.appendChild(button);
+
+    const pin = document.createElement("button");
+    pin.className = "map-pin" + (index===selected?" selected":"");
+    pin.style.left = city.x + "%";
+    pin.style.top = city.y + "%";
+    pin.title = language==="fa"?city.fa:city.en;
+    pin.setAttribute("aria-label",pin.title);
+    pin.addEventListener("click",()=>selectCity(index));
+    pins.appendChild(pin);
   });
-}, {
-  threshold: 0.35
+}
+
+function selectCity(index){
+  selected = Math.max(0,Math.min(cities.length-1,index));
+  renderCities();
+  updateWalk();
+}
+
+function updateWalk(){
+  const city = cities[selected];
+  $("currentCity").textContent = language==="fa"?city.fa:city.en;
+  $("walkProgress").textContent =
+    language==="fa"
+    ? `ایستگاه ${selected+1} از ${cities.length}`
+    : `Stop ${selected+1} of ${cities.length}`;
+
+  const poster = $("cityPoster");
+  poster.onerror = function(){
+    this.onerror = null;
+    this.src = "poster.jpg";
+  };
+  poster.src = city.file;
+  poster.alt = "پوستر " + city.fa;
+
+  $("walkStage").classList.add("moving");
+  setTimeout(()=>$("walkStage").classList.remove("moving"),900);
+}
+
+function showPanel(panel){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+  panel.classList.add("active");
+  previousPanel = panel;
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function backToHall(){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+  window.scrollTo({top:hall.offsetTop,behavior:"smooth"});
+}
+
+$("showMap").addEventListener("click",()=>{
+  showPanel(mapPanel);
+  renderCities();
+});
+$("showWalk").addEventListener("click",()=>{
+  selectCity(0);
+  showPanel(walkPanel);
+});
+$("mapBack").addEventListener("click",backToHall);
+$("walkBack").addEventListener("click",backToHall);
+$("mapToWalk").addEventListener("click",()=>{
+  updateWalk();
+  showPanel(walkPanel);
+});
+$("nextCity").addEventListener("click",()=>{
+  if(selected < cities.length-1) selectCity(selected+1);
+  else selectCity(0);
+});
+$("prevCity").addEventListener("click",()=>{
+  if(selected > 0) selectCity(selected-1);
+  else selectCity(cities.length-1);
+});
+$("backBtn").addEventListener("click",()=>{
+  if(walkPanel.classList.contains("active") || mapPanel.classList.contains("active")){
+    backToHall();
+  }else{
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
 });
 
-scenes.forEach((scene) => observer.observe(scene));
-</script>
+/* تغییر زبان */
+function setLanguage(){
+  document.documentElement.lang = language;
+  document.documentElement.dir = language==="fa"?"rtl":"ltr";
 
+  document.querySelectorAll("[data-fa]").forEach(el=>{
+    el.textContent = el.dataset[language];
+  });
+
+  $("langBtn").textContent = language==="fa"?"FA | EN":"EN | FA";
+  renderCities();
+  updateWalk();
+}
+$("langBtn").addEventListener("click",()=>{
+  language = language==="fa"?"en":"fa";
+  setLanguage();
+});
+
+/* شمارنده بازدید */
+fetch("https://api.counterapi.dev/v1/iran-hezar-rang/gallery/up")
+  .then(response=>{
+    if(!response.ok) throw new Error("counter unavailable");
+    return response.json();
+  })
+  .then(data=>{
+    $("visitorCount").textContent =
+      Number(data.count).toLocaleString(language==="fa"?"fa-IR":"en-US");
+  })
+  .catch(()=>{
+    $("visitorCount").textContent = "—";
+  });
+
+/* آماده‌سازی اولیه */
+renderCities();
+updateWalk();
+</script>
 </body>
 </html>
