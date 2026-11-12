@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f4ead8">
+<title>گالری سه‌بعدی | ایران، هزار رنگ</title>
+
+<style>
+:root {
+  --paper: #f4ead8;
+  --cream: #fffaf1;
+  --gold: #b38a4a;
+  --green: #153f3b;
+  --rust: #a83e1d;
+  --ink: #342d25;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.topbar {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background: rgba(255,250,241,.92);
+  border-bottom: 1px solid rgba(179,138,74,.25);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  color: var(--green);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.home-link {
+  color: var(--green);
+  text-decoration: none;
+  border: 1px solid var(--gold);
+  border-radius: 25px;
+  padding: 8px 17px;
+  font-size: 13px;
+}
+
+.scene {
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.scene-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(20,18,15,.08),
+    rgba(20,18,15,.24)
+  );
+}
+
+.scene-copy {
+  width: min(90%, 760px);
+  padding: 25px;
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 15px rgba(0,0,0,.55);
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.scene.visible .scene-copy {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scene-copy h1 {
+  font-size: clamp(27px, 5vw, 52px);
+  line-height: 1.8;
+  margin: 0 0 12px;
+}
+
+.scene-copy p {
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 2;
+  margin: 0;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 25px;
+  color: white;
+  font-size: 13px;
+  opacity: .9;
+  animation: hint 2s infinite;
+}
+
+@keyframes hint {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* انتخاب مسیر */
+
+.choice-section {
+  min-height: 100svh;
+  padding: 105px 6% 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top, #fffdf8, transparent 65%),
+    var(--paper);
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.section-heading h2 {
+  color: var(--green);
+  font-size: clamp(25px, 4vw, 38px);
+  margin: 0 0 12px;
+}
+
+.section-heading p {
+  color: #756858;
+  line-height: 2;
+  margin: 0;
+}
+
+.choice-grid {
+  width: min(100%, 1050px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.choice-card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: white;
+  border: 1px solid rgba(179,138,74,.4);
+  box-shadow: 0 8px 28px rgba(70,50,25,.09);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.choice-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 18px 38px rgba(70,50,25,.17);
+}
+
+.choice-card picture {
+  display: block;
+  height: 290px;
+  overflow: hidden;
+}
+
+.choice-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.choice-card:hover img {
+  transform: scale(1.04);
+}
+
+.choice-content {
+  padding: 22px;
+  text-align: center;
+}
+
+.choice-content h3 {
+  color: var(--green);
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+
+.choice-content p {
+  color: #756858;
+  font-size: 14px;
+  line-height: 2;
+  margin: 0 0 18px;
+}
+
+.choice-button {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  border-radius: 30px;
+  padding: 11px 25px;
+  font-size: 14px;
+}
+
+/* نقشه */
+
+.map-section {
+  min-height: 100svh;
+  padding: 95px 5% 55px;
+  background: #fffaf1;
+  text-align: center;
+}
+
+.map-section h2 {
+  color: var(--green);
+  font-size: clamp(26px, 4vw, 38px);
+  margin: 0 0 12px;
+}
+
+.map-section p {
+  color: #756858;
+  line-height: 2;
+  margin-bottom: 28px;
+}
+
+.map-picture {
+  display: block;
+  width: min(100%, 1150px);
+  margin: auto;
+}
+
+.map-picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(40,30,20,.12);
+}
+
+.map-note {
+  margin: 22px auto 0;
+  color: var(--green);
+  font-size: 14px;
+}
+
+/* شروع مسیر هدایت شده - تکمیل تابلوها در مرحله بعد */
+
+.guided-section {
+  min-height: 100svh;
+  padding: 100px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #fffaf1;
+}
+
+.guided-content {
+  max-width: 650px;
+}
+
+.guided-content h2 {
+  color: var(--green);
+  font-size: clamp(26px, 4vw, 38px);
+}
+
+.guided-content p {
+  line-height: 2.2;
+  color: #756858;
+}
+
+.guided-content a {
+  display: inline-block;
+  margin-top: 15px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 13px 27px;
+}
+
+footer {
+  padding: 25px 15px;
+  text-align: center;
+  background: var(--green);
+  color: #fffaf1;
+  font-size: 12px;
+  line-height: 2.2;
+}
+
+/* موبایل */
+
+@media (max-width: 700px) {
+  .topbar {
+    height: 54px;
+    padding: 0 4%;
+  }
+
+  .brand {
+    font-size: 13px;
+  }
+
+  .home-link {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .scene {
+    min-height: 100svh;
+  }
+
+  .scene-copy {
+    width: 92%;
+    padding: 18px;
+  }
+
+  .scene-copy h1 {
+    font-size: 29px;
+  }
+
+  .scene-copy p {
+    font-size: 16px;
+  }
+
+  .choice-section {
+    padding: 85px 5% 55px;
+  }
+
+  .choice-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .choice-card picture {
+    height: auto;
+    aspect-ratio: 9 / 12;
+  }
+
+  .choice-content {
+    padding: 18px;
+  }
+
+  .choice-content h3 {
+    font-size: 20px;
+  }
+
+  .map-section {
+    padding: 85px 4% 40px;
+  }
+
+  .map-picture img {
+    border-radius: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">ایران، هزار رنگ</a>
+  <a class="home-link" href="index.html">صفحه اصلی</a>
+</header>
+
+<main>
+
+  <!-- ۱. ورودی بسته -->
+  <section class="scene">
+    <picture>
+      <source
+        media="(max-width: 700px)"
+        srcset="assets/gallery-entrance-closed-mobile.png">
+      <img
+        class="scene-image"
+        src="assets/gallery-entrance-closed.png"
+        alt="ورودی گالری ایران، هزار رنگ">
+    </picture>
+    <div class="scene-copy">
+      <h1>به ایران، هزار رنگ خوش آمدید</h1>
+    </div>
+    <div class="scroll-hint">برای آغاز سفر، به پایین بروید ↓</div>
+  </section>
+
+  <!-- ۲. درهای باز -->
+  <section class="scene">
+    <picture>
+      <source
+        media="(max-width: 700px)"
+        srcset="assets/gallery-entrance-open-mobile.png">
+      <img
+        class="scene-image"
+        src="assets/gallery-entrance-open.jpg"
+        alt="درهای باز نمایشگاه">
+    </picture>
+    <div class="scene-copy">
+      <h1>از اینجا، سفر رنگ‌ها آغاز می‌شود.</h1>
+    </div>
+  </section>
+
+  <!-- ۳. سالن اصلی -->
+  <section class="scene">
+    <picture>
+      <source
+        media="(max-width: 700px)"
+        srcset="assets/gallery-main-hall-mobile.jpg">
+      <img
+        class="scene-image"
+        src="assets/gallery-main-hall.jpg"
+        alt="سالن اصلی نمایشگاه">
+    </picture>
+    <div class="scene-copy">
+      <h1>هر گوشه از این سرزمین، روایتی دارد</h1>
+      <p>روایتی از زنان، پوشش‌ها و فرهنگ‌ها؛ از دل تاریخ تا زندگی امروز.</p>
+    </div>
+  </section>
+
+  <!-- ۴. انتخاب مسیر -->
+  <section class="choice-section" id="choices">
+    <div class="section-heading">
+      <h2>سفر خود را چگونه آغاز می‌کنید؟</h2>
+      <p>راه خود را انتخاب کنید و به کشف رنگ‌های ایران بروید.</p>
+    </div>
+
+    <div class="choice-grid">
+
+      <!-- مسیر نقشه -->
+      <a class="choice-card" href="#map">
+        <picture>
+          <source
+            media="(max-width: 700px)"
+            srcset="assets/iran-map-mobile.png">
+          <img
+            src="assets/iran-map-desktop.png"
+            alt="نقشه رنگارنگ ایران">
+        </picture>
+        <div class="choice-content">
+          <h3>نقشه سفر</h3>
+          <p>مقصدت را انتخاب کن؛ سفر تو از هر نقطه‌ای می‌تواند آغاز شود.</p>
+          <span class="choice-button">رفتن به نقشه</span>
+        </div>
+      </a>
+
+      <!-- مسیر پیاده‌روی -->
+      <a class="choice-card" href="#guided">
+        <picture>
+          <source
+            media="(max-width: 700px)"
+            srcset="assets/gallery-choice-walk-mobile.jpg">
+          <img
+            src="assets/gallery-choice-walk.jpg"
+            alt="راهروی تابلوهای نمایشگاه">
+        </picture>
+        <div class="choice-content">
+          <h3>پیاده‌روی در گالری</h3>
+          <p>قدم‌به‌قدم در مسیر نمایشگاه حرکت کن و تابلوها را به ترتیب ببین.</p>
+          <span class="choice-button">شروع پیاده‌روی</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ۵. مقصد مسیر نقشه -->
+  <section class="map-section" id="map">
+    <h2>راهنمای سفر</h2>
+    <p>مقصد خود را روی نقشه ایران انتخاب کنید.</p>
+
+    <picture class="map-picture">
+      <source
+        media="(max-width: 700px)"
+        srcset="assets/iran-map-mobile.png">
+      <img
+        src="assets/iran-map-desktop.png"
+        alt="نقشه برجسته ایران">
+    </picture>
+
+    <div class="map-note">
+      انتخاب شهرها و نشانگرهای تعاملی در مرحله بعد اضافه می‌شوند.
+    </div>
+  </section>
+
+  <!-- ۶. شروع مسیر هدایت‌شده -->
+  <section class="guided-section" id="guided">
+    <div class="guided-content">
+      <h2>پیاده‌روی در گالری</h2>
+      <p>
+        در این مسیر، تابلوها را یکی‌یکی و به ترتیب مسیر نمایشگاه تماشا خواهید کرد.
+        بازدید هدایت‌شده از قزوین آغاز می‌شود.
+      </p>
+      <p>
+        بخش حرکت دوربین و نمایش تابلوهای شهرها در مرحله بعد تکمیل می‌شود.
+      </p>
+      <a href="qazvin.html">آشنایی با قزوین</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</div>
+  <div>آثار و ایده: مریم ساعی | طراحی و پژوهش فرهنگی: مرجان ساعی</div>
+</footer>
+
+<script>
+const scenes = document.querySelectorAll(".scene");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, {
+  threshold: 0.35
+});
+
+scenes.forEach((scene) => observer.observe(scene));
+</script>
+
+</body>
+</html>
