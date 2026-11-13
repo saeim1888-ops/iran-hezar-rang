@@ -230,7 +230,34 @@ p{font-size:12px;line-height:1.9;margin:6px 0}.muted{color:#786b56;font-size:11p
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 
 const cities=[
-["قزوین","Qazvin","qazvin.jpg",43,43,"qazvin.html"],["گیلان","Gilan","gilan.jpg",43,34,"gilan.html"],["مازندران","Mazandaran","mazandaran.png",49,38,"mazandaran.html"],["گلستان","Golestan","golestan.png",59,36,"turkmen-sahra.html"],["سمنان","Semnan","semnan.png",57,48,"semnan.html"],["خراسان شمالی","North Khorasan","khorasan-shomali.png",70,37,"khorasan-shomali.html"],["خراسان جنوبی","South Khorasan","khorasan-jonubi.png",76,57,"khorasan-jonubi.html"],["سیستان و بلوچستان","Sistan and Baluchestan","sistan-baluchestan.png",83,76,"sistan-baluchestan.html"],["هرمزگان","Hormozgan","hormozgan.png",68,83,"hormozgan.html"],["کرمان","Kerman","kerman.png",69,67,null],["یزد","Yazd","yazd.png",58,65,"yazd.html"],["اصفهان","Isfahan","isfahan.png",48,61,"isfahan.html"],["شیراز","Shiraz","fars.png",43,77,"fars.html"],["بوشهر","Bushehr","bushehr.png",34,83,"bushehr.html"],["کهگیلویه و بویراحمد","Kohgiluyeh and Boyer-Ahmad","kohgiluyeh.png",37,72,null],["چهارمحال و بختیاری","Chaharmahal and Bakhtiari","chaharmahal.png",39,62,"chaharmahal.html"],["خوزستان","Khuzestan","khuzestan.png",24,72,null],["ایلام","Ilam","ilam.png",19,58,"ilam.html"],["لرستان","Lorestan","lorestan.png",28,55,"lorestan.html"],["اراک","Arak","arak.png",34,48,"arak.html"],["کاشان","Kashan","kashan.png",43,55,"kashan.html"],["همدان","Hamedan","hamedan.png",28,43,"hamedan.html"],["کرمانشاه","Kermanshah","kermanshah.png",18,49,"kermanshah.html"],["کردستان","Kurdistan","kurdistan.png",17,37,"kurdistan.html"],["ارومیه","Urmia","azerbaijan.png",10,32,"azerbaijan.html"],["تبریز","Tabriz","azerbaijan.png",20,25,"azerbaijan.html"],["اردبیل","Ardabil","ardabil.png",33,24,"ardabil.html"],["زنجان","Zanjan","zanjan.png",31,34,"zanjan.html"]
+["قزوین","Qazvin","qazvin.jpg",43,43,"qazvin.html"],
+["گیلان","Gilan","gilan.jpg",43,34,"gilan.html"],
+["مازندران","Mazandaran","mazandaran.png",49,38,"mazandaran.html"],
+["گلستان","Golestan","turkmen-sahra.jpg",59,36,"turkmen-sahra.html"],
+["سمنان","Semnan","semnan.png",57,48,"semnan.html"],
+["خراسان شمالی","North Khorasan","khorasan-shomali.png",70,37,"khorasan-shomali.html"],
+["خراسان جنوبی","South Khorasan","khorasan-jonubi.png",76,57,"khorasan-jonubi.html"],
+["سیستان و بلوچستان","Sistan and Baluchestan","sistan-baluchestan.png",83,76,"sistan-baluchestan.html"],
+["هرمزگان","Hormozgan","hormozgan.png",68,83,"hormozgan.html"],
+["کرمان","Kerman","",69,67,null],
+["یزد","Yazd","yazd.png",58,65,"yazd.html"],
+["اصفهان","Isfahan","isfahan.png",48,61,"isfahan.html"],
+["شیراز","Shiraz","fars.png",43,77,"fars.html"],
+["بوشهر","Bushehr","bushehr.png",34,83,"bushehr.html"],
+["کهگیلویه و بویراحمد","Kohgiluyeh and Boyer-Ahmad","",37,72,null],
+["چهارمحال و بختیاری","Chaharmahal and Bakhtiari","chaharmahal.png",39,62,"chaharmahal.html"],
+["خوزستان","Khuzestan","",24,72,null],
+["ایلام","Ilam","ilam.png",19,58,"ilam.html"],
+["لرستان","Lorestan","lorestan.png",28,55,"lorestan.html"],
+["اراک","Arak","arak.png",34,48,"arak.html"],
+["کاشان","Kashan","kashan.png",43,55,"kashan.html"],
+["همدان","Hamedan","hamedan.png",28,43,"hamedan.html"],
+["کرمانشاه","Kermanshah","kermanshah.png",18,49,"kermanshah.html"],
+["کردستان","Kurdistan","kurdistan.png",17,37,"kurdistan.html"],
+["ارومیه","Urmia","azerbaijan-poster.png",10,32,"azerbaijan.html"],
+["تبریز","Tabriz","azerbaijan-poster.png",20,25,"azerbaijan.html"],
+["اردبیل","Ardabil","ardabil.png",33,24,"ardabil.html"],
+["زنجان","Zanjan","zanjan.png",31,34,"zanjan.html"]
 ];
 const destinationCoords=[[50.00,36.27],[49.58,37.28],[53.06,36.56],[54.43,36.84],[53.39,35.58],[57.33,37.47],[59.22,32.86],[60.86,29.50],[56.27,27.18],[57.08,30.28],[54.37,31.90],[51.67,32.65],[52.53,29.59],[50.84,28.92],[51.59,30.67],[50.86,32.33],[48.67,31.32],[46.42,33.64],[48.35,33.49],[49.69,34.09],[51.44,33.98],[48.51,34.80],[47.07,34.31],[46.99,35.31],[45.07,37.55],[46.29,38.08],[48.29,38.25],[48.50,36.67]];
 let provinceMapLoaded=false;
@@ -311,15 +338,7 @@ function loadPosterTexture(i){
  if(!city||!material||posterLoaded.has(i))return;
  posterLoaded.add(i);
  const file=city[2];
- const aliases={
-  3:['golestan.jpg','golestan.png','golestan.jpeg'],
-  9:['kerman.jpg','kerman.png','kerman.jpeg'],
-  14:['kohgiluyeh-boyerahmad.png','kohgiluyeh.png','kohgiluyeh.jpg','kohgiluyeh-va-boyerahmad.png'],
-  16:['khuzestan.jpg','khuzestan.png','khuzestan.jpeg'],
-  24:['azerbaijan.png','azarbaijan.png','west-azerbaijan.png'],
-  25:['azerbaijan.png','azarbaijan.png','east-azerbaijan.png']
- };
- const candidates=[...new Set(['./'+file,...(aliases[i]||[]).map(name=>'./'+name)])];
+ const candidates=[`https://saeim1888-ops.github.io/iran-hezar-rang/${file}`,file,'./'+file];
  const tryNext=n=>{
   if(n>=candidates.length){
    material.map=makePosterFallback(i);material.color.set(0xffffff);material.needsUpdate=true;
@@ -395,15 +414,7 @@ function showFocusArtwork(i){
  if(!img||!fallback)return;
  img.hidden=true;fallback.hidden=true;img.removeAttribute('src');
  if(!file){fallback.hidden=false;return;}
- const aliases={
-  3:['golestan.jpg','golestan.png','golestan.jpeg'],
-  9:['kerman.jpg','kerman.png','kerman.jpeg'],
-  14:['kohgiluyeh-boyerahmad.png','kohgiluyeh.png','kohgiluyeh.jpg','kohgiluyeh-va-boyerahmad.png'],
-  16:['khuzestan.jpg','khuzestan.png','khuzestan.jpeg'],
-  24:['azerbaijan.png','azarbaijan.png','west-azerbaijan.png'],
-  25:['azerbaijan.png','azarbaijan.png','east-azerbaijan.png']
- };
- const candidates=[...new Set(['./'+file,...(aliases[i]||[]).map(name=>'./'+name)])];
+ const candidates=[`https://saeim1888-ops.github.io/iran-hezar-rang/${file}`,file,'./'+file];
  let n=0;
  const tryNext=()=>{if(n>=candidates.length){img.hidden=true;fallback.hidden=false;return;}img.onerror=()=>{n++;tryNext();};img.onload=()=>{img.hidden=false;fallback.hidden=true;};img.src=candidates[n++];};
  img.alt=(lang==='fa'?'اثر هنری استان ':'Artwork of ')+cities[i][lang==='fa'?0:1];tryNext();
