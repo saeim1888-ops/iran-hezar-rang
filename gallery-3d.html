@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -11,88 +10,47 @@
 <title>گالری سه‌بعدی | ایران، هزار رنگ</title>
 <style>
 :root{--green:#24463f;--deep:#e9e1d3;--paper:#f4eee3;--gold:#b99558;--cream:#fffdf8;--ink:#403b33}
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;font-family:"Vazirmatn",Tahoma,Arial,sans-serif;background:var(--deep);color:var(--ink)}
-body{overflow:hidden}
-button,a{font:inherit}
-button{cursor:pointer}
-[hidden]{display:none!important}
-#scene{position:fixed;inset:0;z-index:0}
-#scene canvas{display:block;width:100%;height:100%}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;font-family:"Vazirmatn",Tahoma,Arial,sans-serif;background:var(--deep);color:var(--ink)}body{overflow:hidden}
+button,a{font:inherit}button{cursor:pointer}[hidden]{display:none!important}
+#scene{position:fixed;inset:0;z-index:0}#scene canvas{display:block;width:100%;height:100%}
 .topbar{position:fixed;z-index:30;top:0;left:0;right:0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:7px 2%;background:#fbf8f0df;backdrop-filter:blur(12px);border-bottom:1px solid #b9955866}
-.tools{display:flex;gap:6px;align-items:center}
-.tool{border:1px solid #c99a42;border-radius:22px;padding:6px 10px;background:#fffaf1;color:var(--green);font-size:10px;text-decoration:none}
-.brand{text-align:center;font-weight:bold;color:#29473e;font-size:14px}
-.brand small{display:block;font-size:8px;letter-spacing:1.5px;color:#9c7941;margin-top:2px}
+.tools{display:flex;gap:6px;align-items:center}.tool{border:1px solid #c99a42;border-radius:22px;padding:6px 10px;background:#fffaf1;color:var(--green);font-size:10px;text-decoration:none}
+.brand{text-align:center;font-weight:bold;color:#29473e;font-size:14px}.brand small{display:block;font-size:8px;letter-spacing:1.5px;color:#9c7941;margin-top:2px}
 .overlay{position:fixed;z-index:20;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:65px 14px 45px;background:linear-gradient(#f3eee4a8,#e9e1d3c9);overflow:auto}
 .panel{width:min(760px,94vw);padding:22px 24px;border:1px solid #c9ad7b;background:#fffdf0e8;box-shadow:0 15px 45px #55452b25;border-radius:16px;backdrop-filter:blur(16px)}
-h1{font-size:clamp(22px,3.2vw,38px);color:#29473e;margin:0 0 9px}
-h2{font-size:clamp(18px,2.6vw,28px);color:#29473e;margin:0 0 10px}
-p{font-size:12px;line-height:1.9;margin:6px 0}
-.muted{color:#786b56;font-size:11px}
+h1{font-size:clamp(22px,3.2vw,38px);color:#29473e;margin:0 0 9px}h2{font-size:clamp(18px,2.6vw,28px);color:#29473e;margin:0 0 10px}
+p{font-size:12px;line-height:1.9;margin:6px 0}.muted{color:#786b56;font-size:11px}
 .gold{border:1px solid #d8bd87;border-radius:25px;padding:9px 17px;background:linear-gradient(135deg,#fffaf0,#dfc58f);color:#29473e;font-size:11px;font-weight:bold;margin:4px}
-.actions{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:14px}
-.hint{position:fixed;z-index:6;bottom:42px;left:50%;transform:translateX(-50%);padding:7px 12px;border-radius:20px;background:#fffdf0e8;color:#4b493f;font-size:10px;white-space:nowrap}
-#mapOverlay{align-items:flex-start;padding-top:72px;background:#eee8dff2}
-#mapGo{display:none}
-.mapbox{width:min(1050px,96vw);display:grid;grid-template-columns:minmax(0,1.6fr) minmax(210px,.7fr);gap:12px;align-items:start}
-.mapimage{position:relative;background:#fffaf1;border-radius:12px;overflow:hidden;border:1px solid #cbb98f;box-shadow:0 8px 24px #473b2618}
-.mapimage img{width:100%;display:block}
+.actions{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:14px}.hint{position:fixed;z-index:6;bottom:42px;left:50%;transform:translateX(-50%);padding:7px 12px;border-radius:20px;background:#fffdf0e8;color:#4b493f;font-size:10px;white-space:nowrap}
+#mapOverlay{align-items:center;justify-content:center;padding:76px 12px 58px;background:linear-gradient(145deg,#f4eee3f2,#e6dac5f5)}
+#mapOverlay>div{width:100%;max-width:1180px;margin:auto}
+#mapOverlay h2{margin-bottom:3px}#mapOverlay>div>p{margin:3px 0 12px}
+.mapbox{width:100%;display:grid;grid-template-columns:minmax(0,1.65fr) minmax(190px,.65fr);gap:16px;align-items:center}
+.mapimage{position:relative;overflow:visible;border:1px solid #c9ad7b;border-radius:14px;background:#f8f0df;box-shadow:0 12px 0 #b99a68,0 17px 0 #8e7046,0 24px 32px #51412d35;transform:perspective(1100px) rotateX(4deg);transform-origin:center bottom}
+.mapimage:after{content:"";position:absolute;left:3%;right:3%;bottom:-17px;height:17px;border-radius:0 0 12px 12px;background:linear-gradient(#b99a68,#8e7046);z-index:-1}
+.mapimage img{display:block;width:100%;border-radius:13px}
 .pins{position:absolute;inset:0}
-.pin{position:absolute;transform:translate(-50%,-50%);border:2px solid white;border-radius:50%;width:14px;height:14px;background:#a83e1d;box-shadow:0 0 8px #0009;padding:0}
-.pin.sel{width:21px;height:21px;background:#e0ad45;box-shadow:0 0 0 5px #e0ad4566;z-index:2}
-.citylist{max-height:64vh;overflow:auto;background:#fffdf8;color:#342d25;border-radius:12px;padding:9px;border:1px solid #d6c7a8}
-.citylist h3{text-align:center;color:var(--green);font-size:13px;margin:3px}
-.city{display:block;width:100%;padding:7px;border:0;border-bottom:1px solid #e9ddc9;background:none;color:#342d25;text-align:right;font-size:11px}
+.pin{position:absolute;transform:translate(-50%,-50%);min-width:24px;min-height:21px;padding:3px 5px;border:1px solid #fff8e8;border-radius:7px;background:linear-gradient(145deg,#9d4828,#74351e);color:#fff9e9;font-size:clamp(7px,.72vw,10px);font-weight:600;line-height:1.25;white-space:nowrap;box-shadow:0 3px 0 #542a19,0 5px 9px #0004;transition:transform .3s,box-shadow .3s,background .3s;z-index:2}
+.pin.sel{background:linear-gradient(145deg,#f1d38d,#c18b36);color:#243e34;border:2px solid #fff8e8;transform:translate(-50%,-100%) scale(1.18);box-shadow:0 7px 0 #9b7136,0 11px 16px #0004;z-index:5}
+.citylist{max-height:56vh;overflow:auto;background:#fffdf8;color:#342d25;border-radius:12px;padding:10px;border:1px solid #d6c7a8;box-shadow:0 8px 24px #473b2618}
+.citylist h3{text-align:center;color:var(--green);font-size:13px;margin:3px 0 8px}
+.city{display:block;width:100%;padding:8px;border:0;border-bottom:1px solid #e9ddc9;background:none;color:#342d25;text-align:right;font-size:11px}
 .city.sel{background:#e9dfc9;color:var(--green);font-weight:bold;outline:1px solid #c99a42}
-#welcome{background:linear-gradient(#07130c66,#07130cc9),url('assets/gallery-entrance-closed.png') center/cover}
-#doorOverlay{background:linear-gradient(#07130c55,#07130caa),url('assets/gallery-entrance-open.jpg') center/cover}
-#endOverlay{background:linear-gradient(#07130c88,#07130cf0),url('assets/gallery-choice-walk.jpg') center/cover}
-#endOverlay .panel{background:#10251ebd}
-#hallOverlay h1{font-size:21px}
-#endSlogan{font-size:clamp(16px,2.2vw,22px)}
+.map-actions{position:sticky;bottom:0;z-index:12;display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:16px auto 0;padding:9px;border:1px solid #d7c39e;border-radius:30px;background:#fffaf0ed;box-shadow:0 5px 20px #473b2620}
+.map-actions .gold{margin:0}
+@media(max-width:700px){#mapOverlay{padding:68px 9px 52px}.mapbox{grid-template-columns:1fr;gap:9px}.mapimage{transform:perspective(900px) rotateX(3deg)}.citylist{max-height:20vh}.pin{font-size:7px;padding:3px 4px;min-width:20px;min-height:18px}.map-actions{margin-top:9px;padding:7px}.map-actions .gold{font-size:9px;padding:7px 10px}}
+#welcome{background:linear-gradient(#07130c66,#07130cc9),url('assets/gallery-entrance-closed.png') center/cover}#doorOverlay{background:linear-gradient(#07130c55,#07130caa),url('assets/gallery-entrance-open.jpg') center/cover}#endOverlay{background:linear-gradient(#07130c88,#07130cf0),url('assets/gallery-choice-walk.jpg') center/cover}#endOverlay .panel{background:#10251ebd}#hallOverlay h1{font-size:21px}#endSlogan{font-size:clamp(16px,2.2vw,22px)}
 #walkInfo{position:fixed;z-index:8;bottom:48px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:7px;background:#fffdf0e8;border:1px solid #c99a42;border-radius:26px;padding:6px 9px}
-#walkInfo button{border:0;border-radius:20px;padding:7px 11px;background:#f0d69f;color:#18372e;font-size:10px;font-weight:bold}
-#walkInfo #openMapWalk{background:#153f3b;color:#fff0c8;border:1px solid #c99a42}
-#cityName{min-width:90px;text-align:center;color:#29473e;font-size:11px;font-weight:bold}
+#walkInfo button{border:0;border-radius:20px;padding:7px 11px;background:#f0d69f;color:#18372e;font-size:10px;font-weight:bold}#walkInfo #openMapWalk{background:#153f3b;color:#fff0c8;border:1px solid #c99a42}#cityName{min-width:90px;text-align:center;color:#29473e;font-size:11px;font-weight:bold}
 #visitorFooter{position:fixed;z-index:31;bottom:7px;left:50%;transform:translateX(-50%);padding:5px 12px;border-radius:18px;background:#fffdf0e8;border:1px solid #c99a4266;color:#625945;font-size:9px;white-space:nowrap}
-#loading .panel{width:min(360px,88vw)}
-.loaderTrack{height:4px;background:#ffffff30;border-radius:9px;overflow:hidden;margin:15px auto 5px;max-width:250px}
-.loaderBar{height:100%;width:0;background:linear-gradient(90deg,#d8ad58,#fff0c2);animation:loadbar 1.7s ease forwards}
-@keyframes loadbar{to{width:100%}}
-#walkSlogans{position:fixed;z-index:7;top:62px;left:50%;transform:translateX(-50%);display:flex;gap:6px;justify-content:center;max-width:94vw;pointer-events:none}
-#walkSlogans span{background:#fffdf0e8;border:1px solid #c99a4266;border-radius:20px;padding:6px 10px;color:#29473e;font-size:9px;white-space:nowrap}
-.avatar{width:82px;height:82px;margin:12px auto 8px;border-radius:50%;background:radial-gradient(circle at 50% 28%,#f7dfbd 0 17%,transparent 18%),linear-gradient(145deg,#d5a45d,#35584a);border:2px solid #d8b46d;display:grid;place-items:center;overflow:hidden}
-.avatar svg{width:74px;height:74px}
+#loading .panel{width:min(360px,88vw)}.loaderTrack{height:4px;background:#ffffff30;border-radius:9px;overflow:hidden;margin:15px auto 5px;max-width:250px}.loaderBar{height:100%;width:0;background:linear-gradient(90deg,#d8ad58,#fff0c2);animation:loadbar 1.7s ease forwards}@keyframes loadbar{to{width:100%}}
+#walkSlogans{position:fixed;z-index:7;top:62px;left:50%;transform:translateX(-50%);display:flex;gap:6px;justify-content:center;max-width:94vw;pointer-events:none}#walkSlogans span{background:#fffdf0e8;border:1px solid #c99a4266;border-radius:20px;padding:6px 10px;color:#29473e;font-size:9px;white-space:nowrap}
+.avatar{width:82px;height:82px;margin:12px auto 8px;border-radius:50%;background:radial-gradient(circle at 50% 28%,#f7dfbd 0 17%,transparent 18%),linear-gradient(145deg,#d5a45d,#35584a);border:2px solid #d8b46d;display:grid;place-items:center;overflow:hidden}.avatar svg{width:74px;height:74px}
 #posterFocusOverlay{background:transparent;justify-content:flex-end;align-items:center;padding:82px 3vw 56px;pointer-events:none;overflow:hidden}
 #posterFocusOverlay .panel{pointer-events:auto;width:min(340px,31vw);padding:15px 17px;background:rgba(255,253,247,.24);border:1px solid rgba(255,255,255,.48);box-shadow:0 8px 26px rgba(28,24,17,.12),inset 0 1px 0 rgba(255,255,255,.35);backdrop-filter:blur(3px) saturate(115%);-webkit-backdrop-filter:blur(3px) saturate(115%);text-align:right;color:#302d27}
-#posterFocusOverlay h2{font-size:20px;margin:2px 0 5px;color:#263d35;text-shadow:0 1px 8px rgba(255,255,255,.55);font-weight:700}
-#posterFocusOverlay p{font-size:10px;line-height:1.9;color:#38352f;text-shadow:0 1px 7px rgba(255,255,255,.65)}
-#focusSlogan{font-family:"Noto Naskh Arabic","Vazirmatn",serif;font-size:14px!important;font-weight:700;line-height:1.8!important;color:#896a35!important;margin:2px 0 8px;text-shadow:0 1px 8px rgba(255,255,255,.8)!important}
-#focusDesc{margin-top:5px}
-#posterFocusOverlay .gold{font-size:9px;padding:7px 10px;margin:2px}
-@media(max-width:700px){
-#posterFocusOverlay{align-items:flex-end;justify-content:center;padding:0 10px 62px}
-#posterFocusOverlay .panel{width:min(96vw,440px);padding:10px 12px;text-align:center;background:rgba(255,253,247,.30);backdrop-filter:blur(3px) saturate(115%);-webkit-backdrop-filter:blur(3px) saturate(115%)}
-#posterFocusOverlay h2{font-size:16px}
-#posterFocusOverlay p{font-size:9px}
-#posterFocusOverlay .actions{margin-top:7px}
-#posterFocusOverlay .gold{font-size:8px;padding:6px 8px}
-.topbar{grid-template-columns:1fr auto;grid-template-areas:"tools brand";gap:4px;padding:5px}
-.tools{grid-area:tools;gap:4px}
-.brand{grid-area:brand;font-size:12px}
-.brand small{display:none}
-.tool{font-size:9px;padding:6px 8px}
-.mapbox{grid-template-columns:1fr}
-.citylist{max-height:24vh}
-.overlay{padding-top:75px}
-.panel{padding:17px 12px}
-#walkInfo{bottom:42px;width:max-content;max-width:96vw;gap:4px;padding:5px}
-#walkInfo button{padding:7px 9px;font-size:9px}
-#cityName{min-width:75px;font-size:10px}
-#walkSlogans{top:53px;gap:4px}
-#walkSlogans span{font-size:8px;padding:5px 7px}
-}
+#posterFocusOverlay h2{font-size:20px;margin:2px 0 5px;color:#263d35;text-shadow:0 1px 8px rgba(255,255,255,.55);font-weight:700}#posterFocusOverlay p{font-size:10px;line-height:1.9;color:#38352f;text-shadow:0 1px 7px rgba(255,255,255,.65)}#focusSlogan{font-family:"Noto Naskh Arabic","Vazirmatn",serif;font-size:14px!important;font-weight:700;line-height:1.8!important;color:#896a35!important;margin:2px 0 8px;text-shadow:0 1px 8px rgba(255,255,255,.8)!important}#focusDesc{margin-top:5px}#posterFocusOverlay .gold{font-size:9px;padding:7px 10px;margin:2px}
+@media(max-width:700px){#posterFocusOverlay{align-items:flex-end;justify-content:center;padding:0 10px 62px}#posterFocusOverlay .panel{width:min(96vw,440px);padding:10px 12px;text-align:center;background:rgba(255,253,247,.30);backdrop-filter:blur(3px) saturate(115%);-webkit-backdrop-filter:blur(3px) saturate(115%)}#posterFocusOverlay h2{font-size:16px}#posterFocusOverlay p{font-size:9px}#posterFocusOverlay .actions{margin-top:7px}#posterFocusOverlay .gold{font-size:8px;padding:6px 8px}
+.topbar{grid-template-columns:1fr auto;grid-template-areas:"tools brand";gap:4px;padding:5px}.tools{grid-area:tools;gap:4px}.brand{grid-area:brand;font-size:12px}.brand small{display:none}.tool{font-size:9px;padding:6px 8px}.mapbox{grid-template-columns:1fr}.citylist{max-height:24vh}.overlay{padding-top:75px}.panel{padding:17px 12px}#walkInfo{bottom:42px;width:max-content;max-width:96vw;gap:4px;padding:5px}#walkInfo button{padding:7px 9px;font-size:9px}#cityName{min-width:75px;font-size:10px}#walkSlogans{top:53px;gap:4px}#walkSlogans span{font-size:8px;padding:5px 7px}}
 </style>
 </head>
 <body>
@@ -132,32 +90,25 @@ p{font-size:12px;line-height:1.9;margin:6px 0}
 </section>
 
 <section class="overlay" id="mapOverlay" hidden>
- <div style="width:100%">
+ <div>
   <h2 id="mapTitle">نقشهٔ سفر ایران</h2>
-  <p id="mapDesc">نقطه یا نام مقصد را انتخاب کنید.</p>
+  <p id="mapDesc">استان را روی نقشه یا از فهرست انتخاب کنید؛ سپس نمایش آن را بزنید.</p>
   <div class="mapbox">
-   <div class="mapimage"><img id="iranMap" src="assets/iran-map-desktop.png" alt="نقشه ایران"><div class="pins" id="pins"></div></div>
-   <aside class="citylist"><h3 id="listTitle">فهرست مقصدها</h3><div id="cityList"></div></aside>
+   <div class="mapimage"><img id="iranMap" src="assets/iran-map-desktop.png" alt="نقشهٔ ایران"><div class="pins" id="pins"></div></div>
+   <aside class="citylist"><h3 id="listTitle">فهرست استان‌ها</h3><div id="cityList"></div></aside>
   </div>
-  <div class="actions"><button class="gold" id="mapGo">نمایش این مقصد در گالری</button><button class="gold" id="mapBack">بازگشت به سالن</button></div>
+  <div class="map-actions"><button class="gold" id="mapGo">نمایش استان انتخاب‌شده</button><button class="gold" id="mapBack">بازگشت به سالن</button></div>
  </div>
 </section>
 
 <section class="overlay" id="posterFocusOverlay" hidden>
  <div class="panel">
-  <p class="muted" id="focusOver">روایت تصویری استان</p>
-  <h2 id="focusCity">قزوین</h2>
-  <p id="focusSlogan">نقش دیروز، رنگ امروز</p>
+  <p class="muted" id="focusOver">روایت تصویری استان</p><h2 id="focusCity">قزوین</h2><p id="focusSlogan">نقش دیروز، رنگ امروز</p>
   <p id="focusDesc">برای خواندن روایت این سرزمین، وارد صفحهٔ توضیحات شوید.</p>
   <div class="actions">
-   <button class="gold" id="focusPrev">تابلوی قبلی</button>
-   <button class="gold" id="detailBtn">مشاهدهٔ توضیحات شهر</button>
-   <button class="gold" id="focusNext">تابلوی بعدی</button>
+   <button class="gold" id="focusPrev">تابلوی قبلی</button><button class="gold" id="detailBtn">مشاهدهٔ توضیحات شهر</button><button class="gold" id="focusNext">تابلوی بعدی</button>
   </div>
-  <div class="actions">
-   <button class="gold" id="focusMapBtn">بازگشت به نقشهٔ سفر</button>
-   <button class="gold" id="focusHallBtn">بازگشت به انتخاب مسیر</button>
-  </div>
+  <div class="actions"><button class="gold" id="focusMapBtn">بازگشت به نقشهٔ سفر</button><button class="gold" id="focusHallBtn">بازگشت به انتخاب مسیر</button></div>
  </div>
 </section>
 
@@ -165,823 +116,213 @@ p{font-size:12px;line-height:1.9;margin:6px 0}
  <div class="panel">
   <h2 id="endSlogan">هر نقش، یادگاری از یک سرزمین؛ هر رنگ، تکه‌ای از هویت ایران</h2>
   <p id="credit1">هنرمند و خالق آثار: مریم ساعی</p>
-  <div class="avatar" aria-label="تصویرسازی نمادین طراح و پژوهشگر">
-   <svg viewBox="0 0 100 100" role="img">
-    <path d="M18 96c3-25 15-36 32-36s29 11 32 36" fill="#f0d5ae"/>
-    <path d="M25 43c-3-22 8-34 25-34 20 0 29 15 24 37-4-8-9-12-15-15-8 9-19 13-34 12z" fill="#253c32"/>
-    <circle cx="50" cy="43" r="18" fill="#e7b98e"/>
-    <path d="M31 40c4-18 16-24 29-17 7 4 10 11 10 18-8-2-15-7-19-13-5 7-12 11-20 12z" fill="#253c32"/>
-    <path d="M37 63l13 13 13-13" fill="none" stroke="#b77c42" stroke-width="4"/>
-   </svg>
-  </div>
-  <p id="credit2">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</p>
-  <p class="muted" id="creditRole">طراح وب و پژوهشگر فرهنگی</p>
-  <div class="actions">
-   <button class="gold" id="endHall">بازگشت به گالری سه‌بعدی</button>
-   <a class="gold" href="./index.html" style="text-decoration:none">بازگشت به صفحه اصلی</a>
-  </div>
+  <div class="avatar" aria-label="تصویرسازی نمادین طراح و پژوهشگر"><svg viewBox="0 0 100 100" role="img"><path d="M18 96c3-25 15-36 32-36s29 11 32 36" fill="#f0d5ae"/><path d="M25 43c-3-22 8-34 25-34 20 0 29 15 24 37-4-8-9-12-15-15-8 9-19 13-34 12z" fill="#253c32"/><circle cx="50" cy="43" r="18" fill="#e7b98e"/><path d="M31 40c4-18 16-24 29-17 7 4 10 11 10 18-8-2-15-7-19-13-5 7-12 11-20 12z" fill="#253c32"/><path d="M37 63l13 13 13-13" fill="none" stroke="#b77c42" stroke-width="4"/></svg></div><p id="credit2">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</p><p class="muted" id="creditRole">طراح وب و پژوهشگر فرهنگی</p>
+  <div class="actions"><button class="gold" id="endHall">بازگشت به گالری سه‌بعدی</button><a class="gold" href="./index.html" style="text-decoration:none">بازگشت به صفحه اصلی</a></div>
  </div>
 </section>
 
-<div id="walkSlogans" hidden>
- <span id="walkSlogan1">هر استان، روایتی از یک زندگی</span>
- <span id="walkSlogan2">در امتداد رنگ‌ها قدم بزنید</span>
-</div>
+<div id="walkSlogans" hidden><span id="walkSlogan1">هر استان، روایتی از یک زندگی</span><span id="walkSlogan2">در امتداد رنگ‌ها قدم بزنید</span></div>
 <div id="walkInfo" hidden>
  <button id="openMapWalk">نقشه</button>
- <button id="prev">قبلی</button>
- <span id="cityName">قزوین</span>
- <button id="next">بعدی</button>
+ <button id="prev">قبلی</button><span id="cityName">قزوین</span><button id="next">بعدی</button>
 </div>
 <div class="hint" id="hint">با اسکرول یا دکمه‌ها در سالن حرکت کنید</div>
 <div id="visitorFooter">بازدیدکنندگان: <strong id="visitorCount">—</strong></div>
 
 <script type="module">
-
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 
 const cities=[
-["قزوین","Qazvin","qazvin.jpg",43,43,"qazvin.html"],
-["گیلان","Gilan","gilan.jpg",43,34,"gilan.html"],
-["مازندران","Mazandaran","mazandaran.png",49,38,"mazandaran.html"],
-["گلستان","Golestan","",59,36,"turkmen-sahra.html"],
-["سمنان","Semnan","semnan.png",57,48,"semnan.html"],
-["خراسان شمالی","North Khorasan","khorasan-shomali.png",70,37,"khorasan-shomali.html"],
-["خراسان جنوبی","South Khorasan","khorasan-jonubi.png",76,57,"khorasan-jonubi.html"],
-["سیستان و بلوچستان","Sistan and Baluchestan","sistan-baluchestan.png",83,76,"sistan-baluchestan.html"],
-["هرمزگان","Hormozgan","hormozgan.png",68,83,"hormozgan.html"],
-["کرمان","Kerman","",69,67,null],
-["یزد","Yazd","yazd.png",58,65,"yazd.html"],
-["اصفهان","Isfahan","isfahan.png",48,61,"isfahan.html"],
-["شیراز","Shiraz","fars.png",43,77,"fars.html"],
-["بوشهر","Bushehr","bushehr.png",34,83,"bushehr.html"],
-["کهگیلویه و بویراحمد","Kohgiluyeh and Boyer-Ahmad","",37,72,null],
-["چهارمحال و بختیاری","Chaharmahal and Bakhtiari","chaharmahal.png",39,62,"chaharmahal.html"],
-["خوزستان","Khuzestan","",24,72,null],
-["ایلام","Ilam","ilam.png",19,58,"ilam.html"],
-["لرستان","Lorestan","lorestan.png",28,55,"lorestan.html"],
-["اراک","Arak","arak.png",34,48,"arak.html"],
-["کاشان","Kashan","kashan.png",43,55,"kashan.html"],
-["همدان","Hamedan","hamedan.png",28,43,"hamedan.html"],
-["کرمانشاه","Kermanshah","kermanshah.png",18,49,"kermanshah.html"],
-["کردستان","Kurdistan","kurdistan.png",17,37,"kurdistan.html"],
-["ارومیه","Urmia","azerbaijan.png",10,32,"azerbaijan.html"],
-["تبریز","Tabriz","azerbaijan.png",20,25,"azerbaijan.html"],
-["اردبیل","Ardabil","ardabil.png",33,24,"ardabil.html"],
-["زنجان","Zanjan","zanjan.png",31,34,"zanjan.html"]
+["قزوین","Qazvin","qazvin.jpg",43,43,"qazvin.html"],["گیلان","Gilan","gilan.jpg",43,34,"gilan.html"],["مازندران","Mazandaran","mazandaran.png",49,38,"mazandaran.html"],["گلستان","Golestan","",59,36,"turkmen-sahra.html"],["سمنان","Semnan","semnan.png",57,48,"semnan.html"],["خراسان شمالی","North Khorasan","khorasan-shomali.png",70,37,"khorasan-shomali.html"],["خراسان جنوبی","South Khorasan","khorasan-jonubi.png",76,57,"khorasan-jonubi.html"],["سیستان و بلوچستان","Sistan and Baluchestan","sistan-baluchestan.png",83,76,"sistan-baluchestan.html"],["هرمزگان","Hormozgan","hormozgan.png",68,83,"hormozgan.html"],["کرمان","Kerman","",69,67,null],["یزد","Yazd","yazd.png",58,65,"yazd.html"],["اصفهان","Isfahan","isfahan.png",48,61,"isfahan.html"],["شیراز","Shiraz","fars.png",43,77,"fars.html"],["بوشهر","Bushehr","bushehr.png",34,83,"bushehr.html"],["کهگیلویه و بویراحمد","Kohgiluyeh and Boyer-Ahmad","",37,72,null],["چهارمحال و بختیاری","Chaharmahal and Bakhtiari","chaharmahal.png",39,62,"chaharmahal.html"],["خوزستان","Khuzestan","",24,72,null],["ایلام","Ilam","ilam.png",19,58,"ilam.html"],["لرستان","Lorestan","lorestan.png",28,55,"lorestan.html"],["اراک","Arak","arak.png",34,48,"arak.html"],["کاشان","Kashan","kashan.png",43,55,"kashan.html"],["همدان","Hamedan","hamedan.png",28,43,"hamedan.html"],["کرمانشاه","Kermanshah","kermanshah.png",18,49,"kermanshah.html"],["کردستان","Kurdistan","kurdistan.png",17,37,"kurdistan.html"],["ارومیه","Urmia","azerbaijan.png",10,32,"azerbaijan.html"],["تبریز","Tabriz","azerbaijan.png",20,25,"azerbaijan.html"],["اردبیل","Ardabil","ardabil.png",33,24,"ardabil.html"],["زنجان","Zanjan","zanjan.png",31,34,"zanjan.html"]
 ];
+
+const knownSlogans={
+  0:['نقش دیروز، رنگ امروز','Yesterday’s patterns, today’s colors'],
+  24:['رنگِ کوهستان، نوای عاشیقی','Mountain colors, the melody of Ashiqs'],
+  25:['رنگِ کوهستان، نوای عاشیقی','Mountain colors, the melody of Ashiqs'],
+  26:['رنگِ کوهستان، نوای عاشیقی','Mountain colors, the melody of Ashiqs'],
+  27:['درخشش نقره، شکوه نقش‌های ماندگار','Silver brilliance, the grandeur of enduring patterns']
+};
+const sloganCache=new Map();
+async function getCitySlogan(index){
+  if(knownSlogans[index])return knownSlogans[index];
+  if(sloganCache.has(index))return sloganCache.get(index);
+  const page=cities[index]?.[5];
+  if(!page)return null;
+  try{
+    const response=await fetch('./'+page,{cache:'force-cache'});
+    if(!response.ok)return null;
+    const html=await response.text();
+    const doc=new DOMParser().parseFromString(html,'text/html');
+    const selectors=['[data-slogan]','.city-slogan','.slogan','.hero-slogan','.hero-subtitle','.tagline'];
+    for(const selector of selectors){
+      const el=doc.querySelector(selector);
+      const value=(el?.getAttribute('data-slogan')||el?.textContent||'').trim().replace(/\s+/g,' ');
+      if(value && value.length<100){const result=[value,value];sloganCache.set(index,result);return result;}
+    }
+  }catch(e){}
+  return null;
+}
 
 let lang='fa',selected=0,mode='welcome',moving=false;
 const $=id=>document.getElementById(id);
-
-const scene=new THREE.Scene();
-scene.background=new THREE.Color(0xe9e2d6);
-scene.fog=new THREE.Fog(0xe9e2d6,42,125);
-
-function sixty(){return 62}
-const camera=new THREE.PerspectiveCamera(sixty(),innerWidth/innerHeight,.1,250);
-camera.position.set(0,2.4,42);
-camera.lookAt(0,2,-5);
-
+const scene=new THREE.Scene();scene.background=new THREE.Color(0xe9e2d6);scene.fog=new THREE.Fog(0xe9e2d6,42,125);
+const camera=new THREE.PerspectiveCamera( sixty(),innerWidth/innerHeight,.1,250);camera.position.set(0,2.4,42);camera.lookAt(0,2,-5);
+function sixty(){return 62} // camera field of view
 const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
-renderer.setPixelRatio(Math.min(devicePixelRatio,1.25));
-renderer.setSize(innerWidth,innerHeight);
-renderer.outputColorSpace=THREE.SRGBColorSpace;
-renderer.shadowMap.enabled=false;
-$('scene').appendChild(renderer.domElement);
-
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.25));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.shadowMap.enabled=false;$('scene').appendChild(renderer.domElement);
 scene.add(new THREE.HemisphereLight(0xfff8e9,0x938a78,2.1));
-
-const key=new THREE.DirectionalLight(0xfff1d6,1.8);
-key.position.set(-8,13,22);
-scene.add(key);
-
-const warm=new THREE.PointLight(0xffe2ad,24,65);
-warm.position.set(0,7,4);
-scene.add(warm);
-
+const key=new THREE.DirectionalLight(0xfff1d6,1.8);key.position.set(-8,13,22);scene.add(key);
+const warm=new THREE.PointLight(0xffe2ad,24,65);warm.position.set(0,7,4);scene.add(warm);
 const floorMat=new THREE.MeshStandardMaterial({color:0xd8cbb6,roughness:.38,metalness:.05});
-const floor=new THREE.Mesh(new THREE.PlaneGeometry(15,112),floorMat);
-floor.rotation.x=-Math.PI/2;
-floor.position.set(0,0,-25);
-floor.receiveShadow=true;
-scene.add(floor);
-
-const ceiling=new THREE.Mesh(
- new THREE.PlaneGeometry(15,112),
- new THREE.MeshStandardMaterial({color:0xf1eadf,roughness:.92,side:THREE.DoubleSide})
-);
-ceiling.rotation.x=Math.PI/2;
-ceiling.position.set(0,8,-25);
-scene.add(ceiling);
-
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(15,112),floorMat);floor.rotation.x=-Math.PI/2;floor.position.set(0,0,-25);floor.receiveShadow=true;scene.add(floor);
+const ceiling=new THREE.Mesh(new THREE.PlaneGeometry(15,112),new THREE.MeshStandardMaterial({color:0xf1eadf,roughness:.92,side:THREE.DoubleSide}));ceiling.rotation.x=Math.PI/2;ceiling.position.set(0,8,-25);scene.add(ceiling);
 const wallMat=new THREE.MeshStandardMaterial({color:0xe7dfd2,roughness:.88});
-for(const x of [-7.5,7.5]){
- const w=new THREE.Mesh(new THREE.PlaneGeometry(112,8),wallMat);
- w.position.set(x,4,-25);
- w.rotation.y=x<0?Math.PI/2:-Math.PI/2;
- w.receiveShadow=true;
- scene.add(w);
-}
-
-const back=new THREE.Mesh(
- new THREE.PlaneGeometry(15,8),
- new THREE.MeshStandardMaterial({color:0xd9cbb4})
-);
-back.position.set(0,4,-81);
-scene.add(back);
-
+for(const x of [-7.5,7.5]){const w=new THREE.Mesh(new THREE.PlaneGeometry(112,8),wallMat);w.position.set(x,4,-25);w.rotation.y=x<0?Math.PI/2:-Math.PI/2;w.receiveShadow=true;scene.add(w)}
+// پشت سالن و نورهای سقفی
+const back=new THREE.Mesh(new THREE.PlaneGeometry(15,8),new THREE.MeshStandardMaterial({color:0xd9cbb4}));back.position.set(0,4,-81);scene.add(back);
+// حاشیه‌های ظریف معماری و طاقچه‌های کم‌تعداد برای صنایع‌دستی در مسیر سالن
 const trimMat=new THREE.MeshStandardMaterial({color:0xb8955d,metalness:.48,roughness:.42});
 for(const x of [-7.38,7.38]){
- const trim=new THREE.Mesh(new THREE.BoxGeometry(.08,.12,108),trimMat);
- trim.position.set(x,.22,-25);
- scene.add(trim);
- const upper=new THREE.Mesh(new THREE.BoxGeometry(.08,.08,108),trimMat);
- upper.position.set(x,7.65,-25);
- scene.add(upper);
+  const trim=new THREE.Mesh(new THREE.BoxGeometry(.08,.12,108),trimMat);trim.position.set(x,.22,-25);scene.add(trim);
+  const upper=new THREE.Mesh(new THREE.BoxGeometry(.08,.08,108),trimMat);upper.position.set(x,7.65,-25);scene.add(upper);
 }
-
 function craftNiche(z,side,kind){
- const x=side*7.32;
- const g=new THREE.Group();
- g.position.set(x,2.25,z);
- g.rotation.y=side<0?Math.PI/2:-Math.PI/2;
- scene.add(g);
-
- const shelf=new THREE.Mesh(
-  new THREE.BoxGeometry(1.25,.12,.48),
-  new THREE.MeshStandardMaterial({color:0xc4aa7b,roughness:.65})
- );
- shelf.position.y=-.7;
- g.add(shelf);
-
- const niche=new THREE.Mesh(
-  new THREE.BoxGeometry(1.5,1.75,.16),
-  new THREE.MeshStandardMaterial({color:0xd2c4ad,roughness:.9})
- );
- niche.position.z=-.16;
- g.add(niche);
-
- if(kind===0){
-  const vase=new THREE.Mesh(
-   new THREE.CylinderGeometry(.18,.27,.62,18),
-   new THREE.MeshStandardMaterial({color:0x2d7975,metalness:.35,roughness:.3})
-  );
-  vase.position.set(-.18,-.36,.12);
-  g.add(vase);
-  const neck=new THREE.Mesh(
-   new THREE.CylinderGeometry(.1,.15,.22,16),
-   new THREE.MeshStandardMaterial({color:0xb99558,metalness:.4})
-  );
-  neck.position.set(-.18,.05,.12);
-  g.add(neck);
- }else if(kind===1){
-  const plate=new THREE.Mesh(
-   new THREE.CylinderGeometry(.48,.48,.08,32),
-   new THREE.MeshStandardMaterial({color:0x2c7770,metalness:.28,roughness:.3})
-  );
-  plate.rotation.x=Math.PI/2;
-  plate.position.set(.12,-.12,.1);
-  g.add(plate);
-  const ring=new THREE.Mesh(new THREE.TorusGeometry(.38,.025,8,40),trimMat);
-  ring.position.set(.12,-.12,.17);
-  g.add(ring);
- }else{
-  const jar=new THREE.Mesh(
-   new THREE.SphereGeometry(.34,20,14),
-   new THREE.MeshStandardMaterial({color:0xa85d43,roughness:.55})
-  );
-  jar.scale.y=1.1;
-  jar.position.set(.1,-.35,.12);
-  g.add(jar);
- }
+ const x=side*7.32, g=new THREE.Group();g.position.set(x,2.25,z);g.rotation.y=side<0?Math.PI/2:-Math.PI/2;scene.add(g);
+ const shelf=new THREE.Mesh(new THREE.BoxGeometry(1.25,.12,.48),new THREE.MeshStandardMaterial({color:0xc4aa7b,roughness:.65}));shelf.position.y=-.7;g.add(shelf);
+ const niche=new THREE.Mesh(new THREE.BoxGeometry(1.5,1.75,.16),new THREE.MeshStandardMaterial({color:0xd2c4ad,roughness:.9}));niche.position.z=-.16;g.add(niche);
+ if(kind===0){const vase=new THREE.Mesh(new THREE.CylinderGeometry(.18,.27,.62,18),new THREE.MeshStandardMaterial({color:0x2d7975,metalness:.35,roughness:.3}));vase.position.set(-.18,-.36,.12);g.add(vase);const neck=new THREE.Mesh(new THREE.CylinderGeometry(.1,.15,.22,16),new THREE.MeshStandardMaterial({color:0xb99558,metalness:.4}));neck.position.set(-.18,.05,.12);g.add(neck);}
+ else if(kind===1){const plate=new THREE.Mesh(new THREE.CylinderGeometry(.48,.48,.08,32),new THREE.MeshStandardMaterial({color:0x2c7770,metalness:.28,roughness:.3}));plate.rotation.x=Math.PI/2;plate.position.set(.12,-.12,.1);g.add(plate);const ring=new THREE.Mesh(new THREE.TorusGeometry(.38,.025,8,40),trimMat);ring.position.set(.12,-.12,.17);g.add(ring);}
+ else {const jar=new THREE.Mesh(new THREE.SphereGeometry(.34,20,14),new THREE.MeshStandardMaterial({color:0xa85d43,roughness:.55}));jar.scale.y=1.1;jar.position.set(.1,-.35,.12);g.add(jar);}
 }
+// صنایع‌دستی به شکل جزئیات محیطی محدود؛ نه استند کنار هر تابلو
+craftNiche(15,-1,0);craftNiche(-17,1,1);craftNiche(-49,-1,2);
 
-craftNiche(15,-1,0);
-craftNiche(-17,1,1);
-craftNiche(-49,-1,2);
-
-for(let z=32;z>-80;z-=9){
- const lamp=new THREE.PointLight(0xffe7c1,11,17);
- lamp.position.set(0,7.3,z);
- scene.add(lamp);
- const bulb=new THREE.Mesh(
-  new THREE.SphereGeometry(.12,12,8),
-  new THREE.MeshBasicMaterial({color:0xfff0d1})
- );
- bulb.position.set(0,7.5,z);
- scene.add(bulb);
-}
-
+for(let z=32;z>-80;z-=9){const lamp=new THREE.PointLight(0xffe7c1,11,17);lamp.position.set(0,7.3,z);scene.add(lamp);const bulb=new THREE.Mesh(new THREE.SphereGeometry(.12,12,8),new THREE.MeshBasicMaterial({color:0xfff0d1}));bulb.position.set(0,7.5,z);scene.add(bulb)}
+// درهای سه بعدی ورودی
 const doorMat=new THREE.MeshStandardMaterial({color:0x765b3d,roughness:.48});
 const doors=[];
-for(const side of [-1,1]){
- const pivot=new THREE.Group();
- pivot.position.set(side*1.8,0,35);
- scene.add(pivot);
- const leaf=new THREE.Mesh(new THREE.BoxGeometry(3.6,6.2,.28),doorMat);
- leaf.position.x=-side*1.8;
- leaf.position.y=3.1;
- pivot.add(leaf);
- const panel=new THREE.Mesh(
-  new THREE.BoxGeometry(2.9,5.5,.04),
-  new THREE.MeshStandardMaterial({color:0xc6a46c,metalness:.25,roughness:.5})
- );
- panel.position.set(-side*1.8,3.1,.17);
- pivot.add(panel);
- doors.push({pivot,side});
-}
-
+for(const side of [-1,1]){const pivot=new THREE.Group();pivot.position.set(side*1.8,0,35);scene.add(pivot);const leaf=new THREE.Mesh(new THREE.BoxGeometry(3.6,6.2,.28),doorMat);leaf.position.x=-side*1.8;leaf.position.y=3.1;leaf.castShadow=true;pivot.add(leaf);const panel=new THREE.Mesh(new THREE.BoxGeometry(2.9,5.5,.04),new THREE.MeshStandardMaterial({color:0xc6a46c,metalness:.25,roughness:.5}));panel.position.set(-side*1.8,3.1,.17);pivot.add(panel);doors.push({pivot,side})}
 const loader=new THREE.TextureLoader();
-
-function texture(path){
- return new Promise(resolve=>{
-  loader.load(path,t=>{
-   t.colorSpace=THREE.SRGBColorSpace;
-   resolve(t);
-  },undefined,()=>resolve(null));
- });
-}
-
+function texture(path){return new Promise(resolve=>loader.load(path,t=>{t.colorSpace=THREE.SRGBColorSpace;resolve(t)},undefined,()=>resolve(null)))}
 const posterPositions=[],posterMaterials=[],posterLoaded=new Set();
-
-function loadPosterTexture(i){
- const city=cities[i],mat=posterMaterials[i];
- if(!city||!city[2]||!mat||posterLoaded.has(i))return;
- posterLoaded.add(i);
- const candidates=[city[2],'assets/'+city[2],'posters/'+city[2]];
- const tryNext=n=>{
-  if(n>=candidates.length){posterLoaded.delete(i);return}
-  loader.load(candidates[n],tex=>{
-   tex.colorSpace=THREE.SRGBColorSpace;
-   mat.map=tex;
-   mat.color.set(0xffffff);
-   mat.needsUpdate=true;
-  },undefined,()=>tryNext(n+1));
- };
- tryNext(0);
-}
-
+function loadPosterTexture(i){const city=cities[i],mat=posterMaterials[i];if(!city||!city[2]||!mat||posterLoaded.has(i))return;posterLoaded.add(i);const candidates=[city[2],'assets/'+city[2],'posters/'+city[2]];const tryNext=n=>{if(n>=candidates.length){posterLoaded.delete(i);return}loader.load(candidates[n],tex=>{tex.colorSpace=THREE.SRGBColorSpace;mat.map=tex;mat.color.set(0xffffff);mat.needsUpdate=true},undefined,()=>tryNext(n+1))};tryNext(0);}
 function addPoster(city,i){
- const side=i%2===0?-1:1,z=25-i*3.8;
- posterPositions[i]={side,z};
-
- const group=new THREE.Group();
- group.position.set(side*7.32,3.45,z);
- group.rotation.y=side<0?Math.PI/2:-Math.PI/2;
- scene.add(group);
-
- const frame=new THREE.Mesh(
-  new THREE.BoxGeometry(2.55,3.55,.16),
-  new THREE.MeshStandardMaterial({color:0xb99558,metalness:.52,roughness:.34})
- );
- group.add(frame);
-
- const inner=new THREE.Mesh(
-  new THREE.PlaneGeometry(2.34,3.34),
-  new THREE.MeshBasicMaterial({color:0xf7f0e4})
- );
- inner.position.z=.095;
- group.add(inner);
- posterMaterials[i]=inner.material;
-
- const plaque=new THREE.Mesh(
-  new THREE.BoxGeometry(1.85,.28,.08),
-  new THREE.MeshStandardMaterial({color:0x31564b,roughness:.6})
- );
- plaque.position.set(0,-1.98,.12);
- group.add(plaque);
-
- const hit=new THREE.Mesh(
-  new THREE.PlaneGeometry(2.7,3.9),
-  new THREE.MeshBasicMaterial({transparent:true,opacity:0,side:THREE.DoubleSide})
- );
- hit.position.z=.22;
- hit.userData.city=i;
- group.add(hit);
- posterHits.push(hit);
-
- const cabinet=new THREE.Group();
- cabinet.position.set(2.0,-.55,.18);
- group.add(cabinet);
-
- const base=new THREE.Mesh(
-  new THREE.BoxGeometry(1.02,.22,.82),
-  new THREE.MeshStandardMaterial({color:0xf4f0e7,roughness:.42})
- );
- base.position.y=-1.48;
- cabinet.add(base);
-
- const glassMat=new THREE.MeshPhysicalMaterial({
-  color:0xffffff,transparent:true,opacity:.16,roughness:.08,
-  metalness:0,transmission:.55,thickness:.08
- });
- const glass=new THREE.Mesh(new THREE.BoxGeometry(1.02,2.15,.82),glassMat);
- glass.position.y=-.28;
- cabinet.add(glass);
-
+ const side=i%2===0?-1:1,z=25-i*3.8;posterPositions[i]={side,z};
+ const group=new THREE.Group();group.position.set(side*7.32,3.45,z);group.rotation.y=side<0?Math.PI/2:-Math.PI/2;scene.add(group);
+ const frame=new THREE.Mesh(new THREE.BoxGeometry(2.55,3.55,.16),new THREE.MeshStandardMaterial({color:0xb99558,metalness:.52,roughness:.34}));group.add(frame);
+ const inner=new THREE.Mesh(new THREE.PlaneGeometry(2.34,3.34),new THREE.MeshBasicMaterial({color:0xf7f0e4}));inner.position.z=.095;group.add(inner);
+ const posterMat=inner.material;posterMaterials[i]=posterMat;
+ const plaque=new THREE.Mesh(new THREE.BoxGeometry(1.85,.28,.08),new THREE.MeshStandardMaterial({color:0x31564b,roughness:.6}));plaque.position.set(0,-1.98,.12);group.add(plaque);
+ const hit=new THREE.Mesh(new THREE.PlaneGeometry(2.7,3.9),new THREE.MeshBasicMaterial({transparent:true,opacity:0,side:THREE.DoubleSide}));hit.position.z=.22;hit.userData.city=i;group.add(hit);posterHits.push(hit);
+ // ویترین شیشه‌ای کوچک کنار همین تابلو؛ مانکن صرفاً نمونهٔ حجمی تا جایگزینی مدل لباس اختصاصی
+ const cabinet=new THREE.Group();cabinet.position.set(2.0,-.55,.18);group.add(cabinet);
+ const base=new THREE.Mesh(new THREE.BoxGeometry(1.02,.22,.82),new THREE.MeshStandardMaterial({color:0xf4f0e7,roughness:.42}));base.position.y=-1.48;cabinet.add(base);
+ const glassMat=new THREE.MeshPhysicalMaterial({color:0xffffff,transparent:true,opacity:.16,roughness:.08,metalness:0,transmission:.55,thickness:.08});
+ const glass=new THREE.Mesh(new THREE.BoxGeometry(1.02,2.15,.82),glassMat);glass.position.y=-.28;cabinet.add(glass);
  const goldEdge=new THREE.MeshStandardMaterial({color:0xb99558,metalness:.55,roughness:.35});
- for(const xx of [-.5,.5]){
-  for(const zz of [-.4,.4]){
-   const post=new THREE.Mesh(new THREE.BoxGeometry(.025,2.2,.025),goldEdge);
-   post.position.set(xx,-.28,zz);
-   cabinet.add(post);
-  }
- }
-
- const head=new THREE.Mesh(
-  new THREE.SphereGeometry(.16,14,12),
-  new THREE.MeshStandardMaterial({color:0xd7b18c,roughness:.9})
- );
- head.position.y=.78;
- cabinet.add(head);
-
- const torso=new THREE.Mesh(
-  new THREE.CylinderGeometry(.19,.28,.82,14),
-  new THREE.MeshStandardMaterial({color:0x9c725e,roughness:.9})
- );
- torso.position.y=.25;
- cabinet.add(torso);
-
- const skirt=new THREE.Mesh(
-  new THREE.CylinderGeometry(.28,.43,.72,16),
-  new THREE.MeshStandardMaterial({color:0x6f7760,roughness:.95})
- );
- skirt.position.y=-.5;
- cabinet.add(skirt);
-
- const pedestal=new THREE.Mesh(
-  new THREE.BoxGeometry(.58,.16,.52),
-  new THREE.MeshStandardMaterial({color:0xf6f1e8,roughness:.55})
- );
- pedestal.position.y=-1.42;
- cabinet.add(pedestal);
+ for(const xx of [-.5,.5])for(const zz of [-.4,.4]){const post=new THREE.Mesh(new THREE.BoxGeometry(.025,2.2,.025),goldEdge);post.position.set(xx,-.28,zz);cabinet.add(post)}
+ const head=new THREE.Mesh(new THREE.SphereGeometry(.16,14,12),new THREE.MeshStandardMaterial({color:0xd7b18c,roughness:.9}));head.position.y=.78;cabinet.add(head);
+ const torso=new THREE.Mesh(new THREE.CylinderGeometry(.19,.28,.82,14),new THREE.MeshStandardMaterial({color:0x9c725e,roughness:.9}));torso.position.y=.25;cabinet.add(torso);
+ const skirt=new THREE.Mesh(new THREE.CylinderGeometry(.28,.43,.72,16),new THREE.MeshStandardMaterial({color:0x6f7760,roughness:.95}));skirt.position.y=-.5;cabinet.add(skirt);
+ const pedestal=new THREE.Mesh(new THREE.BoxGeometry(.58,.16,.52),new THREE.MeshStandardMaterial({color:0xf6f1e8,roughness:.55}));pedestal.position.y=-1.42;cabinet.add(pedestal);
 }
-
-const posterHits=[];
-cities.forEach(addPoster);
-
+const posterHits=[];cities.forEach(addPoster);
+// عکس‌های خود گالری به‌عنوان سطوح تصویری داخل معماری سه‌بعدی استفاده می‌شوند
 function addPhotoPlane(path,w,h,x,y,z,rotationY=0){
- loader.load(path,tex=>{
-  tex.colorSpace=THREE.SRGBColorSpace;
-  const m=new THREE.Mesh(
-   new THREE.PlaneGeometry(w,h),
-   new THREE.MeshBasicMaterial({map:tex,side:THREE.DoubleSide})
-  );
-  m.position.set(x,y,z);
-  m.rotation.y=rotationY;
-  scene.add(m);
- },undefined,()=>{});
+ loader.load(path,tex=>{tex.colorSpace=THREE.SRGBColorSpace;const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({map:tex,side:THREE.DoubleSide}));m.position.set(x,y,z);m.rotation.y=rotationY;scene.add(m)},undefined,()=>{});
 }
-
 addPhotoPlane('assets/gallery-entrance-open.jpg',6.8,5.8,0,3.2,34.65);
-
-const doorwayLight=new THREE.PointLight(0xffd79b,55,25);
-doorwayLight.position.set(0,4,30);
-scene.add(doorwayLight);
-
-let targetZ=42,targetX=0,targetY=2.4,lookX=0,lookY=2.65,lookZ=-13;
-let cameraMode='welcome',walkProgress=0,wheelVelocity=0;
-
-function moveCamera(z,x=0){
- camera.fov=62;
- camera.updateProjectionMatrix();
- targetZ=z;
- targetX=x;
- targetY=2.4;
- lookX=x*.18;
- lookY=2.65;
- lookZ=z-15;
- moving=true;
- requestSceneRender();
-}
-
-function focusSelectedPoster(){
- loadPosterTexture(selected);
- const p=posterPositions[selected];
- if(!p)return;
-
- mode='focus';
- wheelVelocity=0;
- targetX=p.side<0?-3.55:3.55;
- targetY=3.25;
- targetZ=p.z;
- lookX=p.side*7.30;
- lookY=3.25;
- lookZ=p.z;
-
- camera.fov=52;
- camera.updateProjectionMatrix();
- moving=true;
- show('');
- $('hint').hidden=true;
-
- $('focusCity').textContent=cities[selected][lang==='fa'?0:1];
- $('focusOver').textContent=lang==='fa'?'تابلوی انتخاب‌شده':'Selected artwork';
- $('focusDesc').textContent=lang==='fa'
-  ?'روایت پوشش و فرهنگ این منطقه را در کنار اثر ببینید. برای جزئیات بیشتر وارد صفحه شهر شوید.'
-  :'Discover this region’s clothing and culture. Open its city page for more details.';
-
- $('detailBtn').textContent=lang==='fa'?'مشاهدهٔ توضیحات شهر':'View city story';
- $('focusPrev').textContent=lang==='fa'?'تابلوی قبلی':'Previous artwork';
- $('focusNext').textContent=lang==='fa'?'تابلوی بعدی':'Next artwork';
- $('focusMapBtn').textContent=lang==='fa'?'بازگشت به نقشهٔ سفر':'Back to travel map';
- $('focusHallBtn').textContent=lang==='fa'?'بازگشت به انتخاب مسیر':'Back to route selection';
-
- setTimeout(()=>{
-  if(mode==='focus')show('posterFocusOverlay');
- },1150);
-}
-
-function openCityDetails(){
- const page=cities[selected][5];
- if(page){
-  window.location.href='./'+page;
- }else{
-  alert(lang==='fa'
-   ?'صفحهٔ توضیحات این منطقه هنوز در سایت ساخته نشده است.'
-   :'The information page for this region is not available yet.');
- }
-}
-
-function show(id){
- document.querySelectorAll('.overlay').forEach(el=>el.hidden=el.id!==id);
-}
-
-function requestSceneRender(){
- moving=true;
-}
-
-const knownSlogans={
- 0:['نقش دیروز، رنگ امروز','Yesterday’s patterns, today’s colors'],
- 24:['رنگِ کوهستان، نوای عاشیقی','Mountain colors, the melody of Ashiqs'],
- 25:['رنگِ کوهستان، نوای عاشیقی','Mountain colors, the melody of Ashiqs'],
- 27:['درخشش نقره، شکوه نقش‌های ماندگار','Silver brilliance, the grandeur of enduring patterns']
-};
-
-const sloganCache=new Map();
-
-async function getCitySlogan(index){
- if(knownSlogans[index])return knownSlogans[index];
- if(sloganCache.has(index))return sloganCache.get(index);
-
- const page=cities[index]?.[5];
- if(!page)return null;
-
- try{
-  const response=await fetch('./'+page);
-  if(!response.ok)return null;
-
-  const html=await response.text();
-  const doc=new DOMParser().parseFromString(html,'text/html');
-
-  const selectors=[
-   '[data-slogan]',
-   '.city-slogan',
-   '.slogan',
-   '.hero-slogan',
-   '.hero-subtitle',
-   '.tagline'
-  ];
-
-  for(const selector of selectors){
-   const el=doc.querySelector(selector);
-   const value=(el?.getAttribute('data-slogan')||el?.textContent||'')
-    .trim().replace(/\s+/g,' ');
-
-   if(value&&value.length<100){
-    const result=[value,value];
-    sloganCache.set(index,result);
-    return result;
-   }
-  }
- }catch(e){}
-
- return null;
-}
-
+// تصاویر سالن و انتخاب مسیر عمداً به دیوار انتهایی چسبانده نمی‌شوند؛
+// تا دوربین در پایان مسیر داخل یک تصویر تخت زوم نکند.
+const doorwayLight=new THREE.PointLight(0xffd79b,55,25);doorwayLight.position.set(0,4,30);scene.add(doorwayLight);
+let targetZ=42, targetX=0, targetY=2.4, lookX=0, lookY=2.65, lookZ=-13, cameraMode='welcome', walkProgress=0, wheelVelocity=0;
+function moveCamera(z,x=0){camera.fov=62;camera.updateProjectionMatrix();targetZ=z;targetX=x;targetY=2.4;lookX=x*.18;lookY=2.65;lookZ=z-15;moving=true;requestSceneRender()}
 async function updateFocusLabel(){
- const index=selected;
- const city=cities[index];
-
+ const index=selected,city=cities[index];
  $('focusCity').textContent=city[lang==='fa'?0:1];
  $('focusSlogan').textContent=lang==='fa'?'در حال دریافت شعار شهر…':'Loading city slogan…';
-
  const slogan=await getCitySlogan(index);
-
  if(index!==selected)return;
-
- if(slogan){
-  $('focusSlogan').hidden=false;
-  $('focusSlogan').textContent=slogan[lang==='fa'?0:1];
- }else{
-  $('focusSlogan').hidden=true;
- }
+ if(slogan){$('focusSlogan').hidden=false;$('focusSlogan').textContent=slogan[lang==='fa'?0:1];}
+ else {$('focusSlogan').hidden=true;}
 }
-
+function focusSelectedPoster(){loadPosterTexture(selected);const p=posterPositions[selected];if(!p)return;mode='focus';wheelVelocity=0;targetX=p.side<0?-3.55:3.55;targetY=3.25;targetZ=p.z;lookX=p.side*7.30;lookY=3.25;lookZ=p.z;camera.fov=52;camera.updateProjectionMatrix();moving=true;show('');$('hint').hidden=true;$('focusCity').textContent=cities[selected][lang==='fa'?0:1];updateFocusLabel();$('focusOver').textContent=lang==='fa'?'تابلوی انتخاب‌شده':'Selected artwork';$('focusDesc').textContent=lang==='fa'?'روایت پوشش و فرهنگ این منطقه را در کنار اثر ببینید. برای جزئیات بیشتر وارد صفحه شهر شوید.':'Discover this region’s clothing and culture. Open its city page for more details.';$('detailBtn').textContent=lang==='fa'?'مشاهدهٔ توضیحات شهر':'View city story';$('focusPrev').textContent=lang==='fa'?'تابلوی قبلی':'Previous artwork';$('focusNext').textContent=lang==='fa'?'تابلوی بعدی':'Next artwork';$('focusMapBtn').textContent=lang==='fa'?'بازگشت به نقشهٔ سفر':'Back to travel map';$('focusHallBtn').textContent=lang==='fa'?'بازگشت به انتخاب مسیر':'Back to route selection';setTimeout(()=>{if(mode==='focus')show('posterFocusOverlay')},1150)}
+function openCityDetails(){const page=cities[selected][5];if(page){window.location.href='./'+page}else{alert(lang==='fa'?'صفحهٔ توضیحات این منطقه هنوز در سایت ساخته نشده است.':'The information page for this region is not available yet.')}}
+function setWalkProgress(value){
+ if(value>cities.length-1+.04){mode='end';show('endOverlay');return}
+ walkProgress=Math.max(0,Math.min(cities.length-1,value));
+ selected=Math.round(walkProgress);loadPosterTexture(selected);if(selected>0)loadPosterTexture(selected-1);if(selected<cities.length-1)loadPosterTexture(selected+1);
+ $('cityName').textContent=cities[selected][lang==='fa'?0:1];
+ $('hint').textContent=lang==='fa'?`ایستگاه ${selected+1} از ۲۸ · با اسکرول در سالن حرکت کنید`:`Stop ${selected+1} of 28 · Scroll to walk`;
+ // اسکرول، دوربین را نرم و پیوسته در امتداد محور سالن حرکت می‌دهد؛ نه به سمت تابلوها
+ moveCamera(32-walkProgress*3.8,0);
+}
+let animationFrame=0;
+function requestSceneRender(){if(!animationFrame)animationFrame=requestAnimationFrame(animate)}
+function animate(){animationFrame=0;
+ wheelVelocity*=.88;
+ if(mode==='walk'&&Math.abs(wheelVelocity)>.0005)setWalkProgress(walkProgress+wheelVelocity);
+ camera.position.z+=(targetZ-camera.position.z)*.075;camera.position.x+=(targetX-camera.position.x)*.075;camera.position.y+=(targetY-camera.position.y)*.075;
+ camera.lookAt(lookX,lookY,lookZ);
+ const cameraMoving=Math.abs(camera.position.z-targetZ)>.035||Math.abs(camera.position.x-targetX)>.035||Math.abs(camera.position.y-targetY)>.035;
+ moving=cameraMoving;renderer.render(scene,camera);
+ if(cameraMoving||(mode==='walk'&&Math.abs(wheelVelocity)>.0005))requestSceneRender();
+}
+requestSceneRender();
+function show(id){['welcome','loading','doorOverlay','hallOverlay','mapOverlay','posterFocusOverlay','endOverlay'].forEach(x=>$(x).hidden=x!==id);$('walkInfo').hidden=id!=='walk';$('walkSlogans').hidden=id!=='walk';$('hint').hidden=['mapOverlay','endOverlay','loading','doorOverlay','welcome'].includes(id);}
+function enter(){mode='loading';show('loading');setTimeout(()=>{doors.forEach(d=>{d.pivot.rotation.y=d.side*.95});moveCamera(24);mode='door';show('doorOverlay')},1450)}
+function arriveHall(){mode='hall';moveCamera(31);setTimeout(()=>{show('hallOverlay');$('hint').textContent=lang==='fa'?'مسیر بازدید خود را انتخاب کنید':'Choose your gallery route'},450)}
+function startWalk(){mode='walk';show('walk');goCity(0)}
+function goCity(i){
+ selected=Math.max(0,Math.min(cities.length-1,i));loadPosterTexture(selected);if(selected>0)loadPosterTexture(selected-1);if(selected<cities.length-1)loadPosterTexture(selected+1);
+ walkProgress=selected;wheelVelocity=0;
+ $('cityName').textContent=cities[selected][lang==='fa'?0:1];
+ // دوربین در مرکز راهرو می‌ماند و با فاصلهٔ ثابت از قاب‌ها عبور می‌کند.
+ moveCamera(32-selected*3.8,0);
+ if(lang==='fa')$('hint').textContent=`ایستگاه ${selected+1} از ۲۸ · با اسکرول حرکت کنید`;
+ else $('hint').textContent=`Stop ${selected+1} of 28 · Scroll to walk`;
+}
+function next(){if(selected===cities.length-1){mode='end';show('endOverlay');return}goCity(selected+1)}
+function previous(){if(selected>0)goCity(selected-1)}
+function selectMapCity(index){selected=Math.max(0,Math.min(cities.length-1,index));renderMap();$('mapGo').textContent=lang==='fa'?'نمایش '+cities[selected][0]+' در گالری':'View '+cities[selected][1]+' in gallery'}
 function renderMap(){
- $('cityList').innerHTML='';
- $('pins').innerHTML='';
-
- cities.forEach((city,i)=>{
-  const item=document.createElement('button');
-  item.className='city'+(i===selected?' sel':'');
-  item.textContent=String(i+1).padStart(2,'0')+' · '+city[lang==='fa'?0:1];
-  item.onclick=()=>{
-   selected=i;
-   renderMap();
-   focusSelectedPoster();
-  };
-  $('cityList').appendChild(item);
-
-  const pin=document.createElement('button');
-  pin.className='pin'+(i===selected?' sel':'');
-  pin.style.left=city[3]+'%';
-  pin.style.top=city[4]+'%';
-  pin.title=city[lang==='fa'?0:1];
-  pin.onclick=()=>{
-   selected=i;
-   renderMap();
-   focusSelectedPoster();
-  };
-  $('pins').appendChild(pin);
- });
-}
-
-function startWalk(){
- mode='walk';
- selected=0;
- $('walkInfo').hidden=false;
- $('walkSlogans').hidden=false;
- $('hint').hidden=false;
- $('cityName').textContent=cities[selected][lang==='fa'?0:1];
- show('');
- moveCamera(25);
- loadPosterTexture(0);
-}
-
-function nextCity(direction){
- selected=(selected+direction+cities.length)%cities.length;
- $('cityName').textContent=cities[selected][lang==='fa'?0:1];
  loadPosterTexture(selected);
- focusSelectedPoster();
-}
-
-function openMap(){
- mode='map';
- renderMap();
- $('mapGo').style.display='inline-block';
- show('mapOverlay');
- $('walkInfo').hidden=true;
- $('walkSlogans').hidden=true;
-}
-
-function returnHall(){
- mode='hall';
- $('walkInfo').hidden=true;
- $('walkSlogans').hidden=true;
- $('hint').hidden=false;
- show('hallOverlay');
- moveCamera(25);
-}
-
-function finishGallery(){
- mode='end';
- $('walkInfo').hidden=true;
- $('walkSlogans').hidden=true;
- $('hint').hidden=true;
- show('endOverlay');
-}
-
-function openEntrance(){
- mode='doors';
- show('doorOverlay');
- doors.forEach(d=>{
-  d.pivot.rotation.y=0;
+ const pins=$('pins'),list=$('cityList');pins.innerHTML='';list.innerHTML='';
+ cities.forEach((c,i)=>{
+  const name=c[lang==='fa'?0:1];
+  const pin=document.createElement('button');
+  pin.type='button';pin.className='pin'+(i===selected?' sel':'');
+  pin.style.left=c[3]+'%';pin.style.top=c[4]+'%';pin.textContent=name;pin.title=name;
+  pin.setAttribute('aria-label',name);pin.onclick=()=>selectMapCity(i);pins.appendChild(pin);
+  const row=document.createElement('button');row.type='button';
+  row.className='city'+(i===selected?' sel':'');
+  row.textContent=String(i+1).padStart(2,'0')+' · '+name;
+  row.onclick=()=>selectMapCity(i);list.appendChild(row);
  });
+ $('mapGo').textContent=lang==='fa'?'نمایش '+cities[selected][0]+' در گالری':'View '+cities[selected][1]+' in gallery';
 }
-
-function openDoors(){
- mode='hall';
- show('hallOverlay');
- $('hint').hidden=false;
-
- doors.forEach(d=>{
-  d.pivot.rotation.y=d.side<0?-.95:.95;
- });
-
- moveCamera(24);
-}
-
-function enterGallery(){
- mode='loading';
- show('loading');
-
- setTimeout(()=>{
-  openEntrance();
- },1900);
-}
-
-function changeLanguage(){
- lang=lang==='fa'?'en':'fa';
-
- document.documentElement.lang=lang;
- document.documentElement.dir=lang==='fa'?'rtl':'ltr';
-
- const fa=lang==='fa';
- $('langBtn').textContent=fa?'FA | EN':'EN | FA';
-
- $('homeBtn').textContent=fa?'صفحهٔ اول سایت':'Home';
- $('galleryHomeBtn').textContent=fa?'صفحهٔ اول گالری':'Gallery Start';
-
- $('welcomeOver').textContent=fa?'گالری سه‌بعدی نمایشگاه':'3D Exhibition Gallery';
- $('welcomeTitle').textContent=fa?'ورود به نمایشگاه ایران، هزار رنگ':'Enter Iran: A Thousand Colors';
- $('welcomeDesc').textContent=fa?'روایت تصویری پوشش زنان ایران':'A visual story of women’s clothing in Iran';
- $('welcomeHint').textContent=fa?'برای گشودن درها، دکمه را بزنید یا اسکرول کنید.':'Press the button or scroll to open the doors.';
- $('enterBtn').textContent=fa?'ورود به گالری':'Enter Gallery';
-
- $('loadingTitle').textContent=fa?'در حال آماده‌سازی گالری':'Preparing the gallery';
- $('loadingDesc').textContent=fa?'لطفاً چند لحظه همراه ما باشید':'Please wait a moment';
-
- $('doorSlogan').textContent=fa?'هر در، آغازِ روایتی تازه است':'Every door opens a new story';
- $('doorTitle').textContent=fa?'به جهان رنگ‌های ایران خوش آمدید':'Welcome to the colors of Iran';
- $('continueHall').textContent=fa?'ورود به سالن':'Enter the hall';
-
- $('hallTitle').textContent=fa?'ایران، هزار رنگ':'Iran: A Thousand Colors';
- $('hallS1').textContent=fa?'از هر گوشهٔ ایران، روایتی از زیبایی و هویت':'Stories of beauty and identity from every corner of Iran';
- $('hallS2').textContent=fa?'سفری تصویری در رنگارنگی پوشش زنان ایران':'A visual journey through the diversity of women’s clothing';
- $('hallHint').textContent=fa?'در سالن حرکت کنید و مسیر خود را انتخاب کنید.':'Explore the hall and choose your route.';
- $('mapBtn').textContent=fa?'نقشهٔ سفر':'Travel Map';
- $('walkBtn').textContent=fa?'پیاده‌روی در گالری':'Gallery Walk';
-
- $('mapTitle').textContent=fa?'نقشهٔ سفر ایران':'Journey Across Iran';
- $('mapDesc').textContent=fa?'نقطه یا نام مقصد را انتخاب کنید.':'Select a destination on the map or from the list.';
- $('listTitle').textContent=fa?'فهرست مقصدها':'Destinations';
- $('mapGo').textContent=fa?'نمایش این مقصد در گالری':'View this destination';
- $('mapBack').textContent=fa?'بازگشت به سالن':'Back to hall';
-
- $('focusOver').textContent=fa?'تابلوی انتخاب‌شده':'Selected artwork';
- $('focusDesc').textContent=fa
-  ?'روایت پوشش و فرهنگ این منطقه را در کنار اثر ببینید. برای جزئیات بیشتر وارد صفحه شهر شوید.'
-  :'Discover this region’s clothing and culture. Open its city page for more details.';
- $('focusPrev').textContent=fa?'تابلوی قبلی':'Previous artwork';
- $('focusNext').textContent=fa?'تابلوی بعدی':'Next artwork';
- $('detailBtn').textContent=fa?'مشاهدهٔ توضیحات شهر':'View city story';
- $('focusMapBtn').textContent=fa?'بازگشت به نقشهٔ سفر':'Back to travel map';
- $('focusHallBtn').textContent=fa?'بازگشت به انتخاب مسیر':'Back to route selection';
-
- $('openMapWalk').textContent=fa?'نقشه':'Map';
- $('prev').textContent=fa?'قبلی':'Previous';
- $('next').textContent=fa?'بعدی':'Next';
-
- $('endSlogan').textContent=fa
-  ?'هر نقش، یادگاری از یک سرزمین؛ هر رنگ، تکه‌ای از هویت ایران'
-  :'Every pattern remembers a land; every color is a piece of Iran’s identity';
-
- $('credit1').textContent=fa?'هنرمند و خالق آثار: مریم ساعی':'Artist and Creator: Maryam Saei';
- $('credit2').textContent=fa?'طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی':'Website Design and Cultural Research: Marjan Saei';
- $('creditRole').textContent=fa?'طراح وب و پژوهشگر فرهنگی':'Web Designer and Cultural Researcher';
- $('endHall').textContent=fa?'بازگشت به گالری سه‌بعدی':'Return to 3D Gallery';
-
- $('walkSlogan1').textContent=fa?'هر استان، روایتی از یک زندگی':'Every region tells a story of life';
- $('walkSlogan2').textContent=fa?'در امتداد رنگ‌ها قدم بزنید':'Walk among the colors';
- $('hint').textContent=fa?'با اسکرول یا دکمه‌ها در سالن حرکت کنید':'Scroll or use the buttons to move through the hall';
-
- if(mode==='map')renderMap();
- if(mode==='walk')$('cityName').textContent=cities[selected][fa?0:1];
- if(mode==='focus')updateFocusLabel();
-}
-
-$('enterBtn').onclick=enterGallery;
-$('continueHall').onclick=openDoors;
-$('mapBtn').onclick=openMap;
-$('walkBtn').onclick=startWalk;
-$('mapBack').onclick=returnHall;
-$('mapGo').onclick=()=>focusSelectedPoster();
-$('focusPrev').onclick=()=>nextCity(-1);
-$('focusNext').onclick=()=>nextCity(1);
-$('detailBtn').onclick=openCityDetails;
-$('focusMapBtn').onclick=openMap;
-$('focusHallBtn').onclick=returnHall;
-$('prev').onclick=()=>nextCity(-1);
-$('next').onclick=()=>nextCity(1);
+function openMap(){mode='map';renderMap();show('mapOverlay')}
+function backHall(){mode='hall';moveCamera(31);show('hallOverlay')}
+$('enterBtn').onclick=enter;$('continueHall').onclick=arriveHall;$('mapBtn').onclick=openMap;$('walkBtn').onclick=startWalk;$('mapGo').onclick=focusSelectedPoster;$('mapBack').onclick=backHall;$('detailBtn').onclick=openCityDetails;$('focusPrev').onclick=()=>{selected=Math.max(0,selected-1);focusSelectedPoster()};$('focusNext').onclick=()=>{selected=Math.min(cities.length-1,selected+1);focusSelectedPoster()};$('focusMapBtn').onclick=openMap;$('focusHallBtn').onclick=backHall;$('prev').onclick=previous;$('next').onclick=next;$('endHall').onclick=backHall;$('galleryHomeBtn').onclick=()=>{mode='welcome';doors.forEach(d=>d.pivot.rotation.y=0);moveCamera(42);show('welcome')};
 $('openMapWalk').onclick=openMap;
-$('endHall').onclick=returnHall;
-$('langBtn').onclick=changeLanguage;
-$('galleryHomeBtn').onclick=()=>{
- mode='welcome';
- show('welcome');
- $('walkInfo').hidden=true;
- $('walkSlogans').hidden=true;
- moveCamera(42);
-};
-
-let scrollLock=false;
-
-window.addEventListener('wheel',event=>{
- if(scrollLock)return;
- if(mode==='welcome'){
-  event.preventDefault();
-  enterGallery();
- }else if(mode==='walk'){
-  event.preventDefault();
-  if(Math.abs(event.deltaY)>8){
-   selected=Math.max(0,Math.min(cities.length-1,selected+(event.deltaY>0?1:-1)));
-   $('cityName').textContent=cities[selected][lang==='fa'?0:1];
-   loadPosterTexture(selected);
-   const p=posterPositions[selected];
-   moveCamera(p.z+14,p.side*2.3);
-   if(selected===cities.length-1&&event.deltaY>0){
-    setTimeout(finishGallery,900);
-   }
-  }
- }
+$('galleryHomeBtn').onclick=()=>{mode='welcome';doors.forEach(d=>d.pivot.rotation.y=0);moveCamera(42);show('welcome')};
+$('langBtn').onclick=()=>{lang=lang==='fa'?'en':'fa';document.documentElement.lang=lang;document.documentElement.dir=lang==='fa'?'rtl':'ltr';$('langBtn').textContent=lang==='fa'?'FA | EN':'EN | FA';
+ const t={welcomeOver:['گالری سه‌بعدی نمایشگاه','3D Exhibition Gallery'],welcomeTitle:['ورود به نمایشگاه ایران، هزار رنگ','Enter Iran, A Thousand Colors'],welcomeDesc:['روایت تصویری پوشش زنان ایران',"A visual story of women's clothing in Iran"],welcomeHint:['به روایتی رنگارنگ از پوشش زنان ایران خوش آمدید.','Welcome to a colorful story of women’s clothing across Iran.'],enterBtn:['ورود به گالری','Enter Gallery'],hallTitle:['ایران، هزار رنگ','Iran, A Thousand Colors'],hallS1:['از هر گوشهٔ ایران، روایتی از زیبایی و هویت','From every corner of Iran, a story of beauty and identity'],hallS2:['سفری تصویری در رنگارنگی پوشش زنان ایران',"A visual journey through the diversity of Iranian women's clothing"],hallHint:['مسیر بازدید خود را انتخاب کنید.','Choose your way to explore.'],doorSlogan:['هر در، آغازِ روایتی تازه است','Every door opens a new story'],doorTitle:['به جهان رنگ‌های ایران خوش آمدید','Welcome to the colors of Iran'],continueHall:['ورود به سالن','Enter the hall'],loadingTitle:['در حال آماده‌سازی گالری','Preparing the gallery'],loadingDesc:['لطفاً چند لحظه همراه ما باشید','Please wait a moment'],walkSlogan1:['هر استان، روایتی از یک زندگی','Every region tells a human story'],walkSlogan2:['در امتداد رنگ‌ها قدم بزنید','Walk along the colors'],creditRole:['طراح وب و پژوهشگر فرهنگی','Web designer and cultural researcher'],mapBtn:['نقشهٔ سفر','Travel Map'],walkBtn:['پیاده‌روی در گالری','Gallery Walk'],mapTitle:['نقشهٔ سفر ایران','Iran Travel Map'],mapDesc:['استان را روی نقشه یا از فهرست انتخاب کنید؛ سپس نمایش آن را بزنید.','Select a province on the map or from the list, then view it.'],listTitle:['فهرست استان‌ها','Provinces'],mapGo:['نمایش استان انتخاب‌شده','View selected province'],focusOver:['تابلوی انتخاب‌شده','Selected artwork'],focusDesc:['برای آشنایی با پوشش، فرهنگ و روایت این منطقه، صفحهٔ توضیحات را ببینید.','Explore the clothing, culture and story of this region on its information page.'],detailBtn:['مشاهدهٔ توضیحات شهر','View city story'],focusPrev:['تابلوی قبلی','Previous artwork'],focusNext:['تابلوی بعدی','Next artwork'],focusMapBtn:['بازگشت به نقشهٔ سفر','Back to travel map'],focusHallBtn:['بازگشت به انتخاب مسیر','Back to route selection'],mapBack:['بازگشت به سالن','Back to Hall'],endSlogan:['هر نقش، یادگاری از یک سرزمین؛ هر رنگ، تکه‌ای از هویت ایران',"Every pattern, a memory of a land; every color, a piece of Iran's identity"],credit1:['هنرمند و خالق آثار: مریم ساعی','Artist and Creator: Maryam Saei'],credit2:['طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی','Website Design and Cultural Research: Marjan Saei'],endHall:['بازگشت به گالری سه‌بعدی','Back to 3D Gallery'],homeBtn:['صفحهٔ اول سایت','Home page'],galleryHomeBtn:['صفحهٔ اول گالری','Gallery start'],prev:['قبلی','Previous'],next:['بعدی','Next']};
+ Object.entries(t).forEach(([id,v])=>$(id).textContent=v[lang==='fa'?0:1]);$('visitorFooter').firstChild.textContent=lang==='fa'?'بازدیدکنندگان: ':'Visitors: ';$('cityName').textContent=cities[selected][lang==='fa'?0:1];if(mode==='map')renderMap();if(mode==='walk')goCity(selected);if(mode==='focus')updateFocusLabel();};
+window.addEventListener('wheel',e=>{
+ if(mode==='welcome'&&e.deltaY>0){enter();return}
+ if(mode==='walk'){e.preventDefault();wheelVelocity+=Math.max(-.22,Math.min(.22,e.deltaY*.0018));requestSceneRender();}
 },{passive:false});
-
-let touchStartY=0;
-
-window.addEventListener('touchstart',e=>{
- touchStartY=e.touches[0].clientY;
-},{passive:true});
-
-window.addEventListener('touchend',e=>{
- const delta=touchStartY-e.changedTouches[0].clientY;
- if(Math.abs(delta)<35)return;
-
- if(mode==='welcome'){
-  enterGallery();
- }else if(mode==='walk'){
-  selected=Math.max(0,Math.min(cities.length-1,selected+(delta>0?1:-1)));
-  $('cityName').textContent=cities[selected][lang==='fa'?0:1];
-  loadPosterTexture(selected);
-  const p=posterPositions[selected];
-  moveCamera(p.z+14,p.side*2.3);
-  if(selected===cities.length-1&&delta>0)setTimeout(finishGallery,900);
- }
-},{passive:true});
-
-const raycaster=new THREE.Raycaster();
-const pointer=new THREE.Vector2();
-
-renderer.domElement.addEventListener('click',event=>{
- if(mode!=='walk'&&mode!=='focus')return;
-
- const rect=renderer.domElement.getBoundingClientRect();
- pointer.x=((event.clientX-rect.left)/rect.width)*2-1;
- pointer.y=-((event.clientY-rect.top)/rect.height)*2+1;
-
- raycaster.setFromCamera(pointer,camera);
- const hits=raycaster.intersectObjects(posterHits,false);
-
- if(hits.length){
-  selected=hits[0].object.userData.city;
-  focusSelectedPoster();
- }
-});
-
-function animate(){
- requestAnimationFrame(animate);
-
- if(moving){
-  camera.position.x+=(targetX-camera.position.x)*.055;
-  camera.position.y+=(targetY-camera.position.y)*.055;
-  camera.position.z+=(targetZ-camera.position.z)*.055;
-
-  const lookTarget=new THREE.Vector3(lookX,lookY,lookZ);
-  camera.lookAt(lookTarget);
-
-  if(Math.abs(camera.position.z-targetZ)<.025&&
-     Math.abs(camera.position.x-targetX)<.025&&
-     Math.abs(camera.position.y-targetY)<.025){
-   moving=false;
-  }
- }
-
- renderer.render(scene,camera);
-}
-
-function resize(){
- camera.aspect=innerWidth/innerHeight;
- camera.updateProjectionMatrix();
- renderer.setSize(innerWidth,innerHeight);
- renderer.setPixelRatio(Math.min(devicePixelRatio,1.25));
-}
-
-window.addEventListener('resize',resize);
-
-async function loadVisitors(){
- try{
-  const response=await fetch('https://api.counterapi.dev/v1/iran-hezar-rang/gallery/visits/up');
-  const data=await response.json();
-  if(data&&data.count)$('visitorCount').textContent=data.count.toLocaleString();
- }catch(e){
-  $('visitorCount').textContent='—';
- }
-}
-
-loadVisitors();
-renderMap();
-animate();
+window.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown'){if(mode==='walk')next()}if(e.key==='ArrowLeft'||e.key==='ArrowUp'){if(mode==='walk')previous()}});
+let touchY=0;window.addEventListener('touchstart',e=>touchY=e.touches[0].clientY,{passive:true});
+window.addEventListener('touchmove',e=>{if(mode==='walk'){const y=e.touches[0].clientY;const dy=touchY-y;touchY=y;wheelVelocity+=Math.max(-.18,Math.min(.18,dy*.006));requestSceneRender();}},{passive:true});
+window.addEventListener('touchend',e=>{let dy=touchY-e.changedTouches[0].clientY;if(mode==='welcome'&&dy>35)enter()},{passive:true});
+const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();renderer.domElement.addEventListener('click',e=>{if(mode!=='walk')return;pointer.x=(e.clientX/innerWidth)*2-1;pointer.y=-(e.clientY/innerHeight)*2+1;raycaster.setFromCamera(pointer,camera);const hits=raycaster.intersectObjects(posterHits);if(hits.length){selected=hits[0].object.userData.city;goCity(selected)}});
+window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setPixelRatio(Math.min(devicePixelRatio,1.25));renderer.setSize(innerWidth,innerHeight);if(innerWidth<700)$('iranMap').src='assets/iran-map-mobile.png';else $('iranMap').src='assets/iran-map-desktop.png'});
+$('iranMap').onerror=()=>{$('iranMap').style.display='none'};
+fetch('https://api.counterapi.dev/v1/iran-hezar-rang/gallery/up').then(r=>r.json()).then(d=>$('visitorCount').textContent=Number(d.count).toLocaleString(lang==='fa'?'fa-IR':'en-US')).catch(()=>{$('visitorCount').textContent='—'});
+if(innerWidth<700)$('iranMap').src='assets/iran-map-mobile.png';
 </script>
 </body>
 </html>
