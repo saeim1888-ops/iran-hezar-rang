@@ -56,7 +56,88 @@ p{font-size:12px;line-height:1.9;margin:6px 0}.muted{color:#786b56;font-size:11p
 #posterFocusOverlay #focusResumeBtn{background:linear-gradient(135deg,#31594c,#173b32);color:#fff4d7;border-color:#c4a36b}
 @media(max-width:700px){#welcome{background-position:56% center}#welcome .panel,#doorOverlay .panel{padding:18px 16px;width:min(92vw,480px)}#welcome .panel{margin-top:20vh}#hallOverlay{background-position:center center;gap:10px}#hallOverlay .panel{width:92vw;padding:13px 15px;margin-top:auto}.routeActions{margin:0 0 3vh;gap:8px}.routeActions .gold{font-size:11px;padding:10px 15px}#posterFocusOverlay{align-items:flex-start;justify-content:flex-start;padding:68px 8px 58px;overflow:hidden}#posterFocusOverlay .panel{left:8px;top:82px;transform:none;width:min(230px,42vw);padding:11px 10px;text-align:right;background:rgba(255,249,235,.96);backdrop-filter:blur(5px)}#posterFocusOverlay h2{font-size:16px}#posterFocusOverlay p{font-size:9px;line-height:1.8}#posterFocusOverlay .focusControls{left:8px;top:calc(82px + 158px);width:min(230px,42vw);align-items:flex-start}#posterFocusOverlay .focusControls .actions{justify-content:flex-start}#posterFocusOverlay .gold{font-size:8px;padding:6px 8px}
 .topbar{grid-template-columns:1fr auto;grid-template-areas:"tools brand";gap:4px;padding:5px}.tools{grid-area:tools;gap:4px}.brand{grid-area:brand;font-size:12px}.brand small{display:none}.tool{font-size:9px;padding:6px 8px}.mapbox{grid-template-columns:1fr}.citylist{max-height:24vh}.overlay{padding-top:75px}.panel{padding:17px 12px}#endOverlay .panel{padding:20px 16px}#endOverlay p{font-size:12px}#walkInfo{bottom:42px;width:max-content;max-width:96vw;gap:4px;padding:5px}#walkInfo button{padding:7px 9px;font-size:9px}#cityName{min-width:75px;font-size:10px}#walkSlogans{top:53px;gap:4px}#walkSlogans span{font-size:8px;padding:5px 7px}}
-.avatar{display:none!important}#endOverlay .panel{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}#endOverlay .actions{justify-content:center;flex-wrap:wrap}</style>
+.avatar{display:none!important}#endOverlay .panel{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}#endOverlay .actions{justify-content:center;flex-wrap:wrap}
+/* --- اصلاحات نهایی تجربهٔ نمایشگاه --- */
+#loading{background:#241711!important;color:#f5e7ce!important;z-index:60;padding:20px;overflow:hidden}
+#loading .loadingBrand{width:min(520px,88vw);display:flex;flex-direction:column;align-items:center;gap:22px;padding:28px 18px;background:transparent;border:0;box-shadow:none}
+#loading #loadingTitle{font-family:'Noto Naskh Arabic','Vazirmatn',serif;color:#f3dfbd;font-size:clamp(30px,5vw,54px);font-weight:700;letter-spacing:.2px;margin:0;text-shadow:0 5px 24px #0008}
+#loading #loadingDesc{color:#d7bd91;font-size:14px;letter-spacing:.4px;margin:0}
+#loading .loaderTrack{width:min(250px,65vw);height:3px;background:#6f5944;border-radius:8px;overflow:hidden}
+#loading .loaderBar{height:100%;width:35%;background:#d3ad70;border-radius:8px;animation:galleryLoad 1.25s ease-in-out infinite alternate}
+@keyframes galleryLoad{from{transform:translateX(-10%);width:22%}to{transform:translateX(245%);width:38%}}
+#mapOverlay{align-items:center!important;justify-content:center!important;padding:58px 14px 24px!important;background:linear-gradient(145deg,#e9dfce,#f5eee2)!important}
+#mapOverlay>div{width:min(1180px,96vw)!important;margin:auto}
+#mapOverlay .mapbox{width:100%;grid-template-columns:minmax(0,1.8fr) minmax(220px,.65fr);align-items:stretch;gap:16px}
+#mapOverlay .mapimage{min-height:0;align-self:stretch;display:flex;align-items:center;justify-content:center;background:#dce8e4}
+#mapOverlay .provinceMapSvg{height:100%;max-height:68vh;object-fit:contain}
+#mapOverlay .citylist{max-height:68vh}
+#mapOverlay .pin{width:10px;height:10px;z-index:3}
+#mapOverlay .pinName{position:absolute;top:11px;left:50%;transform:translateX(-50%);white-space:nowrap;padding:2px 5px;border-radius:4px;background:#fffaf0ed;color:#342d25;border:1px solid #a98b5b;font:600 9px 'Vazirmatn',Tahoma,sans-serif;box-shadow:0 2px 5px #0002;pointer-events:none}
+#mapOverlay .pin.sel{z-index:5}
+#mapOverlay .pin.sel .pinName{background:#31564b;color:#fff8e9;border-color:#d2b47c;font-size:10px}
+#posterFocusOverlay{padding:68px 22px 24px!important}
+#posterFocusOverlay .panel{left:clamp(12px,2vw,28px)!important;top:50%!important;transform:translateY(-50%)!important;width:min(255px,23vw)!important;max-height:68vh;overflow:auto;padding:14px 13px!important;background:rgba(246,235,214,.97)!important;border:1px solid #b99558!important;clip-path:none!important;border-radius:4px 10px 4px 10px!important;box-shadow:0 12px 34px #1b140e55,inset 0 0 0 3px #fff5!important}
+#posterFocusOverlay h2{font-size:clamp(17px,1.5vw,22px)!important}
+#posterFocusOverlay p{font-size:10px!important;line-height:1.85!important}
+#posterFocusOverlay .focusControls{left:clamp(12px,2vw,28px)!important;top:calc(50% + min(35vh,190px))!important;width:min(255px,23vw)!important;align-items:stretch!important}
+#posterFocusOverlay .focusControls .actions{justify-content:flex-start!important}
+#posterFocusOverlay .focusControls .gold{font-size:9px!important;padding:7px 9px!important}
+@media(max-width:700px){
+ #mapOverlay{padding:68px 8px 18px!important;align-items:flex-start!important;overflow:auto}
+ #mapOverlay .mapbox{grid-template-columns:1fr;gap:8px}
+ #mapOverlay .mapimage{min-height:230px}
+ #mapOverlay .provinceMapSvg{height:auto;max-height:42vh}
+ #mapOverlay .citylist{max-height:22vh}
+ #mapOverlay .pinName{font-size:7px;padding:1px 3px;top:9px}
+ #posterFocusOverlay{padding:68px 8px 12px!important;align-items:flex-start!important}
+ #posterFocusOverlay .panel{left:8px!important;top:76px!important;transform:none!important;width:min(190px,43vw)!important;max-height:38vh;padding:10px!important}
+ #posterFocusOverlay .focusControls{left:8px!important;top:calc(76px + 39vh)!important;width:min(190px,43vw)!important}
+ #posterFocusOverlay .focusControls .gold{font-size:8px!important;padding:6px 7px!important}
+}
+
+/* اصلاحات نهایی بر اساس بازبینی تصویری */
+#loading{background:#24170f!important;z-index:40!important;backdrop-filter:none!important}
+#loading .loadingBrand{background:transparent!important;border:0!important;box-shadow:none!important}
+#loading #loadingTitle{color:#f3e4cb!important;text-shadow:0 3px 18px #0008!important}
+#loading #loadingDesc{color:#d8b987!important}
+#loading .loaderTrack{background:#604a37!important}
+#loading .loaderBar{background:#d9b477!important}
+#posterFocusOverlay{background:rgba(31,23,17,.28)!important;backdrop-filter:blur(2px);display:flex;align-items:center!important;justify-content:center!important;padding:78px 3vw 24px!important;overflow:auto!important}
+#posterFocusOverlay .focusStage{width:min(1120px,96vw);display:grid;grid-template-columns:minmax(220px,270px) minmax(360px,1fr);gap:22px;align-items:center;direction:ltr;margin:auto}
+#posterFocusOverlay .focusInfo{position:relative!important;inset:auto!important;transform:none!important;width:100%!important;max-height:72vh;overflow:auto;text-align:right;direction:rtl;padding:20px 17px!important;background:rgba(247,237,218,.98)!important;border:1px solid #b99558!important;border-radius:5px 14px 5px 14px!important;box-shadow:0 14px 40px #160e0870!important;clip-path:none!important}
+#posterFocusOverlay .focusInfo h2{font-size:22px!important;margin:4px 0 12px!important}
+#posterFocusOverlay .focusInfo p{font-size:11px!important;line-height:2!important;white-space:pre-line}
+#posterFocusOverlay .focusArtworkWrap{min-width:0;display:flex;flex-direction:column;align-items:center;gap:12px;direction:rtl}
+#posterFocusOverlay .focusArtwork{display:block;width:auto;height:min(66vh,650px);max-width:min(100%,520px);aspect-ratio:3/4;object-fit:contain;background:#f4ead8;border:9px solid #e8dcc4;outline:1px solid #b99558;box-shadow:0 18px 48px #100b0780}
+#posterFocusOverlay .focusArtworkFallback{width:min(100%,520px);height:min(66vh,650px);aspect-ratio:3/4;background:#f3e8d4;border:9px solid #e8dcc4;outline:1px solid #b99558;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#31564b;font-size:17px;line-height:2;text-align:center;padding:20px}
+#posterFocusOverlay .focusArtworkFallback small{font-size:11px;color:#786b56}
+#posterFocusOverlay .focusControls{position:static!important;inset:auto!important;transform:none!important;width:100%!important;display:flex!important;flex-direction:column;align-items:center!important;gap:4px}
+#posterFocusOverlay .focusControls .actions{justify-content:center!important;margin:2px 0!important;gap:6px}
+#posterFocusOverlay .focusControls .gold{font-size:10px!important;padding:8px 12px!important;margin:1px!important}
+#mapOverlay{align-items:center!important;justify-content:center!important;padding:78px 14px 24px!important;overflow:auto!important}
+#mapOverlay>div{width:min(1180px,96vw)!important;margin:auto!important}
+#mapOverlay .mapbox{width:100%!important;grid-template-columns:minmax(0,1.75fr) minmax(220px,.62fr)!important;align-items:stretch!important;gap:14px!important}
+#mapOverlay .mapimage{height:min(67vh,650px)!important;min-height:360px!important;align-self:stretch!important;background:#dce9e6!important}
+#mapOverlay .provinceMapSvg{width:100%!important;height:100%!important;max-height:none!important;object-fit:contain!important}
+#mapOverlay .citylist{max-height:min(67vh,650px)!important;overflow:auto!important}
+#mapOverlay .waterLabels text{font-size:15px!important;font-weight:700!important;fill:#356d7b!important;stroke:#dce9e6!important;stroke-width:3px!important;paint-order:stroke!important}
+#mapOverlay .pinName{font-size:10px!important;top:13px!important}
+@media(max-width:760px){
+ #posterFocusOverlay{align-items:flex-start!important;padding:72px 10px 18px!important}
+ #posterFocusOverlay .focusStage{grid-template-columns:1fr;gap:12px;width:100%;max-width:560px}
+ #posterFocusOverlay .focusInfo{order:2;max-height:24vh;padding:12px!important}
+ #posterFocusOverlay .focusArtworkWrap{order:1}
+ #posterFocusOverlay .focusArtwork,#posterFocusOverlay .focusArtworkFallback{height:48vh;max-width:88vw}
+ #posterFocusOverlay .focusInfo h2{font-size:18px!important}
+ #posterFocusOverlay .focusControls .actions{gap:3px}
+ #posterFocusOverlay .focusControls .gold{font-size:9px!important;padding:7px 8px!important}
+ #mapOverlay{align-items:flex-start!important;padding:70px 8px 16px!important}
+ #mapOverlay .mapbox{grid-template-columns:1fr!important}
+ #mapOverlay .mapimage{height:48vh!important;min-height:260px!important}
+ #mapOverlay .citylist{max-height:28vh!important}
+}
+
+</style>
 </head>
 <body>
 <div id="scene"></div>
@@ -80,7 +161,7 @@ p{font-size:12px;line-height:1.9;margin:6px 0}.muted{color:#786b56;font-size:11p
  </div>
 </section>
 
-<section class="overlay" id="loading" hidden><div class="panel"><h2 id="loadingTitle">در حال آماده‌سازی گالری</h2><p class="muted" id="loadingDesc">لطفاً چند لحظه همراه ما باشید</p><div class="loaderTrack"><div class="loaderBar"></div></div></div></section>
+<section class="overlay" id="loading" hidden><div class="loadingBrand"><h1 id="loadingTitle">ایران، هزار رنگ</h1><div class="loaderTrack"><div class="loaderBar"></div></div><p id="loadingDesc">ورود به سالن</p></div></section>
 <section class="overlay" id="doorOverlay" hidden><div class="panel"><p class="muted" id="doorSlogan">هر در، آغازِ روایتی تازه است</p><h2 id="doorTitle">به جهان رنگ‌های ایران خوش آمدید</h2><div class="actions"><button class="gold" id="continueHall">ورود به سالن</button></div></div></section>
 <section class="overlay" id="hallOverlay" hidden>
  <div class="panel">
@@ -115,13 +196,19 @@ p{font-size:12px;line-height:1.9;margin:6px 0}.muted{color:#786b56;font-size:11p
 </section>
 
 <section class="overlay" id="posterFocusOverlay" hidden>
- <div class="panel">
-  <p class="muted" id="focusOver">روایت تصویری استان</p><h2 id="focusCity">قزوین</h2>
-  <p id="focusDesc">برای خواندن روایت این سرزمین، وارد صفحهٔ توضیحات شوید.</p>
- </div>
- <div class="focusControls">
-  <div class="actions"><button class="gold" id="focusPrev">تابلوی قبلی</button><button class="gold" id="detailBtn">مشاهدهٔ توضیحات شهر</button><button class="gold" id="focusNext">تابلوی بعدی</button></div>
-  <div class="actions"><button class="gold" id="focusResumeBtn">بازگشت به مسیر پیاده‌روی</button><button class="gold" id="focusMapBtn">بازگشت به نقشهٔ سفر</button><button class="gold" id="focusHallBtn">بازگشت به انتخاب مسیر</button></div>
+ <div class="focusStage">
+  <aside class="panel focusInfo">
+   <p class="muted" id="focusOver">روایت تصویری استان</p><h2 id="focusCity">قزوین</h2>
+   <p id="focusDesc">برای خواندن روایت این سرزمین، وارد صفحهٔ توضیحات شوید.</p>
+  </aside>
+  <div class="focusArtworkWrap">
+   <img id="focusArtwork" class="focusArtwork" alt="اثر هنری استان انتخاب‌شده">
+   <div id="focusArtworkFallback" class="focusArtworkFallback" hidden>تصویر اثر بارگذاری نشد<br><small>فایل تصویر استان را کنار فایل گالری یا در پوشهٔ posters قرار دهید.</small></div>
+   <div class="focusControls">
+    <div class="actions"><button class="gold" id="focusPrev">تابلوی قبلی</button><button class="gold" id="detailBtn">مشاهدهٔ توضیحات شهر</button><button class="gold" id="focusNext">تابلوی بعدی</button></div>
+    <div class="actions"><button class="gold" id="focusResumeBtn">بازگشت به مسیر پیاده‌روی</button><button class="gold" id="focusMapBtn">بازگشت به نقشهٔ سفر</button><button class="gold" id="focusHallBtn">بازگشت به انتخاب مسیر</button></div>
+   </div>
+  </div>
  </div>
 </section>
 
@@ -158,7 +245,7 @@ async function loadProvinceMap(){
    const polys=g.type==='Polygon'?[g.coordinates]:g.type==='MultiPolygon'?g.coordinates:[];
    for(const poly of polys){if(!poly||!poly[0])continue;const d=poly[0].map((pt,i)=>{const q=project(pt[0],pt[1]);return(i?'L':'M')+q[0].toFixed(1)+' '+q[1].toFixed(1)}).join(' ')+' Z';paths.push('<path class="province" d="'+d+'"/>');}
   }
-  svg.innerHTML='<rect width="600" height="470" fill="#dce8e4"/>'+paths.join('')+'<g class="waterLabels" font-family="Vazirmatn, Tahoma, sans-serif" text-anchor="middle" fill="#527b83" font-size="13" font-weight="600"><text x="355" y="66">دریای خزر</text><text x="220" y="395">خلیج فارس</text><text x="455" y="425">دریای عمان</text></g>'+'<text x="300" y="455" text-anchor="middle" fill="#715b39" font-size="12">ایران · IRAN</text>';provinceMapLoaded=true;
+  svg.innerHTML='<rect width="600" height="470" fill="#dce8e4"/>'+paths.join('')+'<g class="waterLabels" font-family="Vazirmatn, Tahoma, sans-serif" text-anchor="middle" fill="#527b83" font-size="13" font-weight="600"><text x="445" y="92">دریای خزر</text><text x="170" y="385">خلیج فارس</text><text x="475" y="385">دریای عمان</text></g>'+'<text x="300" y="455" text-anchor="middle" fill="#715b39" font-size="12">ایران · IRAN</text>';provinceMapLoaded=true;
  }catch(e){svg.innerHTML='<rect width="600" height="470" fill="#dce8e4"/><text x="300" y="210" text-anchor="middle" fill="#715b83" font-size="16">نقشهٔ مرز استان‌ها بارگذاری نشد</text><text x="300" y="245" text-anchor="middle" fill="#527b83" font-size="13">دریای خزر · خلیج فارس · دریای عمان</text><text x="300" y="275" text-anchor="middle" fill="#8b7047" font-size="11">اتصال اینترنت را بررسی کنید</text>';}
 }
 let lang='fa',selected=0,mode='welcome',moving=false,mapReturnMode='hall';
@@ -208,7 +295,7 @@ function makePosterFallback(i){
  const ctx=canvas.getContext('2d');
  const g=ctx.createLinearGradient(0,0,900,1280);g.addColorStop(0,'#f8efdc');g.addColorStop(.55,'#ead8b6');g.addColorStop(1,'#d9c49a');
  ctx.fillStyle=g;ctx.fillRect(0,0,900,1280);
- ctx.strokeStyle='#a47b42';ctx.lineWidth=18;ctx.strokeRect(38,38,824,1204);
+ ctx.strokeStyle='#a47b42';ctx.lineWidth=7;ctx.strokeRect(38,38,824,1204);
  ctx.strokeStyle='rgba(164,123,66,.45)';ctx.lineWidth=3;ctx.strokeRect(65,65,770,1150);
  ctx.fillStyle='#24463f';ctx.textAlign='center';ctx.font='bold 76px serif';ctx.fillText(c[0],450,220);
  ctx.fillStyle='#8b6938';ctx.font='36px serif';ctx.fillText('ایران، هزار رنگ',450,292);
@@ -252,68 +339,7 @@ function addPoster(city,i){
  plaque.position.set(0,-1.98,.15);group.add(plaque);
  const hit=new THREE.Mesh(new THREE.PlaneGeometry(2.7,3.9),new THREE.MeshBasicMaterial({transparent:true,opacity:0,side:THREE.DoubleSide}));
  hit.position.z=.22;hit.userData.city=i;group.add(hit);posterHits.push(hit);
- // ویترین شیشه‌ای کوچک و مرتب در کنار اثر، با ماکت شاخص هر مقصد
- const cabinet=new THREE.Group();cabinet.position.set(1.58,-.62,.18);cabinet.scale.set(.76,.76,.76);group.add(cabinet);
- const base=new THREE.Mesh(new THREE.BoxGeometry(1.02,.22,.82),new THREE.MeshStandardMaterial({color:0xf4f0e7,roughness:.42}));
- base.position.y=-1.48;cabinet.add(base);
- const glassMat=new THREE.MeshPhysicalMaterial({color:0xffffff,transparent:true,opacity:.16,roughness:.08,metalness:0,transmission:.55,thickness:.08});
- const glass=new THREE.Mesh(new THREE.BoxGeometry(1.42,2.05,1.02),glassMat);glass.position.y=-.22;cabinet.add(glass);
- const goldEdge=new THREE.MeshStandardMaterial({color:0xb99558,metalness:.45,roughness:.42});
- for(const xx of [-.70,.70])for(const zz of [-.50,.50]){
-  const post=new THREE.Mesh(new THREE.BoxGeometry(.025,2.05,.025),goldEdge);post.position.set(xx,-.22,zz);cabinet.add(post);
- }
- const pedestal=new THREE.Mesh(new THREE.BoxGeometry(.72,.16,.58),new THREE.MeshStandardMaterial({color:0xf6f1e8,roughness:.55}));
- pedestal.position.y=-1.42;cabinet.add(pedestal);
- const artifactPlate=new THREE.Mesh(new THREE.BoxGeometry(.56,.025,.42),new THREE.MeshStandardMaterial({color:0xc4a36b,metalness:.35,roughness:.45}));
- artifactPlate.position.set(0,-1.31,0);cabinet.add(artifactPlate);
- addKnownLandmark(cabinet,i);
-}
-function addKnownLandmark(cabinet,index){
- // A visible miniature city diorama is placed on the cabinet pedestal for every stop.
- const mat=(color,roughness=.82,metalness=0)=>new THREE.MeshStandardMaterial({color,roughness,metalness});
- const stone=mat(0xc4ad86), pale=mat(0xe3d2b2), dark=mat(0x806747), teal=mat(0x31564b), roof=mat(0xa97842), gold=mat(0xc09a55,.45,.3);
- const add=(geo,material,x,y,z,sx=1,sy=1,sz=1)=>{
-  const o=new THREE.Mesh(geo,material);o.position.set(x,y,z);o.scale.set(sx,sy,sz);cabinet.add(o);return o;
- };
- const baseY=-1.27;
- // Small stepped plinth and a miniature landscape, deliberately visible through the case.
- add(new THREE.BoxGeometry(.94,.09,.70),dark,0,baseY,0);
- add(new THREE.BoxGeometry(.86,.07,.64),pale,0,baseY+.07,0);
- if(index===0){
-  // Qazvin: Alamut fortress on a rocky ridge.
-  add(new THREE.ConeGeometry(.34,.52,7),dark,0,baseY+.34,0,1.2,1,.9);
-  add(new THREE.BoxGeometry(.55,.16,.40),stone,0,baseY+.66,0);
-  add(new THREE.BoxGeometry(.47,.30,.34),pale,0,baseY+.88,0);
-  add(new THREE.BoxGeometry(.54,.09,.39),roof,0,baseY+1.08,0);
-  for(const x of [-.19,.19])for(const z of [-.13,.13]){
-   add(new THREE.BoxGeometry(.12,.22,.12),stone,x,baseY+1.22,z);
-   add(new THREE.BoxGeometry(.15,.06,.15),gold,x,baseY+1.36,z);
-  }
- }else if(index===12){
-  // Fars: Persepolis platform, columns and capitals.
-  add(new THREE.BoxGeometry(.78,.10,.56),dark,0,baseY+.10,0);
-  add(new THREE.BoxGeometry(.70,.10,.50),stone,0,baseY+.20,0);
-  for(const x of [-.25,-.08,.08,.25]){
-   add(new THREE.CylinderGeometry(.035,.05,.53,12),pale,x,baseY+.52,-.12);
-   add(new THREE.CylinderGeometry(.035,.05,.53,12),stone,x,baseY+.52,.15);
-   add(new THREE.BoxGeometry(.12,.07,.12),gold,x,baseY+.82,-.12);
-   add(new THREE.BoxGeometry(.12,.07,.12),gold,x,baseY+.82,.15);
-  }
-  add(new THREE.BoxGeometry(.70,.08,.46),roof,0,baseY+.91,.015);
- }else if(index===22){
-  // Kermanshah: Taq-e Bostan rock relief and arch.
-  add(new THREE.BoxGeometry(.76,.92,.15),dark,0,baseY+.51,-.04);
-  add(new THREE.BoxGeometry(.60,.68,.09),stone,0,baseY+.40,.06);
-  add(new THREE.BoxGeometry(.13,.50,.13),pale,-.23,baseY+.36,.14);
-  add(new THREE.BoxGeometry(.13,.50,.13),pale,.23,baseY+.36,.14);
-  add(new THREE.TorusGeometry(.23,.055,9,28,Math.PI),gold,0,baseY+.62,.14);
-  add(new THREE.BoxGeometry(.43,.08,.10),gold,0,baseY+.62,.14);
-  add(new THREE.BoxGeometry(.22,.25,.04),roof,0,baseY+.32,.17);
- }else{
-  // Do not show invented generic city blocks; reserve the display for a verified local landmark model.
-  add(new THREE.BoxGeometry(.62,.08,.46),pale,0,baseY+.08,0);
-  add(new THREE.BoxGeometry(.34,.025,.24),gold,0,baseY+.135,0);
- }
+
 }
 const posterHits=[];cities.forEach(addPoster);
 // عکس‌های خود گالری به‌عنوان سطوح تصویری داخل معماری سه‌بعدی استفاده می‌شوند
@@ -326,7 +352,47 @@ function addPhotoPlane(path,w,h,x,y,z,rotationY=0){
 const doorwayLight=new THREE.PointLight(0xffd79b,55,25);doorwayLight.position.set(0,4,30);scene.add(doorwayLight);
 let targetZ=42, targetX=0, targetY=2.4, lookX=0, lookY=2.65, lookZ=-13, cameraMode='welcome', walkProgress=0, wheelVelocity=0;
 function moveCamera(z,x=0){camera.fov=62;camera.updateProjectionMatrix();targetZ=z;targetX=x;targetY=2.4;lookX=x*.18;lookY=2.65;lookZ=z-15;moving=true;requestSceneRender()}
-function focusSelectedPoster(){loadPosterTexture(selected);const p=posterPositions[selected];if(!p)return;mode='focus';wheelVelocity=0;targetX=p.side<0?-2.45:2.45;targetY=3.35;targetZ=p.z-p.side*1.15;lookX=p.side<0?-7.10:7.10;lookY=3.25;lookZ=p.z;camera.fov=43;camera.updateProjectionMatrix();moving=true;requestSceneRender();show('');$('hint').hidden=true;$('focusCity').textContent=cities[selected][lang==='fa'?0:1];$('focusOver').textContent=lang==='fa'?'تابلوی انتخاب‌شده':'Selected artwork';$('focusDesc').textContent=(lang==='fa'?(approvedSlogans[selected]?approvedSlogans[selected]+'\\n\\n':'')+'روایت تصویری '+cities[selected][0]+'، پوشش زنان و پیوند آن با فرهنگ و زندگی بومی این سرزمین را دنبال می‌کند.\\nبرای دیدن روایت کامل و جاذبه‌های منطقه، دکمهٔ «مشاهدهٔ توضیحات شهر» را بزنید.':'Explore '+cities[selected][1]+' through women’s clothing, local culture and everyday traditions. Select “View city story” for the full regional guide.');$('detailBtn').textContent=lang==='fa'?'مشاهدهٔ توضیحات شهر':'View city story';$('focusPrev').textContent=lang==='fa'?'تابلوی قبلی':'Previous artwork';$('focusNext').textContent=lang==='fa'?'تابلوی بعدی':'Next artwork';$('focusMapBtn').textContent=lang==='fa'?'بازگشت به نقشهٔ سفر':'Back to travel map';$('focusHallBtn').textContent=lang==='fa'?'بازگشت به انتخاب مسیر':'Back to route selection';$('focusResumeBtn').textContent=lang==='fa'?'بازگشت به مسیر پیاده‌روی':'Return to gallery walk';setTimeout(()=>{if(mode==='focus')show('posterFocusOverlay')},900)}
+const provinceStories={
+0:'قزوین با کاروانسراهای تاریخی، باغستان‌های کهن و هنر خوشنویسی شناخته می‌شود. پوشش زنان این منطقه با شلیته‌های چین‌دار، جلیقه‌های رنگین و سربندهای محلی، بخشی از هویت فرهنگی آن است.',
+1:'گیلان سرزمین شالیزارها، جنگل‌های هیرکانی و آیین‌های پرنشاط محلی است. لباس زنان گیلان با دامن‌های پرچین و رنگارنگ، جلیقه و روسری‌های نقش‌دار شناخته می‌شود.',
+2:'مازندران با جنگل، دریا و آیین‌های بومی پیوندی دیرینه دارد. پوشاک زنان مازندرانی در رنگ‌های شاد و با دامن‌های چین‌دار و سربندهای محلی جلوه می‌کند.',
+3:'گلستان محل هم‌نشینی فرهنگ‌های ترکمن، فارس و دیگر اقوام است. لباس زنان ترکمن با سوزن‌دوزی‌های ظریف، زیورهای نقره و کلاه و روسری‌های سنتی شهرت دارد.',
+4:'سمنان در مسیر تاریخی کاروان‌ها قرار دارد و از کویر تا جنگل‌های هیرکانی را دربرمی‌گیرد. پوشش محلی آن با تنوع رنگ، سربندها و نقش‌دوزی‌های بومی شناخته می‌شود.',
+5:'خراسان شمالی سرزمین اقوام کرمانج، ترک، ترکمن و تات است. لباس‌های محلی زنان با رنگ‌های زنده، دامن‌های چین‌دار و زیورآلات سنتی، تنوع فرهنگی استان را بازتاب می‌دهد.',
+6:'خراسان جنوبی با معماری خشتی، قنات‌ها و روستاهای تاریخی شناخته می‌شود. هنرهای نساجی، سوزن‌دوزی و پوشش‌های محلی زنان، بخشی از میراث زنده این سرزمین کویری است.',
+7:'سیستان و بلوچستان سرزمین هامون، نخلستان‌ها و هنر سوزن‌دوزی است. لباس زنان بلوچ با سوزن‌دوزی‌های هندسی و رنگارنگ، آینه‌دوزی و جزئیات ظریف از شاخص‌ترین پوشش‌های ایران است.',
+8:'هرمزگان با دریا، جزیره‌ها و فرهنگ دریانوردی شناخته می‌شود. برقع، پوشش‌های رنگی و شلوارهای نقش‌دوزی‌شده زنان بندری، جلوه‌ای ویژه از هویت ساحلی جنوب ایران است.',
+9:'کرمان با باغ‌های تاریخی، ارگ بم، کویر لوت و هنرهای دستی ارزشمند شناخته می‌شود. پوشش محلی زنان در نواحی مختلف استان، از رنگ‌ها و نقش‌های متنوعی بهره می‌برد.',
+10:'یزد شهر بادگیرها، قنات‌ها و معماری خشتی است. پوشش سنتی زنان یزدی با چادر و روسری‌های محلی و رنگ‌های متین، با اقلیم کویری و فرهنگ دیرپای شهر پیوند دارد.',
+11:'اصفهان با میدان نقش‌جهان، پل‌های تاریخی و هنرهای ظریف همچون قلم‌زنی و میناکاری شناخته می‌شود. پوشاک محلی زنان در کنار پارچه‌های نقش‌دار، بخشی از میراث هنری این منطقه است.',
+12:'فارس سرزمین تخت‌جمشید، باغ‌های شیراز و شعر فارسی است. لباس زنان قشقایی با رنگ‌های درخشان، دامن‌های چندلایه و سربندهای زیبا از شناخته‌شده‌ترین پوشش‌های محلی ایران است.',
+13:'بوشهر با ساحل خلیج فارس، موسیقی دریایی و آیین‌های پرشور جنوب شناخته می‌شود. پوشش زنان بوشهری با رنگ‌های روشن، پارچه‌های خنک و برقع در برخی نواحی جلوه‌ای خاص دارد.',
+14:'کهگیلویه و بویراحمد سرزمین زاگرس، چشمه‌ها و کوچ‌های عشایری است. لباس زنان بویراحمدی با دامن‌های پرچین، رنگ‌های شاد و سربندهای بلند، با زندگی عشایری پیوند دارد.',
+15:'چهارمحال و بختیاری با کوهستان‌های زاگرس و فرهنگ عشایری بختیاری شناخته می‌شود. لباس زنان بختیاری با دامن‌های چندلایه، مینا و لچک‌های آراسته، هویتی متمایز دارد.',
+16:'خوزستان با رودهای بزرگ، نخلستان‌ها و پیشینه تمدنی کهن شناخته می‌شود. پوشش زنان عرب و بختیاری و دیگر گروه‌های بومی استان، تنوع فرهنگی این سرزمین را نشان می‌دهد.',
+17:'ایلام سرزمین کوهستان‌های زاگرس، جنگل‌های بلوط و فرهنگ کردی است. پوشاک زنان ایلامی با سربندها، جلیقه‌ها و پارچه‌های رنگین، جلوه‌ای از سنت‌های محلی دارد.',
+18:'لرستان با قلعه فلک‌الافلاک، آبشارها و آیین‌های کهن لری شناخته می‌شود. لباس زنان لر با گلونی، جلیقه و دامن‌های رنگارنگ، از نمادهای هویت فرهنگی زاگرس است.',
+19:'اراک و استان مرکزی در مسیر پیوند فلات مرکزی ایران قرار دارند و به فرش، جاجیم و هنرهای روستایی شناخته می‌شوند. پوشش محلی زنان نیز در روستاهای گوناگون، رنگ و نقش ویژه خود را دارد.',
+20:'کاشان با خانه‌های تاریخی، باغ فین و هنر گلاب‌گیری و قالی‌بافی شناخته می‌شود. پوشش سنتی زنان این ناحیه با چادرهای محلی و روسری‌های نقش‌دار، یادآور زندگی کویری است.',
+21:'همدان با تاریخ هگمتانه، غار علیصدر و سفال لالجین شناخته می‌شود. پوشش زنان در نواحی مختلف استان، از جمله لباس‌های کردی و لری، تنوع فرهنگی منطقه را بازتاب می‌دهد.',
+22:'کرمانشاه با بیستون، طاق‌بستان و موسیقی تنبور شناخته می‌شود. لباس زنان کردی با سربندهای آراسته، جلیقه و دامن‌های پرچین و رنگارنگ، بخشی از هویت زاگرس است.',
+23:'کردستان سرزمین اورامانات، کوهستان‌های بلند و موسیقی کردی است. لباس زنان کرد با کوا و کراس، شال و سربندهای رنگی و زیورهای سنتی، از زیباترین پوشش‌های محلی ایران است.',
+24:'آذربایجان غربی با دریاچه ارومیه، طبیعت کوهستانی و تنوع فرهنگی اقوام آذری و کرد شناخته می‌شود. پوشش زنان منطقه با پارچه‌های رنگی، جلیقه و سربندهای محلی جلوه می‌کند.',
+25:'آذربایجان شرقی با تبریز تاریخی، بازار بزرگ و هنر قالی‌بافی شناخته می‌شود. پوشش زنان آذری با رنگ‌های زنده، جلیقه‌ها و سربندهای محلی، در کنار نوای عاشیقی بخشی از هویت منطقه است.',
+26:'اردبیل با دامنه‌های سبلان، بقعه شیخ صفی‌الدین و دشت‌های سرسبز شناخته می‌شود. لباس زنان آذری با رنگ‌های شاد، دامن‌های چین‌دار و سربندهای سنتی جلوه‌ای دلنشین دارد.',
+27:'زنجان با گنبد سلطانیه، غار کتله‌خور و هنر ملیله‌کاری شناخته می‌شود. پوشش زنان روستایی استان با رنگ‌ها و نقش‌های محلی، بخشی از میراث فرهنگی منطقه است.'
+};
+function showFocusArtwork(i){
+ const img=$('focusArtwork'),fallback=$('focusArtworkFallback'),file=cities[i]?.[2]||'';
+ if(!img||!fallback)return;
+ img.hidden=true;fallback.hidden=true;img.removeAttribute('src');
+ if(!file){fallback.hidden=false;return;}
+ const candidates=[file,'./'+file,'posters/'+file,'./posters/'+file,'assets/'+file,'./assets/'+file,'assets/posters/'+file,'./assets/posters/'+file,'images/'+file,'./images/'+file];
+ let n=0;
+ const tryNext=()=>{if(n>=candidates.length){img.hidden=true;fallback.hidden=false;return;}img.onerror=()=>{n++;tryNext();};img.onload=()=>{img.hidden=false;fallback.hidden=true;};img.src=candidates[n++];};
+ img.alt=(lang==='fa'?'اثر هنری استان ':'Artwork of ')+cities[i][lang==='fa'?0:1];tryNext();
+}
+function focusSelectedPoster(){showFocusArtwork(selected);loadPosterTexture(selected);const p=posterPositions[selected];if(!p)return;mode='focus';wheelVelocity=0;targetX=p.side<0?-2.45:2.45;targetY=3.35;targetZ=p.z-p.side*1.15;lookX=p.side<0?-7.10:7.10;lookY=3.25;lookZ=p.z;camera.fov=51;camera.updateProjectionMatrix();moving=true;requestSceneRender();show('');$('hint').hidden=true;$('focusCity').textContent=cities[selected][lang==='fa'?0:1];$('focusOver').textContent=lang==='fa'?'تابلوی انتخاب‌شده':'Selected artwork';$('focusDesc').textContent=(lang==='fa'?(approvedSlogans[selected]?approvedSlogans[selected]+'\n\n':'')+(provinceStories[selected]||('این استان بخشی از تنوع فرهنگی و طبیعی ایران است و پوشش زنان آن، پیوندی با آداب و زندگی بومی منطقه دارد.'))+'\n\nبرای دیدن روایت کامل و جاذبه‌های منطقه، دکمهٔ «مشاهدهٔ توضیحات شهر» را بزنید.':'Explore '+cities[selected][1]+'. '+(provinceStories[selected]||'Discover the local culture, women’s clothing and traditions of this region.')+' Select “View city story” for the full regional guide.');$('detailBtn').textContent=lang==='fa'?'مشاهدهٔ توضیحات شهر':'View city story';$('focusPrev').textContent=lang==='fa'?'تابلوی قبلی':'Previous artwork';$('focusNext').textContent=lang==='fa'?'تابلوی بعدی':'Next artwork';$('focusMapBtn').textContent=lang==='fa'?'بازگشت به نقشهٔ سفر':'Back to travel map';$('focusHallBtn').textContent=lang==='fa'?'بازگشت به انتخاب مسیر':'Back to route selection';$('focusResumeBtn').textContent=lang==='fa'?'بازگشت به مسیر پیاده‌روی':'Return to gallery walk';setTimeout(()=>{if(mode==='focus')show('posterFocusOverlay')},1900)}
 const approvedSlogans={0:'قزوین | نقش دیروز، رنگ امروز',24:'رنگِ کوهستان، نوای عاشیقی',25:'رنگِ کوهستان، نوای عاشیقی',27:'درخشش نقره، شکوه نقش‌های ماندگار'};
 function openCityDetails(){const page=cities[selected][5];if(page){window.location.href='./'+page}else{alert(lang==='fa'?'صفحهٔ توضیحات این منطقه هنوز در سایت ساخته نشده است.':'The information page for this region is not available yet.')}}
 function setWalkProgress(value){
@@ -351,8 +417,8 @@ function animate(){animationFrame=0;
 }
 requestSceneRender();
 function show(id){['welcome','loading','doorOverlay','hallOverlay','mapOverlay','posterFocusOverlay','endOverlay'].forEach(x=>$(x).hidden=x!==id);$('walkInfo').hidden=id!=='walk';$('walkSlogans').hidden=id!=='walk';$('hint').hidden=['mapOverlay','endOverlay','loading','doorOverlay','welcome'].includes(id);}
-function enter(){mode='loading';show('loading');setTimeout(()=>{doors.forEach(d=>{d.pivot.rotation.y=d.side*.95});moveCamera(24);mode='door';show('doorOverlay')},1450)}
-function arriveHall(){mode='hall';moveCamera(31);setTimeout(()=>{show('hallOverlay');$('hint').textContent=lang==='fa'?'مسیر بازدید خود را انتخاب کنید':'Choose your gallery route'},450)}
+function enter(){mode='loading';show('loading');$('loadingDesc').textContent=lang==='fa'?'ورود به سالن':'Entering the hall';doors.forEach(d=>{d.pivot.rotation.y=0});setTimeout(()=>{doors.forEach(d=>{d.pivot.rotation.y=d.side*.95});moveCamera(31);setTimeout(()=>{if(mode==='loading'){mode='hall';show('hallOverlay');$('hint').textContent=lang==='fa'?'مسیر بازدید خود را انتخاب کنید':'Choose your gallery route'}},2300)},2100)}
+function arriveHall(){mode='hall';show('');moveCamera(31);setTimeout(()=>{if(mode==='hall'){show('hallOverlay');$('hint').textContent=lang==='fa'?'مسیر بازدید خود را انتخاب کنید':'Choose your gallery route'}},1500)}
 function startWalk(){mode='walk';show('walk');goCity(0)}
 function goCity(i){
  selected=Math.max(0,Math.min(cities.length-1,i));loadPosterTexture(selected);if(selected>0)loadPosterTexture(selected-1);if(selected<cities.length-1)loadPosterTexture(selected+1);
@@ -365,7 +431,7 @@ function goCity(i){
 }
 function next(){if(selected===cities.length-1){mode='end';show('endOverlay');return}goCity(selected+1)}
 function previous(){if(selected>0)goCity(selected-1)}
-function renderMap(){loadProvinceMap();loadPosterTexture(selected);const pins=$('pins'),list=$('cityList');pins.innerHTML='';list.innerHTML='';cities.forEach((c,i)=>{let b=document.createElement('button');b.className='pin'+(i===selected?' sel':'');const geo=destinationCoords[i]||[53,33];b.style.left=((geo[0]-44)/20*100)+'%';b.style.top=((40-geo[1])/15*100)+'%';b.title=c[lang==='fa'?0:1];b.onclick=()=>{selected=i;renderMap();focusSelectedPoster()};pins.appendChild(b);let row=document.createElement('button');row.className='city'+(i===selected?' sel':'');row.textContent=(i+1)+'. '+c[lang==='fa'?0:1];row.onclick=()=>{selected=i;renderMap();focusSelectedPoster()};list.appendChild(row)})}
+function renderMap(){loadProvinceMap();loadPosterTexture(selected);const pins=$('pins'),list=$('cityList');pins.innerHTML='';list.innerHTML='';cities.forEach((c,i)=>{let b=document.createElement('button');b.className='pin'+(i===selected?' sel':'');const geo=destinationCoords[i]||[53,33];b.style.left=((geo[0]-44)/20*100)+'%';b.style.top=((40-geo[1])/15*100)+'%';b.title=c[lang==='fa'?0:1];b.setAttribute('aria-label',b.title);b.innerHTML='<span class="pinName">'+c[lang==='fa'?0:1]+'</span>';b.onclick=()=>{selected=i;renderMap();focusSelectedPoster()};pins.appendChild(b);let row=document.createElement('button');row.className='city'+(i===selected?' sel':'');row.textContent=(i+1)+'. '+c[lang==='fa'?0:1];row.onclick=()=>{selected=i;renderMap();focusSelectedPoster()};list.appendChild(row)})}
 function openMap(){if(mode!=='map')mapReturnMode=mode;mode='map';renderMap();show('mapOverlay')}
 function backHall(){mode='hall';moveCamera(31);show('hallOverlay')}
 function closeMap(){if(mapReturnMode==='walk'){mode='walk';show('walk');moveCamera(32-selected*3.8,0);$('cityName').textContent=cities[selected][lang==='fa'?0:1]}else if(mapReturnMode==='focus'){focusSelectedPoster()}else{backHall()}}
@@ -373,7 +439,7 @@ $('enterBtn').onclick=enter;$('continueHall').onclick=arriveHall;$('mapBtn').onc
 $('openMapWalk').onclick=openMap;
 $('galleryHomeBtn').onclick=()=>{mode='welcome';doors.forEach(d=>d.pivot.rotation.y=0);moveCamera(42);show('welcome')};
 $('langBtn').onclick=()=>{lang=lang==='fa'?'en':'fa';document.documentElement.lang=lang;document.documentElement.dir=lang==='fa'?'rtl':'ltr';$('langBtn').textContent=lang==='fa'?'FA | EN':'EN | FA';
- const t={welcomeOver:['گالری سه‌بعدی نمایشگاه','3D Exhibition Gallery'],welcomeTitle:['ورود به نمایشگاه ایران، هزار رنگ','Enter Iran, A Thousand Colors'],welcomeDesc:['روایت تصویری پوشش زنان ایران',"A visual story of women's clothing in Iran"],welcomeHint:['به روایتی رنگارنگ از پوشش زنان ایران خوش آمدید.','Welcome to a colorful story of women’s clothing across Iran.'],enterBtn:['ورود به گالری','Enter Gallery'],welcomeMapBtn:['نقشهٔ سفر استان‌ها','Provincial travel map'],hallTitle:['ایران، هزار رنگ','Iran, A Thousand Colors'],hallS1:['از هر گوشهٔ ایران، روایتی از زیبایی و هویت','From every corner of Iran, a story of beauty and identity'],hallS2:['سفری تصویری در رنگارنگی پوشش زنان ایران',"A visual journey through the diversity of Iranian women's clothing"],hallHint:['مسیر بازدید خود را انتخاب کنید.','Choose your way to explore.'],doorSlogan:['هر در، آغازِ روایتی تازه است','Every door opens a new story'],doorTitle:['به جهان رنگ‌های ایران خوش آمدید','Welcome to the colors of Iran'],continueHall:['ورود به سالن','Enter the hall'],loadingTitle:['در حال آماده‌سازی گالری','Preparing the gallery'],loadingDesc:['لطفاً چند لحظه همراه ما باشید','Please wait a moment'],walkSlogan1:['هر استان، روایتی از یک زندگی','Every region tells a human story'],walkSlogan2:['در امتداد رنگ‌ها قدم بزنید','Walk along the colors'],creditRole:['طراح وب و پژوهشگر فرهنگی','Web designer and cultural researcher'],mapBtn:['نقشهٔ سفر','Travel Map'],walkBtn:['پیاده‌روی در گالری','Gallery Walk'],mapTitle:['نقشهٔ سفر ایران','Iran Travel Map'],mapDesc:['نقطه یا نام مقصد را انتخاب کنید.','Select a marker or destination.'],listTitle:['فهرست مقصدها','Destinations'],mapGo:['انتخاب مقصد','Select destination'],focusOver:['تابلوی انتخاب‌شده','Selected artwork'],focusDesc:['برای آشنایی با پوشش، فرهنگ و روایت این منطقه، صفحهٔ توضیحات را ببینید.','Explore the clothing, culture and story of this region on its information page.'],detailBtn:['مشاهدهٔ توضیحات شهر','View city story'],focusPrev:['تابلوی قبلی','Previous artwork'],focusNext:['تابلوی بعدی','Next artwork'],focusMapBtn:['بازگشت به نقشهٔ سفر','Back to travel map'],focusHallBtn:['بازگشت به انتخاب مسیر','Back to route selection'],focusResumeBtn:['بازگشت به مسیر پیاده‌روی','Return to gallery walk'],mapBack:['بازگشت به سالن','Back to Hall'],endSlogan:['هر نقش، یادگاری از یک سرزمین؛ هر رنگ، تکه‌ای از هویت ایران',"Every pattern, a memory of a land; every color, a piece of Iran's identity"],credit1:['هنرمند و خالق آثار: مریم ساعی','Artist and Creator: Maryam Saei'],credit2:['طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی','Website Design and Cultural Research: Marjan Saei'],endHall:['بازگشت به گالری سه‌بعدی','Back to 3D Gallery'],homeBtn:['صفحهٔ اول سایت','Home page'],galleryHomeBtn:['صفحهٔ اول گالری','Gallery start'],prev:['قبلی','Previous'],next:['بعدی','Next']};
+ const t={welcomeOver:['گالری سه‌بعدی نمایشگاه','3D Exhibition Gallery'],welcomeTitle:['ورود به نمایشگاه ایران، هزار رنگ','Enter Iran, A Thousand Colors'],welcomeDesc:['روایت تصویری پوشش زنان ایران',"A visual story of women's clothing in Iran"],welcomeHint:['به روایتی رنگارنگ از پوشش زنان ایران خوش آمدید.','Welcome to a colorful story of women’s clothing across Iran.'],enterBtn:['ورود به گالری','Enter Gallery'],welcomeMapBtn:['نقشهٔ سفر استان‌ها','Provincial travel map'],hallTitle:['ایران، هزار رنگ','Iran, A Thousand Colors'],hallS1:['از هر گوشهٔ ایران، روایتی از زیبایی و هویت','From every corner of Iran, a story of beauty and identity'],hallS2:['سفری تصویری در رنگارنگی پوشش زنان ایران',"A visual journey through the diversity of Iranian women's clothing"],hallHint:['مسیر بازدید خود را انتخاب کنید.','Choose your way to explore.'],doorSlogan:['هر در، آغازِ روایتی تازه است','Every door opens a new story'],doorTitle:['به جهان رنگ‌های ایران خوش آمدید','Welcome to the colors of Iran'],continueHall:['ورود به سالن','Enter the hall'],loadingTitle:['ایران، هزار رنگ','Iran, A Thousand Colors'],loadingDesc:['ورود به سالن','Entering the hall'],walkSlogan1:['هر استان، روایتی از یک زندگی','Every region tells a human story'],walkSlogan2:['در امتداد رنگ‌ها قدم بزنید','Walk along the colors'],creditRole:['طراح وب و پژوهشگر فرهنگی','Web designer and cultural researcher'],mapBtn:['نقشهٔ سفر','Travel Map'],walkBtn:['پیاده‌روی در گالری','Gallery Walk'],mapTitle:['نقشهٔ سفر ایران','Iran Travel Map'],mapDesc:['نقطه یا نام مقصد را انتخاب کنید.','Select a marker or destination.'],listTitle:['فهرست مقصدها','Destinations'],mapGo:['انتخاب مقصد','Select destination'],focusOver:['تابلوی انتخاب‌شده','Selected artwork'],focusDesc:['برای آشنایی با پوشش، فرهنگ و روایت این منطقه، صفحهٔ توضیحات را ببینید.','Explore the clothing, culture and story of this region on its information page.'],detailBtn:['مشاهدهٔ توضیحات شهر','View city story'],focusPrev:['تابلوی قبلی','Previous artwork'],focusNext:['تابلوی بعدی','Next artwork'],focusMapBtn:['بازگشت به نقشهٔ سفر','Back to travel map'],focusHallBtn:['بازگشت به انتخاب مسیر','Back to route selection'],focusResumeBtn:['بازگشت به مسیر پیاده‌روی','Return to gallery walk'],mapBack:['بازگشت به سالن','Back to Hall'],endSlogan:['هر نقش، یادگاری از یک سرزمین؛ هر رنگ، تکه‌ای از هویت ایران',"Every pattern, a memory of a land; every color, a piece of Iran's identity"],credit1:['هنرمند و خالق آثار: مریم ساعی','Artist and Creator: Maryam Saei'],credit2:['طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی','Website Design and Cultural Research: Marjan Saei'],endHall:['بازگشت به گالری سه‌بعدی','Back to 3D Gallery'],homeBtn:['صفحهٔ اول سایت','Home page'],galleryHomeBtn:['صفحهٔ اول گالری','Gallery start'],prev:['قبلی','Previous'],next:['بعدی','Next']};
  Object.entries(t).forEach(([id,v])=>$(id).textContent=v[lang==='fa'?0:1]);$('visitorFooter').firstChild.textContent=lang==='fa'?'بازدیدکنندگان: ':'Visitors: ';$('cityName').textContent=cities[selected][lang==='fa'?0:1];if(mode==='map')renderMap();if(mode==='walk')goCity(selected);};
 window.addEventListener('wheel',e=>{
  if(mode==='welcome'&&e.deltaY>0){enter();return}
@@ -387,5 +453,434 @@ const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();renderer.domEl
 window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setPixelRatio(Math.min(devicePixelRatio,1.25));renderer.setSize(innerWidth,innerHeight);requestSceneRender()});
 fetch('https://api.counterapi.dev/v1/iran-hezar-rang/gallery/up').then(r=>r.json()).then(d=>$('visitorCount').textContent=Number(d.count).toLocaleString(lang==='fa'?'fa-IR':'en-US')).catch(()=>{$('visitorCount').textContent='—'});
 </script>
+
+<style id="final-last-minute-fixes">
+/* Loading: solid dark-brown full screen, no scene showing through */
+#loading{position:fixed!important;inset:0!important;z-index:999!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#24130d!important;background-image:none!important;color:#f5e8d2!important;backdrop-filter:none!important;}
+#loading[hidden]{display:none!important}
+#loading .loadingBrand{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:24px!important;width:min(560px,90vw)!important;padding:30px!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#loading #loadingTitle{display:block!important;color:#f3e4cb!important;font-size:clamp(34px,5vw,58px)!important;font-weight:800!important;letter-spacing:0!important;text-shadow:0 4px 24px #0009!important}
+#loading #loadingDesc{display:block!important;color:#d8b987!important;font-size:15px!important;margin:0!important}
+#loading .loaderTrack{width:min(230px,60vw)!important;height:4px!important;background:#61432e!important;border-radius:10px!important;overflow:hidden!important}
+#loading .loaderBar{background:#d8b477!important;height:100%!important;border-radius:10px!important;animation:galleryLoad 1.25s ease-in-out infinite alternate!important}
+/* Artwork focus: narrow vertical information label on the LEFT, artwork on RIGHT */
+#posterFocusOverlay{z-index:25!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:82px 3vw 24px!important;background:rgba(31,23,17,.16)!important;backdrop-filter:none!important;overflow:auto!important}
+#posterFocusOverlay[hidden]{display:none!important}
+#posterFocusOverlay .focusStage{display:grid!important;grid-template-columns:230px minmax(380px,1fr)!important;grid-template-areas:"info artwork"!important;gap:28px!important;align-items:center!important;width:min(1120px,96vw)!important;max-width:1120px!important;margin:auto!important;direction:ltr!important}
+#posterFocusOverlay .focusInfo{grid-area:info!important;position:relative!important;inset:auto!important;transform:none!important;justify-self:stretch!important;align-self:center!important;width:230px!important;min-height:390px!important;max-height:68vh!important;overflow:auto!important;box-sizing:border-box!important;padding:22px 17px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;text-align:right!important;direction:rtl!important;background:linear-gradient(155deg,#fff8e8 0%,#ead9b9 100%)!important;border:1px solid #b99558!important;border-radius:5px 13px 5px 13px!important;box-shadow:0 14px 38px #160e0870!important;clip-path:none!important}
+#posterFocusOverlay .focusInfo h2{font-size:22px!important;margin:8px 0 14px!important}
+#posterFocusOverlay .focusInfo p{font-size:11px!important;line-height:2.1!important;white-space:pre-line!important}
+#posterFocusOverlay .focusArtworkWrap{grid-area:artwork!important;position:relative!important;min-width:0!important;width:100%!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:14px!important;direction:rtl!important}
+#posterFocusOverlay .focusArtwork{display:block!important;width:auto!important;height:min(66vh,650px)!important;max-width:min(100%,520px)!important;aspect-ratio:3/4!important;object-fit:contain!important;background:#f4ead8!important;border:8px solid #e8dcc4!important;outline:1px solid #b99558!important;box-shadow:0 18px 48px #100b0780!important}
+#posterFocusOverlay .focusArtworkFallback{width:min(100%,520px)!important;height:min(66vh,650px)!important;aspect-ratio:3/4!important;box-sizing:border-box!important}
+#posterFocusOverlay .focusControls{position:static!important;inset:auto!important;transform:none!important;width:100%!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:7px!important}
+#posterFocusOverlay .focusControls .actions{position:static!important;display:flex!important;justify-content:center!important;flex-wrap:wrap!important;gap:7px!important;margin:0!important;width:100%!important}
+@media(max-width:760px){
+ #posterFocusOverlay{align-items:flex-start!important;padding:76px 10px 18px!important}
+ #posterFocusOverlay .focusStage{grid-template-columns:1fr!important;grid-template-areas:"artwork" "info"!important;gap:12px!important;width:100%!important;max-width:560px!important}
+ #posterFocusOverlay .focusInfo{width:100%!important;min-height:0!important;max-height:24vh!important;order:2!important}
+ #posterFocusOverlay .focusArtwork{height:45vh!important;max-width:88vw!important}
+ #posterFocusOverlay .focusArtworkFallback{height:45vh!important}
+}
+</style>
+
+<style id="loading-motion-enhancement">
+/* A clearly animated loading indicator for the gallery entrance */
+#loading .loadingBrand{
+  gap:24px!important;
+}
+#loading .loaderTrack{
+  position:relative!important;
+  width:min(280px,68vw)!important;
+  height:7px!important;
+  overflow:hidden!important;
+  border-radius:20px!important;
+  background:rgba(216,180,119,.22)!important;
+  border:1px solid rgba(216,180,119,.48)!important;
+  box-shadow:0 0 18px rgba(216,180,119,.10)!important;
+}
+#loading .loaderBar{
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  width:34%!important;
+  height:100%!important;
+  border-radius:20px!important;
+  background:linear-gradient(90deg,#b98c50 0%,#f4dfb5 48%,#d4ad70 100%)!important;
+  box-shadow:0 0 12px rgba(231,197,139,.62)!important;
+  animation:galleryLoadingSweep 1.35s cubic-bezier(.45,.05,.55,.95) infinite!important;
+  will-change:transform!important;
+}
+#loading .loaderBar::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent)!important;
+  animation:galleryLoadingShine .85s linear infinite!important;
+}
+#loading #loadingDesc{
+  position:relative!important;
+  padding-inline:22px!important;
+  animation:galleryLoadingPulse 1.5s ease-in-out infinite!important;
+}
+#loading #loadingDesc::after{
+  content:""!important;
+  display:inline-block!important;
+  width:1.5em!important;
+  text-align:left!important;
+  animation:galleryLoadingDots 1.25s steps(4,end) infinite!important;
+}
+@keyframes galleryLoadingSweep{
+  0%{transform:translateX(-115%)}
+  100%{transform:translateX(315%)}
+}
+@keyframes galleryLoadingShine{
+  0%{transform:translateX(-120%)}
+  100%{transform:translateX(120%)}
+}
+@keyframes galleryLoadingPulse{
+  0%,100%{opacity:.72}
+  50%{opacity:1}
+}
+@keyframes galleryLoadingDots{
+  0%{content:""}
+  25%{content:"."}
+  50%{content:".."}
+  75%,100%{content:"..."}
+}
+@media(prefers-reduced-motion:reduce){
+  #loading .loaderBar,#loading .loaderBar::after,#loading #loadingDesc,
+  #loading #loadingDesc::after{animation-duration:3s!important}
+}
+</style>
+
+
+<style id="keep-artwork-inside-original-frame">
+/* Focus view: reveal the original Three.js artwork frame; no duplicate HTML poster */
+#posterFocusOverlay{
+ position:fixed!important;inset:0!important;z-index:30!important;
+ display:flex!important;align-items:stretch!important;justify-content:stretch!important;
+ padding:0!important;overflow:hidden!important;
+ background:transparent!important;backdrop-filter:none!important;
+ pointer-events:none!important;
+}
+#posterFocusOverlay[hidden]{display:none!important}
+#posterFocusOverlay .focusStage{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ max-width:none!important;margin:0!important;padding:0!important;
+ display:block!important;background:transparent!important;border:0!important;
+ box-shadow:none!important;pointer-events:none!important;
+}
+#posterFocusOverlay .focusInfo{
+ position:absolute!important;left:clamp(18px,5vw,76px)!important;
+ right:auto!important;top:50%!important;transform:translateY(-50%)!important;
+ width:clamp(205px,19vw,270px)!important;min-height:270px!important;
+ max-height:62vh!important;overflow:auto!important;box-sizing:border-box!important;
+ padding:22px 19px!important;background:rgba(247,237,218,.97)!important;
+ border:1px solid #b99558!important;border-radius:8px!important;
+ box-shadow:0 12px 34px rgba(30,24,15,.22)!important;
+ clip-path:none!important;pointer-events:auto!important;
+ direction:rtl!important;text-align:right!important;color:#294b43!important;
+}
+#posterFocusOverlay .focusInfo h2{font-size:22px!important;margin:8px 0 14px!important}
+#posterFocusOverlay .focusInfo p{font-size:12px!important;line-height:2.05!important}
+#posterFocusOverlay .focusArtworkWrap{display:none!important}
+#posterFocusOverlay #focusArtwork,
+#posterFocusOverlay #focusArtworkFallback{display:none!important}
+#posterFocusOverlay .focusControls{
+ position:absolute!important;left:50%!important;right:auto!important;
+ top:auto!important;bottom:clamp(18px,4vh,42px)!important;
+ transform:translateX(-50%)!important;width:min(760px,90vw)!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ gap:9px!important;pointer-events:auto!important;
+}
+#posterFocusOverlay .focusControls .actions{
+ position:static!important;display:flex!important;justify-content:center!important;
+ flex-wrap:wrap!important;gap:9px!important;width:100%!important;margin:0!important;
+}
+#posterFocusOverlay .focusControls .gold{font-size:12px!important;padding:10px 16px!important}
+@media(max-width:760px){
+ #posterFocusOverlay .focusInfo{
+  left:12px!important;top:82px!important;transform:none!important;
+  width:min(210px,48vw)!important;min-height:0!important;max-height:34vh!important;
+  padding:12px!important;
+ }
+ #posterFocusOverlay .focusInfo h2{font-size:20px!important}
+ #posterFocusOverlay .focusInfo p{font-size:12px!important;line-height:2.05!important}
+ #posterFocusOverlay .focusControls{bottom:12px!important;width:96vw!important;gap:5px!important}
+ #posterFocusOverlay .focusControls .actions{gap:5px!important}
+ #posterFocusOverlay .focusControls .gold{font-size:9px!important;padding:7px 9px!important}
+}
+</style>
+
+
+<style id="torn-paper-label-and-restore-buttons">
+/* Torn archival paper label + keep navigation buttons visible below artwork */
+#posterFocusOverlay{
+  overflow:auto!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:82px 22px 28px!important;
+}
+#posterFocusOverlay .focusStage{
+  width:min(1160px,96vw)!important;
+  display:grid!important;
+  grid-template-columns:270px minmax(0,1fr)!important;
+  grid-template-areas:"label artwork"!important;
+  gap:34px!important;
+  align-items:center!important;
+  direction:ltr!important;
+  margin:auto!important;
+}
+#posterFocusOverlay .focusInfo{
+  grid-area:label!important;
+  position:relative!important;
+  inset:auto!important;
+  transform:none!important;
+  width:100%!important;
+  min-height:330px!important;
+  max-height:70vh!important;
+  overflow:auto!important;
+  box-sizing:border-box!important;
+  padding:34px 25px 38px!important;
+  direction:rtl!important;
+  text-align:right!important;
+  color:#403326!important;
+  background:
+    radial-gradient(ellipse at 12% 18%,rgba(255,255,255,.48),transparent 42%),
+    radial-gradient(ellipse at 88% 82%,rgba(145,105,55,.10),transparent 45%),
+    repeating-linear-gradient(2deg,rgba(120,87,48,.025) 0 1px,transparent 1px 5px),
+    linear-gradient(135deg,#f4e8ce 0%,#ead9b8 48%,#f5e9d1 100%)!important;
+  border:1px solid rgba(139,103,57,.48)!important;
+  border-radius:0!important;
+  clip-path:polygon(2% 1%,13% 2%,22% 0%,35% 2%,48% 1%,62% 2%,75% 0%,88% 2%,98% 1%,97% 10%,100% 18%,98% 31%,100% 44%,98% 58%,100% 72%,98% 86%,99% 98%,86% 97%,73% 100%,60% 98%,46% 100%,32% 98%,18% 100%,3% 98%,4% 88%,1% 76%,3% 62%,0% 48%,2% 34%,0% 20%)!important;
+  box-shadow:none!important;
+  filter:drop-shadow(0 12px 14px rgba(35,25,14,.25))!important;
+}
+#posterFocusOverlay .focusInfo::before{
+  content:""!important;
+  position:absolute!important;
+  inset:10px!important;
+  pointer-events:none!important;
+  border:1px solid rgba(153,115,65,.22)!important;
+  clip-path:inherit!important;
+}
+#posterFocusOverlay .focusInfo,
+#posterFocusOverlay .focusInfo *{
+  font-family:"Vazirmatn","Noto Naskh Arabic",Tahoma,sans-serif!important;
+  font-feature-settings:"kern" 1,"liga" 1!important;
+}
+#posterFocusOverlay .focusInfo .muted{
+  color:#987346!important;
+  font-size:12px!important;
+  font-weight:500!important;
+  letter-spacing:0!important;
+}
+#posterFocusOverlay .focusInfo h2{
+  color:#294b42!important;
+  font-size:27px!important;
+  font-weight:800!important;
+  line-height:1.65!important;
+  margin:13px 0 19px!important;
+}
+#posterFocusOverlay .focusInfo p{
+  color:#493d2e!important;
+  font-size:14px!important;
+  font-weight:500!important;
+  line-height:2.25!important;
+  letter-spacing:-.15px!important;
+  white-space:pre-line!important;
+  text-wrap:pretty!important;
+}
+#posterFocusOverlay .focusArtworkWrap{
+  grid-area:artwork!important;
+  min-width:0!important;
+  width:100%!important;
+  position:static!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:15px!important;
+}
+#posterFocusOverlay .focusArtwork{
+  display:block!important;
+  max-width:min(100%,520px)!important;
+  height:min(62vh,620px)!important;
+  object-fit:contain!important;
+}
+#posterFocusOverlay .focusControls{
+  position:static!important;
+  inset:auto!important;
+  transform:none!important;
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+  width:100%!important;
+  max-width:760px!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  margin:0 auto!important;
+}
+#posterFocusOverlay .focusControls .actions{
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  position:static!important;
+  width:100%!important;
+  flex-direction:row!important;
+  flex-wrap:wrap!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:8px!important;
+  margin:0!important;
+}
+#posterFocusOverlay .focusControls button{
+  display:inline-flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  position:static!important;
+  pointer-events:auto!important;
+  font-size:11px!important;
+  padding:10px 14px!important;
+  margin:0!important;
+}
+@media(max-width:760px){
+  #posterFocusOverlay{
+    align-items:flex-start!important;
+    padding:76px 12px 22px!important;
+  }
+  #posterFocusOverlay .focusStage{
+    width:100%!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-template-areas:"artwork" "label"!important;
+    gap:18px!important;
+  }
+  #posterFocusOverlay .focusArtwork{height:min(48vh,480px)!important;max-width:90vw!important}
+  #posterFocusOverlay .focusInfo{width:100%!important;min-height:0!important;max-height:none!important;padding:28px 24px!important}
+  #posterFocusOverlay .focusControls .actions{gap:6px!important}
+  #posterFocusOverlay .focusControls button{font-size:10px!important;padding:9px 11px!important}
+}
+</style>
+
+
+<style id="final-button-placement-fix">
+/* Keep the navigation controls in a dedicated bottom strip, never over the artwork */
+#posterFocusOverlay .focusControls{
+  position:fixed!important;
+  left:50%!important;
+  right:auto!important;
+  top:auto!important;
+  bottom:12px!important;
+  transform:translateX(-50%)!important;
+  z-index:80!important;
+  width:min(900px,94vw)!important;
+  max-width:900px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:6px!important;
+  padding:7px 10px!important;
+  box-sizing:border-box!important;
+  background:rgba(244,234,216,.94)!important;
+  border:1px solid rgba(185,149,88,.72)!important;
+  border-radius:16px!important;
+  box-shadow:0 5px 18px rgba(35,25,15,.18)!important;
+  pointer-events:auto!important;
+}
+#posterFocusOverlay .focusControls .actions{
+  position:static!important;
+  display:flex!important;
+  flex-direction:row!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:7px!important;
+  width:100%!important;
+  margin:0!important;
+}
+#posterFocusOverlay .focusControls button,
+#posterFocusOverlay .focusControls a{
+  position:static!important;
+  display:inline-flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+  margin:0!important;
+  white-space:nowrap!important;
+}
+@media(max-width:760px){
+  #posterFocusOverlay .focusControls{
+    bottom:8px!important;
+    width:96vw!important;
+    padding:6px!important;
+    gap:4px!important;
+  }
+  #posterFocusOverlay .focusControls .actions{gap:4px!important}
+  #posterFocusOverlay .focusControls button,
+  #posterFocusOverlay .focusControls a{
+    font-size:9px!important;
+    padding:7px 9px!important;
+  }
+}
+</style>
+
+
+<style id="fantasy-gallery-buttons">
+/* Decorative Persian-gallery navigation buttons */
+#posterFocusOverlay .focusControls{
+  background:linear-gradient(135deg,rgba(250,242,222,.97),rgba(231,211,174,.97))!important;
+  border:1px solid #bd9657!important;
+  border-radius:22px!important;
+  box-shadow:0 8px 22px rgba(58,39,20,.20), inset 0 1px 0 rgba(255,255,255,.9)!important;
+  padding:10px 14px!important;
+}
+#posterFocusOverlay .focusControls button,
+#posterFocusOverlay .focusControls a{
+  position:relative!important;
+  overflow:hidden!important;
+  border:1px solid #b88b49!important;
+  border-radius:999px!important;
+  background:linear-gradient(145deg,#fff8e8 0%,#f0dfb9 55%,#dfc18b 100%)!important;
+  color:#294b42!important;
+  font-family:inherit!important;
+  font-weight:700!important;
+  letter-spacing:0!important;
+  padding:10px 17px!important;
+  min-height:39px!important;
+  box-shadow:0 3px 0 #b58b50,0 5px 10px rgba(64,43,20,.13),inset 0 1px 0 rgba(255,255,255,.95)!important;
+  transition:transform .22s ease,box-shadow .22s ease,filter .22s ease!important;
+}
+#posterFocusOverlay .focusControls button::before,
+#posterFocusOverlay .focusControls a::before{
+  content:"✦"!important;
+  display:inline-block!important;
+  color:#a77a39!important;
+  font-size:10px!important;
+  margin-inline-end:7px!important;
+  opacity:.9!important;
+}
+#posterFocusOverlay .focusControls button:hover,
+#posterFocusOverlay .focusControls a:hover{
+  transform:translateY(-3px)!important;
+  filter:saturate(1.12)!important;
+  box-shadow:0 5px 0 #a77a3e,0 9px 15px rgba(64,43,20,.18),inset 0 1px 0 rgba(255,255,255,.95)!important;
+}
+#posterFocusOverlay .focusControls button:active,
+#posterFocusOverlay .focusControls a:active{
+  transform:translateY(1px)!important;
+  box-shadow:0 1px 0 #a77a3e,0 2px 5px rgba(64,43,20,.14)!important;
+}
+@media(max-width:760px){
+  #posterFocusOverlay .focusControls{padding:7px!important;border-radius:17px!important}
+  #posterFocusOverlay .focusControls button,
+  #posterFocusOverlay .focusControls a{padding:8px 11px!important;min-height:34px!important;font-size:10px!important}
+}
+</style>
+
 </body>
 </html>
