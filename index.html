@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -58,8 +59,7 @@
       overflow: hidden;
     }
 
-    .bg-fallback,
-    .bg-video {
+    .bg-fallback {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -69,15 +69,15 @@
       pointer-events: none;
     }
 
-    .bg-fallback { z-index: -3; }
-
-    .bg-video {
-      z-index: -2;
-      opacity: 0;
-      transition: opacity 1.5s ease;
+    .bg-picture {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      display: block;
+      overflow: hidden;
     }
 
-    .bg-video.is-playing { opacity: 1; }
+    .bg-fallback { z-index: -3; }
 
     .wash {
       position: absolute;
@@ -145,7 +145,6 @@
       text-shadow: 0 1px 10px rgba(255,248,225,.98);
     }
 
-    /* سه کارت تصویری */
     .cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -188,12 +187,12 @@
       z-index: 2;
     }
 
-       .card:hover {
-  transform: translateY(-8px) scale(1.08) !important;
-  box-shadow: 0 18px 35px rgba(62,43,22,.35);
-  z-index: 10;
-}
-    
+    .card:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 18px 35px rgba(62,43,22,.35);
+      z-index: 10;
+    }
+
     .card:active { transform: scale(.985); }
 
     .card-image {
@@ -252,7 +251,6 @@
       line-height: 1;
     }
 
-    /* اعتبار هنرمند و طراح */
     .credit {
       position: absolute;
       bottom: max(14px, env(safe-area-inset-bottom));
@@ -287,7 +285,6 @@
       text-shadow: 0 0 5px rgba(255,255,255,.2);
     }
 
-    /* نشانگر قرمز موس */
     .cursor-dot { display: none; }
 
     @media (pointer: fine) {
@@ -309,10 +306,7 @@
         pointer-events: none;
         z-index: 9999;
         transform: translate(-50%,-50%);
-        transition:
-          width .15s,
-          height .15s,
-          background .15s;
+        transition: width .15s, height .15s, background .15s;
       }
 
       .cursor-dot.hover {
@@ -322,7 +316,6 @@
       }
     }
 
-    /* نمایش موبایل */
     @media (max-width: 700px) {
       .stage {
         justify-content: flex-start;
@@ -386,11 +379,8 @@
 
     @media (max-width: 380px) {
       h1 { font-size: 38px; }
-
       .stage { padding-inline: 12px; }
-
       .card { min-height: 108px; }
-
       .credit-item { font-size: 9px; }
     }
 
@@ -401,30 +391,16 @@
         animation-duration: .01ms !important;
         transition-duration: .01ms !important;
       }
-
-      .bg-video { display: none !important; }
     }
 
     @keyframes riseIn {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes cardRise {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -435,82 +411,57 @@
 
   <main class="stage">
 
-    <img
-      class="bg-fallback"
-      src="assets/flowers-poster.png"
-      alt=""
-    >
-
-    <video
-      class="bg-video"
-      muted
-      loop
-      autoplay
-      playsinline
-      preload="none"
-      poster="assets/flowers-poster.png"
-      aria-hidden="true"
-    >
+    <picture class="bg-picture" aria-hidden="true">
       <source
-        src="assets/flowers-background.mp4"
-        type="video/mp4"
+        media="(max-width: 700px)"
+        srcset="./homepage-bg-mobile.png"
       >
-    </video>
+      <img
+        class="bg-fallback"
+        src="./homepage-bg-desktop.png"
+        alt=""
+      >
+    </picture>
 
     <div class="wash"></div>
 
-    <button
-      class="language"
-      id="languageToggle"
-      type="button"
-    >
+    <button class="language" id="languageToggle" type="button">
       FA | EN
     </button>
 
     <section class="content">
 
-      <div
-        class="eyebrow"
+      <div class="eyebrow"
         data-fa="سفر به رنگ‌ها و روایت‌ها"
-        data-en="A journey through colors and stories"
-      >
+        data-en="A journey through colors and stories">
         سفر به رنگ‌ها و روایت‌ها
       </div>
 
       <h1
         data-fa="ایران، هزار رنگ"
-        data-en="Iran, a Thousand Colors"
-      >
+        data-en="Iran, a Thousand Colors">
         ایران، هزار رنگ
       </h1>
 
-      <p
-        class="subtitle"
+      <p class="subtitle"
         data-fa="روایت تصویری پوشش زنان ایران"
-        data-en="A visual story of women's clothing in Iran"
-      >
+        data-en="A visual story of women's clothing in Iran">
         روایت تصویری پوشش زنان ایران
       </p>
 
       <nav class="cards" aria-label="بخش‌های نمایشگاه">
 
         <a class="card" href="regions.html">
-          <img
-            class="card-image"
+          <img class="card-image"
             src="assets/card-regions.png"
-            alt="پوشش سنتی زنان ایران"
-          >
+            alt="پوشش سنتی زنان ایران">
           <span class="card-copy">
-            <strong
-              data-fa="معرفی مناطق و آثار"
-              data-en="Regions & Artworks"
-            >
+            <strong data-fa="معرفی مناطق و آثار"
+              data-en="Regions & Artworks">
               معرفی مناطق و آثار
             </strong>
-            <small
-              data-fa="آشنایی با پوشش و فرهنگ بومی ایران"
-              data-en="Explore regional dress and culture"
-            >
+            <small data-fa="آشنایی با پوشش و فرهنگ بومی ایران"
+              data-en="Explore regional dress and culture">
               آشنایی با پوشش و فرهنگ بومی ایران
             </small>
             <span class="card-arrow" aria-hidden="true">←</span>
@@ -518,22 +469,16 @@
         </a>
 
         <a class="card" href="gallery-3d.html">
-          <img
-            class="card-image"
+          <img class="card-image"
             src="assets/card-3d-gallery.png"
-            alt="نقشه تصویری ایران و بناهای تاریخی"
-          >
+            alt="نقشه تصویری ایران و بناهای تاریخی">
           <span class="card-copy">
-            <strong
-              data-fa="گالری سه‌بعدی"
-              data-en="3D Gallery"
-            >
+            <strong data-fa="گالری سه‌بعدی"
+              data-en="3D Gallery">
               گالری سه‌بعدی
             </strong>
-            <small
-              data-fa="سفر مجازی در فضای نمایشگاه"
-              data-en="Explore the virtual exhibition"
-            >
+            <small data-fa="سفر مجازی در فضای نمایشگاه"
+              data-en="Explore the virtual exhibition">
               سفر مجازی در فضای نمایشگاه
             </small>
             <span class="card-arrow" aria-hidden="true">←</span>
@@ -541,22 +486,16 @@
         </a>
 
         <a class="card" href="exhibition-photos.html">
-          <img
-            class="card-image"
+          <img class="card-image"
             src="assets/card-exhibition-photos.png"
-            alt="فضای نمایش آثار در نمایشگاه حضوری"
-          >
+            alt="فضای نمایش آثار در نمایشگاه حضوری">
           <span class="card-copy">
-            <strong
-              data-fa="تصاویر نمایشگاه حضوری"
-              data-en="Exhibition Photos"
-            >
+            <strong data-fa="تصاویر نمایشگاه حضوری"
+              data-en="Exhibition Photos">
               تصاویر نمایشگاه حضوری
             </strong>
-            <small
-              data-fa="لحظه‌هایی از برگزاری نمایشگاه"
-              data-en="Moments from the physical exhibition"
-            >
+            <small data-fa="لحظه‌هایی از برگزاری نمایشگاه"
+              data-en="Moments from the physical exhibition">
               لحظه‌هایی از برگزاری نمایشگاه
             </small>
             <span class="card-arrow" aria-hidden="true">←</span>
@@ -569,31 +508,21 @@
     <footer class="credit">
 
       <div class="credit-item">
-        <span
-          class="credit-label"
+        <span class="credit-label"
           data-fa="هنرمند و خالق آثار:"
-          data-en="Artist & creator:"
-        >
+          data-en="Artist & creator:">
           هنرمند و خالق آثار:
         </span>
-
-        <span class="credit-name">
-          مریم ساعی · Maryam Saei
-        </span>
+        <span class="credit-name">مریم ساعی · Maryam Saei</span>
       </div>
 
       <div class="credit-item">
-        <span
-          class="credit-label"
+        <span class="credit-label"
           data-fa="طراحی سایت و پژوهش فرهنگی:"
-          data-en="Website design & cultural research:"
-        >
+          data-en="Website design & cultural research:">
           طراحی سایت و پژوهش فرهنگی:
         </span>
-
-        <span class="credit-name">
-          مرجان ساعی · Marjan Saei
-        </span>
+        <span class="credit-name">مرجان ساعی · Marjan Saei</span>
       </div>
 
     </footer>
@@ -602,102 +531,40 @@
 
   <script>
     (() => {
-
       const root = document.documentElement;
-      const languageButton =
-        document.getElementById("languageToggle");
-
+      const languageButton = document.getElementById("languageToggle");
       let english = false;
 
       languageButton.addEventListener("click", () => {
-
         english = !english;
-
         root.lang = english ? "en" : "fa";
         root.dir = english ? "ltr" : "rtl";
 
-        document
-          .querySelectorAll("[data-fa][data-en]")
+        document.querySelectorAll("[data-fa][data-en]")
           .forEach((element) => {
-
             element.textContent = english
               ? element.dataset.en
               : element.dataset.fa;
-
           });
-
       });
 
-      const cursor =
-        document.querySelector(".cursor-dot");
+      const cursor = document.querySelector(".cursor-dot");
 
-      if (
-        window.matchMedia("(pointer: fine)").matches &&
-        cursor
-      ) {
+      if (window.matchMedia("(pointer: fine)").matches && cursor) {
+        window.addEventListener("pointermove", (event) => {
+          cursor.style.left = event.clientX + "px";
+          cursor.style.top = event.clientY + "px";
+        }, { passive: true });
 
-        window.addEventListener(
-          "pointermove",
-          (event) => {
-
-            cursor.style.left =
-              event.clientX + "px";
-
-            cursor.style.top =
-              event.clientY + "px";
-
-          },
-          { passive: true }
-        );
-
-        document
-          .querySelectorAll("a, button")
-          .forEach((element) => {
-
-            element.addEventListener(
-              "pointerenter",
-              () => cursor.classList.add("hover")
-            );
-
-            element.addEventListener(
-              "pointerleave",
-              () => cursor.classList.remove("hover")
-            );
-
-          });
-
+        document.querySelectorAll("a, button").forEach((element) => {
+          element.addEventListener("pointerenter", () =>
+            cursor.classList.add("hover")
+          );
+          element.addEventListener("pointerleave", () =>
+            cursor.classList.remove("hover")
+          );
+        });
       }
-
-      const video =
-        document.querySelector(".bg-video");
-
-      if (video) {
-
-        video.addEventListener("loadedmetadata", () => {
-          video.playbackRate = 0.55;
-        });
-
-        video.addEventListener("play", () => {
-          video.playbackRate = 0.55;
-          video.classList.add("is-playing");
-        });
-
-        video.addEventListener("error", () => {
-          video.classList.remove("is-playing");
-          video.style.display = "none";
-        });
-
-        const playPromise = video.play();
-
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            video.classList.remove("is-playing");
-            video.style.display = "none";
-          });
-        }
-
-      }
-
     })();
   </script>
 
