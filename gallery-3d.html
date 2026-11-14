@@ -270,9 +270,10 @@ const cities=[
 ["ارومیه","Urmia","azerbaijan-poster.png",10,32,"azerbaijan.html"],
 ["تبریز","Tabriz","azerbaijan-poster.png",20,25,"azerbaijan.html"],
 ["اردبیل","Ardabil","ardabil.png",33,24,"ardabil.html"],
-["زنجان","Zanjan","zanjan.png",31,34,"zanjan.html"]
+["زنجان","Zanjan","zanjan.png",31,34,"zanjan.html"],
+["تهران","Tehran","",51,36,null]
 ];
-const destinationCoords=[[50.00,36.27],[49.58,37.28],[53.06,36.56],[54.43,36.84],[53.39,35.58],[57.33,37.47],[59.22,32.86],[60.86,29.50],[56.27,27.18],[57.08,30.28],[54.37,31.90],[51.67,32.65],[52.53,29.59],[50.84,28.92],[51.59,30.67],[50.86,32.33],[48.67,31.32],[46.42,33.64],[48.35,33.49],[49.69,34.09],[51.44,33.98],[48.51,34.80],[47.07,34.31],[46.99,35.31],[45.07,37.55],[46.29,38.08],[48.29,38.25],[48.50,36.67]];
+const destinationCoords=[[50.00,36.27],[49.58,37.28],[53.06,36.56],[54.43,36.84],[53.39,35.58],[57.33,37.47],[59.22,32.86],[60.86,29.50],[56.27,27.18],[57.08,30.28],[54.37,31.90],[51.67,32.65],[52.53,29.59],[50.84,28.92],[51.59,30.67],[50.86,32.33],[48.67,31.32],[46.42,33.64],[48.35,33.49],[49.69,34.09],[51.44,33.98],[48.51,34.80],[47.07,34.31],[46.99,35.31],[45.07,37.55],[46.29,38.08],[48.29,38.25],[48.50,36.67],[51.389,35.689]];
 let provinceMapLoaded=false;
 async function loadProvinceMap(){
  const svg=$('provinceMapSvg');if(!svg||provinceMapLoaded)return;
@@ -299,17 +300,17 @@ scene.add(new THREE.HemisphereLight(0xfff8e9,0x938a78,2.1));
 const key=new THREE.DirectionalLight(0xfff1d6,1.8);key.position.set(-8,13,22);scene.add(key);
 const warm=new THREE.PointLight(0xffe2ad,24,65);warm.position.set(0,7,4);scene.add(warm);
 const floorMat=new THREE.MeshStandardMaterial({color:0xd8cbb6,roughness:.38,metalness:.05});
-const floor=new THREE.Mesh(new THREE.PlaneGeometry(15,112),floorMat);floor.rotation.x=-Math.PI/2;floor.position.set(0,0,-25);floor.receiveShadow=true;scene.add(floor);
-const ceiling=new THREE.Mesh(new THREE.PlaneGeometry(15,112),new THREE.MeshStandardMaterial({color:0xf1eadf,roughness:.92,side:THREE.DoubleSide}));ceiling.rotation.x=Math.PI/2;ceiling.position.set(0,8,-25);scene.add(ceiling);
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(15,128),floorMat);floor.rotation.x=-Math.PI/2;floor.position.set(0,0,-29);floor.receiveShadow=true;scene.add(floor);
+const ceiling=new THREE.Mesh(new THREE.PlaneGeometry(15,128),new THREE.MeshStandardMaterial({color:0xf1eadf,roughness:.92,side:THREE.DoubleSide}));ceiling.rotation.x=Math.PI/2;ceiling.position.set(0,8,-29);scene.add(ceiling);
 const wallMat=new THREE.MeshStandardMaterial({color:0xe7dfd2,roughness:.88});
-for(const x of [-7.5,7.5]){const w=new THREE.Mesh(new THREE.PlaneGeometry(112,8),wallMat);w.position.set(x,4,-25);w.rotation.y=x<0?Math.PI/2:-Math.PI/2;w.receiveShadow=true;scene.add(w)}
+for(const x of [-7.5,7.5]){const w=new THREE.Mesh(new THREE.PlaneGeometry(128,8),wallMat);w.position.set(x,4,-29);w.rotation.y=x<0?Math.PI/2:-Math.PI/2;w.receiveShadow=true;scene.add(w)}
 // پشت سالن و نورهای سقفی
-const back=new THREE.Mesh(new THREE.PlaneGeometry(15,8),new THREE.MeshStandardMaterial({color:0xd9cbb4}));back.position.set(0,4,-81);scene.add(back);
+const back=new THREE.Mesh(new THREE.PlaneGeometry(15,8),new THREE.MeshStandardMaterial({color:0xd9cbb4}));back.position.set(0,4,-93);scene.add(back);
 // حاشیه‌های ظریف معماری و طاقچه‌های کم‌تعداد برای صنایع‌دستی در مسیر سالن
 const trimMat=new THREE.MeshStandardMaterial({color:0xb8955d,metalness:.48,roughness:.42});
 for(const x of [-7.38,7.38]){
-  const trim=new THREE.Mesh(new THREE.BoxGeometry(.08,.12,108),trimMat);trim.position.set(x,.22,-25);scene.add(trim);
-  const upper=new THREE.Mesh(new THREE.BoxGeometry(.08,.08,108),trimMat);upper.position.set(x,7.65,-25);scene.add(upper);
+  const trim=new THREE.Mesh(new THREE.BoxGeometry(.08,.12,124),trimMat);trim.position.set(x,.22,-29);scene.add(trim);
+  const upper=new THREE.Mesh(new THREE.BoxGeometry(.08,.08,124),trimMat);upper.position.set(x,7.65,-29);scene.add(upper);
 }
 // جزئیات معماری تکمیلی: قاب‌بندی دیوارها و نورهای دیواری، بدون تغییر محل یا اندازهٔ تابلوها
 const ivoryTrim=new THREE.MeshStandardMaterial({color:0xf0e6d4,roughness:.82});
@@ -317,7 +318,7 @@ const bronzeTrim=new THREE.MeshStandardMaterial({color:0x9b7848,metalness:.38,ro
 const sconceGlow=new THREE.MeshStandardMaterial({color:0xffe7bd,emissive:0xffc875,emissiveIntensity:.65,roughness:.4});
 for(const side of [-1,1]){
   // نوارهای باریک عمودی روی دیوار، با فاصله از سطح قاب‌ها
-  for(let z=29;z>-79;z-=15.2){
+  for(let z=29;z>-90;z-=15.2){
     const x=side*7.43;
     for(const dz of [-1.35,1.35]){
       const stile=new THREE.Mesh(new THREE.BoxGeometry(.035,6.9,.055),bronzeTrim);
@@ -329,7 +330,7 @@ for(const side of [-1,1]){
     railBottom.position.set(x,.72,z);scene.add(railBottom);
   }
   // چراغ‌های دیواری کوچک و گرم، بین بخش‌های نمایش
-  for(let z=21;z>-76;z-=19){
+  for(let z=21;z>-95;z-=19){
     const lampGroup=new THREE.Group();lampGroup.position.set(side*7.22,5.55,z);lampGroup.rotation.y=side<0?Math.PI/2:-Math.PI/2;scene.add(lampGroup);
     const base=new THREE.Mesh(new THREE.BoxGeometry(.22,.42,.12),bronzeTrim);lampGroup.add(base);
     const shade=new THREE.Mesh(new THREE.SphereGeometry(.16,14,10),sconceGlow);shade.position.z=.12;lampGroup.add(shade);
@@ -337,13 +338,13 @@ for(const side of [-1,1]){
   }
 }
 // تیرهای سقفی ظریف و قاب‌های کم‌عمق برای ایجاد ریتم معماری
-for(let z=31;z>-80;z-=15.2){
+for(let z=31;z>-90;z-=15.2){
   const beam=new THREE.Mesh(new THREE.BoxGeometry(14.7,.12,.22),ivoryTrim);beam.position.set(0,7.82,z);scene.add(beam);
   const beamLine=new THREE.Mesh(new THREE.BoxGeometry(14.7,.035,.035),bronzeTrim);beamLine.position.set(0,7.72,z);scene.add(beamLine);
 }
 // حاشیهٔ سنگی ظریف در امتداد کف؛ مسیر مرکزی برای حرکت باز می‌ماند
 for(const x of [-6.9,6.9]){
-  const floorLine=new THREE.Mesh(new THREE.BoxGeometry(.035,.018,108),bronzeTrim);floorLine.position.set(x,.018,-25);scene.add(floorLine);
+  const floorLine=new THREE.Mesh(new THREE.BoxGeometry(.035,.018,124),bronzeTrim);floorLine.position.set(x,.018,-29);scene.add(floorLine);
 }
 // یک نشان هندسی کوچک در ابتدای سالن، نه فرش سرتاسری
 const entryMedallion=new THREE.Group();entryMedallion.position.set(0,.025,28);scene.add(entryMedallion);
@@ -361,7 +362,7 @@ function craftNiche(z,side,kind){
 // صنایع‌دستی به شکل جزئیات محیطی محدود؛ نه استند کنار هر تابلو
 // تزئینات طاقچه‌ای حذف شدند تا کنار تابلوها شیء اضافی دیده نشود.
 
-for(let z=32;z>-80;z-=9){const lamp=new THREE.PointLight(0xffe7c1,11,17);lamp.position.set(0,7.3,z);scene.add(lamp);const bulb=new THREE.Mesh(new THREE.SphereGeometry(.12,12,8),new THREE.MeshBasicMaterial({color:0xfff0d1}));bulb.position.set(0,7.5,z);scene.add(bulb)}
+for(let z=32;z>-95;z-=9){const lamp=new THREE.PointLight(0xffe7c1,11,17);lamp.position.set(0,7.3,z);scene.add(lamp);const bulb=new THREE.Mesh(new THREE.SphereGeometry(.12,12,8),new THREE.MeshBasicMaterial({color:0xfff0d1}));bulb.position.set(0,7.5,z);scene.add(bulb)}
 // درهای سه بعدی ورودی
 const doorMat=new THREE.MeshStandardMaterial({color:0x765b3d,roughness:.48});
 const doors=[];
@@ -372,6 +373,7 @@ const posterPositions=[],posterMaterials=[],posterLoaded=new Set(),posterGroups=
 function makePosterFallback(i){
  const c=cities[i],canvas=document.createElement('canvas');canvas.width=900;canvas.height=1280;
  const ctx=canvas.getContext('2d');
+ if(!c[2]){ctx.fillStyle='#f7f0e4';ctx.fillRect(0,0,900,1280);const blankTex=new THREE.CanvasTexture(canvas);blankTex.colorSpace=THREE.SRGBColorSpace;return blankTex;}
  const g=ctx.createLinearGradient(0,0,900,1280);g.addColorStop(0,'#f8efdc');g.addColorStop(.55,'#ead8b6');g.addColorStop(1,'#d9c49a');
  ctx.fillStyle=g;ctx.fillRect(0,0,900,1280);
  ctx.strokeStyle='#a47b42';ctx.lineWidth=7;ctx.strokeRect(38,38,824,1204);
@@ -461,7 +463,8 @@ const provinceStories={
 24:'آذربایجان غربی با دریاچه ارومیه، طبیعت کوهستانی و تنوع فرهنگی اقوام آذری و کرد شناخته می‌شود. پوشش زنان منطقه با پارچه‌های رنگی، جلیقه و سربندهای محلی جلوه می‌کند.',
 25:'آذربایجان شرقی با تبریز تاریخی، بازار بزرگ و هنر قالی‌بافی شناخته می‌شود. پوشش زنان آذری با رنگ‌های زنده، جلیقه‌ها و سربندهای محلی، در کنار نوای عاشیقی بخشی از هویت منطقه است.',
 26:'اردبیل با دامنه‌های سبلان، بقعه شیخ صفی‌الدین و دشت‌های سرسبز شناخته می‌شود. لباس زنان آذری با رنگ‌های شاد، دامن‌های چین‌دار و سربندهای سنتی جلوه‌ای دلنشین دارد.',
-27:'زنجان با گنبد سلطانیه، غار کتله‌خور و هنر ملیله‌کاری شناخته می‌شود. پوشش زنان روستایی استان با رنگ‌ها و نقش‌های محلی، بخشی از میراث فرهنگی منطقه است.'
+27:'زنجان با گنبد سلطانیه، غار کتله‌خور و هنر ملیله‌کاری شناخته می‌شود. پوشش زنان روستایی استان با رنگ‌ها و نقش‌های محلی، بخشی از میراث فرهنگی منطقه است.',
+28:'تهران، پایتخت ایران، محل پیوند تاریخ، معماری، زندگی شهری و تنوع فرهنگی است. پوشش زنان تهران نیز بازتابی از دگرگونی‌های اجتماعی و فرهنگی ایران معاصر است.'
 };
 function showFocusArtwork(i){
  const img=$('focusArtwork'),fallback=$('focusArtworkFallback'),file=cities[i]?.[2]||'';
@@ -485,7 +488,7 @@ function focusSelectedPoster(){if($('focusInfoPanel'))$('focusInfoPanel').classL
  }
  camera.updateProjectionMatrix();moving=true;requestSceneRender();show('');$('hint').hidden=true;$('focusCity').textContent=cities[selected][lang==='fa'?0:1];$('focusOver').textContent=lang==='fa'?'تابلوی انتخاب‌شده':'Selected artwork';$('focusDesc').textContent=(lang==='fa'?(approvedSlogans[selected]?approvedSlogans[selected]+'\n\n':'')+(provinceStories[selected]||('این استان بخشی از تنوع فرهنگی و طبیعی ایران است و پوشش زنان آن، پیوندی با آداب و زندگی بومی منطقه دارد.'))+'\n\nبرای دیدن روایت کامل و جاذبه‌های منطقه، دکمهٔ «مشاهدهٔ توضیحات شهر» را بزنید.':'Explore '+cities[selected][1]+'. '+(provinceStories[selected]||'Discover the local culture, women’s clothing and traditions of this region.')+' Select “View city story” for the full regional guide.');$('detailBtn').textContent=lang==='fa'?'مشاهدهٔ توضیحات شهر':'View city story';$('focusPrev').textContent=lang==='fa'?'تابلوی قبلی':'Previous artwork';$('focusNext').textContent=lang==='fa'?'تابلوی بعدی':'Next artwork';$('focusMapBtn').textContent=lang==='fa'?'بازگشت به نقشهٔ سفر':'Back to travel map';$('focusHallBtn').textContent=lang==='fa'?'بازگشت به انتخاب مسیر':'Back to route selection';$('focusResumeBtn').textContent=lang==='fa'?'بازگشت به مسیر پیاده‌روی':'Return to gallery walk';setTimeout(()=>{if(mode==='focus')show('posterFocusOverlay')},1900)}
 const approvedSlogans={
-0:'نقش دیروز، رنگ امروز',1:'باران که می‌بارد، رنگ‌ها می‌رویند',2:'از جنگل تا دریا، ترانه‌ای رنگین',3:'هم‌نشینی قوم‌ها، شکوه نقش‌ها',4:'از کویر تا جنگل، روایت رنگ‌ها',5:'رنگ اقوام، نوای دوتار',6:'نقش‌های ماندگار، رنگ‌های کویر',7:'سوزن‌دوزی بلوچ، روایت صبر و شکوه',8:'رنگ دریا، نقش آفتاب',9:'از ارگ تا کویر، شکوه هنر',10:'بادگیرها و رنگ‌های ماندگار',11:'نقش جهان، نقش زندگی',12:'از ایل قشقایی تا باغ‌های شیراز',13:'آفتاب جنوب، رنگ دریا',14:'در پناه زاگرس، به رنگ زندگی',15:'شکوه کوچ، رنگ‌های زاگرس',16:'از رودهای کهن تا نخلستان‌های جنوب',17:'بلوط‌زاران زاگرس، نقش‌های ماندگار',18:'گلونی، رنگ سربلند زاگرس',19:'نقش دست‌ها، میراث خاک',20:'عطر گلاب، شکوه نقش و نگار',21:'از هگمتانه تا لالجین، رنگ تاریخ',22:'نغمه تنبور، شکوه نقش کردی',23:'اورامانات، آواز رنگ‌ها',24:'رنگ کوهستان، روایت دریاچه',25:'رنگِ کوهستان، نوای عاشیقی',26:'دامنه سبلان، ترانه رنگ‌ها',27:'درخشش نقره، شکوه نقش‌های ماندگار'
+0:'نقش دیروز، رنگ امروز',1:'باران که می‌بارد، رنگ‌ها می‌رویند',2:'از جنگل تا دریا، ترانه‌ای رنگین',3:'هم‌نشینی قوم‌ها، شکوه نقش‌ها',4:'از کویر تا جنگل، روایت رنگ‌ها',5:'رنگ اقوام، نوای دوتار',6:'نقش‌های ماندگار، رنگ‌های کویر',7:'سوزن‌دوزی بلوچ، روایت صبر و شکوه',8:'رنگ دریا، نقش آفتاب',9:'از ارگ تا کویر، شکوه هنر',10:'بادگیرها و رنگ‌های ماندگار',11:'نقش جهان، نقش زندگی',12:'از ایل قشقایی تا باغ‌های شیراز',13:'آفتاب جنوب، رنگ دریا',14:'در پناه زاگرس، به رنگ زندگی',15:'شکوه کوچ، رنگ‌های زاگرس',16:'از رودهای کهن تا نخلستان‌های جنوب',17:'بلوط‌زاران زاگرس، نقش‌های ماندگار',18:'گلونی، رنگ سربلند زاگرس',19:'نقش دست‌ها، میراث خاک',20:'عطر گلاب، شکوه نقش و نگار',21:'از هگمتانه تا لالجین، رنگ تاریخ',22:'نغمه تنبور، شکوه نقش کردی',23:'اورامانات، آواز رنگ‌ها',24:'رنگ کوهستان، روایت دریاچه',25:'رنگِ کوهستان، نوای عاشیقی',26:'دامنه سبلان، ترانه رنگ‌ها',27:'درخشش نقره، شکوه نقش‌های ماندگار',28:'تهران، تلاقی تاریخ و زندگی امروز'
 };
 function openCityDetails(){const page=cities[selected][5];if(page){window.location.href='./'+page}else{alert(lang==='fa'?'صفحهٔ توضیحات این منطقه هنوز در سایت ساخته نشده است.':'The information page for this region is not available yet.')}}
 function setWalkProgress(value){
@@ -493,7 +496,7 @@ function setWalkProgress(value){
  walkProgress=Math.max(0,Math.min(cities.length-1,value));
  selected=Math.round(walkProgress);loadPosterTexture(selected);if(selected>0)loadPosterTexture(selected-1);if(selected<cities.length-1)loadPosterTexture(selected+1);
  $('cityName').textContent=cities[selected][lang==='fa'?0:1];
- $('hint').textContent=lang==='fa'?`ایستگاه ${selected+1} از ۲۸ · با اسکرول در سالن حرکت کنید`:`Stop ${selected+1} of 28 · Scroll to walk`;
+ $('hint').textContent=lang==='fa'?`ایستگاه ${selected+1} از ۲۹ · با اسکرول در سالن حرکت کنید`:`Stop ${selected+1} of 29 · Scroll to walk`;
  // اسکرول، دوربین را نرم و پیوسته در امتداد محور سالن حرکت می‌دهد؛ نه به سمت تابلوها
  moveCamera(32-walkProgress*3.8,0);
 }
@@ -542,8 +545,8 @@ function goCity(i){
  $('cityName').textContent=cities[selected][lang==='fa'?0:1];
  // دوربین در مرکز راهرو می‌ماند و با فاصلهٔ ثابت از قاب‌ها عبور می‌کند.
  moveCamera(32-selected*3.8,0);
- if(lang==='fa')$('hint').textContent=`ایستگاه ${selected+1} از ۲۸ · با اسکرول حرکت کنید`;
- else $('hint').textContent=`Stop ${selected+1} of 28 · Scroll to walk`;
+ if(lang==='fa')$('hint').textContent=`ایستگاه ${selected+1} از ۲۹ · با اسکرول حرکت کنید`;
+ else $('hint').textContent=`Stop ${selected+1} of 29 · Scroll to walk`;
 }
 function next(){goCity((selected+1)%cities.length)}
 function previous(){goCity((selected-1+cities.length)%cities.length)}
