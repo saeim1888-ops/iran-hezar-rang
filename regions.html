@@ -98,6 +98,100 @@ html[lang="en"] .poster-copy{direction:ltr;text-align:left}
   html[lang="en"] .poster-copy{text-align:center}
 }
 
+
+/* Regional cards: artwork on the left, copy on the right */
+.cards{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.region-card{
+  display:grid;
+  grid-template-columns:minmax(0, .92fr) minmax(0, 1.08fr);
+  direction:ltr;
+  align-items:stretch;
+  min-height:190px;
+}
+.region-card:after{pointer-events:none}
+.region-card .card-art{
+  height:auto;
+  min-height:190px;
+  align-self:stretch;
+  background:#eee1ca;
+  border-right:1px solid rgba(189,139,62,.45);
+}
+.region-card .card-art:before,
+.region-card .card-art:after{display:none}
+.region-card .card-art img{
+  width:100%;
+  height:100%;
+  min-height:190px;
+  object-fit:contain;
+  object-position:center;
+  padding:7px;
+  background:#f8efdf;
+}
+.region-card .card-body{
+  direction:rtl;
+  text-align:right;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  padding:18px 17px;
+  border-top:0;
+  border-right:1px solid rgba(189,139,62,.35);
+  min-width:0;
+}
+.region-card .card-body:before{margin-bottom:10px}
+.region-card .card-body h3{line-height:1.55}
+.region-card .card-body p{min-height:0;line-height:1.8;margin:4px 0 12px}
+.region-card .card-link{margin-top:auto}
+html[lang="en"] .region-card .card-body{
+  direction:ltr;
+  text-align:left;
+  align-items:flex-start;
+}
+.region-card .card-art.image-missing{
+  display:grid;
+  place-items:center;
+  padding:12px;
+  color:#766b5b;
+  text-align:center;
+  font-size:12px;
+}
+.region-card .card-art.image-missing:after{
+  content:'پوستر اختصاصی هنوز در فایل‌های اصلی سایت پیدا نشده';
+  display:block;
+  position:relative;
+  width:auto;
+  height:auto;
+  border:0;
+  border-radius:0;
+  color:inherit;
+  box-shadow:none;
+}
+/* Compact regional grid: four columns on desktop, three on tablets, two on phones */
+.cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.region-card{
+  grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  min-height:170px;
+}
+.region-card .card-art,
+.region-card .card-art img{min-height:170px}
+@media(max-width:1050px){
+  .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;padding-inline:0}
+  .region-card{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);min-height:150px}
+  .region-card .card-art,
+  .region-card .card-art img{min-height:150px}
+  .region-card .card-body{padding:11px 9px}
+  .region-card .card-body h3{font-size:14px}
+  .region-card .card-body p{font-size:10px;line-height:1.6}
+  .region-card .card-link{font-size:10px}
+}
+
 </style>
 </head>
 <body>
@@ -118,23 +212,23 @@ html[lang="en"] .poster-copy{direction:ltr;text-align:left}
 <footer class="footer" id="contact"><div class="wrap"><div class="footer-inner"><div><h2><span class="fa-text">تماس با ما</span><span class="en-text">Contact us</span></h2><p class="fa-text">برای ارتباط و دریافت اطلاعات بیشتر دربارهٔ نمایشگاه:</p><p class="en-text">For inquiries and more information about the exhibition:</p><a class="contact" href="tel:+989109572003">+989109572003</a></div><div><p><span class="fa-text">ما را در شبکه‌های اجتماعی دنبال کنید</span><span class="en-text">Follow the project on social media</span></p><span class="social-placeholder"><span class="fa-text">لینک صفحهٔ اینستاگرام به‌زودی</span><span class="en-text">Instagram link coming soon</span></span></div></div><div class="copyright">© <span id="year"></span> <span class="fa-text">ایران، هزار رنگ | تمامی حقوق محفوظ است.</span><span class="en-text">Iran, A Thousand Colors | All rights reserved.</span></div></div></footer>
 <script>
 const regions=[
-['قزوین','Qazvin','نقش دیروز، رنگ امروز','qazvin.html','qazvin.png'],
-['گیلان','Gilan','سبزیِ باران و نقشِ زندگی','gilan.html','gilan.png'],
+['قزوین','Qazvin','نقش دیروز، رنگ امروز','qazvin.html','qazvin.jpg'],
+['گیلان','Gilan','سبزیِ باران و نقشِ زندگی','gilan.html','gilan.jpg'],
 ['مازندران','Mazandaran','میان جنگل، دریا و آیین','mazandaran.html','mazandaran.png'],
-['گلستان','Golestan','رنگارنگیِ اقوام در دشت و جنگل','golestan.html','golestan.png'],
+['گلستان','Golestan','رنگارنگیِ اقوام در دشت و جنگل','golestan.html','turkmen-sahra.jpg'],
 ['سمنان','Semnan','روایت کویر و راه‌های کهن','semnan.html','semnan.png'],
-['خراسان شمالی','North Khorasan','نوای دوتار، رنگِ فرهنگ','north-khorasan.html','north-khorasan.png'],
-['خراسان جنوبی','South Khorasan','نقشِ کویر، شکوهِ زندگی','south-khorasan.html','south-khorasan.png'],
-['سیستان و بلوچستان','Sistan & Baluchestan','هنرِ سوزن، قصهٔ سرزمین','sistan.html','sistan.png'],
+['خراسان شمالی','North Khorasan','نوای دوتار، رنگِ فرهنگ','north-khorasan.html','khorasan-shomali.png'],
+['خراسان جنوبی','South Khorasan','نقشِ کویر، شکوهِ زندگی','south-khorasan.html','khorasan-jonubi.png'],
+['سیستان و بلوچستان','Sistan & Baluchestan','هنرِ سوزن، قصهٔ سرزمین','sistan.html','sistan-baluchestan.png'],
 ['هرمزگان','Hormozgan','آبیِ دریا، رنگِ آفتاب','hormozgan.html','hormozgan.png'],
-['کرمان','Kerman','از کویر تا باغ‌های خیال','kerman.html','kerman.png'],
+['کرمان','Kerman','از کویر تا باغ‌های خیال','kerman.html',null],
 ['یزد','Yazd','آرامشِ کویر، ظرافتِ نقش','yazd.html','yazd.png'],
 ['اصفهان','Isfahan','شکوهِ نقش و هنر','isfahan.html','isfahan.png'],
-['شیراز','Shiraz','بهارِ نارنج، رنگِ زندگی','fars.html','shiraz.png'],
+['شیراز','Shiraz','بهارِ نارنج، رنگِ زندگی','fars.html','fars.png'],
 ['بوشهر','Bushehr','آوازِ دریا و آفتاب','bushehr.html','bushehr.png'],
-['کهگیلویه و بویراحمد','Kohgiluyeh & Boyer-Ahmad','رنگِ زاگرس، نقشِ کوچ','kohgiluyeh.html','kohgiluyeh.png'],
+['کهگیلویه و بویراحمد','Kohgiluyeh & Boyer-Ahmad','رنگِ زاگرس، نقشِ کوچ','kohgiluyeh.html',null],
 ['چهارمحال و بختیاری','Chaharmahal & Bakhtiari','شکوهِ زاگرس و ایل','chaharmahal.html','chaharmahal.png'],
-['خوزستان','Khuzestan','گرمای جنوب، رنگِ همزیستی','khuzestan.html','khuzestan.png'],
+['خوزستان','Khuzestan','گرمای جنوب، رنگِ همزیستی','khuzestan.html',null],
 ['لرستان','Lorestan','نقشِ زاگرس، شکوهِ گلونی','lorestan.html','lorestan.png'],
 ['ایلام','Ilam','رنگِ کوهستان، روایتِ اصالت','ilam.html','ilam.png'],
 ['اراک','Arak','هنرِ دست، نقشِ ماندگار','arak.html','arak.png'],
@@ -142,14 +236,14 @@ const regions=[
 ['همدان','Hamedan','ردپای تاریخ در رنگ و سفال','hamedan.html','hamedan.png'],
 ['کرمانشاه','Kermanshah','آوای هورامان، رنگِ اصالت','kermanshah.html','kermanshah.png'],
 ['کردستان','Kurdistan','رنگِ کوهستان، نوای دف','kurdistan.html','kurdistan.png'],
-['ارومیه','Urmia','رنگِ دریاچه، نقشِ فرهنگ','urmia.html','urmia.png'],
-['تبریز','Tabriz','رنگِ کوهستان، نوای عاشیقی','azerbaijan.html','azerbaijan-poster.png'],
+['ارومیه','Urmia','رنگِ دریاچه، نقشِ فرهنگ','urmia.html',null],
+['تبریز','Tabriz','رنگِ کوهستان، نوای عاشیقی','azerbaijan.html','azerbaijan.png'],
 ['اردبیل','Ardabil','سرمایِ کوه، گرمایِ فرهنگ','ardabil.html','ardabil.png'],
 ['زنجان','Zanjan','درخشش نقره، شکوه نقش‌های ماندگار','zanjan.html','zanjan.png'],
-['تهران','Tehran','هم‌نشینیِ روایت‌ها و رنگ‌ها','tehran.html','tehran.png']
+['تهران','Tehran','هم‌نشینیِ روایت‌ها و رنگ‌ها','tehran.html',null]
 ];
 const holder=document.getElementById('regionCards');
-regions.forEach((r,i)=>{const card=document.createElement('article');card.className='region-card';const art=document.createElement('div');art.className='card-art';const img=document.createElement('img');img.src=r[4];img.alt=r[0];img.loading='lazy';img.onerror=()=>img.remove();art.append(img);const body=document.createElement('div');body.className='card-body';body.innerHTML=`<div class="card-meta"><span class="fa-text">روایت منطقه</span><span class="en-text">REGIONAL STORY</span></div><h3><span class="fa-text">${r[0]}</span><span class="en-text">${r[1]}</span></h3><p><span class="fa-text">${r[2]}</span><span class="en-text">Discover this region</span></p><a class="card-link" href="${r[3]}"><span class="fa-text">مشاهدهٔ روایت</span><span class="en-text">Explore region</span> ←</a>`;card.append(art,body);holder.append(card)});
+regions.forEach((r,i)=>{const card=document.createElement('article');card.className='region-card';const art=document.createElement('div');art.className='card-art';if(r[4]){const img=document.createElement('img');img.src=r[4];img.alt='پوستر '+r[0];img.loading='lazy';img.onerror=()=>{img.remove();art.classList.add('image-missing');};art.append(img);}else{art.classList.add('image-missing');}const body=document.createElement('div');body.className='card-body';body.innerHTML=`<div class="card-meta"><span class="fa-text">روایت منطقه</span><span class="en-text">REGIONAL STORY</span></div><h3><span class="fa-text">${r[0]}</span><span class="en-text">${r[1]}</span></h3><p><span class="fa-text">${r[2]}</span><span class="en-text">Discover this region</span></p><a class="card-link" href="${r[3]}"><span class="fa-text">مشاهدهٔ روایت</span><span class="en-text">Explore region</span> ←</a>`;card.append(art,body);holder.append(card)});
 document.getElementById('langToggle').addEventListener('click',()=>{const en=document.documentElement.lang==='fa';document.documentElement.lang=en?'en':'fa';document.documentElement.dir=en?'ltr':'rtl';document.getElementById('langToggle').textContent=en?'EN | FA':'FA | EN';document.documentElement.setAttribute('data-language',en?'en':'fa')});document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body></html>
