@@ -106,12 +106,20 @@ html[lang="en"] .poster-copy{direction:ltr;text-align:left}
 }
 .region-card{
   display:grid;
+  color:inherit;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease;
+  will-change:transform;
   grid-template-columns:minmax(0, .92fr) minmax(0, 1.08fr);
   direction:ltr;
   align-items:stretch;
   min-height:190px;
 }
 .region-card:after{pointer-events:none}
+.region-card:focus-visible{outline:3px solid var(--green);outline-offset:4px}
+.region-card.is-activating{transform:translateY(-5px) scale(1.025);box-shadow:0 16px 28px rgba(53,37,20,.20)}
+@media(prefers-reduced-motion:reduce){.region-card{transition:none}.region-card.is-activating{transform:none}}
 .region-card .card-art{
   height:auto;
   min-height:190px;
@@ -192,6 +200,89 @@ html[lang="en"] .region-card .card-body{
   .region-card .card-link{font-size:10px}
 }
 
+/* Elegant museum-style frame for each regional card */
+.region-card{
+  border:1px solid rgba(164,112,48,.72);
+  border-radius:16px;
+  background:linear-gradient(145deg,#fffaf0 0%,#f4e8d2 100%);
+  box-shadow:0 5px 14px rgba(67,47,25,.08),inset 0 0 0 3px rgba(255,250,240,.82);
+  outline:1px solid rgba(189,139,62,.24);
+  outline-offset:-5px;
+}
+.region-card:after{
+  content:'✧';
+  position:absolute;
+  inset:8px 9px auto auto;
+  width:18px;height:18px;
+  display:grid;place-items:center;
+  color:#bd8b3e;
+  background:#fff8e9;
+  border:1px solid rgba(189,139,62,.55);
+  border-radius:50%;
+  font-size:10px;line-height:1;
+  pointer-events:none;
+}
+.region-card:before{
+  content:'';
+  position:absolute;
+  inset:8px;
+  border:1px solid rgba(189,139,62,.18);
+  border-radius:10px;
+  pointer-events:none;
+  z-index:2;
+}
+.region-card:hover{
+  border-color:#a8752f;
+  box-shadow:0 10px 22px rgba(67,47,25,.14),inset 0 0 0 3px rgba(255,250,240,.9);
+}
+.region-card .card-art{
+  border-radius:13px 0 0 13px;
+  border-right:1px solid rgba(189,139,62,.35);
+}
+.region-card .card-body{background:linear-gradient(145deg,rgba(255,250,240,.96),rgba(244,234,216,.92));}
+@media(max-width:760px){
+  .region-card{border-radius:13px;box-shadow:0 4px 11px rgba(67,47,25,.08),inset 0 0 0 2px rgba(255,250,240,.82)}
+  .region-card:before{inset:6px;border-radius:8px}
+  .region-card .card-art{border-radius:10px 0 0 10px}
+}
+
+
+
+/* Refined card balance: larger artwork, quieter supporting text */
+.region-card{
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+}
+.region-card .card-art,
+.region-card .card-art img{min-height:184px}
+.region-card .card-art img{
+  padding:4px;
+  object-fit:contain;
+  background:#f8efdf;
+}
+.region-card .card-body p{
+  font-size:10px;
+  line-height:1.65;
+  margin:3px 0 9px;
+  color:#807365;
+}
+.region-card .card-link{
+  font-size:10px;
+  font-weight:700;
+  gap:4px;
+  padding-top:5px;
+  opacity:.9;
+}
+@media(max-width:760px){
+  .region-card{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .region-card .card-art,
+  .region-card .card-art img{min-height:154px}
+  .region-card .card-art img{padding:3px}
+  .region-card .card-body p{font-size:9px;line-height:1.55;margin:3px 0 7px}
+  .region-card .card-link{font-size:9px;padding-top:4px}
+  /* Keep province titles at their approved size */
+  .region-card .card-body h3{font-size:14px}
+}
+
 </style>
 </head>
 <body>
@@ -243,7 +334,7 @@ const regions=[
 ['تهران','Tehran','هم‌نشینیِ روایت‌ها و رنگ‌ها','tehran.html',null]
 ];
 const holder=document.getElementById('regionCards');
-regions.forEach((r,i)=>{const card=document.createElement('article');card.className='region-card';const art=document.createElement('div');art.className='card-art';if(r[4]){const img=document.createElement('img');img.src=r[4];img.alt='پوستر '+r[0];img.loading='lazy';img.onerror=()=>{img.remove();art.classList.add('image-missing');};art.append(img);}else{art.classList.add('image-missing');}const body=document.createElement('div');body.className='card-body';body.innerHTML=`<div class="card-meta"><span class="fa-text">روایت منطقه</span><span class="en-text">REGIONAL STORY</span></div><h3><span class="fa-text">${r[0]}</span><span class="en-text">${r[1]}</span></h3><p><span class="fa-text">${r[2]}</span><span class="en-text">Discover this region</span></p><a class="card-link" href="${r[3]}"><span class="fa-text">مشاهدهٔ روایت</span><span class="en-text">Explore region</span> ←</a>`;card.append(art,body);holder.append(card)});
+regions.forEach((r,i)=>{const card=document.createElement('a');card.className='region-card';card.href=r[3];card.setAttribute('aria-label',`مشاهدهٔ روایت ${r[0]} / Explore ${r[1]}`);const art=document.createElement('div');art.className='card-art';if(r[4]){const img=document.createElement('img');img.src=r[4];img.alt='پوستر '+r[0];img.loading='lazy';img.onerror=()=>{img.remove();art.classList.add('image-missing');};art.append(img);}else{art.classList.add('image-missing');}const body=document.createElement('div');body.className='card-body';body.innerHTML=`<div class="card-meta"><span class="fa-text">روایت منطقه</span><span class="en-text">REGIONAL STORY</span></div><h3><span class="fa-text">${r[0]}</span><span class="en-text">${r[1]}</span></h3><p><span class="fa-text">${r[2]}</span><span class="en-text">Discover this region</span></p><span class="card-link"><span class="fa-text">مشاهدهٔ روایت</span><span class="en-text">Explore region</span> ←</span>`;card.append(art,body);card.addEventListener('click',event=>{if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;event.preventDefault();card.classList.add('is-activating');window.setTimeout(()=>{window.location.href=card.href;},180);});holder.append(card)});
 document.getElementById('langToggle').addEventListener('click',()=>{const en=document.documentElement.lang==='fa';document.documentElement.lang=en?'en':'fa';document.documentElement.dir=en?'ltr':'rtl';document.getElementById('langToggle').textContent=en?'EN | FA':'FA | EN';document.documentElement.setAttribute('data-language',en?'en':'fa')});document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body></html>
