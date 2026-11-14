@@ -394,14 +394,19 @@ function loadPosterTexture(i){
  const file=city[2];
  // تا زمان بارگذاری عکس اصلی، سطح تابلو خالی نماند.
  material.map=makePosterFallback(i);material.color.set(0xffffff);material.needsUpdate=true;
- const candidates=[`https://saeim1888-ops.github.io/iran-hezar-rang/${file}`,`https://raw.githubusercontent.com/saeim1888-ops/iran-hezar-rang/main/${file}`,'./'+file,'posters/'+file,'assets/'+file];
+ // برای استان‌هایی که هنوز فایل پوستر ندارند، درخواست بی‌مورد شبکه نفرست.
+ if(!file)return;
+ // فایل پوستر در ریشهٔ مخزن است؛ فقط دو نشانی واقعی امتحان می‌شوند.
+ // مسیرهای تکراری و پوشه‌های احتمالی حذف شدند تا در خطاهای شبکه معطل نشویم.
+ const candidates=[new URL(file,document.baseURI).href,`https://raw.githubusercontent.com/saeim1888-ops/iran-hezar-rang/main/${file}`];
  const tryNext=n=>{
   if(n>=candidates.length){
    material.map=makePosterFallback(i);material.color.set(0xffffff);material.needsUpdate=true;
-   posterLoaded.add(i);return;
+   return;
   }
   loader.load(candidates[n],tex=>{
-   tex.colorSpace=THREE.SRGBColorSpace;tex.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());
+   tex.colorSpace=THREE.SRGBColorSpace;
+   tex.anisotropy=Math.min(2,renderer.capabilities.getMaxAnisotropy());
    material.map=tex;material.color.set(0xffffff);material.needsUpdate=true;
   },undefined,()=>tryNext(n+1));
  };
@@ -476,7 +481,7 @@ function showFocusArtwork(i){
  const tryNext=()=>{if(n>=candidates.length){img.hidden=true;fallback.hidden=false;return;}img.onerror=()=>{n++;tryNext();};img.onload=()=>{img.hidden=false;fallback.hidden=true;};img.src=candidates[n++];};
  img.alt=(lang==='fa'?'اثر هنری استان ':'Artwork of ')+cities[i][lang==='fa'?0:1];tryNext();
 }
-function focusSelectedPoster(){if($('focusInfoPanel'))$('focusInfoPanel').classList.remove('mobile-open');if($('mobileInfoToggle')){$('mobileInfoToggle').hidden=false;$('mobileInfoToggle').textContent=lang==='fa'?'اطلاعات استان':'Region information';}showFocusArtwork(selected);loadPosterTexture(selected);const p=posterPositions[selected];if(!p)return;mode='focus';if($('mobileFocusCity'))$('mobileFocusCity').textContent=cities[selected][lang==='fa'?0:1];wheelVelocity=0;if(matchMedia('(max-width:760px)').matches){
+function focusSelectedPoster(){if($('focusInfoPanel'))$('focusInfoPanel').classList.remove('mobile-open');if($('mobileInfoToggle')){$('mobileInfoToggle').hidden=false;$('mobileInfoToggle').textContent=lang==='fa'?'اطلاعات استان':'Region information';}loadPosterTexture(selected);const p=posterPositions[selected];if(!p)return;mode='focus';if($('mobileFocusCity'))$('mobileFocusCity').textContent=cities[selected][lang==='fa'?0:1];wheelVelocity=0;if(matchMedia('(max-width:760px)').matches){
   // موبایل: دوربین روبه‌روی تابلو و به‌اندازه‌ای دور قرار می‌گیرد که عرض کامل اثر دیده شود.
   targetX=p.side<0?-1.65:1.65;targetY=3.45;targetZ=p.z;
   lookX=p.side<0?-7.32:7.32;lookY=3.45;lookZ=p.z;
