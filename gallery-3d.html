@@ -142,13 +142,22 @@ p{font-size:12px;line-height:1.9;margin:6px 0}.muted{color:#786b56;font-size:11p
 <body>
 <div id="scene"></div>
 <header class="topbar">
- <div class="tools">
-  <a class="tool" href="./index.html" id="homeBtn">صفحهٔ اول سایت</a>
-  <button class="tool" id="galleryHomeBtn">صفحهٔ اول گالری</button>
-  <div id="visitorFooter">بازدیدکنندگان: <strong id="visitorCount">—</strong></div>
+ <div class="header-actions">
+  <button class="tool contact-link" id="contactBtn" type="button">تماس با ما</button>
+  <button class="tool" id="langBtn">FA | EN</button>
  </div>
- <div class="brand">ایران، هزار رنگ<small>IRAN · A THOUSAND COLORS</small></div>
- <div class="tools" style="justify-content:flex-end"><button class="tool" id="langBtn">FA | EN</button></div>
+ <nav class="main-nav" aria-label="منوی اصلی">
+  <a id="navGallery" href="./gallery-3d.html">گالری آنلاین</a>
+  <a id="navRegions" href="./regions.html">استان‌ها</a>
+  <a id="navTeam" href="./index.html#team">عوامل پروژه</a>
+  <a id="navAbout" href="./index.html#about">درباره نمایشگاه</a>
+  <a id="navHome" href="./index.html">صفحه اصلی</a>
+ </nav>
+ <a class="brand" href="./index.html" aria-label="ایران، هزار رنگ">
+  <span class="brand-name">ایران، هزار رنگ</span><span class="brand-mark" aria-hidden="true">✺</span>
+ </a>
+ <div class="header-visitor" id="visitorFooter">بازدیدکنندگان: <strong id="visitorCount">—</strong></div>
+ <button class="tool gallery-start" id="galleryHomeBtn">صفحهٔ اول گالری</button>
 </header>
 
 <section class="overlay" id="welcome">
@@ -559,14 +568,14 @@ function renderMap(){loadProvinceMap();loadPosterTexture(selected);const pins=$(
 function openMap(){if(mode!=='map')mapReturnMode=mode;mode='map';renderMap();show('mapOverlay')}
 function backHall(){mode='hall';moveCamera(31);show('hallOverlay')}
 function closeMap(){if(mapReturnMode==='walk'){mode='walk';show('walk');moveCamera(32-selected*3.8,0);$('cityName').textContent=cities[selected][lang==='fa'?0:1]}else if(mapReturnMode==='focus'){focusSelectedPoster()}else{backHall()}}
-$('enterBtn').onclick=enter;$('continueHall').onclick=arriveHall;$('mapBtn').onclick=openMap;$('walkBtn').onclick=startWalk;$('mapGo').onclick=focusSelectedPoster;$('mapBack').onclick=closeMap;$('welcomeMapBtn').onclick=()=>{mapReturnMode='welcome';openMap()};$('detailBtn').onclick=openCityDetails;$('focusPrev').onclick=()=>{selected=(selected-1+cities.length)%cities.length;focusSelectedPoster()};$('focusNext').onclick=()=>{selected=(selected+1)%cities.length;focusSelectedPoster()};$('focusMapBtn').onclick=openMap;$('focusHallBtn').onclick=backHall;$('focusResumeBtn').onclick=()=>{mode='walk';show('walk');walkProgress=selected;loadPosterTexture(selected);if(selected>0)loadPosterTexture(selected-1);if(selected<cities.length-1)loadPosterTexture(selected+1);moveCamera(32-walkProgress*3.8,0);$('cityName').textContent=cities[selected][lang==='fa'?0:1];};$('prev').onclick=()=>{selected=(selected-1+cities.length)%cities.length;walkProgress=selected;focusSelectedPoster()};$('next').onclick=()=>{selected=(selected+1)%cities.length;walkProgress=selected;focusSelectedPoster()};$('endHall').onclick=backHall;$('galleryHomeBtn').onclick=()=>{mode='welcome';doors.forEach(d=>d.pivot.rotation.y=0);moveCamera(42);show('welcome')};
+$('enterBtn').onclick=enter;$('continueHall').onclick=arriveHall;$('mapBtn').onclick=openMap;$('walkBtn').onclick=startWalk;$('mapGo').onclick=focusSelectedPoster;$('mapBack').onclick=closeMap;$('welcomeMapBtn').onclick=()=>{mapReturnMode='welcome';openMap()};$('detailBtn').onclick=openCityDetails;$('focusPrev').onclick=()=>{selected=(selected-1+cities.length)%cities.length;focusSelectedPoster()};$('focusNext').onclick=()=>{selected=(selected+1)%cities.length;focusSelectedPoster()};$('focusMapBtn').onclick=openMap;$('focusHallBtn').onclick=backHall;$('focusResumeBtn').onclick=()=>{mode='walk';show('walk');walkProgress=selected;loadPosterTexture(selected);if(selected>0)loadPosterTexture(selected-1);if(selected<cities.length-1)loadPosterTexture(selected+1);moveCamera(32-walkProgress*3.8,0);$('cityName').textContent=cities[selected][lang==='fa'?0:1];};$('prev').onclick=()=>{selected=(selected-1+cities.length)%cities.length;walkProgress=selected;focusSelectedPoster()};$('next').onclick=()=>{selected=(selected+1)%cities.length;walkProgress=selected;focusSelectedPoster()};$('endHall').onclick=backHall;$('galleryHomeBtn').onclick=()=>{mode='welcome';doors.forEach(d=>d.pivot.rotation.y=0);moveCamera(42);show('welcome')};$('contactBtn').onclick=()=>window.location.href='./index.html#contact';
 $('openMapWalk').onclick=openMap;
  $('cityHotspotButton').onclick=()=>{$('cityHotspotCard').hidden=!$('cityHotspotCard').hidden;$('cityHotspotButton').setAttribute('aria-expanded',String(!$('cityHotspotCard').hidden));};
  $('cityHotspotClose').onclick=()=>{$('cityHotspotCard').hidden=true;$('cityHotspotButton').setAttribute('aria-expanded','false');};
  $('mobileInfoToggle').onclick=()=>{const info=$('focusInfoPanel');if(info){info.classList.toggle('mobile-open');$('mobileInfoToggle').textContent=info.classList.contains('mobile-open')?(lang==='fa'?'بستن اطلاعات':'Close information'):(lang==='fa'?'اطلاعات استان':'Region information');}};
 $('galleryHomeBtn').onclick=()=>{mode='welcome';doors.forEach(d=>d.pivot.rotation.y=0);moveCamera(42);show('welcome')};
 $('langBtn').onclick=()=>{lang=lang==='fa'?'en':'fa';document.documentElement.lang=lang;document.documentElement.dir=lang==='fa'?'rtl':'ltr';$('langBtn').textContent=lang==='fa'?'FA | EN':'EN | FA';
- const t={welcomeOver:['گالری سه‌بعدی نمایشگاه','3D Exhibition Gallery'],welcomeTitle:['ورود به نمایشگاه ایران، هزار رنگ','Enter Iran, A Thousand Colors'],welcomeDesc:['روایت تصویری پوشش زنان ایران',"A visual story of women's clothing in Iran"],welcomeHint:['به روایتی رنگارنگ از پوشش زنان ایران خوش آمدید.','Welcome to a colorful story of women’s clothing across Iran.'],enterBtn:['ورود به گالری','Enter Gallery'],welcomeMapBtn:['نقشهٔ سفر استان‌ها','Provincial travel map'],hallTitle:['ایران، هزار رنگ','Iran, A Thousand Colors'],hallS1:['از هر گوشهٔ ایران، روایتی از زیبایی و هویت','From every corner of Iran, a story of beauty and identity'],hallS2:['سفری تصویری در رنگارنگی پوشش زنان ایران',"A visual journey through the diversity of Iranian women's clothing"],hallHint:['مسیر بازدید خود را انتخاب کنید.','Choose your way to explore.'],doorSlogan:['هر در، آغازِ روایتی تازه است','Every door opens a new story'],doorTitle:['به جهان رنگ‌های ایران خوش آمدید','Welcome to the colors of Iran'],continueHall:['ورود به سالن','Enter the hall'],loadingTitle:['ایران، هزار رنگ','Iran, A Thousand Colors'],loadingDesc:['ورود به سالن','Entering the hall'],walkSlogan1:['هر استان، روایتی از یک زندگی','Every region tells a human story'],walkSlogan2:['در امتداد رنگ‌ها قدم بزنید','Walk along the colors'],creditRole:['طراح وب و پژوهشگر فرهنگی','Web designer and cultural researcher'],mapBtn:['نقشهٔ سفر','Travel Map'],walkBtn:['پیاده‌روی در گالری','Gallery Walk'],mapTitle:['نقشهٔ سفر ایران','Iran Travel Map'],mapDesc:['نقطه یا نام مقصد را انتخاب کنید.','Select a marker or destination.'],listTitle:['فهرست مقصدها','Destinations'],mapGo:['انتخاب مقصد','Select destination'],focusOver:['تابلوی انتخاب‌شده','Selected artwork'],focusDesc:['برای آشنایی با پوشش، فرهنگ و روایت این منطقه، صفحهٔ توضیحات را ببینید.','Explore the clothing, culture and story of this region on its information page.'],detailBtn:['مشاهدهٔ توضیحات شهر','View city story'],focusPrev:['تابلوی قبلی','Previous artwork'],focusNext:['تابلوی بعدی','Next artwork'],focusMapBtn:['بازگشت به نقشهٔ سفر','Back to travel map'],focusHallBtn:['بازگشت به انتخاب مسیر','Back to route selection'],focusResumeBtn:['بازگشت به مسیر پیاده‌روی','Return to gallery walk'],mapBack:['بازگشت به سالن','Back to Hall'],endSlogan:['هر نقش، یادگاری از یک سرزمین؛ هر رنگ، تکه‌ای از هویت ایران',"Every pattern, a memory of a land; every color, a piece of Iran's identity"],credit1:['هنرمند و خالق آثار: مریم ساعی','Artist and Creator: Maryam Saei'],credit2:['طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی','Website Design and Cultural Research: Marjan Saei'],endHall:['بازگشت به گالری سه‌بعدی','Back to 3D Gallery'],homeBtn:['صفحهٔ اول سایت','Home page'],galleryHomeBtn:['صفحهٔ اول گالری','Gallery start'],prev:['قبلی','Previous'],next:['بعدی','Next']};
+ const t={welcomeOver:['گالری سه‌بعدی نمایشگاه','3D Exhibition Gallery'],welcomeTitle:['ورود به نمایشگاه ایران، هزار رنگ','Enter Iran, A Thousand Colors'],welcomeDesc:['روایت تصویری پوشش زنان ایران',"A visual story of women's clothing in Iran"],welcomeHint:['به روایتی رنگارنگ از پوشش زنان ایران خوش آمدید.','Welcome to a colorful story of women’s clothing across Iran.'],enterBtn:['ورود به گالری','Enter Gallery'],welcomeMapBtn:['نقشهٔ سفر استان‌ها','Provincial travel map'],hallTitle:['ایران، هزار رنگ','Iran, A Thousand Colors'],hallS1:['از هر گوشهٔ ایران، روایتی از زیبایی و هویت','From every corner of Iran, a story of beauty and identity'],hallS2:['سفری تصویری در رنگارنگی پوشش زنان ایران',"A visual journey through the diversity of Iranian women's clothing"],hallHint:['مسیر بازدید خود را انتخاب کنید.','Choose your way to explore.'],doorSlogan:['هر در، آغازِ روایتی تازه است','Every door opens a new story'],doorTitle:['به جهان رنگ‌های ایران خوش آمدید','Welcome to the colors of Iran'],continueHall:['ورود به سالن','Enter the hall'],loadingTitle:['ایران، هزار رنگ','Iran, A Thousand Colors'],loadingDesc:['ورود به سالن','Entering the hall'],walkSlogan1:['هر استان، روایتی از یک زندگی','Every region tells a human story'],walkSlogan2:['در امتداد رنگ‌ها قدم بزنید','Walk along the colors'],creditRole:['طراح وب و پژوهشگر فرهنگی','Web designer and cultural researcher'],mapBtn:['نقشهٔ سفر','Travel Map'],walkBtn:['پیاده‌روی در گالری','Gallery Walk'],mapTitle:['نقشهٔ سفر ایران','Iran Travel Map'],mapDesc:['نقطه یا نام مقصد را انتخاب کنید.','Select a marker or destination.'],listTitle:['فهرست مقصدها','Destinations'],mapGo:['انتخاب مقصد','Select destination'],focusOver:['تابلوی انتخاب‌شده','Selected artwork'],focusDesc:['برای آشنایی با پوشش، فرهنگ و روایت این منطقه، صفحهٔ توضیحات را ببینید.','Explore the clothing, culture and story of this region on its information page.'],detailBtn:['مشاهدهٔ توضیحات شهر','View city story'],focusPrev:['تابلوی قبلی','Previous artwork'],focusNext:['تابلوی بعدی','Next artwork'],focusMapBtn:['بازگشت به نقشهٔ سفر','Back to travel map'],focusHallBtn:['بازگشت به انتخاب مسیر','Back to route selection'],focusResumeBtn:['بازگشت به مسیر پیاده‌روی','Return to gallery walk'],mapBack:['بازگشت به سالن','Back to Hall'],endSlogan:['هر نقش، یادگاری از یک سرزمین؛ هر رنگ، تکه‌ای از هویت ایران',"Every pattern, a memory of a land; every color, a piece of Iran's identity"],credit1:['هنرمند و خالق آثار: مریم ساعی','Artist and Creator: Maryam Saei'],credit2:['طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی','Website Design and Cultural Research: Marjan Saei'],endHall:['بازگشت به گالری سه‌بعدی','Back to 3D Gallery'],galleryHomeBtn:['صفحهٔ اول گالری','Gallery start'],navGallery:['گالری آنلاین','Online Gallery'],navRegions:['استان‌ها','Regions'],navTeam:['عوامل پروژه','Project Team'],navAbout:['درباره نمایشگاه','About Exhibition'],navHome:['صفحه اصلی','Home'],contactBtn:['تماس با ما','Contact Us'],prev:['قبلی','Previous'],next:['بعدی','Next']};
  Object.entries(t).forEach(([id,v])=>$(id).textContent=v[lang==='fa'?0:1]);$('visitorFooter').firstChild.textContent=lang==='fa'?'بازدیدکنندگان: ':'Visitors: ';$('cityName').textContent=cities[selected][lang==='fa'?0:1];if(mode==='map')renderMap();if(mode==='walk')goCity(selected);updateCityHotspot();};
 window.addEventListener('wheel',e=>{
  if(mode==='welcome'&&e.deltaY>0){enter();return}
@@ -1274,6 +1283,54 @@ fetch('https://api.counterapi.dev/v1/iran-hezar-rang/gallery/up').then(r=>r.json
   #walkInfo { gap: 4px !important; padding: 5px !important; }
   #walkInfo button { padding: 7px 9px !important; font-size: 9px !important; }
   #hint { bottom: calc(57px + env(safe-area-inset-bottom, 0px)) !important; font-size: 8px !important; }
+}
+
+/* Shared exhibition-site header: aligned with the regions page */
+.topbar{
+ position:fixed!important;z-index:30;top:0;left:0;right:0;
+ min-height:75px;padding:10px clamp(18px,7.2vw,100px)!important;
+ display:grid!important;grid-template-columns:auto minmax(0,1fr) auto!important;
+ grid-template-areas:"actions nav brand";align-items:center;column-gap:28px;
+ background:#ead6b5!important;border:0!important;border-bottom:4px solid #a94325!important;
+ backdrop-filter:none!important;box-shadow:0 4px 14px rgba(68,43,22,.08)
+}
+.topbar .header-actions{grid-area:actions;display:flex;align-items:center;gap:10px;direction:rtl}
+.topbar .main-nav{grid-area:nav;display:flex;align-items:center;justify-content:center;gap:clamp(12px,2vw,30px);white-space:nowrap}
+.topbar .main-nav a{color:#24463f;text-decoration:none;font-size:13px;font-weight:700;transition:color .2s}
+.topbar .main-nav a:hover{color:#a94325}
+.topbar .brand{grid-area:brand;display:flex;align-items:center;gap:12px;text-decoration:none;color:#24463f;white-space:nowrap;font-size:14px;font-weight:800}
+.topbar .brand-name{display:block}
+.topbar .brand-mark{width:42px;height:42px;border:2px solid #bd8b3d;border-radius:50%;display:grid;place-items:center;background:#fff8e9;color:#b45a24;font-size:27px;line-height:1}
+.topbar .tool{border:1px solid #a97732;border-radius:24px;padding:9px 15px;background:#bd8b3d;color:#382b1d;font-size:12px;font-weight:700}
+.topbar #langBtn{background:#fff5e3;border:2px solid #24463f;color:#24463f;padding:9px 14px}
+.topbar .header-visitor{display:none}
+.topbar .gallery-start{display:none}
+/* Keep overlays clear of the taller shared header. */
+.overlay{padding-top:90px}
+@media(max-width:900px){
+ .topbar{padding:9px 14px!important;column-gap:12px}
+ .topbar .main-nav{gap:10px}
+ .topbar .main-nav a{font-size:11px}
+ .topbar .brand{font-size:12px;gap:7px}
+ .topbar .brand-mark{width:35px;height:35px;font-size:23px}
+ .topbar .tool{font-size:10px;padding:8px 10px}
+}
+@media(max-width:700px){
+ .topbar{min-height:82px;padding:7px 10px!important;grid-template-columns:1fr auto!important;grid-template-rows:auto auto;grid-template-areas:"brand actions" "nav nav";row-gap:5px;column-gap:8px}
+ .topbar .brand{justify-self:end;font-size:12px}
+ .topbar .brand-mark{width:29px;height:29px;font-size:20px}
+ .topbar .header-actions{justify-self:start;gap:6px}
+ .topbar .tool{font-size:9px;padding:6px 9px}
+ .topbar .main-nav{width:100%;justify-content:space-between;gap:5px;overflow-x:auto;scrollbar-width:none;padding:1px 0}
+ .topbar .main-nav::-webkit-scrollbar{display:none}
+ .topbar .main-nav a{font-size:9px;white-space:nowrap}
+ .overlay{padding-top:100px}
+}
+@media(max-width:380px){
+ .topbar{padding-left:7px!important;padding-right:7px!important}
+ .topbar .main-nav a{font-size:8px}
+ .topbar .brand{font-size:11px}
+ .topbar .tool{font-size:8px;padding:5px 7px}
 }
 </style>
 
