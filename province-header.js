@@ -1,25 +1,407 @@
 
-/* province-header.js
-   هدر مشترک سایت «ایران، هزار رنگ»
-*/
-
 (() => {
   "use strict";
 
-  // مسیر صفحات را در صورت تغییر نام فایل‌ها، فقط از این قسمت اصلاح کن.
-  const pages = {
-    home: "index.html",
-    regions: "regions.html",
-    gallery3d: "gallery-3d.html",
-    inPerson: "hezar-rang-cinematic-entry-final.html",
+  if (document.querySelector(".ir-shared-header")) return;
 
-    // این سه مسیر باید با نام واقعی فایل‌ها تطبیق داده شوند.
-    about: "about.html",
-    team: "team.html",
-    contact: "contact.html"
-  };
+  const currentPage = location.pathname.split("/").pop() || "index.html";
 
-  // فهرست موقت استان‌ها؛ ترتیب نهایی باید با نقشه گالری تطبیق داده شود.
+  const links = [
+    {
+      text: "صفحه اصلی",
+      en: "Home",
+      href: "index.html",
+      children: [
+        { text: "صفحه مناطق | استان‌ها", en: "Regions | Provinces", href: "regions.html" },
+        { text: "گالری سه‌بعدی", en: "3D Gallery", href: "gallery-3d.html" },
+        { text: "گالری حضوری", en: "Physical Exhibition", href: "hezar-rang-cinematic-entry-final.html" }
+      ]
+    },
+    { text: "درباره نمایشگاه", en: "About the Exhibition", href: "regions.html#about" },
+    { text: "عوامل پروژه", en: "Project Team", href: "regions.html#team" },
+    { text: "تماس با ما", en: "Contact Us", href: "regions.html#contact" }
+  ];
+
+  const style = document.createElement("style");
+  style.textContent = `
+    .ir-shared-header {
+      position: relative;
+      z-index: 1000;
+      width: 100%;
+      min-height: 72px;
+      padding: 10px 4%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      direction: rtl;
+      background: rgba(244,234,216,.98);
+      border-bottom: 1px solid rgba(168,121,56,.55);
+      box-shadow: 0 4px 18px rgba(57,46,36,.10);
+      font-family: Vazirmatn, Tahoma, sans-serif;
+      box-sizing: border-box;
+    }
+
+    .ir-shared-header *,
+    .ir-shared-header *::before,
+    .ir-shared-header *::after {
+      box-sizing: border-box;
+    }
+
+    .ir-header-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #153f3b;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .ir-header-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff4df;
+      background: #963c25;
+      border: 2px solid #c79a4a;
+      font-size: 21px;
+    }
+
+    .ir-header-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(12px, 2vw, 27px);
+    }
+
+    .ir-header-nav a {
+      color: #153f3b;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: color .2s ease, background .2s ease;
+    }
+
+    .ir-header-nav a:hover {
+      color: #963c25;
+    }
+
+    .ir-header-home {
+      position: relative;
+    }
+
+    .ir-header-home > a {
+      display: block;
+      padding: 12px 3px;
+    }
+
+    .ir-header-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 205px;
+      display: none;
+      flex-direction: column;
+      padding: 8px;
+      background: #fff4df;
+      border: 1px solid #c79a4a;
+      border-radius: 11px;
+      box-shadow: 0 10px 25px rgba(57,46,36,.17);
+    }
+
+    .ir-header-home:hover .ir-header-dropdown,
+    .ir-header-home:focus-within .ir-header-dropdown {
+      display: flex;
+    }
+
+    .ir-header-dropdown a {
+      padding: 11px;
+      border-radius: 7px;
+    }
+
+    .ir-header-dropdown a:hover {
+      background: #f0dfc1;
+    }
+
+    .ir-header-language {
+      display: flex;
+      align-items: center;
+    }
+
+    .ir-header-language .language,
+    .ir-header-language #langToggle,
+    .ir-header-language #langBtn,
+    .ir-header-language #langSwitch,
+    .ir-header-language #languageToggle {
+      position: static !important;
+      inset: auto !important;
+      margin: 0 !important;
+      transform: none !important;
+    }
+
+    .ir-header-menu-button {
+      display: none;
+      width: 42px;
+      height: 40px;
+      padding: 7px;
+      border: 1px solid #c79a4a;
+      border-radius: 9px;
+      background: #fff4df;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .ir-header-menu-button span {
+      display: block;
+      width: 21px;
+      height: 2px;
+      border-radius: 3px;
+      background: #153f3b;
+      transition: .2s ease;
+    }
+
+    .ir-province-strip {
+      width: 100%;
+      min-height: 42px;
+      padding: 7px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      direction: rtl;
+      background: #153f3b;
+      color: #fff4df;
+      font-family: Vazirmatn, Tahoma, sans-serif;
+      font-size: 12px;
+    }
+
+    .ir-province-strip a {
+      color: #f4d79d;
+      text-decoration: none;
+    }
+
+    .ir-province-strip strong {
+      color: #fff4df;
+      font-weight: 700;
+    }
+
+    html[dir="ltr"] .ir-shared-header {
+      direction: ltr;
+    }
+
+    html[dir="ltr"] .ir-header-dropdown {
+      right: auto;
+      left: 0;
+    }
+
+    html[dir="ltr"] .ir-province-strip {
+      direction: ltr;
+    }
+
+    @media(max-width:850px) {
+      .ir-shared-header {
+        min-height: 65px;
+        padding: 9px 14px;
+        flex-wrap: wrap;
+      }
+
+      .ir-header-brand {
+        font-size: 14px;
+      }
+
+      .ir-header-mark {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+      }
+
+      .ir-header-menu-button {
+        display: flex;
+      }
+
+      .ir-header-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        padding: 9px 0 4px;
+        border-top: 1px solid rgba(168,121,56,.3);
+      }
+
+      .ir-header-nav.is-open {
+        display: flex;
+      }
+
+      .ir-header-nav a {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        white-space: normal;
+        text-align: right;
+        border-radius: 7px;
+      }
+
+      .ir-header-nav a:hover {
+        background: rgba(199,154,74,.15);
+      }
+
+      .ir-header-dropdown {
+        position: static;
+        display: none;
+        min-width: 0;
+        margin: 0 10px 7px;
+        padding: 5px;
+        box-shadow: none;
+        background: rgba(199,154,74,.12);
+      }
+
+      .ir-header-home.dropdown-open .ir-header-dropdown {
+        display: flex;
+      }
+
+      .ir-header-home:hover .ir-header-dropdown {
+        display: none;
+      }
+
+      .ir-header-home.dropdown-open:hover .ir-header-dropdown {
+        display: flex;
+      }
+
+      .ir-header-language {
+        padding: 8px 12px;
+      }
+
+      .ir-province-strip {
+        gap: 10px;
+        font-size: 11px;
+      }
+    }
+
+    @media(max-width:380px) {
+      .ir-header-brand {
+        font-size: 12px;
+      }
+
+      .ir-province-strip {
+        gap: 7px;
+        font-size: 10px;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+
+  const header = document.createElement("header");
+  header.className = "ir-shared-header";
+
+  const brand = document.createElement("a");
+  brand.className = "ir-header-brand";
+  brand.href = "index.html";
+  brand.innerHTML = `
+    <span class="ir-header-mark">ه</span>
+    <span>ایران، هزار رنگ</span>
+  `;
+
+  const menuButton = document.createElement("button");
+  menuButton.className = "ir-header-menu-button";
+  menuButton.type = "button";
+  menuButton.setAttribute("aria-label", "باز کردن منو");
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.innerHTML = "<span></span><span></span><span></span>";
+
+  const nav = document.createElement("nav");
+  nav.className = "ir-header-nav";
+
+  links.forEach((item, index) => {
+    const wrapper = document.createElement("div");
+
+    if (item.children) {
+      wrapper.className = "ir-header-home";
+
+      const mainLink = document.createElement("a");
+      mainLink.href = item.href;
+      mainLink.textContent = item.text;
+      wrapper.appendChild(mainLink);
+
+      const dropdown = document.createElement("div");
+      dropdown.className = "ir-header-dropdown";
+
+      item.children.forEach(child => {
+        const a = document.createElement("a");
+        a.href = child.href;
+        a.textContent = child.text;
+        dropdown.appendChild(a);
+      });
+
+      wrapper.appendChild(dropdown);
+
+      mainLink.addEventListener("click", event => {
+        if (window.matchMedia("(max-width:850px)").matches &&
+            !wrapper.classList.contains("dropdown-open")) {
+          event.preventDefault();
+          wrapper.classList.add("dropdown-open");
+        }
+      });
+    } else {
+      const a = document.createElement("a");
+      a.href = item.href;
+      a.textContent = item.text;
+      wrapper.appendChild(a);
+    }
+
+    nav.appendChild(wrapper);
+  });
+
+  const languageSlot = document.createElement("div");
+  languageSlot.className = "ir-header-language";
+
+  const existingLanguageButton =
+    document.querySelector(
+      "#languageToggle, #langToggle, #langBtn, #langSwitch, .language"
+    );
+
+  if (existingLanguageButton) {
+    languageSlot.appendChild(existingLanguageButton);
+  }
+
+  nav.appendChild(languageSlot);
+
+  header.appendChild(brand);
+  header.appendChild(menuButton);
+  header.appendChild(nav);
+
+  const firstPageElement =
+    document.querySelector("main") ||
+    document.querySelector(".stage") ||
+    document.body.firstElementChild;
+
+  document.body.insertBefore(header, firstPageElement);
+
+  menuButton.addEventListener("click", () => {
+    const opened = nav.classList.toggle("is-open");
+    menuButton.setAttribute("aria-expanded", String(opened));
+  });
+
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.matchMedia("(max-width:850px)").matches) {
+        if (!link.closest(".ir-header-home")) {
+          nav.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+        }
+      }
+    });
+  });
+
+  // نوار استان قبلی و بعدی فقط در صفحات استان‌ها
   const provinces = [
     ["قزوین", "qazvin.html"],
     ["گیلان", "gilan.html"],
@@ -41,421 +423,41 @@
     ["ایلام", "ilam.html"],
     ["لرستان", "lorestan.html"],
     ["مرکزی", "arak.html"],
-    ["کاشان", "kashan.html"],
     ["همدان", "hamedan.html"],
     ["کرمانشاه", "kermanshah.html"],
     ["کردستان", "kurdistan.html"],
-    ["ارومیه", "urmia.html"],
-    ["تبریز", "tabriz.html"],
+    ["آذربایجان غربی", "urmia.html"],
+    ["آذربایجان شرقی", "tabriz.html"],
     ["اردبیل", "ardabil.html"],
     ["زنجان", "zanjan.html"],
     ["تهران", "tehran.html"]
   ];
 
-  const currentFile =
-    decodeURIComponent(location.pathname.split("/").pop() || "index.html");
-
-  // اگر هدر قبلاً ساخته شده، دوباره آن را اضافه نکن.
-  if (document.querySelector(".ir-header")) return;
-
-  const currentIndex = provinces.findIndex(
-    province => province[1] === currentFile
+  const provinceIndex = provinces.findIndex(
+    province => province[1] === currentPage
   );
 
-  const isProvincePage = currentIndex !== -1;
+  if (provinceIndex !== -1) {
+    const previous = provinces[
+      (provinceIndex - 1 + provinces.length) % provinces.length
+    ];
 
-  const translations = {
-    fa: {
-      home: "صفحه اصلی",
-      about: "درباره نمایشگاه",
-      team: "عوامل پروژه",
-      contact: "تماس با ما",
-      regions: "صفحه مناطق",
-      regionsSub: "استان‌ها",
-      gallery3d: "صفحه گالری سه‌بعدی",
-      inPerson: "صفحه گالری حضوری",
-      previous: "استان قبلی",
-      current: "استان",
-      next: "استان بعدی",
-      language: "English"
-    },
-    en: {
-      home: "Home",
-      about: "About the Exhibition",
-      team: "Project Team",
-      contact: "Contact Us",
-      regions: "Regions",
-      regionsSub: "Provinces",
-      gallery3d: "3D Gallery",
-      inPerson: "In-person Gallery",
-      previous: "Previous Province",
-      current: "Province",
-      next: "Next Province",
-      language: "فارسی"
-    }
-  };
+    const current = provinces[provinceIndex];
 
-  const style = document.createElement("style");
-  style.textContent = `
-    .ir-header, .ir-header * {
-      box-sizing: border-box;
-    }
+    const next = provinces[
+      (provinceIndex + 1) % provinces.length
+    ];
 
-    .ir-header {
-      position: relative;
-      z-index: 1000;
-      width: 100%;
-      direction: rtl;
-      color: #f4ead8;
-      background: #153f3b;
-      font-family: inherit;
-      box-shadow: 0 3px 14px rgba(0,0,0,.13);
-    }
+    const strip = document.createElement("div");
+    strip.className = "ir-province-strip";
 
-    .ir-header-main {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 12px clamp(16px, 4vw, 55px);
-    }
-
-    .ir-header-brand {
-      color: #f4ead8;
-      text-decoration: none;
-      font-size: 19px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .ir-header-nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: clamp(12px, 2.2vw, 30px);
-      flex-wrap: wrap;
-    }
-
-    .ir-header a,
-    .ir-header button {
-      font: inherit;
-    }
-
-    .ir-header-link,
-    .ir-header-menu-button {
-      color: #f4ead8;
-      text-decoration: none;
-      border: 0;
-      background: transparent;
-      padding: 9px 4px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: color .2s ease;
-    }
-
-    .ir-header-link:hover,
-    .ir-header-menu-button:hover {
-      color: #e5bd72;
-    }
-
-    .ir-header-dropdown {
-      position: relative;
-    }
-
-    .ir-header-dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      min-width: 220px;
-      padding: 9px;
-      background: #f4ead8;
-      border: 1px solid rgba(168,62,29,.22);
-      border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.18);
-    }
-
-    .ir-header-dropdown.open .ir-header-dropdown-menu {
-      display: block;
-    }
-
-    .ir-header-dropdown-menu a {
-      display: block;
-      padding: 10px 12px;
-      color: #153f3b;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-
-    .ir-header-dropdown-menu a:hover {
-      background: #e9dcc4;
-      color: #a83e1d;
-    }
-
-    .ir-header-dropdown-menu .ir-header-subtitle {
-      display: block;
-      margin-top: 3px;
-      color: #77705f;
-      font-size: 11px;
-    }
-
-    .ir-header-language {
-      flex-shrink: 0;
-      padding: 8px 13px !important;
-      border: 1px solid #c9a45d !important;
-      border-radius: 20px !important;
-      color: #f4ead8 !important;
-      background: transparent !important;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    .ir-header-provinces {
-      min-height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: clamp(14px, 4vw, 48px);
-      padding: 9px 16px;
-      background: #a83e1d;
-      color: #fff5e8;
-      font-size: 13px;
-    }
-
-    .ir-header-provinces a {
-      color: inherit;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .ir-header-provinces a:hover {
-      color: #f1d18c;
-    }
-
-    .ir-header-current {
-      text-align: center;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .ir-header-current small {
-      display: block;
-      margin-bottom: 2px;
-      font-size: 10px;
-      font-weight: 400;
-      opacity: .85;
-    }
-
-    @media (max-width: 760px) {
-      .ir-header-main {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 9px;
-        padding: 12px;
-      }
-
-      .ir-header-brand {
-        width: 100%;
-        text-align: center;
-      }
-
-      .ir-header-nav {
-        gap: 10px 16px;
-      }
-
-      .ir-header-link,
-      .ir-header-menu-button {
-        font-size: 12px;
-      }
-
-      .ir-header-provinces {
-        gap: 12px;
-        font-size: 11px;
-      }
-    }
-
-    @media (max-width: 390px) {
-      .ir-header-provinces {
-        gap: 8px;
-        font-size: 10px;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-
-  const header = document.createElement("header");
-  header.className = "ir-header";
-
-  header.innerHTML = `
-    <div class="ir-header-main">
-      <a class="ir-header-brand" href="${pages.home}">
-        ایران، هزار رنگ
-      </a>
-
-      <nav class="ir-header-nav" aria-label="منوی اصلی">
-        <div class="ir-header-dropdown">
-          <button class="ir-header-menu-button"
-                  type="button"
-                  aria-expanded="false">
-            <span data-fa="صفحه اصلی" data-en="Home">صفحه اصلی</span>
-            <span aria-hidden="true">⌄</span>
-          </button>
-
-          <div class="ir-header-dropdown-menu">
-            <a href="${pages.regions}">
-              <span data-fa="صفحه مناطق" data-en="Regions">صفحه مناطق</span>
-              <span class="ir-header-subtitle"
-                    data-fa="استان‌ها"
-                    data-en="Provinces">استان‌ها</span>
-            </a>
-            <a href="${pages.gallery3d}"
-               data-fa="صفحه گالری سه‌بعدی"
-               data-en="3D Gallery">صفحه گالری سه‌بعدی</a>
-            <a href="${pages.inPerson}"
-               data-fa="صفحه گالری حضوری"
-               data-en="In-person Gallery">صفحه گالری حضوری</a>
-          </div>
-        </div>
-
-        <a class="ir-header-link"
-           href="${pages.about}"
-           data-fa="درباره نمایشگاه"
-           data-en="About the Exhibition">درباره نمایشگاه</a>
-
-        <a class="ir-header-link"
-           href="${pages.team}"
-           data-fa="عوامل پروژه"
-           data-en="Project Team">عوامل پروژه</a>
-
-        <a class="ir-header-link"
-           href="${pages.contact}"
-           data-fa="تماس با ما"
-           data-en="Contact Us">تماس با ما</a>
-      </nav>
-
-      <div class="ir-header-language-slot"></div>
-    </div>
-
-    <div class="ir-header-provinces" hidden></div>
-  `;
-
-  document.body.prepend(header);
-
-  // منوی کشویی صفحه اصلی
-  const dropdown = header.querySelector(".ir-header-dropdown");
-  const dropdownButton = dropdown.querySelector("button");
-
-  dropdownButton.addEventListener("click", () => {
-    const isOpen = dropdown.classList.toggle("open");
-    dropdownButton.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  document.addEventListener("click", event => {
-    if (!dropdown.contains(event.target)) {
-      dropdown.classList.remove("open");
-      dropdownButton.setAttribute("aria-expanded", "false");
-    }
-  });
-
-  // نوار استان‌ها فقط در صفحات استان نمایش داده می‌شود.
-  if (isProvincePage) {
-    const previousIndex =
-      (currentIndex - 1 + provinces.length) % provinces.length;
-    const nextIndex =
-      (currentIndex + 1) % provinces.length;
-
-    const previous = provinces[previousIndex];
-    const current = provinces[currentIndex];
-    const next = provinces[nextIndex];
-
-    const provinceBar = header.querySelector(".ir-header-provinces");
-    provinceBar.hidden = false;
-
-    provinceBar.innerHTML = `
-      <a href="${previous[1]}">
-        <span data-fa="← استان قبلی: " data-en="← Previous: ">← استان قبلی: </span>
-        ${previous[0]}
-      </a>
-
-      <div class="ir-header-current">
-        <small data-fa="استان ${currentIndex + 1} از ${provinces.length}"
-               data-en="Province ${currentIndex + 1} of ${provinces.length}">
-          استان ${currentIndex + 1} از ${provinces.length}
-        </small>
-        ${current[0]}
-      </div>
-
-      <a href="${next[1]}">
-        ${next[0]}
-        <span data-fa=" :استان بعدی →" data-en=" :Next →"> :استان بعدی →</span>
-      </a>
+    strip.innerHTML = `
+      <a href="${previous[1]}">← ${previous[0]}</a>
+      <strong>${String(provinceIndex + 1).padStart(2, "0")} | ${current[0]}</strong>
+      <a href="${next[1]}">${next[0]} →</a>
     `;
-  }
 
-  // دکمه زبان فعلی صفحه را به هدر منتقل می‌کنیم تا
-  // رویداد تغییر زبان خود صفحه حفظ شود و دکمه تکراری نسازیم.
-  const existingLanguageButton =
-    document.getElementById("langSwitch") ||
-    document.getElementById("langBtn");
-
-  const languageSlot = header.querySelector(".ir-header-language-slot");
-
-  if (existingLanguageButton) {
-    existingLanguageButton.classList.add("ir-header-language");
-    languageSlot.appendChild(existingLanguageButton);
-  } else {
-    // این دکمه فقط جهت صفحه و کلاس زبان را تغییر می‌دهد.
-    // ترجمه محتوای صفحه نیازمند سیستم ترجمه همان صفحه است.
-    const languageButton = document.createElement("button");
-    languageButton.type = "button";
-    languageButton.className = "ir-header-language";
-    languageButton.textContent = "English";
-
-    languageButton.addEventListener("click", () => {
-      const isEnglish = document.body.classList.toggle("english");
-      document.documentElement.lang = isEnglish ? "en" : "fa";
-      document.documentElement.dir = isEnglish ? "ltr" : "rtl";
-      languageButton.textContent = isEnglish ? "فارسی" : "English";
-      updateHeaderLanguage(isEnglish);
-    });
-
-    languageSlot.appendChild(languageButton);
-  }
-
-  function updateHeaderLanguage(isEnglish) {
-    header.querySelectorAll("[data-fa][data-en]").forEach(element => {
-      element.textContent = isEnglish
-        ? element.dataset.en
-        : element.dataset.fa;
-    });
-
-    header.dir = isEnglish ? "ltr" : "rtl";
-    header.querySelector(".ir-header-dropdown-menu").style.right =
-      isEnglish ? "auto" : "0";
-    header.querySelector(".ir-header-dropdown-menu").style.left =
-      isEnglish ? "0" : "auto";
-  }
-
-  // هماهنگی اولیه با زبان فعلی صفحه
-  const initiallyEnglish =
-    document.documentElement.lang === "en" ||
-    document.body.classList.contains("english");
-
-  updateHeaderLanguage(initiallyEnglish);
-
-  // هماهنگی متن هدر پس از استفاده از دکمه زبان موجود صفحه
-  if (existingLanguageButton) {
-    existingLanguageButton.addEventListener("click", () => {
-      requestAnimationFrame(() => {
-        const isEnglish =
-          document.documentElement.lang === "en" ||
-          document.body.classList.contains("english");
-
-        updateHeaderLanguage(isEnglish);
-      });
-    });
+    header.insertAdjacentElement("afterend", strip);
   }
 })();
 
