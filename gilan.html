@@ -1,643 +1,367 @@
-
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+
+<html dir="rtl" lang="fa">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="گیلان؛ روایت تصویری پوشش زنان، روستاها، میراث فرهنگی، طبیعت و خوراک محلی در نمایشگاه ایران، هزار رنگ." name="description"/>
 <title>گیلان | ایران، هزار رنگ</title>
 <style>
-:root{
-  --paper:#faf7ef;
-  --card:#fffdf8;
-  --olive:#303d25;
-  --gold:#b89b60;
-  --orange:#b86f35;
-  --line:#e7dbc5;
-  --muted:#746b5b;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:var(--paper);
-  color:#39362e;
-  font-family:Tahoma,Arial,sans-serif;
-  line-height:2;
-}
-button,a{font:inherit}
-a{color:inherit}
-.language{
-  position:fixed;
-  top:18px;
-  left:18px;
-  z-index:10;
-  padding:8px 18px;
-  border:1px solid var(--gold);
-  border-radius:30px;
-  color:var(--olive);
-  background:#fffaf0;
-  cursor:pointer;
-}
-header{
-  text-align:center;
-  padding:45px 20px 30px;
-  max-width:1100px;
-  margin:auto;
-}
-.eyebrow{
-  color:#a15b36;
-  font-size:14px;
-  font-weight:bold;
-  margin:0 0 8px;
-}
-h1{
-  color:var(--olive);
-  font-size:clamp(28px,4vw,46px);
-  line-height:1.6;
-  margin:0 0 8px;
-}
-.slogan{
-  color:var(--orange);
-  font-weight:bold;
-  font-size:19px;
-  margin:4px 0;
-}
-.subtitle{
-  color:var(--muted);
-  margin:6px auto 0;
-}
-nav{
-  position:sticky;
-  top:0;
-  z-index:5;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:9px;
-  padding:13px 12px;
-  background:#f0e8d8ee;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  backdrop-filter:blur(8px);
-}
-nav a{
-  text-decoration:none;
-  color:var(--olive);
-  background:#fffaf1;
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:5px 13px;
-  font-size:13px;
-}
-nav a:hover{background:#e8dcc3}
-main{
-  max-width:1010px;
-  margin:28px auto;
-  padding:0 18px;
-}
-section{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:17px;
-  padding:25px;
-  margin:0 0 20px;
-  scroll-margin-top:85px;
-}
-h2{
-  color:var(--olive);
-  font-size:23px;
-  margin:0 0 15px;
-  line-height:1.8;
-}
-h3{
-  color:var(--orange);
-  font-size:17px;
-  margin:0 0 8px;
-}
-p{margin:8px 0 14px}
-.intro{
-  border-right:4px solid var(--gold);
-  background:#fffaf1;
-  border-radius:12px;
-  padding:22px 25px;
-  line-height:2.2;
-}
-.art-frame{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#ebe5d6;
-  border:1px solid #dfd1b5;
-  border-radius:16px;
-  overflow:hidden;
-  padding:15px;
-}
-.art-frame img{
-  display:block;
-  max-width:100%;
-  width:auto;
-  max-height:650px;
-  object-fit:contain;
-}
-.caption{
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
-  margin-top:12px;
-}
-.quote{
-  margin-top:18px;
-  padding:14px 18px;
-  background:#f5eedf;
-  border-right:3px solid var(--gold);
-  border-radius:9px;
-}
-.label-frame{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px;
-  background:#f1eadb;
-  border-radius:13px;
-  border:1px solid var(--line);
-}
-.label-frame img{
-  display:block;
-  max-width:100%;
-  max-height:760px;
-  width:auto;
-  height:auto;
-  object-fit:contain;
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:13px;
-  margin-top:16px;
-}
-.tile{
-  padding:17px;
-  border:1px solid var(--line);
-  border-radius:13px;
-  background:#fffaf1;
-}
-.tile p{margin:0;font-size:14px}
-.note{
-  color:var(--muted);
-  font-size:13px;
-  margin-top:17px;
-}
-.sources{padding-right:22px}
-.sources li{margin:8px 0}
-.sources a{color:#76572b;text-decoration:underline}
-.back{
-  display:inline-block;
-  color:var(--olive);
-  text-decoration:none;
-  padding:9px 16px;
-  border:1px solid var(--gold);
-  border-radius:25px;
-  margin:4px 0 25px;
-}
-footer{
-  text-align:center;
-  padding:24px 15px;
-  color:var(--muted);
-  border-top:1px solid var(--line);
-  font-size:13px;
-}
-[hidden]{display:none!important}
-@media(min-width:760px){
-  .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .food-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-}
-@media(max-width:600px){
-  header{padding-top:65px}
-  section{padding:18px}
-  .grid{grid-template-columns:1fr}
-  nav{gap:6px}
-  nav a{font-size:12px;padding:4px 10px}
-  .intro{padding:16px}
-}
+:root{--cream:#f8f1e3;--paper:#fffaf0;--olive:#596447;--dark:#292b25;--gold:#b08b48;--rust:#b94e27;--teal:#245b60;--line:#dfd2b9}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:150px}
+body{margin:0;background:var(--cream);color:var(--dark);font-family:Tahoma,Arial,sans-serif;line-height:1.95}
+a{color:inherit;text-decoration:none}
 
-/* Shared visual system aligned with the approved Semnan page */
-:root{--paper:#fffaf0;--card:#fffaf0;--olive:#596447;--gold:#b08b48;--orange:#b94e27;--line:#e4d7bd;--muted:#666354;--cream:#f8f1e3}
-body{background:var(--cream);color:#292b25;line-height:2.1}
-header:not(.ir-shared-header){max-width:none;padding:55px 20px 35px;background:radial-gradient(circle at 15% 20%,#e8d7b6 0,transparent 28%),radial-gradient(circle at 85% 80%,#e5d8b8 0,transparent 28%),var(--cream);border-bottom:1px solid #ddcfb4}
-.eyebrow{color:var(--rust,#b94e27);font-size:13px}
-h1{color:var(--olive);font-size:clamp(27px,5vw,43px);line-height:1.7;margin:12px 0}
-.slogan{color:var(--orange);font-size:clamp(17px,3vw,23px);margin:8px 0}
-.subtitle{max-width:720px;color:#666354;font-size:14px;margin:12px auto 0}
-body>nav:not(.ir-header-nav){position:static;backdrop-filter:none;gap:9px;padding:20px 14px;background:var(--paper);border-top:0;border-bottom:1px solid #e4d7bd}
-body>nav:not(.ir-header-nav) a{color:var(--olive);background:#f0e7d5;border:1px solid #e1d2b5;border-radius:30px;padding:5px 13px;font-size:12px}
-body>nav:not(.ir-header-nav) a:hover{background:var(--olive);color:white}
-main{max-width:1050px;margin:30px auto;padding:0 18px}
-section{background:var(--paper);padding:clamp(20px,4vw,38px);margin-bottom:25px;border:1px solid #e4d7bd;border-radius:18px;box-shadow:0 5px 18px #5946290b;scroll-margin-top:20px}
-h2{color:var(--olive);font-size:clamp(21px,3vw,28px);margin-top:0;padding-bottom:10px;border-bottom:1px solid #e5d6b9}
-h3{color:var(--orange);font-size:17px}
-.art-frame{background:#f7efdf;border:1px solid #ddcda9;border-radius:5px;box-shadow:0 9px 25px #00000012}
-@media(max-width:600px){header:not(.ir-shared-header){padding:55px 16px 28px}main{padding:0 10px;margin-top:18px}section{padding:20px 16px;border-radius:13px}}
+.site-header{
+  position:relative;top:0;z-index:1000;width:100%;
+  background:#f4ead8;border-bottom:1px solid #dfd2b9;
+  box-shadow:0 4px 16px rgba(57,46,36,.08);
+}
+.topline{display:none}
+.header-main{
+  max-width:1320px;min-height:72px;margin:auto;padding:10px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:22px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#153f3b;font-size:17px;white-space:nowrap;order:3}
+.brand-mark{
+  width:40px;height:40px;border:2px solid #c79a4a;border-radius:50%;
+  display:grid;place-items:center;color:#fff4df;background:#963c25;font-size:19px;
+}
+.main-menu{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,27px);flex:1;order:2}
+.main-menu>a,.dropbtn{
+  font:inherit;font-size:13px;font-weight:700;color:#153f3b;background:none;
+  border:0;padding:9px 2px;cursor:pointer;white-space:nowrap;
+}
+.main-menu>a:hover,.dropbtn:hover{color:#963c25}
+.dropdown{position:relative}
+.dropdown-content{
+  display:none;position:absolute;top:100%;right:0;min-width:220px;
+  background:#fff8eb;border:1px solid #c79a4a;border-radius:11px;padding:8px;
+  box-shadow:0 10px 25px rgba(57,46,36,.17)
+}
+.dropdown.open .dropdown-content{display:block}
+.dropdown-content a{display:block;padding:10px 12px;border-radius:7px;font-size:13px;color:#153f3b}
+.dropdown-content a:hover{background:#f0dfc1;color:#963c25}
+.lang-switch{
+  order:1;border:1px solid #b7aa8e;border-radius:0;background:#fff8eb;
+  color:#153f3b;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap;
+  min-width:72px
+}
+.province-nav{background:#153f3b;color:#fff4df;padding:8px 16px}
+.province-nav-inner{
+  max-width:1200px;margin:auto;display:flex;align-items:center;
+  justify-content:center;gap:20px;flex-wrap:wrap
+}
+.province-nav a,.province-nav span{
+  font-size:12px;padding:3px 4px;border:0;border-radius:0;color:#f4d79d
+}
+.province-nav span{font-weight:800;color:#fff4df}
+.province-nav a:hover{color:#fff;text-decoration:underline}
+html[dir="ltr"] .header-main{direction:ltr}
+html[dir="ltr"] .dropdown-content{right:auto;left:0}
+html[dir="ltr"] .province-nav-inner{direction:ltr}
+
+.hero{max-width:1100px;margin:34px auto 24px;padding:44px 28px;text-align:center;background:linear-gradient(135deg,#fffaf0,#f0e3cb);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 35px #5c452015;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #b08b4833;border-radius:50%}
+.hero:before{top:-105px;right:-65px}.hero:after{bottom:-120px;left:-60px}
+.eyebrow{color:var(--rust);font-size:12px;letter-spacing:.4px}
+h1{font-size:clamp(25px,4vw,39px);color:var(--teal);margin:8px 0}
+.slogan{font-size:18px;color:var(--olive);font-weight:bold;margin:8px 0}
+.hero p{max-width:780px;margin:10px auto 0;font-size:14px}
+.page-nav{max-width:1100px;margin:0 auto 28px;padding:12px 18px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.page-nav a{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:12px;color:var(--olive)}
+.page-nav a:hover{background:var(--olive);color:white}
+main{max-width:1100px;margin:auto;padding:0 20px 40px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;margin:0 0 22px;box-shadow:0 7px 22px #4b38100b}
+h2{font-size:21px;color:var(--rust);margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+h3{font-size:16px;color:var(--teal);margin:12px 0 5px}
+p{margin:8px 0}.art-grid,.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.art-grid img,.art-image{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:#eee2cf}
+.caption{font-size:12px;color:#756b58;text-align:center;margin-top:7px}
+.tile{background:#f7efdf;border:1px solid var(--line);border-radius:13px;padding:15px}
+.quote{border-right:3px solid var(--gold);padding:9px 14px;color:var(--olive);background:#f7efdf;border-radius:8px;margin-top:15px}
+ul{padding-right:22px}.source-list li{margin:7px 0;font-size:13px}
+.source-list a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+footer{text-align:center;padding:25px 16px;background:#e9dec9;color:#5d584b;font-size:12px}
+.back{display:inline-block;background:var(--rust);color:white;padding:9px 18px;border-radius:22px;margin-top:8px}
+.en{display:none}body.english{direction:ltr}body.english .en{display:initial}body.english .fa{display:none}
+body.english .quote{border-right:0;border-left:3px solid var(--gold)}body.english ul{padding-right:0;padding-left:22px}
+body.english .dropdown-content{right:auto;left:0}
+@media(max-width:850px){
+ .header-main{min-height:66px;padding:9px 14px;flex-wrap:wrap;gap:10px}
+ .brand{font-size:14px;order:1}
+ .brand-mark{width:35px;height:35px;font-size:17px}
+ .lang-switch{order:3;margin-inline-start:0}
+ .main-menu{display:none;order:3;flex:1 0 100%;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 0 4px;border-top:1px solid #dfd2b9}
+ .main-menu.mobile-open{display:flex}
+ .main-menu>a,.dropbtn{display:block;width:100%;padding:11px 12px;text-align:right;white-space:normal}
+ html[dir="ltr"] .main-menu>a,html[dir="ltr"] .dropbtn{text-align:left}
+ .dropdown-content{position:static;min-width:0;margin:0 10px 7px;box-shadow:none;background:#f0dfc1}
+ .dropdown.open .dropdown-content{display:block}
+ .hero{margin:18px 12px;padding:30px 17px}
+ .page-nav{padding:8px 12px}
+ main{padding:0 12px 28px}
+ section{padding:19px}
+ .art-grid,.tiles{grid-template-columns:1fr}
+ .province-nav-inner{gap:10px;font-size:11px}
+}
+@media(min-width:851px){
+ .main-menu{display:flex!important}
+}
 </style>
 </head>
-
-<body>
-<button class="language" id="langButton" type="button">English</button>
-
-<header>
-  <p class="eyebrow" data-fa="مجموعه تصویری ایران، هزار رنگ"
-     data-en="IRAN, A THOUSAND COLORS">مجموعه تصویری ایران، هزار رنگ</p>
-  <h1 data-fa="گیلان؛ رقص رنگ‌ها در سرزمین باران"
-      data-en="Gilan: A Dance of Colors in the Land of Rain">
-      گیلان؛ رقص رنگ‌ها در سرزمین باران
-  </h1>
-  <p class="slogan" data-fa="رنگ زندگی در لباس زنان گیلان"
-     data-en="The Colors of Life in Gilan Women's Dress">
-     رنگ زندگی در لباس زنان گیلان
-  </p>
-  <p class="subtitle"
-     data-fa="روایت تصویری پوشش زنان ایران"
-     data-en="A Visual Story of Iranian Women's Dress">
-     روایت تصویری پوشش زنان ایران
-  </p>
-</header>
-
-<nav>
-  <a href="#art" data-fa="تصویر گیلان" data-en="Artwork">تصویر گیلان</a>
-  <a href="#dress" data-fa="پوشش زنان" data-en="Women's Dress">پوشش زنان</a>
-  <a href="#regions" data-fa="مناطق و روستاها" data-en="Regions">مناطق و روستاها</a>
-  <a href="#heritage" data-fa="میراث فرهنگی" data-en="Heritage">میراث فرهنگی</a>
-  <a href="#foods" data-fa="خوراکی‌ها" data-en="Local Food">خوراکی‌ها</a>
-  <a href="#products" data-fa="محصولات محلی" data-en="Local Products">محصولات محلی</a>
-  <a href="#sources" data-fa="منابع" data-en="Sources">منابع</a>
+<body data-next-en="Mazandaran" data-next-name="مازندران" data-next-url="mazandaran.html" data-prev-en="Qazvin" data-prev-name="قزوین" data-prev-url="qazvin.html" data-province="گیلان" data-province-en="Gilan" data-province-index="2" data-province-total="29">
+<div class="site-header">
+<div class="header-main">
+<a class="brand" href="index.html">
+<span class="brand-mark">ه</span>
+<span class="fa">ایران، هزار رنگ</span><span class="en">Iran, a Thousand Colors</span>
+</a>
+<nav aria-label="منوی اصلی" class="main-menu">
+<div class="dropdown" id="homeDropdown">
+<button aria-expanded="false" class="dropbtn" type="button">
+<span class="fa">صفحه اصلی</span><span class="en">Home</span>
+</button>
+<div class="dropdown-content">
+<a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions | Provinces</span></a>
+<a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+<a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Exhibition</span></a>
+</div>
+</div>
+<a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
+<a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+<a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
 </nav>
-
+<button class="lang-switch" id="langSwitch" type="button">FA | EN</button>
+</div>
+<div class="province-nav"><div class="province-nav-inner">
+<a href="qazvin.html"><span class="fa">← قزوین</span><span class="en">← Qazvin</span></a>
+<span><span class="fa">۰۲ | گیلان</span><span class="en">02 | Gilan</span></span>
+<a href="mazandaran.html"><span class="fa">مازندران →</span><span class="en">Mazandaran →</span></a>
+</div></div>
+</div>
+<header class="hero">
+<div class="eyebrow"><span class="fa">مجموعه تصویری ایران، هزار رنگ</span><span class="en">IRAN, A THOUSAND COLORS</span></div>
+<h1><span class="fa">گیلان؛ رقص رنگ‌ها در سرزمین باران</span><span class="en">Gilan: A Dance of Colors in the Land of Rain</span></h1>
+<div class="slogan"><span class="fa">رنگ زندگی در لباس زنان گیلان</span><span class="en">The Colors of Life in Gilan Women's Dress</span></div>
+<p class="subtitle"><span class="fa">روایت تصویری پوشش زنان ایران</span><span class="en">A Visual Story of Iranian Women's Dress</span></p>
+</header>
+<nav class="page-nav">
+<a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+<a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's clothing</span></a>
+<a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
+<a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History &amp; nature</span></a>
+<a href="#food"><span class="fa">خوراکی‌ها</span><span class="en">Local food</span></a>
+<a href="#products"><span class="fa">محصولات بومی</span><span class="en">Local products</span></a>
+<a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
 <main>
-  <section id="art">
-    <h2 data-fa="۱. تصویر گیلان؛ رقص رنگ‌ها در سرزمین باران"
-        data-en="1. Gilan in Color: A Dance in the Land of Rain">
-        ۱. تصویر گیلان؛ رقص رنگ‌ها در سرزمین باران
-    </h2>
-
-    <div class="art-frame">
-      <img src="gilan.jpg"
-           alt="تصویر هنری زنان گیلان و طبیعت سرسبز شمال ایران">
-    </div>
-
-    <p class="caption"
-       data-fa="روایت تصویری پوشش زنان گیلان، در پیوند با طبیعت، زندگی و فرهنگ محلی"
-       data-en="A visual story of Gilan women's dress, connected to nature, everyday life, and local culture.">
-       روایت تصویری پوشش زنان گیلان، در پیوند با طبیعت، زندگی و فرهنگ محلی
-    </p>
-
-    <div class="quote"
-         data-fa="گیلان، سرزمین باران و شالیزارها، جایی است که رنگ لباس‌های محلی در کنار جنگل، دریا و زندگی روستایی، بخشی از هویت فرهنگی مردم را روایت می‌کند."
-         data-en="Gilan, the land of rain and rice fields, is where colorful traditional clothing joins forests, the sea, and rural life to tell a story of cultural identity.">
-      گیلان، سرزمین باران و شالیزارها، جایی است که رنگ لباس‌های محلی در کنار جنگل، دریا و زندگی روستایی، بخشی از هویت فرهنگی مردم را روایت می‌کند.
-    </div>
-  </section>
-
-  <section id="dress">
-    <h2 data-fa="۲. پوشش زنان گیلان؛ زیبایی در جزئیات"
-        data-en="2. Gilan Women's Dress: Beauty in the Details">
-        ۲. پوشش زنان گیلان؛ زیبایی در جزئیات
-    </h2>
-
-    <p data-fa="پوشش سنتی زنان گیلان با دامن‌های چین‌دار و رنگارنگ، روسری‌ها و سربندهای محلی و پارچه‌های گل‌دار شناخته می‌شود. شکل لباس و ترکیب رنگ‌ها در نواحی مختلف استان یکسان نیست و هر منطقه ویژگی‌های خود را دارد."
-       data-en="Traditional women's clothing in Gilan is known for colorful gathered skirts, local scarves and head coverings, and floral fabrics. Styles and color combinations vary across the province, with each area retaining its own characteristics.">
-       پوشش سنتی زنان گیلان با دامن‌های چین‌دار و رنگارنگ، روسری‌ها و سربندهای محلی و پارچه‌های گل‌دار شناخته می‌شود. شکل لباس و ترکیب رنگ‌ها در نواحی مختلف استان یکسان نیست و هر منطقه ویژگی‌های خود را دارد.
-    </p>
-
-    <div class="label-frame">
-      <img src="gilan_leibel.png"
-           alt="لیبل اطلاعاتی پوشش سنتی زنان گیلان">
-    </div>
-    <p class="caption"
-       data-fa="لیبل اطلاعاتی پوشش زنان گیلان؛ معرفی اجزای لباس و تفاوت‌های منطقه‌ای"
-       data-en="Gilan women's dress information label, showing clothing elements and regional differences.">
-       لیبل اطلاعاتی پوشش زنان گیلان؛ معرفی اجزای لباس و تفاوت‌های منطقه‌ای
-    </p>
-
-    <div class="grid">
-      <article class="tile">
-        <h3 data-fa="پوشش قاسم‌آبادی" data-en="Qasemabadi Dress">پوشش قاسم‌آبادی</h3>
-        <p data-fa="در شرق گیلان، به‌ویژه قاسم‌آباد، دامن‌های پرچین و رنگارنگ و سربندهای محلی از ویژگی‌های شناخته‌شده پوشش زنان هستند."
-           data-en="In eastern Gilan, especially Qasemabad, full colorful skirts and local head coverings are distinctive features of women's dress.">
-          در شرق گیلان، به‌ویژه قاسم‌آباد، دامن‌های پرچین و رنگارنگ و سربندهای محلی از ویژگی‌های شناخته‌شده پوشش زنان هستند.
-        </p>
-      </article>
-
-      <article class="tile">
-        <h3 data-fa="پوشش تالشی" data-en="Taleshi Dress">پوشش تالشی</h3>
-        <p data-fa="در نواحی تالش، پوشش سنتی با شیوه زندگی کوهستانی و روستایی پیوند دارد و در جزئیات لباس تفاوت‌های محلی دیده می‌شود."
-           data-en="In Talesh, traditional dress is linked to mountain and village life, with local variations in clothing details.">
-          در نواحی تالش، پوشش سنتی با شیوه زندگی کوهستانی و روستایی پیوند دارد و در جزئیات لباس تفاوت‌های محلی دیده می‌شود.
-        </p>
-      </article>
-
-      <article class="tile">
-        <h3 data-fa="پوشش نواحی مرکزی" data-en="Central Gilan Dress">پوشش نواحی مرکزی</h3>
-        <p data-fa="در بخش‌های مختلف گیلان، رنگ پارچه، طرح گل‌ها، نوع روسری و شیوه بستن آن می‌تواند تفاوت داشته باشد."
-           data-en="Across Gilan, fabric colors, floral patterns, scarves, and ways of wearing them can differ from place to place.">
-          در بخش‌های مختلف گیلان، رنگ پارچه، طرح گل‌ها، نوع روسری و شیوه بستن آن می‌تواند تفاوت داشته باشد.
-        </p>
-      </article>
-
-      <article class="tile">
-        <h3 data-fa="چادرشب‌بافی" data-en="Chador-Shab Weaving">چادرشب‌بافی</h3>
-        <p data-fa="چادرشب‌بافی از هنرهای شناخته‌شده قاسم‌آباد است؛ پارچه‌ای دست‌باف با طرح‌ها و رنگ‌های متنوع که بخشی از میراث نساجی منطقه به شمار می‌رود."
-           data-en="Chador-shab weaving is a recognized craft of Qasemabad, producing handwoven textiles with varied colors and patterns.">
-          چادرشب‌بافی از هنرهای شناخته‌شده قاسم‌آباد است؛ پارچه‌ای دست‌باف با طرح‌ها و رنگ‌های متنوع که بخشی از میراث نساجی منطقه به شمار می‌رود.
-        </p>
-      </article>
-    </div>
-
-    <p class="note"
-       data-fa="توجه: پوشش سنتی در هر منطقه و دوره تاریخی تنوع داشته است؛ این معرفی، تصویری کلی از برخی ویژگی‌های شناخته‌شده آن ارائه می‌کند."
-       data-en="Note: Traditional clothing varies by locality and historical period. This overview presents selected, widely recognized features.">
-       توجه: پوشش سنتی در هر منطقه و دوره تاریخی تنوع داشته است؛ این معرفی، تصویری کلی از برخی ویژگی‌های شناخته‌شده آن ارائه می‌کند.
-    </p>
-  </section>
-
-  <section id="regions">
-    <h2 data-fa="۳. مناطق و روستاهای گیلان؛ تنوع در دل سرزمین"
-        data-en="3. Gilan's Regions and Villages">
-        ۳. مناطق و روستاهای گیلان؛ تنوع در دل سرزمین
-    </h2>
-    <div class="grid">
-      <article class="tile">
-        <h3 data-fa="قاسم‌آباد و شرق گیلان" data-en="Qasemabad and Eastern Gilan">قاسم‌آباد و شرق گیلان</h3>
-        <p data-fa="منطقه‌ای شناخته‌شده برای پوشش رنگارنگ زنان و هنر چادرشب‌بافی."
-           data-en="Known for colorful women's dress and the craft of chador-shab weaving.">
-          منطقه‌ای شناخته‌شده برای پوشش رنگارنگ زنان و هنر چادرشب‌بافی.
-        </p>
-      </article>
-      <article class="tile">
-        <h3 data-fa="تالش و غرب گیلان" data-en="Talesh and Western Gilan">تالش و غرب گیلان</h3>
-        <p data-fa="سرزمینی با فرهنگ محلی متنوع، طبیعت کوهستانی و سنت‌های روستایی."
-           data-en="A region of diverse local culture, mountain landscapes, and village traditions.">
-          سرزمینی با فرهنگ محلی متنوع، طبیعت کوهستانی و سنت‌های روستایی.
-        </p>
-      </article>
-      <article class="tile">
-        <h3 data-fa="ماسوله و روستاهای کوهستانی" data-en="Masuleh and Mountain Villages">ماسوله و روستاهای کوهستانی</h3>
-        <p data-fa="بافت پلکانی، معماری بومی و پیوند زندگی روزمره با شیب کوهستان."
-           data-en="Stepped architecture, vernacular buildings, and everyday life shaped by mountain slopes.">
-          بافت پلکانی، معماری بومی و پیوند زندگی روزمره با شیب کوهستان.
-        </p>
-      </article>
-      <article class="tile">
-        <h3 data-fa="لاهیجان و شرق مرکزی" data-en="Lahijan and the Central East">لاهیجان و شرق مرکزی</h3>
-        <p data-fa="شهری پیوندخورده با کشت چای، باغ‌ها و چشم‌اندازهای سرسبز."
-           data-en="A city associated with tea cultivation, gardens, and green landscapes.">
-          شهری پیوندخورده با کشت چای، باغ‌ها و چشم‌اندازهای سرسبز.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section id="heritage">
-    <h2 data-fa="۴. میراث تاریخی و فرهنگی"
-        data-en="4. Historical and Cultural Heritage">
-        ۴. میراث تاریخی و فرهنگی
-    </h2>
-    <div class="grid">
-      <article class="tile">
-        <h3 data-fa="ماسوله" data-en="Masuleh">ماسوله</h3>
-        <p data-fa="روستایی تاریخی با معماری پلکانی و خانه‌هایی که بام هر خانه، حیاط خانه بالاتر است."
-           data-en="A historic village with stepped architecture, where one home's roof serves as the courtyard of the house above.">
-          روستایی تاریخی با معماری پلکانی و خانه‌هایی که بام هر خانه، حیاط خانه بالاتر است.
-        </p>
-      </article>
-      <article class="tile">
-        <h3 data-fa="قلعه رودخان" data-en="Rudkhan Castle">قلعه رودخان</h3>
-        <p data-fa="دژی تاریخی در دل جنگل‌های سرسبز فومن که با مسیر جنگلی و برج‌وباروی سنگی شناخته می‌شود."
-           data-en="A historic fortress in the forested hills of Fuman, known for its stone walls and woodland approach.">
-          دژی تاریخی در دل جنگل‌های سرسبز فومن که با مسیر جنگلی و برج‌وباروی سنگی شناخته می‌شود.
-        </p>
-      </article>
-      <article class="tile">
-        <h3 data-fa="میدان شهرداری رشت" data-en="Rasht Municipality Square">میدان شهرداری رشت</h3>
-        <p data-fa="از فضاهای شاخص شهری رشت با بناهای تاریخی و جایگاهی مهم در زندگی اجتماعی شهر."
-           data-en="A landmark public square in Rasht, surrounded by historic buildings and central to city life.">
-          از فضاهای شاخص شهری رشت با بناهای تاریخی و جایگاهی مهم در زندگی اجتماعی شهر.
-        </p>
-      </article>
-      <article class="tile">
-        <h3 data-fa="باغ‌ها و عمارت‌های لاهیجان" data-en="Lahijan's Gardens and Mansions">باغ‌ها و عمارت‌های لاهیجان</h3>
-        <p data-fa="بخشی از هویت تاریخی شهر که با باغ‌های چای، چشم‌اندازهای سبز و بناهای قدیمی پیوند دارد."
-           data-en="Part of the city's historic identity, associated with tea gardens, green landscapes, and old buildings.">
-          بخشی از هویت تاریخی شهر که با باغ‌های چای، چشم‌اندازهای سبز و بناهای قدیمی پیوند دارد.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section id="foods">
-    <h2 data-fa="۵. طعم‌های اصیل گیلان"
-        data-en="5. The Traditional Flavors of Gilan">
-        ۵. طعم‌های اصیل گیلان
-    </h2>
-    <div class="grid food-grid">
-      <article class="tile">
-        <h3>میرزا قاسمی</h3>
-        <p data-fa="غذایی با بادمجان کبابی، سیر، گوجه‌فرنگی و تخم‌مرغ."
-           data-en="A dish made with roasted eggplant, garlic, tomatoes, and eggs.">
-          غذایی با بادمجان کبابی، سیر، گوجه‌فرنگی و تخم‌مرغ.
-        </p>
-      </article>
-      <article class="tile">
-        <h3>باقلا قاتق</h3>
-        <p data-fa="خوراک محلی با باقلا، شوید و سیر که معمولاً با برنج سرو می‌شود."
-           data-en="A local fava-bean dish with dill and garlic, usually served with rice.">
-          خوراک محلی با باقلا، شوید و سیر که معمولاً با برنج سرو می‌شود.
-        </p>
-      </article>
-      <article class="tile">
-        <h3>ترش‌تره</h3>
-        <p data-fa="خوراکی ترش‌مزه با سبزی‌های محلی و چاشنی‌های گوناگون."
-           data-en="A tangy local dish made with herbs and regional seasonings.">
-          خوراکی ترش‌مزه با سبزی‌های محلی و چاشنی‌های گوناگون.
-        </p>
-      </article>
-      <article class="tile">
-        <h3>اناربیج</h3>
-        <p data-fa="خورشی محلی با گردو، سبزی و طعمی ترش و متمایز."
-           data-en="A regional stew made with walnuts and herbs, known for its tangy flavor.">
-          خورشی محلی با گردو، سبزی و طعمی ترش و متمایز.
-        </p>
-      </article>
-      <article class="tile">
-        <h3>کباب ترش</h3>
-        <p data-fa="کبابی با چاشنی‌های ترش محلی، معمولاً با گردو و سبزی‌های معطر."
-           data-en="Grilled meat marinated with tangy local seasonings, often including walnuts and herbs.">
-          کبابی با چاشنی‌های ترش محلی، معمولاً با گردو و سبزی‌های معطر.
-        </p>
-      </article>
-      <article class="tile">
-        <h3>رشته‌خشکار</h3>
-        <p data-fa="شیرینی سنتی تهیه‌شده از رشته‌های نازک خمیری و مغز گردو و ادویه."
-           data-en="A traditional sweet made from fine pastry strands, walnuts, and spices.">
-          شیرینی سنتی تهیه‌شده از رشته‌های نازک خمیری و مغز گردو و ادویه.
-        </p>
-      </article>
-      <article class="tile">
-        <h3>کلوچه فومن</h3>
-        <p data-fa="شیرینی مشهور فومن با لایه‌ای از خمیر و مغزی معطر."
-           data-en="Fuman's well-known pastry, made with dough and a fragrant filling.">
-          شیرینی مشهور فومن با لایه‌ای از خمیر و مغزی معطر.
-        </p>
-      </article>
-      <article class="tile">
-        <h3>کال‌کباب</h3>
-        <p data-fa="چاشنی محلی با بادمجان کبابی، گردو و سبزی‌های معطر."
-           data-en="A local relish made with roasted eggplant, walnuts, and aromatic herbs.">
-          چاشنی محلی با بادمجان کبابی، گردو و سبزی‌های معطر.
-        </p>
-      </article>
-      <article class="tile">
-        <h3>حلواهای محلی</h3>
-        <p data-fa="انواع شیرینی و حلوا در شهرها و روستاهای گیلان با دستورهای بومی تهیه می‌شوند."
-           data-en="Local sweets and halva are prepared across Gilan using regional recipes.">
-          انواع شیرینی و حلوا در شهرها و روستاهای گیلان با دستورهای بومی تهیه می‌شوند.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section id="products">
-    <h2 data-fa="۶. محصولات محلی و کشاورزی"
-        data-en="6. Local Products and Agriculture">
-        ۶. محصولات محلی و کشاورزی
-    </h2>
-    <div class="grid">
-      <article class="tile">
-        <h3 data-fa="چای لاهیجان" data-en="Lahijan Tea">چای لاهیجان</h3>
-        <p data-fa="چای از محصولات شناخته‌شده گیلان و بخشی از چشم‌انداز باغ‌های منطقه است."
-           data-en="Tea is one of Gilan's best-known products and shapes the region's garden landscapes.">
-          چای از محصولات شناخته‌شده گیلان و بخشی از چشم‌انداز باغ‌های منطقه است.
-        </p>
-      </article>
-      <article class="tile">
-        <h3 data-fa="برنج گیلان" data-en="Gilan Rice">برنج گیلان</h3>
-        <p data-fa="کشت برنج در شالیزارهای پربار، بخشی مهم از اقتصاد و فرهنگ غذایی استان است."
-           data-en="Rice cultivation in fertile paddies is an important part of the province's economy and food culture.">
-          کشت برنج در شالیزارهای پربار، بخشی مهم از اقتصاد و فرهنگ غذایی استان است.
-        </p>
-      </article>
-      <article class="tile">
-        <h3 data-fa="زیتون رودبار" data-en="Rudbar Olives">زیتون رودبار</h3>
-        <p data-fa="رودبار به باغ‌های زیتون و فرآورده‌های گوناگون آن شهرت دارد."
-           data-en="Rudbar is known for its olive groves and a variety of olive products.">
-          رودبار به باغ‌های زیتون و فرآورده‌های گوناگون آن شهرت دارد.
-        </p>
-      </article>
-      <article class="tile">
-        <h3 data-fa="عسل و فرآورده‌های محلی" data-en="Honey and Local Products">عسل و فرآورده‌های محلی</h3>
-        <p data-fa="عسل و محصولات بومی دیگر نیز بخشی از تنوع تولید و سوغات منطقه را تشکیل می‌دهند."
-           data-en="Honey and other local goods contribute to the region's varied produce and souvenirs.">
-          عسل و محصولات بومی دیگر نیز بخشی از تنوع تولید و سوغات منطقه را تشکیل می‌دهند.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section id="sources">
-    <h2 data-fa="۷. منابع و مطالعه بیشتر"
-        data-en="7. Sources and Further Reading">
-        ۷. منابع و مطالعه بیشتر
-    </h2>
-    <p data-fa="برای آشنایی بیشتر با پوشش، صنایع‌دستی و فرهنگ غذایی گیلان، می‌توانید منابع زیر را بررسی کنید:"
-       data-en="Explore the following sources to learn more about Gilan's clothing, handicrafts, and food culture:">
-       برای آشنایی بیشتر با پوشش، صنایع‌دستی و فرهنگ غذایی گیلان، می‌توانید منابع زیر را بررسی کنید:
-    </p>
-    <ul class="sources">
-      <li>
-        <a href="https://www.iranicaonline.org/articles/clothing-xxii/"
-           target="_blank" rel="noopener">
+<section id="art"><h2><span class="fa">۱. تصویر گیلان؛ رقص رنگ‌ها در سرزمین باران</span><span class="en">1. Gilan in Color: A Dance in the Land of Rain</span></h2><div class="art-grid"><div><img alt="تصویر هنری زنان گیلان و طبیعت سرسبز شمال ایران" class="hero-art" src="gilan.jpg"/><p class="caption"><span class="fa">روایت تصویری پوشش زنان گیلان، در پیوند با طبیعت، زندگی و فرهنگ محلی</span><span class="en">A visual story of Gilan women's dress, connected to nature, everyday life, and local culture.</span></p></div><div><div class="quote"><span class="fa">گیلان، سرزمین باران و شالیزارها، جایی است که رنگ لباس‌های محلی در کنار جنگل، دریا و زندگی روستایی، بخشی از هویت فرهنگی مردم را روایت می‌کند.</span><span class="en">Gilan, the land of rain and rice fields, is where colorful traditional clothing joins forests, the sea, and rural life to tell a story of cultural identity.</span></div></div></div></section>
+<section id="clothing"><h2><span class="fa">۲. پوشش زنان گیلان؛ زیبایی در جزئیات</span><span class="en">2. Gilan Women's Dress: Beauty in the Details</span></h2><div class="art-grid"><div><img alt="لیبل اطلاعاتی پوشش سنتی زنان گیلان" class="label-art" src="gilan_leibel.png"/><p class="caption"><span class="fa">لیبل اطلاعاتی پوشش زنان گیلان؛ معرفی اجزای لباس و تفاوت‌های منطقه‌ای</span><span class="en">Gilan women's dress information label, showing clothing elements and regional differences.</span></p></div><div><p><span class="fa">پوشش سنتی زنان گیلان با دامن‌های چین‌دار و رنگارنگ، روسری‌ها و سربندهای محلی و پارچه‌های گل‌دار شناخته می‌شود. شکل لباس و ترکیب رنگ‌ها در نواحی مختلف استان یکسان نیست و هر منطقه ویژگی‌های خود را دارد.</span><span class="en">Traditional women's clothing in Gilan is known for colorful gathered skirts, local scarves and head coverings, and floral fabrics. Styles and color combinations vary across the province, with each area retaining its own characteristics.</span></p><div class="grid">
+<article class="tile">
+<h3><span class="fa">پوشش قاسم‌آبادی</span><span class="en">Qasemabadi Dress</span></h3>
+<p><span class="fa">در شرق گیلان، به‌ویژه قاسم‌آباد، دامن‌های پرچین و رنگارنگ و سربندهای محلی از ویژگی‌های شناخته‌شده پوشش زنان هستند.</span><span class="en">In eastern Gilan, especially Qasemabad, full colorful skirts and local head coverings are distinctive features of women's dress.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">پوشش تالشی</span><span class="en">Taleshi Dress</span></h3>
+<p><span class="fa">در نواحی تالش، پوشش سنتی با شیوه زندگی کوهستانی و روستایی پیوند دارد و در جزئیات لباس تفاوت‌های محلی دیده می‌شود.</span><span class="en">In Talesh, traditional dress is linked to mountain and village life, with local variations in clothing details.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">پوشش نواحی مرکزی</span><span class="en">Central Gilan Dress</span></h3>
+<p><span class="fa">در بخش‌های مختلف گیلان، رنگ پارچه، طرح گل‌ها، نوع روسری و شیوه بستن آن می‌تواند تفاوت داشته باشد.</span><span class="en">Across Gilan, fabric colors, floral patterns, scarves, and ways of wearing them can differ from place to place.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">چادرشب‌بافی</span><span class="en">Chador-Shab Weaving</span></h3>
+<p><span class="fa">چادرشب‌بافی از هنرهای شناخته‌شده قاسم‌آباد است؛ پارچه‌ای دست‌باف با طرح‌ها و رنگ‌های متنوع که بخشی از میراث نساجی منطقه به شمار می‌رود.</span><span class="en">Chador-shab weaving is a recognized craft of Qasemabad, producing handwoven textiles with varied colors and patterns.</span></p>
+</article>
+</div><p class="note"><span class="fa">توجه: پوشش سنتی در هر منطقه و دوره تاریخی تنوع داشته است؛ این معرفی، تصویری کلی از برخی ویژگی‌های شناخته‌شده آن ارائه می‌کند.</span><span class="en">Note: Traditional clothing varies by locality and historical period. This overview presents selected, widely recognized features.</span></p></div></div></section>
+<section id="villages">
+<h2><span class="fa">۳. مناطق و روستاهای گیلان؛ تنوع در دل سرزمین</span><span class="en">3. Gilan's Regions and Villages</span></h2>
+<div class="grid">
+<article class="tile">
+<h3><span class="fa">قاسم‌آباد و شرق گیلان</span><span class="en">Qasemabad and Eastern Gilan</span></h3>
+<p><span class="fa">منطقه‌ای شناخته‌شده برای پوشش رنگارنگ زنان و هنر چادرشب‌بافی.</span><span class="en">Known for colorful women's dress and the craft of chador-shab weaving.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">تالش و غرب گیلان</span><span class="en">Talesh and Western Gilan</span></h3>
+<p><span class="fa">سرزمینی با فرهنگ محلی متنوع، طبیعت کوهستانی و سنت‌های روستایی.</span><span class="en">A region of diverse local culture, mountain landscapes, and village traditions.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">ماسوله و روستاهای کوهستانی</span><span class="en">Masuleh and Mountain Villages</span></h3>
+<p><span class="fa">بافت پلکانی، معماری بومی و پیوند زندگی روزمره با شیب کوهستان.</span><span class="en">Stepped architecture, vernacular buildings, and everyday life shaped by mountain slopes.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">لاهیجان و شرق مرکزی</span><span class="en">Lahijan and the Central East</span></h3>
+<p><span class="fa">شهری پیوندخورده با کشت چای، باغ‌ها و چشم‌اندازهای سرسبز.</span><span class="en">A city associated with tea cultivation, gardens, and green landscapes.</span></p>
+</article>
+</div>
+</section>
+<section id="history">
+<h2><span class="fa">۴. میراث تاریخی و فرهنگی</span><span class="en">4. Historical and Cultural Heritage</span></h2>
+<div class="grid">
+<article class="tile">
+<h3><span class="fa">ماسوله</span><span class="en">Masuleh</span></h3>
+<p><span class="fa">روستایی تاریخی با معماری پلکانی و خانه‌هایی که بام هر خانه، حیاط خانه بالاتر است.</span><span class="en">A historic village with stepped architecture, where one home's roof serves as the courtyard of the house above.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">قلعه رودخان</span><span class="en">Rudkhan Castle</span></h3>
+<p><span class="fa">دژی تاریخی در دل جنگل‌های سرسبز فومن که با مسیر جنگلی و برج‌وباروی سنگی شناخته می‌شود.</span><span class="en">A historic fortress in the forested hills of Fuman, known for its stone walls and woodland approach.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">میدان شهرداری رشت</span><span class="en">Rasht Municipality Square</span></h3>
+<p><span class="fa">از فضاهای شاخص شهری رشت با بناهای تاریخی و جایگاهی مهم در زندگی اجتماعی شهر.</span><span class="en">A landmark public square in Rasht, surrounded by historic buildings and central to city life.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">باغ‌ها و عمارت‌های لاهیجان</span><span class="en">Lahijan's Gardens and Mansions</span></h3>
+<p><span class="fa">بخشی از هویت تاریخی شهر که با باغ‌های چای، چشم‌اندازهای سبز و بناهای قدیمی پیوند دارد.</span><span class="en">Part of the city's historic identity, associated with tea gardens, green landscapes, and old buildings.</span></p>
+</article>
+</div>
+</section>
+<section id="food">
+<h2><span class="fa">۵. طعم‌های اصیل گیلان</span><span class="en">5. The Traditional Flavors of Gilan</span></h2>
+<div class="grid">
+<article class="tile">
+<h3>میرزا قاسمی</h3>
+<p><span class="fa">غذایی با بادمجان کبابی، سیر، گوجه‌فرنگی و تخم‌مرغ.</span><span class="en">A dish made with roasted eggplant, garlic, tomatoes, and eggs.</span></p>
+</article>
+<article class="tile">
+<h3>باقلا قاتق</h3>
+<p><span class="fa">خوراک محلی با باقلا، شوید و سیر که معمولاً با برنج سرو می‌شود.</span><span class="en">A local fava-bean dish with dill and garlic, usually served with rice.</span></p>
+</article>
+<article class="tile">
+<h3>ترش‌تره</h3>
+<p><span class="fa">خوراکی ترش‌مزه با سبزی‌های محلی و چاشنی‌های گوناگون.</span><span class="en">A tangy local dish made with herbs and regional seasonings.</span></p>
+</article>
+<article class="tile">
+<h3>اناربیج</h3>
+<p><span class="fa">خورشی محلی با گردو، سبزی و طعمی ترش و متمایز.</span><span class="en">A regional stew made with walnuts and herbs, known for its tangy flavor.</span></p>
+</article>
+<article class="tile">
+<h3>کباب ترش</h3>
+<p><span class="fa">کبابی با چاشنی‌های ترش محلی، معمولاً با گردو و سبزی‌های معطر.</span><span class="en">Grilled meat marinated with tangy local seasonings, often including walnuts and herbs.</span></p>
+</article>
+<article class="tile">
+<h3>رشته‌خشکار</h3>
+<p><span class="fa">شیرینی سنتی تهیه‌شده از رشته‌های نازک خمیری و مغز گردو و ادویه.</span><span class="en">A traditional sweet made from fine pastry strands, walnuts, and spices.</span></p>
+</article>
+<article class="tile">
+<h3>کلوچه فومن</h3>
+<p><span class="fa">شیرینی مشهور فومن با لایه‌ای از خمیر و مغزی معطر.</span><span class="en">Fuman's well-known pastry, made with dough and a fragrant filling.</span></p>
+</article>
+<article class="tile">
+<h3>کال‌کباب</h3>
+<p><span class="fa">چاشنی محلی با بادمجان کبابی، گردو و سبزی‌های معطر.</span><span class="en">A local relish made with roasted eggplant, walnuts, and aromatic herbs.</span></p>
+</article>
+<article class="tile">
+<h3>حلواهای محلی</h3>
+<p><span class="fa">انواع شیرینی و حلوا در شهرها و روستاهای گیلان با دستورهای بومی تهیه می‌شوند.</span><span class="en">Local sweets and halva are prepared across Gilan using regional recipes.</span></p>
+</article>
+</div>
+</section>
+<section id="products">
+<h2><span class="fa">۶. محصولات محلی و کشاورزی</span><span class="en">6. Local Products and Agriculture</span></h2>
+<div class="grid">
+<article class="tile">
+<h3><span class="fa">چای لاهیجان</span><span class="en">Lahijan Tea</span></h3>
+<p><span class="fa">چای از محصولات شناخته‌شده گیلان و بخشی از چشم‌انداز باغ‌های منطقه است.</span><span class="en">Tea is one of Gilan's best-known products and shapes the region's garden landscapes.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">برنج گیلان</span><span class="en">Gilan Rice</span></h3>
+<p><span class="fa">کشت برنج در شالیزارهای پربار، بخشی مهم از اقتصاد و فرهنگ غذایی استان است.</span><span class="en">Rice cultivation in fertile paddies is an important part of the province's economy and food culture.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">زیتون رودبار</span><span class="en">Rudbar Olives</span></h3>
+<p><span class="fa">رودبار به باغ‌های زیتون و فرآورده‌های گوناگون آن شهرت دارد.</span><span class="en">Rudbar is known for its olive groves and a variety of olive products.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">عسل و فرآورده‌های محلی</span><span class="en">Honey and Local Products</span></h3>
+<p><span class="fa">عسل و محصولات بومی دیگر نیز بخشی از تنوع تولید و سوغات منطقه را تشکیل می‌دهند.</span><span class="en">Honey and other local goods contribute to the region's varied produce and souvenirs.</span></p>
+</article>
+</div>
+</section>
+<section id="sources">
+<h2><span class="fa">۷. منابع و مطالعه بیشتر</span><span class="en">7. Sources and Further Reading</span></h2>
+<p><span class="fa">برای آشنایی بیشتر با پوشش، صنایع‌دستی و فرهنگ غذایی گیلان، می‌توانید منابع زیر را بررسی کنید:</span><span class="en">Explore the following sources to learn more about Gilan's clothing, handicrafts, and food culture:</span></p>
+<ul class="source-list">
+<li>
+<a href="https://www.iranicaonline.org/articles/clothing-xxii/" rel="noopener" target="_blank">
           Encyclopaedia Iranica — Clothing in the Caspian region
         </a>
-      </li>
-      <li>
-        <a href="https://www.iranicaonline.org/articles/gilan-xxi-cooking/"
-           target="_blank" rel="noopener">
+</li>
+<li>
+<a href="https://www.iranicaonline.org/articles/gilan-xxi-cooking/" rel="noopener" target="_blank">
           Encyclopaedia Iranica — Cooking in Gilan
         </a>
-      </li>
-      <li>
-        <a href="https://www.iranicaonline.org/articles/gilan-xx/"
-           target="_blank" rel="noopener">
+</li>
+<li>
+<a href="https://www.iranicaonline.org/articles/gilan-xx/" rel="noopener" target="_blank">
           Encyclopaedia Iranica — Gilan and its handicrafts
         </a>
-      </li>
-      <li>
-        <a href="https://visitiran.ir/en/handicraft/Chador-Shab"
-           target="_blank" rel="noopener">
+</li>
+<li>
+<a href="https://visitiran.ir/en/handicraft/Chador-Shab" rel="noopener" target="_blank">
           Visit Iran — Chador-Shab weaving
         </a>
-      </li>
-      <li>
-        <a href="https://visitiran.ir/en/destination/qasemabad"
-           target="_blank" rel="noopener">
+</li>
+<li>
+<a href="https://visitiran.ir/en/destination/qasemabad" rel="noopener" target="_blank">
           Visit Iran — Qasemabad
         </a>
-      </li>
-      <li>
-        <a href="https://visitiran.ir/en/province/gilan-province"
-           target="_blank" rel="noopener">
+</li>
+<li>
+<a href="https://visitiran.ir/en/province/gilan-province" rel="noopener" target="_blank">
           Visit Iran — Gilan Province
         </a>
-      </li>
-    </ul>
-    <p class="note"
-       data-fa="این صفحه بخشی از یک پروژه هنری و فرهنگی است. اطلاعات پوشش و سنت‌های محلی ممکن است بر اساس منطقه، نسل و منابع تاریخی تفاوت داشته باشد."
-       data-en="This page is part of an art and cultural project. Clothing and local traditions may vary by region, generation, and historical source.">
-       این صفحه بخشی از یک پروژه هنری و فرهنگی است. اطلاعات پوشش و سنت‌های محلی ممکن است بر اساس منطقه، نسل و منابع تاریخی تفاوت داشته باشد.
-    </p>
-  </section>
-
-  <a class="back" href="index.html"
-     data-fa="← بازگشت به گالری ایران، هزار رنگ"
-     data-en="← Back to Iran, A Thousand Colors Gallery">
-     ← بازگشت به گالری ایران، هزار رنگ
-  </a>
+</li>
+</ul>
+<p class="note"><span class="fa">این صفحه بخشی از یک پروژه هنری و فرهنگی است. اطلاعات پوشش و سنت‌های محلی ممکن است بر اساس منطقه، نسل و منابع تاریخی تفاوت داشته باشد.</span><span class="en">This page is part of an art and cultural project. Clothing and local traditions may vary by region, generation, and historical source.</span></p>
+</section>
+<div style="text-align:center"><a class="back" href="index.html"><span class="fa">بازگشت به صفحه اصلی</span><span class="en">Back to Home</span></a></div>
 </main>
-
 <footer>
-  <span data-fa="ایران، هزار رنگ | روایت تصویری پوشش زنان ایران"
-        data-en="Iran, A Thousand Colors | A Visual Story of Iranian Women's Dress">
-        ایران، هزار رنگ | روایت تصویری پوشش زنان ایران
-  </span>
+<div><span class="fa">هنرمند و خالق آثار: مریم ساعی</span><span class="en">Artist and creator: Maryam Saei</span></div>
+<div><span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span><span class="en">Website design and cultural research: Marjan Saei</span></div>
+<div style="margin-top:8px">© Iran, a Thousand Colors</div>
 </footer>
-
 <script>
-const langButton = document.getElementById("langButton");
-let currentLang = "fa";
-
-function setLanguage(lang){
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
-
-  document.querySelectorAll("[data-fa][data-en]").forEach(el => {
-    el.textContent = el.dataset[lang];
-  });
-
-  langButton.textContent = lang === "fa" ? "English" : "فارسی";
-
-  try {
-    localStorage.setItem("iranHezarRangLanguage", lang);
-  } catch(e) {}
-}
-
-langButton.addEventListener("click", () => {
-  setLanguage(currentLang === "fa" ? "en" : "fa");
+const langSwitch = document.getElementById("langSwitch");
+langSwitch.addEventListener("click", () => {
+  const english = !document.body.classList.contains("english");
+  document.body.classList.toggle("english", english);
+  document.documentElement.lang = english ? "en" : "fa";
+  document.documentElement.dir = english ? "ltr" : "rtl";
+  langSwitch.textContent = english ? "FA | EN" : "FA | EN";
 });
 
-try {
-  const savedLang = localStorage.getItem("iranHezarRangLanguage");
-  if(savedLang === "en") setLanguage("en");
-} catch(e) {}
+const homeDropdown = document.getElementById("homeDropdown");
+const homeButton = homeDropdown.querySelector(".dropbtn");
+homeButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const opened = homeDropdown.classList.toggle("open");
+  homeButton.setAttribute("aria-expanded", String(opened));
+});
+
+document.addEventListener("click", (event) => {
+  if (!homeDropdown.contains(event.target)) {
+    homeDropdown.classList.remove("open");
+    homeButton.setAttribute("aria-expanded", "false");
+  }
+});
+
+if (window.matchMedia("(max-width:850px)").matches) {
+  const menu = document.querySelector(".main-menu");
+  const menuButton = document.createElement("button");
+  menuButton.type = "button";
+  menuButton.className = "mobile-menu-button";
+  menuButton.setAttribute("aria-label", "Open menu");
+  menuButton.innerHTML = "☰";
+  menuButton.style.cssText = "order:2;border:1px solid #c79a4a;background:#fff8eb;color:#153f3b;border-radius:9px;width:40px;height:38px;font-size:20px";
+  document.querySelector(".header-main").insertBefore(menuButton, menu);
+  menuButton.addEventListener("click", () => {
+    const opened = menu.classList.toggle("mobile-open");
+    menuButton.setAttribute("aria-expanded", String(opened));
+  });
+}
 </script>
-<script src="province-header.js" defer></script>
 </body>
 </html>
