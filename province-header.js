@@ -6,20 +6,24 @@
 
   const currentPage = location.pathname.split("/").pop() || "index.html";
 
+  const isEnglish = () =>
+    (document.documentElement.lang || "").toLowerCase().startsWith("en") ||
+    document.documentElement.dir === "ltr";
+
   const links = [
     {
-      text: "صفحه اصلی",
+      fa: "صفحه اصلی",
       en: "Home",
       href: "index.html",
       children: [
-        { text: "صفحه مناطق | استان‌ها", en: "Regions | Provinces", href: "regions.html" },
-        { text: "گالری سه‌بعدی", en: "3D Gallery", href: "gallery-3d.html" },
-        { text: "گالری حضوری", en: "Physical Exhibition", href: "hezar-rang-cinematic-entry-final.html" }
+        { fa: "صفحه مناطق | استان‌ها", en: "Regions | Provinces", href: "regions.html" },
+        { fa: "گالری سه‌بعدی", en: "3D Gallery", href: "gallery-3d.html" },
+        { fa: "گالری حضوری", en: "Physical Exhibition", href: "hezar-rang-cinematic-entry-final.html" }
       ]
     },
-    { text: "درباره نمایشگاه", en: "About the Exhibition", href: "regions.html#about" },
-    { text: "عوامل پروژه", en: "Project Team", href: "regions.html#team" },
-    { text: "تماس با ما", en: "Contact Us", href: "regions.html#contact" }
+    { fa: "درباره نمایشگاه", en: "About the Exhibition", href: "regions.html#about" },
+    { fa: "عوامل پروژه", en: "Project Team", href: "regions.html#team" },
+    { fa: "تماس با ما", en: "Contact Us", href: "regions.html#contact" }
   ];
 
   const style = document.createElement("style");
@@ -29,15 +33,15 @@
       z-index: 1000;
       width: 100%;
       min-height: 72px;
-      padding: 10px 4%;
+      padding: 10px clamp(16px, 4vw, 55px);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 22px;
       direction: rtl;
-      background: rgba(244,234,216,.98);
-      border-bottom: 1px solid rgba(168,121,56,.55);
-      box-shadow: 0 4px 18px rgba(57,46,36,.10);
+      background: #ead4b0;
+      border-bottom: 3px solid #963c25;
+      box-shadow: 0 4px 16px rgba(57,46,36,.10);
       font-family: Vazirmatn, Tahoma, sans-serif;
       box-sizing: border-box;
     }
@@ -54,14 +58,15 @@
       gap: 10px;
       color: #153f3b;
       text-decoration: none;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 800;
       white-space: nowrap;
+      flex: 0 0 auto;
     }
 
     .ir-header-mark {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       display: grid;
       place-items: center;
       border-radius: 50%;
@@ -74,15 +79,17 @@
     .ir-header-nav {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      gap: clamp(12px, 2vw, 27px);
+      justify-content: center;
+      gap: clamp(12px, 1.8vw, 25px);
+      flex: 1 1 auto;
+      min-width: 0;
     }
 
     .ir-header-nav a {
       color: #153f3b;
       text-decoration: none;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       white-space: nowrap;
       transition: color .2s ease, background .2s ease;
     }
@@ -104,11 +111,11 @@
       position: absolute;
       top: 100%;
       right: 0;
-      min-width: 205px;
+      min-width: 220px;
       display: none;
       flex-direction: column;
       padding: 8px;
-      background: #fff4df;
+      background: #fff8eb;
       border: 1px solid #c79a4a;
       border-radius: 11px;
       box-shadow: 0 10px 25px rgba(57,46,36,.17);
@@ -128,9 +135,24 @@
       background: #f0dfc1;
     }
 
+    .ir-header-nav a.ir-header-contact {
+      padding: 10px 17px;
+      border-radius: 22px;
+      background: #c18d3d;
+      color: #153f3b;
+      border: 1px solid #a9782f;
+    }
+
+    .ir-header-nav a.ir-header-contact:hover {
+      background: #b47b2c;
+      color: #fff8eb;
+    }
+
     .ir-header-language {
       display: flex;
       align-items: center;
+      flex: 0 0 auto;
+      margin-inline-start: 4px;
     }
 
     .ir-header-language .language,
@@ -165,7 +187,6 @@
       height: 2px;
       border-radius: 3px;
       background: #153f3b;
-      transition: .2s ease;
     }
 
     .ir-province-strip {
@@ -186,6 +207,10 @@
     .ir-province-strip a {
       color: #f4d79d;
       text-decoration: none;
+    }
+
+    .ir-province-strip a:hover {
+      color: #fff;
     }
 
     .ir-province-strip strong {
@@ -211,6 +236,7 @@
         min-height: 65px;
         padding: 9px 14px;
         flex-wrap: wrap;
+        gap: 10px;
       }
 
       .ir-header-brand {
@@ -230,6 +256,7 @@
       .ir-header-nav {
         display: none;
         width: 100%;
+        flex: 1 0 100%;
         flex-direction: column;
         align-items: stretch;
         gap: 2px;
@@ -250,8 +277,12 @@
         border-radius: 7px;
       }
 
-      .ir-header-nav a:hover {
-        background: rgba(199,154,74,.15);
+      html[dir="ltr"] .ir-header-nav a {
+        text-align: left;
+      }
+
+      .ir-header-nav a.ir-header-contact {
+        text-align: center;
       }
 
       .ir-header-dropdown {
@@ -283,6 +314,7 @@
       .ir-province-strip {
         gap: 10px;
         font-size: 11px;
+        flex-wrap: wrap;
       }
     }
 
@@ -297,6 +329,7 @@
       }
     }
   `;
+
   document.head.appendChild(style);
 
   const header = document.createElement("header");
@@ -305,22 +338,32 @@
   const brand = document.createElement("a");
   brand.className = "ir-header-brand";
   brand.href = "index.html";
-  brand.innerHTML = `
-    <span class="ir-header-mark">ه</span>
-    <span>ایران، هزار رنگ</span>
-  `;
+
+  const mark = document.createElement("span");
+  mark.className = "ir-header-mark";
+  mark.textContent = "ه";
+
+  const brandText = document.createElement("span");
+  brandText.className = "ir-header-brand-text";
+  brandText.dataset.fa = "ایران، هزار رنگ";
+  brandText.dataset.en = "Iran, a Thousand Colors";
+
+  brand.append(mark, brandText);
 
   const menuButton = document.createElement("button");
   menuButton.className = "ir-header-menu-button";
   menuButton.type = "button";
-  menuButton.setAttribute("aria-label", "باز کردن منو");
+  menuButton.setAttribute("aria-label", "Open menu");
   menuButton.setAttribute("aria-expanded", "false");
   menuButton.innerHTML = "<span></span><span></span><span></span>";
 
   const nav = document.createElement("nav");
   nav.className = "ir-header-nav";
 
-  links.forEach((item, index) => {
+  const languageSlot = document.createElement("div");
+  languageSlot.className = "ir-header-language";
+
+  links.forEach(item => {
     const wrapper = document.createElement("div");
 
     if (item.children) {
@@ -328,7 +371,8 @@
 
       const mainLink = document.createElement("a");
       mainLink.href = item.href;
-      mainLink.textContent = item.text;
+      mainLink.dataset.fa = item.fa;
+      mainLink.dataset.en = item.en;
       wrapper.appendChild(mainLink);
 
       const dropdown = document.createElement("div");
@@ -337,15 +381,18 @@
       item.children.forEach(child => {
         const a = document.createElement("a");
         a.href = child.href;
-        a.textContent = child.text;
+        a.dataset.fa = child.fa;
+        a.dataset.en = child.en;
         dropdown.appendChild(a);
       });
 
       wrapper.appendChild(dropdown);
 
       mainLink.addEventListener("click", event => {
-        if (window.matchMedia("(max-width:850px)").matches &&
-            !wrapper.classList.contains("dropdown-open")) {
+        if (
+          window.matchMedia("(max-width:850px)").matches &&
+          !wrapper.classList.contains("dropdown-open")
+        ) {
           event.preventDefault();
           wrapper.classList.add("dropdown-open");
         }
@@ -353,20 +400,22 @@
     } else {
       const a = document.createElement("a");
       a.href = item.href;
-      a.textContent = item.text;
+      a.dataset.fa = item.fa;
+      a.dataset.en = item.en;
+
+      if (item.href.includes("#contact")) {
+        a.className = "ir-header-contact";
+      }
+
       wrapper.appendChild(a);
     }
 
     nav.appendChild(wrapper);
   });
 
-  const languageSlot = document.createElement("div");
-  languageSlot.className = "ir-header-language";
-
-  const existingLanguageButton =
-    document.querySelector(
-      "#languageToggle, #langToggle, #langBtn, #langSwitch, .language"
-    );
+  const existingLanguageButton = document.querySelector(
+    "#languageToggle, #langToggle, #langBtn, #langSwitch, .language"
+  );
 
   if (existingLanguageButton) {
     languageSlot.appendChild(existingLanguageButton);
@@ -374,16 +423,16 @@
 
   nav.appendChild(languageSlot);
 
-  header.appendChild(brand);
-  header.appendChild(menuButton);
-  header.appendChild(nav);
+  header.append(brand, menuButton, nav);
 
-  const firstPageElement =
-    document.querySelector("main") ||
-    document.querySelector(".stage") ||
-    document.body.firstElementChild;
+  // Place header before all page content.
+  const firstBodyElement = document.body.firstElementChild;
 
-  document.body.insertBefore(header, firstPageElement);
+  if (firstBodyElement) {
+    document.body.insertBefore(header, firstBodyElement);
+  } else {
+    document.body.appendChild(header);
+  }
 
   menuButton.addEventListener("click", () => {
     const opened = nav.classList.toggle("is-open");
@@ -392,72 +441,104 @@
 
   nav.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
-      if (window.matchMedia("(max-width:850px)").matches) {
-        if (!link.closest(".ir-header-home")) {
-          nav.classList.remove("is-open");
-          menuButton.setAttribute("aria-expanded", "false");
-        }
+      if (
+        window.matchMedia("(max-width:850px)").matches &&
+        !link.closest(".ir-header-home")
+      ) {
+        nav.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
       }
     });
   });
 
-  // نوار استان قبلی و بعدی فقط در صفحات استان‌ها
   const provinces = [
-    ["قزوین", "qazvin.html"],
-    ["گیلان", "gilan.html"],
-    ["مازندران", "mazandaran.html"],
-    ["گلستان", "golestan.html"],
-    ["سمنان", "semnan.html"],
-    ["خراسان شمالی", "north-khorasan.html"],
-    ["خراسان جنوبی", "south-khorasan.html"],
-    ["سیستان و بلوچستان", "sistan-baluchestan.html"],
-    ["هرمزگان", "hormozgan.html"],
-    ["کرمان", "kerman.html"],
-    ["یزد", "yazd.html"],
-    ["اصفهان", "isfahan.html"],
-    ["فارس", "fars.html"],
-    ["بوشهر", "bushehr.html"],
-    ["کهگیلویه و بویراحمد", "kohgiluyeh.html"],
-    ["چهارمحال و بختیاری", "chaharmahal.html"],
-    ["خوزستان", "khuzestan.html"],
-    ["ایلام", "ilam.html"],
-    ["لرستان", "lorestan.html"],
-    ["مرکزی", "arak.html"],
-    ["همدان", "hamedan.html"],
-    ["کرمانشاه", "kermanshah.html"],
-    ["کردستان", "kurdistan.html"],
-    ["آذربایجان غربی", "urmia.html"],
-    ["آذربایجان شرقی", "tabriz.html"],
-    ["اردبیل", "ardabil.html"],
-    ["زنجان", "zanjan.html"],
-    ["تهران", "tehran.html"]
+    ["قزوین", "Qazvin", "qazvin.html"],
+    ["گیلان", "Gilan", "gilan.html"],
+    ["مازندران", "Mazandaran", "mazandaran.html"],
+    ["گلستان", "Golestan", "golestan.html"],
+    ["سمنان", "Semnan", "semnan.html"],
+    ["خراسان شمالی", "North Khorasan", "north-khorasan.html"],
+    ["خراسان جنوبی", "South Khorasan", "south-khorasan.html"],
+    ["سیستان و بلوچستان", "Sistan and Baluchestan", "sistan-baluchestan.html"],
+    ["هرمزگان", "Hormozgan", "hormozgan.html"],
+    ["کرمان", "Kerman", "kerman.html"],
+    ["یزد", "Yazd", "yazd.html"],
+    ["اصفهان", "Isfahan", "isfahan.html"],
+    ["فارس", "Fars", "fars.html"],
+    ["بوشهر", "Bushehr", "bushehr.html"],
+    ["کهگیلویه و بویراحمد", "Kohgiluyeh and Boyer-Ahmad", "kohgiluyeh.html"],
+    ["چهارمحال و بختیاری", "Chaharmahal and Bakhtiari", "chaharmahal.html"],
+    ["خوزستان", "Khuzestan", "khuzestan.html"],
+    ["ایلام", "Ilam", "ilam.html"],
+    ["لرستان", "Lorestan", "lorestan.html"],
+    ["مرکزی", "Markazi", "arak.html"],
+    ["همدان", "Hamadan", "hamedan.html"],
+    ["کرمانشاه", "Kermanshah", "kermanshah.html"],
+    ["کردستان", "Kurdistan", "kurdistan.html"],
+    ["آذربایجان غربی", "West Azerbaijan", "urmia.html"],
+    ["آذربایجان شرقی", "East Azerbaijan", "tabriz.html"],
+    ["اردبیل", "Ardabil", "ardabil.html"],
+    ["زنجان", "Zanjan", "zanjan.html"],
+    ["تهران", "Tehran", "tehran.html"]
   ];
 
   const provinceIndex = provinces.findIndex(
-    province => province[1] === currentPage
+    province => province[2] === currentPage
   );
 
   if (provinceIndex !== -1) {
-    const previous = provinces[
-      (provinceIndex - 1 + provinces.length) % provinces.length
-    ];
+    const previous =
+      provinces[(provinceIndex - 1 + provinces.length) % provinces.length];
 
     const current = provinces[provinceIndex];
 
-    const next = provinces[
-      (provinceIndex + 1) % provinces.length
-    ];
+    const next = provinces[(provinceIndex + 1) % provinces.length];
 
     const strip = document.createElement("div");
     strip.className = "ir-province-strip";
 
-    strip.innerHTML = `
-      <a href="${previous[1]}">← ${previous[0]}</a>
-      <strong>${String(provinceIndex + 1).padStart(2, "0")} | ${current[0]}</strong>
-      <a href="${next[1]}">${next[0]} →</a>
-    `;
+    const prevLink = document.createElement("a");
+    prevLink.href = previous[2];
+    prevLink.dataset.fa = `← ${previous[0]}`;
+    prevLink.dataset.en = `← ${previous[1]}`;
 
+    const currentLabel = document.createElement("strong");
+    currentLabel.dataset.fa =
+      `${String(provinceIndex + 1).padStart(2, "0")} | ${current[0]}`;
+    currentLabel.dataset.en =
+      `${String(provinceIndex + 1).padStart(2, "0")} | ${current[1]}`;
+
+    const nextLink = document.createElement("a");
+    nextLink.href = next[2];
+    nextLink.dataset.fa = `${next[0]} →`;
+    nextLink.dataset.en = `${next[1]} →`;
+
+    strip.append(prevLink, currentLabel, nextLink);
     header.insertAdjacentElement("afterend", strip);
   }
+
+  const translateHeader = () => {
+    const english = isEnglish();
+
+    header.querySelectorAll("[data-fa][data-en]").forEach(element => {
+      element.textContent = english
+        ? element.dataset.en
+        : element.dataset.fa;
+    });
+
+    menuButton.setAttribute(
+      "aria-label",
+      english ? "Open menu" : "باز کردن منو"
+    );
+  };
+
+  translateHeader();
+
+  const languageObserver = new MutationObserver(translateHeader);
+
+  languageObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["lang", "dir"]
+  });
 })();
 
