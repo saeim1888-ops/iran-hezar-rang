@@ -1,428 +1,317 @@
-
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+
+<html dir="rtl" lang="fa">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ترکمن‌صحرا؛ روایت تصویری پوشش زنان ترکمن، هنر قالی‌بافی، فرهنگ و طبیعت ایران.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ترکمن‌صحرا؛ روایت تصویری پوشش زنان، روستاها، میراث فرهنگی، طبیعت و خوراک محلی در نمایشگاه ایران، هزار رنگ." name="description"/>
 <title>ترکمن‌صحرا | ایران، هزار رنگ</title>
 <style>
-:root{
-  --paper:#faf7ef;
-  --card:#fffdf8;
-  --olive:#303d25;
-  --gold:#b89b60;
-  --orange:#b86f35;
-  --line:#e7dbc5;
-  --muted:#746b5b;
+:root{--cream:#f8f1e3;--paper:#fffaf0;--olive:#596447;--dark:#292b25;--gold:#b08b48;--rust:#b94e27;--teal:#245b60;--line:#dfd2b9}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:150px}
+body{margin:0;background:var(--cream);color:var(--dark);font-family:Tahoma,Arial,sans-serif;line-height:1.95}
+a{color:inherit;text-decoration:none}
+
+.site-header{
+  position:relative;top:0;z-index:1000;width:100%;
+  background:#f4ead8;border-bottom:1px solid #dfd2b9;
+  box-shadow:0 4px 16px rgba(57,46,36,.08);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--paper);color:#39362e;
-  font-family:Tahoma,Arial,sans-serif;line-height:2;
+.topline{display:none}
+.header-main{
+  max-width:1320px;min-height:72px;margin:auto;padding:10px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:22px;
 }
-button,a{font:inherit}
-a{color:inherit}
-.language{
-  position:fixed;top:18px;left:18px;z-index:10;
-  padding:8px 18px;border:1px solid var(--gold);
-  border-radius:30px;color:var(--olive);
-  background:#fffaf0;cursor:pointer;
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#153f3b;font-size:17px;white-space:nowrap;order:3}
+.brand-mark{
+  width:40px;height:40px;border:2px solid #c79a4a;border-radius:50%;
+  display:grid;place-items:center;color:#fff4df;background:#963c25;font-size:19px;
 }
-header{
-  text-align:center;padding:45px 20px 30px;
-  max-width:1100px;margin:auto;
+.main-menu{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,27px);flex:1;order:2}
+.main-menu>a,.dropbtn{
+  font:inherit;font-size:13px;font-weight:700;color:#153f3b;background:none;
+  border:0;padding:9px 2px;cursor:pointer;white-space:nowrap;
 }
-.eyebrow{color:#a15b36;font-size:14px;font-weight:bold;margin:0 0 8px}
-h1{
-  color:var(--olive);font-size:clamp(28px,4vw,46px);
-  line-height:1.6;margin:0 0 8px;
+.main-menu>a:hover,.dropbtn:hover{color:#963c25}
+.dropdown{position:relative}
+.dropdown-content{
+  display:none;position:absolute;top:100%;right:0;min-width:220px;
+  background:#fff8eb;border:1px solid #c79a4a;border-radius:11px;padding:8px;
+  box-shadow:0 10px 25px rgba(57,46,36,.17)
 }
-.slogan{color:var(--orange);font-weight:bold;font-size:19px;margin:4px 0}
-.subtitle{color:var(--muted);margin:6px auto 0}
-nav{
-  position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;
-  justify-content:center;gap:9px;padding:13px 12px;
-  background:#f0e8d8ee;border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);backdrop-filter:blur(8px);
+.dropdown.open .dropdown-content{display:block}
+.dropdown-content a{display:block;padding:10px 12px;border-radius:7px;font-size:13px;color:#153f3b}
+.dropdown-content a:hover{background:#f0dfc1;color:#963c25}
+.lang-switch{
+  order:1;border:1px solid #b7aa8e;border-radius:0;background:#fff8eb;
+  color:#153f3b;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap;
+  min-width:72px
 }
-nav a{
-  text-decoration:none;color:var(--olive);background:#fffaf1;
-  border:1px solid var(--line);border-radius:24px;
-  padding:5px 13px;font-size:13px;
+.province-nav{background:#153f3b;color:#fff4df;padding:8px 16px}
+.province-nav-inner{
+  max-width:1200px;margin:auto;display:flex;align-items:center;
+  justify-content:center;gap:20px;flex-wrap:wrap
 }
-nav a:hover{background:#e8dcc3}
-main{max-width:1010px;margin:28px auto;padding:0 18px}
-section{
-  background:var(--card);border:1px solid var(--line);
-  border-radius:17px;padding:25px;margin:0 0 20px;
-  scroll-margin-top:85px;
+.province-nav a,.province-nav span{
+  font-size:12px;padding:3px 4px;border:0;border-radius:0;color:#f4d79d
 }
-h2{color:var(--olive);font-size:23px;margin:0 0 15px;line-height:1.8}
-h3{color:var(--orange);font-size:17px;margin:0 0 8px}
-p{margin:8px 0 14px}
-.intro{
-  border-right:4px solid var(--gold);background:#fffaf1;
-  border-radius:12px;padding:22px 25px;line-height:2.2;
+.province-nav span{font-weight:800;color:#fff4df}
+.province-nav a:hover{color:#fff;text-decoration:underline}
+html[dir="ltr"] .header-main{direction:ltr}
+html[dir="ltr"] .dropdown-content{right:auto;left:0}
+html[dir="ltr"] .province-nav-inner{direction:ltr}
+
+.hero{max-width:1100px;margin:34px auto 24px;padding:44px 28px;text-align:center;background:linear-gradient(135deg,#fffaf0,#f0e3cb);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 35px #5c452015;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #b08b4833;border-radius:50%}
+.hero:before{top:-105px;right:-65px}.hero:after{bottom:-120px;left:-60px}
+.eyebrow{color:var(--rust);font-size:12px;letter-spacing:.4px}
+h1{font-size:clamp(25px,4vw,39px);color:var(--teal);margin:8px 0}
+.slogan{font-size:18px;color:var(--olive);font-weight:bold;margin:8px 0}
+.hero p{max-width:780px;margin:10px auto 0;font-size:14px}
+.page-nav{max-width:1100px;margin:0 auto 28px;padding:12px 18px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.page-nav a{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:12px;color:var(--olive)}
+.page-nav a:hover{background:var(--olive);color:white}
+main{max-width:1100px;margin:auto;padding:0 20px 40px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;margin:0 0 22px;box-shadow:0 7px 22px #4b38100b}
+h2{font-size:21px;color:var(--rust);margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+h3{font-size:16px;color:var(--teal);margin:12px 0 5px}
+p{margin:8px 0}.art-grid,.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.art-grid img,.art-image{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:#eee2cf}
+.caption{font-size:12px;color:#756b58;text-align:center;margin-top:7px}
+.tile{background:#f7efdf;border:1px solid var(--line);border-radius:13px;padding:15px}
+.quote{border-right:3px solid var(--gold);padding:9px 14px;color:var(--olive);background:#f7efdf;border-radius:8px;margin-top:15px}
+ul{padding-right:22px}.source-list li{margin:7px 0;font-size:13px}
+.source-list a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+footer{text-align:center;padding:25px 16px;background:#e9dec9;color:#5d584b;font-size:12px}
+.back{display:inline-block;background:var(--rust);color:white;padding:9px 18px;border-radius:22px;margin-top:8px}
+.en{display:none}body.english{direction:ltr}body.english .en{display:initial}body.english .fa{display:none}
+body.english .quote{border-right:0;border-left:3px solid var(--gold)}body.english ul{padding-right:0;padding-left:22px}
+body.english .dropdown-content{right:auto;left:0}
+@media(max-width:850px){
+ .header-main{min-height:66px;padding:9px 14px;flex-wrap:wrap;gap:10px}
+ .brand{font-size:14px;order:1}
+ .brand-mark{width:35px;height:35px;font-size:17px}
+ .lang-switch{order:3;margin-inline-start:0}
+ .main-menu{display:none;order:3;flex:1 0 100%;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 0 4px;border-top:1px solid #dfd2b9}
+ .main-menu.mobile-open{display:flex}
+ .main-menu>a,.dropbtn{display:block;width:100%;padding:11px 12px;text-align:right;white-space:normal}
+ html[dir="ltr"] .main-menu>a,html[dir="ltr"] .dropbtn{text-align:left}
+ .dropdown-content{position:static;min-width:0;margin:0 10px 7px;box-shadow:none;background:#f0dfc1}
+ .dropdown.open .dropdown-content{display:block}
+ .hero{margin:18px 12px;padding:30px 17px}
+ .page-nav{padding:8px 12px}
+ main{padding:0 12px 28px}
+ section{padding:19px}
+ .art-grid,.tiles{grid-template-columns:1fr}
+ .province-nav-inner{gap:10px;font-size:11px}
 }
-.art-frame{
-  display:flex;align-items:center;justify-content:center;
-  background:#ebe5d6;border:1px solid #dfd1b5;
-  border-radius:16px;overflow:hidden;padding:15px;
-}
-.art-frame img{
-  display:block;max-width:100%;width:auto;
-  max-height:650px;object-fit:contain;
-}
-.caption{text-align:center;color:var(--muted);font-size:14px;margin-top:12px}
-.quote{
-  margin-top:18px;padding:14px 18px;background:#f5eedf;
-  border-right:3px solid var(--gold);border-radius:9px;
-}
-.label-frame{
-  display:flex;align-items:center;justify-content:center;
-  padding:12px;background:#f1eadb;border-radius:13px;
-  border:1px solid var(--line);
-}
-.label-frame img{
-  display:block;max-width:100%;max-height:760px;
-  width:auto;height:auto;object-fit:contain;
-}
-.grid{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:13px;margin-top:16px;
-}
-.tile{padding:17px;border:1px solid var(--line);border-radius:13px;background:#fffaf1}
-.tile p{margin:0;font-size:14px}
-.note{color:var(--muted);font-size:13px;margin-top:17px}
-.sources{padding-right:22px}
-.sources li{margin:8px 0}
-.sources a{color:#76572b;text-decoration:underline}
-.back{
-  display:inline-block;color:var(--olive);text-decoration:none;
-  padding:9px 16px;border:1px solid var(--gold);
-  border-radius:25px;margin:4px 0 25px;
-}
-footer{
-  text-align:center;padding:24px 15px;color:var(--muted);
-  border-top:1px solid var(--line);font-size:13px;
-}
-[hidden]{display:none!important}
-@media(min-width:760px){
-  .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .food-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-}
-@media(max-width:600px){
-  header{padding-top:65px}
-  section{padding:18px}
-  .grid{grid-template-columns:1fr}
-  nav{gap:6px}
-  nav a{font-size:12px;padding:4px 10px}
-  .intro{padding:16px}
+@media(min-width:851px){
+ .main-menu{display:flex!important}
 }
 </style>
 </head>
-<body>
-
-<button class="language" id="langButton" type="button">English</button>
-
-<header>
-  <p class="eyebrow" data-fa="مجموعه تصویری ایران، هزار رنگ"
-     data-en="IRAN, A THOUSAND COLORS">مجموعه تصویری ایران، هزار رنگ</p>
-  <h1 data-fa="ترکمن‌صحرا؛ سرخ مثل دشت‌های ترکمن"
-      data-en="Turkmen Sahra: Red Like the Turkmen Plains">
-      ترکمن‌صحرا؛ سرخ مثل دشت‌های ترکمن
-  </h1>
-  <p class="slogan" data-fa="روایت رنگ، نقش و زندگی در فرهنگ ترکمن"
-     data-en="A Story of Color, Pattern, and Turkmen Life">
-     روایت رنگ، نقش و زندگی در فرهنگ ترکمن
-  </p>
-  <p class="subtitle" data-fa="روایت تصویری پوشش زنان ایران"
-     data-en="A Visual Story of Iranian Women's Dress">
-     روایت تصویری پوشش زنان ایران
-  </p>
-</header>
-
-<nav>
-  <a href="#art" data-fa="تصویر ترکمن‌صحرا" data-en="Artwork">تصویر ترکمن‌صحرا</a>
-  <a href="#dress" data-fa="پوشش زنان" data-en="Women's Dress">پوشش زنان</a>
-  <a href="#regions" data-fa="مناطق و روستاها" data-en="Regions">مناطق و روستاها</a>
-  <a href="#heritage" data-fa="میراث فرهنگی" data-en="Heritage">میراث فرهنگی</a>
-  <a href="#foods" data-fa="خوراکی‌ها" data-en="Local Food">خوراکی‌ها</a>
-  <a href="#products" data-fa="محصولات محلی" data-en="Local Products">محصولات محلی</a>
-  <a href="#sources" data-fa="منابع" data-en="Sources">منابع</a>
+<body data-next-en="Semnan" data-next-name="سمنان" data-next-url="semnan.html" data-prev-en="Mazandaran" data-prev-name="مازندران" data-prev-url="mazandaran.html" data-province="ترکمن‌صحرا" data-province-en="Turkmen Sahra" data-province-index="4" data-province-total="29">
+<div class="site-header">
+<div class="header-main">
+<a class="brand" href="index.html">
+<span class="brand-mark">ه</span>
+<span class="fa">ایران، هزار رنگ</span><span class="en">Iran, a Thousand Colors</span>
+</a>
+<nav aria-label="منوی اصلی" class="main-menu">
+<div class="dropdown" id="homeDropdown">
+<button aria-expanded="false" class="dropbtn" type="button">
+<span class="fa">صفحه اصلی</span><span class="en">Home</span>
+</button>
+<div class="dropdown-content">
+<a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions | Provinces</span></a>
+<a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+<a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Exhibition</span></a>
+</div>
+</div>
+<a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
+<a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+<a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
 </nav>
-
+<button class="lang-switch" id="langSwitch" type="button">FA | EN</button>
+</div>
+<div class="province-nav"><div class="province-nav-inner">
+<a href="mazandaran.html"><span class="fa">← مازندران</span><span class="en">← Mazandaran</span></a>
+<span><span class="fa">۰۴ | ترکمن‌صحرا</span><span class="en">04 | Turkmen Sahra</span></span>
+<a href="semnan.html"><span class="fa">سمنان →</span><span class="en">Semnan →</span></a>
+</div></div>
+</div>
+<header class="hero">
+<div class="eyebrow"><span class="fa">مجموعه تصویری ایران، هزار رنگ</span><span class="en">IRAN, A THOUSAND COLORS</span></div>
+<h1><span class="fa">ترکمن‌صحرا؛ سرخ مثل دشت‌های ترکمن</span><span class="en">Turkmen Sahra: Red Like the Turkmen Plains</span></h1>
+<div class="slogan"><span class="fa">روایت رنگ، نقش و زندگی در فرهنگ ترکمن</span><span class="en">A Story of Color, Pattern, and Turkmen Life</span></div>
+<p><span class="fa">این صفحه نگاهی به پوشش زنان، فرهنگ عشایری و روستایی، بناهای تاریخی، طبیعت و طعم‌های محلی استان سمنان دارد؛ سرزمینی که تنوع اقلیمی آن در شیوه زندگی و میراث فرهنگی مردمش بازتاب یافته است.</span><span class="en">This page explores women's clothing, nomadic and village culture, historic landmarks, landscapes, and local flavors of Semnan—a region whose varied climate is reflected in the lives and cultural heritage of its people.</span></p>
+</header>
+<nav class="page-nav">
+<a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+<a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's clothing</span></a>
+<a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
+<a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History &amp; nature</span></a>
+<a href="#food"><span class="fa">خوراکی‌ها</span><span class="en">Local food</span></a>
+<a href="#products"><span class="fa">محصولات بومی</span><span class="en">Local products</span></a>
+<a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
 <main>
-<section id="art">
-  <h2 data-fa="۱. تصویر ترکمن‌صحرا؛ سرخ مثل دشت‌های ترکمن"
-      data-en="1. Turkmen Sahra: Red Like the Turkmen Plains">
-      ۱. تصویر ترکمن‌صحرا؛ سرخ مثل دشت‌های ترکمن
-  </h2>
-  <div class="art-frame">
-    <img src="turkmen-sahra.jpg" alt="اثر هنری پوشش زنان ترکمن‌صحرا">
-  </div>
-  <p class="caption"
-     data-fa="روایت تصویری پوشش زنان ترکمن در پیوند با دشت، نقش‌ونگار و میراث فرهنگی"
-     data-en="A visual story of Turkmen women's dress, connected to the plains, patterns, and cultural heritage.">
-     روایت تصویری پوشش زنان ترکمن در پیوند با دشت، نقش‌ونگار و میراث فرهنگی
-  </p>
-  <div class="quote"
-       data-fa="در ترکمن‌صحرا، رنگ سرخ، نقش‌های هندسی و هنرهای دستی بخشی از خاطره و هویت فرهنگی منطقه‌اند؛ فرهنگی که در پوشاک، قالی‌ها و زندگی روزمره بازتاب یافته است."
-       data-en="In Turkmen Sahra, red hues, geometric patterns, and handicrafts form part of the region's cultural memory and identity, reflected in clothing, carpets, and everyday life.">
-    در ترکمن‌صحرا، رنگ سرخ، نقش‌های هندسی و هنرهای دستی بخشی از خاطره و هویت فرهنگی منطقه‌اند؛ فرهنگی که در پوشاک، قالی‌ها و زندگی روزمره بازتاب یافته است.
-  </div>
+<section id="art"><h2><span class="fa">۱. تصویر ترکمن‌صحرا؛ سرخ مثل دشت‌های ترکمن</span><span class="en">1. Turkmen Sahra: Red Like the Turkmen Plains</span></h2><div class="art-grid"><div><img alt="اثر هنری پوشش زنان ترکمن‌صحرا" class="hero-art" src="turkmen-sahra.jpg"/></div><div><p class="caption"><span class="fa">روایت تصویری پوشش زنان ترکمن در پیوند با دشت، نقش‌ونگار و میراث فرهنگی</span><span class="en">A visual story of Turkmen women's dress, connected to the plains, patterns, and cultural heritage.</span></p><div class="quote"><span class="fa">در ترکمن‌صحرا، رنگ سرخ، نقش‌های هندسی و هنرهای دستی بخشی از خاطره و هویت فرهنگی منطقه‌اند؛ فرهنگی که در پوشاک، قالی‌ها و زندگی روزمره بازتاب یافته است.</span><span class="en">In Turkmen Sahra, red hues, geometric patterns, and handicrafts form part of the region's cultural memory and identity, reflected in clothing, carpets, and everyday life.</span></div></div></div></section>
+<section id="clothing"><h2><span class="fa">۲. پوشش زنان ترکمن؛ زیبایی در رنگ و جزئیات</span><span class="en">2. Turkmen Women's Dress: Color and Detail</span></h2><div class="art-grid"><div><img alt="لیبل اطلاعاتی پوشش سنتی زنان ترکمن‌صحرا" class="label-art" src="turkmen-sahra_leibel.png"/><p class="caption"><span class="fa">لیبل اطلاعاتی پوشش زنان ترکمن‌صحرا؛ همراه اثر در گالری حضوری</span><span class="en">Turkmen Sahra women's dress information label, displayed beside the artwork in the physical gallery.</span></p></div><div><p><span class="fa">پوشش سنتی زنان ترکمن در بسیاری از نمونه‌ها با پیراهن‌های بلند، پارچه‌های رنگی، روسری یا سربند و زیورآلات همراه است. نوع لباس، رنگ و تزئینات می‌تواند با توجه به منطقه، سن، موقعیت اجتماعی و مناسبت تفاوت داشته باشد.</span><span class="en">Traditional Turkmen women's clothing often includes long dresses, colorful fabrics, headscarves or head coverings, and jewelry. Garments, colors, and decorations may vary by region, age, social context, and occasion.</span></p><div class="grid">
+<article class="tile">
+<h3><span class="fa">پیراهن بلند و رنگارنگ</span><span class="en">Long, Colorful Dresses</span></h3>
+<p><span class="fa">پیراهن‌های بلند و پارچه‌های رنگی در نمونه‌های مختلف پوشاک ترکمن دیده می‌شوند؛ جزئیات لباس در مناطق و دوره‌های مختلف یکسان نیست.</span><span class="en">Long dresses and colorful fabrics appear in different examples of Turkmen clothing, though details vary across places and periods.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">روسری و سربند</span><span class="en">Scarves and Headwear</span></h3>
+<p><span class="fa">پوشش سر، شیوه بستن آن و تزئینات وابسته به سنت‌های محلی و شرایط زندگی است.</span><span class="en">Head coverings, their styles, and decorations reflect local traditions and ways of life.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">زیورآلات</span><span class="en">Jewelry</span></h3>
+<p><span class="fa">زیورآلات فلزی و نقره‌ای در برخی نمونه‌های پوشش سنتی ترکمن دیده می‌شوند و می‌توانند ارزش زیبایی‌شناختی و فرهنگی داشته باشند.</span><span class="en">Metal and silver jewelry appears in some traditional Turkmen outfits and can carry aesthetic and cultural significance.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">نقش‌های هندسی</span><span class="en">Geometric Patterns</span></h3>
+<p><span class="fa">نقوش هندسی در قالی و بافته‌های ترکمنی جایگاه ویژه‌ای دارند و از شناخته‌شده‌ترین جلوه‌های هنر منطقه‌اند.</span><span class="en">Geometric motifs have a special place in Turkmen carpets and textiles and are among the region's best-known art forms.</span></p>
+</article>
+</div><p class="note"><span class="fa">توجه: پوشش سنتی ترکمن در طول زمان و میان جوامع مختلف تنوع داشته است؛ این معرفی تصویری کلی از برخی ویژگی‌های شناخته‌شده ارائه می‌کند.</span><span class="en">Note: Traditional Turkmen clothing has varied over time and among communities. This overview presents selected, widely recognized features.</span></p></div></div></section>
+<section id="villages">
+<h2><span class="fa">۳. مناطق و روستاهای ترکمن‌صحرا</span><span class="en">3. Regions and Villages of Turkmen Sahra</span></h2>
+<div class="grid">
+<article class="tile">
+<h3><span class="fa">گنبد کاووس</span><span class="en">Gonbad-e Kavus</span></h3>
+<p><span class="fa">یکی از شهرهای شاخص منطقه که برج تاریخی گنبد قابوس، نماد معماری و تاریخ آن است.</span><span class="en">A prominent city in the region, home to the historic Gonbad-e Qabus Tower, a landmark of its architecture and history.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">بندر ترکمن</span><span class="en">Bandar Torkaman</span></h3>
+<p><span class="fa">شهری ساحلی در کرانه دریای خزر که با بازار محلی، صنایع‌دستی و ارتباط با زندگی دریایی شناخته می‌شود.</span><span class="en">A Caspian coastal town associated with local markets, handicrafts, and maritime life.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">آق‌قلا</span><span class="en">Aq Qala</span></h3>
+<p><span class="fa">از مناطق شناخته‌شده ترکمن‌صحرا که فرهنگ ترکمنی، بافته‌های سنتی و چشم‌اندازهای دشتی در آن دیده می‌شود.</span><span class="en">A recognized area of Turkmen Sahra, with Turkmen culture, traditional textiles, and open plain landscapes.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">گمیشان</span><span class="en">Gomishan</span></h3>
+<p><span class="fa">منطقه‌ای در نزدیکی ساحل خزر با معماری بومی، تالاب‌ها و شیوه‌های زندگی پیوندخورده با محیط ساحلی.</span><span class="en">An area near the Caspian coast, known for vernacular architecture, wetlands, and coastal ways of life.</span></p>
+</article>
+</div>
 </section>
-
-<section id="dress">
-  <h2 data-fa="۲. پوشش زنان ترکمن؛ زیبایی در رنگ و جزئیات"
-      data-en="2. Turkmen Women's Dress: Color and Detail">
-      ۲. پوشش زنان ترکمن؛ زیبایی در رنگ و جزئیات
-  </h2>
-  <p data-fa="پوشش سنتی زنان ترکمن در بسیاری از نمونه‌ها با پیراهن‌های بلند، پارچه‌های رنگی، روسری یا سربند و زیورآلات همراه است. نوع لباس، رنگ و تزئینات می‌تواند با توجه به منطقه، سن، موقعیت اجتماعی و مناسبت تفاوت داشته باشد."
-     data-en="Traditional Turkmen women's clothing often includes long dresses, colorful fabrics, headscarves or head coverings, and jewelry. Garments, colors, and decorations may vary by region, age, social context, and occasion.">
-    پوشش سنتی زنان ترکمن در بسیاری از نمونه‌ها با پیراهن‌های بلند، پارچه‌های رنگی، روسری یا سربند و زیورآلات همراه است. نوع لباس، رنگ و تزئینات می‌تواند با توجه به منطقه، سن، موقعیت اجتماعی و مناسبت تفاوت داشته باشد.
-  </p>
-
-  <div class="label-frame">
-    <img src="turkmen-sahra_leibel.png" alt="لیبل اطلاعاتی پوشش سنتی زنان ترکمن‌صحرا">
-  </div>
-  <p class="caption"
-     data-fa="لیبل اطلاعاتی پوشش زنان ترکمن‌صحرا؛ همراه اثر در گالری حضوری"
-     data-en="Turkmen Sahra women's dress information label, displayed beside the artwork in the physical gallery.">
-    لیبل اطلاعاتی پوشش زنان ترکمن‌صحرا؛ همراه اثر در گالری حضوری
-  </p>
-
-  <div class="grid">
-    <article class="tile">
-      <h3 data-fa="پیراهن بلند و رنگارنگ" data-en="Long, Colorful Dresses">پیراهن بلند و رنگارنگ</h3>
-      <p data-fa="پیراهن‌های بلند و پارچه‌های رنگی در نمونه‌های مختلف پوشاک ترکمن دیده می‌شوند؛ جزئیات لباس در مناطق و دوره‌های مختلف یکسان نیست."
-         data-en="Long dresses and colorful fabrics appear in different examples of Turkmen clothing, though details vary across places and periods.">
-        پیراهن‌های بلند و پارچه‌های رنگی در نمونه‌های مختلف پوشاک ترکمن دیده می‌شوند؛ جزئیات لباس در مناطق و دوره‌های مختلف یکسان نیست.
-      </p>
-    </article>
-    <article class="tile">
-      <h3 data-fa="روسری و سربند" data-en="Scarves and Headwear">روسری و سربند</h3>
-      <p data-fa="پوشش سر، شیوه بستن آن و تزئینات وابسته به سنت‌های محلی و شرایط زندگی است."
-         data-en="Head coverings, their styles, and decorations reflect local traditions and ways of life.">
-        پوشش سر، شیوه بستن آن و تزئینات وابسته به سنت‌های محلی و شرایط زندگی است.
-      </p>
-    </article>
-    <article class="tile">
-      <h3 data-fa="زیورآلات" data-en="Jewelry">زیورآلات</h3>
-      <p data-fa="زیورآلات فلزی و نقره‌ای در برخی نمونه‌های پوشش سنتی ترکمن دیده می‌شوند و می‌توانند ارزش زیبایی‌شناختی و فرهنگی داشته باشند."
-         data-en="Metal and silver jewelry appears in some traditional Turkmen outfits and can carry aesthetic and cultural significance.">
-        زیورآلات فلزی و نقره‌ای در برخی نمونه‌های پوشش سنتی ترکمن دیده می‌شوند و می‌توانند ارزش زیبایی‌شناختی و فرهنگی داشته باشند.
-      </p>
-    </article>
-    <article class="tile">
-      <h3 data-fa="نقش‌های هندسی" data-en="Geometric Patterns">نقش‌های هندسی</h3>
-      <p data-fa="نقوش هندسی در قالی و بافته‌های ترکمنی جایگاه ویژه‌ای دارند و از شناخته‌شده‌ترین جلوه‌های هنر منطقه‌اند."
-         data-en="Geometric motifs have a special place in Turkmen carpets and textiles and are among the region's best-known art forms.">
-        نقوش هندسی در قالی و بافته‌های ترکمنی جایگاه ویژه‌ای دارند و از شناخته‌شده‌ترین جلوه‌های هنر منطقه‌اند.
-      </p>
-    </article>
-  </div>
-  <p class="note"
-     data-fa="توجه: پوشش سنتی ترکمن در طول زمان و میان جوامع مختلف تنوع داشته است؛ این معرفی تصویری کلی از برخی ویژگی‌های شناخته‌شده ارائه می‌کند."
-     data-en="Note: Traditional Turkmen clothing has varied over time and among communities. This overview presents selected, widely recognized features.">
-    توجه: پوشش سنتی ترکمن در طول زمان و میان جوامع مختلف تنوع داشته است؛ این معرفی تصویری کلی از برخی ویژگی‌های شناخته‌شده ارائه می‌کند.
-  </p>
+<section id="history">
+<h2><span class="fa">۴. میراث تاریخی و فرهنگی</span><span class="en">4. Historical and Cultural Heritage</span></h2>
+<div class="grid">
+<article class="tile">
+<h3><span class="fa">برج گنبد قابوس</span><span class="en">Gonbad-e Qabus Tower</span></h3>
+<p><span class="fa">برجی آجری از سده پنجم هجری که به دلیل معماری شاخص خود در فهرست میراث جهانی یونسکو ثبت شده است.</span><span class="en">A distinctive brick tower from the 11th century, inscribed on the UNESCO World Heritage List for its remarkable architecture.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">گورستان خالد نبی</span><span class="en">Khalid Nabi Cemetery</span></h3>
+<p><span class="fa">مجموعه‌ای تاریخی در ناحیه کوهستانی شرق گلستان که به چشم‌انداز طبیعی و سنگ‌قبرهای خاص خود شناخته می‌شود.</span><span class="en">A historic site in the eastern hills of Golestan, known for its landscape and distinctive stone markers.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">قالی ترکمنی</span><span class="en">Turkmen Carpets</span></h3>
+<p><span class="fa">قالی‌ها و بافته‌های ترکمنی با ترکیب رنگ‌های پرقدرت و نقش‌های هندسی، بخشی مهم از میراث هنری منطقه هستند.</span><span class="en">Turkmen carpets and textiles, with rich colors and geometric motifs, are an important part of the region's artistic heritage.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">دشت‌های ترکمن‌صحرا</span><span class="en">Turkmen Sahra Plains</span></h3>
+<p><span class="fa">دشت‌های گسترده و افق باز منطقه، بخشی از چشم‌انداز طبیعی و زندگی دامداری و کشاورزی آن هستند.</span><span class="en">The region's wide plains and open horizons shape its natural landscape and pastoral and agricultural life.</span></p>
+</article>
+</div>
 </section>
-
-<section id="regions">
-  <h2 data-fa="۳. مناطق و روستاهای ترکمن‌صحرا"
-      data-en="3. Regions and Villages of Turkmen Sahra">
-      ۳. مناطق و روستاهای ترکمن‌صحرا
-  </h2>
-  <div class="grid">
-    <article class="tile">
-      <h3 data-fa="گنبد کاووس" data-en="Gonbad-e Kavus">گنبد کاووس</h3>
-      <p data-fa="یکی از شهرهای شاخص منطقه که برج تاریخی گنبد قابوس، نماد معماری و تاریخ آن است."
-         data-en="A prominent city in the region, home to the historic Gonbad-e Qabus Tower, a landmark of its architecture and history.">
-        یکی از شهرهای شاخص منطقه که برج تاریخی گنبد قابوس، نماد معماری و تاریخ آن است.
-      </p>
-    </article>
-    <article class="tile">
-      <h3 data-fa="بندر ترکمن" data-en="Bandar Torkaman">بندر ترکمن</h3>
-      <p data-fa="شهری ساحلی در کرانه دریای خزر که با بازار محلی، صنایع‌دستی و ارتباط با زندگی دریایی شناخته می‌شود."
-         data-en="A Caspian coastal town associated with local markets, handicrafts, and maritime life.">
-        شهری ساحلی در کرانه دریای خزر که با بازار محلی، صنایع‌دستی و ارتباط با زندگی دریایی شناخته می‌شود.
-      </p>
-    </article>
-    <article class="tile">
-      <h3 data-fa="آق‌قلا" data-en="Aq Qala">آق‌قلا</h3>
-      <p data-fa="از مناطق شناخته‌شده ترکمن‌صحرا که فرهنگ ترکمنی، بافته‌های سنتی و چشم‌اندازهای دشتی در آن دیده می‌شود."
-         data-en="A recognized area of Turkmen Sahra, with Turkmen culture, traditional textiles, and open plain landscapes.">
-        از مناطق شناخته‌شده ترکمن‌صحرا که فرهنگ ترکمنی، بافته‌های سنتی و چشم‌اندازهای دشتی در آن دیده می‌شود.
-      </p>
-    </article>
-    <article class="tile">
-      <h3 data-fa="گمیشان" data-en="Gomishan">گمیشان</h3>
-      <p data-fa="منطقه‌ای در نزدیکی ساحل خزر با معماری بومی، تالاب‌ها و شیوه‌های زندگی پیوندخورده با محیط ساحلی."
-         data-en="An area near the Caspian coast, known for vernacular architecture, wetlands, and coastal ways of life.">
-        منطقه‌ای در نزدیکی ساحل خزر با معماری بومی، تالاب‌ها و شیوه‌های زندگی پیوندخورده با محیط ساحلی.
-      </p>
-    </article>
-  </div>
+<section id="food">
+<h2><span class="fa">۵. طعم‌های محلی ترکمن‌صحرا</span><span class="en">5. Local Flavors of Turkmen Sahra</span></h2>
+<div class="grid">
+<article class="tile">
+<h3>چکدرمه</h3>
+<p><span class="fa">غذایی شناخته‌شده در فرهنگ ترکمن که معمولاً با برنج و گوشت تهیه می‌شود.</span><span class="en">A well-known Turkmen dish, commonly prepared with rice and meat.</span></p>
+</article>
+<article class="tile">
+<h3>بؤرسوک</h3>
+<p><span class="fa">خمیر سرخ‌شده‌ای که در شکل‌ها و دستورهای گوناگون در سفره‌های ترکمنی دیده می‌شود.</span><span class="en">Fried dough prepared in different shapes and recipes and served in Turkmen food traditions.</span></p>
+</article>
+<article class="tile">
+<h3>پیشمه</h3>
+<p><span class="fa">نوعی شیرینی یا خمیر سرخ‌شده محلی که در برخی مناسبت‌ها و دورهمی‌ها تهیه می‌شود.</span><span class="en">A local fried pastry prepared for some gatherings and special occasions.</span></p>
+</article>
+</div>
 </section>
-
-<section id="heritage">
-  <h2 data-fa="۴. میراث تاریخی و فرهنگی"
-      data-en="4. Historical and Cultural Heritage">
-      ۴. میراث تاریخی و فرهنگی
-  </h2>
-  <div class="grid">
-    <article class="tile">
-      <h3 data-fa="برج گنبد قابوس" data-en="Gonbad-e Qabus Tower">برج گنبد قابوس</h3>
-      <p data-fa="برجی آجری از سده پنجم هجری که به دلیل معماری شاخص خود در فهرست میراث جهانی یونسکو ثبت شده است."
-         data-en="A distinctive brick tower from the 11th century, inscribed on the UNESCO World Heritage List for its remarkable architecture.">
-        برجی آجری از سده پنجم هجری که به دلیل معماری شاخص خود در فهرست میراث جهانی یونسکو ثبت شده است.
-      </p>
-    </article>
-    <article class="tile">
-      <h3 data-fa="گورستان خالد نبی" data-en="Khalid Nabi Cemetery">گورستان خالد نبی</h3>
-      <p data-fa="مجموعه‌ای تاریخی در ناحیه کوهستانی شرق گلستان که به چشم‌انداز طبیعی و سنگ‌قبرهای خاص خود شناخته می‌شود."
-         data-en="A historic site in the eastern hills of Golestan, known for its landscape and distinctive stone markers.">
-        مجموعه‌ای تاریخی در ناحیه کوهستانی شرق گلستان که به چشم‌انداز طبیعی و سنگ‌قبرهای خاص خود شناخته می‌شود.
-      </p>
-    </article>
-    <article class="tile">
-      <h3 data-fa="قالی ترکمنی" data-en="Turkmen Carpets">قالی ترکمنی</h3>
-      <p data-fa="قالی‌ها و بافته‌های ترکمنی با ترکیب رنگ‌های پرقدرت و نقش‌های هندسی، بخشی مهم از میراث هنری منطقه هستند."
-         data-en="Turkmen carpets and textiles, with rich colors and geometric motifs, are an important part of the region's artistic heritage.">
-        قالی‌ها و بافته‌های ترکمنی با ترکیب رنگ‌های پرقدرت و نقش‌های هندسی، بخشی مهم از میراث هنری منطقه هستند.
-      </p>
-    </article>
-    <article class="tile">
-      <h3 data-fa="دشت‌های ترکمن‌صحرا" data-en="Turkmen Sahra Plains">دشت‌های ترکمن‌صحرا</h3>
-      <p data-fa="دشت‌های گسترده و افق باز منطقه، بخشی از چشم‌انداز طبیعی و زندگی دامداری و کشاورزی آن هستند."
-         data-en="The region's wide plains and open horizons shape its natural landscape and pastoral and agricultural life.">
-        دشت‌های گسترده و افق باز منطقه، بخشی از چشم‌انداز طبیعی و زندگی دامداری و کشاورزی آن هستند.
-      </p>
-    </article>
-  </div>
-</section>
-
-<section id="foods">
-  <h2 data-fa="۵. طعم‌های محلی ترکمن‌صحرا"
-      data-en="5. Local Flavors of Turkmen Sahra">
-      ۵. طعم‌های محلی ترکمن‌صحرا
-  </h2>
-  <div class="grid food-grid">
-    <article class="tile">
-      <h3>چکدرمه</h3>
-      <p data-fa="غذایی شناخته‌شده در فرهنگ ترکمن که معمولاً با برنج و گوشت تهیه می‌شود."
-         data-en="A well-known Turkmen dish, commonly prepared with rice and meat.">
-        غذایی شناخته‌شده در فرهنگ ترکمن که معمولاً با برنج و گوشت تهیه می‌شود.
-      </p>
-    </article>
-    <article class="tile">
-      <h3>بؤرسوک</h3>
-      <p data-fa="خمیر سرخ‌شده‌ای که در شکل‌ها و دستورهای گوناگون در سفره‌های ترکمنی دیده می‌شود."
-         data-en="Fried dough prepared in different shapes and recipes and served in Turkmen food traditions.">
-        خمیر سرخ‌شده‌ای که در شکل‌ها و دستورهای گوناگون در سفره‌های ترکمنی دیده می‌شود.
-      </p>
-    </article>
-    <article class="tile">
-      <h3>پیشمه</h3>
-      <p data-fa="نوعی شیرینی یا خمیر سرخ‌شده محلی که در برخی مناسبت‌ها و دورهمی‌ها تهیه می‌شود."
-         data-en="A local fried pastry prepared for some gatherings and special occasions.">
-        نوعی شیرینی یا خمیر سرخ‌شده محلی که در برخی مناسبت‌ها و دورهمی‌ها تهیه می‌شود.
-      </p>
-    </article>
-  </div>
-</section>
-
 <section id="products">
-  <h2 data-fa="۶. محصولات محلی و هنرهای دستی"
-      data-en="6. Local Products and Handicrafts">
-      ۶. محصولات محلی و هنرهای دستی
-  </h2>
-  <div class="grid">
-    <article class="tile">
-      <h3 data-fa="قالی و قالیچه ترکمنی" data-en="Turkmen Carpets and Rugs">قالی و قالیچه ترکمنی</h3>
-      <p data-fa="بافته‌هایی با نقش‌های هندسی و ترکیب‌های رنگی شاخص که از هنرهای شناخته‌شده جامعه ترکمن‌اند."
-         data-en="Textiles with geometric motifs and distinctive color combinations, among the best-known Turkmen arts.">
-        بافته‌هایی با نقش‌های هندسی و ترکیب‌های رنگی شاخص که از هنرهای شناخته‌شده جامعه ترکمن‌اند.
-      </p>
-    </article>
-    <article class="tile">
-      <h3 data-fa="سوزن‌دوزی و تزئینات" data-en="Embroidery and Decoration">سوزن‌دوزی و تزئینات</h3>
-      <p data-fa="تزئین پارچه و پوشاک با دوخت‌ها و نقش‌های سنتی، در بخش‌هایی از هنرهای دستی منطقه جایگاه دارد."
-         data-en="Decorative stitching and traditional motifs feature in parts of the region's textile crafts.">
-        تزئین پارچه و پوشاک با دوخت‌ها و نقش‌های سنتی، در بخش‌هایی از هنرهای دستی منطقه جایگاه دارد.
-      </p>
-    </article>
-    <article class="tile">
-      <h3 data-fa="دامداری و فرآورده‌های محلی" data-en="Livestock and Local Products">دامداری و فرآورده‌های محلی</h3>
-      <p data-fa="دامداری و تولید فرآورده‌های وابسته به آن در کنار کشاورزی، بخشی از اقتصاد سنتی برخی نواحی منطقه بوده است."
-         data-en="Livestock and related products, alongside agriculture, have formed part of the traditional economy in some areas.">
-        دامداری و تولید فرآورده‌های وابسته به آن در کنار کشاورزی، بخشی از اقتصاد سنتی برخی نواحی منطقه بوده است.
-      </p>
-    </article>
-    <article class="tile">
-      <h3 data-fa="محصولات کشاورزی" data-en="Agricultural Products">محصولات کشاورزی</h3>
-      <p data-fa="گندم و دیگر محصولات زراعی در دشت‌های منطقه کشت می‌شوند؛ نوع و میزان تولید با شرایط هر ناحیه تغییر می‌کند."
-         data-en="Wheat and other crops are grown across the plains, with production varying by local conditions.">
-        گندم و دیگر محصولات زراعی در دشت‌های منطقه کشت می‌شوند؛ نوع و میزان تولید با شرایط هر ناحیه تغییر می‌کند.
-      </p>
-    </article>
-  </div>
+<h2><span class="fa">۶. محصولات محلی و هنرهای دستی</span><span class="en">6. Local Products and Handicrafts</span></h2>
+<div class="grid">
+<article class="tile">
+<h3><span class="fa">قالی و قالیچه ترکمنی</span><span class="en">Turkmen Carpets and Rugs</span></h3>
+<p><span class="fa">بافته‌هایی با نقش‌های هندسی و ترکیب‌های رنگی شاخص که از هنرهای شناخته‌شده جامعه ترکمن‌اند.</span><span class="en">Textiles with geometric motifs and distinctive color combinations, among the best-known Turkmen arts.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">سوزن‌دوزی و تزئینات</span><span class="en">Embroidery and Decoration</span></h3>
+<p><span class="fa">تزئین پارچه و پوشاک با دوخت‌ها و نقش‌های سنتی، در بخش‌هایی از هنرهای دستی منطقه جایگاه دارد.</span><span class="en">Decorative stitching and traditional motifs feature in parts of the region's textile crafts.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">دامداری و فرآورده‌های محلی</span><span class="en">Livestock and Local Products</span></h3>
+<p><span class="fa">دامداری و تولید فرآورده‌های وابسته به آن در کنار کشاورزی، بخشی از اقتصاد سنتی برخی نواحی منطقه بوده است.</span><span class="en">Livestock and related products, alongside agriculture, have formed part of the traditional economy in some areas.</span></p>
+</article>
+<article class="tile">
+<h3><span class="fa">محصولات کشاورزی</span><span class="en">Agricultural Products</span></h3>
+<p><span class="fa">گندم و دیگر محصولات زراعی در دشت‌های منطقه کشت می‌شوند؛ نوع و میزان تولید با شرایط هر ناحیه تغییر می‌کند.</span><span class="en">Wheat and other crops are grown across the plains, with production varying by local conditions.</span></p>
+</article>
+</div>
 </section>
-
 <section id="sources">
-  <h2 data-fa="۷. منابع و مطالعه بیشتر" data-en="7. Sources and Further Reading">
-    ۷. منابع و مطالعه بیشتر
-  </h2>
-  <p data-fa="برای مطالعه بیشتر درباره تاریخ، پوشاک، هنرهای دستی و میراث ترکمن‌صحرا، منابع زیر نقطه شروع مناسبی هستند:"
-     data-en="The following sources are useful starting points for learning about Turkmen Sahra's history, clothing, handicrafts, and heritage:">
-    برای مطالعه بیشتر درباره تاریخ، پوشاک، هنرهای دستی و میراث ترکمن‌صحرا، منابع زیر نقطه شروع مناسبی هستند:
-  </p>
-  <ul class="sources">
-    <li><a href="https://whc.unesco.org/en/list/1398/" target="_blank" rel="noopener">UNESCO — Gonbad-e Qabus</a></li>
-    <li><a href="https://www.iranicaonline.org/" target="_blank" rel="noopener">Encyclopaedia Iranica — پژوهش‌های ایران‌شناسی</a></li>
-    <li><a href="https://www.visitiran.ir/" target="_blank" rel="noopener">Visit Iran — میراث و جاذبه‌های ایران</a></li>
-    <li><a href="https://www.ichto.ir/" target="_blank" rel="noopener">وزارت میراث فرهنگی، گردشگری و صنایع دستی ایران</a></li>
-  </ul>
-  <p class="note"
-     data-fa="این صفحه یک معرفی فرهنگی و هنری است؛ جزئیات پوشاک و سنت‌ها ممکن است در میان خانواده‌ها، روستاها و دوره‌های تاریخی متفاوت باشد."
-     data-en="This page offers a cultural and artistic overview. Clothing and traditions may vary among families, villages, and historical periods.">
-    این صفحه یک معرفی فرهنگی و هنری است؛ جزئیات پوشاک و سنت‌ها ممکن است در میان خانواده‌ها، روستاها و دوره‌های تاریخی متفاوت باشد.
-  </p>
+<h2><span class="fa">۷. منابع و مطالعه بیشتر</span><span class="en">7. Sources and Further Reading</span></h2>
+<p><span class="fa">برای مطالعه بیشتر درباره تاریخ، پوشاک، هنرهای دستی و میراث ترکمن‌صحرا، منابع زیر نقطه شروع مناسبی هستند:</span><span class="en">The following sources are useful starting points for learning about Turkmen Sahra's history, clothing, handicrafts, and heritage:</span></p>
+<ul class="source-list">
+<li><a href="https://whc.unesco.org/en/list/1398/" rel="noopener" target="_blank">UNESCO — Gonbad-e Qabus</a></li>
+<li><a href="https://www.iranicaonline.org/" rel="noopener" target="_blank">Encyclopaedia Iranica — پژوهش‌های ایران‌شناسی</a></li>
+<li><a href="https://www.visitiran.ir/" rel="noopener" target="_blank">Visit Iran — میراث و جاذبه‌های ایران</a></li>
+<li><a href="https://www.ichto.ir/" rel="noopener" target="_blank">وزارت میراث فرهنگی، گردشگری و صنایع دستی ایران</a></li>
+</ul>
+<p class="note"><span class="fa">این صفحه یک معرفی فرهنگی و هنری است؛ جزئیات پوشاک و سنت‌ها ممکن است در میان خانواده‌ها، روستاها و دوره‌های تاریخی متفاوت باشد.</span><span class="en">This page offers a cultural and artistic overview. Clothing and traditions may vary among families, villages, and historical periods.</span></p>
 </section>
-
-<a class="back" href="index.html" data-fa="← بازگشت به گالری مناطق ایران"
-   data-en="← Back to the Regions Gallery">← بازگشت به گالری مناطق ایران</a>
+<div style="text-align:center"><a class="back" href="index.html"><span class="fa">بازگشت به صفحه اصلی</span><span class="en">Back to Home</span></a></div>
 </main>
-
 <footer>
-  <p data-fa="ایران، هزار رنگ | اثر هنری: مریم ساعی | طراحی وب و پژوهش فرهنگی: مرجان ساعی"
-     data-en="Iran, A Thousand Colors | Artwork: Maryam Saei | Website Design & Cultural Research: Marjan Saei">
-    ایران، هزار رنگ | اثر هنری: مریم ساعی | طراحی وب و پژوهش فرهنگی: مرجان ساعی
-  </p>
+<div><span class="fa">هنرمند و خالق آثار: مریم ساعی</span><span class="en">Artist and creator: Maryam Saei</span></div>
+<div><span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span><span class="en">Website design and cultural research: Marjan Saei</span></div>
+<div style="margin-top:8px">© Iran, a Thousand Colors</div>
 </footer>
-
 <script>
-const langButton = document.getElementById('langButton');
-let currentLang = 'fa';
-
-function setLanguage(lang){
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
-
-  document.querySelectorAll('[data-fa][data-en]').forEach(element => {
-    element.textContent = element.dataset[lang];
-  });
-
-  langButton.textContent = lang === 'fa' ? 'English' : 'فارسی';
-}
-
-langButton.addEventListener('click', () => {
-  setLanguage(currentLang === 'fa' ? 'en' : 'fa');
+const langSwitch = document.getElementById("langSwitch");
+langSwitch.addEventListener("click", () => {
+  const english = !document.body.classList.contains("english");
+  document.body.classList.toggle("english", english);
+  document.documentElement.lang = english ? "en" : "fa";
+  document.documentElement.dir = english ? "ltr" : "rtl";
+  langSwitch.textContent = english ? "FA | EN" : "FA | EN";
 });
+
+const homeDropdown = document.getElementById("homeDropdown");
+const homeButton = homeDropdown.querySelector(".dropbtn");
+homeButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const opened = homeDropdown.classList.toggle("open");
+  homeButton.setAttribute("aria-expanded", String(opened));
+});
+
+document.addEventListener("click", (event) => {
+  if (!homeDropdown.contains(event.target)) {
+    homeDropdown.classList.remove("open");
+    homeButton.setAttribute("aria-expanded", "false");
+  }
+});
+
+if (window.matchMedia("(max-width:850px)").matches) {
+  const menu = document.querySelector(".main-menu");
+  const menuButton = document.createElement("button");
+  menuButton.type = "button";
+  menuButton.className = "mobile-menu-button";
+  menuButton.setAttribute("aria-label", "Open menu");
+  menuButton.innerHTML = "☰";
+  menuButton.style.cssText = "order:2;border:1px solid #c79a4a;background:#fff8eb;color:#153f3b;border-radius:9px;width:40px;height:38px;font-size:20px";
+  document.querySelector(".header-main").insertBefore(menuButton, menu);
+  menuButton.addEventListener("click", () => {
+    const opened = menu.classList.toggle("mobile-open");
+    menuButton.setAttribute("aria-expanded", String(opened));
+  });
+}
 </script>
 </body>
 </html>
