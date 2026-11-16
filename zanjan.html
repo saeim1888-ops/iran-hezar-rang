@@ -182,10 +182,57 @@ body.english .fa { display: none !important; }
     padding: 6px 10px;
   }
 }
+
+/* Shared exhibition header */
+.site-header{position:sticky;top:0;z-index:30;background:#fffaf0;border-bottom:1px solid #dfd2b9;box-shadow:0 3px 14px #392b1812}
+.site-header-inner{max-width:1200px;margin:auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.site-brand{display:flex;align-items:center;gap:10px;color:#245b60;font-weight:bold;text-decoration:none;white-space:nowrap;font-size:17px}
+.site-brand-mark{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fffaf0;background:#b94e27;border:3px solid #b08b48}
+.site-nav{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:17px;background:transparent;padding:0}
+.site-nav a{border:0;border-radius:0;padding:5px 0;color:#245b60;font-size:12px;text-decoration:none}
+.site-nav a:hover{color:#b94e27}
+.site-language{border:1px solid #b08b48;border-radius:24px;background:#fffaf0;color:#596447;padding:7px 13px;cursor:pointer;white-space:nowrap;font-weight:bold}
+.site-menu-toggle{display:none;border:0;background:transparent;color:#245b60;font-size:25px;cursor:pointer}
+.province-bar{background:#245b60;color:#fff8e9}
+.province-inner{max-width:1200px;margin:auto;padding:8px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12px}
+.province-inner a{color:#f3dba8;text-decoration:none}
+.province-inner a:hover{color:white}
+.province-current{color:#fff;font-weight:bold;text-align:center}
+body.english .site-header-inner,body.english .province-inner{direction:ltr}
+@media(max-width:850px){
+.site-header-inner{flex-wrap:wrap;gap:9px}.site-menu-toggle{display:block}
+.site-nav{display:none;width:100%;order:5;flex-direction:column;align-items:stretch;gap:0}
+.site-nav.open{display:flex}.site-nav a{padding:9px 4px;border-top:1px solid #e3d5b9}
+.province-inner{padding:8px 10px;font-size:10px}.site-brand{font-size:14px}
+}
+
 </style>
 </head>
 
 <body>
+
+<header class="site-header">
+ <div class="site-header-inner">
+  <a class="site-brand" href="index.html"><span class="site-brand-mark">ه</span><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span></a>
+  <button class="site-menu-toggle" type="button" onclick="toggleSiteMenu()" aria-label="منوی اصلی">☰</button>
+  <nav class="site-nav" id="siteNav" aria-label="منوی اصلی">
+   <a href="index.html"><span class="fa">صفحه اصلی</span><span class="en">Home</span></a>
+   <a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions</span></a>
+   <a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+   <a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Gallery</span></a>
+   <a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About</span></a>
+   <a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+   <a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact</span></a>
+  </nav>
+  <button class="site-language" type="button" onclick="toggleSiteLanguage()">FA | EN</button>
+ </div>
+</header>
+<div class="province-bar"><div class="province-inner">
+ <a href="ardabil.html"><span class="fa">← استان قبلی: اردبیل</span><span class="en">← Previous: Ardabil</span></a>
+ <span class="province-current"><span class="fa">۲۷ از ۲۸ | زنجان</span><span class="en">27 of 28 | Zanjan</span></span>
+ <a href="tehran.html"><span class="fa">استان بعدی: تهران →</span><span class="en">Next: Tehran →</span></a>
+</div></div>
+
 
 <button class="lang-switch" id="langSwitch" type="button" aria-label="Change language">English</button>
 <div class="topline"></div>
@@ -616,6 +663,13 @@ body.english .fa { display: none !important; }
 </footer>
 
 <script>
+
+function toggleSiteMenu(){document.getElementById("siteNav").classList.toggle("open");}
+function toggleSiteLanguage(){
+ const current=localStorage.getItem("iranHezarRangLanguage")||"fa";
+ setLanguage(current==="fa"?"en":"fa");
+}
+
 const langSwitch = document.getElementById("langSwitch");
 
 function setLanguage(language) {
