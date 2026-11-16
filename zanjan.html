@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="زنجان؛ روایت تصویری پوشش سنتی زنان، روستاها، تاریخ، خوراک و فرهنگ استان زنجان در نمایشگاه ایران، هزار رنگ.">
-<title>زنجان | ایران، هزار رنگ</title>
 
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="زنجان؛ روایت تصویری پوشش سنتی زنان، روستاها، تاریخ، خوراک و فرهنگ استان زنجان در نمایشگاه ایران، هزار رنگ." name="description"/>
+<title>زنجان | ایران، هزار رنگ</title>
 <style>
 :root {
   --cream: #f8f1e3;
@@ -127,11 +127,7 @@ p { margin: 12px 0; }
   color: var(--olive);
   font-size: 18px;
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 15px;
-}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
 .tile {
   background: #f6eedf;
   border: 1px solid #e3d4b7;
@@ -173,6 +169,7 @@ body.english .back { direction: ltr; }
 body:not(.english) .en { display: none !important; }
 body.english .fa { display: none !important; }
 @media (max-width:600px) {
+  .tiles { grid-template-columns: 1fr; }
   header { padding-top: 45px; }
   nav { gap: 6px; }
   nav a { font-size: 12px; }
@@ -208,460 +205,396 @@ body.english .site-header-inner,body.english .province-inner{direction:ltr}
 
 </style>
 </head>
-
 <body>
-
 <header class="site-header">
- <div class="site-header-inner">
-  <a class="site-brand" href="index.html"><span class="site-brand-mark">ه</span><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span></a>
-  <button class="site-menu-toggle" type="button" onclick="toggleSiteMenu()" aria-label="منوی اصلی">☰</button>
-  <nav class="site-nav" id="siteNav" aria-label="منوی اصلی">
-   <a href="index.html"><span class="fa">صفحه اصلی</span><span class="en">Home</span></a>
-   <a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions</span></a>
-   <a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
-   <a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Gallery</span></a>
-   <a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About</span></a>
-   <a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
-   <a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact</span></a>
-  </nav>
-  <button class="site-language" type="button" onclick="toggleSiteLanguage()">FA | EN</button>
- </div>
+<div class="site-header-inner">
+<a class="site-brand" href="index.html"><span class="site-brand-mark">ه</span><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span></a>
+<button aria-label="منوی اصلی" class="site-menu-toggle" onclick="toggleSiteMenu()" type="button">☰</button>
+<nav aria-label="منوی اصلی" class="site-nav" id="siteNav">
+<a href="index.html"><span class="fa">صفحه اصلی</span><span class="en">Home</span></a>
+<a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions</span></a>
+<a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+<a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Gallery</span></a>
+<a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About</span></a>
+<a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+<a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact</span></a>
+</nav>
+<button class="site-language" onclick="toggleSiteLanguage()" type="button">FA | EN</button>
+</div>
 </header>
 <div class="province-bar"><div class="province-inner">
- <a href="ardabil.html"><span class="fa">← استان قبلی: اردبیل</span><span class="en">← Previous: Ardabil</span></a>
- <span class="province-current"><span class="fa">۲۷ از ۲۸ | زنجان</span><span class="en">27 of 28 | Zanjan</span></span>
- <a href="tehran.html"><span class="fa">استان بعدی: تهران →</span><span class="en">Next: Tehran →</span></a>
+<a href="ardabil.html"><span class="fa">← استان قبلی: اردبیل</span><span class="en">← Previous: Ardabil</span></a>
+<span class="province-current"><span class="fa">۲۸ از ۲۹ | زنجان</span><span class="en">28 of 29 | Zanjan</span></span>
+<a href="tehran.html"><span class="fa">استان بعدی: تهران →</span><span class="en">Next: Tehran →</span></a>
 </div></div>
-
-
-<button class="lang-switch" id="langSwitch" type="button" aria-label="Change language">English</button>
+<button aria-label="Change language" class="lang-switch" id="langSwitch" type="button">English</button>
 <div class="topline"></div>
-
 <header>
-  <div class="eyebrow">
-    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
-    <span class="en">Iran, A Thousand Colors | A visual story of women's dress in Iran</span>
-  </div>
-
-  <h1>
-    <span class="fa">زنجان؛ روایت هنر، اصالت و زندگی</span>
-    <span class="en">Zanjan: A Story of Art, Heritage and Life</span>
-  </h1>
-
-  <p class="slogan">
-    <span class="fa">«زنجان؛ درخشش نقره، شکوه نقش‌های ماندگار»</span>
-    <span class="en">“Zanjan: Silver Brilliance, Timeless Patterns”</span>
-  </p>
-
-  <p class="subtitle">
-    <span class="fa">سفری تصویری میان پوشش زنان، روستاهای طارم، هنرهای دستی، بناهای تاریخی، طبیعت و طعم‌های محلی سرزمین زنجان</span>
-    <span class="en">A visual journey through women's dress, villages of Tarom, handicrafts, historic monuments, nature, and the local flavors of Zanjan.</span>
-  </p>
+<div class="eyebrow">
+<span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+<span class="en">Iran, A Thousand Colors | A visual story of women's dress in Iran</span>
+</div>
+<h1>
+<span class="fa">زنجان؛ روایت هنر، اصالت و زندگی</span>
+<span class="en">Zanjan: A Story of Art, Heritage and Life</span>
+</h1>
+<p class="slogan">
+<span class="fa">«زنجان؛ درخشش نقره، شکوه نقش‌های ماندگار»</span>
+<span class="en">“Zanjan: Silver Brilliance, Timeless Patterns”</span>
+</p>
+<p class="subtitle">
+<span class="fa">سفری تصویری میان پوشش زنان، روستاهای طارم، هنرهای دستی، بناهای تاریخی، طبیعت و طعم‌های محلی سرزمین زنجان</span>
+<span class="en">A visual journey through women's dress, villages of Tarom, handicrafts, historic monuments, nature, and the local flavors of Zanjan.</span>
+</p>
 </header>
-
 <nav aria-label="Page navigation">
-  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
-  <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
-  <a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
-  <a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
-  <a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food & Sweets</span></a>
-  <a href="#products"><span class="fa">محصولات محلی</span><span class="en">Local Products</span></a>
-  <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+<a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+<a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
+<a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
+<a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History &amp; Nature</span></a>
+<a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food &amp; Sweets</span></a>
+<a href="#products"><span class="fa">محصولات محلی</span><span class="en">Local Products</span></a>
+<a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
 </nav>
-
 <main>
-
 <section id="art">
-  <h2>
-    <span class="fa">۱. تصویر زنجان؛ روایت یک سرزمین</span>
-    <span class="en">1. Zanjan in Art: A Land's Story</span>
-  </h2>
-
-  <p>
-    <span class="fa">در این اثر، پوشش سنتی زنان زنجان در کنار معماری تاریخی، چشم‌اندازهای رنگارنگ کوهستان، هنر فلزکاری و خوراک‌های محلی قرار گرفته است؛ عناصری که هرکدام بخشی از حافظه فرهنگی این سرزمین را روایت می‌کنند.</span>
-    <span class="en">This artwork brings together traditional women's clothing, historic architecture, colorful mountain landscapes, metalwork, and local foods. Each element tells part of Zanjan's cultural memory.</span>
-  </p>
-
-  <img class="hero-art" src="zanjan.png" alt="اثر هنری زنجان با پوشش سنتی زنان و نمادهای فرهنگی استان">
-
-  <p class="caption">
-    <span class="fa">اثر تصویری زنجان از مجموعه «ایران، هزار رنگ»</span>
-    <span class="en">The Zanjan artwork from “Iran, A Thousand Colors”</span>
-  </p>
-
-  <div class="quote">
-    <span class="fa">از نقش‌های لباس زنان تا درخشش هنر دست، زنجان سرزمینی است که اصالت را در جزئیات حفظ کرده است.</span>
-    <span class="en">From the patterns of women's clothing to the brilliance of handmade crafts, Zanjan is a land that preserves its heritage in every detail.</span>
-  </div>
-
-  <p class="small">
-    <span class="fa">این تصویر، اثر هنری مجموعه است؛ توضیحات این صفحه برای معرفی فرهنگی و تاریخی استان ارائه شده‌اند.</span>
-    <span class="en">This is the artwork created for the collection. The descriptions on this page provide cultural and historical context about the province.</span>
-  </p>
+<h2>
+<span class="fa">۱. تصویر زنجان؛ روایت یک سرزمین</span>
+<span class="en">1. Zanjan in Art: A Land's Story</span>
+</h2>
+<p>
+<span class="fa">در این اثر، پوشش سنتی زنان زنجان در کنار معماری تاریخی، چشم‌اندازهای رنگارنگ کوهستان، هنر فلزکاری و خوراک‌های محلی قرار گرفته است؛ عناصری که هرکدام بخشی از حافظه فرهنگی این سرزمین را روایت می‌کنند.</span>
+<span class="en">This artwork brings together traditional women's clothing, historic architecture, colorful mountain landscapes, metalwork, and local foods. Each element tells part of Zanjan's cultural memory.</span>
+</p>
+<img alt="اثر هنری زنجان با پوشش سنتی زنان و نمادهای فرهنگی استان" class="hero-art" src="zanjan.png"/>
+<p class="caption">
+<span class="fa">اثر تصویری زنجان از مجموعه «ایران، هزار رنگ»</span>
+<span class="en">The Zanjan artwork from “Iran, A Thousand Colors”</span>
+</p>
+<div class="quote">
+<span class="fa">از نقش‌های لباس زنان تا درخشش هنر دست، زنجان سرزمینی است که اصالت را در جزئیات حفظ کرده است.</span>
+<span class="en">From the patterns of women's clothing to the brilliance of handmade crafts, Zanjan is a land that preserves its heritage in every detail.</span>
+</div>
+<p class="small">
+<span class="fa">این تصویر، اثر هنری مجموعه است؛ توضیحات این صفحه برای معرفی فرهنگی و تاریخی استان ارائه شده‌اند.</span>
+<span class="en">This is the artwork created for the collection. The descriptions on this page provide cultural and historical context about the province.</span>
+</p>
 </section>
-
 <section id="clothing">
-  <h2>
-    <span class="fa">۲. پوشش زنان زنجان؛ زیبایی در جزئیات</span>
-    <span class="en">2. Women's Dress in Zanjan: Beauty in the Details</span>
-  </h2>
-
-  <p>
-    <span class="fa">پوشاک سنتی زنان زنجان از اجزای گوناگونی تشکیل می‌شد و در هر ناحیه، با توجه به شرایط زندگی و سنت‌های محلی، تفاوت‌هایی داشت. پیراهن‌های بلند، شلوارهای محلی، جلیقه‌های سوزن‌دوزی‌شده و پوشش‌های متنوع سر و صورت، از ویژگی‌های قابل توجه این پوشاک هستند. در برخی نواحی طارم، نمونه‌هایی از این پوشش هنوز در حافظه و زندگی مردم حضور دارند.</span>
-    <span class="en">Traditional women's clothing in Zanjan consisted of several elements, with variations shaped by local customs and ways of life. Long dresses, traditional trousers, embroidered waistcoats, and distinctive head and face coverings are among its notable features. In parts of Tarom, examples of this dress remain part of local memory and life.</span>
-  </p>
-
-  <img class="label-art" src="zanjan-label.png" alt="لیبل تصویری معرفی پوشش محلی زنان و فرهنگ زنجان">
-
-  <p class="caption">
-    <span class="fa">لیبل اختصاصی زنجان؛ راهنمای تصویری پوشش، جاذبه‌ها و فرهنگ محلی</span>
-    <span class="en">Zanjan's exhibition label: a visual guide to clothing, landmarks, and local culture</span>
-  </p>
-
-  <div class="grid">
-    <article class="tile">
-      <h3><span class="fa">چنه‌آلتی و یاشماق</span><span class="en">Chene-alti and Yashmaq</span></h3>
-      <p>
-        <span class="fa">چنه‌آلتی از زیورهای سنتی زیر چانه بود که می‌توانست از سکه‌های قلاب‌دار یا منجوق ساخته شود و گاه تا بخش بالایی سر امتداد پیدا کند. یاشماق نیز پوششی برای دهان، چانه و گردن بود.</span>
-        <span class="en">Chene-alti was a traditional ornament worn beneath the chin, sometimes made of linked coins or beads and extending towards the top of the head. Yashmaq covered the mouth, chin, and neck.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">کوینک و تومان</span><span class="en">Köynək and Tuman</span></h3>
-      <p>
-        <span class="fa">کوینک به پیراهن محلی و تومان به شلوار یا تنبان گفته می‌شد. در برخی روایت‌های پوشاک زنجان، تومان بلند و کوتاه با نام‌های متفاوتی مانند اوزون تومان و قیسا تومان شناخته می‌شوند.</span>
-        <span class="en">Köynək refers to the traditional shirt, while tuman refers to trousers. Some local accounts distinguish long and short versions, known as uzun tuman and qisa tuman.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">جلیزقا و یل</span><span class="en">Jelizqa and Yel</span></h3>
-      <p>
-        <span class="fa">جلیزقا نوعی جلیقه بدون آستین و یل بالاپوشی آستین‌دار بود. جلیقه‌ها در بعضی نمونه‌ها با پولدوزی و تزئینات سنتی آراسته می‌شدند.</span>
-        <span class="en">Jelizqa was a sleeveless waistcoat, while yel was a long-sleeved outer garment. Some waistcoats were decorated with traditional embroidery and embellishments.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">پوشن و زیورآلات</span><span class="en">Pooshan and Ornaments</span></h3>
-      <p>
-        <span class="fa">پوشن پارچه‌ای برای نگه‌داشتن مو و پوشش سر بود. انگشتر، النگو و زیورهای سکه‌ای یا منجوقی نیز در آراستن پوشاک زنان نقش داشتند.</span>
-        <span class="en">Pooshan was a fabric head covering used to hold the hair in place. Rings, bracelets, and ornaments made with coins or beads also complemented women's dress.</span>
-      </p>
-    </article>
-  </div>
-
-  <p class="small">
-    <span class="fa">نام و شکل اجزای پوشاک ممکن است در روستاها و دوره‌های مختلف تفاوت داشته باشد؛ بنابراین نباید یک نمونه را به همه زنان استان تعمیم داد.</span>
-    <span class="en">The names and forms of clothing elements may vary between villages and historical periods; one style should not be generalized to all women in the province.</span>
-  </p>
+<h2>
+<span class="fa">۲. پوشش زنان زنجان؛ زیبایی در جزئیات</span>
+<span class="en">2. Women's Dress in Zanjan: Beauty in the Details</span>
+</h2>
+<p>
+<span class="fa">پوشاک سنتی زنان زنجان از اجزای گوناگونی تشکیل می‌شد و در هر ناحیه، با توجه به شرایط زندگی و سنت‌های محلی، تفاوت‌هایی داشت. پیراهن‌های بلند، شلوارهای محلی، جلیقه‌های سوزن‌دوزی‌شده و پوشش‌های متنوع سر و صورت، از ویژگی‌های قابل توجه این پوشاک هستند. در برخی نواحی طارم، نمونه‌هایی از این پوشش هنوز در حافظه و زندگی مردم حضور دارند.</span>
+<span class="en">Traditional women's clothing in Zanjan consisted of several elements, with variations shaped by local customs and ways of life. Long dresses, traditional trousers, embroidered waistcoats, and distinctive head and face coverings are among its notable features. In parts of Tarom, examples of this dress remain part of local memory and life.</span>
+</p>
+<img alt="لیبل تصویری معرفی پوشش محلی زنان و فرهنگ زنجان" class="label-art" src="zanjan-label.png"/>
+<p class="caption">
+<span class="fa">لیبل اختصاصی زنجان؛ راهنمای تصویری پوشش، جاذبه‌ها و فرهنگ محلی</span>
+<span class="en">Zanjan's exhibition label: a visual guide to clothing, landmarks, and local culture</span>
+</p>
+<div class="tiles">
+<article class="tile">
+<h3><span class="fa">چنه‌آلتی و یاشماق</span><span class="en">Chene-alti and Yashmaq</span></h3>
+<p>
+<span class="fa">چنه‌آلتی از زیورهای سنتی زیر چانه بود که می‌توانست از سکه‌های قلاب‌دار یا منجوق ساخته شود و گاه تا بخش بالایی سر امتداد پیدا کند. یاشماق نیز پوششی برای دهان، چانه و گردن بود.</span>
+<span class="en">Chene-alti was a traditional ornament worn beneath the chin, sometimes made of linked coins or beads and extending towards the top of the head. Yashmaq covered the mouth, chin, and neck.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">کوینک و تومان</span><span class="en">Köynək and Tuman</span></h3>
+<p>
+<span class="fa">کوینک به پیراهن محلی و تومان به شلوار یا تنبان گفته می‌شد. در برخی روایت‌های پوشاک زنجان، تومان بلند و کوتاه با نام‌های متفاوتی مانند اوزون تومان و قیسا تومان شناخته می‌شوند.</span>
+<span class="en">Köynək refers to the traditional shirt, while tuman refers to trousers. Some local accounts distinguish long and short versions, known as uzun tuman and qisa tuman.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">جلیزقا و یل</span><span class="en">Jelizqa and Yel</span></h3>
+<p>
+<span class="fa">جلیزقا نوعی جلیقه بدون آستین و یل بالاپوشی آستین‌دار بود. جلیقه‌ها در بعضی نمونه‌ها با پولدوزی و تزئینات سنتی آراسته می‌شدند.</span>
+<span class="en">Jelizqa was a sleeveless waistcoat, while yel was a long-sleeved outer garment. Some waistcoats were decorated with traditional embroidery and embellishments.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">پوشن و زیورآلات</span><span class="en">Pooshan and Ornaments</span></h3>
+<p>
+<span class="fa">پوشن پارچه‌ای برای نگه‌داشتن مو و پوشش سر بود. انگشتر، النگو و زیورهای سکه‌ای یا منجوقی نیز در آراستن پوشاک زنان نقش داشتند.</span>
+<span class="en">Pooshan was a fabric head covering used to hold the hair in place. Rings, bracelets, and ornaments made with coins or beads also complemented women's dress.</span>
+</p>
+</article>
+</div>
+<p class="small">
+<span class="fa">نام و شکل اجزای پوشاک ممکن است در روستاها و دوره‌های مختلف تفاوت داشته باشد؛ بنابراین نباید یک نمونه را به همه زنان استان تعمیم داد.</span>
+<span class="en">The names and forms of clothing elements may vary between villages and historical periods; one style should not be generalized to all women in the province.</span>
+</p>
 </section>
-
 <section id="villages">
-  <h2>
-    <span class="fa">۳. روستاهای زنجان؛ روایت‌های زنده محلی</span>
-    <span class="en">3. Zanjan's Villages: Living Local Stories</span>
-  </h2>
-
-  <p>
-    <span class="fa">استان زنجان از روستاهای کوهستانی، دشت‌های حاصلخیز و نواحی باغداری تشکیل شده است. در هر ناحیه، زبان، پوشش، خوراک و شیوه زندگی مردم بخشی از هویت محلی را می‌سازد. روستاهای طارم به‌ویژه برای شناخت پوشاک سنتی زنان و فرهنگ کشاورزی منطقه اهمیت دارند.</span>
-    <span class="en">Zanjan Province includes mountain villages, fertile plains, and agricultural areas. In each region, language, clothing, food, and everyday life contribute to local identity. The villages of Tarom are particularly important for understanding women's traditional dress and the area's agricultural culture.</span>
-  </p>
-
-  <div class="grid">
-    <article class="tile">
-      <h3><span class="fa">هزاررود؛ طارم</span><span class="en">Hazarroud, Tarom</span></h3>
-      <p>
-        <span class="fa">روستای هزاررود از نقاطی است که پوشاک محلی زنان طارمی در آن ثبت و معرفی شده است. چنه‌آلتی، جیلیقا، کوینک، شلوار، تومان، یایلیق و یاشماق از اجزای نام‌برده‌شده در این پوشش هستند.</span>
-        <span class="en">Hazarroud is one of the villages where traditional women's clothing of Tarom has been documented. Its recorded elements include chene-alti, jiliqa, köynək, trousers, tuman, yayliq, and yashmaq.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">سانسیز؛ طارم</span><span class="en">Sansiz, Tarom</span></h3>
-      <p>
-        <span class="fa">سانسیز نیز در گزارش‌های مربوط به پوشاک محلی زنان طارمی نام برده شده است. ثبت روایت زنان و خانواده‌های این روستا می‌تواند به شناخت بهتر شیوه پوشش و تغییرات آن در گذر زمان کمک کند.</span>
-        <span class="en">Sansiz is also mentioned in accounts of Tarom women's traditional clothing. Recording the stories of women and families in this village can help document local dress and how it has changed over time.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">روستاهای طارم</span><span class="en">Villages of Tarom</span></h3>
-      <p>
-        <span class="fa">طارم با باغ‌های زیتون، انار و چشم‌اندازهای سرسبز شناخته می‌شود. پیوند زندگی روستایی با باغداری و طبیعت، بخشی از هویت فرهنگی این منطقه است.</span>
-        <span class="en">Tarom is known for its olive and pomegranate orchards and green landscapes. The connection between rural life, agriculture, and nature is an important part of the region's cultural identity.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">خوئین و روستاهای اطراف</span><span class="en">Khuin and Nearby Villages</span></h3>
-      <p>
-        <span class="fa">برخی روستاهای استان، از جمله خوئین، در کنار زبان ترکی آذربایجانی و فارسی، با گویش‌ها و ویژگی‌های زبانی محلی نیز شناخته می‌شوند. معرفی دقیق هر روستا نیازمند ثبت روایت‌های بومی است.</span>
-        <span class="en">Some villages, including Khuin, are known for local linguistic features alongside Azerbaijani Turkish and Persian. A detailed account of each village requires local documentation.</span>
-      </p>
-    </article>
-  </div>
-
-  <p class="small">
-    <span class="fa">در معرفی پوشاک روستاها، نام هر لباس باید به همان محدوده‌ای نسبت داده شود که در منابع یا روایت‌های محلی ثبت شده است.</span>
-    <span class="en">When documenting village clothing, each garment should be linked only to the area where it is supported by sources or local accounts.</span>
-  </p>
+<h2>
+<span class="fa">۳. روستاهای زنجان؛ روایت‌های زنده محلی</span>
+<span class="en">3. Zanjan's Villages: Living Local Stories</span>
+</h2>
+<p>
+<span class="fa">استان زنجان از روستاهای کوهستانی، دشت‌های حاصلخیز و نواحی باغداری تشکیل شده است. در هر ناحیه، زبان، پوشش، خوراک و شیوه زندگی مردم بخشی از هویت محلی را می‌سازد. روستاهای طارم به‌ویژه برای شناخت پوشاک سنتی زنان و فرهنگ کشاورزی منطقه اهمیت دارند.</span>
+<span class="en">Zanjan Province includes mountain villages, fertile plains, and agricultural areas. In each region, language, clothing, food, and everyday life contribute to local identity. The villages of Tarom are particularly important for understanding women's traditional dress and the area's agricultural culture.</span>
+</p>
+<div class="tiles">
+<article class="tile">
+<h3><span class="fa">هزاررود؛ طارم</span><span class="en">Hazarroud, Tarom</span></h3>
+<p>
+<span class="fa">روستای هزاررود از نقاطی است که پوشاک محلی زنان طارمی در آن ثبت و معرفی شده است. چنه‌آلتی، جیلیقا، کوینک، شلوار، تومان، یایلیق و یاشماق از اجزای نام‌برده‌شده در این پوشش هستند.</span>
+<span class="en">Hazarroud is one of the villages where traditional women's clothing of Tarom has been documented. Its recorded elements include chene-alti, jiliqa, köynək, trousers, tuman, yayliq, and yashmaq.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">سانسیز؛ طارم</span><span class="en">Sansiz, Tarom</span></h3>
+<p>
+<span class="fa">سانسیز نیز در گزارش‌های مربوط به پوشاک محلی زنان طارمی نام برده شده است. ثبت روایت زنان و خانواده‌های این روستا می‌تواند به شناخت بهتر شیوه پوشش و تغییرات آن در گذر زمان کمک کند.</span>
+<span class="en">Sansiz is also mentioned in accounts of Tarom women's traditional clothing. Recording the stories of women and families in this village can help document local dress and how it has changed over time.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">روستاهای طارم</span><span class="en">Villages of Tarom</span></h3>
+<p>
+<span class="fa">طارم با باغ‌های زیتون، انار و چشم‌اندازهای سرسبز شناخته می‌شود. پیوند زندگی روستایی با باغداری و طبیعت، بخشی از هویت فرهنگی این منطقه است.</span>
+<span class="en">Tarom is known for its olive and pomegranate orchards and green landscapes. The connection between rural life, agriculture, and nature is an important part of the region's cultural identity.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">خوئین و روستاهای اطراف</span><span class="en">Khuin and Nearby Villages</span></h3>
+<p>
+<span class="fa">برخی روستاهای استان، از جمله خوئین، در کنار زبان ترکی آذربایجانی و فارسی، با گویش‌ها و ویژگی‌های زبانی محلی نیز شناخته می‌شوند. معرفی دقیق هر روستا نیازمند ثبت روایت‌های بومی است.</span>
+<span class="en">Some villages, including Khuin, are known for local linguistic features alongside Azerbaijani Turkish and Persian. A detailed account of each village requires local documentation.</span>
+</p>
+</article>
+</div>
+<p class="small">
+<span class="fa">در معرفی پوشاک روستاها، نام هر لباس باید به همان محدوده‌ای نسبت داده شود که در منابع یا روایت‌های محلی ثبت شده است.</span>
+<span class="en">When documenting village clothing, each garment should be linked only to the area where it is supported by sources or local accounts.</span>
+</p>
 </section>
-
 <section id="history">
-  <h2>
-    <span class="fa">۴. تاریخ، معماری و طبیعت</span>
-    <span class="en">4. History, Architecture, and Nature</span>
-  </h2>
-
-  <h3><span class="fa">گنبد سلطانیه</span><span class="en">Soltaniyeh Dome</span></h3>
-  <p>
-    <span class="fa">گنبد سلطانیه از برجسته‌ترین آثار معماری دوره ایلخانی و از میراث جهانی ثبت‌شده ایران در یونسکو است. عظمت بنا، گنبد فیروزه‌ای و تزئینات معماری آن، جایگاه ویژه‌ای در تاریخ هنر و معماری ایران دارد.</span>
-    <span class="en">The Soltaniyeh Dome is one of the outstanding architectural monuments of the Ilkhanid period and a UNESCO World Heritage Site. Its monumental scale, turquoise dome, and architectural decoration make it a landmark in Iranian art and architecture.</span>
-  </p>
-
-  <h3><span class="fa">معبد داش‌کَسَن</span><span class="en">Dash Kasan Temple</span></h3>
-  <p>
-    <span class="fa">معبد داش‌کسن در نزدیکی سلطانیه قرار دارد و به دلیل نقش‌برجسته‌ها و حجاری‌های خاص خود شناخته می‌شود. این مجموعه، نمونه‌ای ارزشمند از پیوند هنر سنگ‌تراشی و تاریخ منطقه است.</span>
-    <span class="en">Dash Kasan Temple, near Soltaniyeh, is known for its distinctive rock carvings and reliefs. The site offers a remarkable example of the relationship between stone craftsmanship and regional history.</span>
-  </p>
-
-  <h3><span class="fa">قلعه بهستان؛ ماه‌نشان</span><span class="en">Behestan Castle, Mahneshan</span></h3>
-  <p>
-    <span class="fa">قلعه بهستان در شهرستان ماه‌نشان و در کنار رودخانه قزل‌اوزن قرار دارد. ساختار صخره‌ای و شکل ویژه این اثر، آن را به یکی از چشم‌اندازهای تاریخی و طبیعی متفاوت استان تبدیل کرده است.</span>
-    <span class="en">Behestan Castle is located in Mahneshan County beside the Qezel Ozan River. Its rocky structure and unusual form make it one of the province's distinctive historic and natural landmarks.</span>
-  </p>
-
-  <h3><span class="fa">رختشویخانه زنجان</span><span class="en">Zanjan Rakhtshooykhaneh</span></h3>
-  <p>
-    <span class="fa">رختشویخانه بنایی تاریخی در شهر زنجان است که برای شست‌وشوی لباس‌ها و استفاده عمومی مردم ساخته شده بود. این بنا امروز به‌عنوان موزه، بخشی از زندگی اجتماعی و معماری شهری گذشته را روایت می‌کند.</span>
-    <span class="en">The historic Rakhtshooykhaneh in Zanjan was built as a public laundry facility. Today, as a museum, it offers a glimpse into the city's past social life and architecture.</span>
-  </p>
-
-  <h3><span class="fa">غار کتله‌خور و طبیعت زنجان</span><span class="en">Katale Khor Cave and Zanjan's Nature</span></h3>
-  <p>
-    <span class="fa">غار کتله‌خور در محدوده گرماب و شهرستان خدابنده از جاذبه‌های طبیعی شناخته‌شده استان است. کوه‌های رنگارنگ آلاداغلار، رودخانه قزل‌اوزن و چشم‌اندازهای طارم نیز بخشی از تنوع طبیعی زنجان را شکل می‌دهند.</span>
-    <span class="en">Katale Khor Cave, in the Garmab area of Khodabandeh County, is one of the province's best-known natural attractions. The colorful Aladaghlar mountains, the Qezel Ozan River, and the landscapes of Tarom add to Zanjan's natural diversity.</span>
-  </p>
-
-  <h3><span class="fa">بازار تاریخی زنجان و موزه مردان نمکی</span><span class="en">Zanjan Historic Bazaar and Salt Men Museum</span></h3>
-  <p>
-    <span class="fa">بازار تاریخی زنجان از مجموعه‌های مهم معماری و تجارت سنتی شهر است. موزه مردان نمکی نیز با نمایش آثار به‌دست‌آمده از معدن نمک چهرآباد، بخشی شگفت‌انگیز از تاریخ و باستان‌شناسی منطقه را معرفی می‌کند.</span>
-    <span class="en">Zanjan's historic bazaar is an important example of traditional urban architecture and commerce. The Salt Men Museum displays finds from the Chehrabad salt mine and reveals a remarkable chapter of the region's archaeology.</span>
-  </p>
+<h2>
+<span class="fa">۴. تاریخ، معماری و طبیعت</span>
+<span class="en">4. History, Architecture, and Nature</span>
+</h2>
+<h3><span class="fa">گنبد سلطانیه</span><span class="en">Soltaniyeh Dome</span></h3>
+<p>
+<span class="fa">گنبد سلطانیه از برجسته‌ترین آثار معماری دوره ایلخانی و از میراث جهانی ثبت‌شده ایران در یونسکو است. عظمت بنا، گنبد فیروزه‌ای و تزئینات معماری آن، جایگاه ویژه‌ای در تاریخ هنر و معماری ایران دارد.</span>
+<span class="en">The Soltaniyeh Dome is one of the outstanding architectural monuments of the Ilkhanid period and a UNESCO World Heritage Site. Its monumental scale, turquoise dome, and architectural decoration make it a landmark in Iranian art and architecture.</span>
+</p>
+<h3><span class="fa">معبد داش‌کَسَن</span><span class="en">Dash Kasan Temple</span></h3>
+<p>
+<span class="fa">معبد داش‌کسن در نزدیکی سلطانیه قرار دارد و به دلیل نقش‌برجسته‌ها و حجاری‌های خاص خود شناخته می‌شود. این مجموعه، نمونه‌ای ارزشمند از پیوند هنر سنگ‌تراشی و تاریخ منطقه است.</span>
+<span class="en">Dash Kasan Temple, near Soltaniyeh, is known for its distinctive rock carvings and reliefs. The site offers a remarkable example of the relationship between stone craftsmanship and regional history.</span>
+</p>
+<h3><span class="fa">قلعه بهستان؛ ماه‌نشان</span><span class="en">Behestan Castle, Mahneshan</span></h3>
+<p>
+<span class="fa">قلعه بهستان در شهرستان ماه‌نشان و در کنار رودخانه قزل‌اوزن قرار دارد. ساختار صخره‌ای و شکل ویژه این اثر، آن را به یکی از چشم‌اندازهای تاریخی و طبیعی متفاوت استان تبدیل کرده است.</span>
+<span class="en">Behestan Castle is located in Mahneshan County beside the Qezel Ozan River. Its rocky structure and unusual form make it one of the province's distinctive historic and natural landmarks.</span>
+</p>
+<h3><span class="fa">رختشویخانه زنجان</span><span class="en">Zanjan Rakhtshooykhaneh</span></h3>
+<p>
+<span class="fa">رختشویخانه بنایی تاریخی در شهر زنجان است که برای شست‌وشوی لباس‌ها و استفاده عمومی مردم ساخته شده بود. این بنا امروز به‌عنوان موزه، بخشی از زندگی اجتماعی و معماری شهری گذشته را روایت می‌کند.</span>
+<span class="en">The historic Rakhtshooykhaneh in Zanjan was built as a public laundry facility. Today, as a museum, it offers a glimpse into the city's past social life and architecture.</span>
+</p>
+<h3><span class="fa">غار کتله‌خور و طبیعت زنجان</span><span class="en">Katale Khor Cave and Zanjan's Nature</span></h3>
+<p>
+<span class="fa">غار کتله‌خور در محدوده گرماب و شهرستان خدابنده از جاذبه‌های طبیعی شناخته‌شده استان است. کوه‌های رنگارنگ آلاداغلار، رودخانه قزل‌اوزن و چشم‌اندازهای طارم نیز بخشی از تنوع طبیعی زنجان را شکل می‌دهند.</span>
+<span class="en">Katale Khor Cave, in the Garmab area of Khodabandeh County, is one of the province's best-known natural attractions. The colorful Aladaghlar mountains, the Qezel Ozan River, and the landscapes of Tarom add to Zanjan's natural diversity.</span>
+</p>
+<h3><span class="fa">بازار تاریخی زنجان و موزه مردان نمکی</span><span class="en">Zanjan Historic Bazaar and Salt Men Museum</span></h3>
+<p>
+<span class="fa">بازار تاریخی زنجان از مجموعه‌های مهم معماری و تجارت سنتی شهر است. موزه مردان نمکی نیز با نمایش آثار به‌دست‌آمده از معدن نمک چهرآباد، بخشی شگفت‌انگیز از تاریخ و باستان‌شناسی منطقه را معرفی می‌کند.</span>
+<span class="en">Zanjan's historic bazaar is an important example of traditional urban architecture and commerce. The Salt Men Museum displays finds from the Chehrabad salt mine and reveals a remarkable chapter of the region's archaeology.</span>
+</p>
 </section>
-
 <section id="food">
-  <h2>
-    <span class="fa">۵. طعم‌های اصیل زنجان</span>
-    <span class="en">5. The Flavors of Zanjan</span>
-  </h2>
-
-  <p>
-    <span class="fa">خوراک‌های محلی زنجان بخشی از فرهنگ روزمره و آیین‌های خانوادگی مردم این منطقه‌اند. آش‌های محلی، غذاهای سنتی و شیرینی‌های خانگی، تنوع سفره زنجانی را نشان می‌دهند.</span>
-    <span class="en">Zanjan's local foods are part of everyday culture and family traditions. Regional soups, traditional dishes, and homemade sweets reveal the variety of the local table.</span>
-  </p>
-
-  <div class="grid">
-    <article class="tile">
-      <h3><span class="fa">جغوربغور</span><span class="en">Joghour Baghour</span></h3>
-      <p>
-        <span class="fa">جغوربغور از غذاهای شناخته‌شده زنجان است که با جگر و دیگر اجزای دل و جگر تهیه می‌شود و معمولاً با نان سرو می‌شود.</span>
-        <span class="en">Joghour Baghour is a well-known Zanjan dish made with liver and other organ meats, usually served with bread.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">آش ترش و آش شیر</span><span class="en">Sour Ash and Milk Ash</span></h3>
-      <p>
-        <span class="fa">آش ترش و آش شیر از نمونه‌های آش‌های محلی هستند که با مواد اولیه و شیوه پخت ویژه خود در سفره‌های منطقه جای دارند.</span>
-        <span class="en">Sour ash and milk ash are among the local soups, each prepared with its own ingredients and cooking traditions.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">شش‌انداز و پیازو</span><span class="en">Shesh-andaz and Piazu</span></h3>
-      <p>
-        <span class="fa">شش‌انداز و پیازو از غذاهایی هستند که در معرفی خوراک‌های سنتی زنجان نام برده می‌شوند و بخشی از تنوع غذایی این استان را نشان می‌دهند.</span>
-        <span class="en">Shesh-andaz and piazu are among the dishes associated with Zanjan's traditional cuisine and reflect the province's culinary variety.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">نان اردک و شیرینی شستی</span><span class="en">Nan-e Ardeh and Shasti Sweets</span></h3>
-      <p>
-        <span class="fa">نان اردک و شیرینی شستی از خوراکی‌های محلی و شیرینی‌های سنتی زنجان هستند که در معرفی سوغات و خوراک منطقه جایگاه دارند.</span>
-        <span class="en">Nan-e Ardeh and Shasti are local baked goods and traditional sweets associated with Zanjan's food culture.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">قرابیه گردویی و چای‌چورک</span><span class="en">Walnut Ghorabiyeh and Chay Chorek</span></h3>
-      <p>
-        <span class="fa">قرابیه گردویی و چای‌چورک از شیرینی‌ها و نان‌های محلی هستند که می‌توان آن‌ها را در کنار دیگر خوراکی‌های سنتی استان معرفی کرد.</span>
-        <span class="en">Walnut ghorabiyeh and chay chorek are local sweets and breads that can be introduced alongside the province's other traditional foods.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">قیقاناخ</span><span class="en">Gheyqanagh</span></h3>
-      <p>
-        <span class="fa">قیقاناخ نوعی خوراک شیرین و ساده است که در برخی روایت‌های خوراک محلی منطقه دیده می‌شود و با تخم‌مرغ و مواد شیرین تهیه می‌شود.</span>
-        <span class="en">Gheyqanagh is a simple sweet dish found in local food traditions, commonly prepared with eggs and sweet ingredients.</span>
-      </p>
-    </article>
-  </div>
-
-  <p class="small">
-    <span class="fa">دستور پخت و نام‌گذاری خوراک‌ها ممکن است در خانواده‌ها و نواحی مختلف استان تفاوت داشته باشد.</span>
-    <span class="en">Recipes and food names may vary between families and different parts of the province.</span>
-  </p>
+<h2>
+<span class="fa">۵. طعم‌های اصیل زنجان</span>
+<span class="en">5. The Flavors of Zanjan</span>
+</h2>
+<p>
+<span class="fa">خوراک‌های محلی زنجان بخشی از فرهنگ روزمره و آیین‌های خانوادگی مردم این منطقه‌اند. آش‌های محلی، غذاهای سنتی و شیرینی‌های خانگی، تنوع سفره زنجانی را نشان می‌دهند.</span>
+<span class="en">Zanjan's local foods are part of everyday culture and family traditions. Regional soups, traditional dishes, and homemade sweets reveal the variety of the local table.</span>
+</p>
+<div class="tiles">
+<article class="tile">
+<h3><span class="fa">جغوربغور</span><span class="en">Joghour Baghour</span></h3>
+<p>
+<span class="fa">جغوربغور از غذاهای شناخته‌شده زنجان است که با جگر و دیگر اجزای دل و جگر تهیه می‌شود و معمولاً با نان سرو می‌شود.</span>
+<span class="en">Joghour Baghour is a well-known Zanjan dish made with liver and other organ meats, usually served with bread.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">آش ترش و آش شیر</span><span class="en">Sour Ash and Milk Ash</span></h3>
+<p>
+<span class="fa">آش ترش و آش شیر از نمونه‌های آش‌های محلی هستند که با مواد اولیه و شیوه پخت ویژه خود در سفره‌های منطقه جای دارند.</span>
+<span class="en">Sour ash and milk ash are among the local soups, each prepared with its own ingredients and cooking traditions.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">شش‌انداز و پیازو</span><span class="en">Shesh-andaz and Piazu</span></h3>
+<p>
+<span class="fa">شش‌انداز و پیازو از غذاهایی هستند که در معرفی خوراک‌های سنتی زنجان نام برده می‌شوند و بخشی از تنوع غذایی این استان را نشان می‌دهند.</span>
+<span class="en">Shesh-andaz and piazu are among the dishes associated with Zanjan's traditional cuisine and reflect the province's culinary variety.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">نان اردک و شیرینی شستی</span><span class="en">Nan-e Ardeh and Shasti Sweets</span></h3>
+<p>
+<span class="fa">نان اردک و شیرینی شستی از خوراکی‌های محلی و شیرینی‌های سنتی زنجان هستند که در معرفی سوغات و خوراک منطقه جایگاه دارند.</span>
+<span class="en">Nan-e Ardeh and Shasti are local baked goods and traditional sweets associated with Zanjan's food culture.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">قرابیه گردویی و چای‌چورک</span><span class="en">Walnut Ghorabiyeh and Chay Chorek</span></h3>
+<p>
+<span class="fa">قرابیه گردویی و چای‌چورک از شیرینی‌ها و نان‌های محلی هستند که می‌توان آن‌ها را در کنار دیگر خوراکی‌های سنتی استان معرفی کرد.</span>
+<span class="en">Walnut ghorabiyeh and chay chorek are local sweets and breads that can be introduced alongside the province's other traditional foods.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">قیقاناخ</span><span class="en">Gheyqanagh</span></h3>
+<p>
+<span class="fa">قیقاناخ نوعی خوراک شیرین و ساده است که در برخی روایت‌های خوراک محلی منطقه دیده می‌شود و با تخم‌مرغ و مواد شیرین تهیه می‌شود.</span>
+<span class="en">Gheyqanagh is a simple sweet dish found in local food traditions, commonly prepared with eggs and sweet ingredients.</span>
+</p>
+</article>
+</div>
+<p class="small">
+<span class="fa">دستور پخت و نام‌گذاری خوراک‌ها ممکن است در خانواده‌ها و نواحی مختلف استان تفاوت داشته باشد.</span>
+<span class="en">Recipes and food names may vary between families and different parts of the province.</span>
+</p>
 </section>
-
 <section id="products">
-  <h2>
-    <span class="fa">۶. هنرهای دستی و محصولات محلی</span>
-    <span class="en">6. Handicrafts and Local Products</span>
-  </h2>
-
-  <div class="grid">
-    <article class="tile">
-      <h3><span class="fa">ملیله‌کاری زنجان</span><span class="en">Zanjan Silver Filigree</span></h3>
-      <p>
-        <span class="fa">ملیله‌کاری از هنرهای شاخص زنجان است که با مفتول‌های ظریف فلزی و نقش‌های پیچیده ساخته می‌شود. ظرافت و درخشش این هنر، آن را به یکی از نمادهای صنایع دستی استان تبدیل کرده است.</span>
-        <span class="en">Silver filigree is one of Zanjan's signature crafts, made with delicate metal wires arranged in intricate patterns. Its fine detail and brilliance make it a symbol of the province's handicrafts.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">چاقوسازی و فلزکاری</span><span class="en">Knife Making and Metalwork</span></h3>
-      <p>
-        <span class="fa">چاقوسازی زنجان شهرتی دیرینه دارد. مهارت آهنگران و صنعتگران در شکل‌دادن و پرداخت فلز، بخشی از هویت حرفه‌ای و هنری این شهر است.</span>
-        <span class="en">Zanjan has a long-standing reputation for knife making. The skill of its metalworkers in shaping and finishing metal is part of the city's craft identity.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">چاروق‌دوزی</span><span class="en">Charoq Shoemaking</span></h3>
-      <p>
-        <span class="fa">چاروق نوعی پای‌افزار چرمی سنتی است که در زنجان با شیوه‌های گوناگون دوخته و تزئین می‌شود. نمونه‌های تزئینی آن می‌توانند با نخ‌های رنگی و جزئیات ظریف آراسته شوند.</span>
-        <span class="en">Charoq is a traditional leather shoe made and decorated in different styles in Zanjan. Decorative examples may feature colorful threads and delicate details.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">مسگری و حکاکی</span><span class="en">Copperwork and Engraving</span></h3>
-      <p>
-        <span class="fa">ساخت ظروف مسی و هنر حکاکی روی فلز از مهارت‌های سنتی صنعتگران زنجانی است؛ آثاری که در کنار کاربرد روزمره، ارزش هنری و تزئینی نیز دارند.</span>
-        <span class="en">Copperware and metal engraving are traditional skills practiced by Zanjan artisans. These objects have both practical and decorative value.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">قالی، گلیم و جاجیم</span><span class="en">Carpets, Kilims and Jajims</span></h3>
-      <p>
-        <span class="fa">قالی‌بافی در بخش‌های مختلف استان رواج دارد. گلیم و جاجیم نیز در نواحی‌ای مانند طارم، ماه‌نشان و انگوران با نقش‌ها و شیوه‌های بافت محلی تولید می‌شوند.</span>
-        <span class="en">Carpet weaving is practiced across the province. Kilims and jajims are also made in areas such as Tarom, Mahneshan, and Angouran, each with local patterns and weaving methods.</span>
-      </p>
-    </article>
-
-    <article class="tile">
-      <h3><span class="fa">محصولات طارم</span><span class="en">Products of Tarom</span></h3>
-      <p>
-        <span class="fa">زیتون، روغن زیتون، انار و دیگر محصولات باغی از تولیدات شناخته‌شده طارم هستند. آب‌وهوا و باغداری در شکل‌گیری هویت اقتصادی و غذایی این منطقه نقش مهمی دارند.</span>
-        <span class="en">Olives, olive oil, pomegranates, and other orchard products are among Tarom's well-known products. The climate and orchard farming play an important role in the area's economy and food culture.</span>
-      </p>
-    </article>
-  </div>
+<h2>
+<span class="fa">۶. هنرهای دستی و محصولات محلی</span>
+<span class="en">6. Handicrafts and Local Products</span>
+</h2>
+<div class="tiles">
+<article class="tile">
+<h3><span class="fa">ملیله‌کاری زنجان</span><span class="en">Zanjan Silver Filigree</span></h3>
+<p>
+<span class="fa">ملیله‌کاری از هنرهای شاخص زنجان است که با مفتول‌های ظریف فلزی و نقش‌های پیچیده ساخته می‌شود. ظرافت و درخشش این هنر، آن را به یکی از نمادهای صنایع دستی استان تبدیل کرده است.</span>
+<span class="en">Silver filigree is one of Zanjan's signature crafts, made with delicate metal wires arranged in intricate patterns. Its fine detail and brilliance make it a symbol of the province's handicrafts.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">چاقوسازی و فلزکاری</span><span class="en">Knife Making and Metalwork</span></h3>
+<p>
+<span class="fa">چاقوسازی زنجان شهرتی دیرینه دارد. مهارت آهنگران و صنعتگران در شکل‌دادن و پرداخت فلز، بخشی از هویت حرفه‌ای و هنری این شهر است.</span>
+<span class="en">Zanjan has a long-standing reputation for knife making. The skill of its metalworkers in shaping and finishing metal is part of the city's craft identity.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">چاروق‌دوزی</span><span class="en">Charoq Shoemaking</span></h3>
+<p>
+<span class="fa">چاروق نوعی پای‌افزار چرمی سنتی است که در زنجان با شیوه‌های گوناگون دوخته و تزئین می‌شود. نمونه‌های تزئینی آن می‌توانند با نخ‌های رنگی و جزئیات ظریف آراسته شوند.</span>
+<span class="en">Charoq is a traditional leather shoe made and decorated in different styles in Zanjan. Decorative examples may feature colorful threads and delicate details.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">مسگری و حکاکی</span><span class="en">Copperwork and Engraving</span></h3>
+<p>
+<span class="fa">ساخت ظروف مسی و هنر حکاکی روی فلز از مهارت‌های سنتی صنعتگران زنجانی است؛ آثاری که در کنار کاربرد روزمره، ارزش هنری و تزئینی نیز دارند.</span>
+<span class="en">Copperware and metal engraving are traditional skills practiced by Zanjan artisans. These objects have both practical and decorative value.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">قالی، گلیم و جاجیم</span><span class="en">Carpets, Kilims and Jajims</span></h3>
+<p>
+<span class="fa">قالی‌بافی در بخش‌های مختلف استان رواج دارد. گلیم و جاجیم نیز در نواحی‌ای مانند طارم، ماه‌نشان و انگوران با نقش‌ها و شیوه‌های بافت محلی تولید می‌شوند.</span>
+<span class="en">Carpet weaving is practiced across the province. Kilims and jajims are also made in areas such as Tarom, Mahneshan, and Angouran, each with local patterns and weaving methods.</span>
+</p>
+</article>
+<article class="tile">
+<h3><span class="fa">محصولات طارم</span><span class="en">Products of Tarom</span></h3>
+<p>
+<span class="fa">زیتون، روغن زیتون، انار و دیگر محصولات باغی از تولیدات شناخته‌شده طارم هستند. آب‌وهوا و باغداری در شکل‌گیری هویت اقتصادی و غذایی این منطقه نقش مهمی دارند.</span>
+<span class="en">Olives, olive oil, pomegranates, and other orchard products are among Tarom's well-known products. The climate and orchard farming play an important role in the area's economy and food culture.</span>
+</p>
+</article>
+</div>
 </section>
-
 <section id="sources">
-  <h2>
-    <span class="fa">۷. منابع و مطالعه بیشتر</span>
-    <span class="en">7. Sources and Further Reading</span>
-  </h2>
-
-  <p>
-    <span class="fa">برای شناخت بیشتر پوشاک، هنرهای دستی، خوراک و جاذبه‌های استان زنجان، منابع زیر به‌عنوان نقطه شروع مطالعه و بررسی معرفی می‌شوند.</span>
-    <span class="en">The following resources are starting points for further research into Zanjan's clothing, handicrafts, food, and attractions.</span>
-  </p>
-
-  <h3><span class="fa">منابع فارسی</span><span class="en">Persian Sources</span></h3>
-  <ul class="source-list">
-    <li>
-      <a href="https://ostandari-zn.ir/zanjangov/سیماى-شهرستان/صنایع-دستی-شهرستان" target="_blank" rel="noopener">
-        <span class="fa">استانداری زنجان – صنایع دستی شهرستان</span>
-        <span class="en">Zanjan Governor's Office – Local Handicrafts</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://zanjan360.ir/لباس-محلی-زنان-زنجان؛-نمادی-از-هویت-و-اص/" target="_blank" rel="noopener">
-        <span class="fa">زنجان ۳۶۰ – لباس محلی زنان زنجان</span>
-        <span class="en">Zanjan 360 – Traditional Women's Clothing</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.karnaval.ir/blog/zanjan-local-foods" target="_blank" rel="noopener">
-        <span class="fa">کارناوال – غذاهای محلی زنجان</span>
-        <span class="en">Karnaval – Local Foods of Zanjan</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.alibaba.ir/mag/zanjan/zanjan-ci/zanjan-attractions/" target="_blank" rel="noopener">
-        <span class="fa">مجله علی‌بابا – جاذبه‌های گردشگری زنجان</span>
-        <span class="en">Alibaba Magazine – Zanjan Attractions</span>
-      </a>
-    </li>
-  </ul>
-
-  <h3><span class="fa">منابع انگلیسی و بین‌المللی</span><span class="en">English and International Sources</span></h3>
-  <ul class="source-list">
-    <li>
-      <a href="https://visitiran.ir/en/province/zanjan-province" target="_blank" rel="noopener">
+<h2>
+<span class="fa">۷. منابع و مطالعه بیشتر</span>
+<span class="en">7. Sources and Further Reading</span>
+</h2>
+<p>
+<span class="fa">برای شناخت بیشتر پوشاک، هنرهای دستی، خوراک و جاذبه‌های استان زنجان، منابع زیر به‌عنوان نقطه شروع مطالعه و بررسی معرفی می‌شوند.</span>
+<span class="en">The following resources are starting points for further research into Zanjan's clothing, handicrafts, food, and attractions.</span>
+</p>
+<h3><span class="fa">منابع فارسی</span><span class="en">Persian Sources</span></h3>
+<ul class="source-list">
+<li>
+<a href="https://ostandari-zn.ir/zanjangov/سیماى-شهرستان/صنایع-دستی-شهرستان" rel="noopener" target="_blank">
+<span class="fa">استانداری زنجان – صنایع دستی شهرستان</span>
+<span class="en">Zanjan Governor's Office – Local Handicrafts</span>
+</a>
+</li>
+<li>
+<a href="https://zanjan360.ir/لباس-محلی-زنان-زنجان؛-نمادی-از-هویت-و-اص/" rel="noopener" target="_blank">
+<span class="fa">زنجان ۳۶۰ – لباس محلی زنان زنجان</span>
+<span class="en">Zanjan 360 – Traditional Women's Clothing</span>
+</a>
+</li>
+<li>
+<a href="https://www.karnaval.ir/blog/zanjan-local-foods" rel="noopener" target="_blank">
+<span class="fa">کارناوال – غذاهای محلی زنجان</span>
+<span class="en">Karnaval – Local Foods of Zanjan</span>
+</a>
+</li>
+<li>
+<a href="https://www.alibaba.ir/mag/zanjan/zanjan-ci/zanjan-attractions/" rel="noopener" target="_blank">
+<span class="fa">مجله علی‌بابا – جاذبه‌های گردشگری زنجان</span>
+<span class="en">Alibaba Magazine – Zanjan Attractions</span>
+</a>
+</li>
+</ul>
+<h3><span class="fa">منابع انگلیسی و بین‌المللی</span><span class="en">English and International Sources</span></h3>
+<ul class="source-list">
+<li>
+<a href="https://visitiran.ir/en/province/zanjan-province" rel="noopener" target="_blank">
         Visit Iran – Zanjan Province
       </a>
-    </li>
-    <li>
-      <a href="https://whc.unesco.org/en/list/1188/" target="_blank" rel="noopener">
+</li>
+<li>
+<a href="https://whc.unesco.org/en/list/1188/" rel="noopener" target="_blank">
         UNESCO – Soltaniyeh
       </a>
-    </li>
-    <li>
-      <a href="https://visitiran.ir/index.php/handicraft/Charoq--Duzi--%28Zanjan%29" target="_blank" rel="noopener">
+</li>
+<li>
+<a href="https://visitiran.ir/index.php/handicraft/Charoq--Duzi--%28Zanjan%29" rel="noopener" target="_blank">
         Visit Iran – Charoq Duzi (Zanjan)
       </a>
-    </li>
-  </ul>
-
-  <p class="small">
-    <span class="fa">این منابع برای مطالعه بیشتر گردآوری شده‌اند. در نسخه نهایی نمایشگاه، بهتر است اطلاعات پوشاک روستاها با اسناد میراث فرهنگی و روایت افراد آگاه محلی نیز تطبیق داده شود.</span>
-    <span class="en">These resources are provided for further reading. For the final exhibition, village clothing details should also be cross-checked with cultural heritage records and knowledgeable local accounts.</span>
-  </p>
-
-  <a class="back" href="index.html">
-    <span class="fa">← بازگشت به گالری مناطق ایران</span>
-    <span class="en">← Back to the Regions Gallery</span>
-  </a>
+</li>
+</ul>
+<p class="small">
+<span class="fa">این منابع برای مطالعه بیشتر گردآوری شده‌اند. در نسخه نهایی نمایشگاه، بهتر است اطلاعات پوشاک روستاها با اسناد میراث فرهنگی و روایت افراد آگاه محلی نیز تطبیق داده شود.</span>
+<span class="en">These resources are provided for further reading. For the final exhibition, village clothing details should also be cross-checked with cultural heritage records and knowledgeable local accounts.</span>
+</p>
+<a class="back" href="index.html">
+<span class="fa">← بازگشت به گالری مناطق ایران</span>
+<span class="en">← Back to the Regions Gallery</span>
+</a>
 </section>
-
 </main>
-
 <footer>
-  <p>
-    <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
-    <span class="en">Iran, A Thousand Colors | A Visual Story of Women's Dress in Iran</span>
-  </p>
-  <p>
-    <span class="fa">هنرمند و خالق آثار: مریم ساعی</span>
-    <span class="en">Artist and Artwork Creator: Maryam Saei</span>
-  </p>
-  <p>
-    <span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span>
-    <span class="en">Website Design and Cultural Research: Marjan Saei</span>
-  </p>
+<p>
+<span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+<span class="en">Iran, A Thousand Colors | A Visual Story of Women's Dress in Iran</span>
+</p>
+<p>
+<span class="fa">هنرمند و خالق آثار: مریم ساعی</span>
+<span class="en">Artist and Artwork Creator: Maryam Saei</span>
+</p>
+<p>
+<span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span>
+<span class="en">Website Design and Cultural Research: Marjan Saei</span>
+</p>
 </footer>
-
 <script>
 
 function toggleSiteMenu(){document.getElementById("siteNav").classList.toggle("open");}
@@ -689,6 +622,5 @@ langSwitch.addEventListener("click", function () {
 const savedLanguage = localStorage.getItem("iranHezarRangLanguage") || "fa";
 setLanguage(savedLanguage);
 </script>
-
 </body>
 </html>
