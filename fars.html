@@ -45,17 +45,71 @@ body.english .page-section,body.english .card{text-align:left}
 body.english ul{padding-left:24px;padding-right:0}
 @media(max-width:800px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero,.page-section,nav,header,footer{margin-left:12px;margin-right:12px}.hero,.page-section{padding:23px 18px}}
 @media(max-width:480px){.cards{grid-template-columns:1fr}header{padding-left:5px;padding-right:5px}.logo{font-size:15px}}
+
+/* Shared exhibition header */
+.site-header{max-width:none;width:100%;margin:0;padding:13px clamp(14px,4vw,52px);min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px;background:#f4ead8;border-bottom:1px solid #dfd2b9;box-shadow:0 3px 14px rgba(65,48,27,.08);position:relative;z-index:20}
+.brand{display:flex;align-items:center;gap:10px;color:#153f3b;text-decoration:none;font-weight:800;font-size:18px;white-space:nowrap}
+.brand-mark{width:39px;height:39px;display:grid;place-items:center;border-radius:50%;background:#a83e1d;color:#fff;border:2px solid #c9a45d;font-size:17px}
+.main-menu{display:flex;align-items:center;justify-content:center;gap:7px;max-width:none;margin:0;padding:0;background:transparent;border:0;border-radius:0;flex:1}
+.main-menu>a,.menu-home>a{display:block;text-decoration:none;color:#153f3b;font-size:14px;font-weight:600;padding:7px 11px;border-radius:20px;white-space:nowrap}
+.main-menu>a:hover,.menu-home>a:hover{background:#e9ddc7}
+.menu-home{position:relative}
+.submenu{display:none;position:absolute;top:100%;right:0;min-width:190px;padding:8px;background:#fffaf1;border:1px solid #dfd2b9;border-radius:12px;box-shadow:0 8px 22px rgba(40,30,20,.14)}
+.submenu a{display:block;padding:7px 10px;color:#153f3b;text-decoration:none;border-radius:8px;font-size:13px;white-space:nowrap}
+.submenu a:hover{background:#f1e6d3}
+.menu-home:hover .submenu,.menu-home:focus-within .submenu{display:block}
+.language-button{background:#fffaf1;color:#153f3b;border:1px solid #c9a45d;border-radius:22px;padding:6px 15px;white-space:nowrap}
+.menu-toggle{display:none;background:transparent;border:1px solid #c9a45d;color:#153f3b;border-radius:9px;padding:3px 11px;font-size:23px;line-height:1.4}
+.province-nav{max-width:none;margin:0;padding:9px 18px;background:#153f3b;color:#fff;display:flex;align-items:center;justify-content:center;gap:clamp(20px,8vw,100px);border:0;border-radius:0}
+.province-nav a{color:#f8f0e1;text-decoration:none;font-size:14px}
+.province-nav strong{color:#f1d69b;font-size:15px}
+body.english .submenu{right:auto;left:0}
+@media(max-width:800px){
+ .site-header{min-height:66px;gap:10px;padding:10px 14px}
+ .brand{font-size:15px}
+ .brand-mark{width:34px;height:34px}
+ .menu-toggle{display:block;order:2}
+ .language-button{order:3;padding:5px 11px}
+ .main-menu{display:none;position:absolute;top:100%;right:10px;left:10px;max-width:none;flex-direction:column;align-items:stretch;gap:2px;padding:10px;background:#fffaf1;border:1px solid #dfd2b9;border-radius:13px;box-shadow:0 8px 22px rgba(40,30,20,.14)}
+ .main-menu.open{display:flex}
+ .main-menu>a,.menu-home>a{padding:8px 12px}
+ .submenu{position:static;box-shadow:none;margin:2px 8px 6px;border-radius:9px}
+ .menu-home.open .submenu{display:block}
+ .province-nav{gap:12px;padding:9px 8px}
+ .province-nav a{font-size:12px}
+ .province-nav strong{font-size:13px}
+}
+
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">ایران، هزار رنگ | Iran, A Thousand Colors</div>
-  <button type="button" onclick="toggleLanguage()" id="langButton">English</button>
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-mark">ای</span><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span></a>
+  <button class="menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false" onclick="toggleMenu()">☰</button>
+  <nav class="main-menu" id="mainMenu" aria-label="Main navigation">
+    <div class="menu-home">
+      <a href="index.html"><span class="fa">صفحه اصلی</span><span class="en">Home</span></a>
+      <div class="submenu">
+        <a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions | Provinces</span></a>
+        <a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+        <a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">In-person Gallery</span></a>
+      </div>
+    </div>
+    <a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
+    <a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+    <a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
+  </nav>
+  <button type="button" onclick="toggleLanguage()" id="langButton" class="language-button">EN</button>
 </header>
+<div class="province-nav">
+  <a href="isfahan.html"><span class="fa">← اصفهان</span><span class="en">← Isfahan</span></a>
+  <strong><span class="fa">۱۳ | فارس</span><span class="en">13 | Fars</span></strong>
+  <a href="bushehr.html"><span class="fa">بوشهر →</span><span class="en">Bushehr →</span></a>
+</div>
 
 <div class="hero">
-  <div class="eyebrow"><span class="fa">منطقه ۱۰ از ۲۳ منطقه</span><span class="en">REGION 10 OF 23</span></div>
+  <div class="eyebrow"><span class="fa">منطقه ۱۳ از ۲۸ منطقه</span><span class="en">REGION 13 OF 28</span></div>
   <h1><span class="fa">فارس؛ سرزمین شعر، تاریخ و شکوه</span><span class="en">Fars: Land of Poetry, History and Grandeur</span></h1>
   <h2><span class="fa">فارس؛ ترانه‌ی رنگ‌ها، روایتِ اصالت</span><span class="en">Fars: A Song of Colors, a Story of Heritage</span></h2>
   <p><span class="fa">سفری تصویری میان پوشش زنان، فرهنگ قشقایی، روستاها، بناهای تاریخی، طبیعت و طعم‌های به‌یادماندنی سرزمین فارس.</span><span class="en">A visual journey through women's dress, Qashqai culture, villages, historic landmarks, nature and the memorable flavors of Fars.</span></p>
@@ -164,8 +218,22 @@ function toggleLanguage(){
  document.body.classList.toggle('english',english);
  document.documentElement.lang=english?'en':'fa';
  document.documentElement.dir=english?'ltr':'rtl';
- document.getElementById('langButton').textContent=english?'فارسی':'English';
+ document.getElementById('langButton').textContent=english?'FA':'EN';
+ document.querySelector('.menu-toggle').setAttribute('aria-label',english?'Open menu':'باز کردن منو');
 }
+function toggleMenu(){
+ const menu=document.getElementById('mainMenu');
+ const button=document.querySelector('.menu-toggle');
+ menu.classList.toggle('open');
+ button.setAttribute('aria-expanded',menu.classList.contains('open')?'true':'false');
+}
+document.addEventListener('click',function(event){
+ const home=document.querySelector('.menu-home');
+ if(home && event.target.closest('.menu-home > a') && window.matchMedia('(max-width: 800px)').matches){
+   event.preventDefault();
+   home.classList.toggle('open');
+ }
+});
 </script>
 </body>
 </html>
