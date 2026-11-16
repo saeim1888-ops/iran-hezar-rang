@@ -48,7 +48,7 @@ a {
   );
 }
 
-header {
+.province-hero {
   text-align: center;
   padding: 48px 20px 34px;
   border-bottom: 1px solid #d9c8a5;
@@ -80,7 +80,7 @@ h1 {
   max-width: 760px;
 }
 
-nav {
+.section-nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -89,7 +89,7 @@ nav {
   background: #eee4d1;
 }
 
-nav a {
+.section-nav a {
   text-decoration: none;
   padding: 6px 13px;
   border: 1px solid #d3c09a;
@@ -237,7 +237,7 @@ body.english {
   font-family: Arial, Tahoma, sans-serif;
 }
 
-body.english nav {
+body.english .section-nav {
   direction: ltr;
 }
 
@@ -264,22 +264,16 @@ body.english .fa {
 }
 
 @media (max-width: 600px) {
-  header {
+  .province-hero {
     padding-top: 45px;
   }
 
-  nav {
+  .section-nav {
     gap: 6px;
   }
 
-  nav a {
+  .section-nav a {
     font-size: 12px;
-  }
-
-  .lang-switch {
-    top: 8px;
-    left: 8px;
-    padding: 6px 10px;
   }
 }
 </style>
@@ -287,13 +281,176 @@ body.english .fa {
 
 <body>
 
-<button class="lang-switch" id="langSwitch" type="button">
-  English
-</button>
-
 <div class="topline"></div>
 
-<header>
+<style>
+/* Shared exhibition header */
+.site-header {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 12px clamp(14px, 3vw, 38px);
+  background: #f4ead8;
+  border-bottom: 1px solid #dfd2b9;
+  box-shadow: 0 3px 14px #38281712;
+  color: #153f3b;
+}
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  color: #153f3b;
+  text-decoration: none;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.site-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #fff8e9;
+  background: #a83e1d;
+  border: 2px solid #b08b48;
+  font-size: 18px;
+  line-height: 1;
+}
+.site-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 1.8vw, 24px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-menu a, .site-menu button {
+  color: #153f3b;
+  text-decoration: none;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px 2px;
+}
+.site-menu a:hover, .site-menu button:hover { color: #a83e1d; }
+.site-home-wrap { position: relative; }
+.site-submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 190px;
+  padding: 8px;
+  background: #fffaf0;
+  border: 1px solid #dfd2b9;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px #24190f20;
+}
+.site-home-wrap.open .site-submenu { display: grid; }
+.site-submenu a { display: block; padding: 8px 10px; white-space: nowrap; }
+.site-lang {
+  flex: 0 0 auto;
+  border: 1px solid #b08b48;
+  border-radius: 24px;
+  padding: 7px 13px;
+  background: #fffaf0;
+  color: #153f3b;
+  font-weight: 800;
+  cursor: pointer;
+}
+.site-mobile-toggle {
+  display: none;
+  border: 1px solid #cbb98f;
+  border-radius: 9px;
+  padding: 6px 10px;
+  color: #153f3b;
+  background: #fffaf0;
+  font-size: 21px;
+  cursor: pointer;
+}
+.province-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px clamp(14px, 3vw, 38px);
+  background: #153f3b;
+  color: #fff8e9;
+  font-size: 13px;
+}
+.province-bar a {
+  color: #f5dfae;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.province-current { text-align: center; font-weight: 800; }
+.province-current small { display: block; color: #e3d1a6; font-size: 11px; font-weight: 500; }
+body.english .site-header, body.english .site-menu { direction: ltr; }
+body.english .site-submenu { right: auto; left: 0; }
+body.english .province-bar { direction: ltr; }
+body.english .province-current { direction: ltr; }
+@media (max-width: 760px) {
+  .site-header { flex-wrap: wrap; gap: 10px; padding: 10px 13px; }
+  .site-brand { margin-right: auto; }
+  .site-mobile-toggle { display: inline-block; order: 3; }
+  .site-lang { order: 2; }
+  .site-menu {
+    display: none;
+    order: 4;
+    flex: 1 0 100%;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 0 2px;
+    border-top: 1px solid #dfd2b9;
+  }
+  .site-header.menu-open .site-menu { display: flex; }
+  .site-menu a, .site-menu button { display: block; width: 100%; text-align: right; padding: 8px 10px; }
+  body.english .site-menu a, body.english .site-menu button { text-align: left; }
+  .site-submenu { position: static; box-shadow: none; margin: 0 10px 5px; }
+  .province-bar { font-size: 11px; gap: 6px; padding: 9px 10px; }
+  .province-bar a { white-space: normal; }
+}
+</style>
+<header class="site-header">
+  <a class="site-brand" href="index.html">
+    <span class="site-brand-mark">هـ</span>
+    <span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span>
+  </a>
+  <button class="site-mobile-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+  <nav class="site-menu" aria-label="منوی اصلی">
+    <div class="site-home-wrap">
+      <button class="site-home-button" type="button" aria-expanded="false">
+        <span class="fa">صفحه اصلی⌄</span><span class="en">Home⌄</span>
+      </button>
+      <div class="site-submenu">
+        <a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions | Provinces</span></a>
+        <a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+        <a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Gallery</span></a>
+      </div>
+    </div>
+    <a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
+    <a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+    <a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
+  </nav>
+  <button class="site-lang" id="langSwitch" type="button">English</button>
+</header>
+<div class="province-bar">
+  <a href="hamedan.html"><span class="fa">← استان قبلی: همدان</span><span class="en">← Previous: Hamedan</span></a>
+  <div class="province-current"><span class="fa">۲۲ از ۲۸ | کرمانشاه</span><span class="en">22 of 28 | Kermanshah</span><small><span class="fa">مسیر استان‌ها</span><span class="en">Province Route</span></small></div>
+  <a href="kurdistan.html"><span class="fa">استان بعدی: کردستان →</span><span class="en">Next: Kurdistan →</span></a>
+</div>
+
+
+<header class="province-hero">
   <div class="eyebrow">
     <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
     <span class="en">Iran, A Thousand Colors | A visual story of women's dress in Iran</span>
@@ -315,7 +472,7 @@ body.english .fa {
   </p>
 </header>
 
-<nav>
+<nav class="section-nav">
   <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
   <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
   <a href="#villages"><span class="fa">روستاها و نواحی</span><span class="en">Villages & Areas</span></a>
@@ -790,6 +947,21 @@ body.english .fa {
     setLanguage(
       document.body.classList.contains('english') ? 'fa' : 'en'
     );
+  });
+
+  const siteHeader = document.querySelector('.site-header');
+  const mobileToggle = document.querySelector('.site-mobile-toggle');
+  const homeWrap = document.querySelector('.site-home-wrap');
+  const homeButton = document.querySelector('.site-home-button');
+
+  mobileToggle.addEventListener('click', () => {
+    const opened = siteHeader.classList.toggle('menu-open');
+    mobileToggle.setAttribute('aria-expanded', String(opened));
+  });
+
+  homeButton.addEventListener('click', () => {
+    const opened = homeWrap.classList.toggle('open');
+    homeButton.setAttribute('aria-expanded', String(opened));
   });
 })();
 </script>
