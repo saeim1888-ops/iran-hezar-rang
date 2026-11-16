@@ -180,6 +180,156 @@ body.english .fa { display: none !important; }
     padding: 6px 10px;
   }
 }
+
+/* Shared exhibition header */
+.site-header {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 12px clamp(14px, 3vw, 38px);
+  background: #f4ead8;
+  border-bottom: 1px solid #dfd2b9;
+  box-shadow: 0 3px 14px #34271912;
+}
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #153f3b;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.site-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #fff8e9;
+  background: #a83e1d;
+  border: 2px solid #b08b48;
+  font-size: 18px;
+}
+.site-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.site-menu a, .home-menu-button {
+  border: 0;
+  background: transparent;
+  color: #153f3b;
+  text-decoration: none;
+  font: inherit;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.site-menu a:hover, .home-menu-button:hover { background: #e9ddc8; }
+.home-menu-wrap { position: relative; }
+.home-submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 190px;
+  padding: 8px;
+  border: 1px solid #dfd2b9;
+  border-radius: 12px;
+  background: #fffaf0;
+  box-shadow: 0 8px 24px #0002;
+}
+.home-menu-wrap.open .home-submenu { display: grid; }
+.home-submenu a { border-radius: 8px; }
+.site-lang {
+  border: 1px solid #b08b48;
+  border-radius: 24px;
+  padding: 7px 12px;
+  color: #153f3b;
+  background: #fffaf0;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.mobile-menu-button {
+  display: none;
+  border: 1px solid #cbbb9d;
+  border-radius: 9px;
+  background: #fffaf0;
+  color: #153f3b;
+  padding: 7px 10px;
+  font-size: 20px;
+}
+.province-bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 10px clamp(12px, 3vw, 34px);
+  background: #153f3b;
+  color: #fff8e9;
+}
+.province-bar a {
+  color: #f6e6c4;
+  text-decoration: none;
+  font-size: 13px;
+}
+.province-bar a:last-child { text-align: left; }
+.province-current {
+  text-align: center;
+  font-weight: bold;
+  color: #fff8e9;
+  line-height: 1.7;
+}
+.province-current small {
+  display: block;
+  color: #e8d5ad;
+  font-size: 11px;
+  font-weight: normal;
+}
+.province-hero {
+  text-align: center;
+  padding: 48px 20px 34px;
+  border-bottom: 1px solid #d9c8a5;
+  background: var(--paper);
+}
+.section-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 16px;
+  background: #eee4d1;
+}
+body.english .home-submenu { right: auto; left: 0; }
+@media (max-width: 760px) {
+  .site-header { flex-wrap: wrap; gap: 10px; }
+  .mobile-menu-button { display: block; }
+  .site-menu {
+    display: none;
+    order: 4;
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 8px;
+    border-top: 1px solid #dfd2b9;
+  }
+  .site-header.menu-open .site-menu { display: flex; }
+  .site-menu > a, .home-menu-button { text-align: right; width: 100%; }
+  .home-submenu { position: static; box-shadow: none; margin: 2px 10px 8px; }
+  .province-bar { grid-template-columns: 1fr auto 1fr; gap: 6px; }
+  .province-bar a { font-size: 11px; }
+  .province-current { font-size: 12px; }
+  .province-current small { font-size: 10px; }
+}
+
 </style>
 </head>
 
@@ -188,7 +338,41 @@ body.english .fa { display: none !important; }
         aria-label="Change language">English</button>
 <div class="topline"></div>
 
-<header>
+<header class="site-header" id="siteHeader">
+  <a class="site-brand" href="index.html">
+    <span class="site-brand-mark">هـ</span>
+    <span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span>
+  </a>
+  <button class="mobile-menu-button" id="mobileMenuButton" type="button" aria-label="Open menu">☰</button>
+  <nav class="site-menu" aria-label="Main navigation">
+    <div class="home-menu-wrap" id="homeMenuWrap">
+      <button class="home-menu-button" id="homeMenuButton" type="button">
+        <span class="fa">صفحه اصلی ▾</span><span class="en">Home ▾</span>
+      </button>
+      <div class="home-submenu">
+        <a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions | Provinces</span></a>
+        <a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+        <a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">In-person Gallery</span></a>
+      </div>
+    </div>
+    <a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
+    <a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+    <a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
+  </nav>
+  <span class="site-lang">FA | EN</span>
+</header>
+<div class="province-bar" aria-label="Province navigation">
+  <a href="kerman.html"><span class="fa">← استان قبلی: کرمان</span><span class="en">← Previous: Kerman</span></a>
+  <div class="province-current">
+    <span class="fa">۱۱ از ۲۸ | یزد</span>
+    <span class="en">11 of 28 | Yazd</span>
+    <small><span class="fa">مسیر استان‌ها</span><span class="en">Province Journey</span></small>
+  </div>
+  <a href="isfahan.html"><span class="fa">استان بعدی: اصفهان →</span><span class="en">Next: Isfahan →</span></a>
+</div>
+
+
+<header class="province-hero">
   <div class="eyebrow">
     <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
     <span class="en">Iran, A Thousand Colors | A visual story of women's dress in Iran</span>
@@ -210,7 +394,7 @@ body.english .fa { display: none !important; }
   </p>
 </header>
 
-<nav aria-label="Page navigation">
+<nav class="section-nav" aria-label="Page navigation">
   <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
   <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
   <a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
@@ -756,5 +940,21 @@ body.english .fa { display: none !important; }
   });
 })();
 </script>
+
+<script>
+(() => {
+  const header = document.getElementById('siteHeader');
+  const mobileButton = document.getElementById('mobileMenuButton');
+  const homeWrap = document.getElementById('homeMenuWrap');
+  const homeButton = document.getElementById('homeMenuButton');
+  if (mobileButton && header) {
+    mobileButton.addEventListener('click', () => header.classList.toggle('menu-open'));
+  }
+  if (homeButton && homeWrap) {
+    homeButton.addEventListener('click', () => homeWrap.classList.toggle('open'));
+  }
+})();
+</script>
+
 </body>
 </html>
