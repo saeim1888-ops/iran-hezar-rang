@@ -34,11 +34,15 @@ height:5px;
 background:linear-gradient(90deg,var(--rust),var(--gold),var(--teal),var(--olive))
 }
 
-header{
+.province-hero{
 text-align:center;
-padding:48px 20px 34px;
-border-bottom:1px solid #d9c8a5;
-background:var(--paper)
+max-width:1050px;
+margin:24px auto 18px;
+padding:38px 20px 30px;
+border:1px solid #d9c8a5;
+border-radius:16px;
+background:var(--paper);
+box-shadow:0 5px 20px #65502a0a
 }
 
 .eyebrow{color:var(--rust);font-size:14px}
@@ -63,16 +67,19 @@ margin:8px auto;
 max-width:700px
 }
 
-nav{
+.section-nav{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 gap:9px;
+max-width:1050px;
+margin:0 auto;
 padding:16px;
-background:#eee4d1
+background:#eee4d1;
+border-radius:12px
 }
 
-nav a{
+.section-nav a{
 text-decoration:none;
 padding:6px 13px;
 border:1px solid #d3c09a;
@@ -80,20 +87,7 @@ border-radius:30px;
 font-size:13px
 }
 
-.lang-switch{
-position:fixed;
-z-index:10;
-top:12px;
-left:12px;
-border:1px solid var(--gold);
-border-radius:30px;
-background:var(--paper);
-color:var(--olive);
-padding:8px 14px;
-font-weight:bold;
-cursor:pointer;
-box-shadow:0 2px 10px #0001
-}
+
 
 main{
 max-width:1050px;
@@ -194,7 +188,7 @@ direction:ltr;
 font-family:Arial,Tahoma,sans-serif
 }
 
-body.english nav{direction:ltr}
+body.english .section-nav{direction:ltr}
 body.english ul{
 padding-left:22px;
 padding-right:0
@@ -213,24 +207,62 @@ display:none!important
 }
 
 @media(max-width:600px){
-header{padding-top:45px}
-nav{gap:6px}
-nav a{font-size:12px}
-.lang-switch{
-top:8px;
-left:8px;
-padding:6px 10px
+.province-hero{margin:18px 12px;padding:28px 16px 22px}
+.section-nav{gap:6px;margin:0 12px}
+.section-nav a{font-size:12px}
 }
-}
+
+.site-header{position:sticky;top:0;z-index:1000;max-width:none;width:100%;margin:0;padding:10px clamp(14px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:18px;background:#f4ead8;border-bottom:1px solid #dfd2b9;box-shadow:0 5px 18px rgba(53,47,38,.08);font-family:Tahoma,Arial,sans-serif;line-height:1.5}
+.site-brand{display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:17px;font-weight:800;color:#153f3b}
+.brand-mark{width:34px;height:34px;display:inline-grid;place-items:center;border-radius:50%;background:#a83e1d;color:#f4ead8;border:2px solid #c79a50;font-size:16px;flex:0 0 auto}
+.main-menu{display:flex;align-items:center;justify-content:center;gap:5px;flex:1}
+.main-menu a,.home-menu-trigger{display:inline-flex;align-items:center;gap:5px;padding:8px 10px;border:0;border-radius:9px;background:transparent;color:#153f3b;text-decoration:none;font:500 12px Tahoma,Arial,sans-serif;white-space:nowrap}
+.main-menu a:hover,.home-menu-trigger:hover{background:#e9ddc8}
+.home-menu{position:relative}
+.home-dropdown{display:none;position:absolute;top:100%;right:0;min-width:190px;padding:8px;background:#fffaf1;border:1px solid #dfd2b9;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.12)}
+.home-menu.open .home-dropdown{display:grid}
+.home-dropdown a{display:block;text-align:right}
+.site-header .lang-button{border:1px solid #c79a50;border-radius:22px;background:#fffaf1;color:#153f3b;padding:6px 14px;font-size:13px;white-space:nowrap;cursor:pointer}
+.menu-toggle{display:none;border:1px solid #dfd2b9;background:#fffaf1;color:#153f3b;border-radius:9px;padding:5px 10px;font-size:20px;cursor:pointer}
+.province-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px clamp(14px,4vw,56px);background:#153f3b;color:#f8f0e1;font-family:Tahoma,Arial,sans-serif;line-height:1.6}
+.province-bar a{color:#f8f0e1;text-decoration:none;font-size:12px;white-space:nowrap}
+.province-current{text-align:center;font-weight:700;font-size:13px}
+.province-current small{display:block;font-size:10px;opacity:.78;font-weight:400}
+@media(max-width:850px){.site-header{flex-wrap:wrap}.menu-toggle{display:block}.main-menu{display:none;order:3;flex:0 0 100%;align-items:stretch;flex-direction:column;padding:8px 0}.site-header.mobile-open .main-menu{display:flex}.main-menu a,.home-menu-trigger{width:100%;justify-content:flex-start;text-align:right}.home-menu{width:100%}.home-dropdown{position:static;box-shadow:none;margin:3px 10px 8px}.province-bar{padding:9px 12px}.province-bar a{font-size:10px}.province-current{font-size:11px}}
+@media(max-width:480px){.site-brand{font-size:14px}.brand-mark{width:30px;height:30px}.site-header{gap:8px}.province-current small{font-size:9px}}
+
 </style>
 </head>
 
 <body>
 
-<button class="lang-switch" id="langSwitch" type="button" aria-label="Change language">English</button>
 <div class="topline"></div>
+<header class="site-header" id="siteHeader">
+  <div class="site-brand"><span class="brand-mark">هـ</span><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span></div>
+  <button class="menu-toggle" type="button" aria-label="باز کردن منو" onclick="toggleMenu()">☰</button>
+  <nav class="main-menu" aria-label="Main menu">
+    <div class="home-menu" id="homeMenu">
+      <button class="home-menu-trigger" type="button" onclick="toggleHomeMenu()"><span class="fa">صفحه اصلی</span><span class="en">Home</span>⌄</button>
+      <div class="home-dropdown">
+        <a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions & Provinces</span></a>
+        <a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+        <a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Gallery</span></a>
+      </div>
+    </div>
+    <a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
+    <a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+    <a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
+  </nav>
+  <button type="button" onclick="toggleLanguage()" id="langSwitch" class="lang-button">EN</button>
+</header>
+<div class="province-bar">
+  <a href="arak.html"><span class="fa">← استان قبلی: مرکزی</span><span class="en">← Previous: Markazi</span></a>
+  <div class="province-current"><span class="fa">۲۱ از ۲۸ | همدان</span><span class="en">21 of 28 | Hamedan</span><small><span class="fa">مسیر استان‌ها</span><span class="en">Province Journey</span></small></div>
+  <a href="kermanshah.html"><span class="fa">استان بعدی: کرمانشاه →</span><span class="en">Next: Kermanshah →</span></a>
+</div>
 
-<header>
+
+<section class="province-hero">
 <div class="eyebrow">
 <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
 <span class="en">Iran, A Thousand Colors | A visual story of women's dress in Iran</span>
@@ -250,9 +282,9 @@ padding:6px 10px
 <span class="fa">سفری تصویری میان پوشش زنان، شهرها و روستاهای کهن، بناهای تاریخی، سفال لالجین و طعم‌های به‌یادماندنی همدان</span>
 <span class="en">A visual journey through women's dress, historic towns and villages, heritage sites, Lalejin pottery, and Hamedan's memorable flavors.</span>
 </p>
-</header>
+</section>
 
-<nav>
+<nav class="section-nav">
 <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
 <a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
 <a href="#villages"><span class="fa">شهرها و روستاها</span><span class="en">Towns & Villages</span></a>
@@ -643,26 +675,32 @@ padding:6px 10px
 </footer>
 
 <script>
-(() => {
- const button=document.getElementById('langSwitch');
- const saved=localStorage.getItem('iranHezarRangLanguage');
-
- function setLanguage(language){
-  const english=language==='en';
-  document.body.classList.toggle('english',english);
-  document.documentElement.lang=english?'en':'fa';
-  document.documentElement.dir=english?'ltr':'rtl';
-  button.textContent=english?'فارسی':'English';
-  button.setAttribute('aria-label',english?'Switch to Persian':'Switch to English');
-  localStorage.setItem('iranHezarRangLanguage',language);
- }
-
- setLanguage(saved==='en'?'en':'fa');
-
- button.addEventListener('click',()=>{
-  setLanguage(document.body.classList.contains('english')?'fa':'en');
- });
-})();
+function setLanguage(language){
+  const english = language === 'en';
+  document.body.classList.toggle('english', english);
+  document.documentElement.lang = english ? 'en' : 'fa';
+  document.documentElement.dir = english ? 'ltr' : 'rtl';
+  const button = document.getElementById('langSwitch');
+  button.textContent = english ? 'FA' : 'EN';
+  button.setAttribute('aria-label', english ? 'Switch to Persian' : 'Switch to English');
+  try { localStorage.setItem('iranHezarRangLanguage', language); } catch(e) {}
+}
+function toggleLanguage(){
+  setLanguage(document.body.classList.contains('english') ? 'fa' : 'en');
+  document.getElementById('siteHeader').classList.remove('mobile-open');
+  document.getElementById('homeMenu').classList.remove('open');
+}
+function toggleMenu(){
+  document.getElementById('siteHeader').classList.toggle('mobile-open');
+}
+function toggleHomeMenu(){
+  document.getElementById('homeMenu').classList.toggle('open');
+}
+try {
+  setLanguage(localStorage.getItem('iranHezarRangLanguage') === 'en' ? 'en' : 'fa');
+} catch(e) {
+  setLanguage('fa');
+}
 </script>
 
 </body>
