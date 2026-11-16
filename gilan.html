@@ -219,6 +219,24 @@ footer{
   nav a{font-size:12px;padding:4px 10px}
   .intro{padding:16px}
 }
+
+/* Shared visual system aligned with the approved Semnan page */
+:root{--paper:#fffaf0;--card:#fffaf0;--olive:#596447;--gold:#b08b48;--orange:#b94e27;--line:#e4d7bd;--muted:#666354;--cream:#f8f1e3}
+body{background:var(--cream);color:#292b25;line-height:2.1}
+header:not(.ir-shared-header){max-width:none;padding:55px 20px 35px;background:radial-gradient(circle at 15% 20%,#e8d7b6 0,transparent 28%),radial-gradient(circle at 85% 80%,#e5d8b8 0,transparent 28%),var(--cream);border-bottom:1px solid #ddcfb4}
+.eyebrow{color:var(--rust,#b94e27);font-size:13px}
+h1{color:var(--olive);font-size:clamp(27px,5vw,43px);line-height:1.7;margin:12px 0}
+.slogan{color:var(--orange);font-size:clamp(17px,3vw,23px);margin:8px 0}
+.subtitle{max-width:720px;color:#666354;font-size:14px;margin:12px auto 0}
+body>nav:not(.ir-header-nav){position:static;backdrop-filter:none;gap:9px;padding:20px 14px;background:var(--paper);border-top:0;border-bottom:1px solid #e4d7bd}
+body>nav:not(.ir-header-nav) a{color:var(--olive);background:#f0e7d5;border:1px solid #e1d2b5;border-radius:30px;padding:5px 13px;font-size:12px}
+body>nav:not(.ir-header-nav) a:hover{background:var(--olive);color:white}
+main{max-width:1050px;margin:30px auto;padding:0 18px}
+section{background:var(--paper);padding:clamp(20px,4vw,38px);margin-bottom:25px;border:1px solid #e4d7bd;border-radius:18px;box-shadow:0 5px 18px #5946290b;scroll-margin-top:20px}
+h2{color:var(--olive);font-size:clamp(21px,3vw,28px);margin-top:0;padding-bottom:10px;border-bottom:1px solid #e5d6b9}
+h3{color:var(--orange);font-size:17px}
+.art-frame{background:#f7efdf;border:1px solid #ddcda9;border-radius:5px;box-shadow:0 9px 25px #00000012}
+@media(max-width:600px){header:not(.ir-shared-header){padding:55px 16px 28px}main{padding:0 10px;margin-top:18px}section{padding:20px 16px;border-radius:13px}}
 </style>
 </head>
 
@@ -620,5 +638,6 @@ try {
   if(savedLang === "en") setLanguage("en");
 } catch(e) {}
 </script>
+<script src="province-header.js" defer></script>
 </body>
 </html>
