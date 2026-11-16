@@ -64,7 +64,7 @@ h1{
 }
 .hero h2{font-size:22px;color:var(--rust);margin:0}
 .hero p{margin:10px auto;max-width:820px}
-nav{
+.section-nav{
   max-width:1015px;
   margin:18px auto;
   padding:15px 25px;
@@ -76,7 +76,7 @@ nav{
   justify-content:center;
   flex-wrap:wrap;
 }
-nav a{
+.section-nav a{
   font-size:14px;
   text-decoration:none;
   border:1px solid var(--line);
@@ -143,13 +143,13 @@ footer a{color:var(--green)}
 body.english{direction:ltr}
 body.english .en{display:inline}
 body.english .fa{display:none}
-body.english .page-section,
+body.english .section-nav{direction:ltr}\nbody.english .page-section,
 body.english .card{text-align:left}
 body.english ul{padding-left:24px;padding-right:0}
 
 @media(max-width:800px){
   .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .hero,.page-section,nav,header,footer{
+  .hero,.page-section,.section-nav,footer{
     margin-left:12px;
     margin-right:12px;
   }
@@ -185,19 +185,96 @@ body.english ul{padding-left:24px;padding-right:0}
 .cards {
   gap: 15px;
 }
+
+/* Shared Iran, A Thousand Colors site header */
+.site-header{
+  position:relative; z-index:50; width:100%; max-width:none; margin:0;
+  padding:12px clamp(14px,3vw,42px); min-height:76px;
+  display:flex; align-items:center; justify-content:space-between; gap:22px;
+  background:#f4ead8; border-bottom:1px solid #dfd2b9;
+  box-shadow:0 3px 14px rgba(54,42,25,.08);
+  direction:rtl;
+}
+.site-brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:#153f3b; flex:0 0 auto}
+.brand-mark{width:39px;height:39px;border-radius:50%;display:grid;place-items:center;background:#a83e1d;color:#fff8e9;border:2px solid #b08b48;font-weight:800;font-size:20px}
+.brand-name{font-weight:800;font-size:17px;white-space:nowrap}
+.main-menu{display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.8vw,25px);flex:1}
+.main-menu>a,.home-menu>a{color:#153f3b;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap}
+.main-menu>a:hover,.home-menu>a:hover,.home-dropdown a:hover{color:#a83e1d}
+.home-menu{position:relative;padding:10px 0}
+.home-dropdown{display:none;position:absolute;top:100%;right:0;min-width:190px;padding:8px;background:#fffaf1;border:1px solid #dfd2b9;border-radius:10px;box-shadow:0 8px 22px #0002}
+.home-dropdown a{display:block;padding:8px 10px;color:#153f3b;text-decoration:none;font-size:13px;white-space:nowrap;border-radius:6px}
+.home-menu:hover .home-dropdown,.home-menu:focus-within .home-dropdown{display:block}
+.language-toggle{flex:0 0 auto;border:1px solid #b08b48;border-radius:24px;background:#fffaf1;color:#153f3b;padding:7px 14px;font-weight:700;font-size:13px;cursor:pointer}
+.mobile-menu-toggle{display:none;border:1px solid #d7c6a7;border-radius:9px;background:#fffaf1;color:#153f3b;padding:5px 11px;font-size:21px;line-height:1.4;cursor:pointer}
+.province-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px clamp(12px,3vw,40px);background:#153f3b;color:#fff8e9;direction:rtl}
+.province-step{color:#f7e7c7;text-decoration:none;font-size:13px;font-weight:600}
+.province-current{font-size:14px;font-weight:800;color:#fff;text-align:center;white-space:nowrap}
+body.english .site-header,body.english .province-bar{direction:ltr}
+body.english .home-dropdown{right:auto;left:0}
+body.english .main-menu{direction:ltr}
+@media(max-width:850px){
+  .site-header{gap:10px;flex-wrap:wrap}
+  .brand-name{font-size:15px}
+  .mobile-menu-toggle{display:block;margin-inline-start:auto}
+  .main-menu{display:none;order:4;flex:0 0 100%;width:100%;align-items:stretch;flex-direction:column;gap:0;padding:8px 0 4px;border-top:1px solid #dfd2b9}
+  .main-menu.open{display:flex}
+  .main-menu>a,.home-menu>a{display:block;padding:9px 8px}
+  .home-menu{padding:0}
+  .home-dropdown{position:static;display:none;box-shadow:none;margin:0 8px 8px;border-radius:8px}
+  .home-menu.open .home-dropdown{display:block}
+  .language-toggle{margin-inline-start:0}
+  .province-bar{flex-wrap:wrap;justify-content:center}
+  .province-step{font-size:12px}
+}
+@media(max-width:480px){
+  .site-header{padding:10px 12px}
+  .brand-mark{width:34px;height:34px}
+  .brand-name{font-size:14px}
+  .province-bar{gap:6px}
+  .province-step{max-width:42%;text-align:center}
+  .province-current{font-size:13px}
+}
+
 </style>
 </head>
 
 <body>
-<header>
-  <div class="logo">ایران، هزار رنگ | Iran, A Thousand Colors</div>
-  <button type="button" onclick="toggleLanguage()" id="langButton">English</button>
-</header>
+<div class="site-header">
+  <a class="site-brand" href="index.html">
+    <span class="brand-mark">ه</span>
+    <span class="brand-name"><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span></span>
+  </a>
+
+  <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+
+  <nav class="main-menu" id="mainMenu" aria-label="منوی اصلی">
+    <div class="home-menu">
+      <a class="menu-home" href="index.html"><span class="fa">صفحه اصلی</span><span class="en">Home</span></a>
+      <div class="home-dropdown">
+        <a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions | Provinces</span></a>
+        <a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+        <a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">In-person Gallery</span></a>
+      </div>
+    </div>
+    <a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
+    <a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+    <a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
+  </nav>
+
+  <button class="language-toggle" id="langSwitch" type="button">English</button>
+</div>
+
+<div class="province-bar">
+  <a class="province-step" href="hamedan.html"><span class="fa">← استان قبلی: همدان</span><span class="en">← Previous: Hamedan</span></a>
+  <div class="province-current"><span class="fa">۲۳ از ۲۸ | کردستان</span><span class="en">23 of 28 | Kurdistan</span></div>
+  <a class="province-step" href="urmia.html"><span class="fa">استان بعدی: آذربایجان غربی →</span><span class="en">Next: West Azerbaijan →</span></a>
+</div>
 
 <div class="hero">
   <div class="eyebrow">
-    <span class="fa">منطقه ۹ از ۲۳ منطقه</span>
-    <span class="en">REGION 9 OF 23</span>
+    <span class="fa">منطقه ۲۳ از ۲۸ منطقه</span>
+    <span class="en">REGION 23 OF 28</span>
   </div>
 
   <h1>
@@ -216,7 +293,7 @@ body.english ul{padding-left:24px;padding-right:0}
   </p>
 </div>
 
-<nav>
+<nav class="section-nav">
   <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
   <a href="#dress"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
   <a href="#villages"><span class="fa">روستاها و نواحی</span><span class="en">Villages & Regions</span></a>
@@ -780,16 +857,43 @@ body.english ul{padding-left:24px;padding-right:0}
 </footer>
 
 <script>
-function toggleLanguage(){
-  const english=!document.body.classList.contains('english');
+(() => {
+  const languageButton = document.getElementById('langSwitch');
+  const mobileButton = document.getElementById('mobileMenuToggle');
+  const mainMenu = document.getElementById('mainMenu');
+  const homeMenu = document.querySelector('.home-menu');
+  const savedLanguage = localStorage.getItem('iranHezarRangLanguage');
 
-  document.body.classList.toggle('english',english);
-  document.documentElement.lang=english?'en':'fa';
-  document.documentElement.dir=english?'ltr':'rtl';
+  function setLanguage(language) {
+    const english = language === 'en';
+    document.body.classList.toggle('english', english);
+    document.documentElement.lang = english ? 'en' : 'fa';
+    document.documentElement.dir = english ? 'ltr' : 'rtl';
+    languageButton.textContent = english ? 'فارسی' : 'English';
+    languageButton.setAttribute('aria-label', english ? 'Switch to Persian' : 'Switch to English');
+    localStorage.setItem('iranHezarRangLanguage', language);
+  }
 
-  document.getElementById('langButton').textContent=
-    english?'فارسی':'English';
-}
+  setLanguage(savedLanguage === 'en' ? 'en' : 'fa');
+
+  languageButton.addEventListener('click', () => {
+    setLanguage(document.body.classList.contains('english') ? 'fa' : 'en');
+  });
+
+  mobileButton.addEventListener('click', () => {
+    const isOpen = mainMenu.classList.toggle('open');
+    mobileButton.setAttribute('aria-expanded', String(isOpen));
+    mobileButton.textContent = isOpen ? '×' : '☰';
+  });
+
+  const homeLink = document.querySelector('.menu-home');
+  homeLink.addEventListener('click', (event) => {
+    if (window.matchMedia('(max-width: 850px)').matches) {
+      event.preventDefault();
+      homeMenu.classList.toggle('open');
+    }
+  });
+})();
 </script>
 
 </body>
