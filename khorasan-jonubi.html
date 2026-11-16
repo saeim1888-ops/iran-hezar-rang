@@ -1,560 +1,466 @@
-
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>خراسان جنوبی | ایران، هزار رنگ</title>
 
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="سمنان؛ روایت تصویری پوشش زنان، فرهنگ روستاها، تاریخ، طبیعت و خوراکی‌های محلی در نمایشگاه ایران، هزار رنگ." name="description"/>
+<title>خراسان جنوبی | ایران، هزار رنگ</title>
 <style>
-:root {
-  --cream:#f8f1e3;
-  --paper:#fffaf0;
-  --olive:#596447;
-  --dark:#292b25;
-  --gold:#b08b48;
-  --rust:#b94e27;
-  --teal:#245b60;
+:root{--cream:#f8f1e3;--paper:#fffaf0;--olive:#596447;--dark:#292b25;--gold:#b08b48;--rust:#b94e27;--teal:#245b60;--line:#dfd2b9}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:150px}
+body{margin:0;background:var(--cream);color:var(--dark);font-family:Tahoma,Arial,sans-serif;line-height:1.95}
+a{color:inherit;text-decoration:none}
+
+.site-header{
+  position:relative;top:0;z-index:1000;width:100%;
+  background:#f4ead8;border-bottom:1px solid #dfd2b9;
+  box-shadow:0 4px 16px rgba(57,46,36,.08);
 }
-* { box-sizing:border-box; }
-body {
-  margin:0;
-  background:var(--cream);
-  color:var(--dark);
-  font-family:Tahoma,Arial,sans-serif;
-  line-height:2.1;
+.topline{display:none}
+.header-main{
+  max-width:1320px;min-height:72px;margin:auto;padding:10px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:22px;
 }
-.topline {
-  height:9px;
-  background:linear-gradient(90deg,var(--rust),var(--gold),var(--olive),var(--teal));
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#153f3b;font-size:17px;white-space:nowrap;order:3}
+.brand-mark{
+  width:40px;height:40px;border:2px solid #c79a4a;border-radius:50%;
+  display:grid;place-items:center;color:#fff4df;background:#963c25;font-size:19px;
 }
-header {
-  text-align:center;
-  padding:35px 18px 22px;
-  background:
-    radial-gradient(circle at top left,#e9d9b8,transparent 45%),
-    var(--paper);
-  border-bottom:1px solid #dfcfad;
+.main-menu{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,27px);flex:1;order:2}
+.main-menu>a,.dropbtn{
+  font:inherit;font-size:13px;font-weight:700;color:#153f3b;background:none;
+  border:0;padding:9px 2px;cursor:pointer;white-space:nowrap;
 }
-.eyebrow {
-  color:var(--rust);
-  font-size:13px;
-  letter-spacing:1px;
+.main-menu>a:hover,.dropbtn:hover{color:#963c25}
+.dropdown{position:relative}
+.dropdown-content{
+  display:none;position:absolute;top:100%;right:0;min-width:220px;
+  background:#fff8eb;border:1px solid #c79a4a;border-radius:11px;padding:8px;
+  box-shadow:0 10px 25px rgba(57,46,36,.17)
 }
-h1 {
-  margin:5px 0;
-  color:var(--olive);
-  font-size:clamp(27px,5vw,43px);
+.dropdown.open .dropdown-content{display:block}
+.dropdown-content a{display:block;padding:10px 12px;border-radius:7px;font-size:13px;color:#153f3b}
+.dropdown-content a:hover{background:#f0dfc1;color:#963c25}
+.lang-switch{
+  order:1;border:1px solid #b7aa8e;border-radius:0;background:#fff8eb;
+  color:#153f3b;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap;
+  min-width:72px
 }
-.subtitle { color:#74694f; margin:0; }
-.lang-switch {
-  position:fixed;
-  z-index:5;
-  top:14px;
-  right:14px;
-  border:1px solid var(--gold);
-  background:var(--paper);
-  color:var(--dark);
-  padding:7px 14px;
-  border-radius:25px;
-  cursor:pointer;
-  font-weight:bold;
+.province-nav{background:#153f3b;color:#fff4df;padding:8px 16px}
+.province-nav-inner{
+  max-width:1200px;margin:auto;display:flex;align-items:center;
+  justify-content:center;gap:20px;flex-wrap:wrap
 }
-nav {
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  padding:16px;
+.province-nav a,.province-nav span{
+  font-size:12px;padding:3px 4px;border:0;border-radius:0;color:#f4d79d
 }
-nav a,.back {
-  text-decoration:none;
-  color:var(--olive);
-  border:1px solid #d8c6a0;
-  background:var(--paper);
-  padding:6px 14px;
-  border-radius:25px;
-  font-size:13px;
+.province-nav span{font-weight:800;color:#fff4df}
+.province-nav a:hover{color:#fff;text-decoration:underline}
+html[dir="ltr"] .header-main{direction:ltr}
+html[dir="ltr"] .dropdown-content{right:auto;left:0}
+html[dir="ltr"] .province-nav-inner{direction:ltr}
+
+.hero{max-width:1100px;margin:34px auto 24px;padding:44px 28px;text-align:center;background:linear-gradient(135deg,#fffaf0,#f0e3cb);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 35px #5c452015;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #b08b4833;border-radius:50%}
+.hero:before{top:-105px;right:-65px}.hero:after{bottom:-120px;left:-60px}
+.eyebrow{color:var(--rust);font-size:12px;letter-spacing:.4px}
+h1{font-size:clamp(25px,4vw,39px);color:var(--teal);margin:8px 0}
+.slogan{font-size:18px;color:var(--olive);font-weight:bold;margin:8px 0}
+.hero p{max-width:780px;margin:10px auto 0;font-size:14px}
+.page-nav{max-width:1100px;margin:0 auto 28px;padding:12px 18px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.page-nav a{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:12px;color:var(--olive)}
+.page-nav a:hover{background:var(--olive);color:white}
+main{max-width:1100px;margin:auto;padding:0 20px 40px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;margin:0 0 22px;box-shadow:0 7px 22px #4b38100b}
+h2{font-size:21px;color:var(--rust);margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+h3{font-size:16px;color:var(--teal);margin:12px 0 5px}
+p{margin:8px 0}.art-grid,.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.art-grid img,.art-image{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:#eee2cf}
+.caption{font-size:12px;color:#756b58;text-align:center;margin-top:7px}
+.tile{background:#f7efdf;border:1px solid var(--line);border-radius:13px;padding:15px}
+.quote{border-right:3px solid var(--gold);padding:9px 14px;color:var(--olive);background:#f7efdf;border-radius:8px;margin-top:15px}
+ul{padding-right:22px}.source-list li{margin:7px 0;font-size:13px}
+.source-list a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+footer{text-align:center;padding:25px 16px;background:#e9dec9;color:#5d584b;font-size:12px}
+.back{display:inline-block;background:var(--rust);color:white;padding:9px 18px;border-radius:22px;margin-top:8px}
+.en{display:none}body.english{direction:ltr}body.english .en{display:initial}body.english .fa{display:none}
+body.english .quote{border-right:0;border-left:3px solid var(--gold)}body.english ul{padding-right:0;padding-left:22px}
+body.english .dropdown-content{right:auto;left:0}
+@media(max-width:850px){
+ .header-main{min-height:66px;padding:9px 14px;flex-wrap:wrap;gap:10px}
+ .brand{font-size:14px;order:1}
+ .brand-mark{width:35px;height:35px;font-size:17px}
+ .lang-switch{order:3;margin-inline-start:0}
+ .main-menu{display:none;order:3;flex:1 0 100%;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 0 4px;border-top:1px solid #dfd2b9}
+ .main-menu.mobile-open{display:flex}
+ .main-menu>a,.dropbtn{display:block;width:100%;padding:11px 12px;text-align:right;white-space:normal}
+ html[dir="ltr"] .main-menu>a,html[dir="ltr"] .dropbtn{text-align:left}
+ .dropdown-content{position:static;min-width:0;margin:0 10px 7px;box-shadow:none;background:#f0dfc1}
+ .dropdown.open .dropdown-content{display:block}
+ .hero{margin:18px 12px;padding:30px 17px}
+ .page-nav{padding:8px 12px}
+ main{padding:0 12px 28px}
+ section{padding:19px}
+ .art-grid,.tiles{grid-template-columns:1fr}
+ .province-nav-inner{gap:10px;font-size:11px}
 }
-main {
-  max-width:1050px;
-  padding:0 18px 45px;
-  margin:auto;
-}
-section {
-  background:var(--paper);
-  border:1px solid #e7d8bb;
-  border-radius:18px;
-  padding:24px;
-  margin:22px 0;
-  box-shadow:0 7px 22px #6d59300b;
-}
-h2 {
-  font-size:22px;
-  color:var(--rust);
-  margin-top:0;
-}
-h3 { color:var(--olive); }
-.hero-art {
-  display:block;
-  width:100%;
-  max-width:690px;
-  margin:22px auto;
-  padding:9px;
-  background:#fffdf7;
-  border:1px solid var(--gold);
-  outline:5px solid #e9dcc1;
-  outline-offset:-14px;
-  border-radius:4px;
-  box-shadow:0 12px 28px #30281720;
-}
-.label-art {
-  display:block;
-  width:100%;
-  max-width:470px;
-  margin:20px auto;
-  padding:7px;
-  background:#fffdf7;
-  border:1px solid #d5bd8b;
-  box-shadow:0 8px 22px #30281718;
-}
-.quote {
-  margin:24px 0;
-  padding:20px;
-  border-right:5px solid var(--rust);
-  background:#f4e8d1;
-  color:#51462f;
-  font-size:20px;
-  text-align:center;
-}
-.grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px;
-}
-.tile {
-  padding:17px;
-  background:#f8f0e0;
-  border:1px solid #e4d2ae;
-  border-radius:13px;
-}
-.tile h3 { margin-top:0; }
-.small { font-size:13px; color:#726750; }
-.source-list { padding-right:22px; }
-.source-list a { color:var(--teal); overflow-wrap:anywhere; }
-footer {
-  text-align:center;
-  padding:25px 16px 35px;
-  color:#71664f;
-  font-size:13px;
-}
-.back {
-  display:inline-block;
-  margin:10px;
-}
-.en { display:none; }
-body.english {
-  direction:ltr;
-  font-family:Arial,Tahoma,sans-serif;
-}
-body.english .fa { display:none; }
-body.english .en { display:block; }
-body.english .lang-switch { right:auto; left:14px; }
-body.english .quote {
-  border-right:0;
-  border-left:5px solid var(--rust);
-}
-body.english .source-list { padding-right:0; padding-left:22px; }
-body.english nav { direction:ltr; }
-@media(max-width:650px) {
-  section { padding:17px; }
-  .grid { grid-template-columns:1fr; }
-  nav { padding-top:22px; }
+@media(min-width:851px){
+ .main-menu{display:flex!important}
 }
 </style>
 </head>
-
 <body>
-<div class="topline"></div>
-
-<button class="lang-switch" id="langSwitch" type="button">English</button>
-
-<header>
-  <div class="eyebrow fa">گالری مناطق ایران · روایت تصویری پوشش زنان</div>
-  <div class="eyebrow en">IRAN REGIONS GALLERY · WOMEN'S TRADITIONAL DRESS</div>
-
-  <h1 class="fa">خراسان جنوبی</h1>
-  <h1 class="en">South Khorasan</h1>
-
-  <p class="subtitle fa">سرخی زرشک، زرّینی زعفران</p>
-  <p class="subtitle en">The Crimson of Barberries, the Gold of Saffron</p>
-</header>
-
-<nav>
-  <a href="index.html">
-    <span class="fa">صفحه اصلی گالری</span>
-    <span class="en">Gallery Home</span>
-  </a>
-  <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
-  <a href="#dress"><span class="fa">پوشش محلی</span><span class="en">Traditional Dress</span></a>
-  <a href="#culture"><span class="fa">فرهنگ و خوراک</span><span class="en">Culture & Food</span></a>
+<div class="site-header">
+<div class="header-main">
+<a class="brand" href="index.html">
+<span class="brand-mark">ه</span>
+<span class="fa">ایران، هزار رنگ</span><span class="en">Iran, a Thousand Colors</span>
+</a>
+<nav aria-label="منوی اصلی" class="main-menu">
+<div class="dropdown" id="homeDropdown">
+<button aria-expanded="false" class="dropbtn" type="button">
+<span class="fa">صفحه اصلی</span><span class="en">Home</span>
+</button>
+<div class="dropdown-content">
+<a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions | Provinces</span></a>
+<a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+<a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Exhibition</span></a>
+</div>
+</div>
+<a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
+<a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+<a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
 </nav>
-
-<main>
-
-<section id="art">
-  <h2 class="fa">پنجره‌ای به خراسان جنوبی</h2>
-  <h2 class="en">A Window into South Khorasan</h2>
-
-  <p class="fa">
-    در جنوب خراسان، رنگ سرخ زرشک، عطر زعفران و معماری خشتی
+<button class="lang-switch" id="langSwitch" type="button">FA | EN</button>
+</div>
+<div class="province-nav"><div class="province-nav-inner">
+<a href="north-khorasan.html"><span class="fa"><span class="fa">۰۷ | خراسان جنوبی</span><span class="en">07 | South Khorasan</span></span><span class="en">← North Khorasan</span></a>
+<span><span class="fa">۰۵ | سمنان</span><span class="en">05 | Semnan</span></span>
+<a href="sistan-baluchestan.html"><span class="fa">سیستان و بلوچستان →</span><span class="en">Sistan and Baluchestan →</span></a>
+</div></div>
+</div>
+<header class="hero">
+<div class="eyebrow"><span class="fa">گالری حضوری و آنلاین | ایران، هزار رنگ</span><span class="en">In-person and online exhibition | Iran, a Thousand Colors</span></div>
+<h1><span class="fa">خراسان جنوبی</span><span class="en">South Khorasan</span></h1>
+<div class="slogan"><span class="fa">سرخی زرشک، زرّینی زعفران</span><span class="en">The Crimson of Barberries, the Gold of Saffron</span></div>
+<p><span class="fa">در جنوب خراسان، رنگ سرخ زرشک، عطر زعفران و معماری خشتی
     روایتگر پیوند زندگی مردم با اقلیم کویری و فرهنگ دیرپای این سرزمین‌اند.
-    این اثر، برداشتی هنری از تنوع فرهنگی و پوشش محلی منطقه است.
-  </p>
-  <p class="en">
-    In South Khorasan, crimson barberries, fragrant saffron and earthen
+    این اثر، برداشتی هنری از تنوع فرهنگی و پوشش محلی منطقه است.</span><span class="en">In South Khorasan, crimson barberries, fragrant saffron and earthen
     architecture tell a story of life shaped by the desert climate and
     enduring cultural traditions. This artwork is an artistic interpretation
-    of the region's cultural diversity and traditional dress.
-  </p>
-
-  <img class="hero-art"
-       src="khorasan-jonubi.png"
-       alt="اثر هنری خراسان جنوبی"
-       onerror="this.style.display='none';document.getElementById('posterWarning').style.display='block';">
-
-  <p id="posterWarning" class="small" style="display:none;text-align:center">
-    تصویر پوستر پیدا نشد؛ نام فایل را بررسی کن: khorasan-jonubi.png
-  </p>
-
-  <div class="quote fa">«خراسان جنوبی؛ سرخی زرشک، زرّینی زعفران»</div>
-  <div class="quote en">“South Khorasan: Barberry Crimson, Saffron Gold”</div>
-
-  <h2 class="fa">لیبل اطلاعاتی اثر</h2>
-  <h2 class="en">Artwork Information Label</h2>
-
-  <img class="label-art"
-       src="khorasan-jonubi_leibel.png"
-       alt="لیبل اطلاعاتی خراسان جنوبی"
-       onerror="this.style.display='none';document.getElementById('labelWarning').style.display='block';">
-
-  <p id="labelWarning" class="small" style="display:none;text-align:center">
-    تصویر لیبل پیدا نشد؛ نام فایل را بررسی کن: khorasan-jonubi_leibel.png
-  </p>
-</section>
-
-<section id="dress">
-  <h2 class="fa">پوشش زنان؛ رنگ در تار و پود زندگی</h2>
-  <h2 class="en">Women's Dress: Colour Woven into Daily Life</h2>
-
-  <p class="fa">
+    of the region's cultural diversity and traditional dress.</span></p>
+</header>
+<nav class="page-nav">
+<a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+<a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women’s clothing</span></a>
+<a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
+<a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History &amp; nature</span></a>
+<a href="#food"><span class="fa">خوراکی‌ها</span><span class="en">Local food</span></a>
+<a href="#products"><span class="fa">محصولات بومی</span><span class="en">Local products</span></a>
+<a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
+<main>
+<section id="art"><h2><span class="fa">اثر هنری خراسان جنوبی</span><span class="en">South Khorasan Artwork</span></h2><div class="art-grid"><div><img alt="اثر هنری خراسان جنوبی" class="hero-art" onerror="this.style.display='none';document.getElementById('posterWarning').style.display='block';" src="khorasan-jonubi.png"/><div class="caption"><span class="fa">روایت تصویری پوشش و هویت فرهنگی زنان خراسان جنوبی</span><span class="en">A visual story of women’s clothing and cultural identity in South Khorasan</span></div></div><div><p><span class="fa">در جنوب خراسان، رنگ سرخ زرشک، عطر زعفران و معماری خشتی
+    روایتگر پیوند زندگی مردم با اقلیم کویری و فرهنگ دیرپای این سرزمین‌اند.
+    این اثر، برداشتی هنری از تنوع فرهنگی و پوشش محلی منطقه است.</span><span class="en">In South Khorasan, crimson barberries, fragrant saffron and earthen
+    architecture tell a story of life shaped by the desert climate and
+    enduring cultural traditions. This artwork is an artistic interpretation
+    of the region's cultural diversity and traditional dress.</span></p><div class="quote fa">«خراسان جنوبی؛ سرخی زرشک، زرّینی زعفران»</div><div class="quote en">“South Khorasan: Barberry Crimson, Saffron Gold”</div><img alt="لیبل اطلاعاتی خراسان جنوبی" class="label-art" onerror="this.style.display='none';document.getElementById('labelWarning').style.display='block';" src="khorasan-jonubi_leibel.png"/></div></div></section>
+<section id="clothing"><h2><span class="fa">پوشش زنان؛ رنگ در تار و پود زندگی</span><span class="en">Women's Dress: Colour Woven into Daily Life</span></h2><p class="fa">
     پوشاک محلی خراسان جنوبی یک شکل واحد ندارد و در شهرها و روستاهای
     مختلف، با توجه به سنت‌های خانوادگی، آب‌وهوا و فرهنگ بومی تفاوت‌هایی
     دیده می‌شود. سربندها و روسری‌ها، پیراهن‌ها و دامن‌های محلی و
     جزئیات رنگی، بخشی از این تنوع را شکل می‌دهند.
-  </p>
-  <p class="en">
+  </p><p class="en">
     Traditional clothing in South Khorasan is not uniform. Styles vary
     among towns and villages according to local customs, climate and
     community traditions. Head coverings, shirts, skirts and colourful
     details are among the elements that express this diversity.
-  </p>
-
-  <div class="grid">
-    <div class="tile">
-      <h3 class="fa">چنشت؛ روستای رنگ‌ها</h3>
-      <h3 class="en">Chen Asht: A Village of Colour</h3>
-      <p class="fa">
+  </p><div class="tiles">
+<article class="tile">
+<h3 class="fa">چنشت؛ روستای رنگ‌ها</h3>
+<h3 class="en">Chen Asht: A Village of Colour</h3>
+<p class="fa">
         روستای چنشت در منابع گردشگری به‌خاطر پوشش محلی رنگارنگ و
         سنت‌های فرهنگی خود شناخته می‌شود. لباس این منطقه را باید
         در پیوند با هویت و رسم‌های بومی آن دید.
       </p>
-      <p class="en">
+<p class="en">
         Chen Asht village is known in tourism references for its colourful
         local dress and cultural traditions. Its clothing is best understood
         in the context of local identity and customs.
       </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">جوراب‌های هفت‌رنگ</h3>
-      <h3 class="en">Seven-Coloured Socks</h3>
-      <p class="fa">
+</article>
+<article class="tile">
+<h3 class="fa">جوراب‌های هفت‌رنگ</h3>
+<h3 class="en">Seven-Coloured Socks</h3>
+<p class="fa">
         جوراب‌بافی رنگی از جلوه‌های شناخته‌شده صنایع‌دستی و پوشاک
         منطقه بیرجند است؛ نشانه‌ای از ذوق رنگ و مهارت دست‌بافان محلی.
       </p>
-      <p class="en">
+<p class="en">
         Colourful knitted socks are among the recognised textile traditions
         associated with the Birjand area, reflecting local craftsmanship
         and a love of colour.
       </p>
-    </div>
-  </div>
-
-  <p class="small fa">
+</article>
+</div><p class="small fa">
     یادآوری: تصویر هنری این صفحه بازآفرینی معاصر است و ادعا نمی‌کند
     که بازسازی دقیق یک لباس تاریخی یا متعلق به یک روستای مشخص باشد.
-  </p>
-  <p class="small en">
+  </p><p class="small en">
     Note: The artwork is a contemporary artistic interpretation, not an
     exact reconstruction of a historical garment or a specific village's dress.
-  </p>
-</section>
-
-<section id="history">
-  <h2 class="fa">معماری و میراث تاریخی</h2>
-  <h2 class="en">Architecture and Historical Heritage</h2>
-
-  <div class="grid">
-    <div class="tile">
-      <h3 class="fa">عمارت کلاه‌فرنگی بیرجند</h3>
-      <h3 class="en">Kolah Farangi Mansion, Birjand</h3>
-      <p class="fa">
-        بنایی شاخص با فرم معماری ویژه که به یکی از نشانه‌های تاریخی
-        بیرجند تبدیل شده است. ساختار سفید و پلکانی آن در کنار باغ و
-        فضای سبز، ترکیبی چشم‌نواز می‌سازد.
-      </p>
-      <p class="en">
-        This distinctive mansion is one of Birjand's notable landmarks.
-        Its white, tiered architectural form creates a striking composition
-        with the surrounding garden and greenery.
-      </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">روستای ماخونیک</h3>
-      <h3 class="en">Makhunik Village</h3>
-      <p class="fa">
+  </p></section>
+<section id="villages"><h2><span class="fa">روستاها و زیست‌بوم‌های فرهنگی</span><span class="en">Villages and Cultural Landscapes</span></h2><div class="tiles"><article class="tile">
+<h3 class="fa">روستای ماخونیک</h3>
+<h3 class="en">Makhunik Village</h3>
+<p class="fa">
         ماخونیک با خانه‌های خشتی و سنگی، گذرگاه‌های باریک و معماری
         سازگار با محیط، نمونه‌ای ارزشمند از زندگی سنتی در ناحیه خشک
         شرق ایران است.
       </p>
-      <p class="en">
+<p class="en">
         Makhunik is known for its earthen and stone houses, narrow lanes
         and architecture adapted to the environment. It offers a valuable
         glimpse into traditional life in eastern Iran's dry landscape.
       </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">باغ و عمارت اکبریه</h3>
-      <h3 class="en">Akbarieh Garden and Mansion</h3>
-      <p class="fa">
+</article></div></section>
+<section id="history"><h2><span class="fa">معماری و میراث تاریخی</span><span class="en">Architecture and Historical Heritage</span></h2><div class="tiles">
+<article class="tile">
+<h3 class="fa">عمارت کلاه‌فرنگی بیرجند</h3>
+<h3 class="en">Kolah Farangi Mansion, Birjand</h3>
+<p class="fa">
+        بنایی شاخص با فرم معماری ویژه که به یکی از نشانه‌های تاریخی
+        بیرجند تبدیل شده است. ساختار سفید و پلکانی آن در کنار باغ و
+        فضای سبز، ترکیبی چشم‌نواز می‌سازد.
+      </p>
+<p class="en">
+        This distinctive mansion is one of Birjand's notable landmarks.
+        Its white, tiered architectural form creates a striking composition
+        with the surrounding garden and greenery.
+      </p>
+</article>
+<article class="tile">
+<h3 class="fa">روستای ماخونیک</h3>
+<h3 class="en">Makhunik Village</h3>
+<p class="fa">
+        ماخونیک با خانه‌های خشتی و سنگی، گذرگاه‌های باریک و معماری
+        سازگار با محیط، نمونه‌ای ارزشمند از زندگی سنتی در ناحیه خشک
+        شرق ایران است.
+      </p>
+<p class="en">
+        Makhunik is known for its earthen and stone houses, narrow lanes
+        and architecture adapted to the environment. It offers a valuable
+        glimpse into traditional life in eastern Iran's dry landscape.
+      </p>
+</article>
+<article class="tile">
+<h3 class="fa">باغ و عمارت اکبریه</h3>
+<h3 class="en">Akbarieh Garden and Mansion</h3>
+<p class="fa">
         مجموعه‌ای تاریخی در بیرجند که باغ ایرانی، معماری و شیوه
         طراحی فضا را در کنار هم نشان می‌دهد و بخشی از میراث فرهنگی
         استان است.
       </p>
-      <p class="en">
+<p class="en">
         This historic complex in Birjand brings together Persian garden
         design and architecture and forms part of the province's cultural
         heritage.
       </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">ارگ فورگ</h3>
-      <h3 class="en">Forg Citadel</h3>
-      <p class="fa">
+</article>
+<article class="tile">
+<h3 class="fa">ارگ فورگ</h3>
+<h3 class="en">Forg Citadel</h3>
+<p class="fa">
         دژی تاریخی در منطقه درمیان که با معماری خشتی و موقعیت
         کوهستانی خود، چشم‌اندازی از تاریخ و شیوه دفاعی این سرزمین
         ارائه می‌کند.
       </p>
-      <p class="en">
+<p class="en">
         A historic fortress in the Darmian area, Forg Citadel offers a
         glimpse into the region's history and defensive architecture,
         set against a mountainous landscape.
       </p>
-    </div>
-  </div>
-</section>
-
-<section id="culture">
-  <h2 class="fa">محصولات و هنرهای بومی</h2>
-  <h2 class="en">Local Products and Crafts</h2>
-
-  <div class="grid">
-    <div class="tile">
-      <h3 class="fa">زرشک و زعفران</h3>
-      <h3 class="en">Barberries and Saffron</h3>
-      <p class="fa">
-        زرشک از محصولات شاخص خراسان جنوبی است و قائنات به زعفران
-        خود شهرت دارد. رنگ سرخ زرشک و طلایی زعفران، الهام‌بخش
-        رنگ‌پردازی این بخش از گالری است.
-      </p>
-      <p class="en">
-        Barberries are a signature product of South Khorasan, while
-        Qaenat is renowned for saffron. Their crimson and golden colours
-        inspire this part of the gallery.
-      </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">عناب</h3>
-      <h3 class="en">Jujube</h3>
-      <p class="fa">
-        عناب از محصولات شناخته‌شده استان است و در خوراکی‌های محلی
-        و سوغات منطقه جایگاه دارد.
-      </p>
-      <p class="en">
-        Jujube is a recognised regional product and features among
-        local foods and souvenirs.
-      </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">قالی مود</h3>
-      <h3 class="en">Mood Carpet</h3>
-      <p class="fa">
-        قالی مود با نقش‌ها و مهارت بافت محلی، بخشی از سنت قالی‌بافی
-        خراسان جنوبی است؛ هنری که طرح و رنگ را در تار و پود به هم
-        پیوند می‌دهد.
-      </p>
-      <p class="en">
-        Mood carpets are part of South Khorasan's carpet-weaving heritage,
-        bringing together local patterns, colour and weaving skill.
-      </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">توبافی خراشاد</h3>
-      <h3 class="en">Tow-Bafi of Khorashad</h3>
-      <p class="fa">
-        در خراشاد، بافت سنتی پارچه با نخ پنبه و دستگاه‌های بافندگی
-        محلی ادامه یافته است. دست‌بافته‌ها می‌توانند برای پوشاک،
-        حوله و دیگر محصولات پارچه‌ای استفاده شوند.
-      </p>
-      <p class="en">
-        Khorashad preserves traditional cotton weaving using local looms.
-        These textiles are used for clothing, towels and other woven products.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section id="food">
-  <h2 class="fa">طعم‌های محلی خراسان جنوبی</h2>
-  <h2 class="en">Flavours of South Khorasan</h2>
-
-  <div class="grid">
-    <div class="tile">
-      <h3 class="fa">اشکنه</h3>
-      <h3 class="en">Eshkeneh</h3>
-      <p class="fa">
+</article>
+</div></section>
+<section id="food"><h2><span class="fa">طعم‌های محلی خراسان جنوبی</span><span class="en">Flavours of South Khorasan</span></h2><div class="tiles">
+<article class="tile">
+<h3 class="fa">اشکنه</h3>
+<h3 class="en">Eshkeneh</h3>
+<p class="fa">
         اشکنه از خوراک‌های ساده و قدیمی ایرانی است که در مناطق مختلف
         با مواد و شیوه‌های متفاوت تهیه می‌شود. در معرفی خوراک محلی
         استان، بهتر است دستورهای بومی هر منطقه جداگانه بررسی شوند.
       </p>
-      <p class="en">
+<p class="en">
         Eshkeneh is a traditional Iranian dish prepared in different ways
         across the country. Local versions should be documented separately
         when describing the province's food heritage.
       </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">آش‌های محلی</h3>
-      <h3 class="en">Local Soups and Ash</h3>
-      <p class="fa">
+</article>
+<article class="tile">
+<h3 class="fa">آش‌های محلی</h3>
+<h3 class="en">Local Soups and Ash</h3>
+<p class="fa">
         آش بلغور و برخی آش‌های حبوبات در معرفی خوراک‌های سنتی
         منطقه دیده می‌شوند. ترکیب مواد ممکن است با توجه به روستا
         و خانواده متفاوت باشد.
       </p>
-      <p class="en">
+<p class="en">
         Bulgur-based soups and legume dishes appear in accounts of the
         region's traditional food. Ingredients can vary between villages
         and households.
       </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">نان‌های محلی</h3>
-      <h3 class="en">Traditional Breads</h3>
-      <p class="fa">
+</article>
+<article class="tile">
+<h3 class="fa">نان‌های محلی</h3>
+<h3 class="en">Traditional Breads</h3>
+<p class="fa">
         نان در سفره روزمره و مهمان‌نوازی محلی جایگاه مهمی دارد.
         برای ثبت نام و شکل دقیق نان‌های بومی استان، باید از منابع
         محلی و مستندات هر شهر استفاده کرد.
       </p>
-      <p class="en">
+<p class="en">
         Bread plays an important role in everyday meals and hospitality.
         The exact names and forms of local breads should be checked against
         local documentation for each town.
       </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">کف؛ خوراکی آیینی شب یلدا</h3>
-      <h3 class="en">Kaf: A Yalda Treat</h3>
-      <p class="fa">
+</article>
+<article class="tile">
+<h3 class="fa">کف؛ خوراکی آیینی شب یلدا</h3>
+<h3 class="en">Kaf: A Yalda Treat</h3>
+<p class="fa">
         کف از خوراکی‌های آیینی شناخته‌شده در برخی نواحی خراسان جنوبی
         است که با ریشه گیاه چوبک تهیه می‌شود و با دورهمی‌های شب یلدا
         پیوند دارد.
       </p>
-      <p class="en">
+<p class="en">
         Kaf is a traditional treat associated with Yalda gatherings in
         parts of South Khorasan. It is prepared using the root of the
         chubak plant.
       </p>
-    </div>
-  </div>
-</section>
-
-<section id="sources">
-  <h2 class="fa">منابع برای مطالعه بیشتر</h2>
-  <h2 class="en">Sources for Further Reading</h2>
-
-  <ul class="source-list fa">
-    <li><a href="https://visitiran.ir/province/south-khorasan-province" target="_blank" rel="noopener">Visit Iran — خراسان جنوبی</a></li>
-    <li><a href="https://visitiran.ir/en/handicraft/tow-bafi-birjand" target="_blank" rel="noopener">Visit Iran — توبافی بیرجند</a></li>
-    <li><a href="https://www.iranicaonline.org/" target="_blank" rel="noopener">Encyclopaedia Iranica — پژوهش‌های تاریخی و فرهنگی ایران</a></li>
-    <li><a href="https://www.toiran.com/" target="_blank" rel="noopener">ToIran — میراث فرهنگی و گردشگری</a></li>
-  </ul>
-
-  <ul class="source-list en">
-    <li><a href="https://visitiran.ir/province/south-khorasan-province" target="_blank" rel="noopener">Visit Iran — South Khorasan Province</a></li>
-    <li><a href="https://visitiran.ir/en/handicraft/tow-bafi-birjand" target="_blank" rel="noopener">Visit Iran — Tow-Bafi of Birjand</a></li>
-    <li><a href="https://www.iranicaonline.org/" target="_blank" rel="noopener">Encyclopaedia Iranica</a></li>
-    <li><a href="https://www.toiran.com/" target="_blank" rel="noopener">ToIran — Cultural Heritage and Travel</a></li>
-  </ul>
-
-  <p class="small fa">
+</article>
+</div></section>
+<section id="products"><h2><span class="fa">محصولات و هنرهای بومی</span><span class="en">Local Products and Crafts</span></h2><div class="tiles">
+<article class="tile">
+<h3 class="fa">زرشک و زعفران</h3>
+<h3 class="en">Barberries and Saffron</h3>
+<p class="fa">
+        زرشک از محصولات شاخص خراسان جنوبی است و قائنات به زعفران
+        خود شهرت دارد. رنگ سرخ زرشک و طلایی زعفران، الهام‌بخش
+        رنگ‌پردازی این بخش از گالری است.
+      </p>
+<p class="en">
+        Barberries are a signature product of South Khorasan, while
+        Qaenat is renowned for saffron. Their crimson and golden colours
+        inspire this part of the gallery.
+      </p>
+</article>
+<article class="tile">
+<h3 class="fa">عناب</h3>
+<h3 class="en">Jujube</h3>
+<p class="fa">
+        عناب از محصولات شناخته‌شده استان است و در خوراکی‌های محلی
+        و سوغات منطقه جایگاه دارد.
+      </p>
+<p class="en">
+        Jujube is a recognised regional product and features among
+        local foods and souvenirs.
+      </p>
+</article>
+<article class="tile">
+<h3 class="fa">قالی مود</h3>
+<h3 class="en">Mood Carpet</h3>
+<p class="fa">
+        قالی مود با نقش‌ها و مهارت بافت محلی، بخشی از سنت قالی‌بافی
+        خراسان جنوبی است؛ هنری که طرح و رنگ را در تار و پود به هم
+        پیوند می‌دهد.
+      </p>
+<p class="en">
+        Mood carpets are part of South Khorasan's carpet-weaving heritage,
+        bringing together local patterns, colour and weaving skill.
+      </p>
+</article>
+<article class="tile">
+<h3 class="fa">توبافی خراشاد</h3>
+<h3 class="en">Tow-Bafi of Khorashad</h3>
+<p class="fa">
+        در خراشاد، بافت سنتی پارچه با نخ پنبه و دستگاه‌های بافندگی
+        محلی ادامه یافته است. دست‌بافته‌ها می‌توانند برای پوشاک،
+        حوله و دیگر محصولات پارچه‌ای استفاده شوند.
+      </p>
+<p class="en">
+        Khorashad preserves traditional cotton weaving using local looms.
+        These textiles are used for clothing, towels and other woven products.
+      </p>
+</article>
+</div></section>
+<section id="sources"><h2><span class="fa">منابع برای مطالعه بیشتر</span><span class="en">Sources for Further Reading</span></h2><ul class="source-list fa">
+<li><a href="https://visitiran.ir/province/south-khorasan-province" rel="noopener" target="_blank">Visit Iran — خراسان جنوبی</a></li>
+<li><a href="https://visitiran.ir/en/handicraft/tow-bafi-birjand" rel="noopener" target="_blank">Visit Iran — توبافی بیرجند</a></li>
+<li><a href="https://www.iranicaonline.org/" rel="noopener" target="_blank">Encyclopaedia Iranica — پژوهش‌های تاریخی و فرهنگی ایران</a></li>
+<li><a href="https://www.toiran.com/" rel="noopener" target="_blank">ToIran — میراث فرهنگی و گردشگری</a></li>
+</ul><ul class="source-list en">
+<li><a href="https://visitiran.ir/province/south-khorasan-province" rel="noopener" target="_blank">Visit Iran — South Khorasan Province</a></li>
+<li><a href="https://visitiran.ir/en/handicraft/tow-bafi-birjand" rel="noopener" target="_blank">Visit Iran — Tow-Bafi of Birjand</a></li>
+<li><a href="https://www.iranicaonline.org/" rel="noopener" target="_blank">Encyclopaedia Iranica</a></li>
+<li><a href="https://www.toiran.com/" rel="noopener" target="_blank">ToIran — Cultural Heritage and Travel</a></li>
+</ul><p class="small fa">
     متن این صفحه معرفی فرهنگی عمومی است. برای جزئیات دقیق لباس‌ها،
     نام خوراک‌ها و رسم‌های هر روستا، منابع محلی و پژوهش‌های مردم‌نگارانه
     اهمیت دارند.
-  </p>
-  <p class="small en">
+  </p><p class="small en">
     This page offers a general cultural overview. Local sources and
     ethnographic studies are important for documenting village-specific
     clothing, food names and customs.
-  </p>
-</section>
-
+  </p></section>
+<div style="text-align:center"><a class="back" href="index.html"><span class="fa">بازگشت به صفحه اصلی</span><span class="en">Back to Home</span></a></div>
 </main>
-
 <footer>
-  <p class="fa">هنرمند و خالق آثار: مریم ساعی</p>
-  <p class="en">Artist and Artwork Creator: Maryam Saei</p>
-  <p class="fa">طراحی وب‌سایت و پژوهش اطلاعات فرهنگی: مرجان ساعی</p>
-  <p class="en">Website Design and Cultural Research: Marjan Saei</p>
-  <a class="back" href="index.html">
-    <span class="fa">بازگشت به گالری اصلی</span>
-    <span class="en">Back to Main Gallery</span>
-  </a>
-  <p class="small">Iran, A Thousand Colors · ایران، هزار رنگ</p>
+<div><span class="fa">هنرمند و خالق آثار: مریم ساعی</span><span class="en">Artist and creator: Maryam Saei</span></div>
+<div><span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span><span class="en">Website design and cultural research: Marjan Saei</span></div>
+<div style="margin-top:8px">© Iran, a Thousand Colors</div>
 </footer>
-
 <script>
 const langSwitch = document.getElementById("langSwitch");
-
-langSwitch.addEventListener("click", function () {
-  document.body.classList.toggle("english");
-
-  const isEnglish = document.body.classList.contains("english");
-
-  document.documentElement.lang = isEnglish ? "en" : "fa";
-  document.documentElement.dir = isEnglish ? "ltr" : "rtl";
-  langSwitch.textContent = isEnglish ? "فارسی" : "English";
+langSwitch.addEventListener("click", () => {
+  const english = !document.body.classList.contains("english");
+  document.body.classList.toggle("english", english);
+  document.documentElement.lang = english ? "en" : "fa";
+  document.documentElement.dir = english ? "ltr" : "rtl";
+  langSwitch.textContent = english ? "FA | EN" : "FA | EN";
 });
-</script>
 
+const homeDropdown = document.getElementById("homeDropdown");
+const homeButton = homeDropdown.querySelector(".dropbtn");
+homeButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const opened = homeDropdown.classList.toggle("open");
+  homeButton.setAttribute("aria-expanded", String(opened));
+});
+
+document.addEventListener("click", (event) => {
+  if (!homeDropdown.contains(event.target)) {
+    homeDropdown.classList.remove("open");
+    homeButton.setAttribute("aria-expanded", "false");
+  }
+});
+
+if (window.matchMedia("(max-width:850px)").matches) {
+  const menu = document.querySelector(".main-menu");
+  const menuButton = document.createElement("button");
+  menuButton.type = "button";
+  menuButton.className = "mobile-menu-button";
+  menuButton.setAttribute("aria-label", "Open menu");
+  menuButton.innerHTML = "☰";
+  menuButton.style.cssText = "order:2;border:1px solid #c79a4a;background:#fff8eb;color:#153f3b;border-radius:9px;width:40px;height:38px;font-size:20px";
+  document.querySelector(".header-main").insertBefore(menuButton, menu);
+  menuButton.addEventListener("click", () => {
+    const opened = menu.classList.toggle("mobile-open");
+    menuButton.setAttribute("aria-expanded", String(opened));
+  });
+}
+</script>
 </body>
 </html>
