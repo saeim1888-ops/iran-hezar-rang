@@ -45,13 +45,73 @@ body.english .page-section,body.english .card{text-align:left}
 body.english ul{padding-left:24px;padding-right:0}
 @media(max-width:800px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero,.page-section,nav,header,footer{margin-left:12px;margin-right:12px}.hero,.page-section{padding:23px 18px}}
 @media(max-width:480px){.cards{grid-template-columns:1fr}header{padding-left:5px;padding-right:5px}.logo{font-size:15px}}
+
+/* Shared header matching the approved Semnan page */
+.site-header{position:relative;z-index:1000;width:100%;background:#f4ead8;border-bottom:1px solid #dfd2b9;box-shadow:0 4px 16px rgba(57,46,36,.08)}
+.header-main{width:100%;max-width:none;min-height:72px;margin:0;padding:10px clamp(18px,4vw,55px);display:flex;align-items:center;justify-content:space-between;gap:22px;background:#f4ead8}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#153f3b;font-size:17px;white-space:nowrap;text-decoration:none;order:3}
+.brand-mark{width:40px;height:40px;border:2px solid #c79a4a;border-radius:50%;display:grid;place-items:center;color:#fff4df;background:#963c25;font-size:19px}
+.site-header .main-menu{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,27px);flex:1;order:2;max-width:none;margin:0;padding:0;background:transparent;border:0;border-radius:0;flex-wrap:nowrap}
+.site-header .main-menu>a,.site-header .dropbtn{font:inherit;font-size:13px;font-weight:700;color:#153f3b;background:none;border:0;border-radius:0;padding:9px 2px;cursor:pointer;white-space:nowrap;text-decoration:none}
+.site-header .main-menu>a:hover,.site-header .dropbtn:hover{color:#963c25}
+.site-header .dropdown{position:relative}
+.site-header .dropdown-content{display:none;position:absolute;top:100%;right:0;min-width:220px;background:#fff8eb;border:1px solid #c79a4a;border-radius:11px;padding:8px;box-shadow:0 10px 25px rgba(57,46,36,.17);z-index:1002}
+.site-header .dropdown.open .dropdown-content{display:block}
+.site-header .dropdown-content a{display:block;padding:10px 12px;border-radius:7px;font-size:13px;color:#153f3b;text-decoration:none}
+.site-header .dropdown-content a:hover{background:#f0dfc1;color:#963c25}
+.lang-switch{order:1;min-width:80px;margin:0!important;border:1px solid #b7aa8e!important;border-radius:0!important;background:#fff8eb!important;color:#153f3b!important;padding:10px 14px!important;font-weight:700;cursor:pointer}
+.province-nav{background:#153f3b!important;color:#fff4df!important;padding:8px 16px!important;border:0!important;border-radius:0!important;max-width:none!important;margin:0!important;display:block!important}
+.province-nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.province-nav a,.province-nav span{font-size:12px;padding:3px 4px;border:0;border-radius:0;color:#f4d79d;text-decoration:none}
+.province-nav a:hover{color:#fff;text-decoration:underline}
+.mobile-menu-toggle{display:none;width:42px;height:40px;padding:7px;border:1px solid #c79a4a;border-radius:9px;background:#fff4df;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer}
+.mobile-menu-toggle span{display:block;width:21px;height:2px;border-radius:3px;background:#153f3b}
+body.english .site-header,body.english .province-nav{direction:ltr}
+body.english .site-header .dropdown-content{right:auto;left:0}
+@media(max-width:850px){
+ .header-main{min-height:66px;padding:9px 14px;flex-wrap:wrap;justify-content:space-between;gap:10px}
+ .brand{font-size:14px;order:1}
+ .brand-mark{width:35px;height:35px;font-size:17px}
+ .mobile-menu-toggle{display:flex;order:2}
+ .lang-switch{order:3}
+ .site-header .main-menu{display:none;order:4;flex:1 0 100%;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 0 4px;border-top:1px solid #dfd2b9}
+ .site-header .main-menu.mobile-open{display:flex}
+ .site-header .main-menu>a,.site-header .dropbtn{display:block;width:100%;padding:11px 12px;text-align:right;white-space:normal}
+ body.english .site-header .main-menu>a,body.english .site-header .dropbtn{text-align:left}
+ .site-header .dropdown-content{position:static;min-width:0;margin:0 10px 7px;box-shadow:none;background:#f0dfc1}
+ .site-header .dropdown.open .dropdown-content{display:block}
+ .province-nav-inner{gap:10px;font-size:11px}
+}
+@media(min-width:851px){.site-header .main-menu{display:flex!important}}
+
 </style>
 </head>
 <body>
-<header>
-  <div class="logo">ایران، هزار رنگ | Iran, A Thousand Colors</div>
-  <button type="button" onclick="toggleLanguage()" id="langButton">English</button>
-</header>
+<div class="site-header">
+ <div class="header-main">
+  <a class="brand" href="index.html"><span class="brand-mark">✺</span><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, a Thousand Colors</span></a>
+  <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="main-menu" aria-label="منوی اصلی">
+   <div class="dropdown" id="homeDropdown">
+    <button class="dropbtn" type="button" aria-expanded="false"><span class="fa">صفحه اصلی ▾</span><span class="en">Home ▾</span></button>
+    <div class="dropdown-content">
+     <a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions | Provinces</span></a>
+     <a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+     <a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Exhibition</span></a>
+    </div>
+   </div>
+   <a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
+   <a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+   <a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
+  </nav>
+  <button class="lang-switch" id="langButton" type="button" onclick="toggleLanguage()">FA | EN</button>
+ </div>
+ <div class="province-nav"><div class="province-nav-inner">
+  <a href="tabriz.html"><span class="fa">← آذربایجان شرقی</span><span class="en">← East Azerbaijan</span></a>
+  <span><span class="fa">۲۶ | اردبیل</span><span class="en">26 | Ardabil</span></span>
+  <a href="zanjan.html"><span class="fa">زنجان →</span><span class="en">Zanjan →</span></a>
+ </div></div>
+</div>
 
 <div class="hero">
   <div class="eyebrow"><span class="fa">منطقه اردبیل از ۲۳ منطقه</span><span class="en">ARDABIL REGION · IRAN, A THOUSAND COLORS</span></div>
@@ -166,8 +226,30 @@ function toggleLanguage(){
   document.body.classList.toggle('english', english);
   document.documentElement.lang = english ? 'en' : 'fa';
   document.documentElement.dir = english ? 'ltr' : 'rtl';
-  document.getElementById('langButton').textContent = english ? 'فارسی' : 'English';
+  document.getElementById('langButton').textContent = 'FA | EN';
 }
+ 
+document.addEventListener('DOMContentLoaded', function(){
+ const menu=document.querySelector('.site-header .main-menu');
+ const toggle=document.querySelector('.mobile-menu-toggle');
+ if(toggle && menu){
+  toggle.addEventListener('click',function(){
+   const open=menu.classList.toggle('mobile-open');
+   toggle.setAttribute('aria-expanded',open?'true':'false');
+  });
+ }
+ const home=document.querySelector('#homeDropdown .dropbtn');
+ if(home){
+  home.addEventListener('click',function(){
+   if(window.matchMedia('(max-width:850px)').matches){
+    const wrap=document.getElementById('homeDropdown');
+    const open=wrap.classList.toggle('open');
+    home.setAttribute('aria-expanded',open?'true':'false');
+   }
+  });
+ }
+});
+
 </script>
 </body>
 </html>
