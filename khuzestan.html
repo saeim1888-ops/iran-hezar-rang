@@ -1,431 +1,275 @@
-
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>خوزستان | ایران، هزار رنگ</title>
 
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="خوزستان؛ روایت تصویری پوشش زنان، فرهنگ عرب و بختیاری، روستاها، تاریخ، طبیعت و خوراکی‌های محلی در نمایشگاه ایران، هزار رنگ." name="description"/>
+<title>خوزستان | ایران، هزار رنگ</title>
 <style>
-:root {
-  --paper:#f4ead8;
-  --cream:#fffaf0;
-  --rust:#a83e1d;
-  --green:#153f3b;
-  --olive:#656b43;
-  --gold:#b58b42;
-  --text:#352d25;
+:root{--cream:#f8f1e3;--paper:#fffaf0;--olive:#596447;--dark:#292b25;--gold:#b08b48;--rust:#b94e27;--teal:#245b60;--line:#dfd2b9}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:150px}
+body{margin:0;background:var(--cream);color:var(--dark);font-family:Tahoma,Arial,sans-serif;line-height:1.95}
+a{color:inherit;text-decoration:none}
+
+.site-header{
+  position:relative;top:0;z-index:1000;width:100%;
+  background:#f4ead8;border-bottom:1px solid #dfd2b9;
+  box-shadow:0 4px 16px rgba(57,46,36,.08);
 }
-*{box-sizing:border-box}
-body{
-  margin:0;background:var(--paper);color:var(--text);
-  font-family:Tahoma,sans-serif;line-height:2;
+.topline{display:none}
+.header-main{
+  max-width:1320px;min-height:72px;margin:auto;padding:10px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:22px;
 }
-header{
-  background:var(--cream);border-bottom:1px solid #dfcfb5;
-  padding:18px 6%;
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#153f3b;font-size:17px;white-space:nowrap;order:3}
+.brand-mark{
+  width:40px;height:40px;border:2px solid #c79a4a;border-radius:50%;
+  display:grid;place-items:center;color:#fff4df;background:#963c25;font-size:19px;
 }
-.topbar{
-  max-width:1150px;margin:auto;display:flex;
-  align-items:center;justify-content:space-between;
-  gap:18px;flex-wrap:wrap;
+.main-menu{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,27px);flex:1;order:2}
+.main-menu>a,.dropbtn{
+  font:inherit;font-size:13px;font-weight:700;color:#153f3b;background:none;
+  border:0;padding:9px 2px;cursor:pointer;white-space:nowrap;
 }
-.brand{color:var(--green);font-size:21px;font-weight:bold;text-decoration:none}
-nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-nav a{color:var(--text);text-decoration:none;font-size:14px}
-nav a:hover{color:var(--rust)}
-.lang-btn{
-  background:var(--green);color:white;border:0;
-  border-radius:25px;padding:8px 16px;cursor:pointer;font-family:inherit;
+.main-menu>a:hover,.dropbtn:hover{color:#963c25}
+.dropdown{position:relative}
+.dropdown-content{
+  display:none;position:absolute;top:100%;right:0;min-width:220px;
+  background:#fff8eb;border:1px solid #c79a4a;border-radius:11px;padding:8px;
+  box-shadow:0 10px 25px rgba(57,46,36,.17)
 }
-.province-strip{
-  background:var(--green);color:white;text-align:center;
-  padding:9px 12px;font-size:13px;
+.dropdown.open .dropdown-content{display:block}
+.dropdown-content a{display:block;padding:10px 12px;border-radius:7px;font-size:13px;color:#153f3b}
+.dropdown-content a:hover{background:#f0dfc1;color:#963c25}
+.lang-switch{
+  order:1;border:1px solid #b7aa8e;border-radius:0;background:#fff8eb;
+  color:#153f3b;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap;
+  min-width:72px
 }
-main{max-width:1100px;margin:38px auto;padding:0 20px}
-.hero{
-  text-align:center;padding:35px 20px;background:var(--cream);
-  border:1px solid #e2d2b9;border-radius:18px;margin-bottom:28px;
+.province-nav{background:#153f3b;color:#fff4df;padding:8px 16px}
+.province-nav-inner{
+  max-width:1200px;margin:auto;display:flex;align-items:center;
+  justify-content:center;gap:20px;flex-wrap:wrap
 }
-.eyebrow{color:var(--rust);font-size:13px}
-h1{color:var(--green);font-size:clamp(25px,4vw,38px);margin:8px 0}
-.subtitle{color:var(--olive);font-size:17px;margin:0}
-.poster{
-  display:block;width:min(100%,650px);margin:25px auto 0;
-  border-radius:12px;border:7px solid white;
-  box-shadow:0 8px 25px #44351f20;
+.province-nav a,.province-nav span{
+  font-size:12px;padding:3px 4px;border:0;border-radius:0;color:#f4d79d
 }
-.section{
-  background:var(--cream);border:1px solid #e2d2b9;
-  border-radius:16px;padding:25px;margin:22px 0;
+.province-nav span{font-weight:800;color:#fff4df}
+.province-nav a:hover{color:#fff;text-decoration:underline}
+html[dir="ltr"] .header-main{direction:ltr}
+html[dir="ltr"] .dropdown-content{right:auto;left:0}
+html[dir="ltr"] .province-nav-inner{direction:ltr}
+
+.hero{max-width:1100px;margin:34px auto 24px;padding:44px 28px;text-align:center;background:linear-gradient(135deg,#fffaf0,#f0e3cb);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 35px #5c452015;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #b08b4833;border-radius:50%}
+.hero:before{top:-105px;right:-65px}.hero:after{bottom:-120px;left:-60px}
+.eyebrow{color:var(--rust);font-size:12px;letter-spacing:.4px}
+h1{font-size:clamp(25px,4vw,39px);color:var(--teal);margin:8px 0}
+.slogan{font-size:18px;color:var(--olive);font-weight:bold;margin:8px 0}
+.hero p{max-width:780px;margin:10px auto 0;font-size:14px}
+.page-nav{max-width:1100px;margin:0 auto 28px;padding:12px 18px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.page-nav a{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:12px;color:var(--olive)}
+.page-nav a:hover{background:var(--olive);color:white}
+main{max-width:1100px;margin:auto;padding:0 20px 40px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;margin:0 0 22px;box-shadow:0 7px 22px #4b38100b}
+h2{font-size:21px;color:var(--rust);margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+h3{font-size:16px;color:var(--teal);margin:12px 0 5px}
+p{margin:8px 0}.art-grid,.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.art-grid img,.art-image{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:#eee2cf}
+.caption{font-size:12px;color:#756b58;text-align:center;margin-top:7px}
+.tile{background:#f7efdf;border:1px solid var(--line);border-radius:13px;padding:15px}
+.quote{border-right:3px solid var(--gold);padding:9px 14px;color:var(--olive);background:#f7efdf;border-radius:8px;margin-top:15px}
+ul{padding-right:22px}.source-list li{margin:7px 0;font-size:13px}
+.source-list a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+footer{text-align:center;padding:25px 16px;background:#e9dec9;color:#5d584b;font-size:12px}
+.back{display:inline-block;background:var(--rust);color:white;padding:9px 18px;border-radius:22px;margin-top:8px}
+.en{display:none}body.english{direction:ltr}body.english .en{display:initial}body.english .fa{display:none}
+body.english .quote{border-right:0;border-left:3px solid var(--gold)}body.english ul{padding-right:0;padding-left:22px}
+body.english .dropdown-content{right:auto;left:0}
+@media(max-width:850px){
+ .header-main{min-height:66px;padding:9px 14px;flex-wrap:wrap;gap:10px}
+ .brand{font-size:14px;order:1}
+ .brand-mark{width:35px;height:35px;font-size:17px}
+ .lang-switch{order:3;margin-inline-start:0}
+ .main-menu{display:none;order:3;flex:1 0 100%;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 0 4px;border-top:1px solid #dfd2b9}
+ .main-menu.mobile-open{display:flex}
+ .main-menu>a,.dropbtn{display:block;width:100%;padding:11px 12px;text-align:right;white-space:normal}
+ html[dir="ltr"] .main-menu>a,html[dir="ltr"] .dropbtn{text-align:left}
+ .dropdown-content{position:static;min-width:0;margin:0 10px 7px;box-shadow:none;background:#f0dfc1}
+ .dropdown.open .dropdown-content{display:block}
+ .hero{margin:18px 12px;padding:30px 17px}
+ .page-nav{padding:8px 12px}
+ main{padding:0 12px 28px}
+ section{padding:19px}
+ .art-grid,.tiles{grid-template-columns:1fr}
+ .province-nav-inner{gap:10px;font-size:11px}
 }
-h2{
-  color:var(--rust);font-size:21px;margin-top:0;
-  padding-bottom:9px;border-bottom:1px solid #e4d5bd;
-}
-h3{color:var(--green);font-size:16px;margin-bottom:5px}
-p{margin-top:8px}
-.info-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;
-}
-.info-card{
-  background:#f7efdf;border-right:4px solid var(--gold);
-  border-radius:10px;padding:16px;
-}
-.tagline{
-  color:var(--green);font-size:19px;font-weight:bold;
-  text-align:center;padding:15px;
-}
-.sources a{color:var(--rust);overflow-wrap:anywhere}
-footer{
-  background:var(--green);color:#fff6e8;text-align:center;
-  padding:25px 15px;margin-top:45px;font-size:13px;
-}
-[dir="ltr"] .info-card{border-right:0;border-left:4px solid var(--gold)}
-@media(max-width:650px){
-  header{padding:15px}
-  .topbar{justify-content:center}
-  nav{justify-content:center;gap:12px}
-  main{margin-top:20px;padding:0 12px}
-  .section{padding:18px}
+@media(min-width:851px){
+ .main-menu{display:flex!important}
 }
 </style>
 </head>
-
 <body>
-
-<header>
-  <div class="topbar">
-    <a class="brand" href="index.html">
-      <span class="fa-inline">ایران، هزار رنگ</span>
-      <span class="en-inline" hidden>Iran, A Thousand Colors</span>
-    </a>
-    <nav>
-      <a href="index.html">
-        <span class="fa-inline">خانه</span>
-        <span class="en-inline" hidden>Home</span>
-      </a>
-      <a href="regions.html">
-        <span class="fa-inline">استان‌ها</span>
-        <span class="en-inline" hidden>Regions</span>
-      </a>
-      <a href="gallery.html">
-        <span class="fa-inline">گالری</span>
-        <span class="en-inline" hidden>Gallery</span>
-      </a>
-      <button class="lang-btn" onclick="toggleLanguage()">FA | EN</button>
-    </nav>
-  </div>
-</header>
-
-<div class="province-strip">
-  <span class="fa-inline">کهگیلویه و بویراحمد ← خوزستان → بوشهر</span>
-  <span class="en-inline" hidden>Kohgiluyeh and Boyer-Ahmad ← Khuzestan → Bushehr</span>
+<div class="site-header">
+<div class="header-main">
+<a class="brand" href="index.html">
+<span class="brand-mark">ه</span>
+<span class="fa">ایران، هزار رنگ</span><span class="en">Iran, a Thousand Colors</span>
+</a>
+<nav aria-label="منوی اصلی" class="main-menu">
+<div class="dropdown" id="homeDropdown">
+<button aria-expanded="false" class="dropbtn" type="button">
+<span class="fa">صفحه اصلی</span><span class="en">Home</span>
+</button>
+<div class="dropdown-content">
+<a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions | Provinces</span></a>
+<a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+<a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Exhibition</span></a>
 </div>
-
+</div>
+<a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
+<a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+<a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
+</nav>
+<button class="lang-switch" id="langSwitch" type="button">FA | EN</button>
+</div>
+<div class="province-nav"><div class="province-nav-inner">
+<a href="fars.html"><span class="fa">← فارس</span><span class="en">← Fars</span></a>
+<span><span class="fa">۱۱ | خوزستان</span><span class="en">11 | Khuzestan</span></span>
+<a href="kohgiluyeh-boyerahmad.html"><span class="fa">کهگیلویه و بویراحمد →</span><span class="en">Kohgiluyeh and Boyer-Ahmad →</span></a>
+</div></div>
+</div>
+<header class="hero">
+<div class="eyebrow"><span class="fa">گالری حضوری و آنلاین | ایران، هزار رنگ</span><span class="en">In-person and online exhibition | Iran, a Thousand Colors</span></div>
+<h1><span class="fa">خوزستان؛ سرزمین آب، آفتاب و تمدن</span><span class="en">Khuzestan: Land of Water, Sun, and Civilization</span></h1>
+<div class="slogan"><span class="fa">خوزستان؛ رنگِ رودها، گرمای جنوب و شکوه فرهنگ‌های کهن</span><span class="en">Khuzestan: The Colors of Rivers, Southern Warmth, and Ancient Cultures</span></div>
+<p><span class="fa">خوزستان در جنوب‌غرب ایران، سرزمینی از رودهای بزرگ، دشت‌های حاصل‌خیز، نخلستان‌ها و یادگارهای تمدن‌های کهن است. تنوع قومی و فرهنگی عرب، بختیاری، لر و دیگر جوامع این استان در پوشش، آیین‌ها، خوراک و هنرهای بومی آن بازتاب یافته است.</span><span class="en">In southwestern Iran, Khuzestan is a land of great rivers, fertile plains, palm groves, and traces of ancient civilizations. Its Arab, Bakhtiari, Lur, and other communities contribute to a rich cultural diversity reflected in clothing, traditions, food, and local arts.</span></p>
+</header>
+<nav class="page-nav">
+<a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+<a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's clothing</span></a>
+<a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
+<a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History &amp; nature</span></a>
+<a href="#food"><span class="fa">خوراکی‌ها</span><span class="en">Local food</span></a>
+<a href="#products"><span class="fa">محصولات بومی</span><span class="en">Local products</span></a>
+<a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
 <main>
-
-<section class="hero">
-  <div class="eyebrow">
-    <span class="fa-inline">روایت تصویری پوشش زنان ایران</span>
-    <span class="en-inline" hidden>A Visual Story of Iranian Women's Clothing</span>
-  </div>
-
-  <h1>
-    <span class="fa-inline">خوزستان</span>
-    <span class="en-inline" hidden>Khuzestan</span>
-  </h1>
-
-  <p class="subtitle">
-    <span class="fa-inline">سرزمین آفتاب، رود و فرهنگ‌های رنگارنگ</span>
-    <span class="en-inline" hidden>Land of Sun, Rivers and Colorful Cultures</span>
-  </p>
-
-  <img class="poster" src="khuzestan.png"
-       alt="پوستر پوشش محلی زنان خوزستان">
+<section id="art">
+<h2><span class="fa">اثر هنری خوزستان</span><span class="en">Khuzestan Artwork</span></h2>
+<div class="art-grid">
+<div><div aria-label="جایگاه اثر هنری خوزستان" class="art-image" role="img"></div><div class="caption"><span class="fa">جایگاه پوستر خوزستان؛ پس از آماده‌شدن تصویر، فایل پوستر در این بخش قرار می‌گیرد.</span><span class="en">Khuzestan poster placeholder; add the artwork file here when it is ready.</span></div></div>
+<div><p><span class="fa">اثر خوزستان بخشی از مجموعه «ایران، هزار رنگ» است؛ مجموعه‌ای که پوشش زنان مناطق گوناگون ایران را در پیوند با جغرافیا، آیین‌ها و حافظه فرهنگی هر منطقه روایت می‌کند. در این روایت، پوشش عربی جنوب و پوشاک بختیاری دو جلوه از تنوع فرهنگی استان‌اند.</span><span class="en">The Khuzestan artwork is part of “Iran, a Thousand Colors,” a collection portraying women's regional clothing in connection with geography, traditions, and cultural memory. The clothing traditions of Arab communities and Bakhtiari people are two expressions of the province's cultural diversity.</span></p><div class="quote"><span class="fa">«از کرانه‌های کارون تا دامنه‌های زاگرس؛ هر رنگ، روایت مردمی ریشه‌دار است.»</span><span class="en">“From the banks of the Karun to the Zagros foothills, every color tells the story of a rooted people.”</span></div></div>
+</div>
 </section>
-
-<section class="section">
-  <h2>
-    <span class="fa-inline">آشنایی با سرزمین</span>
-    <span class="en-inline" hidden>About the Region</span>
-  </h2>
-  <p class="fa-inline">
-    خوزستان در جنوب غربی ایران، سرزمینی با رودهای بزرگ، دشت‌های حاصلخیز،
-    نخلستان‌ها و پیشینه تاریخی کهن است. این استان از نظر فرهنگی و قومی
-    تنوع چشمگیری دارد و اقوام عرب، بختیاری، لر و دیگر گروه‌های محلی
-    در شکل‌گیری هویت فرهنگی آن نقش داشته‌اند.
-  </p>
-  <p class="en-inline" hidden>
-    Khuzestan, in southwestern Iran, is known for its major rivers,
-    fertile plains, palm groves and ancient history. Its cultural identity
-    reflects the traditions of Arab, Bakhtiari, Lur and other local communities.
-  </p>
+<section id="clothing">
+<h2><span class="fa">پوشش زنان خوزستان</span><span class="en">Women's Clothing in Khuzestan</span></h2>
+<div class="art-grid">
+<div><div aria-label="جایگاه لیبل پوشش زنان خوزستان" class="art-image" role="img"></div><div class="caption"><span class="fa">جایگاه لیبل معرفی پوشش؛ تصویر لیبل پس از آماده‌شدن اضافه می‌شود.</span><span class="en">Clothing label placeholder; the label image will be added when ready.</span></div></div>
+<div>
+<h3><span class="fa">پوشش زنان عرب خوزستان</span><span class="en">Arab Women's Clothing in Khuzestan</span></h3>
+<p><span class="fa">در میان برخی جوامع عرب خوزستان، پوشش سنتی زنان شامل جامه‌های بلند و گشاد، عبا یا پوشش‌های رویی و انواع پوشش سر است. رنگ، جنس پارچه و شیوه آرایش لباس با توجه به شهر یا روستا، سن، مناسبت و سلیقه خانوادگی تفاوت دارد. در معرفی این پوشاک باید از یکسان‌انگاری همه جوامع عرب پرهیز کرد.</span><span class="en">In some Arab communities of Khuzestan, traditional women's dress includes long, loose garments, abayas or outer coverings, and different forms of headwear. Colors, fabrics, and styling vary by town or village, age, occasion, and family preference. These traditions should not be treated as identical across all Arab communities.</span></p>
+<h3><span class="fa">پوشاک زنان بختیاری</span><span class="en">Bakhtiari Women's Clothing</span></h3>
+<p><span class="fa">پوشاک سنتی زنان بختیاری از بخش‌های شناخته‌شده هویت فرهنگی این قوم است. دامن‌های چین‌دار و رنگارنگ، پیراهن بلند، لچک و مینا از اجزای شناخته‌شده این پوشش‌اند. رنگ و آرایه‌های لباس در جشن‌ها و مناسبت‌ها جلوه‌ای ویژه پیدا می‌کند و جزئیات آن ممکن است در نواحی مختلف تفاوت داشته باشد.</span><span class="en">Traditional Bakhtiari women's clothing is a well-known expression of the community's cultural identity. Recognizable elements include colorful pleated skirts, long dresses, the lacek headpiece, and the mina scarf. Colors and decorations are especially vivid during celebrations, while details may differ across local areas.</span></p>
+<div class="quote"><span class="fa">پوشاک محلی خوزستان را باید در پیوند با تنوع قومی و شیوه زندگی هر جامعه شناخت.</span><span class="en">Khuzestan's traditional clothing is best understood through the diversity and ways of life of its communities.</span></div>
+</div>
+</div>
 </section>
-
-<section class="section">
-  <h2>
-    <span class="fa-inline">پوشش زنان؛ روایت تنوع فرهنگی</span>
-    <span class="en-inline" hidden>Women's Clothing: A Cultural Diversity</span>
-  </h2>
-  <p class="fa-inline">
-    پوشاک زنان خوزستان با توجه به قومیت، شهر و شیوه زندگی تفاوت دارد.
-    در میان زنان عرب خوزستان، ثوب یا لباس بلند و عبای محلی در کنار
-    پوشش‌های متنوع سر دیده می‌شود. در برخی مناطق بختیاری و لرنشین نیز
-    پوشش‌های سنتی با دامن‌های چین‌دار، پیراهن‌های بلند و سربندهای محلی
-    بخشی از میراث پوشاک زنان هستند.
-  </p>
-  <p class="fa-inline">
-    رنگ، جنس پارچه، شیوه دوخت و آرایش پوشش سر در مناطق مختلف یکسان نیست.
-    این تفاوت‌ها بازتابی از اقلیم، فرهنگ خانوادگی و سنت‌های محلی است.
-  </p>
-  <p class="en-inline" hidden>
-    Women's clothing in Khuzestan varies by community, town and lifestyle.
-    Among Arab communities, long dresses and traditional abayas are worn
-    alongside different head coverings. Bakhtiari and Lur communities
-    also preserve distinctive garments, gathered skirts and local headwear.
-  </p>
+<section id="villages">
+<h2><span class="fa">روستاها و زیست‌بوم‌های فرهنگی</span><span class="en">Villages and Cultural Landscapes</span></h2>
+<div class="tiles">
+<article class="tile"><h3><span class="fa">صراخیه</span><span class="en">Sarakhieh</span></h3><p><span class="fa">روستایی در حاشیه تالاب شادگان که زندگی مردم آن با آبراهه‌ها، قایق‌ها، نیزارها و معیشت وابسته به تالاب پیوند خورده است. معماری و رفت‌وآمد آبی، چهره‌ای ویژه به این سکونتگاه داده‌اند.</span><span class="en">A village beside Shadegan Wetland, where daily life is closely tied to waterways, boats, reed beds, and wetland livelihoods. Its water-based movement and settlement pattern create a distinctive landscape.</span></p></article>
+<article class="tile"><h3><span class="fa">مال‌آقا</span><span class="en">Mal Agha</span></h3><p><span class="fa">روستایی در ناحیه کوهستانی باغملک که به طبیعت سرسبز، چشمه‌ها و چشم‌اندازهای زاگرسی شناخته می‌شود و نمونه‌ای از تنوع اقلیمی خوزستان است.</span><span class="en">A village in the mountainous area of Baghmalek, known for green landscapes, springs, and Zagros scenery—an example of Khuzestan's varied climate.</span></p></article>
+<article class="tile"><h3><span class="fa">پامنار</span><span class="en">Pamenar</span></h3><p><span class="fa">روستایی در محدوده دزفول و در کنار دریاچه شهیون که با چشم‌اندازهای آبی و کوهستانی و پیوند زندگی محلی با رود و طبیعت شناخته می‌شود.</span><span class="en">A village in the Dezful area beside Lake Shahyoun, known for its waterside and mountain scenery and the connection between local life, the river, and nature.</span></p></article>
+<article class="tile"><h3><span class="fa">روستاهای اطراف شوشتر</span><span class="en">Villages around Shushtar</span></h3><p><span class="fa">آبادی‌های پیرامون شوشتر در بستری از نهرها، زمین‌های کشاورزی و سازه‌های آبی تاریخی شکل گرفته‌اند و بخشی از فرهنگ دیرپای زندگی در کنار آب را بازتاب می‌دهند.</span><span class="en">Settlements around Shushtar have developed among canals, agricultural land, and historic water structures, reflecting a long-standing culture of living alongside water.</span></p></article>
+</div>
 </section>
-
-<section class="section">
-  <h2>
-    <span class="fa-inline">جلوه‌هایی از پوشاک محلی</span>
-    <span class="en-inline" hidden>Elements of Traditional Clothing</span>
-  </h2>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>
-        <span class="fa-inline">ثوب و لباس بلند عربی</span>
-        <span class="en-inline" hidden>Traditional Arab Dress</span>
-      </h3>
-      <p class="fa-inline">لباس بلند و آزاد که در میان بخشی از زنان عرب خوزستان رواج دارد و در طرح و تزئینات متنوع است.</p>
-      <p class="en-inline" hidden>A long, loose garment worn by some Arab women in Khuzestan, with varied designs and decoration.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>
-        <span class="fa-inline">عبا و پوشش بیرونی</span>
-        <span class="en-inline" hidden>Abaya and Outerwear</span>
-      </h3>
-      <p class="fa-inline">پوشش بیرونی سنتی که در برخی جوامع عرب منطقه با شیوه‌های متفاوت استفاده می‌شود.</p>
-      <p class="en-inline" hidden>Traditional outerwear used in different styles in some Arab communities.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>
-        <span class="fa-inline">پوشاک بختیاری</span>
-        <span class="en-inline" hidden>Bakhtiari Clothing</span>
-      </h3>
-      <p class="fa-inline">پوشش زنان بختیاری با پیراهن‌های بلند، دامن‌های پرچین و سربندهای سنتی شناخته می‌شود.</p>
-      <p class="en-inline" hidden>Bakhtiari women's attire is known for long dresses, full skirts and traditional head coverings.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>
-        <span class="fa-inline">روسری و پوشش سر</span>
-        <span class="en-inline" hidden>Head Coverings</span>
-      </h3>
-      <p class="fa-inline">طرح، رنگ و شیوه بستن پوشش سر در میان گروه‌های مختلف استان تنوع دارد.</p>
-      <p class="en-inline" hidden>Head coverings vary in color, pattern and style among the region's communities.</p>
-    </div>
-  </div>
+<section id="history">
+<h2><span class="fa">تاریخ و طبیعت خوزستان</span><span class="en">History and Nature of Khuzestan</span></h2>
+<div class="tiles">
+<article class="tile"><h3><span class="fa">زیگورات چغازنبیل</span><span class="en">Chogha Zanbil Ziggurat</span></h3><p><span class="fa">نیایشگاهی برجسته از تمدن ایلامی در نزدیکی شوش که از مهم‌ترین محوطه‌های باستانی ایران و میراث ثبت‌شده جهانی یونسکو است.</span><span class="en">A remarkable Elamite religious complex near Susa, among Iran's most important archaeological sites and a UNESCO World Heritage property.</span></p></article>
+<article class="tile"><h3><span class="fa">محوطه باستانی شوش</span><span class="en">Ancient Susa</span></h3><p><span class="fa">شوش از مراکز مهم تمدن‌های باستانی فلات ایران و عیلام بوده و آثار تاریخی آن لایه‌های گوناگون تاریخ منطقه را آشکار می‌کند.</span><span class="en">Susa was a major center of ancient civilizations in the Iranian plateau and Elam; its remains reveal many layers of the region's history.</span></p></article>
+<article class="tile"><h3><span class="fa">سازه‌های آبی تاریخی شوشتر</span><span class="en">Shushtar Historical Hydraulic System</span></h3><p><span class="fa">مجموعه‌ای شگفت‌انگیز از پل‌ها، بندها، آسیاب‌ها و کانال‌ها که دانش مهندسی آب در دوره‌های تاریخی را نشان می‌دهد و در فهرست میراث جهانی یونسکو ثبت شده است.</span><span class="en">An extraordinary network of bridges, dams, mills, and canals demonstrating historic water engineering, inscribed on the UNESCO World Heritage List.</span></p></article>
+<article class="tile"><h3><span class="fa">رود کارون و تالاب شادگان</span><span class="en">Karun River and Shadegan Wetland</span></h3><p><span class="fa">کارون از مهم‌ترین رودهای ایران است و در شکل‌گیری سکونت، کشاورزی و فرهنگ خوزستان نقش داشته است. تالاب شادگان نیز از زیست‌بوم‌های ارزشمند جنوب استان به شمار می‌رود.</span><span class="en">The Karun is one of Iran's major rivers and has shaped settlement, agriculture, and culture in Khuzestan. Shadegan is one of the province's valuable wetland ecosystems.</span></p></article>
+</div>
 </section>
-
-<section class="section">
-  <h2>
-    <span class="fa-inline">شهرها و فرهنگ‌های محلی</span>
-    <span class="en-inline" hidden>Local Cities and Cultures</span>
-  </h2>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>اهواز</h3>
-      <p class="fa-inline">مرکز استان و محل تلاقی فرهنگ‌ها و سنت‌های گوناگون خوزستان.</p>
-      <p class="en-inline" hidden>The provincial capital and a meeting point of Khuzestan's diverse traditions.</p>
-    </div>
-    <div class="info-card">
-      <h3>شادگان</h3>
-      <p class="fa-inline">منطقه‌ای با تالاب ارزشمند و پیوند عمیق زندگی مردم با آب و نخلستان.</p>
-      <p class="en-inline" hidden>A region known for its wetlands and the close connection between local life, water and palm groves.</p>
-    </div>
-    <div class="info-card">
-      <h3>دزفول</h3>
-      <p class="fa-inline">شهری با معماری تاریخی، پل کهن و میراث فرهنگی غنی.</p>
-      <p class="en-inline" hidden>A city with historic architecture, an ancient bridge and rich cultural heritage.</p>
-    </div>
-    <div class="info-card">
-      <h3>مسجدسلیمان</h3>
-      <p class="fa-inline">از مناطق مهم فرهنگ بختیاری و دارای پیشینه تاریخی و صنعتی.</p>
-      <p class="en-inline" hidden>An important center of Bakhtiari culture with a significant historical and industrial past.</p>
-    </div>
-  </div>
+<section id="food">
+<h2><span class="fa">خوراکی‌ها و غذاهای محلی</span><span class="en">Local Foods and Dishes</span></h2>
+<div class="tiles">
+<article class="tile"><h3><span class="fa">قلیه‌ماهی</span><span class="en">Ghalieh Mahi</span></h3><p><span class="fa">خورشی جنوبی با ماهی، سبزی‌های معطر، تمرهندی و ادویه که در شهرهای ساحلی و جنوبی خوزستان جایگاه ویژه‌ای دارد.</span><span class="en">A southern fish stew made with aromatic herbs, tamarind, and spices, popular in coastal and southern parts of Khuzestan.</span></p></article>
+<article class="tile"><h3><span class="fa">امگشت</span><span class="en">Emgesht</span></h3><p><span class="fa">پلویی جنوبی که معمولاً با ماهی و سبزی‌ها و ادویه‌های معطر آماده می‌شود و از خوراک‌های شناخته‌شده در سنت غذایی منطقه است.</span><span class="en">A southern rice dish commonly prepared with fish, herbs, and fragrant spices, known in the region's food traditions.</span></p></article>
+<article class="tile"><h3><span class="fa">فلافل و سمبوسه</span><span class="en">Falafel and Sambuseh</span></h3><p><span class="fa">از خوراکی‌های خیابانی محبوب به‌ویژه در اهواز و شهرهای جنوبی استان که با ادویه‌ها و چاشنی‌های تند سرو می‌شوند.</span><span class="en">Popular street foods, especially in Ahvaz and southern towns, often served with spicy seasonings and sauces.</span></p></article>
+<article class="tile"><h3><span class="fa">نافله و کبه</span><span class="en">Nafleh and Kibbeh</span></h3><p><span class="fa">از غذاهایی که در برخی سفره‌های محلی و خانواده‌های عرب خوزستان دیده می‌شوند؛ دستور تهیه و شکل آن‌ها ممکن است از شهری به شهر دیگر تفاوت داشته باشد.</span><span class="en">Dishes found in some local households and Arab Khuzestani food traditions; recipes and forms can vary from one town to another.</span></p></article>
+</div>
 </section>
-
-<section class="section">
-  <h2>
-    <span class="fa-inline">جاذبه‌های طبیعی و تاریخی</span>
-    <span class="en-inline" hidden>Natural and Historical Attractions</span>
-  </h2>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>زیگورات چغازنبیل</h3>
-      <p class="fa-inline">نیایشگاهی باستانی از تمدن ایلام و یکی از آثار ثبت‌شده در میراث جهانی یونسکو.</p>
-      <p class="en-inline" hidden>An ancient Elamite ziggurat and a UNESCO World Heritage Site.</p>
-    </div>
-    <div class="info-card">
-      <h3>سازه‌های آبی شوشتر</h3>
-      <p class="fa-inline">مجموعه‌ای تاریخی از پل‌ها، بندها و آسیاب‌های آبی با مهندسی چشمگیر.</p>
-      <p class="en-inline" hidden>A historic system of bridges, dams and water mills demonstrating remarkable engineering.</p>
-    </div>
-    <div class="info-card">
-      <h3>محوطه تاریخی شوش</h3>
-      <p class="fa-inline">یکی از مراکز مهم تمدن‌های باستانی در جنوب غربی ایران.</p>
-      <p class="en-inline" hidden>An important center of ancient civilizations in southwestern Iran.</p>
-    </div>
-    <div class="info-card">
-      <h3>تالاب شادگان</h3>
-      <p class="fa-inline">زیست‌بومی ارزشمند با تنوع پرندگان و شیوه‌های زندگی وابسته به تالاب.</p>
-      <p class="en-inline" hidden>A valuable wetland ecosystem with diverse birdlife and wetland-based livelihoods.</p>
-    </div>
-    <div class="info-card">
-      <h3>رود کارون</h3>
-      <p class="fa-inline">بزرگ‌ترین رود ایران که در تاریخ و زندگی مردم خوزستان نقشی محوری داشته است.</p>
-      <p class="en-inline" hidden>Iran's largest river, central to the history and daily life of Khuzestan.</p>
-    </div>
-    <div class="info-card">
-      <h3>پل قدیم دزفول</h3>
-      <p class="fa-inline">بنایی تاریخی بر روی رود دز و از نشانه‌های شناخته‌شده شهر دزفول.</p>
-      <p class="en-inline" hidden>A historic bridge over the Dez River and a landmark of Dezful.</p>
-    </div>
-  </div>
+<section id="products">
+<h2><span class="fa">محصولات بومی و صنایع‌دستی</span><span class="en">Local Products and Handicrafts</span></h2>
+<div class="tiles">
+<article class="tile"><h3><span class="fa">خرما و فرآورده‌های نخل</span><span class="en">Dates and Palm Products</span></h3><p><span class="fa">نخلستان‌ها بخش مهمی از چشم‌انداز کشاورزی جنوب خوزستان‌اند و خرما از محصولات شناخته‌شده استان است. برگ و الیاف نخل نیز در برخی هنرهای بومی کاربرد دارند.</span><span class="en">Date palm groves are an important part of southern Khuzestan's agricultural landscape. Dates are a well-known local product, while palm leaves and fibers are used in some traditional crafts.</span></p></article>
+<article class="tile"><h3><span class="fa">کپوبافی دزفول</span><span class="en">Kapo Weaving of Dezful</span></h3><p><span class="fa">هنری با استفاده از برگ خرما و الیاف گیاهی که در آن ظرف‌ها و محصولات تزئینی با نقش‌ها و رنگ‌های متنوع بافته می‌شوند.</span><span class="en">A craft using palm leaves and plant fibers to weave containers and decorative objects in varied patterns and colors.</span></p></article>
+<article class="tile"><h3><span class="fa">حصیربافی</span><span class="en">Mat Weaving</span></h3><p><span class="fa">بافت زیرانداز، سبد و وسایل کاربردی از برگ و الیاف گیاهی، به‌ویژه در نواحی نخل‌خیز و روستاهای نزدیک تالاب و رودخانه.</span><span class="en">Mats, baskets, and useful household objects are woven from plant leaves and fibers, particularly in palm-growing areas and villages near wetlands and rivers.</span></p></article>
+<article class="tile"><h3><span class="fa">عبابافی و دست‌بافته‌ها</span><span class="en">Abaya Weaving and Textiles</span></h3><p><span class="fa">عبابافی و تولید برخی دست‌بافته‌های سنتی در بخش‌هایی از استان، از مهارت‌های مرتبط با فرهنگ پوشاک و زندگی محلی به شمار می‌رود.</span><span class="en">Abaya weaving and other traditional textiles in parts of the province are crafts connected with local clothing traditions and everyday life.</span></p></article>
+<article class="tile"><h3><span class="fa">خرما، شیره و محصولات کشاورزی</span><span class="en">Dates, Date Syrup, and Farm Products</span></h3><p><span class="fa">در کنار خرما، محصولات کشاورزی متنوع دشت‌های خوزستان و فرآورده‌های محلی آن‌ها بخشی از سوغات و اقتصاد روستایی استان را تشکیل می‌دهند.</span><span class="en">Alongside dates, the province's fertile plains produce a variety of crops and local products that contribute to regional livelihoods and souvenirs.</span></p></article>
+<article class="tile"><h3><span class="fa">گلیم و دست‌بافته‌های بختیاری</span><span class="en">Bakhtiari Rugs and Textiles</span></h3><p><span class="fa">دست‌بافته‌های بختیاری با نقش‌ها و ترکیب رنگ‌های برگرفته از محیط زندگی و سنت‌های عشایری، بخشی از میراث هنری جوامع بختیاری‌اند.</span><span class="en">Bakhtiari textiles and rugs, with patterns and colors inspired by their environment and nomadic traditions, form part of the community's artistic heritage.</span></p></article>
+</div>
 </section>
-
-<section class="section">
-  <h2>
-    <span class="fa-inline">خوراک‌های محلی</span>
-    <span class="en-inline" hidden>Local Cuisine</span>
-  </h2>
-  <p class="fa-inline">
-    قلیه‌ماهی، قلیه‌میگو، فلافل آبادانی، سمبوسه، ماهی صبور شکم‌پر،
-    امگشت و انواع غذاهای تهیه‌شده با خرما و ماهی از خوراک‌های شناخته‌شده
-    خوزستان هستند. تنوع غذاها بازتابی از هم‌نشینی فرهنگ‌های مختلف و
-    دسترسی به محصولات دریایی، رودخانه‌ای و کشاورزی منطقه است.
-  </p>
-  <p class="en-inline" hidden>
-    Popular Khuzestani dishes include fish and shrimp Ghalieh,
-    Abadani falafel, samosas, stuffed Sabour fish and Amgost.
-    The cuisine reflects the region's diverse communities and its
-    access to seafood, river fish and agricultural produce.
-  </p>
+<section id="sources">
+<h2><span class="fa">منابع و یادداشت پژوهش</span><span class="en">Sources and Research Note</span></h2>
+<ul class="source-list">
+<li><a href="https://www.visitiran.ir/" rel="noopener" target="_blank">Visit Iran</a> — <span class="fa">اطلاعات گردشگری، میراث فرهنگی و جاذبه‌های ایران.</span><span class="en">Tourism, cultural heritage, and attractions in Iran.</span></li>
+<li><a href="https://whc.unesco.org/en/list/113/" rel="noopener" target="_blank">UNESCO — Chogha Zanbil</a> — <span class="fa">اطلاعات ثبت جهانی و معرفی محوطه چغازنبیل.</span><span class="en">World Heritage information about Chogha Zanbil.</span></li>
+<li><a href="https://whc.unesco.org/en/list/1315/" rel="noopener" target="_blank">UNESCO — Shushtar Historical Hydraulic System</a> — <span class="fa">اطلاعات میراث جهانی سازه‌های آبی شوشتر.</span><span class="en">World Heritage information about the Shushtar hydraulic system.</span></li>
+<li><a href="https://www.ramsar.org/" rel="noopener" target="_blank">Ramsar Convention</a> — <span class="fa">اطلاعات مربوط به تالاب‌ها و اهمیت زیست‌محیطی آن‌ها.</span><span class="en">Information about wetlands and their ecological importance.</span></li>
+</ul>
+<p class="caption"><span class="fa">یادداشت: پوشش و سنت‌های محلی خوزستان در میان جوامع عرب، بختیاری و دیگر گروه‌ها یکسان نیست. معرفی هر نمونه باید با توجه به منطقه، جامعه محلی و مستندات معتبر انجام شود.</span><span class="en">Note: Khuzestan's clothing and cultural traditions differ among Arab, Bakhtiari, and other communities. Each example should be described with attention to its locality, community, and reliable documentation.</span></p>
 </section>
-
-<section class="section">
-  <h2>
-    <span class="fa-inline">شیرینی‌ها و محصولات محلی</span>
-    <span class="en-inline" hidden>Sweets and Local Products</span>
-  </h2>
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>
-        <span class="fa-inline">خرما و فرآورده‌های آن</span>
-        <span class="en-inline" hidden>Dates and Date Products</span>
-      </h3>
-      <p class="fa-inline">خرما و فرآورده‌های متنوع آن از محصولات مهم نخلستان‌های استان هستند.</p>
-      <p class="en-inline" hidden>Dates and their products are important specialties of the province's palm groves.</p>
-    </div>
-    <div class="info-card">
-      <h3>
-        <span class="fa-inline">کلوچه و شیرینی‌های محلی</span>
-        <span class="en-inline" hidden>Local Cookies and Sweets</span>
-      </h3>
-      <p class="fa-inline">در شهرها و خانواده‌های مختلف، شیرینی‌ها و خوراکی‌های سنتی با دستورهای محلی تهیه می‌شوند.</p>
-      <p class="en-inline" hidden>Traditional sweets and snacks are prepared with local recipes across the province.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>
-    <span class="fa-inline">صنایع‌دستی و هنرهای بومی</span>
-    <span class="en-inline" hidden>Handicrafts and Local Arts</span>
-  </h2>
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>
-        <span class="fa-inline">گلیم و دست‌بافته‌ها</span>
-        <span class="en-inline" hidden>Glim and Woven Textiles</span>
-      </h3>
-      <p class="fa-inline">بافته‌های عشایری با نقش‌ها و رنگ‌های برگرفته از محیط زندگی و سنت‌های محلی.</p>
-      <p class="en-inline" hidden>Nomadic textiles featuring patterns and colors inspired by local life and traditions.</p>
-    </div>
-    <div class="info-card">
-      <h3>
-        <span class="fa-inline">حصیربافی</span>
-        <span class="en-inline" hidden>Mat Weaving</span>
-      </h3>
-      <p class="fa-inline">هنری کاربردی با استفاده از مواد گیاهی و برگ نخل در برخی مناطق استان.</p>
-      <p class="en-inline" hidden>A practical craft using plant fibers and palm leaves in some parts of the province.</p>
-    </div>
-    <div class="info-card">
-      <h3>
-        <span class="fa-inline">بافته‌های عشایری</span>
-        <span class="en-inline" hidden>Nomadic Weaving</span>
-      </h3>
-      <p class="fa-inline">دست‌بافته‌هایی که در زندگی روزمره و فرهنگ کوچ‌نشینی کاربرد دارند.</p>
-      <p class="en-inline" hidden>Handwoven objects used in everyday life and nomadic culture.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="tagline">
-    <span class="fa-inline">«از آبیِ کارون تا نقشِ نخلستان»</span>
-    <span class="en-inline" hidden>“From the Blue Karun to the Patterns of Palm Groves”</span>
-  </div>
-</section>
-
-<section class="section sources">
-  <h2>
-    <span class="fa-inline">منابع و مطالعه بیشتر</span>
-    <span class="en-inline" hidden>Sources and Further Reading</span>
-  </h2>
-  <ul>
-    <li><a href="https://whc.unesco.org/" target="_blank" rel="noopener">UNESCO World Heritage Centre</a></li>
-    <li><a href="https://ich.unesco.org/" target="_blank" rel="noopener">UNESCO Intangible Cultural Heritage</a></li>
-    <li><a href="https://www.visitiran.ir/" target="_blank" rel="noopener">Visit Iran</a></li>
-  </ul>
-</section>
-
+<div style="text-align:center"><a class="back" href="index.html"><span class="fa">بازگشت به صفحه اصلی</span><span class="en">Back to Home</span></a></div>
 </main>
-
 <footer>
-  <p>
-    <span class="fa-inline">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
-    <span class="en-inline" hidden>Iran, A Thousand Colors | A Visual Story of Iranian Women's Clothing</span>
-  </p>
-  <p>Artwork: Maryam Saei | Website & Cultural Research: Marjan Saei</p>
+<div><span class="fa">هنرمند و خالق آثار: مریم ساعی</span><span class="en">Artist and creator: Maryam Saei</span></div>
+<div><span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span><span class="en">Website design and cultural research: Marjan Saei</span></div>
+<div style="margin-top:8px">© Iran, a Thousand Colors</div>
 </footer>
-
 <script>
-let currentLanguage = "fa";
+const langSwitch = document.getElementById("langSwitch");
+langSwitch.addEventListener("click", () => {
+  const english = !document.body.classList.contains("english");
+  document.body.classList.toggle("english", english);
+  document.documentElement.lang = english ? "en" : "fa";
+  document.documentElement.dir = english ? "ltr" : "rtl";
+  langSwitch.textContent = english ? "FA | EN" : "FA | EN";
+});
 
-function toggleLanguage() {
-  currentLanguage = currentLanguage === "fa" ? "en" : "fa";
+const homeDropdown = document.getElementById("homeDropdown");
+const homeButton = homeDropdown.querySelector(".dropbtn");
+homeButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const opened = homeDropdown.classList.toggle("open");
+  homeButton.setAttribute("aria-expanded", String(opened));
+});
 
-  document.documentElement.lang = currentLanguage;
-  document.documentElement.dir = currentLanguage === "fa" ? "rtl" : "ltr";
+document.addEventListener("click", (event) => {
+  if (!homeDropdown.contains(event.target)) {
+    homeDropdown.classList.remove("open");
+    homeButton.setAttribute("aria-expanded", "false");
+  }
+});
 
-  document.querySelectorAll(".fa-inline").forEach(element => {
-    element.hidden = currentLanguage !== "fa";
-  });
-
-  document.querySelectorAll(".en-inline").forEach(element => {
-    element.hidden = currentLanguage !== "en";
+if (window.matchMedia("(max-width:850px)").matches) {
+  const menu = document.querySelector(".main-menu");
+  const menuButton = document.createElement("button");
+  menuButton.type = "button";
+  menuButton.className = "mobile-menu-button";
+  menuButton.setAttribute("aria-label", "Open menu");
+  menuButton.innerHTML = "☰";
+  menuButton.style.cssText = "order:2;border:1px solid #c79a4a;background:#fff8eb;color:#153f3b;border-radius:9px;width:40px;height:38px;font-size:20px";
+  document.querySelector(".header-main").insertBefore(menuButton, menu);
+  menuButton.addEventListener("click", () => {
+    const opened = menu.classList.toggle("mobile-open");
+    menuButton.setAttribute("aria-expanded", String(opened));
   });
 }
 </script>
-
 </body>
 </html>
