@@ -303,6 +303,8 @@ html[lang="en"] .region-card .card-body{
 <footer class="footer" id="contact"><div class="wrap"><div class="footer-inner"><div><h2><span class="fa-text">تماس با ما</span><span class="en-text">Contact us</span></h2><p class="fa-text">برای ارتباط و دریافت اطلاعات بیشتر دربارهٔ نمایشگاه:</p><p class="en-text">For inquiries and more information about the exhibition:</p><a class="contact" href="tel:+989109572003">+989109572003</a></div><div><p><span class="fa-text">ما را در شبکه‌های اجتماعی دنبال کنید</span><span class="en-text">Follow the project on social media</span></p><span class="social-placeholder"><span class="fa-text">لینک صفحهٔ اینستاگرام به‌زودی</span><span class="en-text">Instagram link coming soon</span></span></div></div><div class="copyright">© <span id="year"></span> <span class="fa-text">ایران، هزار رنگ | تمامی حقوق محفوظ است.</span><span class="en-text">Iran, A Thousand Colors | All rights reserved.</span></div></div></footer>
 <script>
 const regions=[
+
+const regions=[
 ['قزوین','Qazvin','نقش دیروز، رنگ امروز','qazvin.html','qazvin.jpg'],
 ['گیلان','Gilan','سبزیِ باران و نقشِ زندگی','gilan.html','gilan.jpg'],
 ['مازندران','Mazandaran','میان جنگل، دریا و آیین','mazandaran.html','mazandaran.png'],
@@ -310,16 +312,16 @@ const regions=[
 ['سمنان','Semnan','روایت کویر و راه‌های کهن','semnan.html','semnan.png'],
 ['خراسان شمالی','North Khorasan','نوای دوتار، رنگِ فرهنگ','north-khorasan.html','khorasan-shomali.png'],
 ['خراسان جنوبی','South Khorasan','نقشِ کویر، شکوهِ زندگی','south-khorasan.html','khorasan-jonubi.png'],
-['سیستان و بلوچستان','Sistan & Baluchestan','هنرِ سوزن، قصهٔ سرزمین','sistan.html','sistan-baluchestan.png'],
+['سیستان و بلوچستان','Sistan & Baluchestan','هنرِ سوزن، قصهٔ سرزمین','sistan-baluchestan.html','sistan-baluchestan.png'],
 ['هرمزگان','Hormozgan','آبیِ دریا، رنگِ آفتاب','hormozgan.html','hormozgan.png'],
-['کرمان','Kerman','از کویر تا باغ‌های خیال','kerman.html',null],
+['کرمان','Kerman','از کویر تا باغ‌های خیال','kerman.html','kerman.png'],
 ['یزد','Yazd','آرامشِ کویر، ظرافتِ نقش','yazd.html','yazd.png'],
 ['اصفهان','Isfahan','شکوهِ نقش و هنر','isfahan.html','isfahan.png'],
 ['شیراز','Shiraz','بهارِ نارنج، رنگِ زندگی','fars.html','fars.png'],
 ['بوشهر','Bushehr','آوازِ دریا و آفتاب','bushehr.html','bushehr.png'],
-['کهگیلویه و بویراحمد','Kohgiluyeh & Boyer-Ahmad','رنگِ زاگرس، نقشِ کوچ','kohgiluyeh.html',null],
+['کهگیلویه و بویراحمد','Kohgiluyeh & Boyer-Ahmad','رنگِ زاگرس، نقشِ کوچ','kohgiluyeh.html','kohgiluyeh.png'],
 ['چهارمحال و بختیاری','Chaharmahal & Bakhtiari','شکوهِ زاگرس و ایل','chaharmahal.html','chaharmahal.png'],
-['خوزستان','Khuzestan','گرمای جنوب، رنگِ همزیستی','khuzestan.html',null],
+['خوزستان','Khuzestan','گرمای جنوب، رنگِ همزیستی','khuzestan.html','khuzestan.png'],
 ['لرستان','Lorestan','نقشِ زاگرس، شکوهِ گلونی','lorestan.html','lorestan.png'],
 ['ایلام','Ilam','رنگِ کوهستان، روایتِ اصالت','ilam.html','ilam.png'],
 ['اراک','Arak','هنرِ دست، نقشِ ماندگار','arak.html','arak.png'],
@@ -327,11 +329,12 @@ const regions=[
 ['همدان','Hamedan','ردپای تاریخ در رنگ و سفال','hamedan.html','hamedan.png'],
 ['کرمانشاه','Kermanshah','آوای هورامان، رنگِ اصالت','kermanshah.html','kermanshah.png'],
 ['کردستان','Kurdistan','رنگِ کوهستان، نوای دف','kurdistan.html','kurdistan.png'],
-['ارومیه','Urmia','رنگِ دریاچه، نقشِ فرهنگ','urmia.html',null],
+['ارومیه','Urmia','رنگِ دریاچه، نقشِ فرهنگ','azarbaijan-gharb.html','azarbaijan-gharb.png'],
 ['تبریز','Tabriz','رنگِ کوهستان، نوای عاشیقی','tabriz.html','azerbaijan.png'],
 ['اردبیل','Ardabil','سرمایِ کوه، گرمایِ فرهنگ','ardabil.html','ardabil.png'],
 ['زنجان','Zanjan','درخشش نقره، شکوه نقش‌های ماندگار','zanjan.html','zanjan.png'],
 ['تهران','Tehran','هم‌نشینیِ روایت‌ها و رنگ‌ها','tehran.html',null]
+
 ];
 const holder=document.getElementById('regionCards');
 regions.forEach((r,i)=>{const card=document.createElement('a');card.className='region-card';card.href=r[3];card.setAttribute('aria-label',`مشاهدهٔ روایت ${r[0]} / Explore ${r[1]}`);const art=document.createElement('div');art.className='card-art';if(r[4]){const img=document.createElement('img');img.src=r[4];img.alt='پوستر '+r[0];img.loading='lazy';img.onerror=()=>{img.remove();art.classList.add('image-missing');};art.append(img);}else{art.classList.add('image-missing');}const body=document.createElement('div');body.className='card-body';body.innerHTML=`<div class="card-meta"><span class="fa-text">روایت منطقه</span><span class="en-text">REGIONAL STORY</span></div><h3><span class="fa-text">${r[0]}</span><span class="en-text">${r[1]}</span></h3><p><span class="fa-text">${r[2]}</span><span class="en-text">Discover this region</span></p><span class="card-link"><span class="fa-text">مشاهدهٔ روایت</span><span class="en-text">Explore region</span> ←</span>`;card.append(art,body);card.addEventListener('click',event=>{if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;event.preventDefault();card.classList.add('is-activating');window.setTimeout(()=>{window.location.href=card.href;},180);});holder.append(card)});
