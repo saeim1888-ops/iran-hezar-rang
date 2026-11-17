@@ -1,707 +1,439 @@
-
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="همدان؛ روایت تصویری پوشش زنان، تاریخ، خوراک و هنرهای دستی در ایران، هزار رنگ.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="سمنان؛ روایت تصویری پوشش زنان، فرهنگ روستاها، تاریخ، طبیعت و خوراکی‌های محلی در نمایشگاه ایران، هزار رنگ." name="description"/>
 <title>همدان | ایران، هزار رنگ</title>
-
 <style>
-:root{
---cream:#f8f1e3;
---paper:#fffaf0;
---olive:#596447;
---dark:#292b25;
---gold:#b08b48;
---rust:#b94e27;
---teal:#245b60
+:root{--cream:#f8f1e3;--paper:#fffaf0;--olive:#596447;--dark:#292b25;--gold:#b08b48;--rust:#b94e27;--teal:#245b60;--line:#dfd2b9}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:150px}
+body{margin:0;background:var(--cream);color:var(--dark);font-family:Tahoma,Arial,sans-serif;line-height:1.95}
+a{color:inherit;text-decoration:none}
+
+.site-header{
+  position:relative;top:0;z-index:1000;width:100%;
+  background:#f4ead8;border-bottom:1px solid #dfd2b9;
+  box-shadow:0 4px 16px rgba(57,46,36,.08);
 }
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-margin:0;
-background:var(--cream);
-color:var(--dark);
-font-family:Tahoma,Arial,sans-serif;
-line-height:2.1
+.topline{display:none}
+.header-main{
+  max-width:1320px;min-height:72px;margin:auto;padding:10px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:22px;
 }
-a{color:var(--teal)}
-
-.topline{
-height:5px;
-background:linear-gradient(90deg,var(--rust),var(--gold),var(--teal),var(--olive))
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#153f3b;font-size:17px;white-space:nowrap;order:3}
+.brand-mark{
+  width:40px;height:40px;border:2px solid #c79a4a;border-radius:50%;
+  display:grid;place-items:center;color:#fff4df;background:#963c25;font-size:19px;
 }
-
-.province-hero{
-text-align:center;
-max-width:1050px;
-margin:24px auto 18px;
-padding:38px 20px 30px;
-border:1px solid #d9c8a5;
-border-radius:16px;
-background:var(--paper);
-box-shadow:0 5px 20px #65502a0a
+.main-menu{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,27px);flex:1;order:2}
+.main-menu>a,.dropbtn{
+  font:inherit;font-size:13px;font-weight:700;color:#153f3b;background:none;
+  border:0;padding:9px 2px;cursor:pointer;white-space:nowrap;
 }
-
-.eyebrow{color:var(--rust);font-size:14px}
-
-h1{
-color:var(--olive);
-font-size:clamp(30px,5vw,48px);
-line-height:1.6;
-margin:12px 0
+.main-menu>a:hover,.dropbtn:hover{color:#963c25}
+.dropdown{position:relative}
+.dropdown-content{
+  display:none;position:absolute;top:100%;right:0;min-width:220px;
+  background:#fff8eb;border:1px solid #c79a4a;border-radius:11px;padding:8px;
+  box-shadow:0 10px 25px rgba(57,46,36,.17)
 }
-
-.slogan{
-color:var(--rust);
-font-size:clamp(18px,3vw,24px);
-font-weight:bold;
-margin:8px 0
+.dropdown.open .dropdown-content{display:block}
+.dropdown-content a{display:block;padding:10px 12px;border-radius:7px;font-size:13px;color:#153f3b}
+.dropdown-content a:hover{background:#f0dfc1;color:#963c25}
+.lang-switch{
+  order:1;border:1px solid #b7aa8e;border-radius:0;background:#fff8eb;
+  color:#153f3b;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap;
+  min-width:72px
 }
-
-.subtitle{
-color:#696455;
-margin:8px auto;
-max-width:700px
+.province-nav{background:#153f3b;color:#fff4df;padding:8px 16px}
+.province-nav-inner{
+  max-width:1200px;margin:auto;display:flex;align-items:center;
+  justify-content:center;gap:20px;flex-wrap:wrap
 }
-
-.section-nav{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:9px;
-max-width:1050px;
-margin:0 auto;
-padding:16px;
-background:#eee4d1;
-border-radius:12px
+.province-nav a,.province-nav span{
+  font-size:12px;padding:3px 4px;border:0;border-radius:0;color:#f4d79d
 }
+.province-nav span{font-weight:800;color:#fff4df}
+.province-nav a:hover{color:#fff;text-decoration:underline}
+html[dir="ltr"] .header-main{direction:ltr}
+html[dir="ltr"] .dropdown-content{right:auto;left:0}
+html[dir="ltr"] .province-nav-inner{direction:ltr}
 
-.section-nav a{
-text-decoration:none;
-padding:6px 13px;
-border:1px solid #d3c09a;
-border-radius:30px;
-font-size:13px
+.hero{max-width:1100px;margin:34px auto 24px;padding:44px 28px;text-align:center;background:linear-gradient(135deg,#fffaf0,#f0e3cb);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 35px #5c452015;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #b08b4833;border-radius:50%}
+.hero:before{top:-105px;right:-65px}.hero:after{bottom:-120px;left:-60px}
+.eyebrow{color:var(--rust);font-size:12px;letter-spacing:.4px}
+h1{font-size:clamp(25px,4vw,39px);color:var(--teal);margin:8px 0}
+.slogan{font-size:18px;color:var(--olive);font-weight:bold;margin:8px 0}
+.hero p{max-width:780px;margin:10px auto 0;font-size:14px}
+.page-nav{max-width:1100px;margin:0 auto 28px;padding:12px 18px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.page-nav a{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:12px;color:var(--olive)}
+.page-nav a:hover{background:var(--olive);color:white}
+main{max-width:1100px;margin:auto;padding:0 20px 40px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;margin:0 0 22px;box-shadow:0 7px 22px #4b38100b}
+h2{font-size:21px;color:var(--rust);margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+h3{font-size:16px;color:var(--teal);margin:12px 0 5px}
+p{margin:8px 0}.art-grid,.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.art-grid img,.art-image{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:#eee2cf}
+.caption{font-size:12px;color:#756b58;text-align:center;margin-top:7px}
+.tile{background:#f7efdf;border:1px solid var(--line);border-radius:13px;padding:15px}
+.quote{border-right:3px solid var(--gold);padding:9px 14px;color:var(--olive);background:#f7efdf;border-radius:8px;margin-top:15px}
+ul{padding-right:22px}.source-list li{margin:7px 0;font-size:13px}
+.source-list a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+footer{text-align:center;padding:25px 16px;background:#e9dec9;color:#5d584b;font-size:12px}
+.back{display:inline-block;background:var(--rust);color:white;padding:9px 18px;border-radius:22px;margin-top:8px}
+.en{display:none}body.english{direction:ltr}body.english .en{display:initial}body.english .fa{display:none}
+body.english .quote{border-right:0;border-left:3px solid var(--gold)}body.english ul{padding-right:0;padding-left:22px}
+body.english .dropdown-content{right:auto;left:0}
+@media(max-width:850px){
+ .header-main{min-height:66px;padding:9px 14px;flex-wrap:wrap;gap:10px}
+ .brand{font-size:14px;order:1}
+ .brand-mark{width:35px;height:35px;font-size:17px}
+ .lang-switch{order:3;margin-inline-start:0}
+ .main-menu{display:none;order:3;flex:1 0 100%;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 0 4px;border-top:1px solid #dfd2b9}
+ .main-menu.mobile-open{display:flex}
+ .main-menu>a,.dropbtn{display:block;width:100%;padding:11px 12px;text-align:right;white-space:normal}
+ html[dir="ltr"] .main-menu>a,html[dir="ltr"] .dropbtn{text-align:left}
+ .dropdown-content{position:static;min-width:0;margin:0 10px 7px;box-shadow:none;background:#f0dfc1}
+ .dropdown.open .dropdown-content{display:block}
+ .hero{margin:18px 12px;padding:30px 17px}
+ .page-nav{padding:8px 12px}
+ main{padding:0 12px 28px}
+ section{padding:19px}
+ .art-grid,.tiles{grid-template-columns:1fr}
+ .province-nav-inner{gap:10px;font-size:11px}
 }
-
-
-
-main{
-max-width:1050px;
-margin:auto;
-padding:24px 18px 60px
+@media(min-width:851px){
+ .main-menu{display:flex!important}
 }
-
-section{
-background:var(--paper);
-border:1px solid #e3d5b9;
-border-radius:15px;
-padding:clamp(18px,4vw,35px);
-margin:25px 0;
-box-shadow:0 5px 20px #65502a0a
-}
-
-h2{
-color:var(--olive);
-font-size:clamp(22px,3vw,29px);
-border-bottom:1px solid #d9c8a5;
-padding-bottom:10px;
-margin-top:0
-}
-
-h3{color:var(--rust);font-size:19px}
-p{margin:12px 0}
-
-.hero-art{
-display:block;
-width:min(100%,690px);
-height:auto;
-margin:18px auto;
-border:6px solid #fffaf0;
-outline:1px solid #d7c398;
-border-radius:3px
-}
-
-.caption{
-text-align:center;
-color:#6b6657;
-font-size:13px;
-margin:14px auto
-}
-
-.label-art{
-display:block;
-width:min(100%,470px);
-height:auto;
-margin:22px auto 10px;
-border:1px solid #ddc99e
-}
-
-.quote{
-border-right:4px solid var(--gold);
-padding:12px 18px;
-background:#f3ead7;
-color:var(--olive);
-font-size:18px
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px
-}
-
-.tile{
-background:#f6eedf;
-border:1px solid #e3d4b7;
-border-radius:12px;
-padding:17px
-}
-
-.tile h3{margin-top:0}
-
-.small{font-size:13px;color:#6b6657}
-ul{padding-right:22px}
-li{margin:7px 0}
-.source-list li{overflow-wrap:anywhere}
-
-footer{
-text-align:center;
-padding:28px 16px;
-background:var(--olive);
-color:#fff8e9
-}
-
-footer a{color:#ffdf9e}
-
-.back{
-display:inline-block;
-margin-top:18px;
-color:var(--olive)
-}
-
-body.english{
-direction:ltr;
-font-family:Arial,Tahoma,sans-serif
-}
-
-body.english .section-nav{direction:ltr}
-body.english ul{
-padding-left:22px;
-padding-right:0
-}
-
-body.english .quote{
-border-right:0;
-border-left:4px solid var(--gold)
-}
-
-body.english .back{direction:ltr}
-
-body:not(.english) .en,
-body.english .fa{
-display:none!important
-}
-
-@media(max-width:600px){
-.province-hero{margin:18px 12px;padding:28px 16px 22px}
-.section-nav{gap:6px;margin:0 12px}
-.section-nav a{font-size:12px}
-}
-
-.site-header{position:sticky;top:0;z-index:1000;max-width:none;width:100%;margin:0;padding:10px clamp(14px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:18px;background:#f4ead8;border-bottom:1px solid #dfd2b9;box-shadow:0 5px 18px rgba(53,47,38,.08);font-family:Tahoma,Arial,sans-serif;line-height:1.5}
-.site-brand{display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:17px;font-weight:800;color:#153f3b}
-.brand-mark{width:34px;height:34px;display:inline-grid;place-items:center;border-radius:50%;background:#a83e1d;color:#f4ead8;border:2px solid #c79a50;font-size:16px;flex:0 0 auto}
-.main-menu{display:flex;align-items:center;justify-content:center;gap:5px;flex:1}
-.main-menu a,.home-menu-trigger{display:inline-flex;align-items:center;gap:5px;padding:8px 10px;border:0;border-radius:9px;background:transparent;color:#153f3b;text-decoration:none;font:500 12px Tahoma,Arial,sans-serif;white-space:nowrap}
-.main-menu a:hover,.home-menu-trigger:hover{background:#e9ddc8}
-.home-menu{position:relative}
-.home-dropdown{display:none;position:absolute;top:100%;right:0;min-width:190px;padding:8px;background:#fffaf1;border:1px solid #dfd2b9;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.12)}
-.home-menu.open .home-dropdown{display:grid}
-.home-dropdown a{display:block;text-align:right}
-.site-header .lang-button{border:1px solid #c79a50;border-radius:22px;background:#fffaf1;color:#153f3b;padding:6px 14px;font-size:13px;white-space:nowrap;cursor:pointer}
-.menu-toggle{display:none;border:1px solid #dfd2b9;background:#fffaf1;color:#153f3b;border-radius:9px;padding:5px 10px;font-size:20px;cursor:pointer}
-.province-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px clamp(14px,4vw,56px);background:#153f3b;color:#f8f0e1;font-family:Tahoma,Arial,sans-serif;line-height:1.6}
-.province-bar a{color:#f8f0e1;text-decoration:none;font-size:12px;white-space:nowrap}
-.province-current{text-align:center;font-weight:700;font-size:13px}
-.province-current small{display:block;font-size:10px;opacity:.78;font-weight:400}
-@media(max-width:850px){.site-header{flex-wrap:wrap}.menu-toggle{display:block}.main-menu{display:none;order:3;flex:0 0 100%;align-items:stretch;flex-direction:column;padding:8px 0}.site-header.mobile-open .main-menu{display:flex}.main-menu a,.home-menu-trigger{width:100%;justify-content:flex-start;text-align:right}.home-menu{width:100%}.home-dropdown{position:static;box-shadow:none;margin:3px 10px 8px}.province-bar{padding:9px 12px}.province-bar a{font-size:10px}.province-current{font-size:11px}}
-@media(max-width:480px){.site-brand{font-size:14px}.brand-mark{width:30px;height:30px}.site-header{gap:8px}.province-current small{font-size:9px}}
-
 </style>
 </head>
-
 <body>
-
-<div class="topline"></div>
-<header class="site-header" id="siteHeader">
-  <div class="site-brand"><span class="brand-mark">هـ</span><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span></div>
-  <button class="menu-toggle" type="button" aria-label="باز کردن منو" onclick="toggleMenu()">☰</button>
-  <nav class="main-menu" aria-label="Main menu">
-    <div class="home-menu" id="homeMenu">
-      <button class="home-menu-trigger" type="button" onclick="toggleHomeMenu()"><span class="fa">صفحه اصلی</span><span class="en">Home</span>⌄</button>
-      <div class="home-dropdown">
-        <a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions & Provinces</span></a>
-        <a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
-        <a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Gallery</span></a>
-      </div>
-    </div>
-    <a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
-    <a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
-    <a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
-  </nav>
-  <button type="button" onclick="toggleLanguage()" id="langSwitch" class="lang-button">EN</button>
-</header>
-<div class="province-bar">
-  <a href="arak.html"><span class="fa">← استان قبلی: مرکزی</span><span class="en">← Previous: Markazi</span></a>
-  <div class="province-current"><span class="fa">۲۱ از ۲۸ | همدان</span><span class="en">21 of 28 | Hamedan</span><small><span class="fa">مسیر استان‌ها</span><span class="en">Province Journey</span></small></div>
-  <a href="kermanshah.html"><span class="fa">استان بعدی: کرمانشاه →</span><span class="en">Next: Kermanshah →</span></a>
+<div class="site-header">
+<div class="header-main">
+<a class="brand" href="index.html">
+<span class="brand-mark">ه</span>
+<span class="fa">ایران، هزار رنگ</span><span class="en">Iran, a Thousand Colors</span>
+</a>
+<nav aria-label="منوی اصلی" class="main-menu">
+<div class="dropdown" id="homeDropdown">
+<button aria-expanded="false" class="dropbtn" type="button">
+<span class="fa">صفحه اصلی</span><span class="en">Home</span>
+</button>
+<div class="dropdown-content">
+<a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions | Provinces</span></a>
+<a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+<a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Exhibition</span></a>
 </div>
-
-
-<section class="province-hero">
-<div class="eyebrow">
+</div>
+<a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
+<a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+<a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
+</nav>
+<button class="lang-switch" id="langSwitch" type="button">FA | EN</button>
+</div>
+<div class="province-nav"><div class="province-nav-inner">
+<a href="zanjan.html"><span class="fa">← زنجان</span><span class="en">← Zanjan</span></a>
+<span><span class="fa">همدان</span><span class="en">Hamedan</span></span>
+<a href="kermanshah.html"><span class="fa">کرمانشاه →</span><span class="en">Kermanshah →</span></a>
+</div></div>
+</div>
+<header class="hero"><div class="eyebrow">
 <span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
 <span class="en">Iran, A Thousand Colors | A visual story of women's dress in Iran</span>
-</div>
-
-<h1>
+</div><h1>
 <span class="fa">همدان؛ روایت تاریخ، هنر و زندگی</span>
 <span class="en">Hamedan: A Story of History, Art and Life</span>
-</h1>
-
-<p class="slogan">
+</h1><p class="slogan">
 <span class="fa">«همدان؛ اصالت در نقش، گرما در پوشش»</span>
 <span class="en">“Hamedan: Heritage in Every Pattern, Warmth in Every Layer”</span>
-</p>
-
-<p class="subtitle">
+</p><p class="subtitle">
 <span class="fa">سفری تصویری میان پوشش زنان، شهرها و روستاهای کهن، بناهای تاریخی، سفال لالجین و طعم‌های به‌یادماندنی همدان</span>
 <span class="en">A visual journey through women's dress, historic towns and villages, heritage sites, Lalejin pottery, and Hamedan's memorable flavors.</span>
-</p>
-</section>
-
-<nav class="section-nav">
+</p></header>
+<nav class="page-nav">
 <a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
-<a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's Dress</span></a>
-<a href="#villages"><span class="fa">شهرها و روستاها</span><span class="en">Towns & Villages</span></a>
-<a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History & Nature</span></a>
-<a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food & Sweets</span></a>
-<a href="#products"><span class="fa">محصولات محلی</span><span class="en">Local Products</span></a>
+<a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's clothing</span></a>
+<a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
+<a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History &amp; nature</span></a>
+<a href="#food"><span class="fa">خوراکی‌ها</span><span class="en">Local food</span></a>
+<a href="#products"><span class="fa">محصولات بومی</span><span class="en">Local products</span></a>
 <a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
 </nav>
-
 <main>
-
-<section id="art">
-<h2>
+<section id="art"><h2>
 <span class="fa">۱. تصویر همدان؛ روایت یک سرزمین</span>
 <span class="en">1. Hamedan in Art: A Land's Story</span>
-</h2>
-
-<p>
-<span class="fa">در این اثر، پوشش آبی الهام‌گرفته از نمونه‌های محلی، گیوه، سفال لالجین، خوراک‌های سنتی و نشانه‌هایی از تاریخ همدان کنار هم قرار گرفته‌اند؛ عناصری که بخشی از حافظه فرهنگی این سرزمین را روایت می‌کنند.</span>
-<span class="en">This artwork brings together a blue outfit inspired by local examples, giveh footwear, Lalejin pottery, regional foods, and historic landmarks of Hamedan.</span>
-</p>
-
-<img class="hero-art" src="hamedan.png" alt="اثر هنری همدان با پوشش آبی، گیوه، سفال لالجین و نمادهای تاریخی">
-
-<p class="caption">
+</h2><div class="art-grid"><div><img alt="اثر هنری همدان با پوشش آبی، گیوه، سفال لالجین و نمادهای تاریخی" class="hero-art" src="hamedan.png"/><p class="caption">
 <span class="fa">اثر تصویری همدان از مجموعه «ایران، هزار رنگ»</span>
 <span class="en">The Hamedan artwork from “Iran, A Thousand Colors”</span>
-</p>
-
-<div class="quote">
+</p></div><div><p>
+<span class="fa">در این اثر، پوشش آبی الهام‌گرفته از نمونه‌های محلی، گیوه، سفال لالجین، خوراک‌های سنتی و نشانه‌هایی از تاریخ همدان کنار هم قرار گرفته‌اند؛ عناصری که بخشی از حافظه فرهنگی این سرزمین را روایت می‌کنند.</span>
+<span class="en">This artwork brings together a blue outfit inspired by local examples, giveh footwear, Lalejin pottery, regional foods, and historic landmarks of Hamedan.</span>
+</p><div class="quote">
 <span class="fa">از نقش پارچه و بافت گیوه تا سفال لالجین و یادگارهای هگمتانه؛ هرکدام روایتی از پیوند مردم با سرزمینشان است.</span>
 <span class="en">From textile patterns and woven giveh to Lalejin pottery and ancient Hegmataneh, each tells a story of people's bond with their land.</span>
-</div>
-
-<p class="small">
+</div><p class="small">
 <span class="fa">این تصویر، اثر هنری مجموعه است؛ توضیحات این صفحه برای معرفی فرهنگی و تاریخی استان ارائه شده‌اند.</span>
 <span class="en">This is the collection's artwork; the text provides cultural and historical context.</span>
-</p>
-</section>
-
-<section id="clothing">
-<h2>
+</p></div></div></section>
+<section id="clothing"><h2>
 <span class="fa">۲. پوشش زنان همدان؛ تنوع در جزئیات</span>
 <span class="en">2. Women's Dress in Hamedan: Diversity in the Details</span>
-</h2>
-
-<p>
-<span class="fa">پوشاک سنتی زنان همدان یک دست لباس یکسان برای تمام استان نیست. همدان در محل پیوند حوزه‌های فرهنگی فارس، ترک، کرد و لر قرار دارد و پوشش در نواحی مختلف، با توجه به زبان، جغرافیا و شیوه زندگی تفاوت داشته است. در توصیف‌های منتشرشده، سرپوش‌هایی مانند چارقد و «سرکی» و نیز پیراهن، جلیقه و دامن چین‌دار دیده می‌شود.</span>
-<span class="en">Traditional women's clothing in Hamedan was not uniform across the province. At the meeting point of Persian, Turkic, Kurdish, and Luri cultural areas, dress varied by language, geography, and way of life. Published descriptions mention head coverings such as Saraki, as well as a long shirt, vest, and pleated skirt.</span>
-</p>
-
-<img class="label-art" src="hamedan_leibel.png" alt="لیبل تصویری معرفی پوشش، تاریخ و فرهنگ همدان">
-
-<p class="caption">
+</h2><div class="art-grid"><div><img alt="لیبل تصویری معرفی پوشش، تاریخ و فرهنگ همدان" class="label-art" src="hamedan_leibel.png"/><p class="caption">
 <span class="fa">لیبل اختصاصی همدان؛ راهنمای تصویری پوشش، جاذبه‌ها و خوراک محلی</span>
 <span class="en">Hamedan's exhibition label: a visual guide to clothing, landmarks, and food</span>
-</p>
-
-<div class="grid">
-
-<article class="tile">
+</p></div><div><p>
+<span class="fa">پوشاک سنتی زنان همدان یک دست لباس یکسان برای تمام استان نیست. همدان در محل پیوند حوزه‌های فرهنگی فارس، ترک، کرد و لر قرار دارد و پوشش در نواحی مختلف، با توجه به زبان، جغرافیا و شیوه زندگی تفاوت داشته است. در توصیف‌های منتشرشده، سرپوش‌هایی مانند چارقد و «سرکی» و نیز پیراهن، جلیقه و دامن چین‌دار دیده می‌شود.</span>
+<span class="en">Traditional women's clothing in Hamedan was not uniform across the province. At the meeting point of Persian, Turkic, Kurdish, and Luri cultural areas, dress varied by language, geography, and way of life. Published descriptions mention head coverings such as Saraki, as well as a long shirt, vest, and pleated skirt.</span>
+</p><article class="tile">
 <h3><span class="fa">سرکی؛ پوشش سر در نواحی کردنشین</span><span class="en">Saraki: Headwear in Kurdish Areas</span></h3>
 <p>
 <span class="fa">منبع انگلیسی Visit Iran، سرکی را نوعی روسری در میان زنان کرد منطقه معرفی می‌کند که معمولاً زمینه تیره و نقش‌های قرمز دارد. این نام را نباید به همه زنان استان نسبت داد.</span>
 <span class="en">Visit Iran describes Saraki as a headscarf worn by Kurdish women in the region, often dark with red patterns. It should not be generalized to all women in the province.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">شده و عرقچین</span><span class="en">Shadeh and Skullcap</span></h3>
 <p>
 <span class="fa">در توصیف‌های پوشاک محلی، از «شده» و عرقچین به‌عنوان پوشش‌هایی که زیر یا همراه روسری استفاده می‌شدند یاد شده است. شکل و کاربرد آن‌ها می‌توانست میان نواحی تفاوت داشته باشد.</span>
 <span class="en">Local clothing descriptions mention Shadeh and skullcaps worn beneath or with a scarf. Their form and use could vary by area.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">کوینک یا کراس</span><span class="en">Kevink or Keras</span></h3>
 <p>
 <span class="fa">در منبع Visit Iran، کوینک یا کراس به‌عنوان پیراهنی آستین‌دار و بلند توصیف شده است. این اصطلاحات محلی در نوشتار انگلیسی با چند املای متفاوت ثبت شده‌اند.</span>
 <span class="en">Visit Iran describes Kevink or Keras as a long-sleeved, long shirt. These local terms appear with different English transliterations.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">جلیقه، شوال‌قری و تومبال</span><span class="en">Vest, Shoval Qeri, and Toombal</span></h3>
 <p>
 <span class="fa">در همان توصیف، جلیقه ساتن یا مخمل گلدوزی‌شده، دامن کوتاه چین‌دار با نام شوال‌قری و شلوار تومبال از اجزای پوشش زنان معرفی شده‌اند؛ نه نسخه‌ای ثابت برای تمام شهرستان‌ها.</span>
 <span class="en">The same account mentions an embroidered satin or velvet vest, a short pleated skirt called Shoval Qeri, and trousers known as Toombal. This is not a fixed outfit for every district.</span>
 </p>
-</article>
-
-</div>
-
-<p class="small">
+</article><p class="small">
 <span class="fa">برای نسبت‌دادن هر جزء لباس به روستایی مشخص، به عکس مستند، پژوهش مردم‌شناختی یا تأیید افراد آگاه محلی نیاز داریم.</span>
 <span class="en">Linking a garment to a specific village requires documentary photographs, ethnographic research, or local confirmation.</span>
-</p>
-</section>
-
-<section id="villages">
-<h2>
+</p></div></div></section>
+<section id="villages"><h2>
 <span class="fa">۳. شهرها و روستاهای همدان؛ هر ناحیه، یک روایت</span>
 <span class="en">3. Hamedan's Towns and Villages</span>
-</h2>
-
-<p>
+</h2><p>
 <span class="fa">در این بخش نام شهرها و مراکز شناخته‌شده را از روستاها جدا می‌کنیم تا اطلاعات جغرافیایی دقیق بماند. در نسخه‌های بعدی می‌توان روایت روستاهایی را افزود که پوشش یا هنر بومی آن‌ها مستند شده باشد.</span>
 <span class="en">This section distinguishes towns and known centers from villages. Later versions can add villages whose local dress or crafts are documented.</span>
-</p>
-
-<div class="grid">
-
-<article class="tile">
+</p><div class="tiles"><article class="tile">
 <h3><span class="fa">لالجین؛ شهر سفال</span><span class="en">Lalejin: The Pottery Town</span></h3>
 <p>
 <span class="fa">لالجین در شهرستان بهار از مراکز مهم سفالگری ایران است. کارگاه‌های سفال و لعاب‌های رنگی آن بخشی شاخص از هویت هنری همدان‌اند.</span>
 <span class="en">Lalejin, in Bahar County, is a major pottery center, known for its workshops and colored glazes.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">ملایر؛ گیوه و منبت</span><span class="en">Malayer: Giveh and Woodcarving</span></h3>
 <p>
 <span class="fa">ملایر با گیوه‌بافی، فرش و هنرهای چوبی شناخته می‌شود. گیوه آجیده را در بخش پای‌افزار و صنایع‌دستی معرفی می‌کنیم، نه به‌عنوان لباس کامل زنان یک روستای مشخص.</span>
 <span class="en">Malayer is associated with giveh weaving, carpets, and woodcraft. Ajideh giveh belongs in the footwear and handicrafts section, not as a complete village costume.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">تویسرکان؛ گردو و خوراک محلی</span><span class="en">Tuyserkan: Walnuts and Local Cuisine</span></h3>
 <p>
 <span class="fa">تویسرکان به باغ‌های گردو و خوراک‌هایی مانند آش کلم‌قمری شناخته می‌شود و بخشی از تنوع کشاورزی و غذایی استان را نشان می‌دهد.</span>
 <span class="en">Tuyserkan is known for walnut orchards and dishes such as kohlrabi ash.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">نهاوند؛ گلیم</span><span class="en">Nahavand: Kilim</span></h3>
 <p>
 <span class="fa">گلیم نهاوند از صنایع‌دستی معرفی‌شده استان است و در کنار دیگر دست‌بافته‌های محلی جای می‌گیرد.</span>
 <span class="en">Nahavand kilim is among the province's documented handicrafts.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">اسدآباد و نواحی غربی</span><span class="en">Asadabad and Western Areas</span></h3>
 <p>
 <span class="fa">در نواحی غربی استان، از جمله بخش‌هایی با جمعیت کردزبان، تنوع پوشش و زبان اهمیت دارد. پوشاک هر روستا باید جداگانه مستند شود.</span>
 <span class="en">In western areas, including Kurdish-speaking communities, linguistic and clothing diversity matters. Each village's dress should be documented separately.</span>
 </p>
-</article>
-
-</div>
-</section>
-
-<section id="history">
-<h2>
+</article></div></section>
+<section id="history"><h2>
 <span class="fa">۴. تاریخ، معماری و طبیعت</span>
 <span class="en">4. History, Architecture, and Nature</span>
-</h2>
-
-<h3><span class="fa">هگمتانه؛ شهر باستانی</span><span class="en">Hegmataneh: The Ancient City</span></h3>
-<p>
+</h2><p>
 <span class="fa">یونسکو در معرفی «هگمتانه و مرکز تاریخی همدان» به پیشینه چند هزار ساله سکونت در این شهر و اهمیت آن در دوره مادها و حکومت‌های بعدی اشاره می‌کند. این مجموعه در سال ۲۰۲۴ در فهرست میراث جهانی ثبت شد.</span>
 <span class="en">UNESCO's “Hegmataneh and Historical Centre of Hamedan” entry highlights nearly three millennia of settlement and its importance under the Medes and later dynasties. It was inscribed in 2024.</span>
-</p>
-
-<h3><span class="fa">کتیبه‌های گنج‌نامه</span><span class="en">Ganjnameh Inscriptions</span></h3>
-<p>
+</p><p>
 <span class="fa">کتیبه‌های گنج‌نامه در دامنه الوند، یادگار دوره هخامنشی‌اند و به داریوش و خشایارشا نسبت داده می‌شوند. این سنگ‌نوشته‌ها از نمادهای تاریخی همدان‌اند.</span>
 <span class="en">The Ganjnameh inscriptions on Mount Alvand date to the Achaemenid period and are associated with Darius I and Xerxes I.</span>
-</p>
-
-<h3><span class="fa">آرامگاه بوعلی‌سینا و باباطاهر</span><span class="en">Mausoleums of Avicenna and Baba Taher</span></h3>
-<p>
+</p><p>
 <span class="fa">آرامگاه بوعلی‌سینا یادآور جایگاه علمی این دانشمند ایرانی است و آرامگاه باباطاهر با شعر و دوبیتی‌های او پیوند دارد.</span>
 <span class="en">Avicenna's mausoleum commemorates the Iranian philosopher and physician; Baba Taher's mausoleum is associated with his poetry.</span>
-</p>
-
-<h3><span class="fa">گنبد علویان و شیر سنگی</span><span class="en">Alavian Dome and Stone Lion</span></h3>
-<p>
+</p><p>
 <span class="fa">گنبد علویان از بناهای برجسته دوره سلجوقی و نمونه‌ای ارزشمند از آجرکاری و گچ‌بری ایرانی است. شیر سنگی نیز از یادمان‌های شناخته‌شده شهر است.</span>
 <span class="en">The Alavian Dome is a notable Seljuk monument and an example of Iranian brickwork and stucco. The Stone Lion is another well-known city landmark.</span>
-</p>
-
-<h3><span class="fa">الوند و غار علیصدر</span><span class="en">Mount Alvand and Ali-Sadr Cave</span></h3>
-<p>
+</p><p>
 <span class="fa">کوهستان الوند و چشم‌اندازهای اطراف آن هویت طبیعی همدان را شکل می‌دهند؛ غار آبی علیصدر نیز از جاذبه‌های شناخته‌شده استان است.</span>
 <span class="en">Mount Alvand and its landscapes shape Hamedan's natural identity; Ali-Sadr water cave is another major attraction.</span>
-</p>
-</section>
-
-<section id="food">
-<h2>
+</p><div class="tiles"><article class="tile"><h3><span class="fa">هگمتانه؛ شهر باستانی</span><span class="en">Hegmataneh: The Ancient City</span></h3></article><article class="tile"><h3><span class="fa">کتیبه‌های گنج‌نامه</span><span class="en">Ganjnameh Inscriptions</span></h3></article><article class="tile"><h3><span class="fa">آرامگاه بوعلی‌سینا و باباطاهر</span><span class="en">Mausoleums of Avicenna and Baba Taher</span></h3></article><article class="tile"><h3><span class="fa">گنبد علویان و شیر سنگی</span><span class="en">Alavian Dome and Stone Lion</span></h3></article><article class="tile"><h3><span class="fa">الوند و غار علیصدر</span><span class="en">Mount Alvand and Ali-Sadr Cave</span></h3></article></div></section>
+<section id="food"><h2>
 <span class="fa">۵. طعم‌های اصیل همدان</span>
 <span class="en">5. The Flavors of Hamedan</span>
-</h2>
-
-<p>
+</h2><p>
 <span class="fa">سفره همدان از غذاهای گرم و محلی تا شیرینی‌های سنتی تنوع دارد. نام و دستور پخت بعضی خوراک‌ها در شهرستان‌ها و خانواده‌های مختلف تفاوت می‌کند.</span>
 <span class="en">Hamedan's food culture ranges from hearty regional dishes to traditional sweets. Names and recipes may vary between districts and families.</span>
-</p>
-
-<div class="grid">
-
-<article class="tile">
+</p><div class="tiles"><article class="tile">
 <h3><span class="fa">سرداشی</span><span class="en">Sardashi</span></h3>
 <p>
 <span class="fa">از غذاهای شناخته‌شده همدان که با گوشت و سبزیجات تهیه و در ظرفی مخصوص در تنور یا فر پخته می‌شود.</span>
 <span class="en">A well-known Hamedan dish made with meat and vegetables and baked in a special dish.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">آش خشکبار</span><span class="en">Dried-Fruit Ash</span></h3>
 <p>
 <span class="fa">آشی محلی با ترکیبی از حبوبات، میوه‌های خشک و چاشنی‌های ترش که در معرفی خوراک‌های سنتی همدان آمده است.</span>
 <span class="en">A regional soup combining legumes, dried fruits, and sour seasonings.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">آش کلم‌قمری تویسرکان</span><span class="en">Tuyserkan Kohlrabi Ash</span></h3>
 <p>
 <span class="fa">خوراک محلی معرفی‌شده برای تویسرکان که کلم‌قمری در آن نقش اصلی دارد.</span>
 <span class="en">A local Tuyserkan dish in which kohlrabi is a key ingredient.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">حلوا زرده و انگشت‌پیچ</span><span class="en">Halva Zardeh and Angosht-Pich</span></h3>
 <p>
 <span class="fa">دو شیرینی شناخته‌شده همدان که در فهرست سوغات خوراکی استان آمده‌اند.</span>
 <span class="en">Two well-known Hamedan sweets listed among the province's edible souvenirs.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">کماج و نان چای</span><span class="en">Komaj and Naan-e Chay</span></h3>
 <p>
 <span class="fa">نان‌ها و شیرینی‌های سنتی که در کنار انگشت‌پیچ و دیگر سوغات شیرین، بخشی از خوراکی‌های استان‌اند.</span>
 <span class="en">Traditional breads and sweets sold alongside Angosht-Pich and other local confectionery.</span>
 </p>
-</article>
-
-</div>
-</section>
-
-<section id="products">
-<h2>
+</article></div></section>
+<section id="products"><h2>
 <span class="fa">۶. محصولات محلی و هنرهای دستی</span>
 <span class="en">6. Local Products and Handicrafts</span>
-</h2>
-
-<div class="grid">
-
-<article class="tile">
+</h2><div class="tiles"><article class="tile">
 <h3><span class="fa">لالجین؛ سفال و سرامیک</span><span class="en">Lalejin: Pottery and Ceramics</span></h3>
 <p>
 <span class="fa">لالجین یکی از مهم‌ترین مراکز سفالگری ایران است. سفالینه‌های آن با فرم‌های کاربردی و لعاب‌های رنگی، از جمله فیروزه‌ای، شناخته می‌شوند.</span>
 <span class="en">Lalejin is a major pottery center, known for functional forms and colored glazes including turquoise.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">ملایر؛ گیوه آجیده و منبت</span><span class="en">Malayer: Ajideh Giveh and Woodcarving</span></h3>
 <p>
 <span class="fa">گیوه آجیده را به‌عنوان پای‌افزار دست‌ساز منطقه معرفی می‌کنیم. منبت‌کاری و صنایع چوبی ملایر نیز از هنرهای شناخته‌شده این شهرستان‌اند.</span>
 <span class="en">Ajideh giveh is presented as handmade regional footwear. Malayer is also known for woodcarving and wooden crafts.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">نهاوند؛ گلیم</span><span class="en">Nahavand: Kilim</span></h3>
 <p>
 <span class="fa">گلیم نهاوند از دست‌بافته‌های معرفی‌شده استان است و در کنار فرش و دیگر بافته‌های محلی جای می‌گیرد.</span>
 <span class="en">Nahavand kilim is among the province's noted woven crafts.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">تویسرکان؛ گردو</span><span class="en">Tuyserkan: Walnuts</span></h3>
 <p>
 <span class="fa">گردوی تویسرکان از محصولات کشاورزی شناخته‌شده استان است و پیوند باغداری و اقتصاد محلی را نشان می‌دهد.</span>
 <span class="en">Tuyserkan walnuts are a well-known agricultural product of the province.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">ملایر؛ انگور و شیره انگور</span><span class="en">Malayer: Grapes and Grape Syrup</span></h3>
 <p>
 <span class="fa">انگور، کشمش و شیره انگور از محصولات کشاورزی و خوراکی شناخته‌شده بخش‌هایی از استان، به‌ویژه ملایر، هستند.</span>
 <span class="en">Grapes, raisins, and grape syrup are well-known products in parts of the province, especially Malayer.</span>
 </p>
-</article>
-
-<article class="tile">
+</article><article class="tile">
 <h3><span class="fa">چرم و صنایع چوبی</span><span class="en">Leather and Woodcraft</span></h3>
 <p>
 <span class="fa">چرم‌کاری، نمدمالی، خراطی و منبت از دیگر هنرهای دستی معرفی‌شده در استان همدان‌اند.</span>
 <span class="en">Leatherworking, felt-making, woodturning, and woodcarving are among Hamedan's other handicrafts.</span>
 </p>
-</article>
-
-</div>
-</section>
-
-<section id="sources">
-<h2>
+</article></div></section>
+<section id="sources"><h2>
 <span class="fa">۷. منابع و مطالعه بیشتر</span>
 <span class="en">7. Sources and Further Reading</span>
-</h2>
-
-<p>
+</h2><p>
 <span class="fa">برای تدوین این صفحه از منابع فارسی و انگلیسی استفاده شده است. منابع پوشاک، گردشگری، صنایع‌دستی و میراث تاریخی جداگانه انتخاب شده‌اند.</span>
 <span class="en">This page draws on Persian- and English-language sources covering clothing, tourism, handicrafts, and historical heritage.</span>
-</p>
-
-<h3><span class="fa">منابع ایرانی و فارسی</span><span class="en">Iranian and Persian-Language Sources</span></h3>
-
-<ul class="source-list">
-<li>
-<a href="https://www.discover-iran.com/fa/provinces/hamadan" target="_blank" rel="noopener">Discover Iran – همدان</a>
-<span class="fa"> — خوراک محلی، سفال لالجین، منبت ملایر، گلیم نهاوند و جاذبه‌های استان.</span>
-<span class="en"> — Local cuisine, Lalejin pottery, Malayer woodcarving, Nahavand kilim, and attractions.</span>
-</li>
-
-<li>
-<a href="https://miras.iranhc.org/heritage/گنبد-علویان-33" target="_blank" rel="noopener">یگان میراث ایران – گنبد علویان</a>
-<span class="fa"> — معرفی تاریخی و معماری گنبد علویان.</span>
-<span class="en"> — Historical and architectural information about Alavian Dome.</span>
-</li>
-
-<li>
-<a href="https://www.tasnimnews.ir/fa/news/1393/12/13/675108/" target="_blank" rel="noopener">خبرگزاری تسنیم – جاذبه‌های گردشگری همدان</a>
-<span class="fa"> — آثار تاریخی، جاذبه‌های طبیعی، خوراک و صنایع‌دستی استان.</span>
-<span class="en"> — Historic sites, natural attractions, food, and handicrafts.</span>
-</li>
-</ul>
-
-<h3><span class="fa">منابع انگلیسی و بین‌المللی</span><span class="en">English and International Sources</span></h3>
-
-<ul class="source-list">
-<li>
-<a href="https://visitiran.ir/costume/traditional-clothes-hamedan-province" target="_blank" rel="noopener">Visit Iran – Traditional Clothes of Hamedan Province</a>
-<span class="fa"> — منبع مستقیم برای اجزای پوشاک سنتی زنان و تنوع فرهنگی استان.</span>
-<span class="en"> — Women's traditional clothing and the province's cultural diversity.</span>
-</li>
-
-<li>
-<a href="https://visitiran.ir/province/hamedan-province" target="_blank" rel="noopener">Visit Iran – Hamedan Province</a>
-<span class="fa"> — خوراک‌ها، سوغات، صنایع‌دستی و آداب محلی.</span>
-<span class="en"> — Cuisine, souvenirs, handicrafts, and local customs.</span>
-</li>
-
-<li>
-<a href="https://en.icro.ir/Drawing-and-visualization/Iranian-Pottery-and-Ceramics%3A-A-Cohesive-Union-of-Art-and-Craft" target="_blank" rel="noopener">Islamic Culture and Relations Organization – Iranian Pottery and Ceramics</a>
-<span class="fa"> — معرفی لالجین به‌عنوان یکی از مراکز مهم سفالگری ایران.</span>
-<span class="en"> — Lalejin as one of Iran's major pottery centers.</span>
-</li>
-
-<li>
-<a href="https://www.unesco.org/archives/multimedia/document-6874" target="_blank" rel="noopener">UNESCO – Hegmataneh and Historical Centre of Hamedan</a>
-<span class="fa"> — پیشینه باستانی هگمتانه و ثبت جهانی ۲۰۲۴.</span>
-<span class="en"> — Ancient Hegmataneh and the 2024 World Heritage inscription.</span>
-</li>
-</ul>
-
-<p class="small">
+</p><p class="small">
 <span class="fa">یادداشت پژوهشی: منابع گردشگری برای معرفی عمومی مناسب‌اند؛ برای ثبت قطعی پوشش یک روستا یا شیوه خاص دوخت، عکس مستند، پژوهش مردم‌شناختی یا تأیید میراث فرهنگی همان منطقه لازم است.</span>
 <span class="en">Research note: Confirming a specific village costume or sewing tradition requires documentary photographs, ethnographic research, or local heritage confirmation.</span>
-</p>
-</section>
-
-<a class="back" href="index.html">
-<span class="fa">← بازگشت به گالری «ایران، هزار رنگ»</span>
-<span class="en">← Back to the “Iran, A Thousand Colors” gallery</span>
-</a>
-
+</p><ul class="source-list"><li>
+<a href="https://www.discover-iran.com/fa/provinces/hamadan" rel="noopener" target="_blank">Discover Iran – همدان</a>
+<span class="fa"> — خوراک محلی، سفال لالجین، منبت ملایر، گلیم نهاوند و جاذبه‌های استان.</span>
+<span class="en"> — Local cuisine, Lalejin pottery, Malayer woodcarving, Nahavand kilim, and attractions.</span>
+</li><li>
+<a href="https://miras.iranhc.org/heritage/گنبد-علویان-33" rel="noopener" target="_blank">یگان میراث ایران – گنبد علویان</a>
+<span class="fa"> — معرفی تاریخی و معماری گنبد علویان.</span>
+<span class="en"> — Historical and architectural information about Alavian Dome.</span>
+</li><li>
+<a href="https://www.tasnimnews.ir/fa/news/1393/12/13/675108/" rel="noopener" target="_blank">خبرگزاری تسنیم – جاذبه‌های گردشگری همدان</a>
+<span class="fa"> — آثار تاریخی، جاذبه‌های طبیعی، خوراک و صنایع‌دستی استان.</span>
+<span class="en"> — Historic sites, natural attractions, food, and handicrafts.</span>
+</li><li>
+<a href="https://visitiran.ir/costume/traditional-clothes-hamedan-province" rel="noopener" target="_blank">Visit Iran – Traditional Clothes of Hamedan Province</a>
+<span class="fa"> — منبع مستقیم برای اجزای پوشاک سنتی زنان و تنوع فرهنگی استان.</span>
+<span class="en"> — Women's traditional clothing and the province's cultural diversity.</span>
+</li><li>
+<a href="https://visitiran.ir/province/hamedan-province" rel="noopener" target="_blank">Visit Iran – Hamedan Province</a>
+<span class="fa"> — خوراک‌ها، سوغات، صنایع‌دستی و آداب محلی.</span>
+<span class="en"> — Cuisine, souvenirs, handicrafts, and local customs.</span>
+</li><li>
+<a href="https://en.icro.ir/Drawing-and-visualization/Iranian-Pottery-and-Ceramics%3A-A-Cohesive-Union-of-Art-and-Craft" rel="noopener" target="_blank">Islamic Culture and Relations Organization – Iranian Pottery and Ceramics</a>
+<span class="fa"> — معرفی لالجین به‌عنوان یکی از مراکز مهم سفالگری ایران.</span>
+<span class="en"> — Lalejin as one of Iran's major pottery centers.</span>
+</li><li>
+<a href="https://www.unesco.org/archives/multimedia/document-6874" rel="noopener" target="_blank">UNESCO – Hegmataneh and Historical Centre of Hamedan</a>
+<span class="fa"> — پیشینه باستانی هگمتانه و ثبت جهانی ۲۰۲۴.</span>
+<span class="en"> — Ancient Hegmataneh and the 2024 World Heritage inscription.</span>
+</li></ul></section>
+<div style="text-align:center"><a class="back" href="index.html"><span class="fa">بازگشت به صفحه اصلی</span><span class="en">Back to Home</span></a></div>
 </main>
-
 <footer>
-<p><strong><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, A Thousand Colors</span></strong></p>
-<p><span class="fa">روایت تصویری پوشش زنان ایران</span><span class="en">A visual story of women's dress in Iran</span></p>
-<p><span class="fa">همدان؛ اصالت در نقش، گرما در پوشش</span><span class="en">Hamedan: Heritage in Every Pattern, Warmth in Every Layer</span></p>
-<p class="small"><span class="fa">این صفحه بخشی از گالری آنلاین مجموعه است.</span><span class="en">This page is part of the collection's online gallery.</span></p>
+<div><span class="fa">هنرمند و خالق آثار: مریم ساعی</span><span class="en">Artist and creator: Maryam Saei</span></div>
+<div><span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span><span class="en">Website design and cultural research: Marjan Saei</span></div>
+<div style="margin-top:8px">© Iran, a Thousand Colors</div>
 </footer>
-
 <script>
-function setLanguage(language){
-  const english = language === 'en';
-  document.body.classList.toggle('english', english);
-  document.documentElement.lang = english ? 'en' : 'fa';
-  document.documentElement.dir = english ? 'ltr' : 'rtl';
-  const button = document.getElementById('langSwitch');
-  button.textContent = english ? 'FA' : 'EN';
-  button.setAttribute('aria-label', english ? 'Switch to Persian' : 'Switch to English');
-  try { localStorage.setItem('iranHezarRangLanguage', language); } catch(e) {}
-}
-function toggleLanguage(){
-  setLanguage(document.body.classList.contains('english') ? 'fa' : 'en');
-  document.getElementById('siteHeader').classList.remove('mobile-open');
-  document.getElementById('homeMenu').classList.remove('open');
-}
-function toggleMenu(){
-  document.getElementById('siteHeader').classList.toggle('mobile-open');
-}
-function toggleHomeMenu(){
-  document.getElementById('homeMenu').classList.toggle('open');
-}
-try {
-  setLanguage(localStorage.getItem('iranHezarRangLanguage') === 'en' ? 'en' : 'fa');
-} catch(e) {
-  setLanguage('fa');
+const langSwitch = document.getElementById("langSwitch");
+langSwitch.addEventListener("click", () => {
+  const english = !document.body.classList.contains("english");
+  document.body.classList.toggle("english", english);
+  document.documentElement.lang = english ? "en" : "fa";
+  document.documentElement.dir = english ? "ltr" : "rtl";
+  langSwitch.textContent = english ? "FA | EN" : "FA | EN";
+});
+
+const homeDropdown = document.getElementById("homeDropdown");
+const homeButton = homeDropdown.querySelector(".dropbtn");
+homeButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const opened = homeDropdown.classList.toggle("open");
+  homeButton.setAttribute("aria-expanded", String(opened));
+});
+
+document.addEventListener("click", (event) => {
+  if (!homeDropdown.contains(event.target)) {
+    homeDropdown.classList.remove("open");
+    homeButton.setAttribute("aria-expanded", "false");
+  }
+});
+
+if (window.matchMedia("(max-width:850px)").matches) {
+  const menu = document.querySelector(".main-menu");
+  const menuButton = document.createElement("button");
+  menuButton.type = "button";
+  menuButton.className = "mobile-menu-button";
+  menuButton.setAttribute("aria-label", "Open menu");
+  menuButton.innerHTML = "☰";
+  menuButton.style.cssText = "order:2;border:1px solid #c79a4a;background:#fff8eb;color:#153f3b;border-radius:9px;width:40px;height:38px;font-size:20px";
+  document.querySelector(".header-main").insertBefore(menuButton, menu);
+  menuButton.addEventListener("click", () => {
+    const opened = menu.classList.toggle("mobile-open");
+    menuButton.setAttribute("aria-expanded", String(opened));
+  });
 }
 </script>
-
 </body>
 </html>
