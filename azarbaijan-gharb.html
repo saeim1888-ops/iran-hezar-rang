@@ -1,0 +1,925 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آذربایجان غربی | ایران، هزار رنگ</title>
+
+<style>
+:root {
+  --paper:#f4ead8;
+  --cream:#fffaf0;
+  --rust:#a83e1d;
+  --green:#153f3b;
+  --olive:#656b43;
+  --gold:#b58b42;
+  --text:#352d25;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--text);
+  font-family:Tahoma,sans-serif;
+  line-height:2;
+}
+
+header{
+  background:var(--cream);
+  border-bottom:1px solid #dfcfb5;
+  padding:18px 6%;
+}
+
+.topbar{
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.brand{
+  color:var(--green);
+  font-size:21px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-size:14px;
+}
+
+nav a:hover{color:var(--rust)}
+
+.lang-btn{
+  background:var(--green);
+  color:white;
+  border:0;
+  border-radius:25px;
+  padding:8px 16px;
+  cursor:pointer;
+  font-family:inherit;
+}
+
+.province-strip{
+  background:var(--green);
+  color:white;
+  text-align:center;
+  padding:9px 12px;
+  font-size:13px;
+}
+
+main{
+  max-width:1100px;
+  margin:38px auto;
+  padding:0 20px;
+}
+
+.hero{
+  text-align:center;
+  padding:35px 20px;
+  background:var(--cream);
+  border:1px solid #e2d2b9;
+  border-radius:18px;
+  margin-bottom:28px;
+}
+
+.eyebrow{
+  color:var(--rust);
+  font-size:13px;
+  letter-spacing:1px;
+}
+
+h1{
+  color:var(--green);
+  font-size:clamp(25px,4vw,38px);
+  margin:8px 0;
+}
+
+.subtitle{
+  color:var(--olive);
+  font-size:17px;
+  margin:0;
+}
+
+.poster{
+  display:block;
+  width:min(100%,650px);
+  margin:25px auto 0;
+  border-radius:12px;
+  border:7px solid white;
+  box-shadow:0 8px 25px #44351f20;
+}
+
+.section{
+  background:var(--cream);
+  border:1px solid #e2d2b9;
+  border-radius:16px;
+  padding:25px;
+  margin:22px 0;
+}
+
+h2{
+  color:var(--rust);
+  font-size:21px;
+  margin-top:0;
+  padding-bottom:9px;
+  border-bottom:1px solid #e4d5bd;
+}
+
+h3{
+  color:var(--green);
+  font-size:16px;
+  margin-bottom:5px;
+}
+
+p{margin-top:8px}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+}
+
+.info-card{
+  background:#f7efdf;
+  border-right:4px solid var(--gold);
+  border-radius:10px;
+  padding:16px;
+}
+
+.tagline{
+  color:var(--green);
+  font-size:19px;
+  font-weight:bold;
+  text-align:center;
+  padding:15px;
+}
+
+.sources a{
+  color:var(--rust);
+  overflow-wrap:anywhere;
+}
+
+footer{
+  background:var(--green);
+  color:#fff6e8;
+  text-align:center;
+  padding:25px 15px;
+  margin-top:45px;
+  font-size:13px;
+}
+
+[dir="ltr"] .info-card{
+  border-right:0;
+  border-left:4px solid var(--gold);
+}
+
+[dir="ltr"]{
+  text-align:left;
+}
+
+@media(max-width:650px){
+  header{padding:15px}
+  .topbar{justify-content:center}
+  nav{justify-content:center;gap:12px}
+  main{margin-top:20px;padding:0 12px}
+  .section{padding:18px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="topbar">
+
+    <a class="brand" href="index.html">
+      <span class="fa-inline">ایران، هزار رنگ</span>
+      <span class="en-inline" hidden>Iran, A Thousand Colors</span>
+    </a>
+
+    <nav>
+      <a href="index.html">
+        <span class="fa-inline">خانه</span>
+        <span class="en-inline" hidden>Home</span>
+      </a>
+
+      <a href="regions.html">
+        <span class="fa-inline">استان‌ها</span>
+        <span class="en-inline" hidden>Regions</span>
+      </a>
+
+      <a href="gallery.html">
+        <span class="fa-inline">گالری</span>
+        <span class="en-inline" hidden>Gallery</span>
+      </a>
+
+      <button class="lang-btn" onclick="toggleLanguage()">FA | EN</button>
+    </nav>
+
+  </div>
+</header>
+
+<div class="province-strip">
+  <span class="fa-inline">آذربایجان شرقی ← آذربایجان غربی → کردستان</span>
+  <span class="en-inline" hidden>East Azerbaijan ← West Azerbaijan → Kurdistan</span>
+</div>
+
+<main>
+
+<!-- معرفی و پوستر -->
+
+<section class="hero">
+
+  <div class="eyebrow">
+    <span class="fa-inline">روایت تصویری پوشش زنان ایران</span>
+    <span class="en-inline" hidden>A Visual Story of Iranian Women's Clothing</span>
+  </div>
+
+  <h1>
+    <span class="fa-inline">آذربایجان غربی</span>
+    <span class="en-inline" hidden>West Azerbaijan</span>
+  </h1>
+
+  <p class="subtitle">
+    <span class="fa-inline">سرزمین دریاچه‌ها، رنگ‌ها و فرهنگ‌های هم‌نشین</span>
+    <span class="en-inline" hidden>Land of Lakes, Colors and Interwoven Cultures</span>
+  </p>
+
+  <img
+    class="poster"
+    src="azarbaijan-gharb.png"
+    alt="پوستر پوشش محلی زنان آذربایجان غربی"
+  >
+
+</section>
+
+<!-- معرفی منطقه -->
+
+<section class="section">
+
+  <h2>
+    <span class="fa-inline">آشنایی با سرزمین</span>
+    <span class="en-inline" hidden>About the Region</span>
+  </h2>
+
+  <p class="fa-inline">
+    آذربایجان غربی در شمال غرب ایران قرار دارد و با طبیعت کوهستانی،
+    دشت‌های گسترده، دریاچه ارومیه و آثار تاریخی ارزشمند شناخته می‌شود.
+    این استان از تنوع فرهنگی و زبانی چشمگیری برخوردار است.
+    آذری‌ها، کردها، آشوری‌ها، ارمنی‌ها و دیگر گروه‌های محلی
+    در شکل‌گیری هویت تاریخی و فرهنگی این سرزمین سهم داشته‌اند.
+  </p>
+
+  <p class="en-inline" hidden>
+    West Azerbaijan is located in northwestern Iran and is known for
+    its mountains, broad plains, Lake Urmia and important historical sites.
+    The province has a rich cultural and linguistic diversity,
+    shaped by Azerbaijani, Kurdish, Assyrian, Armenian and other communities.
+  </p>
+
+</section>
+
+<!-- پوشاک زنان -->
+
+<section class="section">
+
+  <h2>
+    <span class="fa-inline">پوشش زنان؛ روایت رنگ و هویت</span>
+    <span class="en-inline" hidden>Women's Clothing: Color and Identity</span>
+  </h2>
+
+  <p class="fa-inline">
+    پوشاک سنتی زنان آذربایجان غربی با توجه به قومیت، منطقه و شیوه زندگی
+    تفاوت‌های چشمگیری دارد. در میان زنان آذری، پیراهن‌های بلند و رنگارنگ،
+    دامن‌های چین‌دار، جلیقه و پوشش‌های سنتی سر از اجزای شناخته‌شده لباس محلی هستند.
+  </p>
+
+  <p class="fa-inline">
+    در میان زنان کرد استان نیز پوشاک سنتی با پیراهن‌های بلند،
+    شلوارهای محلی، جلیقه و سربندهای رنگارنگ شناخته می‌شود.
+    پارچه‌های براق، رنگ‌های زنده و تزئینات پارچه‌ای در برخی
+    پوشش‌های کردی جلوه ویژه‌ای دارند.
+  </p>
+
+  <p class="fa-inline">
+    پوشاک زنان آشوری و ارمنی منطقه نیز پیشینه و ویژگی‌های فرهنگی
+    خاص خود را دارد. بنابراین نمی‌توان یک نوع لباس را نماینده
+    تمام زنان آذربایجان غربی دانست.
+  </p>
+
+  <p class="en-inline" hidden>
+    Traditional women's clothing in West Azerbaijan varies significantly
+    according to community, locality and lifestyle.
+    Azerbaijani women's attire may include long colorful dresses,
+    gathered skirts, vests and traditional head coverings.
+    Kurdish women's clothing is also known for long dresses,
+    local trousers, vests and colorful scarves.
+    Assyrian and Armenian communities have their own distinct
+    clothing traditions. No single outfit represents all women
+    of the province.
+  </p>
+
+</section>
+
+<!-- اجزای پوشش -->
+
+<section class="section">
+
+  <h2>
+    <span class="fa-inline">اجزای پوشش محلی</span>
+    <span class="en-inline" hidden>Elements of Traditional Clothing</span>
+  </h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">پیراهن بلند</span>
+        <span class="en-inline" hidden>Long Dress</span>
+      </h3>
+      <p class="fa-inline">
+        پیراهن‌های بلند و رنگارنگ از اجزای شناخته‌شده پوشاک
+        سنتی زنان در بخش‌هایی از استان هستند.
+      </p>
+      <p class="en-inline" hidden>
+        Long and colorful dresses are recognizable elements
+        of traditional women's clothing in parts of the province.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">دامن چین‌دار</span>
+        <span class="en-inline" hidden>Gathered Skirt</span>
+      </h3>
+      <p class="fa-inline">
+        دامن‌های پرچین و چندلایه در برخی پوشش‌های سنتی
+        آذری و کردی دیده می‌شوند.
+      </p>
+      <p class="en-inline" hidden>
+        Full and layered skirts appear in some Azerbaijani
+        and Kurdish traditional outfits.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">جلیقه و نیم‌تنه</span>
+        <span class="en-inline" hidden>Vest and Bodice</span>
+      </h3>
+      <p class="fa-inline">
+        جلیقه‌های پارچه‌ای و تزئین‌شده در برخی لباس‌های
+        محلی زنان استفاده می‌شوند.
+      </p>
+      <p class="en-inline" hidden>
+        Fabric vests and decorated bodices are used
+        in some traditional women's outfits.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">روسری و سربند</span>
+        <span class="en-inline" hidden>Scarves and Headwear</span>
+      </h3>
+      <p class="fa-inline">
+        پوشش سر با رنگ‌ها و شیوه‌های بستن گوناگون،
+        بخشی از هویت بصری لباس محلی است.
+      </p>
+      <p class="en-inline" hidden>
+        Head coverings in different colors and styles
+        are part of the visual identity of traditional dress.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- مناطق فرهنگی -->
+
+<section class="section">
+
+  <h2>
+    <span class="fa-inline">شهرها و نواحی فرهنگی</span>
+    <span class="en-inline" hidden>Cities and Cultural Areas</span>
+  </h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>ارومیه</h3>
+      <p class="fa-inline">
+        مرکز استان و شهری با پیشینه تاریخی و تنوع فرهنگی،
+        زبانی و مذهبی.
+      </p>
+      <p class="en-inline" hidden>
+        The provincial capital, known for its history
+        and cultural, linguistic and religious diversity.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>خوی</h3>
+      <p class="fa-inline">
+        شهری تاریخی با بازار کهن، بناهای قدیمی و
+        جایگاه فرهنگی مهم در شمال استان.
+      </p>
+      <p class="en-inline" hidden>
+        A historic city with an old bazaar and important
+        cultural heritage in the north of the province.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>مهاباد</h3>
+      <p class="fa-inline">
+        از شهرهای مهم فرهنگ کردی در استان با موسیقی،
+        پوشاک و سنت‌های محلی شناخته‌شده.
+      </p>
+      <p class="en-inline" hidden>
+        An important center of Kurdish culture,
+        known for local music, clothing and traditions.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>بوکان</h3>
+      <p class="fa-inline">
+        شهری با فرهنگ کردی و پیشینه‌ای غنی در
+        موسیقی و سنت‌های منطقه‌ای.
+      </p>
+      <p class="en-inline" hidden>
+        A city with a strong Kurdish cultural identity
+        and rich musical and regional traditions.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>ماکو</h3>
+      <p class="fa-inline">
+        منطقه‌ای کوهستانی در شمال استان با چشم‌اندازهای
+        طبیعی و آثار تاریخی.
+      </p>
+      <p class="en-inline" hidden>
+        A mountainous area in the north of the province
+        with scenic landscapes and historical sites.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>سلماس</h3>
+      <p class="fa-inline">
+        منطقه‌ای با پیشینه تاریخی و حضور فرهنگ‌های
+        گوناگون در شمال غرب ایران.
+      </p>
+      <p class="en-inline" hidden>
+        An area with a long history and diverse cultural
+        communities in northwestern Iran.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- جاذبه ها -->
+
+<section class="section">
+
+  <h2>
+    <span class="fa-inline">جاذبه‌های تاریخی و طبیعی</span>
+    <span class="en-inline" hidden>Historical and Natural Attractions</span>
+  </h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>دریاچه ارومیه</h3>
+      <p class="fa-inline">
+        یکی از بزرگ‌ترین دریاچه‌های شور منطقه که
+        از مهم‌ترین نمادهای طبیعی آذربایجان غربی است.
+      </p>
+      <p class="en-inline" hidden>
+        One of the region's largest salt lakes
+        and a major natural symbol of West Azerbaijan.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>قره‌کلیسا</h3>
+      <p class="fa-inline">
+        کلیسای تاریخی تادئوس مقدس در نزدیکی چالدران،
+        از آثار مهم میراث ارمنی و ثبت‌شده در یونسکو.
+      </p>
+      <p class="en-inline" hidden>
+        The historic Saint Thaddeus Monastery near Chaldoran,
+        an important Armenian heritage site listed by UNESCO.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>تخت سلیمان</h3>
+      <p class="fa-inline">
+        محوطه‌ای تاریخی و باستانی با آثاری از دوره‌های
+        مختلف تاریخی و ثبت‌شده در میراث جهانی یونسکو.
+      </p>
+      <p class="en-inline" hidden>
+        An ancient archaeological complex with remains
+        from different historical periods, listed by UNESCO.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>غار سهولان</h3>
+      <p class="fa-inline">
+        غاری آبی و طبیعی در نزدیکی مهاباد با تالاب‌های
+        زیرزمینی و فضای دیدنی.
+      </p>
+      <p class="en-inline" hidden>
+        A remarkable water cave near Mahabad
+        with underground lakes and scenic chambers.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>کلیسای ننه مریم</h3>
+      <p class="fa-inline">
+        از کلیساهای تاریخی ارومیه و از آثار مهم
+        میراث مسیحی منطقه.
+      </p>
+      <p class="en-inline" hidden>
+        One of Urmia's historic churches
+        and an important Christian heritage site.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>کوه‌های آرارات و مرزهای کوهستانی</h3>
+      <p class="fa-inline">
+        چشم‌اندازهای کوهستانی شمال استان و نواحی مرزی،
+        بخشی از طبیعت شاخص این منطقه هستند.
+      </p>
+      <p class="en-inline" hidden>
+        The northern mountain landscapes and border highlands
+        are among the region's distinctive natural features.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- فرهنگ و موسیقی -->
+
+<section class="section">
+
+  <h2>
+    <span class="fa-inline">موسیقی و فرهنگ بومی</span>
+    <span class="en-inline" hidden>Music and Local Culture</span>
+  </h2>
+
+  <p class="fa-inline">
+    موسیقی آذری و کردی، عاشیقی، آوازهای محلی و سازهای سنتی
+    از جلوه‌های مهم فرهنگی آذربایجان غربی هستند.
+    هنر عاشیقی با روایت داستان‌ها و حماسه‌ها،
+    در فرهنگ موسیقایی آذربایجان جایگاه ویژه‌ای دارد.
+  </p>
+
+  <p class="fa-inline">
+    در بخش‌های کردنشین استان نیز موسیقی محلی،
+    رقص‌های آیینی و ترانه‌های منطقه‌ای بخشی از
+    حافظه فرهنگی و سنت‌های اجتماعی مردم هستند.
+  </p>
+
+  <p class="en-inline" hidden>
+    Azerbaijani and Kurdish music, Ashiq storytelling,
+    folk songs and traditional instruments are important
+    elements of West Azerbaijan's cultural heritage.
+    Ashiq performers hold a special place in Azerbaijani
+    musical traditions, while Kurdish music and ceremonial
+    dances are important in Kurdish communities.
+  </p>
+
+</section>
+
+<!-- خوراک -->
+
+<section class="section">
+
+  <h2>
+    <span class="fa-inline">خوراک‌های محلی</span>
+    <span class="en-inline" hidden>Local Cuisine</span>
+  </h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">آش دوغ</span>
+        <span class="en-inline" hidden>Doogh Ash</span>
+      </h3>
+      <p class="fa-inline">
+        از غذاهای شناخته‌شده منطقه با پایه دوغ یا ماست،
+        سبزی و حبوبات.
+      </p>
+      <p class="en-inline" hidden>
+        A well-known regional soup made with yogurt or doogh,
+        herbs and legumes.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">ارومیه خورش</span>
+        <span class="en-inline" hidden>Urmia Stew</span>
+      </h3>
+      <p class="fa-inline">
+        خوراکی محلی با ترکیبی از گوشت، لوبیا و
+        سبزیجات که در آشپزی ارومیه شناخته شده است.
+      </p>
+      <p class="en-inline" hidden>
+        A local stew prepared with meat, beans
+        and vegetables, known in Urmia cuisine.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">گوزلمه</span>
+        <span class="en-inline" hidden>Gozleme</span>
+      </h3>
+      <p class="fa-inline">
+        خوراکی محلی تهیه‌شده با نان و مواد گوناگون
+        که در برخی مناطق شمال غرب ایران رواج دارد.
+      </p>
+      <p class="en-inline" hidden>
+        A local flatbread dish with different fillings,
+        found in parts of northwestern Iran.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">کوفته محلی</span>
+        <span class="en-inline" hidden>Local Koofteh</span>
+      </h3>
+      <p class="fa-inline">
+        انواع کوفته با ترکیبات و دستورهای خانوادگی
+        در شهرهای مختلف استان تهیه می‌شوند.
+      </p>
+      <p class="en-inline" hidden>
+        Different kinds of koofteh are prepared
+        with local and family recipes.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- شیرینی و سوغات -->
+
+<section class="section">
+
+  <h2>
+    <span class="fa-inline">شیرینی‌ها و سوغات</span>
+    <span class="en-inline" hidden>Sweets and Souvenirs</span>
+  </h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">نقل ارومیه</span>
+        <span class="en-inline" hidden>Urmia Noghl</span>
+      </h3>
+      <p class="fa-inline">
+        از مشهورترین شیرینی‌های منطقه که با مغزها،
+        شکر و طعم‌دهنده‌های گوناگون تهیه می‌شود.
+      </p>
+      <p class="en-inline" hidden>
+        One of the region's best-known sweets,
+        made with nuts, sugar and different flavorings.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">حلوای هویج</span>
+        <span class="en-inline" hidden>Carrot Halva</span>
+      </h3>
+      <p class="fa-inline">
+        شیرینی سنتی تهیه‌شده با هویج و مواد شیرین‌کننده
+        که در برخی مناطق شمال غرب ایران شناخته شده است.
+      </p>
+      <p class="en-inline" hidden>
+        A traditional sweet made with carrots
+        and sweet ingredients, known in parts of northwestern Iran.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">عسل طبیعی</span>
+        <span class="en-inline" hidden>Natural Honey</span>
+      </h3>
+      <p class="fa-inline">
+        عسل کوهستانی و محصولات زنبورداری از سوغات
+        نواحی مختلف استان هستند.
+      </p>
+      <p class="en-inline" hidden>
+        Mountain honey and beekeeping products
+        are among the region's local specialties.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">فرآورده‌های لبنی</span>
+        <span class="en-inline" hidden>Dairy Products</span>
+      </h3>
+      <p class="fa-inline">
+        محصولات لبنی محلی و فرآورده‌های روستایی
+        از تولیدات شناخته‌شده منطقه‌اند.
+      </p>
+      <p class="en-inline" hidden>
+        Local dairy and village products
+        are among the region's specialties.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- صنایع دستی -->
+
+<section class="section">
+
+  <h2>
+    <span class="fa-inline">صنایع‌دستی و هنرهای سنتی</span>
+    <span class="en-inline" hidden>Handicrafts and Traditional Arts</span>
+  </h2>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">قالی‌بافی</span>
+        <span class="en-inline" hidden>Carpet Weaving</span>
+      </h3>
+      <p class="fa-inline">
+        هنر ریشه‌دار منطقه با طرح‌ها و نقش‌های
+        سنتی در نواحی مختلف استان.
+      </p>
+      <p class="en-inline" hidden>
+        A long-standing craft featuring traditional
+        patterns in different parts of the province.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">گلیم‌بافی</span>
+        <span class="en-inline" hidden>Glim Weaving</span>
+      </h3>
+      <p class="fa-inline">
+        دست‌بافته‌هایی با نقش‌های هندسی و رنگ‌های
+        برگرفته از فرهنگ محلی.
+      </p>
+      <p class="en-inline" hidden>
+        Flat-woven textiles with geometric patterns
+        and colors inspired by local culture.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">رودوزی و هنرهای پارچه‌ای</span>
+        <span class="en-inline" hidden>Embroidery and Textile Arts</span>
+      </h3>
+      <p class="fa-inline">
+        تزئین پارچه و دوخت‌های سنتی در برخی پوشاک
+        و محصولات هنری منطقه دیده می‌شود.
+      </p>
+      <p class="en-inline" hidden>
+        Traditional embroidery and textile decoration
+        appear in some local garments and crafts.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>
+        <span class="fa-inline">منبت و صنایع چوبی</span>
+        <span class="en-inline" hidden>Woodcraft</span>
+      </h3>
+      <p class="fa-inline">
+        هنرهای چوبی و تزئینی از دیگر جلوه‌های
+        صنایع‌دستی در بخش‌هایی از استان هستند.
+      </p>
+      <p class="en-inline" hidden>
+        Decorative woodcraft is another expression
+        of handicraft traditions in parts of the province.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- شعار -->
+
+<section class="section">
+  <div class="tagline">
+    <span class="fa-inline">«آذربایجان غربی | رنگِ دریاچه، شکوه فرهنگ‌ها»</span>
+    <span class="en-inline" hidden>West Azerbaijan | Colors of the Lake, Heritage of Cultures</span>
+  </div>
+</section>
+
+<!-- منابع -->
+
+<section class="section sources">
+
+  <h2>
+    <span class="fa-inline">منابع و مطالعه بیشتر</span>
+    <span class="en-inline" hidden>Sources and Further Reading</span>
+  </h2>
+
+  <ul>
+    <li>
+      <a href="https://whc.unesco.org/" target="_blank" rel="noopener">
+        UNESCO World Heritage Centre
+      </a>
+    </li>
+
+    <li>
+      <a href="https://ich.unesco.org/" target="_blank" rel="noopener">
+        UNESCO Intangible Cultural Heritage
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.visitiran.ir/" target="_blank" rel="noopener">
+        Visit Iran
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.urmia.ir/" target="_blank" rel="noopener">
+        درگاه شهرداری ارومیه
+      </a>
+    </li>
+  </ul>
+
+</section>
+
+</main>
+
+<footer>
+
+  <p>
+    <span class="fa-inline">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+    <span class="en-inline" hidden>Iran, A Thousand Colors | A Visual Story of Iranian Women's Clothing</span>
+  </p>
+
+  <p>
+    Artwork: Maryam Saei
+    |
+    Website & Cultural Research: Marjan Saei
+  </p>
+
+</footer>
+
+<script>
+let currentLanguage = "fa";
+
+function toggleLanguage() {
+  currentLanguage = currentLanguage === "fa" ? "en" : "fa";
+
+  document.documentElement.lang = currentLanguage;
+  document.documentElement.dir =
+    currentLanguage === "fa" ? "rtl" : "ltr";
+
+  document.querySelectorAll(".fa-inline").forEach(element => {
+    element.hidden = currentLanguage !== "fa";
+  });
+
+  document.querySelectorAll(".en-inline").forEach(element => {
+    element.hidden = currentLanguage !== "en";
+  });
+}
+</script>
+
+</body>
+</html>
