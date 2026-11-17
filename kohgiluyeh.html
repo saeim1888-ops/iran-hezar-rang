@@ -1,15 +1,762 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>کهگیلویه و بویراحمد | ایران، هزار رنگ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کهگیلویه و بویراحمد | ایران، هزار رنگ</title>
+
+<style>
+:root{
+  --cream:#f4ead8;
+  --paper:#fffaf0;
+  --olive:#656b43;
+  --green:#153f3b;
+  --rust:#a83e1d;
+  --gold:#c6a66b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--cream);
+  color:#39443a;
+  font-family:Tahoma,sans-serif;
+  line-height:2.1;
+}
+body.english{direction:ltr;text-align:left}
+.topline{height:7px;background:var(--rust)}
+header{
+  text-align:center;
+  padding:24px 15px;
+  background:var(--paper);
+  border-bottom:1px solid var(--gold);
+}
+.logo{color:var(--green);font-size:25px;font-weight:bold}
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:22px;
+  padding:12px;
+  background:#eee3cd;
+}
+nav a{color:var(--green);text-decoration:none;font-size:13px}
+nav a:hover{color:var(--rust)}
+.lang-switch{
+  position:fixed;
+  top:18px;
+  left:20px;
+  z-index:10;
+  background:var(--paper);
+  border:1px solid var(--gold);
+  border-radius:30px;
+  padding:7px 13px;
+  cursor:pointer;
+  color:var(--green);
+}
+main{max-width:1050px;margin:35px auto;padding:15px}
+.hero{text-align:center;padding:35px 15px}
+.hero h1{font-size:39px;color:var(--olive);margin:10px}
+.hero h2{font-size:23px;color:var(--rust)}
+.hero p{color:#77715f}
+section{
+  background:var(--paper);
+  border:1px solid #ddc99e;
+  border-radius:18px;
+  padding:25px;
+  margin:25px 0;
+  box-shadow:0 4px 15px #00000008;
+}
+section h2{
+  text-align:center;
+  color:white;
+  background:var(--green);
+  border-radius:30px;
+  padding:8px 20px;
+  font-size:21px;
+  margin:0 auto 22px;
+  max-width:460px;
+}
+section p{text-align:justify}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.tile{
+  background:#f6edda;
+  border:1px solid #dfc99e;
+  border-radius:14px;
+  padding:18px;
+  text-align:center;
+}
+.tile h3{color:var(--rust)}
+.visual-placeholder{
+  min-height:125px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  background:#e9dfca;
+  border:1px dashed #b99b68;
+  border-radius:12px;
+  color:#77715f;
+  margin:10px 0;
+  padding:15px;
+}
+.visual-placeholder span{font-size:28px}
+.visual-placeholder small{font-size:12px}
+.quote{
+  text-align:center;
+  color:var(--green);
+  font-size:22px;
+  font-weight:bold;
+  padding:20px;
+}
+.sources a{
+  color:#245c60;
+  display:block;
+  margin:8px 0;
+}
+.en{display:none}
+body.english .fa{display:none}
+body.english .en{display:block}
+.back{
+  display:block;
+  width:max-content;
+  margin:30px auto;
+  padding:10px 25px;
+  border-radius:30px;
+  background:var(--green);
+  color:white;
+  text-decoration:none;
+}
+footer{
+  text-align:center;
+  padding:25px;
+  color:var(--olive);
+  background:#eee3cd;
+}
+@media(max-width:700px){
+  .hero h1{font-size:29px}
+  .hero h2{font-size:19px}
+  .grid{grid-template-columns:1fr}
+  section{padding:15px}
+  nav{gap:12px}
+  .lang-switch{top:8px;left:8px}
+}
+</style>
 </head>
+
 <body>
-  <h1>کهگیلویه و بویراحمد</h1>
-  <p>صفحه این استان به‌زودی آماده می‌شود.</p>
-  <a href="bushehr.html">استان قبلی</a>
-  <a href="chaharmahal.html">استان بعدی</a>
-  <a href="regions.html">بازگشت به فهرست استان‌ها</a>
+<div class="topline"></div>
+
+<button class="lang-switch" onclick="toggleLanguage()">FA | EN</button>
+
+<header>
+  <div class="logo">ایران، هزار رنگ</div>
+  <p class="fa">روایتی تصویری از پوشش زنان ایران</p>
+  <p class="en">A Visual Journey Through Iranian Women's Clothing</p>
+</header>
+
+<nav>
+  <a href="index.html"><span class="fa">صفحه اصلی</span><span class="en">Home</span></a>
+  <a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+  <a href="gallery.html"><span class="fa">گالری آنلاین</span><span class="en">Online Gallery</span></a>
+  <a href="index.html#regions"><span class="fa">استان‌ها</span><span class="en">Regions</span></a>
+  <a href="index.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About</span></a>
+</nav>
+
+<main>
+
+<div class="hero">
+  <p class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</p>
+  <p class="en">Iran, A Thousand Colors | Women's Clothing</p>
+
+  <h1 class="fa">کهگیلویه و بویراحمد؛ شکوه زاگرس، اصالت ایل و رنگ</h1>
+  <h1 class="en">Kohgiluyeh and Boyer-Ahmad; Zagros Grandeur and Tribal Heritage</h1>
+
+  <h2 class="fa">سرزمین کوهستان، چشمه‌ها و فرهنگ دیرپای عشایری</h2>
+  <h2 class="en">Land of Mountains, Springs and Nomadic Heritage</h2>
+
+  <p class="fa">
+    سفری میان پوشش زنان لُر، زندگی عشایری،
+    طبیعت زاگرس و هنرهای دست‌ساز مردمان این سرزمین
+  </p>
+  <p class="en">
+    A journey through Luri women's clothing, nomadic life,
+    Zagros landscapes and traditional handicrafts.
+  </p>
+
+  <div class="visual-placeholder">
+    <span>⛰️</span>
+    <small class="fa">جایگاه تصویر اصلی استان – در انتظار آماده‌سازی پوستر</small>
+    <small class="en">Main provincial artwork – image to be added</small>
+  </div>
+</div>
+
+<section>
+<h2>
+<span class="fa">معرفی استان</span>
+<span class="en">About the Province</span>
+</h2>
+
+<p class="fa">
+کهگیلویه و بویراحمد در جنوب‌غربی ایران و در دامنه‌های رشته‌کوه زاگرس
+قرار گرفته است. این استان با کوهستان‌های بلند، جنگل‌های بلوط،
+چشمه‌ها، رودخانه‌ها و مراتع سرسبز شناخته می‌شود.
+فرهنگ لُری، سنت‌های عشایری، موسیقی محلی و پیوند عمیق مردم با طبیعت،
+از ویژگی‌های برجسته هویت فرهنگی این منطقه هستند.
+یاسوج مرکز استان است و شهرهایی مانند دهدشت، گچساران،
+سی‌سخت و لیکک نیز هرکدام بخشی از تنوع فرهنگی و طبیعی آن را نشان می‌دهند.
+</p>
+
+<p class="en">
+Kohgiluyeh and Boyer-Ahmad lies in southwestern Iran,
+among the mountains of the Zagros range. Its high peaks,
+oak forests, springs, rivers and green pastures shape its landscape.
+Luri culture, nomadic traditions, local music and a close relationship
+with nature are central to the region's identity.
+Yasuj is the provincial capital.
+</p>
+</section>
+
+<section>
+<h2>
+<span class="fa">پوشش زنان و فرهنگ محلی</span>
+<span class="en">Women's Clothing and Local Culture</span>
+</h2>
+
+<div class="grid">
+
+<div class="tile">
+<h3 class="fa">پوشش زنان بویراحمدی</h3>
+<h3 class="en">Boyer-Ahmadi Women's Clothing</h3>
+<div class="visual-placeholder">
+<span>👗</span>
+<small class="fa">جایگاه تصویر پوشش زنان بویراحمدی</small>
+<small class="en">Boyer-Ahmadi traditional clothing image</small>
+</div>
+<p class="fa">
+پوشش سنتی زنان بویراحمدی از جلوه‌های شناخته‌شده فرهنگ لُری است.
+دامن‌های بلند و چین‌دار، پیراهن‌های رنگارنگ، روسری و سربند،
+همراه با زیورآلات سنتی، از عناصر این پوشش هستند.
+ترکیب رنگ‌ها و جزئیات لباس در میان خانواده‌ها و مناطق مختلف
+می‌تواند تفاوت داشته باشد.
+</p>
+<p class="en">
+Traditional Boyer-Ahmadi clothing is a distinctive expression
+of Luri culture. Long pleated skirts, colorful dresses,
+headscarves and traditional jewelry are among its elements.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">پوشش زنان کهگیلویه</h3>
+<h3 class="en">Kohgiluyeh Women's Clothing</h3>
+<div class="visual-placeholder">
+<span>🌺</span>
+<small class="fa">جایگاه تصویر پوشش زنان کهگیلویه</small>
+<small class="en">Kohgiluyeh traditional clothing image</small>
+</div>
+<p class="fa">
+پوشش زنان کهگیلویه نیز با تنوع رنگ، پارچه‌های محلی،
+دامن‌های چین‌دار و سربندهای سنتی شناخته می‌شود.
+شیوه پوشیدن و تزئین لباس در مناطق مختلف این شهرستان
+با توجه به سنت‌های محلی تفاوت‌هایی دارد.
+</p>
+<p class="en">
+Kohgiluyeh women's clothing features colorful fabrics,
+traditional head coverings and pleated skirts,
+with local variations in style and decoration.
+</p>
+</div>
+
+</div>
+
+<p class="fa">
+پوشش لُری تنها یک لباس نیست؛ بخشی از حافظه فرهنگی،
+شیوه زندگی و هویت اجتماعی مردم منطقه است.
+</p>
+</section>
+
+<section>
+<h2>
+<span class="fa">عشایر و زندگی ایلی</span>
+<span class="en">Nomadic Life and Tribal Culture</span>
+</h2>
+
+<div class="grid">
+
+<div class="tile">
+<h3 class="fa">زندگی عشایر بویراحمد</h3>
+<h3 class="en">Boyer-Ahmad Nomadic Life</h3>
+<div class="visual-placeholder">
+<span>⛺</span>
+<small class="fa">جایگاه تصویر سیاه‌چادر عشایری</small>
+<small class="en">Nomadic black tent image</small>
+</div>
+<p class="fa">
+زندگی عشایری در بخش‌هایی از استان همچنان با کوچ فصلی،
+دامداری و بهره‌گیری از مراتع پیوند دارد.
+سیاه‌چادر، ابزارهای زندگی روزمره و صنایع‌دستی
+بخشی از میراث این شیوه زندگی هستند.
+</p>
+<p class="en">
+Nomadic life in parts of the province remains connected
+to seasonal migration, livestock and mountain pastures.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">موسیقی و آیین‌های محلی</h3>
+<h3 class="en">Local Music and Traditions</h3>
+<div class="visual-placeholder">
+<span>🎵</span>
+<small class="fa">جایگاه تصویر موسیقی و آیین‌های محلی</small>
+<small class="en">Local music and traditions image</small>
+</div>
+<p class="fa">
+موسیقی لُری، سازهایی مانند کَرنا و دهل،
+آوازهای محلی و روایت‌های شفاهی از بخش‌های مهم
+فرهنگ این منطقه هستند.
+</p>
+<p class="en">
+Luri music, traditional instruments such as the karnay
+and drum, local songs and oral storytelling
+are important parts of the region's heritage.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>
+<span class="fa">روستاها و مناطق شاخص</span>
+<span class="en">Notable Villages and Areas</span>
+</h2>
+
+<div class="grid">
+
+<div class="tile">
+<h3>کریک</h3>
+<div class="visual-placeholder">
+<span>🏡</span>
+<small class="fa">جایگاه تصویر روستای کریک</small>
+<small class="en">Kreik village image</small>
+</div>
+<p class="fa">
+روستایی تاریخی در نزدیکی یاسوج با بافت پلکانی،
+خانه‌های سنتی و چشم‌اندازهای زیبای کوهستانی.
+</p>
+<p class="en">
+A historic stepped village near Yasuj,
+known for its traditional houses and mountain scenery.
+</p>
+</div>
+
+<div class="tile">
+<h3>سی‌سخت</h3>
+<div class="visual-placeholder">
+<span>🏔️</span>
+<small class="fa">جایگاه تصویر سی‌سخت و دنا</small>
+<small class="en">Sisakht and Dena image</small>
+</div>
+<p class="fa">
+شهری کوهستانی در دامنه دنا با باغ‌ها،
+چشمه‌ها و طبیعت چشم‌نواز.
+</p>
+<p class="en">
+A mountain town at the foot of Dena,
+surrounded by gardens and springs.
+</p>
+</div>
+
+<div class="tile">
+<h3>دشت لار و مناطق عشایری</h3>
+<div class="visual-placeholder">
+<span>🌿</span>
+<small class="fa">جایگاه تصویر مراتع و طبیعت عشایری</small>
+<small class="en">Pastures and nomadic landscapes image</small>
+</div>
+<p class="fa">
+مراتع و نواحی ییلاقی زاگرس که در زندگی دامداری
+و کوچ فصلی اهمیت دارند.
+</p>
+<p class="en">
+Zagros pastures and summer grounds important
+to pastoral and seasonal nomadic life.
+</p>
+</div>
+
+<div class="tile">
+<h3>دهدشت و بلادشاپور</h3>
+<div class="visual-placeholder">
+<span>🏛️</span>
+<small class="fa">جایگاه تصویر بافت تاریخی دهدشت</small>
+<small class="en">Dehdasht historic quarter image</small>
+</div>
+<p class="fa">
+دهدشت با آثار تاریخی بلادشاپور،
+یکی از مهم‌ترین نقاط تاریخی استان به شمار می‌رود.
+</p>
+<p class="en">
+Dehdasht is home to the historic remains
+of Belad Shapur.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>
+<span class="fa">جاذبه‌های تاریخی و طبیعی</span>
+<span class="en">Historical and Natural Attractions</span>
+</h2>
+
+<div class="grid">
+
+<div class="tile">
+<h3 class="fa">کوه دنا</h3>
+<h3 class="en">Mount Dena</h3>
+<div class="visual-placeholder">
+<span>🏔️</span>
+<small class="fa">جایگاه تصویر کوه دنا</small>
+<small class="en">Mount Dena image</small>
+</div>
+<p class="fa">
+رشته‌کوهی باشکوه در زاگرس با قله‌های مرتفع،
+چشمه‌ها و تنوع زیستی ارزشمند.
+</p>
+<p class="en">
+A magnificent Zagros mountain range
+with high peaks and rich biodiversity.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">آبشار مارگون</h3>
+<h3 class="en">Margoon Waterfall</h3>
+<div class="visual-placeholder">
+<span>💧</span>
+<small class="fa">جایگاه تصویر آبشار مارگون</small>
+<small class="en">Margoon Waterfall image</small>
+</div>
+<p class="fa">
+آبشاری مشهور در منطقه سپیدان و نزدیک مرز استان
+کهگیلویه و بویراحمد و فارس؛ برای معرفی جغرافیایی
+باید جایگاه استانی آن به‌درستی ذکر شود.
+</p>
+<p class="en">
+A famous waterfall in Sepidan, near the border
+of Kohgiluyeh and Boyer-Ahmad and Fars provinces.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">تنگ تامرادی</h3>
+<h3 class="en">Tang-e Tamoradi</h3>
+<div class="visual-placeholder">
+<span>🌊</span>
+<small class="fa">جایگاه تصویر تنگ تامرادی</small>
+<small class="en">Tang-e Tamoradi image</small>
+</div>
+<p class="fa">
+دره‌ای طبیعی در نزدیکی یاسوج با آبشارها،
+حوضچه‌ها و چشم‌اندازهای کوهستانی.
+</p>
+<p class="en">
+A natural gorge near Yasuj with waterfalls,
+pools and mountain scenery.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">آبشار یاسوج</h3>
+<h3 class="en">Yasuj Waterfall</h3>
+<div class="visual-placeholder">
+<span>🌳</span>
+<small class="fa">جایگاه تصویر آبشار یاسوج</small>
+<small class="en">Yasuj Waterfall image</small>
+</div>
+<p class="fa">
+از جاذبه‌های طبیعی نزدیک شهر یاسوج،
+در میان پوشش گیاهی و طبیعت کوهستانی.
+</p>
+<p class="en">
+A natural attraction near Yasuj,
+surrounded by mountain vegetation.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">بافت تاریخی بلادشاپور</h3>
+<h3 class="en">Belad Shapur Historic Site</h3>
+<div class="visual-placeholder">
+<span>🏛️</span>
+<small class="fa">جایگاه تصویر بلادشاپور</small>
+<small class="en">Belad Shapur image</small>
+</div>
+<p class="fa">
+بقایای شهری تاریخی در دهدشت با آثار معماری،
+کاروانسراها و بناهای ارزشمند.
+</p>
+<p class="en">
+Historic urban remains in Dehdasht,
+including architectural and caravanserai ruins.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">دریاچه کوه‌گل</h3>
+<h3 class="en">Kouh Gol Lake</h3>
+<div class="visual-placeholder">
+<span>🏞️</span>
+<small class="fa">جایگاه تصویر دریاچه کوه‌گل</small>
+<small class="en">Kouh Gol Lake image</small>
+</div>
+<p class="fa">
+دریاچه‌ای کوهستانی در نزدیکی سی‌سخت
+با چشم‌اندازهای طبیعی و فصلی.
+</p>
+<p class="en">
+A seasonal mountain lake near Sisakht
+with beautiful natural scenery.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>
+<span class="fa">غذاها و خوراکی‌های محلی</span>
+<span class="en">Local Cuisine</span>
+</h2>
+
+<div class="grid">
+
+<div class="tile">
+<h3 class="fa">آش دوغ</h3>
+<h3 class="en">Doogh Soup</h3>
+<p class="fa">
+آشی سنتی با پایه دوغ و سبزی‌های محلی
+که در مناطق مختلف زاگرس به شیوه‌های گوناگون تهیه می‌شود.
+</p>
+<p class="en">
+A traditional yogurt-based soup prepared
+in different local styles.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">شله ماش</h3>
+<h3 class="en">Sheleh Mash</h3>
+<p class="fa">
+خوراکی محلی با ماش و مواد غذایی ساده و بومی
+که در سفره‌های منطقه جای دارد.
+</p>
+<p class="en">
+A local mung bean dish made with simple regional ingredients.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">نان محلی</h3>
+<h3 class="en">Traditional Bread</h3>
+<p class="fa">
+نان‌های تنوری و محلی که با روش‌های سنتی
+در روستاها و مناطق عشایری تهیه می‌شوند.
+</p>
+<p class="en">
+Traditional oven-baked breads prepared
+in villages and nomadic communities.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">آش کارده</h3>
+<h3 class="en">Karde Soup</h3>
+<p class="fa">
+خوراکی محلی بر پایه گیاه کارده که در برخی
+مناطق زاگرس تهیه می‌شود.
+</p>
+<p class="en">
+A regional dish made with the local karde plant.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>
+<span class="fa">صنایع‌دستی و هنرهای بومی</span>
+<span class="en">Handicrafts and Folk Arts</span>
+</h2>
+
+<div class="grid">
+
+<div class="tile">
+<h3 class="fa">گبه‌بافی</h3>
+<h3 class="en">Gabbeh Weaving</h3>
+<div class="visual-placeholder">
+<span>🧶</span>
+<small class="fa">جایگاه تصویر گبه عشایری</small>
+<small class="en">Nomadic Gabbeh image</small>
+</div>
+<p class="fa">
+گبه‌های دست‌باف عشایری با نقش‌های ساده،
+الهام‌گرفته از طبیعت، حیوانات و زندگی روزمره.
+</p>
+<p class="en">
+Handwoven nomadic rugs with simple patterns
+inspired by nature and everyday life.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">جاجیم‌بافی</h3>
+<h3 class="en">Jajim Weaving</h3>
+<div class="visual-placeholder">
+<span>🧵</span>
+<small class="fa">جایگاه تصویر جاجیم</small>
+<small class="en">Jajim weaving image</small>
+</div>
+<p class="fa">
+بافت‌های رنگارنگ و راه‌راه با نقش‌های هندسی
+که از هنرهای کاربردی مناطق عشایری هستند.
+</p>
+<p class="en">
+Colorful striped textiles with geometric patterns,
+traditionally used in nomadic life.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">سیاه‌چادربافی</h3>
+<h3 class="en">Black Tent Weaving</h3>
+<div class="visual-placeholder">
+<span>⛺</span>
+<small class="fa">جایگاه تصویر سیاه‌چادر</small>
+<small class="en">Black tent weaving image</small>
+</div>
+<p class="fa">
+هنر تهیه پوشش سیاه‌چادرهای عشایری
+با استفاده از موی بز و مهارت‌های سنتی.
+</p>
+<p class="en">
+Traditional black tent making using goat hair
+and inherited weaving skills.
+</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">نمدمالی و بافته‌های سنتی</h3>
+<h3 class="en">Felt Making and Traditional Textiles</h3>
+<div class="visual-placeholder">
+<span>🪡</span>
+<small class="fa">جایگاه تصویر نمد و بافته‌های محلی</small>
+<small class="en">Felt and local textiles image</small>
+</div>
+<p class="fa">
+هنرهای دستی برگرفته از نیازهای زندگی عشایری
+و استفاده از مواد اولیه طبیعی.
+</p>
+<p class="en">
+Handicrafts rooted in nomadic life
+and the use of natural materials.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>
+<span class="fa">سوغات و محصولات محلی</span>
+<span class="en">Souvenirs and Local Products</span>
+</h2>
+
+<div class="grid">
+<div class="tile">
+<h3 class="fa">عسل کوهستان</h3>
+<h3 class="en">Mountain Honey</h3>
+<p class="fa">محصول زنبورداری در مناطق کوهستانی و مراتع زاگرس.</p>
+<p class="en">Honey produced in the Zagros mountain pastures.</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">گردو و بادام</h3>
+<h3 class="en">Walnuts and Almonds</h3>
+<p class="fa">از محصولات باغی مناطق سردسیر و کوهستانی استان.</p>
+<p class="en">Orchard products from the province's cooler areas.</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">لبنیات محلی</h3>
+<h3 class="en">Local Dairy Products</h3>
+<p class="fa">محصولات سنتی دامداری عشایری و روستایی.</p>
+<p class="en">Traditional dairy products from rural and nomadic communities.</p>
+</div>
+
+<div class="tile">
+<h3 class="fa">بافته‌های عشایری</h3>
+<h3 class="en">Nomadic Textiles</h3>
+<p class="fa">گبه، جاجیم و دست‌بافته‌هایی با نقش‌های بومی.</p>
+<p class="en">Gabbeh, jajim and other traditional woven crafts.</p>
+</div>
+</div>
+</section>
+
+<section class="sources">
+<h2>
+<span class="fa">منابع و اطلاعات بیشتر</span>
+<span class="en">Sources and Further Information</span>
+</h2>
+
+<a href="https://www.visitiran.ir/" target="_blank">Visit Iran – گردشگری ایران</a>
+<a href="https://www.ichto.ir/" target="_blank">وزارت میراث فرهنگی، گردشگری و صنایع‌دستی</a>
+<a href="https://www.irna.ir/" target="_blank">خبرگزاری جمهوری اسلامی ایران</a>
+<a href="https://www.isna.ir/" target="_blank">خبرگزاری ایسنا</a>
+</section>
+
+<div class="quote">
+<span class="fa">هر منطقه، یک رنگ؛ هر اثر، یک روایت</span>
+<span class="en">Every Region, A Color; Every Artwork, A Story</span>
+</div>
+
+<a href="gallery-3d.html" class="back">
+<span class="fa">بازگشت به نقشه سفر</span>
+<span class="en">Back to Travel Map</span>
+</a>
+
+</main>
+
+<footer>
+<p class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</p>
+<p class="en">Iran, A Thousand Colors</p>
+<p>هنرمند و خالق آثار: مریم ساعی</p>
+<p>طراحی سایت و پژوهش: مرجان ساعی</p>
+</footer>
+
+<script>
+function toggleLanguage(){
+  const english=document.body.classList.toggle("english");
+  document.documentElement.lang=english?"en":"fa";
+  document.documentElement.dir=english?"ltr":"rtl";
+  localStorage.setItem("siteLanguage",english?"en":"fa");
+}
+
+window.addEventListener("DOMContentLoaded",()=>{
+  if(localStorage.getItem("siteLanguage")==="en"){
+    document.body.classList.add("english");
+    document.documentElement.lang="en";
+    document.documentElement.dir="ltr";
+  }
+});
+</script>
 </body>
 </html>
