@@ -1,260 +1,758 @@
+
 <!DOCTYPE html>
-
-<html dir="rtl" lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="سمنان؛ روایت تصویری پوشش زنان، فرهنگ روستاها، تاریخ، طبیعت و خوراکی‌های محلی در نمایشگاه ایران، هزار رنگ." name="description"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ایلام | ایران، هزار رنگ</title>
+
 <style>
-:root{--cream:#f8f1e3;--paper:#fffaf0;--olive:#596447;--dark:#292b25;--gold:#b08b48;--rust:#b94e27;--teal:#245b60;--line:#dfd2b9}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:150px}
-body{margin:0;background:var(--cream);color:var(--dark);font-family:Tahoma,Arial,sans-serif;line-height:1.95}
+:root {
+  --paper:#f4ead8;
+  --cream:#fff9ed;
+  --rust:#a83e1d;
+  --green:#153f3b;
+  --olive:#656b43;
+  --gold:#bd9652;
+  --ink:#342d25;
+  --muted:#776d60;
+  --line:#dfcfb5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:radial-gradient(circle at 15% 10%,rgba(189,150,82,.09),transparent 25%),var(--paper);
+  color:var(--ink);
+  font-family:Tahoma,Arial,sans-serif;
+  line-height:2;
+}
 a{color:inherit;text-decoration:none}
+.topbar{
+  background:var(--green);color:var(--cream);
+  padding:12px 5%;display:flex;align-items:center;
+  justify-content:space-between;gap:15px;flex-wrap:wrap
+}
+.brand{font-size:17px;font-weight:bold}
+.top-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.top-actions a{font-size:13px;opacity:.9}
+.language-btn{
+  border:1px solid var(--gold);background:transparent;color:var(--cream);
+  border-radius:30px;padding:5px 15px;cursor:pointer;
+  font-family:inherit;font-size:12px
+}
+.hero{
+  padding:65px 7% 55px;text-align:center;
+  background:linear-gradient(135deg,rgba(21,63,59,.97),rgba(35,75,65,.92));
+  color:var(--cream);position:relative;overflow:hidden
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;width:240px;height:240px;
+  border:1px solid rgba(220,190,130,.25);border-radius:50%
+}
+.hero:before{top:-130px;right:-70px}
+.hero:after{bottom:-160px;left:-70px}
+.hero-kicker{color:#e4c58d;font-size:13px;letter-spacing:2px;margin-bottom:12px}
+.hero h1{font-size:clamp(30px,5vw,49px);line-height:1.6;margin-bottom:8px}
+.hero h2{font-size:clamp(15px,2vw,20px);font-weight:normal;color:#e7d9bd}
+.hero-description{max-width:700px;margin:20px auto 0;font-size:14px;color:#eee3d0}
+.hero-placeholder{
+  max-width:900px;min-height:210px;margin:35px auto 0;
+  border:1px dashed rgba(231,217,189,.55);border-radius:5px;
+  background:rgba(255,255,255,.045);display:flex;
+  align-items:center;justify-content:center;color:#e7d9bd;
+  font-size:13px;padding:20px
+}
+.page-nav{
+  background:var(--cream);border-bottom:1px solid var(--line);
+  padding:12px 5%;display:flex;justify-content:center;gap:22px;flex-wrap:wrap
+}
+.page-nav a{color:var(--green);font-size:12px}
+.page-nav a:hover{color:var(--rust)}
+.container{width:min(1100px,90%);margin:auto}
+.intro{padding:55px 0 25px;text-align:center;max-width:850px;margin:auto}
+.eyebrow{color:var(--rust);font-size:12px;font-weight:bold;margin-bottom:8px}
+.section-title{color:var(--green);font-size:clamp(22px,3vw,29px);margin-bottom:16px}
+.intro p{color:var(--muted);font-size:14px}
+.content-section{padding:38px 0;border-bottom:1px solid var(--line)}
+.section-heading{margin-bottom:22px}
+.section-heading h2{color:var(--green);font-size:22px;margin-bottom:5px}
+.section-heading p{color:var(--muted);font-size:13px}
+.two-column{
+  display:grid;grid-template-columns:1.1fr .9fr;
+  gap:28px;align-items:center
+}
+.text-content p{font-size:14px;color:#5e554a;margin-bottom:13px}
+.visual-placeholder{
+  min-height:230px;border:1px dashed #bda987;
+  background:linear-gradient(145deg,rgba(189,150,82,.08),rgba(21,63,59,.04)),rgba(255,249,237,.65);
+  border-radius:5px;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;
+  color:var(--olive);padding:20px;font-size:13px
+}
+.visual-placeholder .symbol{font-size:30px;margin-bottom:8px;color:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.info-card{background:rgba(255,249,237,.8);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.info-card .visual-placeholder{
+  min-height:145px;border:0;border-bottom:1px solid var(--line);border-radius:0
+}
+.card-content{padding:17px}
+.card-content h3{color:var(--rust);font-size:16px;margin-bottom:7px}
+.card-content p{color:var(--muted);font-size:12px;line-height:2}
+.tag-list{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
+.tag{
+  display:inline-block;border:1px solid #c9b58f;color:var(--green);
+  background:rgba(255,249,237,.65);border-radius:30px;padding:4px 13px;font-size:12px
+}
+.quote{
+  margin:35px 0;padding:24px 28px;border-right:4px solid var(--gold);
+  background:rgba(255,249,237,.65);color:var(--green);font-size:17px;text-align:center
+}
+.sources{padding:35px 0 55px}
+.sources ul{padding-right:20px;color:var(--muted);font-size:13px}
+.sources a{color:var(--rust);text-decoration:underline;text-underline-offset:3px}
+footer{background:var(--green);color:#e9ddc8;padding:28px 5%;text-align:center;font-size:12px}
+footer strong{color:#e2bd7d}
+.english{display:none}
+body.en{direction:ltr;font-family:Arial,Tahoma,sans-serif}
+body.en .english{display:block}
+body.en .persian{display:none}
+body.en .text-content,body.en .sources ul{text-align:left}
+body.en .quote{border-right:0;border-left:4px solid var(--gold)}
+body.en .sources ul{padding-left:20px;padding-right:0}
 
-.site-header{
-  position:relative;top:0;z-index:1000;width:100%;
-  background:#f4ead8;border-bottom:1px solid #dfd2b9;
-  box-shadow:0 4px 16px rgba(57,46,36,.08);
+@media(max-width:760px){
+  .hero{padding:45px 6% 40px}
+  .hero-placeholder{min-height:150px}
+  .two-column{grid-template-columns:1fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .page-nav{gap:10px 17px}
 }
-.topline{display:none}
-.header-main{
-  max-width:1320px;min-height:72px;margin:auto;padding:10px 28px;
-  display:flex;align-items:center;justify-content:space-between;gap:22px;
-}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#153f3b;font-size:17px;white-space:nowrap;order:3}
-.brand-mark{
-  width:40px;height:40px;border:2px solid #c79a4a;border-radius:50%;
-  display:grid;place-items:center;color:#fff4df;background:#963c25;font-size:19px;
-}
-.main-menu{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,27px);flex:1;order:2}
-.main-menu>a,.dropbtn{
-  font:inherit;font-size:13px;font-weight:700;color:#153f3b;background:none;
-  border:0;padding:9px 2px;cursor:pointer;white-space:nowrap;
-}
-.main-menu>a:hover,.dropbtn:hover{color:#963c25}
-.dropdown{position:relative}
-.dropdown-content{
-  display:none;position:absolute;top:100%;right:0;min-width:220px;
-  background:#fff8eb;border:1px solid #c79a4a;border-radius:11px;padding:8px;
-  box-shadow:0 10px 25px rgba(57,46,36,.17)
-}
-.dropdown.open .dropdown-content{display:block}
-.dropdown-content a{display:block;padding:10px 12px;border-radius:7px;font-size:13px;color:#153f3b}
-.dropdown-content a:hover{background:#f0dfc1;color:#963c25}
-.lang-switch{
-  order:1;border:1px solid #b7aa8e;border-radius:0;background:#fff8eb;
-  color:#153f3b;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap;
-  min-width:72px
-}
-.province-nav{background:#153f3b;color:#fff4df;padding:8px 16px}
-.province-nav-inner{
-  max-width:1200px;margin:auto;display:flex;align-items:center;
-  justify-content:center;gap:20px;flex-wrap:wrap
-}
-.province-nav a,.province-nav span{
-  font-size:12px;padding:3px 4px;border:0;border-radius:0;color:#f4d79d
-}
-.province-nav span{font-weight:800;color:#fff4df}
-.province-nav a:hover{color:#fff;text-decoration:underline}
-html[dir="ltr"] .header-main{direction:ltr}
-html[dir="ltr"] .dropdown-content{right:auto;left:0}
-html[dir="ltr"] .province-nav-inner{direction:ltr}
-
-.hero{max-width:1100px;margin:34px auto 24px;padding:44px 28px;text-align:center;background:linear-gradient(135deg,#fffaf0,#f0e3cb);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 35px #5c452015;position:relative;overflow:hidden}
-.hero:before,.hero:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #b08b4833;border-radius:50%}
-.hero:before{top:-105px;right:-65px}.hero:after{bottom:-120px;left:-60px}
-.eyebrow{color:var(--rust);font-size:12px;letter-spacing:.4px}
-h1{font-size:clamp(25px,4vw,39px);color:var(--teal);margin:8px 0}
-.slogan{font-size:18px;color:var(--olive);font-weight:bold;margin:8px 0}
-.hero p{max-width:780px;margin:10px auto 0;font-size:14px}
-.page-nav{max-width:1100px;margin:0 auto 28px;padding:12px 18px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
-.page-nav a{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:12px;color:var(--olive)}
-.page-nav a:hover{background:var(--olive);color:white}
-main{max-width:1100px;margin:auto;padding:0 20px 40px}
-section{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;margin:0 0 22px;box-shadow:0 7px 22px #4b38100b}
-h2{font-size:21px;color:var(--rust);margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
-h3{font-size:16px;color:var(--teal);margin:12px 0 5px}
-p{margin:8px 0}.art-grid,.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
-.art-grid img,.art-image{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:#eee2cf}
-.caption{font-size:12px;color:#756b58;text-align:center;margin-top:7px}
-.tile{background:#f7efdf;border:1px solid var(--line);border-radius:13px;padding:15px}
-.quote{border-right:3px solid var(--gold);padding:9px 14px;color:var(--olive);background:#f7efdf;border-radius:8px;margin-top:15px}
-ul{padding-right:22px}.source-list li{margin:7px 0;font-size:13px}
-.source-list a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
-footer{text-align:center;padding:25px 16px;background:#e9dec9;color:#5d584b;font-size:12px}
-.back{display:inline-block;background:var(--rust);color:white;padding:9px 18px;border-radius:22px;margin-top:8px}
-.en{display:none}body.english{direction:ltr}body.english .en{display:initial}body.english .fa{display:none}
-body.english .quote{border-right:0;border-left:3px solid var(--gold)}body.english ul{padding-right:0;padding-left:22px}
-body.english .dropdown-content{right:auto;left:0}
-@media(max-width:850px){
- .header-main{min-height:66px;padding:9px 14px;flex-wrap:wrap;gap:10px}
- .brand{font-size:14px;order:1}
- .brand-mark{width:35px;height:35px;font-size:17px}
- .lang-switch{order:3;margin-inline-start:0}
- .main-menu{display:none;order:3;flex:1 0 100%;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 0 4px;border-top:1px solid #dfd2b9}
- .main-menu.mobile-open{display:flex}
- .main-menu>a,.dropbtn{display:block;width:100%;padding:11px 12px;text-align:right;white-space:normal}
- html[dir="ltr"] .main-menu>a,html[dir="ltr"] .dropbtn{text-align:left}
- .dropdown-content{position:static;min-width:0;margin:0 10px 7px;box-shadow:none;background:#f0dfc1}
- .dropdown.open .dropdown-content{display:block}
- .hero{margin:18px 12px;padding:30px 17px}
- .page-nav{padding:8px 12px}
- main{padding:0 12px 28px}
- section{padding:19px}
- .art-grid,.tiles{grid-template-columns:1fr}
- .province-nav-inner{gap:10px;font-size:11px}
-}
-@media(min-width:851px){
- .main-menu{display:flex!important}
+@media(max-width:480px){
+  .cards{grid-template-columns:1fr}
+  .topbar{justify-content:center}
+  .top-actions{justify-content:center}
+  .section-heading h2{font-size:19px}
 }
 </style>
 </head>
+
 <body>
-<div class="site-header">
-<div class="header-main">
-<a class="brand" href="index.html">
-<span class="brand-mark">ه</span>
-<span class="fa">ایران، هزار رنگ</span><span class="en">Iran, a Thousand Colors</span>
-</a>
-<nav aria-label="منوی اصلی" class="main-menu">
-<div class="dropdown" id="homeDropdown">
-<button aria-expanded="false" class="dropbtn" type="button">
-<span class="fa">صفحه اصلی</span><span class="en">Home</span>
-</button>
-<div class="dropdown-content">
-<a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions | Provinces</span></a>
-<a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
-<a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Exhibition</span></a>
-</div>
-</div>
-<a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
-<a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
-<a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
-</nav>
-<button class="lang-switch" id="langSwitch" type="button">FA | EN</button>
-</div>
-<div class="province-nav"><div class="province-nav-inner">
-<a href="chaharmahal.html"><span class="fa">← چهارمحال و بختیاری</span><span class="en">← Chaharmahal and Bakhtiari</span></a>
-<span><span class="fa">۱۸ | ایلام</span><span class="en">18 | Ilam</span></span>
-<a href="lorestan.html"><span class="fa">لرستان →</span><span class="en">Lorestan →</span></a>
-</div></div>
-</div>
-<header class="hero">
-<div class="eyebrow"><span class="fa">گالری حضوری و آنلاین | ایران، هزار رنگ</span><span class="en">In-person and online exhibition | Iran, a Thousand Colors</span></div>
-<h1><span class="fa">ایلام؛ آواز بلوط، رنگ زاگرس</span><span class="en">Ilam: Oak Forest Songs, Colors of the Zagros</span></h1>
-<div class="slogan"><span class="fa">هر نقش، یادگاری از فرهنگ و طبیعت</span><span class="en">Every Pattern, a Memory of Culture and Nature</span></div>
-<p><span class="fa">سفری تصویری میان پوشش زنان ایلام، روستاهای زاگرس، میراث تاریخی، جنگل‌های بلوط و طعم‌های محلی این سرزمین.</span><span class="en">A visual journey through women’s dress, Zagros villages, historical heritage, oak forests and local flavors of Ilam.</span></p>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="persian">ایران، هزار رنگ</span>
+    <span class="english">Iran, A Thousand Colors</span>
+  </div>
+  <div class="top-actions">
+    <a href="index.html"><span class="persian">صفحهٔ اصلی</span><span class="english">Home</span></a>
+    <a href="qazvin.html"><span class="persian">قزوین</span><span class="english">Qazvin</span></a>
+    <button class="language-btn" onclick="toggleLanguage()">FA | EN</button>
+  </div>
 </header>
-<nav class="page-nav"><a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a><a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women’s clothing</span></a><a href="#villages"><span class="fa">روستاها و مناطق</span><span class="en">Villages &amp; Regions</span></a><a href="#history"><span class="fa">تاریخ و معماری</span><span class="en">History &amp; Architecture</span></a><a href="#nature"><span class="fa">طبیعت زاگرس</span><span class="en">Zagros Nature</span></a><a href="#food"><span class="fa">خوراک و شیرینی</span><span class="en">Food &amp; Sweets</span></a><a href="#products"><span class="fa">سوغات و صنایع‌دستی</span><span class="en">Handicrafts</span></a><a href="#music"><span class="fa">موسیقی و آیین‌ها</span><span class="en">Music &amp; Rituals</span></a><a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a></nav>
-<main><section class="page-section" id="art"><h2><span class="fa">تصویر ایلام؛ روایت یک سرزمین</span><span class="en">Ilam in Art: A Land’s Story</span></h2><div class="art-grid"><div><img alt="اثر هنری پوشش زنان ایلام" src="ilam.png"/><div class="caption"><span class="fa">اثر هنری ایلام از مجموعهٔ «ایران، هزار رنگ»</span><span class="en">The Ilam artwork from “Iran, A Thousand Colors”</span></div></div><div><p><span class="fa">در این اثر، پوشش زن ایلامی در کنار چشم‌اندازهای زاگرس، بناهای تاریخی و نشانه‌هایی از زندگی محلی قرار گرفته است. رنگ‌ها و نقش‌ها، پیوند میان فرهنگ، طبیعت و خاطرهٔ جمعی را روایت می‌کنند.</span><span class="en">This artwork brings together women's dress, Zagros landscapes, historical architecture and symbols of local life. Its colors and patterns tell a story of culture, nature and collective memory.</span></p></div></div></section><section class="page-section" id="clothing"><h2><span class="fa">پوشش زنان ایلام؛ شکوه نقش و رنگ</span><span class="en">Women’s Dress in Ilam: Patterns and Colors</span></h2><div class="art-grid"><div><img alt="لیبل تصویری پوشش زنان ایلام" class="label-image" src="ilam_leibel.png"/></div><div></div></div></section><section class="page-section" id="villages">
-<h2><span class="fa">۳. روستاها و نواحی ایلام؛ تنوع در دل زاگرس</span><span class="en">3. Villages and Regions of Ilam</span></h2>
-<p><span class="fa">شهرها و روستاهای ایلام هرکدام جغرافیا، محصولات و روایت‌های محلی خود را دارند. معرفی پوشش خاص هر روستا به پژوهش جداگانه نیاز دارد.</span><span class="en">Ilam's towns and villages each have their own landscapes, products and local stories. Identifying a particular dress tradition for each village requires further research.</span></p>
-<div class="cards">
-<div class="card"><h3><span class="fa">کلم، بدره</span><span class="en">Kalem, Badreh</span></h3><p><span class="fa">روستایی در دامنه‌های کبیرکوه با رودخانه، چشمه‌ها، باغ‌ها و چشم‌اندازهای زاگرس. بقایای تاریخی منسوب به قلعه و آتشکدهٔ کلم نیز از موضوعات بررسی میراث منطقه‌اند.</span><span class="en">A village on the slopes of Kabir Kouh, known for its river, springs, orchards and Zagros scenery. Remains associated with Kalem Castle and Fire Temple are also relevant to local heritage research.</span></p></div>
-<div class="card"><h3><span class="fa">دره‌شهر</span><span class="en">Darreh Shahr</span></h3><p><span class="fa">منطقه‌ای با پیشینهٔ تاریخی و محوطهٔ باستانی سیمره و روستاهای پیرامون.</span><span class="en">A region with a rich history, the ancient site of Seymareh and surrounding villages.</span></p></div>
-<div class="card"><h3><span class="fa">بدره</span><span class="en">Badreh</span></h3><p><span class="fa">ناحیه‌ای کوهستانی در امتداد زاگرس با چشم‌اندازهای طبیعی و روستاهای محلی.</span><span class="en">A mountainous area along the Zagros, with natural scenery and local villages.</span></p></div>
-<div class="card"><h3><span class="fa">ایوان و چرداول</span><span class="en">Eyvan and Chardavol</span></h3><p><span class="fa">از مناطق استان که برای شناخت تنوع فرهنگی، زندگی روستایی و محصولات محلی می‌توان بررسی‌شان کرد.</span><span class="en">Areas worth exploring for cultural diversity, rural life and local products.</span></p></div>
-</div>
-<p class="note"><span class="fa">نام روستاها و ویژگی‌های اختصاصی پوشش زنان در هر منطقه پس از بررسی منابع محلی تکمیل می‌شود.</span><span class="en">Village names and specific women's clothing traditions will be expanded after consulting local sources.</span></p>
-</section><section class="page-section" id="history">
-<h2><span class="fa">۴. تاریخ و معماری</span><span class="en">4. History and Architecture</span></h2>
-<div class="cards">
-<div class="card"><h3><span class="fa">قلعه والی</span><span class="en">Vali Castle</span></h3><p><span class="fa">از بناهای تاریخی شناخته‌شدهٔ شهر ایلام که در معرفی معماری و تاریخ معاصر منطقه جایگاه دارد.</span><span class="en">A well-known historic building in Ilam city, relevant to the region's architectural and modern history.</span></p></div>
-<div class="card"><h3><span class="fa">کاخ فلاحتی</span><span class="en">Falahati Palace</span></h3><p><span class="fa">بنایی تاریخی در شهر ایلام که بخشی از میراث معماری منطقه به‌شمار می‌رود.</span><span class="en">A historic building in Ilam city and part of the region's architectural heritage.</span></p></div>
-<div class="card"><h3><span class="fa">شهر تاریخی سیمره</span><span class="en">Ancient Seymareh</span></h3><p><span class="fa">محوطه‌ای باستانی در محدودهٔ دره‌شهر که برای شناخت تاریخ سکونت در منطقه اهمیت دارد.</span><span class="en">An archaeological site near Darreh Shahr that helps illuminate the history of settlement in the region.</span></p></div>
-<div class="card"><h3><span class="fa">آتشکدهٔ کلم</span><span class="en">Kalem Fire Temple</span></h3><p><span class="fa">از آثار تاریخی گزارش‌شده در نزدیکی روستای کلم؛ جزئیات مربوط به قدمت و کاربری آن باید از منابع میراث فرهنگی تأیید شود.</span><span class="en">A historic site reported near Kalem Village. Its precise date and original function should be verified through heritage sources.</span></p></div>
-</div>
-</section><section class="page-section" id="nature">
-<h2><span class="fa">۵. طبیعت زاگرس؛ سرزمین بلوط و آب</span><span class="en">5. The Zagros: Oaks and Water</span></h2>
-<div class="cards">
-<div class="card"><h3><span class="fa">کبیرکوه</span><span class="en">Kabir Kouh</span></h3><p><span class="fa">رشته‌کوهی شاخص در چشم‌انداز ایلام که با دامنه‌ها و پوشش گیاهی زاگرس پیوند دارد.</span><span class="en">A defining mountain range in Ilam's landscape, associated with Zagros slopes and vegetation.</span></p></div>
-<div class="card"><h3><span class="fa">جنگل‌های بلوط</span><span class="en">Oak Woodlands</span></h3><p><span class="fa">درختان بلوط از عناصر مهم طبیعت زاگرس و بخشی از هویت چشم‌اندازی استان‌اند.</span><span class="en">Oak trees are an important part of the Zagros ecosystem and the province's landscape identity.</span></p></div>
-<div class="card"><h3><span class="fa">تنگه ارغوان</span><span class="en">Arghavan Gorge</span></h3><p><span class="fa">منطقه‌ای طبیعی که به‌ویژه به خاطر چشم‌اندازهای بهاری و درختان ارغوان شناخته می‌شود.</span><span class="en">A natural area known especially for spring scenery and Judas trees.</span></p></div>
-<div class="card"><h3><span class="fa">رودخانه و چشمه‌های کلم</span><span class="en">Kalem River and Springs</span></h3><p><span class="fa">آب و باغ‌ها از عناصر برجستهٔ چشم‌انداز روستای کلم و زندگی کشاورزی پیرامون آن هستند.</span><span class="en">Water and orchards are notable features of Kalem's landscape and surrounding rural life.</span></p></div>
-</div>
-</section><section class="page-section" id="food">
-<h2><span class="fa">۶. طعم‌های محلی ایلام</span><span class="en">6. The Flavors of Ilam</span></h2>
-<p><span class="fa">غذاها و شیرینی‌های محلی بخشی از حافظهٔ خانوادگی و فرهنگ مهمان‌نوازی ایلام‌اند. نام‌ها و روش تهیه ممکن است در مناطق و خانواده‌های مختلف تفاوت داشته باشند.</span><span class="en">Local dishes and sweets are part of Ilam's family memories and hospitality traditions. Names and preparation methods may vary across areas and families.</span></p>
-<div class="cards">
-<div class="card"><h3><span class="fa">بژی‌برساق</span><span class="en">Biji Barsaq</span></h3><p><span class="fa">از شیرینی‌های محلی شناخته‌شده که در منابع معرفی خوراک ایلام به آن اشاره می‌شود.</span><span class="en">A traditional sweet mentioned in descriptions of Ilam's local cuisine.</span></p></div>
-<div class="card"><h3><span class="fa">شله‌کینه</span><span class="en">Sholeh Kineh</span></h3><p><span class="fa">از خوراک‌های محلی منطقه که برای معرفی نهایی باید جزئیات دستور تهیه از منبع معتبر بررسی شود.</span><span class="en">A local food whose preparation details should be checked against a reliable source before final publication.</span></p></div>
-<div class="card"><h3><span class="fa">خوراک‌های خانگی</span><span class="en">Home-style Dishes</span></h3><p><span class="fa">خوراک‌های مبتنی بر غلات، حبوبات و محصولات محلی بخشی از فرهنگ غذایی منطقه‌اند.</span><span class="en">Dishes using grains, legumes and local produce are part of the region's food culture.</span></p></div>
-<div class="card"><h3><span class="fa">شیرینی‌های سنتی</span><span class="en">Traditional Sweets</span></h3><p><span class="fa">فهرست نهایی شیرینی‌ها با استفاده از مقالهٔ کجارو و منابع محلی تکمیل می‌شود.</span><span class="en">The final selection of sweets will be checked against the Kojaro article and local sources.</span></p></div>
-</div>
-</section><section class="page-section" id="products">
-<h2><span class="fa">۷. سوغات و صنایع‌دستی</span><span class="en">7. Souvenirs and Handicrafts</span></h2>
-<div class="cards">
-<div class="card"><h3><span class="fa">گلیم نقش‌برجسته</span><span class="en">Relief-patterned Kilim</span></h3><p><span class="fa">یکی از هنرهای بافته‌شدهٔ شناخته‌شدهٔ ایلام که نقش و بافت آن ظرفیت روایت تصویری دارد.</span><span class="en">A well-known Ilam textile craft whose patterns and weaving offer rich visual storytelling.</span></p></div>
-<div class="card"><h3><span class="fa">جاجیم و دست‌بافته‌ها</span><span class="en">Jajim and Woven Textiles</span></h3><p><span class="fa">دست‌بافته‌های محلی بخشی از هنرهای کاربردی و مهارت‌های سنتی منطقه‌اند.</span><span class="en">Local woven textiles are part of the region's traditional skills and applied arts.</span></p></div>
-<div class="card"><h3><span class="fa">محصولات باغی</span><span class="en">Orchard Products</span></h3><p><span class="fa">برای معرفی دقیق محصولات شاخص هر شهرستان، از فهرست سوغات علی‌بابا و منابع محلی استفاده می‌کنیم.</span><span class="en">Alibaba's souvenir guide and local sources will help verify products associated with each district.</span></p></div>
-<div class="card"><h3><span class="fa">هنرهای بومی</span><span class="en">Local Crafts</span></h3><p><span class="fa">صنایع‌دستی در کنار پوشش و معماری، راهی برای شناخت مهارت‌ها و روایت‌های فرهنگی مردم منطقه‌اند.</span><span class="en">Alongside clothing and architecture, handicrafts offer insight into local skills and cultural stories.</span></p></div>
-</div>
-</section><section class="page-section" id="music">
-<h2><span class="fa">۸. موسیقی و آیین‌ها</span><span class="en">8. Music and Rituals</span></h2>
-<p><span class="fa">هوره از گونه‌های شناخته‌شدهٔ آواز در بخش‌هایی از زاگرس است. موسیقی و آیین‌های محلی ایلام را باید با توجه به تفاوت‌های ناحیه‌ای و روایت‌های مستند معرفی کرد؛ هر سنتی لزوماً در همهٔ روستاهای استان یکسان نیست.</span><span class="en">Hura is a recognized vocal tradition in parts of the Zagros. Ilam's music and rituals should be described with attention to regional variation and documented local accounts; traditions are not necessarily identical across all villages.</span></p>
-</section><section class="page-section" id="sources">
-<h2><span class="fa">۹. منابع و مطالعهٔ بیشتر</span><span class="en">9. Sources and Further Reading</span></h2>
-<p><span class="fa">این منابع برای پژوهش دربارهٔ پوشاک، خوراک، صنایع‌دستی، روستاها و جاذبه‌های ایلام گردآوری شده‌اند. برای جزئیات دقیق پوشش محلی، منابع مردم‌شناسی تخصصی و روایت‌های مستند محلی نیز اهمیت دارند.</span><span class="en">These sources support research on Ilam's clothing, food, handicrafts, villages and attractions. Specialist ethnographic research and documented local accounts are also important for detailed clothing information.</span></p>
-<ul>
-<li><a href="https://diarland.shop/mag/ilam-woman-dress/" rel="noopener" target="_blank">دیارلند — پوشش زنان ایلام</a></li>
-<li><a href="https://www.alibaba.ir/mag/ilam/ilam-ci/ilam-souvenirs/" rel="noopener" target="_blank">علی‌بابا — سوغات ایلام</a></li>
-<li><a href="https://bazaremina.ir/news/ilam-handicrafts" rel="noopener" target="_blank">بازار مینا — صنایع‌دستی ایلام</a></li>
-<li><a href="https://fa.wikipedia.org/wiki/جاهای_گردشگری_استان_ایلام" rel="noopener" target="_blank">ویکی‌پدیا — جاذبه‌های گردشگری استان ایلام</a></li>
-<li><a href="https://fa.wikipedia.org/wiki/رده:روستاهای_شهرستان_ایلام" rel="noopener" target="_blank">ویکی‌پدیا — روستاهای شهرستان ایلام</a></li>
-<li><a href="https://www.otaghak.com/blog/local-foods-of-ilam/" rel="noopener" target="_blank">اتاقک — غذاهای محلی ایلام</a></li>
-<li><a href="https://www.kojaro.com/food/116961-ilam-traditional-sweet/" rel="noopener" target="_blank">کجارو — شیرینی‌های سنتی ایلام</a></li>
-<li><a href="https://www.iranicaonline.org/articles/ilam/" rel="noopener" target="_blank">Encyclopaedia Iranica — Ilam</a></li>
-<li><a href="https://www.iranicaonline.org/articles/clothing-i/" rel="noopener" target="_blank">Encyclopaedia Iranica — Clothing</a></li>
-<li><a href="https://visitiran.ir/en/province/Ilam-Province" rel="noopener" target="_blank">Visit Iran — Ilam Province</a></li>
-<li><a href="https://indianjournals.com/article/ajrssh-4-4-012" rel="noopener" target="_blank">IndianJournals — پژوهش پوشاک زنان ایلامی</a></li>
-</ul>
-<p class="note"><span class="fa">ذکر یک منبع به معنی تأیید تک‌تک جزئیات این صفحه از سوی آن منبع نیست. نسبت‌دادن پوشش مشخص به یک گروه یا روستا نیازمند مدرک مرتبط است.</span><span class="en">Listing a source does not mean it verifies every detail on this page. Specific clothing attributions require directly relevant evidence.</span></p>
-</section></main>
+
+<section class="hero">
+  <div class="hero-kicker">
+    <span class="persian">روایت تصویری پوشش زنان ایران</span>
+    <span class="english">A Visual Story of Women's Clothing in Iran</span>
+  </div>
+
+  <h1><span class="persian">ایلام</span><span class="english">Ilam</span></h1>
+
+  <h2>
+    <span class="persian">سرزمین کوهستان، بلوط و فرهنگ اصیل</span>
+    <span class="english">Land of Mountains, Oak Forests and Living Traditions</span>
+  </h2>
+
+  <p class="hero-description persian">
+    در دامنه‌های زاگرس، میان جنگل‌های بلوط و دره‌های سرسبز،
+    ایلام سرزمین فرهنگ‌های ریشه‌دار، پوشش‌های رنگارنگ و روایت‌های کهن است.
+  </p>
+  <p class="hero-description english">
+    In the Zagros Mountains, among oak forests and green valleys,
+    Ilam is a land of enduring traditions, colorful clothing and ancient stories.
+  </p>
+
+  <div class="hero-placeholder">
+    <span class="persian">جایگاه تصویر اصلی استان ایلام</span>
+    <span class="english">Main Ilam Image Placeholder</span>
+  </div>
+</section>
+
+<nav class="page-nav">
+  <a href="#intro"><span class="persian">معرفی</span><span class="english">Introduction</span></a>
+  <a href="#clothing"><span class="persian">پوشش محلی</span><span class="english">Clothing</span></a>
+  <a href="#culture"><span class="persian">فرهنگ و زندگی</span><span class="english">Culture</span></a>
+  <a href="#places"><span class="persian">مناطق و جاذبه‌ها</span><span class="english">Places</span></a>
+  <a href="#food"><span class="persian">خوراک</span><span class="english">Food</span></a>
+  <a href="#crafts"><span class="persian">صنایع‌دستی</span><span class="english">Handicrafts</span></a>
+</nav>
+
+<main class="container">
+
+<!-- معرفی -->
+<section class="intro" id="intro">
+  <div class="eyebrow">
+    <span class="persian">آشنایی با سرزمین</span>
+    <span class="english">Discover the Region</span>
+  </div>
+
+  <h2 class="section-title">
+    <span class="persian">ایلام؛ روایت زاگرس و زندگی</span>
+    <span class="english">Ilam: Stories of the Zagros</span>
+  </h2>
+
+  <p class="persian">
+    استان ایلام در غرب ایران و در دامنه‌های رشته‌کوه زاگرس قرار دارد.
+    طبیعت کوهستانی، جنگل‌های بلوط، رودخانه‌ها و دشت‌های حاصلخیز،
+    چهره‌ای ویژه به این منطقه بخشیده‌اند. فرهنگ کردی و لکی و سنت‌های
+    عشایری و روستایی، بخش مهمی از هویت فرهنگی مردم ایلام را شکل می‌دهند.
+    این استان همچنین از نظر تاریخی، آثار و محوطه‌های ارزشمندی از دوره‌های
+    گوناگون را در خود جای داده است.
+  </p>
+
+  <p class="english">
+    Ilam is located in western Iran along the Zagros mountain range.
+    Its mountainous landscapes, oak forests, rivers and fertile plains
+    give the region a distinctive character. Kurdish and Laki cultures,
+    together with nomadic and rural traditions, are central to the identity
+    of its people. The province also preserves valuable historical sites
+    from different periods.
+  </p>
+</section>
+
+<!-- پوشش -->
+<section class="content-section" id="clothing">
+  <div class="section-heading">
+    <div class="eyebrow">
+      <span class="persian">تن‌پوش و هویت</span>
+      <span class="english">Clothing and Identity</span>
+    </div>
+    <h2>
+      <span class="persian">پوشش زنان ایلام</span>
+      <span class="english">Women's Traditional Clothing in Ilam</span>
+    </h2>
+    <p class="persian">پوشاک محلی ایلام جلوه‌ای از فرهنگ کردی، لکی و سنت‌های منطقهٔ زاگرس است.</p>
+    <p class="english">Traditional clothing in Ilam reflects Kurdish, Laki and Zagros cultural heritage.</p>
+  </div>
+
+  <div class="two-column">
+    <div class="text-content">
+      <p class="persian">
+        پوشش سنتی زنان ایلامی از اجزای گوناگونی تشکیل می‌شود که در کنار هم
+        ترکیبی چشم‌نواز از رنگ، پارچه و تزئینات می‌سازند. پیراهن‌های بلند،
+        جلیقه یا پوشش رویی، شلوار و سربند یا روسری از اجزای رایج این پوشاک
+        در میان برخی جوامع محلی هستند.
+      </p>
+      <p class="persian">
+        در لباس زنان مناطق کردنشین و لک‌نشین ایلام، رنگ‌های زنده و پارچه‌های
+        لطیف و گاه براق دیده می‌شود. چین‌دار بودن دامن‌ها و استفاده از
+        سربندها و روسری‌های محلی، از ویژگی‌های قابل توجه این پوشش‌هاست.
+      </p>
+      <p class="persian">
+        شیوهٔ پوشیدن لباس و نوع تزئینات در همهٔ مناطق یکسان نیست و با توجه
+        به روستا، ایل، سن و مناسبت‌های اجتماعی تفاوت‌هایی دارد.
+      </p>
+
+      <p class="english">
+        Traditional women's clothing in Ilam consists of several garments
+        that create a colorful combination of fabrics and decorations.
+        Long dresses, outer garments, trousers and local head coverings
+        are common elements in some communities.
+      </p>
+      <p class="english">
+        In Kurdish and Laki communities, vivid colors and delicate,
+        sometimes shiny fabrics can be seen. Full skirts and distinctive
+        scarves and head coverings are notable features.
+      </p>
+      <p class="english">
+        Clothing styles and decorations vary between communities,
+        villages, tribal groups, age groups and social occasions.
+      </p>
+    </div>
+
+    <div class="visual-placeholder">
+      <div class="symbol">✧</div>
+      <span class="persian">جایگاه تصویر پوشش سنتی زنان ایلام</span>
+      <span class="english">Ilam Women's Traditional Clothing</span>
+    </div>
+  </div>
+
+  <div class="cards" style="margin-top:22px">
+    <article class="info-card">
+      <div class="visual-placeholder">
+        <span class="persian">جایگاه تصویر لباس کردی زنان</span>
+        <span class="english">Kurdish Women's Clothing</span>
+      </div>
+      <div class="card-content">
+        <h3><span class="persian">پوشش کردی</span><span class="english">Kurdish Clothing</span></h3>
+        <p class="persian">
+          پیراهن‌های بلند و رنگارنگ، دامن‌های چین‌دار و سربندهای محلی
+          در بخش‌هایی از پوشاک سنتی زنان کرد ایلام دیده می‌شود.
+        </p>
+        <p class="english">
+          Long colorful dresses, full skirts and local head coverings
+          are found in traditional Kurdish women's clothing.
+        </p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder">
+        <span class="persian">جایگاه تصویر پوشش زنان لک</span>
+        <span class="english">Laki Women's Clothing</span>
+      </div>
+      <div class="card-content">
+        <h3><span class="persian">پوشش لکی</span><span class="english">Laki Clothing</span></h3>
+        <p class="persian">
+          پوشاک محلی زنان لک با ویژگی‌های فرهنگی و شیوه‌های پوشش
+          ویژهٔ جوامع لک‌زبان پیوند دارد.
+        </p>
+        <p class="english">
+          Laki women's traditional clothing reflects the cultural
+          identity and dress customs of Laki-speaking communities.
+        </p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder">
+        <span class="persian">جایگاه تصویر سربند و زیورآلات محلی</span>
+        <span class="english">Headwear and Traditional Jewelry</span>
+      </div>
+      <div class="card-content">
+        <h3><span class="persian">سربند و تزئینات</span><span class="english">Headwear and Details</span></h3>
+        <p class="persian">
+          سربندها، روسری‌ها و زیورآلات سنتی، بخشی از جلوهٔ پوشش
+          و آراستگی زنان در فرهنگ محلی هستند.
+        </p>
+        <p class="english">
+          Head coverings, scarves and traditional jewelry are
+          important elements of local women's attire.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- فرهنگ -->
+<section class="content-section" id="culture">
+  <div class="section-heading">
+    <div class="eyebrow">
+      <span class="persian">آیین‌ها و شیوهٔ زندگی</span>
+      <span class="english">Traditions and Ways of Life</span>
+    </div>
+    <h2>
+      <span class="persian">فرهنگ و زندگی مردم ایلام</span>
+      <span class="english">Culture and Everyday Life</span>
+    </h2>
+  </div>
+
+  <div class="two-column">
+    <div class="text-content">
+      <p class="persian">
+        زندگی در ایلام با طبیعت زاگرس و چرخهٔ فصل‌ها پیوندی نزدیک دارد.
+        دامداری، کشاورزی، باغداری و کوچ‌های فصلی در شکل‌گیری شیوهٔ زندگی
+        بسیاری از خانواده‌های روستایی و عشایری نقش داشته‌اند.
+      </p>
+      <p class="persian">
+        موسیقی محلی، آوازها و نغمه‌های کردی و لکی، روایت‌های شفاهی،
+        آیین‌های عروسی و دورهمی‌های خانوادگی از بخش‌های زندهٔ فرهنگ
+        مردم این استان هستند.
+      </p>
+      <p class="persian">
+        مهمان‌نوازی، پیوندهای خانوادگی و احترام به سنت‌های محلی از
+        ارزش‌هایی هستند که در بسیاری از جوامع ایلامی جایگاه مهمی دارند.
+      </p>
+
+      <p class="english">
+        Life in Ilam is closely connected to the Zagros environment
+        and seasonal cycles. Livestock raising, farming, gardening
+        and seasonal migration have shaped the lives of many rural
+        and nomadic families.
+      </p>
+      <p class="english">
+        Local music, Kurdish and Laki songs, oral storytelling,
+        wedding traditions and family gatherings are living parts
+        of the province's cultural heritage.
+      </p>
+      <p class="english">
+        Hospitality, family ties and respect for local traditions
+        remain important values in many Ilam communities.
+      </p>
+    </div>
+
+    <div class="visual-placeholder">
+      <div class="symbol">✧</div>
+      <span class="persian">جایگاه تصویر زندگی عشایری و فرهنگ بومی</span>
+      <span class="english">Nomadic Life and Local Culture</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <span class="persian">«در ایلام، کوهستان حافظ خاطره‌هاست و بلوط، نشانهٔ ریشه‌داری زندگی.»</span>
+    <span class="english">“In Ilam, the mountains preserve memories and the oak stands for enduring life.”</span>
+  </div>
+</section>
+
+<!-- مناطق -->
+<section class="content-section" id="places">
+  <div class="section-heading">
+    <div class="eyebrow">
+      <span class="persian">شهرها و سرزمین‌ها</span>
+      <span class="english">Cities and Landscapes</span>
+    </div>
+    <h2><span class="persian">مناطق شاخص ایلام</span><span class="english">Notable Areas of Ilam</span></h2>
+  </div>
+
+  <div class="cards">
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر شهر ایلام</span><span class="english">Ilam City Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">ایلام</span><span class="english">Ilam</span></h3>
+        <p class="persian">مرکز استان و شهری کوهستانی با چشم‌اندازهای طبیعی و دسترسی به جنگل‌های بلوط زاگرس.</p>
+        <p class="english">The provincial capital, surrounded by mountain scenery and Zagros oak forests.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر دره‌شهر</span><span class="english">Darreh Shahr Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">دره‌شهر</span><span class="english">Darreh Shahr</span></h3>
+        <p class="persian">منطقه‌ای تاریخی در دامنهٔ کبیرکوه با آثار شهر باستانی سیمره.</p>
+        <p class="english">A historic area near Kabir Kouh, home to the ancient city of Seymareh.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر آبدانان</span><span class="english">Abdanan Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">آبدانان</span><span class="english">Abdanan</span></h3>
+        <p class="persian">شهری در میان ارتفاعات زاگرس با طبیعت کوهستانی و جاذبه‌های تاریخی و طبیعی.</p>
+        <p class="english">A town among the Zagros heights, known for its mountainous landscapes and heritage.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر ایوان</span><span class="english">Eyvan Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">ایوان</span><span class="english">Eyvan</span></h3>
+        <p class="persian">منطقه‌ای با دشت‌ها، باغ‌ها و چشم‌اندازهای کوهستانی در شمال استان.</p>
+        <p class="english">A region of plains, gardens and mountain scenery in the north of the province.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر مهران</span><span class="english">Mehran Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">مهران</span><span class="english">Mehran</span></h3>
+        <p class="persian">شهری مرزی در جنوب استان با اهمیت جغرافیایی و ارتباطی ویژه.</p>
+        <p class="english">A border city in southern Ilam with particular geographic and transport importance.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر ملکشاهی</span><span class="english">Malekshahi Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">ملکشاهی</span><span class="english">Malekshahi</span></h3>
+        <p class="persian">منطقه‌ای کوهستانی با فرهنگ عشایری و طبیعت زاگرسی.</p>
+        <p class="english">A mountainous area with nomadic traditions and Zagros landscapes.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- جاذبه ها -->
+<section class="content-section" id="attractions">
+  <div class="section-heading">
+    <div class="eyebrow">
+      <span class="persian">میراث تاریخی و طبیعی</span>
+      <span class="english">Historical and Natural Heritage</span>
+    </div>
+    <h2><span class="persian">دیدنی‌های ایلام</span><span class="english">Places to Discover</span></h2>
+  </div>
+
+  <div class="cards">
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر جنگل‌های بلوط</span><span class="english">Oak Forests Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">جنگل‌های بلوط زاگرس</span><span class="english">Zagros Oak Forests</span></h3>
+        <p class="persian">جنگل‌های گستردهٔ بلوط از شاخص‌ترین جلوه‌های طبیعی استان هستند.</p>
+        <p class="english">Extensive oak forests are among the province's most distinctive natural features.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر تنگه کافرین</span><span class="english">Kafarin Strait Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">تنگه کافرین</span><span class="english">Kafarin Strait</span></h3>
+        <p class="persian">دره‌ای چشم‌نواز با دیواره‌های بلند و چشم‌اندازهای کوهستانی در منطقهٔ بدره.</p>
+        <p class="english">A scenic valley with high cliffs and mountain views in the Badreh area.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر آبشار اما</span><span class="english">Ama Waterfall Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">آبشار اما</span><span class="english">Ama Waterfall</span></h3>
+        <p class="persian">از جاذبه‌های طبیعی استان در نزدیکی شهر ایلام و در محیطی سرسبز.</p>
+        <p class="english">A natural attraction near Ilam city, surrounded by green landscapes.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر شهر باستانی سیمره</span><span class="english">Ancient Seymareh Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">شهر باستانی سیمره</span><span class="english">Ancient City of Seymareh</span></h3>
+        <p class="persian">محوطه‌ای تاریخی در نزدیکی دره‌شهر که از آثار مهم باستانی غرب ایران به شمار می‌رود.</p>
+        <p class="english">An archaeological site near Darreh Shahr and an important historic landmark in western Iran.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر طاق شیرین و فرهاد</span><span class="english">Shirin and Farhad Arch Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">طاق شیرین و فرهاد</span><span class="english">Shirin and Farhad Arch</span></h3>
+        <p class="persian">بنایی تاریخی در منطقهٔ ایوان که با روایت‌های محلی و نام شیرین و فرهاد شناخته می‌شود.</p>
+        <p class="english">A historic structure in the Eyvan area, associated with local stories of Shirin and Farhad.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر دریاچه دوقلو سیاه‌گاو</span><span class="english">Siah Gav Twin Lakes Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">دریاچه‌های دوقلوی سیاه‌گاو</span><span class="english">Siah Gav Twin Lakes</span></h3>
+        <p class="persian">دو دریاچهٔ طبیعی در منطقهٔ آبدانان با چشم‌اندازی متفاوت و تماشایی.</p>
+        <p class="english">Two natural lakes in the Abdanan area with a distinctive and scenic landscape.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- خوراک -->
+<section class="content-section" id="food">
+  <div class="section-heading">
+    <div class="eyebrow">
+      <span class="persian">طعم‌های محلی</span>
+      <span class="english">Local Flavors</span>
+    </div>
+    <h2><span class="persian">خوراک‌ها و غذاهای ایلام</span><span class="english">Ilam Cuisine</span></h2>
+    <p class="persian">خوراک‌های محلی ایلام از محصولات کوهستانی، لبنیات، حبوبات و گیاهان بومی تأثیر گرفته‌اند.</p>
+    <p class="english">Ilam's cuisine draws on mountain produce, dairy, legumes and local herbs.</p>
+  </div>
+
+  <div class="cards">
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر ترخینه</span><span class="english">Tarkhineh Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">ترخینه</span><span class="english">Tarkhineh</span></h3>
+        <p class="persian">خوراکی سنتی بر پایهٔ غلات و دوغ که در تهیهٔ آش و غذاهای محلی استفاده می‌شود.</p>
+        <p class="english">A traditional fermented grain and yogurt preparation used in soups and local dishes.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر آش رشته محلی</span><span class="english">Local Ash Reshteh Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">آش محلی</span><span class="english">Local Ash</span></h3>
+        <p class="persian">آش‌های محلی با حبوبات، سبزی‌های کوهی و مواد در دسترس منطقه تهیه می‌شوند.</p>
+        <p class="english">Local soups are prepared with legumes, mountain herbs and regional ingredients.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر کله‌کنجی</span><span class="english">Kalleh Konji Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">کله‌کنجی</span><span class="english">Kalleh Konji</span></h3>
+        <p class="persian">از خوراکی‌های سنتی تهیه‌شده با کنجد که در برخی مناطق غرب ایران شناخته شده است.</p>
+        <p class="english">A traditional sesame-based preparation known in parts of western Iran.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر نان محلی</span><span class="english">Local Bread Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">نان‌های محلی</span><span class="english">Traditional Breads</span></h3>
+        <p class="persian">نان‌های تنوری و محلی در زندگی روزمره و سفره‌های سنتی مردم جایگاه دارند.</p>
+        <p class="english">Traditional oven-baked breads are an important part of everyday meals.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر روغن حیوانی و لبنیات</span><span class="english">Dairy and Animal Ghee Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">لبنیات و روغن محلی</span><span class="english">Dairy and Local Ghee</span></h3>
+        <p class="persian">محصولات لبنی و روغن حیوانی از فرآورده‌های رایج دامداری در مناطق روستایی و عشایری هستند.</p>
+        <p class="english">Dairy products and animal ghee are common livestock products in rural and nomadic areas.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر گیاهان کوهی خوراکی</span><span class="english">Edible Mountain Herbs Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">گیاهان کوهی</span><span class="english">Mountain Herbs</span></h3>
+        <p class="persian">گیاهان خوراکی و معطر کوهستان در برخی غذاها و شیوه‌های آشپزی محلی استفاده می‌شوند.</p>
+        <p class="english">Edible and aromatic mountain herbs are used in some local dishes and cooking traditions.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- صنایع دستی -->
+<section class="content-section" id="crafts">
+  <div class="section-heading">
+    <div class="eyebrow">
+      <span class="persian">هنر دست مردم</span>
+      <span class="english">Handmade Heritage</span>
+    </div>
+    <h2><span class="persian">صنایع‌دستی و هنرهای بومی</span><span class="english">Handicrafts and Local Arts</span></h2>
+  </div>
+
+  <div class="cards">
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر گلیم ایلام</span><span class="english">Ilam Kilim Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">گلیم‌بافی</span><span class="english">Kilim Weaving</span></h3>
+        <p class="persian">از هنرهای ریشه‌دار منطقه با نقش‌های هندسی و رنگ‌هایی الهام‌گرفته از طبیعت و زندگی عشایری.</p>
+        <p class="english">A longstanding craft featuring geometric patterns and colors inspired by nature and nomadic life.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر جاجیم</span><span class="english">Jajim Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">جاجیم‌بافی</span><span class="english">Jajim Weaving</span></h3>
+        <p class="persian">بافت پارچه‌های سنتی رنگارنگ که در زندگی روزمره و وسایل خانه کاربرد دارند.</p>
+        <p class="english">The weaving of colorful traditional textiles used in everyday life and household items.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر نمدمالی</span><span class="english">Felt Making Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">نمدمالی</span><span class="english">Felt Making</span></h3>
+        <p class="persian">هنر تبدیل پشم به نمد با روش‌های سنتی و مهارت دست هنرمندان محلی.</p>
+        <p class="english">The traditional craft of turning wool into felt through skilled handwork.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر سیاه‌چادر عشایری</span><span class="english">Nomadic Black Tent Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">سیاه‌چادربافی</span><span class="english">Black Tent Weaving</span></h3>
+        <p class="persian">بافت سنتی مورد استفاده در زندگی عشایری که از پشم بز تهیه می‌شود.</p>
+        <p class="english">A traditional nomadic craft using goat hair to make black tent fabric.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر گیوه</span><span class="english">Giveh Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">گیوه‌بافی</span><span class="english">Giveh Making</span></h3>
+        <p class="persian">ساخت پاپوش سنتی سبک و دست‌دوز که با شیوه‌های بومی تولید می‌شود.</p>
+        <p class="english">The handmade production of lightweight traditional footwear.</p>
+      </div>
+    </article>
+
+    <article class="info-card">
+      <div class="visual-placeholder"><span class="persian">جایگاه تصویر ابزار و دست‌ساخته‌های چوبی</span><span class="english">Wooden Handicrafts Image</span></div>
+      <div class="card-content">
+        <h3><span class="persian">هنرهای چوبی و دست‌ساخته‌ها</span><span class="english">Woodcraft and Handmade Objects</span></h3>
+        <p class="persian">ساخت ابزارها و وسایل کاربردی با بهره‌گیری از مواد و مهارت‌های محلی.</p>
+        <p class="english">The making of practical objects using local materials and traditional skills.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- سوغات -->
+<section class="content-section" id="souvenirs">
+  <div class="section-heading">
+    <div class="eyebrow">
+      <span class="persian">یادگاری‌های سرزمین</span>
+      <span class="english">Regional Souvenirs</span>
+    </div>
+    <h2><span class="persian">سوغات و محصولات بومی</span><span class="english">Souvenirs and Local Products</span></h2>
+  </div>
+
+  <div class="text-content">
+    <p class="persian">
+      عسل طبیعی، روغن حیوانی، لبنیات محلی، گردو و محصولات باغی،
+      گیاهان کوهی و دست‌بافته‌هایی مانند گلیم و جاجیم از جمله
+      محصولات و یادگاری‌های مرتبط با طبیعت و فرهنگ ایلام هستند.
+    </p>
+    <p class="english">
+      Natural honey, animal ghee, local dairy products, walnuts,
+      garden produce, mountain herbs and woven crafts such as kilims
+      and jajims are among the products associated with Ilam.
+    </p>
+
+    <div class="tag-list">
+      <span class="tag">عسل طبیعی / Natural Honey</span>
+      <span class="tag">روغن محلی / Local Ghee</span>
+      <span class="tag">گلیم / Kilim</span>
+      <span class="tag">جاجیم / Jajim</span>
+      <span class="tag">گردو / Walnuts</span>
+      <span class="tag">لبنیات / Dairy Products</span>
+    </div>
+  </div>
+</section>
+
+<!-- منابع -->
+<section class="sources">
+  <div class="section-heading">
+    <div class="eyebrow">
+      <span class="persian">برای مطالعهٔ بیشتر</span>
+      <span class="english">Further Reading</span>
+    </div>
+    <h2><span class="persian">منابع و مراجع</span><span class="english">Sources and References</span></h2>
+  </div>
+
+  <ul class="persian">
+    <li><a href="https://www.ichto.ir/" target="_blank" rel="noopener">وزارت میراث فرهنگی، گردشگری و صنایع‌دستی</a> — میراث تاریخی و صنایع‌دستی</li>
+    <li><a href="https://www.irna.ir/" target="_blank" rel="noopener">خبرگزاری جمهوری اسلامی (ایرنا)</a> — گزارش‌های فرهنگی و منطقه‌ای</li>
+    <li><a href="https://www.isna.ir/" target="_blank" rel="noopener">خبرگزاری دانشجویان ایران (ایسنا)</a> — گزارش‌های میراث فرهنگی و گردشگری</li>
+    <li><a href="https://www.visitiran.ir/" target="_blank" rel="noopener">سامانه گردشگری ایران</a> — معرفی جاذبه‌ها و مناطق گردشگری</li>
+  </ul>
+
+  <ul class="english">
+    <li><a href="https://www.ichto.ir/" target="_blank" rel="noopener">Ministry of Cultural Heritage, Tourism and Handicrafts</a></li>
+    <li><a href="https://www.irna.ir/" target="_blank" rel="noopener">Islamic Republic News Agency (IRNA)</a></li>
+    <li><a href="https://www.isna.ir/" target="_blank" rel="noopener">Iranian Students' News Agency (ISNA)</a></li>
+    <li><a href="https://www.visitiran.ir/" target="_blank" rel="noopener">Visit Iran</a></li>
+  </ul>
+</section>
+
+</main>
+
 <footer>
-<div><span class="fa">هنرمند و خالق آثار: مریم ساعی</span><span class="en">Artist and creator: Maryam Saei</span></div>
-<div><span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span><span class="en">Website design and cultural research: Marjan Saei</span></div>
-<div style="margin-top:8px">© Iran, a Thousand Colors</div>
+  <p><strong><span class="persian">ایران، هزار رنگ</span><span class="english">Iran, A Thousand Colors</span></strong></p>
+  <p><span class="persian">روایت تصویری پوشش زنان ایران</span><span class="english">A Visual Story of Women's Clothing in Iran</span></p>
+  <p style="margin-top:12px">
+    <span class="persian">هنرمند و خالق آثار: مریم ساعی</span>
+    <span class="english">Artist and Creator: Maryam Saei</span>
+  </p>
+  <p>
+    <span class="persian">طراحی وب‌سایت و پژوهش اطلاعات فرهنگی: مرجان ساعی</span>
+    <span class="english">Website Design and Cultural Research: Marjan Saei</span>
+  </p>
 </footer>
+
 <script>
-const langSwitch = document.getElementById("langSwitch");
-langSwitch.addEventListener("click", () => {
-  const english = !document.body.classList.contains("english");
-  document.body.classList.toggle("english", english);
-  document.documentElement.lang = english ? "en" : "fa";
-  document.documentElement.dir = english ? "ltr" : "rtl";
-  langSwitch.textContent = english ? "FA | EN" : "FA | EN";
-});
+function toggleLanguage(){
+  const isEnglish=document.body.classList.toggle("en");
+  document.documentElement.lang=isEnglish?"en":"fa";
+  document.documentElement.dir=isEnglish?"ltr":"rtl";
+  localStorage.setItem("iranGalleryLanguage",isEnglish?"en":"fa");
+}
 
-const homeDropdown = document.getElementById("homeDropdown");
-const homeButton = homeDropdown.querySelector(".dropbtn");
-homeButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  const opened = homeDropdown.classList.toggle("open");
-  homeButton.setAttribute("aria-expanded", String(opened));
-});
-
-document.addEventListener("click", (event) => {
-  if (!homeDropdown.contains(event.target)) {
-    homeDropdown.classList.remove("open");
-    homeButton.setAttribute("aria-expanded", "false");
+window.addEventListener("DOMContentLoaded",function(){
+  if(localStorage.getItem("iranGalleryLanguage")==="en"){
+    document.body.classList.add("en");
+    document.documentElement.lang="en";
+    document.documentElement.dir="ltr";
   }
 });
-
-if (window.matchMedia("(max-width:850px)").matches) {
-  const menu = document.querySelector(".main-menu");
-  const menuButton = document.createElement("button");
-  menuButton.type = "button";
-  menuButton.className = "mobile-menu-button";
-  menuButton.setAttribute("aria-label", "Open menu");
-  menuButton.innerHTML = "☰";
-  menuButton.style.cssText = "order:2;border:1px solid #c79a4a;background:#fff8eb;color:#153f3b;border-radius:9px;width:40px;height:38px;font-size:20px";
-  document.querySelector(".header-main").insertBefore(menuButton, menu);
-  menuButton.addEventListener("click", () => {
-    const opened = menu.classList.toggle("mobile-open");
-    menuButton.setAttribute("aria-expanded", String(opened));
-  });
-}
 </script>
+
 </body>
 </html>
