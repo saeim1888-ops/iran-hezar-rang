@@ -1,543 +1,287 @@
-
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+
+<html dir="rtl" lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>کهگیلویه و بویراحمد | ایران، هزار رنگ</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="کهگیلویه و بویراحمد؛ روایت تصویری پوشش زنان، روستاها، تاریخ، طبیعت و خوراک محلی در نمایشگاه ایران، هزار رنگ." name="description"/>
+<title>کهگیلویه و بویراحمد | ایران، هزار رنگ</title>
+<style>
+:root{--cream:#f8f1e3;--paper:#fffaf0;--olive:#596447;--dark:#292b25;--gold:#b08b48;--rust:#b94e27;--teal:#245b60;--line:#dfd2b9}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:150px}
+body{margin:0;background:var(--cream);color:var(--dark);font-family:Tahoma,Arial,sans-serif;line-height:1.95}
+a{color:inherit;text-decoration:none}
 
-  <style>
-    :root {
-      --paper: #f4ead8;
-      --cream: #fffaf0;
-      --rust: #a83e1d;
-      --green: #153f3b;
-      --olive: #656b43;
-      --gold: #b58b42;
-      --text: #352d25;
-    }
+.site-header{
+  position:relative;top:0;z-index:1000;width:100%;
+  background:#f4ead8;border-bottom:1px solid #dfd2b9;
+  box-shadow:0 4px 16px rgba(57,46,36,.08);
+}
+.topline{display:none}
+.header-main{
+  max-width:1320px;min-height:72px;margin:auto;padding:10px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:22px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#153f3b;font-size:17px;white-space:nowrap;order:3}
+.brand-mark{
+  width:40px;height:40px;border:2px solid #c79a4a;border-radius:50%;
+  display:grid;place-items:center;color:#fff4df;background:#963c25;font-size:19px;
+}
+.main-menu{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,27px);flex:1;order:2}
+.main-menu>a,.dropbtn{
+  font:inherit;font-size:13px;font-weight:700;color:#153f3b;background:none;
+  border:0;padding:9px 2px;cursor:pointer;white-space:nowrap;
+}
+.main-menu>a:hover,.dropbtn:hover{color:#963c25}
+.dropdown{position:relative}
+.dropdown-content{
+  display:none;position:absolute;top:100%;right:0;min-width:220px;
+  background:#fff8eb;border:1px solid #c79a4a;border-radius:11px;padding:8px;
+  box-shadow:0 10px 25px rgba(57,46,36,.17)
+}
+.dropdown.open .dropdown-content{display:block}
+.dropdown-content a{display:block;padding:10px 12px;border-radius:7px;font-size:13px;color:#153f3b}
+.dropdown-content a:hover{background:#f0dfc1;color:#963c25}
+.lang-switch{
+  order:1;border:1px solid #b7aa8e;border-radius:0;background:#fff8eb;
+  color:#153f3b;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap;
+  min-width:72px
+}
+.province-nav{background:#153f3b;color:#fff4df;padding:8px 16px}
+.province-nav-inner{
+  max-width:1200px;margin:auto;display:flex;align-items:center;
+  justify-content:center;gap:20px;flex-wrap:wrap
+}
+.province-nav a,.province-nav span{
+  font-size:12px;padding:3px 4px;border:0;border-radius:0;color:#f4d79d
+}
+.province-nav span{font-weight:800;color:#fff4df}
+.province-nav a:hover{color:#fff;text-decoration:underline}
+html[dir="ltr"] .header-main{direction:ltr}
+html[dir="ltr"] .dropdown-content{right:auto;left:0}
+html[dir="ltr"] .province-nav-inner{direction:ltr}
 
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--text);
-      font-family: Tahoma, sans-serif;
-      line-height: 2;
-    }
-
-    header {
-      background: var(--cream);
-      border-bottom: 1px solid #dfcfb5;
-      padding: 18px 6%;
-    }
-
-    .topbar {
-      max-width: 1150px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      color: var(--green);
-      font-size: 21px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: var(--rust);
-    }
-
-    .lang-btn {
-      background: var(--green);
-      color: white;
-      border: 0;
-      border-radius: 25px;
-      padding: 8px 16px;
-      cursor: pointer;
-      font-family: inherit;
-    }
-
-    .province-strip {
-      background: var(--green);
-      color: white;
-      text-align: center;
-      padding: 9px 12px;
-      font-size: 13px;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 38px auto;
-      padding: 0 20px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 35px 20px;
-      background: var(--cream);
-      border: 1px solid #e2d2b9;
-      border-radius: 18px;
-      margin-bottom: 28px;
-    }
-
-    .eyebrow {
-      color: var(--rust);
-      font-size: 13px;
-      letter-spacing: 1px;
-    }
-
-    h1 {
-      color: var(--green);
-      font-size: clamp(25px, 4vw, 38px);
-      margin: 8px 0;
-    }
-
-    .subtitle {
-      color: var(--olive);
-      font-size: 17px;
-      margin: 0;
-    }
-
-    .poster {
-      display: block;
-      width: min(100%, 650px);
-      margin: 25px auto 0;
-      border-radius: 12px;
-      border: 7px solid white;
-      box-shadow: 0 8px 25px #44351f20;
-    }
-
-    .section {
-      background: var(--cream);
-      border: 1px solid #e2d2b9;
-      border-radius: 16px;
-      padding: 25px;
-      margin: 22px 0;
-    }
-
-    h2 {
-      color: var(--rust);
-      font-size: 21px;
-      margin-top: 0;
-      padding-bottom: 9px;
-      border-bottom: 1px solid #e4d5bd;
-    }
-
-    h3 {
-      color: var(--green);
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-
-    p {
-      margin-top: 8px;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-
-    .info-card {
-      background: #f7efdf;
-      border-right: 4px solid var(--gold);
-      border-radius: 10px;
-      padding: 16px;
-    }
-
-    .tagline {
-      color: var(--green);
-      font-size: 19px;
-      font-weight: bold;
-      text-align: center;
-      padding: 15px;
-    }
-
-    .sources a {
-      color: var(--rust);
-      overflow-wrap: anywhere;
-    }
-
-    footer {
-      background: var(--green);
-      color: #fff6e8;
-      text-align: center;
-      padding: 25px 15px;
-      margin-top: 45px;
-      font-size: 13px;
-    }
-
-    [dir="ltr"] {
-      text-align: left;
-    }
-
-    [dir="ltr"] .info-card {
-      border-right: 0;
-      border-left: 4px solid var(--gold);
-    }
-
-    @media (max-width: 650px) {
-      header {
-        padding: 15px;
-      }
-
-      .topbar {
-        justify-content: center;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 12px;
-      }
-
-      main {
-        margin-top: 20px;
-        padding: 0 12px;
-      }
-
-      .section {
-        padding: 18px;
-      }
-    }
-  </style>
+.hero{max-width:1100px;margin:34px auto 24px;padding:44px 28px;text-align:center;background:linear-gradient(135deg,#fffaf0,#f0e3cb);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 35px #5c452015;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #b08b4833;border-radius:50%}
+.hero:before{top:-105px;right:-65px}.hero:after{bottom:-120px;left:-60px}
+.eyebrow{color:var(--rust);font-size:12px;letter-spacing:.4px}
+h1{font-size:clamp(25px,4vw,39px);color:var(--teal);margin:8px 0}
+.slogan{font-size:18px;color:var(--olive);font-weight:bold;margin:8px 0}
+.hero p{max-width:780px;margin:10px auto 0;font-size:14px}
+.page-nav{max-width:1100px;margin:0 auto 28px;padding:12px 18px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.page-nav a{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:12px;color:var(--olive)}
+.page-nav a:hover{background:var(--olive);color:white}
+main{max-width:1100px;margin:auto;padding:0 20px 40px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;margin:0 0 22px;box-shadow:0 7px 22px #4b38100b}
+h2{font-size:21px;color:var(--rust);margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+h3{font-size:16px;color:var(--teal);margin:12px 0 5px}
+p{margin:8px 0}.art-grid,.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.art-grid img,.art-image{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:#eee2cf}
+.caption{font-size:12px;color:#756b58;text-align:center;margin-top:7px}
+.tile{background:#f7efdf;border:1px solid var(--line);border-radius:13px;padding:15px}
+.quote{border-right:3px solid var(--gold);padding:9px 14px;color:var(--olive);background:#f7efdf;border-radius:8px;margin-top:15px}
+ul{padding-right:22px}.source-list li{margin:7px 0;font-size:13px}
+.source-list a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+footer{text-align:center;padding:25px 16px;background:#e9dec9;color:#5d584b;font-size:12px}
+.back{display:inline-block;background:var(--rust);color:white;padding:9px 18px;border-radius:22px;margin-top:8px}
+.en{display:none}body.english{direction:ltr}body.english .en{display:initial}body.english .fa{display:none}
+body.english .quote{border-right:0;border-left:3px solid var(--gold)}body.english ul{padding-right:0;padding-left:22px}
+body.english .dropdown-content{right:auto;left:0}
+@media(max-width:850px){
+ .header-main{min-height:66px;padding:9px 14px;flex-wrap:wrap;gap:10px}
+ .brand{font-size:14px;order:1}
+ .brand-mark{width:35px;height:35px;font-size:17px}
+ .lang-switch{order:3;margin-inline-start:0}
+ .main-menu{display:none;order:3;flex:1 0 100%;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:8px 0 4px;border-top:1px solid #dfd2b9}
+ .main-menu.mobile-open{display:flex}
+ .main-menu>a,.dropbtn{display:block;width:100%;padding:11px 12px;text-align:right;white-space:normal}
+ html[dir="ltr"] .main-menu>a,html[dir="ltr"] .dropbtn{text-align:left}
+ .dropdown-content{position:static;min-width:0;margin:0 10px 7px;box-shadow:none;background:#f0dfc1}
+ .dropdown.open .dropdown-content{display:block}
+ .hero{margin:18px 12px;padding:30px 17px}
+ .page-nav{padding:8px 12px}
+ main{padding:0 12px 28px}
+ section{padding:19px}
+ .art-grid,.tiles{grid-template-columns:1fr}
+ .province-nav-inner{gap:10px;font-size:11px}
+}
+@media(min-width:851px){
+ .main-menu{display:flex!important}
+}
+</style>
 </head>
-
 <body>
-
-<header>
-  <div class="topbar">
-    <a class="brand" href="index.html">
-      <span class="fa-inline">ایران، هزار رنگ</span>
-      <span class="en-inline" hidden>Iran, A Thousand Colors</span>
-    </a>
-
-    <nav>
-      <a href="index.html">
-        <span class="fa-inline">خانه</span>
-        <span class="en-inline" hidden>Home</span>
-      </a>
-      <a href="regions.html">
-        <span class="fa-inline">استان‌ها</span>
-        <span class="en-inline" hidden>Regions</span>
-      </a>
-      <a href="gallery.html">
-        <span class="fa-inline">گالری</span>
-        <span class="en-inline" hidden>Gallery</span>
-      </a>
-      <button class="lang-btn" onclick="toggleLanguage()">FA | EN</button>
-    </nav>
-  </div>
-</header>
-
-<div class="province-strip">
-  <span class="fa-inline">بوشهر ← کهگیلویه و بویراحمد → چهارمحال و بختیاری</span>
-  <span class="en-inline" hidden>Bushehr ← Kohgiluyeh and Boyer-Ahmad → Chaharmahal and Bakhtiari</span>
+<div class="site-header">
+<div class="header-main">
+<a class="brand" href="index.html">
+<span class="brand-mark">ه</span>
+<span class="fa">ایران، هزار رنگ</span><span class="en">Iran, a Thousand Colors</span>
+</a>
+<nav aria-label="منوی اصلی" class="main-menu">
+<div class="dropdown" id="homeDropdown">
+<button aria-expanded="false" class="dropbtn" type="button">
+<span class="fa">صفحه اصلی</span><span class="en">Home</span>
+</button>
+<div class="dropdown-content">
+<a href="regions.html"><span class="fa">صفحه مناطق | استان‌ها</span><span class="en">Regions | Provinces</span></a>
+<a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+<a href="hezar-rang-cinematic-entry-final.html"><span class="fa">گالری حضوری</span><span class="en">Physical Exhibition</span></a>
 </div>
-
+</div>
+<a href="regions.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About the Exhibition</span></a>
+<a href="regions.html#team"><span class="fa">عوامل پروژه</span><span class="en">Project Team</span></a>
+<a href="regions.html#contact"><span class="fa">تماس با ما</span><span class="en">Contact Us</span></a>
+</nav>
+<button class="lang-switch" id="langSwitch" type="button">FA | EN</button>
+</div>
+<div class="province-nav"><div class="province-nav-inner">
+<a href="bushehr.html"><span class="fa">← بوشهر</span><span class="en">← Bushehr</span></a>
+<span><span class="fa">۱۵ | کهگیلویه و بویراحمد</span><span class="en">15 | Kohgiluyeh and Boyer-Ahmad</span></span>
+<a href="chaharmahal.html"><span class="fa">چهارمحال و بختیاری →</span><span class="en">Chaharmahal and Bakhtiari →</span></a>
+</div></div>
+</div>
+<header class="hero">
+<div class="eyebrow">
+<span class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
+<span class="en">Iran, A Thousand Colors | A visual story of women's dress in Iran</span>
+</div>
+<h1>
+<span class="fa">کهگیلویه و بویراحمد؛ شکوه زاگرس و فرهنگ عشایری</span>
+<span class="en">Kohgiluyeh and Boyer-Ahmad: Zagros Grandeur and Nomadic Culture</span>
+</h1>
+<p class="subtitle">
+<span class="fa">شکوه زاگرس، رنگِ زندگی عشایری</span>
+<span class="en">The Grandeur of the Zagros, the Colors of Nomadic Life</span>
+</p>
+<p><span class="fa">کهگیلویه و بویراحمد، سرزمینی کوهستانی در جنوب‌غرب ایران است؛ جایی که جنگل‌های بلوط، رودها، چشمه‌ها و دشت‌های مرتفع در کنار فرهنگ لُری و سنت‌های کوچ‌نشینی، هویتی زنده و چندلایه پدید آورده‌اند.</span><span class="en">Kohgiluyeh and Boyer-Ahmad is a mountainous region in southwestern Iran, where oak forests, rivers, springs, and highland plains meet Lori culture and nomadic traditions to shape a vivid, layered identity.</span></p>
+</header>
+<nav class="page-nav">
+<a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+<a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's clothing</span></a>
+<a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
+<a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History &amp; nature</span></a>
+<a href="#food"><span class="fa">خوراکی‌ها</span><span class="en">Local food</span></a>
+<a href="#products"><span class="fa">محصولات بومی</span><span class="en">Local products</span></a>
+<a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
 <main>
-
-  <section class="hero">
-    <div class="eyebrow">
-      <span class="fa-inline">روایت تصویری پوشش زنان ایران</span>
-      <span class="en-inline" hidden>A visual story of Iranian women's clothing</span>
-    </div>
-
-    <h1>
-      <span class="fa-inline">کهگیلویه و بویراحمد</span>
-      <span class="en-inline" hidden>Kohgiluyeh and Boyer-Ahmad</span>
-    </h1>
-
-    <p class="subtitle">
-      <span class="fa-inline">سرزمین بلوط و آوازهای زاگرس</span>
-      <span class="en-inline" hidden>Land of Oaks and Zagros Melodies</span>
-    </p>
-
-    <img class="poster"
-         src="kohgiluyeh.png"
-         alt="پوستر پوشش محلی زنان کهگیلویه و بویراحمد">
-  </section>
-
-  <section class="section">
-    <h2>
-      <span class="fa-inline">آشنایی با سرزمین</span>
-      <span class="en-inline" hidden>About the Region</span>
-    </h2>
-
-    <p class="fa-inline">
-      کهگیلویه و بویراحمد در دامنه‌های زاگرس قرار دارد؛ سرزمینی با کوهستان‌های بلند،
-      جنگل‌های بلوط، چشمه‌ها و دشت‌های سرسبز. زندگی عشایری، موسیقی محلی،
-      آیین‌های قومی و هنرهای دستی، بخش مهمی از هویت فرهنگی این منطقه را شکل می‌دهند.
-    </p>
-
-    <p class="en-inline" hidden>
-      Kohgiluyeh and Boyer-Ahmad lies along the Zagros Mountains.
-      Its oak forests, highlands, springs and green plains are closely connected
-      to a rich cultural heritage of nomadic life, local music and traditional crafts.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>
-      <span class="fa-inline">پوشش زنان؛ رنگ و شکوه زندگی</span>
-      <span class="en-inline" hidden>Women's Clothing: Color and Heritage</span>
-    </h2>
-
-    <p class="fa-inline">
-      پوشاک سنتی زنان بویراحمدی و کهگیلویه‌ای از جلوه‌های شاخص فرهنگ منطقه است.
-      این پوشش در میان طوایف و نواحی مختلف تفاوت‌هایی دارد و معمولاً از چند لایه
-      لباس رنگارنگ تشکیل می‌شود. پیراهن یا جومه، تنبان یا دامن چین‌دار،
-      سربند و پوشش‌های سر از اجزای شناخته‌شده این پوشاک هستند.
-    </p>
-
-    <p class="fa-inline">
-      رنگ‌های زنده، پارچه‌های طرح‌دار و شیوه بستن سربندها، بخشی از زیبایی
-      پوشش زنان این منطقه را نشان می‌دهد. نوع لباس و نام اجزای آن ممکن است
-      با توجه به محل زندگی، سن و رسم خانوادگی متفاوت باشد.
-    </p>
-
-    <p class="en-inline" hidden>
-      Traditional clothing among Boyer-Ahmad and Kohgiluyeh women is a distinctive
-      expression of regional identity. Depending on the community, it may include
-      a long dress, a gathered skirt or trousers, and traditional head coverings.
-      Colors, fabrics and styles vary between local groups and families.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>
-      <span class="fa-inline">اجزای پوشش محلی</span>
-      <span class="en-inline" hidden>Elements of Traditional Clothing</span>
-    </h2>
-
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>
-          <span class="fa-inline">جومه یا پیراهن</span>
-          <span class="en-inline" hidden>Long Dress</span>
-        </h3>
-        <p class="fa-inline">لباسی بلند و رنگارنگ که از اجزای اصلی پوشش سنتی زنان منطقه به شمار می‌رود.</p>
-        <p class="en-inline" hidden>A long, colorful dress forming an important part of traditional attire.</p>
-      </div>
-
-      <div class="info-card">
-        <h3>
-          <span class="fa-inline">تنبان و دامن</span>
-          <span class="en-inline" hidden>Trousers and Skirt</span>
-        </h3>
-        <p class="fa-inline">پوشش پایین‌تنه که شکل و جزئیات آن در نواحی مختلف می‌تواند متفاوت باشد.</p>
-        <p class="en-inline" hidden>Lower garments whose shape and details vary across local communities.</p>
-      </div>
-
-      <div class="info-card">
-        <h3>
-          <span class="fa-inline">لچک و سربند</span>
-          <span class="en-inline" hidden>Head Coverings</span>
-        </h3>
-        <p class="fa-inline">پوشش سر با شیوه‌های گوناگون بستن و آرایش که در تکمیل لباس محلی نقش دارد.</p>
-        <p class="en-inline" hidden>Traditional head coverings styled in different ways to complete the outfit.</p>
-      </div>
-
-      <div class="info-card">
-        <h3>
-          <span class="fa-inline">زیورآلات</span>
-          <span class="en-inline" hidden>Jewelry</span>
-        </h3>
-        <p class="fa-inline">زیورهای سنتی در برخی پوشش‌ها برای آراستن لباس و نشان دادن سلیقه و رسم محلی استفاده می‌شوند.</p>
-        <p class="en-inline" hidden>Traditional ornaments may be used to decorate clothing and reflect local customs.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>
-      <span class="fa-inline">فرهنگ و زندگی عشایری</span>
-      <span class="en-inline" hidden>Nomadic Culture and Traditions</span>
-    </h2>
-
-    <p class="fa-inline">
-      کوچ‌نشینی و پیوند زندگی با طبیعت، در فرهنگ این استان جایگاه ویژه‌ای دارد.
-      موسیقی محلی، آوازهای بومی، روایت‌های شفاهی، صنایع‌دستی و آیین‌های خانوادگی
-      از جلوه‌های ماندگار فرهنگ مردم زاگرس هستند.
-    </p>
-
-    <p class="en-inline" hidden>
-      Nomadic life and a close relationship with nature remain important
-      elements of the region's identity. Local music, oral storytelling,
-      handicrafts and family traditions are part of its cultural heritage.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>
-      <span class="fa-inline">جاذبه‌های طبیعی و تاریخی</span>
-      <span class="en-inline" hidden>Natural and Historical Attractions</span>
-    </h2>
-
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>دنا</h3>
-        <p class="fa-inline">رشته‌کوهی باشکوه در زاگرس با چشم‌اندازهای کوهستانی و تنوع زیستی ارزشمند.</p>
-        <p class="en-inline" hidden>A magnificent Zagros mountain range with rich biodiversity.</p>
-      </div>
-
-      <div class="info-card">
-        <h3>آبشار یاسوج</h3>
-        <p class="fa-inline">از جاذبه‌های طبیعی شناخته‌شده نزدیک شهر یاسوج.</p>
-        <p class="en-inline" hidden>A well-known natural attraction near Yasuj.</p>
-      </div>
-
-      <div class="info-card">
-        <h3>تنگه تامرادی</h3>
-        <p class="fa-inline">منطقه‌ای دیدنی با آبشارها، صخره‌ها و طبیعت کوهستانی.</p>
-        <p class="en-inline" hidden>A scenic area of waterfalls, cliffs and mountain landscapes.</p>
-      </div>
-
-      <div class="info-card">
-        <h3>دریاچه کوه‌گل</h3>
-        <p class="fa-inline">دریاچه‌ای کوهستانی در نزدیکی سی‌سخت با چشم‌اندازهای طبیعی زیبا.</p>
-        <p class="en-inline" hidden>A mountain lake near Sisakht surrounded by beautiful scenery.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>
-      <span class="fa-inline">خوراک‌های محلی</span>
-      <span class="en-inline" hidden>Local Cuisine</span>
-    </h2>
-
-    <p class="fa-inline">
-      آش کارده، شله‌ماش، کله‌جوش و غذاهای تهیه‌شده از محصولات محلی و لبنیات،
-      بخشی از خوراک‌های شناخته‌شده این منطقه هستند. دستور پخت و نام غذاها
-      ممکن است از شهری به شهر دیگر تفاوت داشته باشد.
-    </p>
-
-    <p class="en-inline" hidden>
-      Local dishes include Ashe Karde, Sholeh Mash and Kaleh Joosh,
-      along with foods prepared from regional produce and dairy products.
-      Recipes and names may vary from one area to another.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>
-      <span class="fa-inline">هنرهای دستی و سوغات</span>
-      <span class="en-inline" hidden>Handicrafts and Souvenirs</span>
-    </h2>
-
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>
-          <span class="fa-inline">گلیم و جاجیم</span>
-          <span class="en-inline" hidden>Glim and Jajim</span>
-        </h3>
-        <p class="fa-inline">بافته‌هایی با نقش‌ها و رنگ‌های برگرفته از طبیعت و زندگی عشایری.</p>
-        <p class="en-inline" hidden>Woven textiles inspired by nature and nomadic life.</p>
-      </div>
-
-      <div class="info-card">
-        <h3>
-          <span class="fa-inline">قالی‌بافی</span>
-          <span class="en-inline" hidden>Carpet Weaving</span>
-        </h3>
-        <p class="fa-inline">هنری سنتی با نقش‌مایه‌های بومی و شیوه‌های بافت منطقه‌ای.</p>
-        <p class="en-inline" hidden>A traditional craft featuring local motifs and weaving techniques.</p>
-      </div>
-
-      <div class="info-card">
-        <h3>
-          <span class="fa-inline">لبنیات و محصولات محلی</span>
-          <span class="en-inline" hidden>Dairy and Local Products</span>
-        </h3>
-        <p class="fa-inline">محصولات عشایری و فرآورده‌های محلی از سوغات این سرزمین هستند.</p>
-        <p class="en-inline" hidden>Nomadic products and local foods are among the region's specialties.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="tagline">
-      <span class="fa-inline">«از شکوه دنا تا نغمه‌های ایل»</span>
-      <span class="en-inline" hidden>“From the Glory of Dena to the Songs of the Tribes”</span>
-    </div>
-  </section>
-
-  <section class="section sources">
-    <h2>
-      <span class="fa-inline">منابع و مطالعه بیشتر</span>
-      <span class="en-inline" hidden>Sources and Further Reading</span>
-    </h2>
-
-    <ul>
-      <li>
-        <a href="https://www.visitiran.ir/" target="_blank" rel="noopener">
-          Visit Iran – معرفی جاذبه‌ها و فرهنگ ایران
-        </a>
-      </li>
-      <li>
-        <a href="https://ich.unesco.org/" target="_blank" rel="noopener">
-          UNESCO – میراث فرهنگی ناملموس
-        </a>
-      </li>
-      <li>
-        <a href="https://www.irantourism.gov.ir/" target="_blank" rel="noopener">
-          وزارت میراث فرهنگی، گردشگری و صنایع دستی
-        </a>
-      </li>
-    </ul>
-  </section>
-
+<section id="art">
+<h2><span class="fa">اثر هنری کهگیلویه و بویراحمد</span><span class="en">Kohgiluyeh and Boyer-Ahmad Artwork</span></h2>
+<div class="art-grid">
+<div><div aria-label="جایگاه اثر هنری کهگیلویه و بویراحمد" class="art-image" role="img"></div><div class="caption"><span class="fa">جایگاه پوستر استان؛ پس از آماده‌شدن تصویر، فایل اثر در این بخش قرار می‌گیرد.</span><span class="en">Province artwork placeholder; add the poster file here when ready.</span></div></div>
+<div><p><span class="fa">اثر این استان بخشی از مجموعه «ایران، هزار رنگ» است؛ مجموعه‌ای که پوشش زنان مناطق گوناگون ایران را در پیوند با جغرافیا، آیین‌ها و حافظه فرهنگی هر منطقه روایت می‌کند. در این صفحه، رنگ‌های پوشاک لُری و بویراحمدی در کنار چشم‌اندازهای زاگرس و زندگی کوچ‌نشینی معرفی می‌شوند.</span><span class="en">This artwork is part of “Iran, a Thousand Colors,” a collection portraying women's regional clothing in connection with geography, traditions, and cultural memory. Here, the colors of Lori and Boyer-Ahmadi dress are presented alongside Zagros landscapes and nomadic life.</span></p><div class="quote"><span class="fa">«در آغوش زاگرس، هر رنگ نشانی از ریشه، کوچ و زندگی است.»</span><span class="en">“In the embrace of the Zagros, every color speaks of roots, migration, and life.”</span></div></div>
+</div>
+</section>
+<section id="clothing">
+<h2><span class="fa">پوشش زنان کهگیلویه و بویراحمد</span><span class="en">Women's Clothing in Kohgiluyeh and Boyer-Ahmad</span></h2>
+<div class="art-grid">
+<div><div aria-label="جایگاه لیبل پوشش زنان کهگیلویه و بویراحمد" class="art-image" role="img"></div><div class="caption"><span class="fa">جایگاه لیبل معرفی پوشش؛ تصویر لیبل پس از آماده‌شدن اضافه می‌شود.</span><span class="en">Clothing label placeholder; add the label image when ready.</span></div></div>
+<div>
+<h3><span class="fa">جامه لُری و بویراحمدی</span><span class="en">Lori and Boyer-Ahmadi Dress</span></h3>
+<p><span class="fa">پوشاک سنتی زنان در میان گروه‌های لُری‌زبان جنوب زاگرس، از جمله بویراحمدی‌ها، معمولاً از پیراهن بلند و چاک‌دار، دامن پرچین و بلند، پوشش سر و سربند تشکیل می‌شود. رنگ‌های شاد و پارچه‌های متنوع در این پوشش جلوه‌ای چشمگیر دارند؛ با این حال، شکل و جزئیات لباس در طایفه‌ها، نواحی و خانواده‌های مختلف یکسان نیست.</span><span class="en">Traditional women's clothing among Lori-speaking communities of the southern Zagros, including the Boyer-Ahmadi, commonly includes a long side-slit dress, a full-length gathered skirt, and head coverings. Bright colors and varied fabrics are distinctive, though details differ among tribes, localities, and families.</span></p>
+<h3><span class="fa">لچک و مینا</span><span class="en">Lachak and Mina</span></h3>
+<p><span class="fa">لچک، پوشش یا کلاهک پارچه‌ای سر است که در برخی نمونه‌ها با سکه، مهره یا آرایه‌های ظریف تزئین می‌شود. مینا، روسری بلند و سبکی است که بر روی سر قرار می‌گیرد و در شیوه‌های سنتی می‌تواند در قاب‌گرفتن چهره نقش داشته باشد. جنس، رنگ و شیوه بستن این اجزا در مناطق مختلف تفاوت دارد.</span><span class="en">The lachak is a fabric headpiece, sometimes decorated with coins, beads, or delicate ornaments. The mina is a long, light scarf worn over the head and, in traditional styles, may frame the face. Materials, colors, and ways of wearing these pieces vary by area.</span></p>
+<h3><span class="fa">دامن‌های پرچین و پیراهن بلند</span><span class="en">Full Skirts and Long Dresses</span></h3>
+<p><span class="fa">دامن‌های چندلایه و پرچین از شاخصه‌های بصری پوشاک زنان این ناحیه‌اند. ترکیب دامن با پیراهن بلند و رنگارنگ، در حرکت و مناسبت‌های جمعی جلوه‌ای خاص پیدا می‌کند.</span><span class="en">Layered, gathered skirts are a recognizable visual feature of women's clothing in the region. Paired with long, colorful dresses, they create a distinctive appearance in movement and at community celebrations.</span></p>
+<div class="quote"><span class="fa">برای بازنمایی دقیق پوشش، باید تفاوت‌های محلی و روایت زنان هر جامعه در نظر گرفته شود.</span><span class="en">Accurate representation should respect local variation and the accounts of women from each community.</span></div>
+</div>
+</div>
+</section>
+<section id="villages">
+<h2><span class="fa">روستاها و زیست‌بوم‌های فرهنگی</span><span class="en">Villages and Cultural Landscapes</span></h2>
+<div class="tiles">
+<article class="tile"><h3><span class="fa">مارین</span><span class="en">Marin</span></h3><p><span class="fa">روستایی پلکانی در شهرستان گچساران که خانه‌های آن در شیب کوهستان شکل گرفته‌اند. باغداری، دامداری، دست‌بافته‌ها و خوراک‌های محلی بخشی از زندگی فرهنگی این روستا هستند.</span><span class="en">A stepped village in Gachsaran, with houses built along a mountain slope. Gardening, livestock raising, woven crafts, and local foods are part of its cultural life.</span></p></article>
+<article class="tile"><h3><span class="fa">کریک</span><span class="en">Kریک (Kریک)</span></h3><p><span class="fa">روستایی در نزدیکی سی‌سخت با بافت سنتی و چشم‌اندازهای کوهستانی دنا. باغ‌ها و معماری بومی آن، پیوند زندگی روستایی با طبیعت زاگرس را نشان می‌دهد.</span><span class="en">A village near Sisakht, known for its traditional settlement and views of the Dena mountains. Its orchards and vernacular architecture reflect rural life in the Zagros.</span></p></article>
+<article class="tile"><h3><span class="fa">سی‌سخت و روستاهای پیرامون</span><span class="en">Sisakht and Nearby Villages</span></h3><p><span class="fa">این ناحیه در دامنه‌های دنا قرار دارد و با باغ‌های میوه، چشمه‌ها و مراتع کوهستانی شناخته می‌شود. کوچ فصلی و دامداری در حافظه فرهنگی منطقه جایگاه مهمی دارد.</span><span class="en">Located on the slopes of Dena, this area is known for orchards, springs, and mountain pastures. Seasonal migration and pastoralism remain important in local cultural memory.</span></p></article>
+<article class="tile"><h3><span class="fa">پاتاوه</span><span class="en">Pataveh</span></h3><p><span class="fa">ناحیه‌ای در مسیر ارتباطی یاسوج و دنا که چشم‌اندازهای رودخانه‌ای و کوهستانی و سکونتگاه‌های روستایی آن بخشی از تنوع جغرافیایی استان را نشان می‌دهد.</span><span class="en">An area along the route between Yasuj and Dena, with river and mountain landscapes and rural settlements that illustrate the province's geographical diversity.</span></p></article>
+</div>
+</section>
+<section id="history">
+<h2><span class="fa">تاریخ و طبیعت کهگیلویه و بویراحمد</span><span class="en">History and Nature of Kohgiluyeh and Boyer-Ahmad</span></h2>
+<div class="tiles">
+<article class="tile"><h3><span class="fa">کوه دنا</span><span class="en">Mount Dena</span></h3><p><span class="fa">رشته‌کوه دنا از بلندترین و شناخته‌شده‌ترین بخش‌های زاگرس است و با قله‌ها، چشمه‌ها، پوشش گیاهی و زیستگاه‌های ارزشمند، اهمیت طبیعی فراوانی دارد.</span><span class="en">The Dena range is one of the highest and best-known parts of the Zagros, valued for its peaks, springs, vegetation, and important habitats.</span></p></article>
+<article class="tile"><h3><span class="fa">منطقه حفاظت‌شده و ذخیره‌گاه زیست‌کره دنا</span><span class="en">Dena Protected Area and Biosphere Reserve</span></h3><p><span class="fa">دنا به سبب تنوع زیستی و گستره ارتفاعی خود اهمیت حفاظتی دارد و به‌عنوان ذخیره‌گاه زیست‌کره در برنامه انسان و زیست‌کره یونسکو شناخته می‌شود.</span><span class="en">Dena is important for conservation because of its biodiversity and altitudinal range, and is recognized as a UNESCO Man and the Biosphere reserve.</span></p></article>
+<article class="tile"><h3><span class="fa">کاروانسرای دهدشت</span><span class="en">Dehdasht Caravanserai</span></h3><p><span class="fa">کاروانسرای تاریخی دهدشت بخشی از مجموعه تاریخی این شهر و یادگاری از مسیرهای رفت‌وآمد و تجارت در جنوب زاگرس است. این کاروانسرا در پرونده زنجیره‌ای «کاروانسراهای ایرانی» ثبت جهانی شده است.</span><span class="en">The historic Dehdasht caravanserai is part of the town's heritage and a reminder of trade and travel routes in the southern Zagros. It is included in the serial UNESCO World Heritage property “The Persian Caravanserai.”</span></p></article>
+<article class="tile"><h3><span class="fa">آبشار یاسوج و رود بشار</span><span class="en">Yasuj Waterfall and Bashar River</span></h3><p><span class="fa">آبشارها، چشمه‌ها و رودهای منطقه در کنار جنگل‌های بلوط، سیمای سرسبز و کوهستانی استان را شکل می‌دهند و در زندگی و گردشگری محلی نقش دارند.</span><span class="en">Waterfalls, springs, and rivers, together with oak forests, shape the province's green mountain landscape and contribute to local life and tourism.</span></p></article>
+</div>
+</section>
+<section id="food">
+<h2><span class="fa">خوراکی‌ها و غذاهای محلی</span><span class="en">Local Foods and Dishes</span></h2>
+<div class="tiles">
+<article class="tile"><h3><span class="fa">آش کارده</span><span class="en">Ash-e Kardeh</span></h3><p><span class="fa">آشی محلی که با گیاه کارده تهیه می‌شود و از خوراک‌های شناخته‌شده نواحی زاگرسی است. روش پخت و ترکیبات آن در خانواده‌ها و مناطق مختلف تفاوت دارد.</span><span class="en">A regional soup made with the kardeh plant, known in Zagros communities. Ingredients and preparation methods vary among families and localities.</span></p></article>
+<article class="tile"><h3><span class="fa">آش دوغ</span><span class="en">Ash-e Doogh</span></h3><p><span class="fa">خوراکی گرم و محلی بر پایه دوغ یا ماست که با سبزی‌ها و حبوبات آماده می‌شود و در مناطق مختلف استان با دستورهای گوناگون پخته می‌شود.</span><span class="en">A warm regional dish based on doogh or yogurt, prepared with herbs and legumes in different local variations.</span></p></article>
+<article class="tile"><h3><span class="fa">نان تیری</span><span class="en">Nan-e Tiri</span></h3><p><span class="fa">نان نازک و سنتی که روی ساج یا سطح داغ پخته می‌شود و در سفره‌های محلی، به‌ویژه در فرهنگ روستایی و عشایری، جایگاه دارد.</span><span class="en">A traditional thin flatbread baked on a hot griddle, common in local meals and especially associated with rural and nomadic foodways.</span></p></article>
+<article class="tile"><h3><span class="fa">نان و خوراک‌های گیاهی کوهستان</span><span class="en">Mountain Breads and Wild-Green Dishes</span></h3><p><span class="fa">گیاهان خوراکی فصلی، لبنیات محلی و نان‌های خانگی در برخی سفره‌های روستایی و عشایری دیده می‌شوند و با فصل و دسترسی به محصولات طبیعی تغییر می‌کنند.</span><span class="en">Seasonal edible plants, local dairy products, and homemade breads feature in some rural and nomadic meals, varying with the seasons and availability of natural produce.</span></p></article>
+</div>
+</section>
+<section id="products">
+<h2><span class="fa">محصولات بومی و صنایع‌دستی</span><span class="en">Local Products and Handicrafts</span></h2>
+<div class="tiles">
+<article class="tile"><h3><span class="fa">گلیم و قالی</span><span class="en">Kilim and Carpets</span></h3><p><span class="fa">دست‌بافته‌های عشایری و روستایی با نقش‌ها و رنگ‌های برگرفته از طبیعت، خاطره کوچ و سلیقه بافندگان محلی، از هنرهای شاخص منطقه‌اند.</span><span class="en">Nomadic and village-woven textiles, with patterns and colors inspired by nature, migration memories, and local weavers' creativity, are among the region's notable crafts.</span></p></article>
+<article class="tile"><h3><span class="fa">جاجیم‌بافی</span><span class="en">Jajim Weaving</span></h3><p><span class="fa">جاجیم‌های رنگارنگ بافته‌هایی کاربردی و تزئینی‌اند که در سنت نساجی جوامع روستایی و عشایری جایگاه دارند.</span><span class="en">Colorful jajims are both practical and decorative textiles with an established place in rural and nomadic weaving traditions.</span></p></article>
+<article class="tile"><h3><span class="fa">گبه و دست‌بافته‌های عشایری</span><span class="en">Gabbeh and Nomadic Textiles</span></h3><p><span class="fa">گبه‌ها با بافت پرزدار و نقش‌های ساده یا ذهنی، بخشی از هنر قالی‌بافی و فرهنگ زندگی عشایری در ناحیه زاگرس هستند.</span><span class="en">Gabbeh rugs, with their pile and often simple or imaginative designs, are part of the Zagros region's weaving art and nomadic culture.</span></p></article>
+<article class="tile"><h3><span class="fa">سیاه‌چادر و بافته‌های مویی</span><span class="en">Black Tents and Goat-Hair Weavings</span></h3><p><span class="fa">بافت سیاه‌چادر از موی بز با زندگی کوچ‌نشینی پیوند دارد و برای ساخت سرپناهی سازگار با شرایط آب‌وهوایی مسیر کوچ به کار می‌رفته است.</span><span class="en">Black tents woven from goat hair are associated with nomadic life and provide shelter suited to the changing weather along migration routes.</span></p></article>
+<article class="tile"><h3><span class="fa">لبنیات و فرآورده‌های دامی</span><span class="en">Dairy and Livestock Products</span></h3><p><span class="fa">ماست، دوغ، کشک و دیگر فرآورده‌های لبنی محلی در پیوند با دامداری و شیوه معیشت کوهستانی و عشایری تولید می‌شوند.</span><span class="en">Yogurt, doogh, kashk, and other local dairy products are connected with pastoralism and mountain and nomadic livelihoods.</span></p></article>
+<article class="tile"><h3><span class="fa">عسل و محصولات باغی</span><span class="en">Honey and Orchard Produce</span></h3><p><span class="fa">عسل، گردو، سیب و دیگر محصولات باغی از تولیدات نواحی کوهستانی استان‌اند و بخشی از سوغات و اقتصاد محلی را تشکیل می‌دهند.</span><span class="en">Honey, walnuts, apples, and other orchard products are produced in the province's mountain areas and contribute to local livelihoods and souvenirs.</span></p></article>
+</div>
+</section>
+<section id="sources">
+<h2><span class="fa">منابع و یادداشت پژوهش</span><span class="en">Sources and Research Note</span></h2>
+<ul class="source-list">
+<li><a href="https://www.visitiran.ir/en/attraction/marin-village" rel="noopener" target="_blank">Visit Iran — Marin Village</a> — <span class="fa">اطلاعات روستای مارین، پوشش محلی، صنایع‌دستی و خوراک.</span><span class="en">Information on Marin village, local clothing, handicrafts, and food.</span></li>
+<li><a href="https://www.iranicaonline.org/articles/clothing-xxv/" rel="noopener" target="_blank">Encyclopaedia Iranica — Clothing of the Bakhtiaris and other Lori-speaking tribes</a> — <span class="fa">پژوهش درباره اجزای پوشاک زنان و مردان گروه‌های لُری‌زبان از جمله بویراحمدی‌ها.</span><span class="en">Research on women's and men's clothing among Lori-speaking groups, including the Boyer-Ahmadi.</span></li>
+<li><a href="https://whc.unesco.org/en/list/1668/" rel="noopener" target="_blank">UNESCO — The Persian Caravanserai</a> — <span class="fa">اطلاعات ثبت جهانی کاروانسراهای ایرانی.</span><span class="en">World Heritage information on Persian caravanserais.</span></li>
+<li><a href="https://www.unesco.org/en/mab" rel="noopener" target="_blank">UNESCO — Man and the Biosphere Programme</a> — <span class="fa">اطلاعات برنامه ذخیره‌گاه‌های زیست‌کره.</span><span class="en">Information on the Biosphere Reserves programme.</span></li>
+<li><a href="https://www.getty.edu/vow/TGNFullDisplay?english=Y&amp;find=7004326&amp;nation=&amp;place=&amp;subjectid=1001158" rel="noopener" target="_blank">Getty — Thesaurus of Geographic Names</a> — <span class="fa">اطلاعات جغرافیایی و فرهنگی منطقه زاگرس و استان.</span><span class="en">Geographical and cultural context for the Zagros region and province.</span></li>
+</ul>
+<p class="caption"><span class="fa">یادداشت: پوشش لُری و بویراحمدی در طایفه‌ها و نواحی گوناگون تفاوت‌هایی دارد. توصیف این صفحه نمایی کلی از عناصر شناخته‌شده است و جایگزین مستندسازی میدانی و روایت زنان جوامع محلی نیست.</span><span class="en">Note: Lori and Boyer-Ahmadi clothing varies among tribes and localities. This page offers a general overview of recognized elements and does not replace field documentation or the accounts of local women.</span></p>
+</section>
+<div style="text-align:center"><a class="back" href="index.html"><span class="fa">بازگشت به صفحه اصلی</span><span class="en">Back to Home</span></a></div>
 </main>
-
 <footer>
-  <p>
-    <span class="fa-inline">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</span>
-    <span class="en-inline" hidden>Iran, A Thousand Colors | A Visual Story of Iranian Women's Clothing</span>
-  </p>
-  <p>Artwork: Maryam Saei | Website & Cultural Research: Marjan Saei</p>
+<div><span class="fa">هنرمند و خالق آثار: مریم ساعی</span><span class="en">Artist and creator: Maryam Saei</span></div>
+<div><span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span><span class="en">Website design and cultural research: Marjan Saei</span></div>
+<div style="margin-top:8px">© Iran, a Thousand Colors</div>
 </footer>
-
 <script>
-  let currentLanguage = "fa";
+const langSwitch = document.getElementById("langSwitch");
+langSwitch.addEventListener("click", () => {
+  const english = !document.body.classList.contains("english");
+  document.body.classList.toggle("english", english);
+  document.documentElement.lang = english ? "en" : "fa";
+  document.documentElement.dir = english ? "ltr" : "rtl";
+  langSwitch.textContent = english ? "FA | EN" : "FA | EN";
+});
 
-  function toggleLanguage() {
-    currentLanguage = currentLanguage === "fa" ? "en" : "fa";
+const homeDropdown = document.getElementById("homeDropdown");
+const homeButton = homeDropdown.querySelector(".dropbtn");
+homeButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const opened = homeDropdown.classList.toggle("open");
+  homeButton.setAttribute("aria-expanded", String(opened));
+});
 
-    document.documentElement.lang = currentLanguage;
-    document.documentElement.dir = currentLanguage === "fa" ? "rtl" : "ltr";
-
-    document.querySelectorAll(".fa-inline").forEach(element => {
-      element.hidden = currentLanguage !== "fa";
-    });
-
-    document.querySelectorAll(".en-inline").forEach(element => {
-      element.hidden = currentLanguage !== "en";
-    });
+document.addEventListener("click", (event) => {
+  if (!homeDropdown.contains(event.target)) {
+    homeDropdown.classList.remove("open");
+    homeButton.setAttribute("aria-expanded", "false");
   }
-</script>
+});
 
+if (window.matchMedia("(max-width:850px)").matches) {
+  const menu = document.querySelector(".main-menu");
+  const menuButton = document.createElement("button");
+  menuButton.type = "button";
+  menuButton.className = "mobile-menu-button";
+  menuButton.setAttribute("aria-label", "Open menu");
+  menuButton.innerHTML = "☰";
+  menuButton.style.cssText = "order:2;border:1px solid #c79a4a;background:#fff8eb;color:#153f3b;border-radius:9px;width:40px;height:38px;font-size:20px";
+  document.querySelector(".header-main").insertBefore(menuButton, menu);
+  menuButton.addEventListener("click", () => {
+    const opened = menu.classList.toggle("mobile-open");
+    menuButton.setAttribute("aria-expanded", String(opened));
+  });
+}
+</script>
 </body>
 </html>
