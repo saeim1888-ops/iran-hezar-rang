@@ -1,600 +1,202 @@
-
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>کرمان | ایران، هزار رنگ</title>
 
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="سمنان؛ روایت تصویری پوشش زنان، فرهنگ روستاها، تاریخ، طبیعت و خوراکی‌های محلی در نمایشگاه ایران، هزار رنگ." name="description"/>
+<title>کرمان | ایران، هزار رنگ</title>
 <style>
-:root{
-  --cream:#f4ead8;
-  --paper:#fffaf0;
-  --olive:#656b43;
-  --green:#153f3b;
-  --rust:#a83e1d;
-  --gold:#c6a66b;
-  --teal:#245c60;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--cream);
-  color:#39443a;
-  font-family:Tahoma,sans-serif;
-  line-height:2.1;
-}
-body.english{direction:ltr;text-align:left}
-.topline{height:7px;background:var(--rust)}
-header{
-  text-align:center;
-  padding:24px 15px;
-  background:var(--paper);
-  border-bottom:1px solid var(--gold);
-}
-.logo{color:var(--green);font-size:25px;font-weight:bold}
-nav{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:22px;
-  padding:12px;
-  background:#eee3cd;
-}
-nav a{color:var(--green);text-decoration:none;font-size:13px}
-nav a:hover{color:var(--rust)}
-.lang-switch{
-  position:fixed;
-  top:18px;
-  left:20px;
-  z-index:10;
-  background:var(--paper);
-  border:1px solid var(--gold);
-  border-radius:30px;
-  padding:7px 13px;
-  cursor:pointer;
-  color:var(--green);
-}
-main{max-width:1050px;margin:35px auto;padding:15px}
-.hero{text-align:center;padding:35px 15px}
-.hero h1{font-size:40px;color:var(--olive);margin:10px}
-.hero h2{font-size:23px;color:var(--rust)}
-.hero p{color:#77715f}
-.hero-art{
-  width:100%;
-  max-height:490px;
-  object-fit:cover;
-  border-radius:18px;
-  border:5px solid white;
-  box-shadow:0 5px 20px #00000015;
-}
-section{
-  background:var(--paper);
-  border:1px solid #ddc99e;
-  border-radius:18px;
-  padding:25px;
-  margin:25px 0;
-  box-shadow:0 4px 15px #00000008;
-}
-section h2{
-  text-align:center;
-  color:white;
-  background:var(--green);
-  border-radius:30px;
-  padding:8px 20px;
-  font-size:21px;
-  margin:0 auto 22px;
-  max-width:460px;
-}
-section p{text-align:justify}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-}
-.tile{
-  background:#f6edda;
-  border:1px solid #dfc99e;
-  border-radius:14px;
-  padding:16px;
-  text-align:center;
-}
-.tile h3{color:var(--rust)}
-.tile img{
-  width:100%;
-  height:210px;
-  object-fit:cover;
-  border-radius:12px;
-}
-.quote{
-  text-align:center;
-  color:var(--green);
-  font-size:22px;
-  font-weight:bold;
-  padding:20px;
-}
-.sources a{
-  color:var(--teal);
-  display:block;
-  margin:8px 0;
-  text-decoration:none;
-}
-.back{
-  display:block;
-  width:max-content;
-  margin:30px auto;
-  padding:10px 25px;
-  border-radius:30px;
-  background:var(--green);
-  color:white;
-  text-decoration:none;
-}
-footer{
-  text-align:center;
-  padding:25px;
-  color:var(--olive);
-  background:#eee3cd;
-}
-.en{display:none}
-body.english .fa{display:none}
-body.english .en{display:block}
-@media(max-width:700px){
-  .hero h1{font-size:29px}
-  .hero h2{font-size:19px}
-  .grid{grid-template-columns:1fr}
-  section{padding:15px}
-  nav{gap:12px}
-  .lang-switch{top:8px;left:8px}
-}
+:root{--cream:#f8f1e3;--paper:#fffaf0;--olive:#596447;--dark:#292b25;--gold:#b08b48;--rust:#b94e27;--teal:#245b60;--line:#dfd2b9}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:150px}
+body{margin:0;background:var(--cream);color:var(--dark);font-family:Tahoma,Arial,sans-serif;line-height:1.95}
+a{color:inherit;text-decoration:none}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(255,250,240,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:0 4px 18px #49351a12}
+.topline{height:5px;background:linear-gradient(90deg,var(--teal),var(--gold),var(--rust))}
+.header-main{max-width:1200px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:bold;color:var(--teal);font-size:19px;white-space:nowrap}
+.brand-mark{width:38px;height:38px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--rust);font-size:20px}
+.main-menu{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.main-menu>a,.dropbtn{font:inherit;font-size:13px;color:var(--dark);background:none;border:0;padding:8px 3px;cursor:pointer}
+.main-menu>a:hover,.dropbtn:hover{color:var(--rust)}
+.dropdown{position:relative}.dropdown-content{display:none;position:absolute;top:100%;right:0;min-width:210px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 12px 30px #30251520}
+.dropdown.open .dropdown-content{display:block}.dropdown-content a{display:block;padding:8px 12px;border-radius:8px;font-size:13px}.dropdown-content a:hover{background:#efe4d0;color:var(--rust)}
+.lang-switch{border:1px solid var(--gold);border-radius:22px;background:transparent;color:var(--teal);padding:7px 13px;font-weight:bold;cursor:pointer;white-space:nowrap}
+.province-nav{background:#245b60;color:#fff;padding:9px 16px}
+.province-nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap}
+.province-nav a,.province-nav span{font-size:12px;padding:5px 10px;border:1px solid #ffffff45;border-radius:20px}
+.province-nav a:hover{background:#ffffff20}
+.hero{max-width:1100px;margin:34px auto 24px;padding:44px 28px;text-align:center;background:linear-gradient(135deg,#fffaf0,#f0e3cb);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 35px #5c452015;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #b08b4833;border-radius:50%}
+.hero:before{top:-105px;right:-65px}.hero:after{bottom:-120px;left:-60px}
+.eyebrow{color:var(--rust);font-size:12px;letter-spacing:.4px}
+h1{font-size:clamp(25px,4vw,39px);color:var(--teal);margin:8px 0}
+.slogan{font-size:18px;color:var(--olive);font-weight:bold;margin:8px 0}
+.hero p{max-width:780px;margin:10px auto 0;font-size:14px}
+.page-nav{max-width:1100px;margin:0 auto 28px;padding:12px 18px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.page-nav a{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:12px;color:var(--olive)}
+.page-nav a:hover{background:var(--olive);color:white}
+main{max-width:1100px;margin:auto;padding:0 20px 40px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;margin:0 0 22px;box-shadow:0 7px 22px #4b38100b}
+h2{font-size:21px;color:var(--rust);margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+h3{font-size:16px;color:var(--teal);margin:12px 0 5px}
+p{margin:8px 0}.art-grid,.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.art-grid img,.art-image{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:#eee2cf}
+.caption{font-size:12px;color:#756b58;text-align:center;margin-top:7px}
+.tile{background:#f7efdf;border:1px solid var(--line);border-radius:13px;padding:15px}
+.quote{border-right:3px solid var(--gold);padding:9px 14px;color:var(--olive);background:#f7efdf;border-radius:8px;margin-top:15px}
+ul{padding-right:22px}.source-list li{margin:7px 0;font-size:13px}
+.source-list a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+footer{text-align:center;padding:25px 16px;background:#e9dec9;color:#5d584b;font-size:12px}
+.back{display:inline-block;background:var(--rust);color:white;padding:9px 18px;border-radius:22px;margin-top:8px}
+.en{display:none}body.english{direction:ltr}body.english .en{display:initial}body.english .fa{display:none}
+body.english .quote{border-right:0;border-left:3px solid var(--gold)}body.english ul{padding-right:0;padding-left:22px}
+body.english .dropdown-content{right:auto;left:0}
+@media(max-width:780px){.header-main{flex-wrap:wrap;justify-content:center}.main-menu{order:3;width:100%;gap:9px}.main-menu>a,.dropbtn{font-size:12px}.brand{font-size:17px}.hero{margin:18px 12px;padding:30px 17px}.page-nav{padding:8px 12px}main{padding:0 12px 28px}section{padding:19px}.art-grid,.tiles{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
+<div class="site-header">
 <div class="topline"></div>
-<button class="lang-switch" onclick="toggleLanguage()">FA | EN</button>
-
-<header>
-  <div class="logo">ایران، هزار رنگ</div>
-  <p class="fa">روایتی تصویری از پوشش زنان ایران</p>
-  <p class="en">A Visual Journey Through Iranian Women's Clothing</p>
-</header>
-
-<nav>
-  <a href="index.html"><span class="fa">صفحه اصلی</span><span class="en">Home</span></a>
-  <a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
-  <a href="gallery.html"><span class="fa">گالری آنلاین</span><span class="en">Online Gallery</span></a>
-  <a href="index.html#regions"><span class="fa">استان‌ها</span><span class="en">Regions</span></a>
-  <a href="index.html#about"><span class="fa">درباره نمایشگاه</span><span class="en">About</span></a>
-</nav>
-
-<main>
-
-<div class="hero">
-  <p class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</p>
-  <p class="en">Iran, A Thousand Colors | Women's Clothing</p>
-
-  <h1 class="fa">کرمان؛ سرزمین ارگ‌ها، کویر و نقش‌های ماندگار</h1>
-  <h1 class="en">Kerman; Land of Citadels, Deserts and Timeless Patterns</h1>
-
-  <h2 class="fa">از شکوه ارگ بم تا افسون کویر لوت</h2>
-  <h2 class="en">From the Grandeur of Bam Citadel to the Magic of Lut Desert</h2>
-
-  <p class="fa">
-    سفری تصویری میان پوشش زنان، هنرهای سنتی،
-    باغ‌های تاریخی و چشم‌اندازهای کویری کرمان
-  </p>
-  <p class="en">
-    A visual journey through women's clothing, traditional arts,
-    historic gardens and the desert landscapes of Kerman.
-  </p>
-
-  <img class="hero-art"
-       src="kerman.png"
-       alt="اثر هنری استان کرمان">
+<div class="header-main">
+<a class="brand" href="index.html"><span class="brand-mark">✺</span><span class="fa">ایران، هزار رنگ</span><span class="en">Iran, a Thousand Colors</span></a>
+<nav aria-label="منوی اصلی" class="main-menu">
+<div class="dropdown" id="homeDropdown">
+<button aria-expanded="false" class="dropbtn" type="button"><span class="fa">صفحه اصلی ▾</span><span class="en">Home ▾</span></button>
+<div class="dropdown-content">
+<a href="regions.html"><span class="fa">معرفی مناطق</span><span class="en">Explore regions</span></a>
+<a href="gallery-3d.html"><span class="fa">گالری سه‌بعدی</span><span class="en">3D Gallery</span></a>
+<a href="gallery.html"><span class="fa">گالری آنلاین</span><span class="en">Online Gallery</span></a>
+<a href="in-person-gallery.html"><span class="fa">تصاویر نمایشگاه حضوری</span><span class="en">In-person exhibition photos</span></a>
 </div>
-
-<section>
-  <h2><span class="fa">معرفی استان</span><span class="en">About the Province</span></h2>
-
-  <p class="fa">
+</div>
+<a href="about.html"><span class="fa">درباره نمایشگاه</span><span class="en">About</span></a>
+<a href="team.html"><span class="fa">عوامل پروژه</span><span class="en">Project team</span></a>
+<a href="contact.html"><span class="fa">تماس با ما</span><span class="en">Contact</span></a>
+</nav>
+<button class="lang-switch" id="langSwitch" type="button">EN</button>
+</div>
+<div class="province-nav"><div class="province-nav-inner"><a class="prev" href="hormozgan.html"><span class="fa">← هرمزگان</span><span class="en">← Hormozgan</span></a><span class="current"><span class="fa">۱۰ | کرمان</span><span class="en">10 | Kerman</span></span><a class="next" href="yazd.html"><span class="fa">یزد →</span><span class="en">Yazd →</span></a></div></div>
+</div>
+<header class="hero">
+<div class="eyebrow"><span class="fa">گالری حضوری و آنلاین | ایران، هزار رنگ</span><span class="en">In-person and online exhibition | Iran, a Thousand Colors</span></div>
+<h1><span class="fa">کرمان؛ سرزمین ارگ‌ها، کویر و نقش‌های ماندگار</span><span class="en">Kerman: Land of Citadels, Deserts and Timeless Patterns</span></h1>
+<div class="slogan"><span class="fa">سمنان؛ روایتی از زندگی در مرز کویر، کوهستان و جنگل</span><span class="en">Semnan: Life Between Desert, Mountains, and Forests</span></div>
+<p><span class="fa">سفری تصویری میان پوشش زنان، هنرهای سنتی، باغ‌های تاریخی و چشم‌اندازهای کویری کرمان</span><span class="en">A visual journey through women's clothing, traditional arts, historic gardens and the desert landscapes of Kerman.</span></p>
+</header>
+<nav class="page-nav">
+<a href="#art"><span class="fa">اثر هنری</span><span class="en">Artwork</span></a>
+<a href="#clothing"><span class="fa">پوشش زنان</span><span class="en">Women's clothing</span></a>
+<a href="#villages"><span class="fa">روستاها</span><span class="en">Villages</span></a>
+<a href="#history"><span class="fa">تاریخ و طبیعت</span><span class="en">History &amp; nature</span></a>
+<a href="#food"><span class="fa">خوراکی‌ها</span><span class="en">Local food</span></a>
+<a href="#products"><span class="fa">محصولات بومی</span><span class="en">Local products</span></a>
+<a href="#sources"><span class="fa">منابع</span><span class="en">Sources</span></a>
+</nav>
+<main>
+<section id="art">
+<h2><span class="fa">اثر هنری کرمان</span><span class="en">Kerman Artwork</span></h2>
+<div class="art-grid">
+<div><img alt="اثر هنری استان کرمان" src="kerman.png"/><div class="caption"><span class="fa">روایت تصویری پوشش و هویت فرهنگی زنان سمنان</span><span class="en">A visual story of women's clothing and cultural identity in Semnan</span></div></div>
+<div><div><div class="caption"><span class="fa">روایت تصویری پوشش و هویت فرهنگی زنان کرمان</span><span class="en">A visual story of women's clothing and cultural identity in Kerman</span></div></div><div><p><span class="fa">اثر کرمان بخشی از مجموعه «ایران، هزار رنگ» است؛ مجموعه‌ای که پوشش زنان مناطق گوناگون ایران را در پیوند با جغرافیا، آیین‌ها و حافظه فرهنگی هر منطقه روایت می‌کند.</span><span class="en">The Kerman artwork is part of “Iran, a Thousand Colors,” portraying regional women’s clothing in connection with geography, traditions, and cultural memory.</span></p><div class="quote"><span class="fa">«از شکوه ارگ بم تا افسون کویر لوت؛ هر نقش، قصه‌ای از کرمان است.»</span><span class="en">“From Bam Citadel to the magic of Lut; every pattern tells a Kerman story.”</span></div></div><p class="fa">
     کرمان در جنوب شرق ایران، سرزمینی پهناور با تنوع اقلیمی،
     تاریخی و فرهنگی است. از کوهستان‌های سرد و باغ‌های پسته
     تا دشت‌های کویری و نخلستان‌های جنوب استان، هر گوشه آن
     روایتی متفاوت از زندگی و سازگاری انسان با طبیعت دارد.
-  </p>
-
-  <p class="fa">
+  </p><p class="fa">
     معماری خشتی، بازارهای تاریخی، قالی‌های پرنقش،
     پته‌دوزی ظریف و خوراک‌های محلی، بخشی از هویت
     فرهنگی این منطقه را شکل می‌دهند.
-  </p>
-
-  <p class="en">
+  </p><p class="en">
     Kerman, in southeastern Iran, is a vast province with
     remarkable climatic, historical and cultural diversity.
     From mountain landscapes and pistachio orchards to deserts
     and southern palm groves, each area tells a different story.
-  </p>
+  </p></div>
+</div>
 </section>
-
-<section>
-  <h2><span class="fa">پوشش زنان و لباس‌های محلی</span><span class="en">Women's Traditional Clothing</span></h2>
-
-  <div class="grid">
-    <div class="tile">
-      <h3 class="fa">پوشش زنان کرمانی</h3>
-      <h3 class="en">Kermani Women's Clothing</h3>
-      <p class="fa">
-        پوشش سنتی زنان در نواحی مختلف کرمان شامل پیراهن‌های
+<section id="clothing">
+<h2><span class="fa">پوشش زنان کرمان</span><span class="en">Women’s Clothing in Kerman</span></h2>
+<div class="tiles"><article class="tile"><h3><span class="fa">پوشش زنان کرمانی</span><span class="en">Kermani Women's Clothing</span></h3><p><span class="fa">پوشش سنتی زنان در نواحی مختلف کرمان شامل پیراهن‌های
         بلند، شلوارهای محلی، روسری و چارقد است.
         رنگ، نوع پارچه و تزئینات لباس در شهرها و روستاهای
-        مختلف تفاوت دارد.
-      </p>
-      <p class="en">
-        Traditional women's clothing includes long dresses,
+        مختلف تفاوت دارد.</span><span class="en">Traditional women's clothing includes long dresses,
         local trousers, scarves and head coverings,
-        varying across towns and villages.
-      </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">پوشش زنان جنوب کرمان</h3>
-      <h3 class="en">Southern Kerman Clothing</h3>
-      <p class="fa">
-        در مناطق جنوبی استان، پوشش زنان از اقلیم گرم،
+        varying across towns and villages.</span></p></article><article class="tile"><h3><span class="fa">پوشش زنان جنوب کرمان</span><span class="en">Southern Kerman Clothing</span></h3><p><span class="fa">در مناطق جنوبی استان، پوشش زنان از اقلیم گرم،
         فرهنگ بومی و ارتباطات فرهنگی منطقه تأثیر گرفته است.
         پارچه‌های سبک و پوشش‌های بلند از ویژگی‌های
-        پوشاک روزمره این نواحی هستند.
-      </p>
-      <p class="en">
-        Women's clothing in southern Kerman reflects
-        the warm climate and local cultural traditions.
-      </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">پوشاک روستایی و عشایری</h3>
-      <h3 class="en">Rural and Nomadic Clothing</h3>
-      <p class="fa">
-        پوشاک در جوامع روستایی و عشایری با سبک زندگی،
-        فعالیت‌های روزانه و شرایط محیطی ارتباط دارد.
-      </p>
-      <p class="en">
-        Rural and nomadic clothing reflects daily life,
-        work and environmental conditions.
-      </p>
-    </div>
-
-    <div class="tile">
-      <h3 class="fa">زیورآلات و تزئینات محلی</h3>
-      <h3 class="en">Local Jewelry and Accessories</h3>
-      <p class="fa">
-        زیورآلات سنتی و تزئینات پارچه‌ای در کنار لباس،
-        بخشی از زیبایی‌شناسی پوشش محلی کرمان هستند.
-      </p>
-      <p class="en">
-        Traditional jewelry and textile decorations
-        complement regional clothing.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2><span class="fa">روستاها و مناطق شاخص</span><span class="en">Notable Villages and Areas</span></h2>
-
-  <div class="grid">
-    <div class="tile">
-      <h3>میمند</h3>
-      <p class="fa">
-        روستای تاریخی با خانه‌های دست‌کند در دل صخره‌ها
-        و معماری منحصربه‌فرد.
-      </p>
-      <p class="en">A historic troglodyte village with rock-cut dwellings.</p>
-    </div>
-
-    <div class="tile">
-      <h3>لاله‌زار</h3>
-      <p class="fa">
-        منطقه‌ای کوهستانی در بردسیر با باغ‌ها و
-        چشم‌اندازهای طبیعی و کشاورزی.
-      </p>
-      <p class="en">A mountainous area near Bardsir with orchards and scenic landscapes.</p>
-    </div>
-
-    <div class="tile">
-      <h3>دلفارد</h3>
-      <p class="fa">
-        منطقه‌ای سرسبز در جنوب کرمان با باغ‌ها،
-        آبشارها و طبیعت کوهستانی.
-      </p>
-      <p class="en">A green valley in southern Kerman with orchards and waterfalls.</p>
-    </div>
-
-    <div class="tile">
-      <h3>راین</h3>
-      <p class="fa">
-        شهری تاریخی در دامنه کوه هزار،
-        شناخته‌شده به ارگ خشتی باشکوه.
-      </p>
-      <p class="en">A historic town at the foot of Mount Hezar, known for its citadel.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2><span class="fa">جاذبه‌های تاریخی و طبیعی</span><span class="en">Historical and Natural Attractions</span></h2>
-
-  <div class="grid">
-    <div class="tile">
-      <h3>ارگ بم</h3>
-      <p class="fa">
-        بزرگ‌ترین سازه خشتی شناخته‌شده جهان و
-        میراث جهانی یونسکو.
-      </p>
-      <p class="en">A remarkable UNESCO-listed adobe citadel.</p>
-    </div>
-
-    <div class="tile">
-      <h3>ارگ راین</h3>
-      <p class="fa">
-        بنایی تاریخی با معماری خشتی و برج‌وباروی
-        چشمگیر در شهر راین.
-      </p>
-      <p class="en">A historic adobe fortress in Rayen.</p>
-    </div>
-
-    <div class="tile">
-      <h3>باغ شاهزاده ماهان</h3>
-      <p class="fa">
-        باغی ایرانی با حوض‌ها، فواره‌ها و
-        معماری هماهنگ با چشم‌انداز کوهستانی.
-      </p>
-      <p class="en">A UNESCO-listed Persian garden in Mahan.</p>
-    </div>
-
-    <div class="tile">
-      <h3>مجموعه گنجعلی‌خان</h3>
-      <p class="fa">
-        مجموعه‌ای تاریخی در قلب بازار کرمان،
-        شامل میدان، حمام و بناهای ارزشمند.
-      </p>
-      <p class="en">A historic complex in Kerman's traditional bazaar.</p>
-    </div>
-
-    <div class="tile">
-      <h3>کلوت‌های شهداد</h3>
-      <p class="fa">
-        سازندهای طبیعی شگفت‌انگیز در حاشیه کویر لوت،
-        با چشم‌اندازهای کم‌نظیر.
-      </p>
-      <p class="en">Spectacular natural formations in the Lut Desert.</p>
-    </div>
-
-    <div class="tile">
-      <h3>کوه هزار</h3>
-      <p class="fa">
-        از بلندترین ارتفاعات جنوب ایران با
-        چشم‌اندازهای کوهستانی و طبیعی.
-      </p>
-      <p class="en">One of southern Iran's highest mountain areas.</p>
-    </div>
-
-    <div class="tile">
-      <h3>میمند</h3>
-      <p class="fa">
-        چشم‌اندازی تاریخی از زندگی انسان در
-        سکونتگاه‌های دست‌کند صخره‌ای.
-      </p>
-      <p class="en">An extraordinary example of rock-cut human settlement.</p>
-    </div>
-
-    <div class="tile">
-      <h3>قلعه دختر و قلعه اردشیر</h3>
-      <p class="fa">
-        بقایای دو بنای تاریخی مهم بر فراز ارتفاعات
-        شهر کرمان.
-      </p>
-      <p class="en">The remains of two important historic fortresses in Kerman.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2><span class="fa">غذاهای محلی</span><span class="en">Local Cuisine</span></h2>
-
-  <div class="grid">
-    <div class="tile">
-      <h3>بزقرمه</h3>
-      <p class="fa">
-        خوراک سنتی کرمانی با گوشت، نخود،
-        کشک و سیر.
-      </p>
-      <p class="en">A traditional dish with meat, chickpeas and kashk.</p>
-    </div>
-
-    <div class="tile">
-      <h3>آبگوشت زیره</h3>
-      <p class="fa">
-        از غذاهای محلی با عطر ویژه زیره کرمان.
-      </p>
-      <p class="en">A local stew flavored with Kerman cumin.</p>
-    </div>
-
-    <div class="tile">
-      <h3>آش اوماج</h3>
-      <p class="fa">
-        آش سنتی با خمیرهای کوچک و سبزی‌های محلی.
-      </p>
-      <p class="en">A traditional soup with small dough pieces and herbs.</p>
-    </div>
-
-    <div class="tile">
-      <h3>زیره‌پلو</h3>
-      <p class="fa">
-        غذایی معطر با زیره مشهور منطقه.
-      </p>
-      <p class="en">An aromatic rice dish with local cumin.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2><span class="fa">شیرینی‌ها و خوراکی‌های محلی</span><span class="en">Local Sweets and Treats</span></h2>
-
-  <div class="grid">
-    <div class="tile">
-      <h3>کلمپه</h3>
-      <p class="fa">شیرینی سنتی کرمان با خرما و ادویه‌های معطر.</p>
-      <p class="en">A traditional date-filled Kerman pastry.</p>
-    </div>
-
-    <div class="tile">
-      <h3>کماچ سهن</h3>
-      <p class="fa">شیرینی محلی تهیه‌شده با جوانه گندم و ادویه.</p>
-      <p class="en">A local sweet made with wheat sprouts and spices.</p>
-    </div>
-
-    <div class="tile">
-      <h3>قطاب کرمانی</h3>
-      <p class="fa">شیرینی سنتی با مغز و مواد شیرین.</p>
-      <p class="en">A traditional filled pastry.</p>
-    </div>
-
-    <div class="tile">
-      <h3>قاووت</h3>
-      <p class="fa">ترکیبی آسیاب‌شده از دانه‌ها و گیاهان معطر.</p>
-      <p class="en">A traditional powdered mixture of seeds and herbs.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2><span class="fa">صنایع‌دستی و هنرهای بومی</span><span class="en">Handicrafts and Folk Arts</span></h2>
-
-  <div class="grid">
-    <div class="tile">
-      <h3>پته‌دوزی کرمان</h3>
-      <p class="fa">
-        هنر رودوزی ظریف با نخ‌های پشمی رنگی
-        بر پارچه‌های پشمی، با نقش‌های گیاهی و سنتی.
-      </p>
-      <p class="en">Traditional wool embroidery with colorful botanical patterns.</p>
-    </div>
-
-    <div class="tile">
-      <h3>قالی کرمان</h3>
-      <p class="fa">
-        از مشهورترین هنرهای نساجی ایران با
-        نقش‌های ظریف و ترکیب رنگ‌های متنوع.
-      </p>
-      <p class="en">One of Iran's most renowned carpet traditions.</p>
-    </div>
-
-    <div class="tile">
-      <h3>گلیم و جاجیم</h3>
-      <p class="fa">
-        بافته‌های سنتی با طرح‌های هندسی و رنگ‌های محلی.
-      </p>
-      <p class="en">Traditional flatweaves with geometric designs.</p>
-    </div>
-
-    <div class="tile">
-      <h3>حصیربافی</h3>
-      <p class="fa">
-        هنر بافت الیاف گیاهی و برگ نخل
-        در برخی مناطق جنوبی استان.
-      </p>
-      <p class="en">Plant-fiber and palm-leaf weaving in southern areas.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2><span class="fa">سوغات و محصولات محلی</span><span class="en">Local Products and Souvenirs</span></h2>
-
-  <div class="grid">
-    <div class="tile">
-      <h3>پسته رفسنجان</h3>
-      <p class="fa">از محصولات شناخته‌شده کشاورزی کرمان.</p>
-      <p class="en">A famous agricultural product of Rafsanjan.</p>
-    </div>
-
-    <div class="tile">
-      <h3>زیره کرمان</h3>
-      <p class="fa">ادویه‌ای معطر و از سوغات مشهور استان.</p>
-      <p class="en">A fragrant spice and well-known local product.</p>
-    </div>
-
-    <div class="tile">
-      <h3>خرمای بم</h3>
-      <p class="fa">محصول شناخته‌شده نخلستان‌های بم.</p>
-      <p class="en">A well-known product of Bam's palm groves.</p>
-    </div>
-
-    <div class="tile">
-      <h3>پته و قالی</h3>
-      <p class="fa">از ارزشمندترین یادگارهای هنر دست هنرمندان کرمانی.</p>
-      <p class="en">Among the most treasured Kermani handicrafts.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sources">
-  <h2><span class="fa">منابع و اطلاعات بیشتر</span><span class="en">Sources and Further Information</span></h2>
-
-  <a href="https://www.visitiran.ir/" target="_blank" rel="noopener">
+        پوشاک روزمره این نواحی هستند.</span><span class="en">Women's clothing in southern Kerman reflects
+        the warm climate and local cultural traditions.</span></p></article><article class="tile"><h3><span class="fa">پوشاک روستایی و عشایری</span><span class="en">Rural and Nomadic Clothing</span></h3><p><span class="fa">پوشاک در جوامع روستایی و عشایری با سبک زندگی،
+        فعالیت‌های روزانه و شرایط محیطی ارتباط دارد.</span><span class="en">Rural and nomadic clothing reflects daily life,
+        work and environmental conditions.</span></p></article><article class="tile"><h3><span class="fa">زیورآلات و تزئینات محلی</span><span class="en">Local Jewelry and Accessories</span></h3><p><span class="fa">زیورآلات سنتی و تزئینات پارچه‌ای در کنار لباس،
+        بخشی از زیبایی‌شناسی پوشش محلی کرمان هستند.</span><span class="en">Traditional jewelry and textile decorations
+        complement regional clothing.</span></p></article></div></section>
+<section id="villages">
+<h2><span class="fa">روستاها و مناطق شاخص</span><span class="en">Notable Villages and Areas</span></h2>
+<div class="tiles"><article class="tile"><h3><span class="fa">میمند</span></h3><p><span class="fa">روستای تاریخی با خانه‌های دست‌کند در دل صخره‌ها
+        و معماری منحصربه‌فرد.</span><span class="en">A historic troglodyte village with rock-cut dwellings.</span></p></article><article class="tile"><h3><span class="fa">لاله‌زار</span></h3><p><span class="fa">منطقه‌ای کوهستانی در بردسیر با باغ‌ها و
+        چشم‌اندازهای طبیعی و کشاورزی.</span><span class="en">A mountainous area near Bardsir with orchards and scenic landscapes.</span></p></article><article class="tile"><h3><span class="fa">دلفارد</span></h3><p><span class="fa">منطقه‌ای سرسبز در جنوب کرمان با باغ‌ها،
+        آبشارها و طبیعت کوهستانی.</span><span class="en">A green valley in southern Kerman with orchards and waterfalls.</span></p></article><article class="tile"><h3><span class="fa">راین</span></h3><p><span class="fa">شهری تاریخی در دامنه کوه هزار،
+        شناخته‌شده به ارگ خشتی باشکوه.</span><span class="en">A historic town at the foot of Mount Hezar, known for its citadel.</span></p></article></div></section>
+<section id="history">
+<h2><span class="fa">تاریخ و طبیعت کرمان</span><span class="en">History and Nature of Kerman</span></h2>
+<div class="tiles"><article class="tile"><h3><span class="fa">ارگ بم</span></h3><p><span class="fa">بزرگ‌ترین سازه خشتی شناخته‌شده جهان و
+        میراث جهانی یونسکو.</span><span class="en">A remarkable UNESCO-listed adobe citadel.</span></p></article><article class="tile"><h3><span class="fa">ارگ راین</span></h3><p><span class="fa">بنایی تاریخی با معماری خشتی و برج‌وباروی
+        چشمگیر در شهر راین.</span><span class="en">A historic adobe fortress in Rayen.</span></p></article><article class="tile"><h3><span class="fa">باغ شاهزاده ماهان</span></h3><p><span class="fa">باغی ایرانی با حوض‌ها، فواره‌ها و
+        معماری هماهنگ با چشم‌انداز کوهستانی.</span><span class="en">A UNESCO-listed Persian garden in Mahan.</span></p></article><article class="tile"><h3><span class="fa">مجموعه گنجعلی‌خان</span></h3><p><span class="fa">مجموعه‌ای تاریخی در قلب بازار کرمان،
+        شامل میدان، حمام و بناهای ارزشمند.</span><span class="en">A historic complex in Kerman's traditional bazaar.</span></p></article><article class="tile"><h3><span class="fa">کلوت‌های شهداد</span></h3><p><span class="fa">سازندهای طبیعی شگفت‌انگیز در حاشیه کویر لوت،
+        با چشم‌اندازهای کم‌نظیر.</span><span class="en">Spectacular natural formations in the Lut Desert.</span></p></article><article class="tile"><h3><span class="fa">کوه هزار</span></h3><p><span class="fa">از بلندترین ارتفاعات جنوب ایران با
+        چشم‌اندازهای کوهستانی و طبیعی.</span><span class="en">One of southern Iran's highest mountain areas.</span></p></article><article class="tile"><h3><span class="fa">میمند</span></h3><p><span class="fa">چشم‌اندازی تاریخی از زندگی انسان در
+        سکونتگاه‌های دست‌کند صخره‌ای.</span><span class="en">An extraordinary example of rock-cut human settlement.</span></p></article><article class="tile"><h3><span class="fa">قلعه دختر و قلعه اردشیر</span></h3><p><span class="fa">بقایای دو بنای تاریخی مهم بر فراز ارتفاعات
+        شهر کرمان.</span><span class="en">The remains of two important historic fortresses in Kerman.</span></p></article></div></section>
+<section id="food">
+<h2><span class="fa">خوراکی‌ها و شیرینی‌های محلی</span><span class="en">Local Foods and Sweets</span></h2>
+<div class="tiles"><article class="tile"><h3><span class="fa">بزقرمه</span></h3><p><span class="fa">خوراک سنتی کرمانی با گوشت، نخود،
+        کشک و سیر.</span><span class="en">A traditional dish with meat, chickpeas and kashk.</span></p></article><article class="tile"><h3><span class="fa">آبگوشت زیره</span></h3><p><span class="fa">از غذاهای محلی با عطر ویژه زیره کرمان.</span><span class="en">A local stew flavored with Kerman cumin.</span></p></article><article class="tile"><h3><span class="fa">آش اوماج</span></h3><p><span class="fa">آش سنتی با خمیرهای کوچک و سبزی‌های محلی.</span><span class="en">A traditional soup with small dough pieces and herbs.</span></p></article><article class="tile"><h3><span class="fa">زیره‌پلو</span></h3><p><span class="fa">غذایی معطر با زیره مشهور منطقه.</span><span class="en">An aromatic rice dish with local cumin.</span></p></article><article class="tile"><h3><span class="fa">کلمپه</span></h3><p><span class="fa">شیرینی سنتی کرمان با خرما و ادویه‌های معطر.</span><span class="en">A traditional date-filled Kerman pastry.</span></p></article><article class="tile"><h3><span class="fa">کماچ سهن</span></h3><p><span class="fa">شیرینی محلی تهیه‌شده با جوانه گندم و ادویه.</span><span class="en">A local sweet made with wheat sprouts and spices.</span></p></article><article class="tile"><h3><span class="fa">قطاب کرمانی</span></h3><p><span class="fa">شیرینی سنتی با مغز و مواد شیرین.</span><span class="en">A traditional filled pastry.</span></p></article><article class="tile"><h3><span class="fa">قاووت</span></h3><p><span class="fa">ترکیبی آسیاب‌شده از دانه‌ها و گیاهان معطر.</span><span class="en">A traditional powdered mixture of seeds and herbs.</span></p></article></div></section>
+<section id="products">
+<h2><span class="fa">محصولات بومی و صنایع‌دستی</span><span class="en">Local Products and Handicrafts</span></h2>
+<div class="tiles"><article class="tile"><h3><span class="fa">پته‌دوزی کرمان</span></h3><p><span class="fa">هنر رودوزی ظریف با نخ‌های پشمی رنگی
+        بر پارچه‌های پشمی، با نقش‌های گیاهی و سنتی.</span><span class="en">Traditional wool embroidery with colorful botanical patterns.</span></p></article><article class="tile"><h3><span class="fa">قالی کرمان</span></h3><p><span class="fa">از مشهورترین هنرهای نساجی ایران با
+        نقش‌های ظریف و ترکیب رنگ‌های متنوع.</span><span class="en">One of Iran's most renowned carpet traditions.</span></p></article><article class="tile"><h3><span class="fa">گلیم و جاجیم</span></h3><p><span class="fa">بافته‌های سنتی با طرح‌های هندسی و رنگ‌های محلی.</span><span class="en">Traditional flatweaves with geometric designs.</span></p></article><article class="tile"><h3><span class="fa">حصیربافی</span></h3><p><span class="fa">هنر بافت الیاف گیاهی و برگ نخل
+        در برخی مناطق جنوبی استان.</span><span class="en">Plant-fiber and palm-leaf weaving in southern areas.</span></p></article><article class="tile"><h3><span class="fa">پسته رفسنجان</span></h3><p><span class="fa">از محصولات شناخته‌شده کشاورزی کرمان.</span><span class="en">A famous agricultural product of Rafsanjan.</span></p></article><article class="tile"><h3><span class="fa">زیره کرمان</span></h3><p><span class="fa">ادویه‌ای معطر و از سوغات مشهور استان.</span><span class="en">A fragrant spice and well-known local product.</span></p></article><article class="tile"><h3><span class="fa">خرمای بم</span></h3><p><span class="fa">محصول شناخته‌شده نخلستان‌های بم.</span><span class="en">A well-known product of Bam's palm groves.</span></p></article><article class="tile"><h3><span class="fa">پته و قالی</span></h3><p><span class="fa">از ارزشمندترین یادگارهای هنر دست هنرمندان کرمانی.</span><span class="en">Among the most treasured Kermani handicrafts.</span></p></article></div></section>
+<section id="sources">
+<h2><span class="fa">منابع و یادداشت پژوهش</span><span class="en">Sources and Research Note</span></h2>
+<ul class="source-list"><li><a href="https://www.visitiran.ir/" rel="noopener" target="_blank">
     Visit Iran – درگاه گردشگری ایران
-  </a>
-
-  <a href="https://whc.unesco.org/" target="_blank" rel="noopener">
+  </a></li><li><a href="https://whc.unesco.org/" rel="noopener" target="_blank">
     UNESCO World Heritage
-  </a>
-
-  <a href="https://www.ich.unesco.org/" target="_blank" rel="noopener">
+  </a></li><li><a href="https://www.ich.unesco.org/" rel="noopener" target="_blank">
     UNESCO Intangible Cultural Heritage
-  </a>
-
-  <a href="https://www.ichto.ir/" target="_blank" rel="noopener">
+  </a></li><li><a href="https://www.ichto.ir/" rel="noopener" target="_blank">
     وزارت میراث فرهنگی، گردشگری و صنایع‌دستی
-  </a>
-</section>
-
-<div class="quote">
-  <span class="fa">هر منطقه، یک رنگ؛ هر اثر، یک روایت</span>
-  <span class="en">Every Region, A Color; Every Artwork, A Story</span>
-</div>
-
-<a href="gallery-3d.html" class="back">
-  <span class="fa">بازگشت به نقشه سفر</span>
-  <span class="en">Back to Travel Map</span>
-</a>
-
+  </a></li></ul><p class="caption"><span class="fa">یادداشت: معرفی پوشاک و فرهنگ محلی کرمان باید با توجه به تنوع مناطق و روایت‌های بومی خوانده شود.</span><span class="en">Note: Kerman’s local clothing and culture should be understood in light of the province’s regional diversity and local accounts.</span></p></section>
+<div style="text-align:center"><a class="back" href="index.html"><span class="fa">بازگشت به صفحه اصلی</span><span class="en">Back to Home</span></a></div>
 </main>
-
 <footer>
-  <p class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</p>
-  <p class="en">Iran, A Thousand Colors | A Visual Journey</p>
-  <p>هنرمند و خالق آثار: مریم ساعی | Maryam Saei</p>
-  <p>طراحی سایت و پژوهش: مرجان ساعی | Marjan Saei</p>
+<div><span class="fa">هنرمند و خالق آثار: مریم ساعی</span><span class="en">Artist and creator: Maryam Saei</span></div>
+<div><span class="fa">طراحی وب‌سایت و پژوهش فرهنگی: مرجان ساعی</span><span class="en">Website design and cultural research: Marjan Saei</span></div>
+<div style="margin-top:8px">© Iran, a Thousand Colors</div>
 </footer>
-
 <script>
-function toggleLanguage(){
-  const english=document.body.classList.toggle("english");
-  document.documentElement.lang=english?"en":"fa";
-  document.documentElement.dir=english?"ltr":"rtl";
-  localStorage.setItem("siteLanguage",english?"en":"fa");
-}
-
-window.addEventListener("DOMContentLoaded",()=>{
-  if(localStorage.getItem("siteLanguage")==="en"){
-    document.body.classList.add("english");
-    document.documentElement.lang="en";
-    document.documentElement.dir="ltr";
-  }
+const langSwitch=document.getElementById("langSwitch");
+langSwitch.addEventListener("click",()=>{
+ const english=!document.body.classList.contains("english");
+ document.body.classList.toggle("english",english);
+ document.documentElement.lang=english?"en":"fa";
+ document.documentElement.dir=english?"ltr":"rtl";
+ langSwitch.textContent=english?"FA":"EN";
+});
+const homeDropdown=document.getElementById("homeDropdown");
+homeDropdown.querySelector(".dropbtn").addEventListener("click",()=>{
+ const opened=homeDropdown.classList.toggle("open");
+ homeDropdown.querySelector(".dropbtn").setAttribute("aria-expanded",String(opened));
+});
+document.addEventListener("click",e=>{
+ if(!homeDropdown.contains(e.target)){
+  homeDropdown.classList.remove("open");
+  homeDropdown.querySelector(".dropbtn").setAttribute("aria-expanded","false");
+ }
 });
 </script>
-
 </body>
 </html>
