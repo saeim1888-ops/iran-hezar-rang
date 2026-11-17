@@ -14,6 +14,7 @@
   --green:#153f3b;
   --rust:#a83e1d;
   --gold:#c6a66b;
+  --teal:#245c60;
 }
 *{box-sizing:border-box}
 body{
@@ -56,12 +57,12 @@ nav a:hover{color:var(--rust)}
 }
 main{max-width:1050px;margin:35px auto;padding:15px}
 .hero{text-align:center;padding:35px 15px}
-.hero h1{font-size:42px;color:var(--olive);margin:10px}
-.hero h2{font-size:24px;color:var(--rust)}
+.hero h1{font-size:40px;color:var(--olive);margin:10px}
+.hero h2{font-size:23px;color:var(--rust)}
 .hero p{color:#77715f}
 .hero-art{
   width:100%;
-  max-height:480px;
+  max-height:490px;
   object-fit:cover;
   border-radius:18px;
   border:5px solid white;
@@ -113,13 +114,11 @@ section p{text-align:justify}
   padding:20px;
 }
 .sources a{
-  color:#245c60;
+  color:var(--teal);
   display:block;
   margin:8px 0;
+  text-decoration:none;
 }
-.en{display:none}
-body.english .fa{display:none}
-body.english .en{display:block}
 .back{
   display:block;
   width:max-content;
@@ -136,8 +135,11 @@ footer{
   color:var(--olive);
   background:#eee3cd;
 }
+.en{display:none}
+body.english .fa{display:none}
+body.english .en{display:block}
 @media(max-width:700px){
-  .hero h1{font-size:30px}
+  .hero h1{font-size:29px}
   .hero h2{font-size:19px}
   .grid{grid-template-columns:1fr}
   section{padding:15px}
@@ -149,7 +151,6 @@ footer{
 
 <body>
 <div class="topline"></div>
-
 <button class="lang-switch" onclick="toggleLanguage()">FA | EN</button>
 
 <header>
@@ -172,475 +173,410 @@ footer{
   <p class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</p>
   <p class="en">Iran, A Thousand Colors | Women's Clothing</p>
 
-  <h1 class="fa">کرمان؛ شکوه کویر، اصالت نقش و رنگ</h1>
-  <h1 class="en">Kerman; Desert Grandeur, Heritage of Patterns and Colors</h1>
+  <h1 class="fa">کرمان؛ سرزمین ارگ‌ها، کویر و نقش‌های ماندگار</h1>
+  <h1 class="en">Kerman; Land of Citadels, Deserts and Timeless Patterns</h1>
 
-  <h2 class="fa">سرزمین ارگ‌های کهن، باغ‌های ایرانی و هنرهای ماندگار</h2>
-  <h2 class="en">Land of Ancient Citadels, Persian Gardens and Enduring Crafts</h2>
+  <h2 class="fa">از شکوه ارگ بم تا افسون کویر لوت</h2>
+  <h2 class="en">From the Grandeur of Bam Citadel to the Magic of Lut Desert</h2>
 
   <p class="fa">
-    سفری تصویری میان پوشش زنان، زندگی روستایی،
-    هنر پته‌دوزی، معماری خشتی و چشم‌اندازهای کویری کرمان
+    سفری تصویری میان پوشش زنان، هنرهای سنتی،
+    باغ‌های تاریخی و چشم‌اندازهای کویری کرمان
   </p>
   <p class="en">
-    A visual journey through women's clothing, rural life,
-    pateh embroidery, adobe architecture and desert landscapes.
+    A visual journey through women's clothing, traditional arts,
+    historic gardens and the desert landscapes of Kerman.
   </p>
 
-  <img class="hero-art" src="kerman-hero.jpg" alt="اثر هنری استان کرمان">
+  <img class="hero-art"
+       src="kerman.png"
+       alt="اثر هنری استان کرمان">
 </div>
 
 <section>
-<h2>
-<span class="fa">معرفی استان</span>
-<span class="en">About the Province</span>
-</h2>
+  <h2><span class="fa">معرفی استان</span><span class="en">About the Province</span></h2>
 
-<p class="fa">
-استان کرمان در جنوب‌شرق ایران قرار دارد و یکی از گسترده‌ترین
-استان‌های کشور است. این سرزمین از کوهستان‌های مرتفع تا دشت‌های
-خشک و پهنه‌های کویری امتداد پیدا می‌کند. کرمان با پیشینه تاریخی
-چند هزارساله، باغ‌های ایرانی، ارگ‌های خشتی، قنات‌های کهن و
-هنرهای دستی ارزشمند، بخش مهمی از میراث فرهنگی ایران را در خود جای داده است.
-</p>
+  <p class="fa">
+    کرمان در جنوب شرق ایران، سرزمینی پهناور با تنوع اقلیمی،
+    تاریخی و فرهنگی است. از کوهستان‌های سرد و باغ‌های پسته
+    تا دشت‌های کویری و نخلستان‌های جنوب استان، هر گوشه آن
+    روایتی متفاوت از زندگی و سازگاری انسان با طبیعت دارد.
+  </p>
 
-<p class="en">
-Kerman Province lies in southeastern Iran. Its landscape ranges
-from high mountains to dry plains and vast deserts. With an ancient
-history, Persian gardens, adobe citadels, historic qanats and
-distinctive handicrafts, Kerman preserves an important part of
-Iran's cultural heritage.
-</p>
+  <p class="fa">
+    معماری خشتی، بازارهای تاریخی، قالی‌های پرنقش،
+    پته‌دوزی ظریف و خوراک‌های محلی، بخشی از هویت
+    فرهنگی این منطقه را شکل می‌دهند.
+  </p>
+
+  <p class="en">
+    Kerman, in southeastern Iran, is a vast province with
+    remarkable climatic, historical and cultural diversity.
+    From mountain landscapes and pistachio orchards to deserts
+    and southern palm groves, each area tells a different story.
+  </p>
 </section>
 
 <section>
-<h2>
-<span class="fa">پوشش زنان و فرهنگ محلی</span>
-<span class="en">Women's Clothing and Local Culture</span>
-</h2>
+  <h2><span class="fa">پوشش زنان و لباس‌های محلی</span><span class="en">Women's Traditional Clothing</span></h2>
 
-<div class="grid">
+  <div class="grid">
+    <div class="tile">
+      <h3 class="fa">پوشش زنان کرمانی</h3>
+      <h3 class="en">Kermani Women's Clothing</h3>
+      <p class="fa">
+        پوشش سنتی زنان در نواحی مختلف کرمان شامل پیراهن‌های
+        بلند، شلوارهای محلی، روسری و چارقد است.
+        رنگ، نوع پارچه و تزئینات لباس در شهرها و روستاهای
+        مختلف تفاوت دارد.
+      </p>
+      <p class="en">
+        Traditional women's clothing includes long dresses,
+        local trousers, scarves and head coverings,
+        varying across towns and villages.
+      </p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">پوشش زنان روستایی</h3>
-<h3 class="en">Rural Women's Clothing</h3>
-<img src="kerman-women-rural.jpg" alt="پوشش زنان روستایی کرمان">
-<p class="fa">
-در مناطق روستایی کرمان، پوشش زنان با توجه به اقلیم،
-شیوه زندگی و سنت‌های محلی تفاوت دارد. روسری، پیراهن‌های بلند
-و لباس‌های متناسب با فعالیت‌های روزمره از عناصر پوشش هستند.
-</p>
-<p class="en">
-Rural women's clothing varies according to climate,
-lifestyle and local customs. Headscarves and long garments
-are among common elements.
-</p>
-</div>
+    <div class="tile">
+      <h3 class="fa">پوشش زنان جنوب کرمان</h3>
+      <h3 class="en">Southern Kerman Clothing</h3>
+      <p class="fa">
+        در مناطق جنوبی استان، پوشش زنان از اقلیم گرم،
+        فرهنگ بومی و ارتباطات فرهنگی منطقه تأثیر گرفته است.
+        پارچه‌های سبک و پوشش‌های بلند از ویژگی‌های
+        پوشاک روزمره این نواحی هستند.
+      </p>
+      <p class="en">
+        Women's clothing in southern Kerman reflects
+        the warm climate and local cultural traditions.
+      </p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">پوشش زنان عشایر</h3>
-<h3 class="en">Nomadic Women's Clothing</h3>
-<img src="kerman-nomad-women.jpg" alt="پوشش زنان عشایری کرمان">
-<p class="fa">
-در میان گروه‌های عشایری و کوچ‌رو استان، پوشش‌های محلی
-با توجه به سنت‌های هر گروه شکل گرفته‌اند. رنگ پارچه‌ها،
-دامن‌ها، روسری‌ها و شیوه تزئین لباس‌ها در این پوشش‌ها
-تنوع قابل توجهی دارد.
-</p>
-<p class="en">
-Among the province's nomadic communities, traditional clothing
-reflects the customs of each group, with variations in colors,
-skirts, headscarves and decorative details.
-</p>
-</div>
+    <div class="tile">
+      <h3 class="fa">پوشاک روستایی و عشایری</h3>
+      <h3 class="en">Rural and Nomadic Clothing</h3>
+      <p class="fa">
+        پوشاک در جوامع روستایی و عشایری با سبک زندگی،
+        فعالیت‌های روزانه و شرایط محیطی ارتباط دارد.
+      </p>
+      <p class="en">
+        Rural and nomadic clothing reflects daily life,
+        work and environmental conditions.
+      </p>
+    </div>
 
-</div>
-
-<p class="fa">
-نکته فرهنگی: کرمان یک لباس سنتی واحد برای تمام زنان استان ندارد؛
-پوشش شهری، روستایی و عشایری با یکدیگر متفاوت است.
-</p>
+    <div class="tile">
+      <h3 class="fa">زیورآلات و تزئینات محلی</h3>
+      <h3 class="en">Local Jewelry and Accessories</h3>
+      <p class="fa">
+        زیورآلات سنتی و تزئینات پارچه‌ای در کنار لباس،
+        بخشی از زیبایی‌شناسی پوشش محلی کرمان هستند.
+      </p>
+      <p class="en">
+        Traditional jewelry and textile decorations
+        complement regional clothing.
+      </p>
+    </div>
+  </div>
 </section>
 
 <section>
-<h2>
-<span class="fa">روستاها و مناطق شاخص</span>
-<span class="en">Notable Villages and Areas</span>
-</h2>
+  <h2><span class="fa">روستاها و مناطق شاخص</span><span class="en">Notable Villages and Areas</span></h2>
 
-<div class="grid">
+  <div class="grid">
+    <div class="tile">
+      <h3>میمند</h3>
+      <p class="fa">
+        روستای تاریخی با خانه‌های دست‌کند در دل صخره‌ها
+        و معماری منحصربه‌فرد.
+      </p>
+      <p class="en">A historic troglodyte village with rock-cut dwellings.</p>
+    </div>
 
-<div class="tile">
-<h3>میمند</h3>
-<img src="kerman-meymand.jpg" alt="روستای تاریخی میمند">
-<p class="fa">
-روستای صخره‌ای تاریخی نزدیک شهر بابک که خانه‌های دست‌کند
-آن در دل سنگ شکل گرفته‌اند و نمونه‌ای کم‌نظیر از
-سازگاری زندگی انسان با طبیعت هستند.
-</p>
-<p class="en">
-A historic rock-cut village near Shahr-e Babak,
-known for its remarkable cave dwellings.
-</p>
-</div>
+    <div class="tile">
+      <h3>لاله‌زار</h3>
+      <p class="fa">
+        منطقه‌ای کوهستانی در بردسیر با باغ‌ها و
+        چشم‌اندازهای طبیعی و کشاورزی.
+      </p>
+      <p class="en">A mountainous area near Bardsir with orchards and scenic landscapes.</p>
+    </div>
 
-<div class="tile">
-<h3>ماهان</h3>
-<img src="kerman-mahan.jpg" alt="شهر ماهان">
-<p class="fa">
-شهری تاریخی در نزدیکی کرمان، شناخته‌شده به باغ شاهزاده
-و آرامگاه شاه نعمت‌الله ولی.
-</p>
-<p class="en">
-A historic town famous for Shazdeh Garden
-and the shrine of Shah Nematollah Vali.
-</p>
-</div>
+    <div class="tile">
+      <h3>دلفارد</h3>
+      <p class="fa">
+        منطقه‌ای سرسبز در جنوب کرمان با باغ‌ها،
+        آبشارها و طبیعت کوهستانی.
+      </p>
+      <p class="en">A green valley in southern Kerman with orchards and waterfalls.</p>
+    </div>
 
-<div class="tile">
-<h3>شهداد</h3>
-<img src="kerman-shahdad.jpg" alt="شهداد و کلوت‌های کویر">
-<p class="fa">
-منطقه‌ای در حاشیه کویر لوت با کلوت‌های شگفت‌انگیز
-و چشم‌اندازهای منحصربه‌فرد طبیعی.
-</p>
-<p class="en">
-A region near the Lut Desert, famous for its extraordinary kaluts.
-</p>
-</div>
-
-<div class="tile">
-<h3>شَفیع‌آباد</h3>
-<img src="kerman-shafiabad.jpg" alt="روستای شفیع آباد">
-<p class="fa">
-روستایی تاریخی در منطقه شهداد با بناهای خشتی
-و معماری سازگار با اقلیم کویری.
-</p>
-<p class="en">
-A historic village near Shahdad with traditional adobe architecture.
-</p>
-</div>
-
-</div>
+    <div class="tile">
+      <h3>راین</h3>
+      <p class="fa">
+        شهری تاریخی در دامنه کوه هزار،
+        شناخته‌شده به ارگ خشتی باشکوه.
+      </p>
+      <p class="en">A historic town at the foot of Mount Hezar, known for its citadel.</p>
+    </div>
+  </div>
 </section>
 
 <section>
-<h2>
-<span class="fa">آثار تاریخی و جاذبه‌های طبیعی</span>
-<span class="en">Historical and Natural Attractions</span>
-</h2>
+  <h2><span class="fa">جاذبه‌های تاریخی و طبیعی</span><span class="en">Historical and Natural Attractions</span></h2>
 
-<div class="grid">
+  <div class="grid">
+    <div class="tile">
+      <h3>ارگ بم</h3>
+      <p class="fa">
+        بزرگ‌ترین سازه خشتی شناخته‌شده جهان و
+        میراث جهانی یونسکو.
+      </p>
+      <p class="en">A remarkable UNESCO-listed adobe citadel.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">ارگ بم</h3>
-<h3 class="en">Bam Citadel</h3>
-<img src="kerman-bam.jpg" alt="ارگ تاریخی بم">
-<p class="fa">
-یکی از مهم‌ترین مجموعه‌های تاریخی خشتی جهان،
-با پیشینه‌ای کهن و پیوندی عمیق با مسیرهای تجاری و سامانه‌های قنات.
-</p>
-<p class="en">
-One of the world's most remarkable historic adobe complexes,
-connected to ancient trade routes and qanat systems.
-</p>
-</div>
+    <div class="tile">
+      <h3>ارگ راین</h3>
+      <p class="fa">
+        بنایی تاریخی با معماری خشتی و برج‌وباروی
+        چشمگیر در شهر راین.
+      </p>
+      <p class="en">A historic adobe fortress in Rayen.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">باغ شاهزاده ماهان</h3>
-<h3 class="en">Shazdeh Garden</h3>
-<img src="kerman-shazdeh.jpg" alt="باغ شاهزاده ماهان">
-<p class="fa">
-باغی ایرانی با حوض‌ها، فواره‌ها، درختان و عمارت مرکزی
-که در فهرست میراث جهانی باغ ایرانی ثبت شده است.
-</p>
-<p class="en">
-A Persian garden with pools, fountains, trees and a central pavilion,
-part of the UNESCO-listed Persian Garden.
-</p>
-</div>
+    <div class="tile">
+      <h3>باغ شاهزاده ماهان</h3>
+      <p class="fa">
+        باغی ایرانی با حوض‌ها، فواره‌ها و
+        معماری هماهنگ با چشم‌انداز کوهستانی.
+      </p>
+      <p class="en">A UNESCO-listed Persian garden in Mahan.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">ارگ راین</h3>
-<h3 class="en">Rayen Citadel</h3>
-<img src="kerman-rayen.jpg" alt="ارگ راین">
-<p class="fa">
-دژی خشتی و تاریخی در دامنه کوه هزار،
-با برج‌ها، باروها و معماری سنتی کویری.
-</p>
-<p class="en">
-A historic adobe fortress on the slopes of Mount Hezar.
-</p>
-</div>
+    <div class="tile">
+      <h3>مجموعه گنجعلی‌خان</h3>
+      <p class="fa">
+        مجموعه‌ای تاریخی در قلب بازار کرمان،
+        شامل میدان، حمام و بناهای ارزشمند.
+      </p>
+      <p class="en">A historic complex in Kerman's traditional bazaar.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">مجموعه گنجعلی‌خان</h3>
-<h3 class="en">Ganjali Khan Complex</h3>
-<img src="kerman-ganjali.jpg" alt="مجموعه گنجعلی خان">
-<p class="fa">
-مجموعه‌ای تاریخی در قلب شهر کرمان شامل میدان،
-بازار، حمام، ضرابخانه و بناهای ارزشمند دوره صفوی.
-</p>
-<p class="en">
-A Safavid-era complex featuring a square, bazaar,
-bathhouse and mint.
-</p>
-</div>
+    <div class="tile">
+      <h3>کلوت‌های شهداد</h3>
+      <p class="fa">
+        سازندهای طبیعی شگفت‌انگیز در حاشیه کویر لوت،
+        با چشم‌اندازهای کم‌نظیر.
+      </p>
+      <p class="en">Spectacular natural formations in the Lut Desert.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">کویر لوت و کلوت‌های شهداد</h3>
-<h3 class="en">Lut Desert and Shahdad Kaluts</h3>
-<img src="kerman-lut.jpg" alt="کلوت های شهداد">
-<p class="fa">
-چشم‌اندازی طبیعی با سازه‌های شگفت‌انگیز حاصل فرسایش باد
-که بخشی از میراث طبیعی جهانی بیابان لوت هستند.
-</p>
-<p class="en">
-An extraordinary landscape shaped by wind erosion,
-part of the UNESCO-listed Lut Desert.
-</p>
-</div>
+    <div class="tile">
+      <h3>کوه هزار</h3>
+      <p class="fa">
+        از بلندترین ارتفاعات جنوب ایران با
+        چشم‌اندازهای کوهستانی و طبیعی.
+      </p>
+      <p class="en">One of southern Iran's highest mountain areas.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">گنبد جبلیه</h3>
-<h3 class="en">Jabalieh Dome</h3>
-<img src="kerman-jabalieh.jpg" alt="گنبد جبلیه">
-<p class="fa">
-بنایی تاریخی با معماری سنگی متفاوت در شهر کرمان
-که از نشانه‌های شناخته‌شده شهر است.
-</p>
-<p class="en">
-A distinctive historic stone structure and landmark of Kerman.
-</p>
-</div>
+    <div class="tile">
+      <h3>میمند</h3>
+      <p class="fa">
+        چشم‌اندازی تاریخی از زندگی انسان در
+        سکونتگاه‌های دست‌کند صخره‌ای.
+      </p>
+      <p class="en">An extraordinary example of rock-cut human settlement.</p>
+    </div>
 
-</div>
+    <div class="tile">
+      <h3>قلعه دختر و قلعه اردشیر</h3>
+      <p class="fa">
+        بقایای دو بنای تاریخی مهم بر فراز ارتفاعات
+        شهر کرمان.
+      </p>
+      <p class="en">The remains of two important historic fortresses in Kerman.</p>
+    </div>
+  </div>
 </section>
 
 <section>
-<h2>
-<span class="fa">غذاها و خوراکی‌های محلی</span>
-<span class="en">Local Cuisine</span>
-</h2>
+  <h2><span class="fa">غذاهای محلی</span><span class="en">Local Cuisine</span></h2>
 
-<div class="grid">
+  <div class="grid">
+    <div class="tile">
+      <h3>بزقرمه</h3>
+      <p class="fa">
+        خوراک سنتی کرمانی با گوشت، نخود،
+        کشک و سیر.
+      </p>
+      <p class="en">A traditional dish with meat, chickpeas and kashk.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">بُزقورمه</h3>
-<h3 class="en">Boz Qormeh</h3>
-<img src="kerman-bozqormeh.jpg" alt="بزقورمه کرمانی">
-<p class="fa">
-خوراک سنتی کرمان با گوشت، نخود، کشک و ادویه‌های محلی.
-</p>
-<p class="en">
-A traditional Kermani dish made with meat, chickpeas and kashk.
-</p>
-</div>
+    <div class="tile">
+      <h3>آبگوشت زیره</h3>
+      <p class="fa">
+        از غذاهای محلی با عطر ویژه زیره کرمان.
+      </p>
+      <p class="en">A local stew flavored with Kerman cumin.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">آش شولی کرمانی</h3>
-<h3 class="en">Kermani Sholi Soup</h3>
-<img src="kerman-sholi.jpg" alt="آش شولی">
-<p class="fa">
-از خوراک‌های سنتی منطقه با سبزیجات و چاشنی‌های محلی.
-</p>
-<p class="en">
-A traditional local soup with vegetables and regional seasonings.
-</p>
-</div>
+    <div class="tile">
+      <h3>آش اوماج</h3>
+      <p class="fa">
+        آش سنتی با خمیرهای کوچک و سبزی‌های محلی.
+      </p>
+      <p class="en">A traditional soup with small dough pieces and herbs.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">کلمپه</h3>
-<h3 class="en">Kolompeh</h3>
-<img src="kerman-kolompeh.jpg" alt="شیرینی کلمپه">
-<p class="fa">
-شیرینی معروف کرمان با مغز خرما و گردو و نقش‌های
-تزئینی روی خمیر.
-</p>
-<p class="en">
-A famous Kermani pastry filled with dates and walnuts,
-decorated with traditional patterns.
-</p>
-</div>
-
-<div class="tile">
-<h3 class="fa">کماچ سهن</h3>
-<h3 class="en">Komach Sahan</h3>
-<img src="kerman-komach.jpg" alt="کماچ سهن">
-<p class="fa">
-شیرینی سنتی تهیه‌شده با جوانه گندم و ادویه‌های معطر.
-</p>
-<p class="en">
-A traditional pastry made with wheat sprouts and aromatic spices.
-</p>
-</div>
-
-<div class="tile">
-<h3 class="fa">قاووت</h3>
-<h3 class="en">Qavut</h3>
-<img src="kerman-qavut.jpg" alt="قاووت کرمانی">
-<p class="fa">
-ترکیبی پودری از دانه‌ها و مواد خوراکی بوداده
-که از خوراکی‌های شناخته‌شده کرمان است.
-</p>
-<p class="en">
-A traditional roasted seed and grain powder from Kerman.
-</p>
-</div>
-
-</div>
+    <div class="tile">
+      <h3>زیره‌پلو</h3>
+      <p class="fa">
+        غذایی معطر با زیره مشهور منطقه.
+      </p>
+      <p class="en">An aromatic rice dish with local cumin.</p>
+    </div>
+  </div>
 </section>
 
 <section>
-<h2>
-<span class="fa">صنایع‌دستی و هنرهای بومی</span>
-<span class="en">Handicrafts and Folk Arts</span>
-</h2>
+  <h2><span class="fa">شیرینی‌ها و خوراکی‌های محلی</span><span class="en">Local Sweets and Treats</span></h2>
 
-<div class="grid">
+  <div class="grid">
+    <div class="tile">
+      <h3>کلمپه</h3>
+      <p class="fa">شیرینی سنتی کرمان با خرما و ادویه‌های معطر.</p>
+      <p class="en">A traditional date-filled Kerman pastry.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">پته‌دوزی کرمان</h3>
-<h3 class="en">Kerman Pateh Embroidery</h3>
-<img src="kerman-pateh.jpg" alt="پته دوزی کرمان">
-<p class="fa">
-هنری ظریف بر روی پارچه‌های پشمی و زمینه‌های رنگی،
-با نقش‌های گیاهی و اسلیمی و دوخت‌های دستی.
-پته از شناخته‌شده‌ترین هنرهای سنتی کرمان است.
-</p>
-<p class="en">
-An intricate embroidery tradition on woollen fabric,
-featuring floral and arabesque patterns.
-</p>
-</div>
+    <div class="tile">
+      <h3>کماچ سهن</h3>
+      <p class="fa">شیرینی محلی تهیه‌شده با جوانه گندم و ادویه.</p>
+      <p class="en">A local sweet made with wheat sprouts and spices.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">قالی‌بافی کرمان</h3>
-<h3 class="en">Kerman Carpet Weaving</h3>
-<img src="kerman-carpet.jpg" alt="قالی کرمان">
-<p class="fa">
-قالی‌های کرمان با طرح‌ها و نقش‌های متنوع،
-رنگ‌آمیزی چشم‌نواز و پیشینه‌ای ارزشمند در هنر فرش ایران.
-</p>
-<p class="en">
-Kerman carpets are renowned for their rich patterns,
-colors and heritage.
-</p>
-</div>
+    <div class="tile">
+      <h3>قطاب کرمانی</h3>
+      <p class="fa">شیرینی سنتی با مغز و مواد شیرین.</p>
+      <p class="en">A traditional filled pastry.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">گلیم و حصیربافی</h3>
-<h3 class="en">Kilim and Mat Weaving</h3>
-<img src="kerman-kilim.jpg" alt="گلیم و حصیربافی">
-<p class="fa">
-بافته‌های سنتی با الگوهای هندسی و مواد اولیه بومی
-که در بخش‌های مختلف استان رواج دارند.
-</p>
-<p class="en">
-Traditional textiles and woven crafts using local materials.
-</p>
-</div>
-
-<div class="tile">
-<h3 class="fa">مسگری و قلم‌زنی</h3>
-<h3 class="en">Copperwork and Engraving</h3>
-<img src="kerman-copper.jpg" alt="مسگری کرمان">
-<p class="fa">
-ساخت ظروف و اشیای مسی با روش‌های سنتی و تزئین
-سطوح فلزی با نقش‌های هنرمندانه.
-</p>
-<p class="en">
-Traditional copper objects and engraved metalwork.
-</p>
-</div>
-
-</div>
+    <div class="tile">
+      <h3>قاووت</h3>
+      <p class="fa">ترکیبی آسیاب‌شده از دانه‌ها و گیاهان معطر.</p>
+      <p class="en">A traditional powdered mixture of seeds and herbs.</p>
+    </div>
+  </div>
 </section>
 
 <section>
-<h2>
-<span class="fa">محصولات محلی و سوغات</span>
-<span class="en">Local Products and Souvenirs</span>
-</h2>
+  <h2><span class="fa">صنایع‌دستی و هنرهای بومی</span><span class="en">Handicrafts and Folk Arts</span></h2>
 
-<div class="grid">
+  <div class="grid">
+    <div class="tile">
+      <h3>پته‌دوزی کرمان</h3>
+      <p class="fa">
+        هنر رودوزی ظریف با نخ‌های پشمی رنگی
+        بر پارچه‌های پشمی، با نقش‌های گیاهی و سنتی.
+      </p>
+      <p class="en">Traditional wool embroidery with colorful botanical patterns.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">پسته رفسنجان</h3>
-<h3 class="en">Rafsanjan Pistachio</h3>
-<p class="fa">از محصولات کشاورزی شناخته‌شده و ارزشمند استان.</p>
-<p class="en">One of the province's best-known agricultural products.</p>
-</div>
+    <div class="tile">
+      <h3>قالی کرمان</h3>
+      <p class="fa">
+        از مشهورترین هنرهای نساجی ایران با
+        نقش‌های ظریف و ترکیب رنگ‌های متنوع.
+      </p>
+      <p class="en">One of Iran's most renowned carpet traditions.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">خرمای بم</h3>
-<h3 class="en">Bam Dates</h3>
-<p class="fa">محصولی مهم از نخلستان‌های منطقه بم.</p>
-<p class="en">An important product of Bam's date palm groves.</p>
-</div>
+    <div class="tile">
+      <h3>گلیم و جاجیم</h3>
+      <p class="fa">
+        بافته‌های سنتی با طرح‌های هندسی و رنگ‌های محلی.
+      </p>
+      <p class="en">Traditional flatweaves with geometric designs.</p>
+    </div>
 
-<div class="tile">
-<h3 class="fa">زیره کرمان</h3>
-<h3 class="en">Kerman Cumin</h3>
-<p class="fa">از محصولات شناخته‌شده کشاورزی و خوراکی استان.</p>
-<p class="en">A well-known agricultural and culinary product.</p>
-</div>
+    <div class="tile">
+      <h3>حصیربافی</h3>
+      <p class="fa">
+        هنر بافت الیاف گیاهی و برگ نخل
+        در برخی مناطق جنوبی استان.
+      </p>
+      <p class="en">Plant-fiber and palm-leaf weaving in southern areas.</p>
+    </div>
+  </div>
+</section>
 
-<div class="tile">
-<h3 class="fa">گردو و مرکبات</h3>
-<h3 class="en">Walnuts and Citrus</h3>
-<p class="fa">از دیگر محصولات مناطق مختلف استان.</p>
-<p class="en">Other agricultural products from different areas of the province.</p>
-</div>
+<section>
+  <h2><span class="fa">سوغات و محصولات محلی</span><span class="en">Local Products and Souvenirs</span></h2>
 
-</div>
+  <div class="grid">
+    <div class="tile">
+      <h3>پسته رفسنجان</h3>
+      <p class="fa">از محصولات شناخته‌شده کشاورزی کرمان.</p>
+      <p class="en">A famous agricultural product of Rafsanjan.</p>
+    </div>
+
+    <div class="tile">
+      <h3>زیره کرمان</h3>
+      <p class="fa">ادویه‌ای معطر و از سوغات مشهور استان.</p>
+      <p class="en">A fragrant spice and well-known local product.</p>
+    </div>
+
+    <div class="tile">
+      <h3>خرمای بم</h3>
+      <p class="fa">محصول شناخته‌شده نخلستان‌های بم.</p>
+      <p class="en">A well-known product of Bam's palm groves.</p>
+    </div>
+
+    <div class="tile">
+      <h3>پته و قالی</h3>
+      <p class="fa">از ارزشمندترین یادگارهای هنر دست هنرمندان کرمانی.</p>
+      <p class="en">Among the most treasured Kermani handicrafts.</p>
+    </div>
+  </div>
 </section>
 
 <section class="sources">
-<h2>
-<span class="fa">منابع و اطلاعات بیشتر</span>
-<span class="en">Sources and Further Information</span>
-</h2>
+  <h2><span class="fa">منابع و اطلاعات بیشتر</span><span class="en">Sources and Further Information</span></h2>
 
-<a href="https://visitiran.ir/index.php/en/province/kerman-province" target="_blank">
-Visit Iran – معرفی استان کرمان
-</a>
+  <a href="https://www.visitiran.ir/" target="_blank" rel="noopener">
+    Visit Iran – درگاه گردشگری ایران
+  </a>
 
-<a href="https://whc.unesco.org/en/list/1208/" target="_blank">
-UNESCO – ارگ بم و چشم‌انداز فرهنگی آن
-</a>
+  <a href="https://whc.unesco.org/" target="_blank" rel="noopener">
+    UNESCO World Heritage
+  </a>
 
-<a href="https://whc.unesco.org/en/list/1372/" target="_blank">
-UNESCO – باغ ایرانی
-</a>
+  <a href="https://www.ich.unesco.org/" target="_blank" rel="noopener">
+    UNESCO Intangible Cultural Heritage
+  </a>
 
-<a href="https://whc.unesco.org/en/list/1505/" target="_blank">
-UNESCO – چشم‌انداز فرهنگی میمند
-</a>
-
-<a href="https://whc.unesco.org/en/list/1506/" target="_blank">
-UNESCO – بیابان لوت
-</a>
-
+  <a href="https://www.ichto.ir/" target="_blank" rel="noopener">
+    وزارت میراث فرهنگی، گردشگری و صنایع‌دستی
+  </a>
 </section>
 
 <div class="quote">
-<span class="fa">هر منطقه، یک رنگ؛ هر اثر، یک روایت</span>
-<span class="en">Every Region, A Color; Every Artwork, A Story</span>
+  <span class="fa">هر منطقه، یک رنگ؛ هر اثر، یک روایت</span>
+  <span class="en">Every Region, A Color; Every Artwork, A Story</span>
 </div>
 
 <a href="gallery-3d.html" class="back">
-<span class="fa">بازگشت به نقشه سفر</span>
-<span class="en">Back to Travel Map</span>
+  <span class="fa">بازگشت به نقشه سفر</span>
+  <span class="en">Back to Travel Map</span>
 </a>
 
 </main>
 
 <footer>
-<p class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</p>
-<p class="en">Iran, A Thousand Colors</p>
-<p>هنرمند و خالق آثار: مریم ساعی</p>
-<p>طراحی سایت و پژوهش: مرجان ساعی</p>
+  <p class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</p>
+  <p class="en">Iran, A Thousand Colors | A Visual Journey</p>
+  <p>هنرمند و خالق آثار: مریم ساعی | Maryam Saei</p>
+  <p>طراحی سایت و پژوهش: مرجان ساعی | Marjan Saei</p>
 </footer>
 
 <script>
