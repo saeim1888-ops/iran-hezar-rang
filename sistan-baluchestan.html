@@ -7,80 +7,154 @@
 <title>سیستان و بلوچستان | ایران، هزار رنگ</title>
 
 <style>
-:root {
+:root{
   --cream:#f4ead8;
   --paper:#fffaf0;
   --olive:#656b43;
   --green:#153f3b;
   --rust:#a83e1d;
   --gold:#c6a66b;
+  --teal:#245c60;
 }
 *{box-sizing:border-box}
 body{
-  margin:0;background:var(--cream);color:#39443a;
-  font-family:Tahoma,sans-serif;line-height:2.1;
+  margin:0;
+  background:var(--cream);
+  color:#39443a;
+  font-family:Tahoma,sans-serif;
+  line-height:2.1;
 }
 body.english{direction:ltr;text-align:left}
 .topline{height:7px;background:var(--rust)}
 header{
-  text-align:center;padding:24px 15px;
-  background:var(--paper);border-bottom:1px solid var(--gold)
+  text-align:center;
+  padding:24px 15px;
+  background:var(--paper);
+  border-bottom:1px solid var(--gold);
 }
-.logo{font-size:25px;font-weight:bold;color:var(--green)}
+.logo{color:var(--green);font-size:25px;font-weight:bold}
 nav{
-  display:flex;justify-content:center;flex-wrap:wrap;
-  gap:22px;padding:12px;background:#eee3cd
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:22px;
+  padding:12px;
+  background:#eee3cd;
 }
-nav a{color:var(--green);text-decoration:none;font-size:13px}
+nav a{
+  color:var(--green);
+  text-decoration:none;
+  font-size:13px;
+}
+nav a:hover{color:var(--rust)}
 .lang-switch{
-  position:fixed;top:18px;left:20px;z-index:10;
-  background:var(--paper);border:1px solid var(--gold);
-  border-radius:30px;padding:7px 13px;cursor:pointer;color:var(--green)
+  position:fixed;
+  top:18px;
+  left:20px;
+  z-index:10;
+  background:var(--paper);
+  border:1px solid var(--gold);
+  border-radius:30px;
+  padding:7px 13px;
+  cursor:pointer;
+  color:var(--green);
 }
 main{max-width:1050px;margin:35px auto;padding:15px}
 .hero{text-align:center;padding:35px 15px}
 .hero h1{font-size:40px;color:var(--olive);margin:10px}
 .hero h2{font-size:23px;color:var(--rust)}
+.hero p{color:#77715f}
 .hero-art{
-  width:100%;max-height:480px;object-fit:cover;
-  border:5px solid white;border-radius:18px;
-  box-shadow:0 5px 20px #00000015
+  width:100%;
+  max-height:490px;
+  object-fit:cover;
+  border-radius:18px;
+  border:5px solid white;
+  box-shadow:0 5px 20px #00000015;
 }
 section{
-  background:var(--paper);border:1px solid #ddc99e;
-  border-radius:18px;padding:25px;margin:25px 0
+  background:var(--paper);
+  border:1px solid #ddc99e;
+  border-radius:18px;
+  padding:25px;
+  margin:25px 0;
+  box-shadow:0 4px 15px #00000008;
 }
 section h2{
-  text-align:center;color:white;background:var(--green);
-  border-radius:30px;padding:8px 20px;
-  font-size:21px;margin:0 auto 22px;max-width:470px
+  text-align:center;
+  color:white;
+  background:var(--green);
+  border-radius:30px;
+  padding:8px 20px;
+  font-size:21px;
+  margin:0 auto 22px;
+  max-width:460px;
 }
 section p{text-align:justify}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
 .tile{
-  background:#f6edda;border:1px solid #dfc99e;
-  border-radius:14px;padding:16px;text-align:center
+  background:#f6edda;
+  border:1px solid #dfc99e;
+  border-radius:14px;
+  padding:16px;
+  text-align:center;
 }
 .tile h3{color:var(--rust)}
 .tile img{
-  width:100%;height:215px;object-fit:cover;border-radius:12px
+  width:100%;
+  height:210px;
+  object-fit:cover;
+  border-radius:12px;
+}
+.label-art{
+  display:block;
+  width:100%;
+  max-width:650px;
+  height:auto;
+  margin:25px auto;
+  border-radius:12px;
+}
+.quote{
+  text-align:center;
+  color:var(--green);
+  font-size:22px;
+  font-weight:bold;
+  padding:20px;
+}
+.sources a{
+  color:var(--teal);
+  display:block;
+  margin:8px 0;
+  text-decoration:none;
+}
+.sources a:hover{text-decoration:underline}
+.back{
+  display:block;
+  width:max-content;
+  margin:30px auto;
+  padding:10px 25px;
+  border-radius:30px;
+  background:var(--green);
+  color:white;
+  text-decoration:none;
+}
+footer{
+  text-align:center;
+  padding:25px;
+  color:var(--olive);
+  background:#eee3cd;
 }
 .en{display:none}
 body.english .fa{display:none}
 body.english .en{display:block}
-.sources a{display:block;color:#245c60;margin:8px 0}
-.quote{
-  text-align:center;color:var(--green);
-  font-size:22px;font-weight:bold;padding:20px
-}
-.back{
-  display:block;width:max-content;margin:30px auto;
-  padding:10px 25px;border-radius:30px;
-  background:var(--green);color:white;text-decoration:none
-}
-footer{text-align:center;padding:25px;background:#eee3cd;color:var(--olive)}
+
 @media(max-width:700px){
   .hero h1{font-size:29px}
+  .hero h2{font-size:19px}
   .grid{grid-template-columns:1fr}
   section{padding:15px}
   nav{gap:12px}
@@ -90,12 +164,14 @@ footer{text-align:center;padding:25px;background:#eee3cd;color:var(--olive)}
 </head>
 
 <body>
+
 <div class="topline"></div>
+
 <button class="lang-switch" onclick="toggleLanguage()">FA | EN</button>
 
 <header>
   <div class="logo">ایران، هزار رنگ</div>
-  <p class="fa">روایت تصویری پوشش زنان ایران</p>
+  <p class="fa">روایتی تصویری از پوشش زنان ایران</p>
   <p class="en">A Visual Journey Through Iranian Women's Clothing</p>
 </header>
 
@@ -109,284 +185,666 @@ footer{text-align:center;padding:25px;background:#eee3cd;color:var(--olive)}
 
 <main>
 
+<!-- HERO -->
+
 <div class="hero">
+
   <p class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</p>
-  <p class="en">Iran, A Thousand Colors</p>
+  <p class="en">Iran, A Thousand Colors | Women's Clothing</p>
 
-  <h1 class="fa">سیستان و بلوچستان؛ سرزمین نقش و رنگ</h1>
-  <h1 class="en">Sistan and Baluchestan; Land of Patterns and Colors</h1>
+  <h1 class="fa">سیستان و بلوچستان؛ سرزمین نقش و سوزن</h1>
+  <h1 class="en">Sistan and Baluchestan; Land of Needlework and Patterns</h1>
 
-  <h2 class="fa">هنر سوزن‌دوزی، شکوه کویر و فرهنگ بلوچ</h2>
-  <h2 class="en">The Art of Embroidery and the Heritage of Baloch Culture</h2>
+  <h2 class="fa">از شکوه هامون تا آبی بی‌کران مکران</h2>
+  <h2 class="en">From the Splendor of Hamun to the Blue Makran Coast</h2>
 
   <p class="fa">
-    سفری میان نقش‌های ظریف سوزن‌دوزی، پوشش زنان بلوچ،
-    نخلستان‌ها و چشم‌اندازهای شگفت‌انگیز جنوب شرق ایران
+    سفری تصویری میان هنر سوزن‌دوزی، پوشش زنان،
+    فرهنگ سیستانی و بلوچی و چشم‌اندازهای شگفت‌انگیز جنوب شرق ایران
   </p>
+
   <p class="en">
-    A journey through Balochi embroidery, traditional clothing,
-    palm groves and the landscapes of southeastern Iran.
+    A visual journey through embroidery, women's clothing,
+    Sistani and Balochi culture and the remarkable landscapes of southeastern Iran.
   </p>
 
-  <img class="hero-art" src="sistan-hero.jpg" alt="اثر هنری سیستان و بلوچستان">
+  <img
+    class="hero-art"
+    src="sistan-baluchestan.png"
+    alt="اثر هنری سیستان و بلوچستان"
+  >
+
 </div>
+
+<!-- INTRODUCTION -->
 
 <section>
-<h2><span class="fa">معرفی استان</span><span class="en">About the Province</span></h2>
+  <h2>
+    <span class="fa">معرفی استان</span>
+    <span class="en">About the Province</span>
+  </h2>
 
-<p class="fa">
-سیستان و بلوچستان در جنوب شرق ایران قرار دارد و از دو پهنه فرهنگی
-و جغرافیایی مهم سیستان و بلوچستان شکل گرفته است. این استان با
-تاریخ کهن، تنوع قومی، موسیقی محلی، هنرهای دستی و طبیعت متنوع،
-یکی از غنی‌ترین مناطق فرهنگی ایران به شمار می‌رود.
-از دشت سیستان تا سواحل مکران، هر گوشه آن روایتی متفاوت دارد.
-</p>
+  <p class="fa">
+    سیستان و بلوچستان، در جنوب شرق ایران، سرزمینی با دو پهنه فرهنگی
+    برجسته و تاریخی است. از دشت‌های سیستان در شمال تا کوهستان‌ها،
+    نخلستان‌ها و سواحل دریای عمان در جنوب، تنوع طبیعت و شیوه زندگی
+    مردم این منطقه چشمگیر است.
+  </p>
 
-<p class="en">
-Sistan and Baluchestan lies in southeastern Iran. Its two major
-cultural regions, Sistan and Baluchestan, preserve rich histories,
-traditional music, handicrafts and diverse landscapes.
-</p>
+  <p class="fa">
+    فرهنگ سیستانی و بلوچی، هر یک با زبان، موسیقی، پوشاک،
+    آیین‌ها و هنرهای بومی خود، بخشی ارزشمند از هویت فرهنگی ایران
+    را شکل می‌دهند. سوزن‌دوزی بلوچی نیز یکی از شناخته‌شده‌ترین
+    جلوه‌های هنری این سرزمین است.
+  </p>
+
+  <p class="en">
+    Sistan and Baluchestan, in southeastern Iran, is a land of
+    two distinctive historical and cultural regions. From the
+    plains of Sistan in the north to the mountains, palm groves
+    and Gulf of Oman coastline in the south, the region offers
+    remarkable natural and cultural diversity.
+  </p>
+
+  <p class="en">
+    Sistani and Balochi cultures each preserve their own languages,
+    music, clothing, customs and traditional arts. Balochi embroidery
+    is one of the most recognizable artistic expressions of the region.
+  </p>
 </section>
+
+<!-- CLOTHING -->
 
 <section>
-<h2><span class="fa">پوشش زنان بلوچ</span><span class="en">Balochi Women's Clothing</span></h2>
+  <h2>
+    <span class="fa">پوشش زنان و لباس‌های محلی</span>
+    <span class="en">Women's Traditional Clothing</span>
+  </h2>
 
-<div class="grid">
-<div class="tile">
-<h3 class="fa">پیراهن بلوچی</h3>
-<h3 class="en">Balochi Dress</h3>
-<img src="sistan-dress.jpg" alt="پیراهن بلوچی">
-<p class="fa">
-پیراهن بلند بلوچی با سوزن‌دوزی‌های ظریف در قسمت جلو،
-آستین‌ها و سرآستین‌ها شناخته می‌شود. نقوش هندسی و
-ترکیب رنگ‌های زنده، هویت ویژه‌ای به این پوشش می‌بخشند.
-</p>
-<p class="en">
-The long Balochi dress is distinguished by intricate embroidery
-on the front, sleeves and cuffs, featuring geometric patterns.
-</p>
-</div>
+  <div class="grid">
 
-<div class="tile">
-<h3 class="fa">سوزن‌دوزی بلوچی</h3>
-<h3 class="en">Balochi Embroidery</h3>
-<img src="sistan-embroidery.jpg" alt="سوزن دوزی بلوچی">
-<p class="fa">
-سوزن‌دوزی یکی از شناخته‌شده‌ترین هنرهای زنان بلوچ است.
-نقش‌های هندسی و ظریف با نخ‌های رنگی روی پارچه دوخته می‌شوند
-و هر منطقه شیوه‌ها و ویژگی‌های خاص خود را دارد.
-</p>
-<p class="en">
-Balochi embroidery is a celebrated women's craft, using
-colorful threads to create intricate geometric patterns.
-</p>
-</div>
-</div>
+    <div class="tile">
+      <h3 class="fa">پوشش زنان بلوچ</h3>
+      <h3 class="en">Balochi Women's Clothing</h3>
+
+      <p class="fa">
+        پیراهن بلند و گشاد بلوچی، با سوزن‌دوزی‌های ظریف
+        در قسمت جلو، سرآستین و حاشیه لباس شناخته می‌شود.
+        نقوش هندسی و ترکیب رنگ‌های زنده، از ویژگی‌های
+        چشمگیر این پوشش هستند.
+      </p>
+
+      <p class="en">
+        The traditional Balochi dress is a long, loose garment
+        decorated with delicate embroidery on the front,
+        sleeves and borders. Geometric patterns and vivid
+        colors are among its distinctive features.
+      </p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">پوشش زنان سیستانی</h3>
+      <h3 class="en">Sistani Women's Clothing</h3>
+
+      <p class="fa">
+        پوشاک سنتی زنان سیستانی با پیراهن‌های بلند،
+        شلوارهای محلی، سربند و روسری شناخته می‌شود.
+        جزئیات لباس و شیوه پوشش در مناطق مختلف
+        سیستان تفاوت‌هایی دارد.
+      </p>
+
+      <p class="en">
+        Traditional Sistani women's clothing includes
+        long dresses, local trousers, head coverings
+        and scarves, with variations across different areas.
+      </p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">سوزن‌دوزی بلوچی</h3>
+      <h3 class="en">Balochi Embroidery</h3>
+
+      <p class="fa">
+        سوزن‌دوزی بلوچی هنری ظریف و زمان‌بر است که با
+        نخ‌های رنگی و نقش‌های هندسی روی پارچه اجرا می‌شود.
+        این هنر در لباس زنان، به‌ویژه بخش پیش‌سینه،
+        آستین‌ها و حاشیه‌ها، جلوه ویژه‌ای دارد.
+      </p>
+
+      <p class="en">
+        Balochi embroidery is a detailed craft made with
+        colorful threads and geometric patterns.
+        It is especially prominent on dress fronts,
+        sleeves and borders.
+      </p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">زیورآلات و تزئینات</h3>
+      <h3 class="en">Jewelry and Accessories</h3>
+
+      <p class="fa">
+        زیورآلات نقره، گردنبندها، دستبندها و تزئینات
+        سنتی در کنار پوشش محلی، بخشی از جلوه فرهنگی
+        و زیبایی‌شناسی پوشاک زنان منطقه هستند.
+      </p>
+
+      <p class="en">
+        Silver jewelry, necklaces, bracelets and
+        traditional accessories complement local clothing
+        and reflect the region's artistic heritage.
+      </p>
+    </div>
+
+  </div>
 </section>
+
+<!-- EMBROIDERY CENTERS -->
 
 <section>
-<h2><span class="fa">مراکز مهم سوزن‌دوزی</span><span class="en">Embroidery Centers</span></h2>
+  <h2>
+    <span class="fa">مراکز مهم سوزن‌دوزی بلوچی</span>
+    <span class="en">Important Balochi Embroidery Centers</span>
+  </h2>
 
-<div class="grid">
-<div class="tile">
-<h3>اسپکه</h3>
-<p class="fa">از مراکز شناخته‌شده سوزن‌دوزی بلوچ در شهرستان نیک‌شهر.</p>
-<p class="en">A recognized center of Balochi embroidery in Nikshahr.</p>
-</div>
+  <p class="fa">
+    سوزن‌دوزی در نقاط مختلف بلوچستان با شیوه‌ها و نقش‌های
+    محلی ادامه دارد. این هنر نه‌تنها بخشی از پوشاک سنتی،
+    بلکه میراثی زنده و منبع درآمد بسیاری از هنرمندان
+    و زنان صنعتگر منطقه است.
+  </p>
 
-<div class="tile">
-<h3>قاسم‌آباد</h3>
-<p class="fa">از مناطق دارای پیشینه هنرهای سوزن‌دوزی و پوشاک محلی.</p>
-<p class="en">A locality associated with traditional embroidery and clothing.</p>
-</div>
+  <div class="grid">
 
-<div class="tile">
-<h3>پیپ</h3>
-<p class="fa">از مناطق مهم هنرهای دستی و سوزن‌دوزی در بلوچستان.</p>
-<p class="en">A locality known for traditional handicrafts.</p>
-</div>
+    <div class="tile">
+      <h3>اسپکه</h3>
+      <p class="fa">از مراکز شناخته‌شده هنر سوزن‌دوزی در بلوچستان.</p>
+      <p class="en">A recognized center of Balochi embroidery.</p>
+    </div>
 
-<div class="tile">
-<h3>ورکات</h3>
-<p class="fa">از مراکز محلی مرتبط با هنر سوزن‌دوزی زنان بلوچ.</p>
-<p class="en">A local center associated with women's embroidery.</p>
-</div>
+    <div class="tile">
+      <h3>قاسم‌آباد</h3>
+      <p class="fa">از مناطق دارای پیشینه و فعالیت در هنرهای سوزن‌دوزی.</p>
+      <p class="en">An area associated with traditional embroidery.</p>
+    </div>
 
-<div class="tile">
-<h3>چانف</h3>
-<p class="fa">از مناطق هنری شهرستان نیک‌شهر با پیشینه پوشاک و دوخت محلی.</p>
-<p class="en">An area with traditional clothing and embroidery heritage.</p>
-</div>
+    <div class="tile">
+      <h3>پیپ</h3>
+      <p class="fa">از نقاط مهم هنرهای دستی و سوزن‌دوزی محلی.</p>
+      <p class="en">A locality known for traditional handicrafts.</p>
+    </div>
 
-<div class="tile">
-<h3>سوران و ایرانشهر</h3>
-<p class="fa">از مناطق مهم فرهنگی و هنری بلوچستان با تنوع نقش و دوخت.</p>
-<p class="en">Important cultural areas with diverse embroidery traditions.</p>
-</div>
-</div>
+    <div class="tile">
+      <h3>ورکات</h3>
+      <p class="fa">از مناطق فعال در هنرهای بومی و سوزن‌دوزی.</p>
+      <p class="en">A locality associated with indigenous embroidery.</p>
+    </div>
+
+    <div class="tile">
+      <h3>چنف</h3>
+      <p class="fa">از مناطق دارای فعالیت هنرمندان سوزن‌دوز بلوچ.</p>
+      <p class="en">An area with Balochi embroidery traditions.</p>
+    </div>
+
+    <div class="tile">
+      <h3>سوران</h3>
+      <p class="fa">یکی از مناطق مهم فرهنگی و هنری بلوچستان.</p>
+      <p class="en">An important cultural and artistic area.</p>
+    </div>
+
+    <div class="tile">
+      <h3>گشت</h3>
+      <p class="fa">از مناطق دارای هنرهای دستی و پوشاک سنتی بلوچی.</p>
+      <p class="en">A locality with traditional clothing and handicrafts.</p>
+    </div>
+
+    <div class="tile">
+      <h3>سیدبار جدگال</h3>
+      <p class="fa">از نقاط دارای پیشینه فرهنگی و هنرهای بومی منطقه.</p>
+      <p class="en">A locality with distinctive regional cultural traditions.</p>
+    </div>
+
+    <div class="tile">
+      <h3>ایرانشهر و ایرندگان</h3>
+      <p class="fa">از پهنه‌های مهم فرهنگی و هنری بلوچستان.</p>
+      <p class="en">Important cultural areas of Balochistan.</p>
+    </div>
+
+  </div>
 </section>
+
+<!-- VILLAGES -->
 
 <section>
-<h2><span class="fa">روستاها و مناطق شاخص</span><span class="en">Notable Villages and Areas</span></h2>
+  <h2>
+    <span class="fa">روستاها و مناطق شاخص</span>
+    <span class="en">Notable Villages and Areas</span>
+  </h2>
 
-<div class="grid">
-<div class="tile">
-<h3>کلپورگان</h3>
-<img src="sistan-kalpourgan.jpg" alt="روستای کلپورگان">
-<p class="fa">روستای تاریخی سراوان و مرکز سفالگری سنتی زنان بلوچ.</p>
-<p class="en">A historic village in Saravan famous for traditional pottery.</p>
-</div>
+  <div class="grid">
 
-<div class="tile">
-<h3>ابریشم‌بافی و حصیربافی بلوچستان</h3>
-<img src="sistan-handicrafts.jpg" alt="صنایع دستی بلوچستان">
-<p class="fa">هنرهای دستی برگرفته از طبیعت و شیوه زندگی مردم منطقه.</p>
-<p class="en">Handicrafts inspired by local nature and lifestyle.</p>
-</div>
-</div>
+    <div class="tile">
+      <h3 class="fa">اسپکه</h3>
+      <h3 class="en">Espakeh</h3>
+      <p class="fa">
+        منطقه‌ای شناخته‌شده در نیک‌شهر که نام آن با هنر
+        سوزن‌دوزی و فعالیت هنرمندان محلی پیوند خورده است.
+      </p>
+      <p class="en">
+        A locality in Nikshahr associated with Balochi embroidery.
+      </p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">روستاهای منطقه سرباز</h3>
+      <h3 class="en">Sarbaz Villages</h3>
+      <p class="fa">
+        روستاهای این منطقه با نخلستان‌ها، رودخانه‌ها،
+        باغ‌ها و معماری متناسب با اقلیم گرم و مرطوب
+        جنوب بلوچستان شناخته می‌شوند.
+      </p>
+      <p class="en">
+        Villages in this area are known for palm groves,
+        rivers, gardens and climate-adapted architecture.
+      </p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">روستاهای مکران</h3>
+      <h3 class="en">Makran Villages</h3>
+      <p class="fa">
+        سکونتگاه‌های ساحلی با فرهنگ دریایی،
+        صیادی و پیوند دیرینه با دریای عمان.
+      </p>
+      <p class="en">
+        Coastal settlements shaped by fishing and maritime culture.
+      </p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">منطقه دشتیاری</h3>
+      <h3 class="en">Dashtiari</h3>
+      <p class="fa">
+        منطقه‌ای با فرهنگ بلوچی، کشاورزی محلی،
+        نخلستان‌ها و آداب و رسوم بومی.
+      </p>
+      <p class="en">
+        A region with Balochi culture, local agriculture,
+        palm groves and traditional customs.
+      </p>
+    </div>
+
+  </div>
 </section>
+
+<!-- HISTORICAL AND NATURAL ATTRACTIONS -->
 
 <section>
-<h2><span class="fa">آثار تاریخی و جاذبه‌های طبیعی</span><span class="en">Historical and Natural Attractions</span></h2>
+  <h2>
+    <span class="fa">جاذبه‌های تاریخی و طبیعی</span>
+    <span class="en">Historical and Natural Attractions</span>
+  </h2>
 
-<div class="grid">
-<div class="tile">
-<h3>شهر سوخته</h3>
-<img src="sistan-shahr-sukhteh.jpg" alt="شهر سوخته">
-<p class="fa">محوطه باستانی ارزشمند در سیستان و از میراث جهانی یونسکو.</p>
-<p class="en">An important archaeological site and UNESCO World Heritage property.</p>
-</div>
+  <div class="grid">
 
-<div class="tile">
-<h3>کوه خواجه</h3>
-<img src="sistan-khajeh.jpg" alt="کوه خواجه">
-<p class="fa">کوهی تاریخی در میان دریاچه هامون با آثار معماری کهن.</p>
-<p class="en">A historic mountain rising from the Hamun lake basin.</p>
-</div>
+    <div class="tile">
+      <h3 class="fa">شهر سوخته</h3>
+      <h3 class="en">Shahr-e Sukhteh</h3>
+      <p class="fa">
+        محوطه باستانی ارزشمند در سیستان که یکی از
+        مهم‌ترین مراکز تمدنی عصر مفرغ در شرق ایران بوده است.
+        این اثر در فهرست میراث جهانی یونسکو ثبت شده است.
+      </p>
+      <p class="en">
+        An important Bronze Age archaeological site in Sistan,
+        listed as a UNESCO World Heritage Site.
+      </p>
+    </div>
 
-<div class="tile">
-<h3>قلعه بمپور</h3>
-<img src="sistan-bampur.jpg" alt="قلعه بمپور">
-<p class="fa">یکی از آثار تاریخی شاخص بلوچستان در نزدیکی ایرانشهر.</p>
-<p class="en">A prominent historic fortress near Iranshahr.</p>
-</div>
+    <div class="tile">
+      <h3 class="fa">کوه خواجه</h3>
+      <h3 class="en">Mount Khajeh</h3>
+      <p class="fa">
+        کوهی تاریخی و طبیعی در میان دریاچه هامون،
+        با بقایای معماری و آثار باستانی ارزشمند.
+      </p>
+      <p class="en">
+        A historic mountain rising from the Hamun basin,
+        with significant archaeological remains.
+      </p>
+    </div>
 
-<div class="tile">
-<h3>چابهار و سواحل مکران</h3>
-<img src="sistan-chabahar.jpg" alt="سواحل چابهار">
-<p class="fa">سواحل زیبای دریای عمان و چشم‌اندازهای منحصربه‌فرد مکران.</p>
-<p class="en">The beautiful Gulf of Oman coastline and Makran landscapes.</p>
-</div>
+    <div class="tile">
+      <h3 class="fa">قلعه ناصری ایرانشهر</h3>
+      <h3 class="en">Naseri Castle</h3>
+      <p class="fa">
+        بنایی تاریخی در ایرانشهر که از آثار شاخص
+        معماری و تاریخ بلوچستان به شمار می‌رود.
+      </p>
+      <p class="en">
+        A historic fortress and an important architectural
+        landmark in Iranshahr.
+      </p>
+    </div>
 
-<div class="tile">
-<h3>کوه‌های مریخی</h3>
-<img src="sistan-mars-mountains.jpg" alt="کوه های مریخی">
-<p class="fa">چشم‌اندازهای زمین‌شناختی شگفت‌انگیز در مسیر چابهار.</p>
-<p class="en">Unusual geological formations near Chabahar.</p>
-</div>
+    <div class="tile">
+      <h3 class="fa">قلعه پرتغالی‌های تیس</h3>
+      <h3 class="en">Portuguese Castle of Tis</h3>
+      <p class="fa">
+        بنایی تاریخی در نزدیکی چابهار که یادآور
+        اهمیت راهبردی سواحل مکران در تاریخ دریانوردی است.
+      </p>
+      <p class="en">
+        A historic fortress near Chabahar reflecting
+        the maritime history of the Makran coast.
+      </p>
+    </div>
 
-<div class="tile">
-<h3>تالاب هامون</h3>
-<img src="sistan-hamun.jpg" alt="تالاب هامون">
-<p class="fa">یکی از مهم‌ترین پهنه‌های طبیعی و زیست‌بومی منطقه سیستان.</p>
-<p class="en">One of the most important natural wetlands of Sistan.</p>
-</div>
-</div>
+    <div class="tile">
+      <h3 class="fa">سواحل مکران</h3>
+      <h3 class="en">Makran Coast</h3>
+      <p class="fa">
+        سواحل زیبای دریای عمان با چشم‌اندازهای متفاوت،
+        صخره‌های ساحلی و زندگی دریایی.
+      </p>
+      <p class="en">
+        Beautiful shores along the Gulf of Oman,
+        with distinctive cliffs and marine landscapes.
+      </p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">کوه‌های مریخی چابهار</h3>
+      <h3 class="en">Martian Mountains</h3>
+      <p class="fa">
+        سازندهای طبیعی شگفت‌انگیز در مسیر ساحلی چابهار
+        با شکل‌های فرسایشی خاص.
+      </p>
+      <p class="en">
+        Remarkable eroded geological formations near Chabahar.
+      </p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">تالاب لیپار</h3>
+      <h3 class="en">Lipar Lagoon</h3>
+      <p class="fa">
+        تالابی ساحلی در نزدیکی چابهار با چشم‌اندازی
+        متفاوت و رنگ‌های طبیعی خاص.
+      </p>
+      <p class="en">
+        A coastal lagoon near Chabahar with distinctive
+        natural colors and scenery.
+      </p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">قلعه بمپور</h3>
+      <h3 class="en">Bampur Castle</h3>
+      <p class="fa">
+        دژی تاریخی در منطقه بمپور که از آثار مهم
+        تاریخی بلوچستان به شمار می‌رود.
+      </p>
+      <p class="en">
+        A historic fortress and important heritage site
+        in the Bampur area.
+      </p>
+    </div>
+
+  </div>
 </section>
+
+<!-- FOOD -->
 
 <section>
-<h2><span class="fa">غذاهای محلی</span><span class="en">Local Cuisine</span></h2>
+  <h2>
+    <span class="fa">غذاهای محلی</span>
+    <span class="en">Local Cuisine</span>
+  </h2>
 
-<div class="grid">
-<div class="tile">
-<h3>تنورچه</h3>
-<p class="fa">یکی از غذاهای شناخته‌شده بلوچی که به شیوه سنتی در تنور تهیه می‌شود.</p>
-<p class="en">A well-known traditional Balochi tandoor dish.</p>
-</div>
+  <div class="grid">
 
-<div class="tile">
-<h3>کشک زرد</h3>
-<p class="fa">خوراک سنتی سیستانی که با کشک زرد و ادویه‌های محلی تهیه می‌شود.</p>
-<p class="en">A traditional Sistani dish prepared with yellow kashk.</p>
-</div>
+    <div class="tile">
+      <h3 class="fa">تباهگ</h3>
+      <h3 class="en">Tabahag</h3>
+      <p class="fa">
+        از خوراک‌های شناخته‌شده بلوچستان که با گوشت
+        طعم‌دار و خشک‌شده و شیوه‌های سنتی نگهداری
+        و آماده‌سازی تهیه می‌شود.
+      </p>
+      <p class="en">
+        A traditional Balochi dish made with seasoned
+        and dried meat.
+      </p>
+    </div>
 
-<div class="tile">
-<h3>بت ماش</h3>
-<p class="fa">از غذاهای محلی منطقه با پایه ماش و برنج.</p>
-<p class="en">A local dish made with mung beans and rice.</p>
-</div>
+    <div class="tile">
+      <h3 class="fa">تنورچه</h3>
+      <h3 class="en">Tanoorcheh</h3>
+      <p class="fa">
+        خوراک گوشتی محلی که در تنور و با شیوه‌ای
+        سنتی پخته می‌شود.
+      </p>
+      <p class="en">
+        A traditional meat dish cooked in a clay oven.
+      </p>
+    </div>
 
-<div class="tile">
-<h3>دوغ پا</h3>
-<p class="fa">غذای سنتی منطقه با ترکیبات محلی و لبنی.</p>
-<p class="en">A traditional local dairy-based dish.</p>
-</div>
-</div>
+    <div class="tile">
+      <h3 class="fa">کراهی</h3>
+      <h3 class="en">Karahi</h3>
+      <p class="fa">
+        خوراکی با گوشت و ادویه‌های محلی که در
+        مناطق مختلف بلوچستان با دستورهای متفاوت تهیه می‌شود.
+      </p>
+      <p class="en">
+        A meat dish prepared with regional spices
+        in different local styles.
+      </p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">اوگن</h3>
+      <h3 class="en">Ogan</h3>
+      <p class="fa">
+        از خوراک‌های سنتی محلی که در برخی مناطق
+        با شیوه‌های بومی آماده می‌شود.
+      </p>
+      <p class="en">
+        A traditional local dish prepared in some
+        areas using regional methods.
+      </p>
+    </div>
+
+  </div>
 </section>
+
+<!-- HANDICRAFTS -->
 
 <section>
-<h2><span class="fa">صنایع‌دستی و سوغات</span><span class="en">Handicrafts and Souvenirs</span></h2>
+  <h2>
+    <span class="fa">صنایع‌دستی و محصولات بومی</span>
+    <span class="en">Handicrafts and Local Products</span>
+  </h2>
 
-<div class="grid">
-<div class="tile">
-<h3>سوزن‌دوزی بلوچ</h3>
-<p class="fa">هنر شاخص زنان بلوچ و یکی از شناخته‌شده‌ترین نمادهای فرهنگی استان.</p>
-<p class="en">The signature embroidery art of Balochi women.</p>
-</div>
+  <div class="grid">
 
-<div class="tile">
-<h3>سفال کلپورگان</h3>
-<p class="fa">سفال دست‌ساز با شیوه‌های سنتی و نقش‌های هندسی.</p>
-<p class="en">Handmade pottery using traditional techniques.</p>
-</div>
+    <div class="tile">
+      <h3 class="fa">سوزن‌دوزی بلوچی</h3>
+      <h3 class="en">Balochi Embroidery</h3>
+      <p class="fa">
+        هنر شاخص زنان بلوچ با نقش‌های هندسی،
+        رنگ‌های زنده و دوخت‌های ظریف.
+      </p>
+      <p class="en">
+        A distinctive women's craft featuring geometric
+        patterns, vivid colors and fine stitching.
+      </p>
+    </div>
 
-<div class="tile">
-<h3>حصیربافی</h3>
-<p class="fa">بافته‌هایی از برگ درخت خرما و الیاف گیاهی.</p>
-<p class="en">Woven crafts made from palm leaves and natural fibers.</p>
-</div>
+    <div class="tile">
+      <h3 class="fa">حصیربافی</h3>
+      <h3 class="en">Mat Weaving</h3>
+      <p class="fa">
+        بافت محصولات کاربردی و تزئینی از برگ
+        درختان نخل و الیاف گیاهی.
+      </p>
+      <p class="en">
+        Functional and decorative objects woven
+        from palm leaves and plant fibers.
+      </p>
+    </div>
 
-<div class="tile">
-<h3>محصولات محلی</h3>
-<p class="fa">خرما، محصولات نخلستانی، ماهی و صنایع‌دستی بومی.</p>
-<p class="en">Dates, palm products, fish and local handicrafts.</p>
-</div>
-</div>
+    <div class="tile">
+      <h3 class="fa">سفال کلپورگان</h3>
+      <h3 class="en">Kalporgan Pottery</h3>
+      <p class="fa">
+        سفالگری سنتی روستای کلپورگان در شهرستان
+        سراوان که با شیوه‌های بومی و نقوش خاص شناخته می‌شود.
+      </p>
+      <p class="en">
+        Traditional pottery from Kalporgan village
+        in Saravan, made with distinctive local techniques.
+      </p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">سکه‌دوزی و آینه‌دوزی</h3>
+      <h3 class="en">Coin and Mirror Embroidery</h3>
+      <p class="fa">
+        تزئینات سنتی روی پارچه و پوشاک با استفاده
+        از سکه‌ها، آینه‌های کوچک و دوخت‌های محلی.
+      </p>
+      <p class="en">
+        Traditional textile decoration using coins,
+        small mirrors and local stitching techniques.
+      </p>
+    </div>
+
+  </div>
 </section>
+
+<!-- LOCAL PRODUCTS -->
+
+<section>
+  <h2>
+    <span class="fa">سوغات و محصولات محلی</span>
+    <span class="en">Local Products and Souvenirs</span>
+  </h2>
+
+  <div class="grid">
+
+    <div class="tile">
+      <h3 class="fa">خرما</h3>
+      <h3 class="en">Dates</h3>
+      <p class="fa">از محصولات مهم نخلستان‌های جنوب استان.</p>
+      <p class="en">An important product of southern palm groves.</p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">ماهی و محصولات دریایی</h3>
+      <h3 class="en">Fish and Seafood</h3>
+      <p class="fa">محصولات دریایی سواحل مکران و دریای عمان.</p>
+      <p class="en">Seafood from the Makran coast and Gulf of Oman.</p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">ادویه‌های محلی</h3>
+      <h3 class="en">Local Spices</h3>
+      <p class="fa">ترکیبات معطر و ادویه‌های مورد استفاده در غذاهای منطقه.</p>
+      <p class="en">Aromatic spice blends used in regional cuisine.</p>
+    </div>
+
+    <div class="tile">
+      <h3 class="fa">خرما و فرآورده‌های نخل</h3>
+      <h3 class="en">Palm Products</h3>
+      <p class="fa">محصولات خوراکی و دست‌ساخته‌های مرتبط با نخلستان‌ها.</p>
+      <p class="en">Food products and handicrafts associated with palm cultivation.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- LABEL -->
+
+<section>
+  <h2>
+    <span class="fa">لیبل اطلاعات اثر</span>
+    <span class="en">Artwork Information Label</span>
+  </h2>
+
+  <img
+    class="label-art"
+    src="sistan-baluchestan_leibel.png"
+    alt="لیبل اطلاعاتی سیستان و بلوچستان"
+  >
+
+  <p class="fa">
+    برای مشاهده اطلاعات مربوط به اثر هنری، پوشش محلی
+    و روایت فرهنگی سیستان و بلوچستان، لیبل اطلاعاتی
+    این منطقه را مطالعه کنید.
+  </p>
+
+  <p class="en">
+    Explore the artwork information label for further details
+    about traditional clothing and the cultural heritage
+    of Sistan and Baluchestan.
+  </p>
+</section>
+
+<!-- SOURCES -->
 
 <section class="sources">
-<h2><span class="fa">منابع و اطلاعات بیشتر</span><span class="en">Sources and Further Information</span></h2>
-<a href="https://www.visitiran.ir/" target="_blank">Visit Iran – گردشگری ایران</a>
-<a href="https://www.ichto.ir/" target="_blank">وزارت میراث فرهنگی، گردشگری و صنایع دستی</a>
-<a href="https://whc.unesco.org/" target="_blank">UNESCO World Heritage</a>
-<a href="https://www.irna.ir/" target="_blank">خبرگزاری جمهوری اسلامی ایران</a>
+  <h2>
+    <span class="fa">منابع و اطلاعات بیشتر</span>
+    <span class="en">Sources and Further Information</span>
+  </h2>
+
+  <a href="https://www.visitiran.ir/" target="_blank" rel="noopener">
+    Visit Iran – درگاه گردشگری ایران
+  </a>
+
+  <a href="https://www.ich.unesco.org/" target="_blank" rel="noopener">
+    UNESCO Intangible Cultural Heritage
+  </a>
+
+  <a href="https://whc.unesco.org/" target="_blank" rel="noopener">
+    UNESCO World Heritage
+  </a>
+
+  <a href="https://www.ichto.ir/" target="_blank" rel="noopener">
+    وزارت میراث فرهنگی، گردشگری و صنایع‌دستی
+  </a>
+
 </section>
 
 <div class="quote">
-<span class="fa">هر منطقه، یک رنگ؛ هر اثر، یک روایت</span>
-<span class="en">Every Region, A Color; Every Artwork, A Story</span>
+  <span class="fa">هر منطقه، یک رنگ؛ هر اثر، یک روایت</span>
+  <span class="en">Every Region, A Color; Every Artwork, A Story</span>
 </div>
 
 <a href="gallery-3d.html" class="back">
-<span class="fa">بازگشت به نقشه سفر</span>
-<span class="en">Back to Travel Map</span>
+  <span class="fa">بازگشت به نقشه سفر</span>
+  <span class="en">Back to Travel Map</span>
 </a>
 
 </main>
 
 <footer>
-<p>ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</p>
-<p>هنرمند و خالق آثار: مریم ساعی</p>
-<p>طراحی سایت و پژوهش: مرجان ساعی</p>
+  <p class="fa">ایران، هزار رنگ | روایت تصویری پوشش زنان ایران</p>
+  <p class="en">Iran, A Thousand Colors | A Visual Journey</p>
+  <p>هنرمند و خالق آثار: مریم ساعی | Maryam Saei</p>
+  <p>طراحی سایت و پژوهش: مرجان ساعی | Marjan Saei</p>
 </footer>
 
 <script>
 function toggleLanguage(){
-  const english=document.body.classList.toggle("english");
-  document.documentElement.lang=english?"en":"fa";
-  document.documentElement.dir=english?"ltr":"rtl";
-  localStorage.setItem("siteLanguage",english?"en":"fa");
+  const english = document.body.classList.toggle("english");
+
+  document.documentElement.lang = english ? "en" : "fa";
+  document.documentElement.dir = english ? "ltr" : "rtl";
+
+  localStorage.setItem("siteLanguage",english ? "en" : "fa");
 }
 
 window.addEventListener("DOMContentLoaded",()=>{
