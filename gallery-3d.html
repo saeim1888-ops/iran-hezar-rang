@@ -1346,5 +1346,71 @@ fetch('https://api.counterapi.dev/v1/iran-hezar-rang/gallery/up').then(r=>r.json
 }
 </style>
 
+
+<style id="requested-focus-navigation-layout">
+/* فقط صفحهٔ تابلوها: کنترل‌های انتخاب استان در بالا و سه مسیر بازگشت در پایین */
+#posterFocusOverlay #focusTopNav{
+ position:fixed!important;top:96px!important;left:50%!important;transform:translateX(-50%)!important;
+ z-index:120!important;display:flex!important;align-items:center!important;justify-content:center!important;
+ flex-wrap:wrap!important;gap:8px!important;width:min(760px,94vw)!important;padding:8px 12px!important;
+ box-sizing:border-box!important;background:rgba(248,239,220,.96)!important;
+ border:1px solid #bd9657!important;border-radius:22px!important;
+ box-shadow:0 5px 16px rgba(45,31,17,.18)!important;pointer-events:auto!important;
+ direction:rtl!important;
+}
+#posterFocusOverlay #focusTopCity{font-family:Vazirmatn,Tahoma,sans-serif!important;font-size:17px!important;font-weight:800!important;color:#24463f!important;padding:3px 10px!important;white-space:nowrap!important}
+#posterFocusOverlay #focusTopNav button{border:1px solid #b88b49!important;border-radius:999px!important;
+ background:linear-gradient(145deg,#fff8e8 0%,#f0dfb9 55%,#dfc18b 100%)!important;color:#294b42!important;
+ font:700 11px Vazirmatn,Tahoma,sans-serif!important;padding:8px 13px!important;min-height:34px!important;
+ box-shadow:0 2px 0 #b58b50,0 4px 8px rgba(64,43,20,.12)!important;white-space:nowrap!important}
+#posterFocusOverlay .focusControls{bottom:12px!important;top:auto!important;left:50%!important;transform:translateX(-50%)!important;
+ width:min(760px,94vw)!important;max-width:760px!important;z-index:120!important;gap:6px!important}
+#posterFocusOverlay .focusControls .actions{justify-content:center!important;gap:8px!important}
+#posterFocusOverlay .focusControls button{font-size:11px!important;padding:9px 13px!important}
+#posterFocusOverlay #focusInfoPanel #detailBtn{display:inline-flex!important;margin-top:12px!important;align-self:flex-start!important}
+@media(max-width:760px){
+ #posterFocusOverlay #focusTopNav{top:105px!important;width:96vw!important;gap:5px!important;padding:6px 7px!important}
+ #posterFocusOverlay #focusTopCity{font-size:13px!important;padding:2px 5px!important}
+ #posterFocusOverlay #focusTopNav button{font-size:9px!important;padding:7px 9px!important;min-height:30px!important}
+ #posterFocusOverlay .focusControls{bottom:calc(8px + env(safe-area-inset-bottom,0px))!important;width:96vw!important;max-width:96vw!important;padding:6px!important;gap:4px!important}
+ #posterFocusOverlay .focusControls .actions{gap:5px!important;flex-wrap:wrap!important}
+ #posterFocusOverlay .focusControls button{font-size:9px!important;padding:7px 9px!important;min-height:31px!important}
+ #posterFocusOverlay .focusStage{padding-top:50px!important}
+ #posterFocusOverlay #focusInfoPanel #detailBtn{font-size:10px!important}
+}
+</style>
+<script id="requested-focus-navigation-layout-script">
+(function(){
+ const root=document.getElementById('posterFocusOverlay');
+ if(!root || root.dataset.navLayoutApplied==='1') return;
+ const info=document.getElementById('focusInfoPanel');
+ const controls=root.querySelector('.focusControls');
+ const rows=controls?controls.querySelectorAll('.actions'):[];
+ if(!info || !controls || rows.length<2) return;
+ const top=document.createElement('div'); top.id='focusTopNav';
+ const city=document.createElement('span'); city.id='focusTopCity'; city.textContent=(document.getElementById('focusCity')||{}).textContent||'قزوین';
+ const mapTop=document.createElement('button'); mapTop.type='button'; mapTop.id='focusTopMapBtn'; mapTop.textContent='نقشه';
+ mapTop.addEventListener('click',function(){ const b=document.getElementById('focusMapBtn'); if(b)b.click(); });
+ const syncMapLabel=()=>{mapTop.textContent=(document.documentElement.lang||'fa').toLowerCase().startsWith('en')?'Map':'نقشه';};
+ new MutationObserver(syncMapLabel).observe(document.documentElement,{attributes:true,attributeFilter:['lang']}); syncMapLabel();
+ top.append(city,mapTop);
+ const prev=document.getElementById('focusPrev'), next=document.getElementById('focusNext');
+ if(prev) top.append(prev); if(next) top.append(next);
+ root.insertBefore(top,root.firstChild);
+ const detail=document.getElementById('detailBtn'); if(detail) info.appendChild(detail);
+ const resume=document.getElementById('focusResumeBtn'), map=document.getElementById('focusMapBtn'), hall=document.getElementById('focusHallBtn');
+ const bottomRow=rows[1];
+ if(bottomRow && map && resume && hall) bottomRow.append(map,resume,hall);
+ if(rows[0] && !rows[0].children.length) rows[0].remove();
+ const focusCity=document.getElementById('focusCity');
+ if(focusCity){
+  const sync=()=>{city.textContent=focusCity.textContent||'';};
+  new MutationObserver(sync).observe(focusCity,{childList:true,subtree:true,characterData:true});
+  sync();
+ }
+ root.dataset.navLayoutApplied='1';
+})();
+</script>
+
 </body>
 </html>
