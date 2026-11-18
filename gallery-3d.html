@@ -137,6 +137,18 @@ p{font-size:12px;line-height:1.9;margin:6px 0}.muted{color:#786b56;font-size:11p
  #mapOverlay .citylist{max-height:28vh!important}
 }
 
+
+<style id="mobile-hint-above-controls">
+/* فقط پیام راهنما را در موبایل بالاتر از نوار دکمه‌ها قرار می‌دهد */
+@media(max-width:760px){
+  #hint{
+    bottom:145px!important;
+    z-index:85!important;
+    max-width:92vw!important;
+    text-align:center!important;
+  }
+}
+</style>
 </style>
 </head>
 <body>
